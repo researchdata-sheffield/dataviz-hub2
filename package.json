@@ -1,0 +1,59 @@
+{
+  "name": "datavizhub-tuos",
+  "private": true,
+  "description": "Promoting and building community around data visualisation at the University of Sheffield",
+  "version": "0.1.0",
+  "author": "Yu Liang Weng <y.weng@sheffield.ac.uk>",
+  "dependencies": {
+    "gatsby": "^2.19.18",
+    "gatsby-image": "^2.2.41",
+    "gatsby-plugin-manifest": "^2.2.41",
+    "gatsby-plugin-offline": "^3.0.35",
+    "gatsby-plugin-postcss": "^2.1.20",
+    "gatsby-plugin-purgecss": "^4.0.1",
+    "gatsby-plugin-react-helmet": "^3.1.22",
+    "gatsby-plugin-sharp": "^2.4.5",
+    "gatsby-source-filesystem": "^2.1.48",
+    "gatsby-transformer-sharp": "^2.3.14",
+    "prop-types": "^15.7.2",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/custom-forms": "0.2.1",
+    "autoprefixer": "9.7.4",
+    "babel-eslint": "10.0.3",
+    "cssnano": "4.1.10",
+    "eslint": "6.8.0",
+    "eslint-loader": "3.0.3",
+    "eslint-plugin-import": "2.20.1",
+    "eslint-plugin-react": "7.18.3",
+    "gatsby-plugin-eslint": "2.0.8",
+    "prettier": "1.19.1",
+    "tailwindcss": "1.2.0"
+  },
+  "keywords": [
+    "the university of sheffield",
+    "data visualisation",
+    "data visualisation hub",
+    "research"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "start": "npm run develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/researchdata-sheffield/dataviz-hub2"
+  },
+  "bugs": {
+    "url": "https://github.com/researchdata-sheffield/dataviz-hub2/issues"
+  }
+}
