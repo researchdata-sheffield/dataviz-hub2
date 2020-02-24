@@ -45,6 +45,13 @@ module.exports = {
         purgeOnly: [`src/css/style.css`]
       }
     },
+    {
+      resolve: 'gatsby-background-image',
+      options: {
+        // add your own characters to escape, replacing the default ':/'
+        specialChars: '/:',
+      },
+    }
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
