@@ -29,7 +29,7 @@ function Header() {
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-24" src={ `${isScroll ? university_logo : university_logo}` }></img></a>
           <div className="ml-4 text-2xl ">
-            <a href="/" className={`${isScroll ? "text-highlight_2" : "text-white"}`}>Dataviz.Shef</a>
+            <a route="/" className={`${isScroll ? "text-highlight_2" : "text-white"}`}>Dataviz.Shef</a>
           </div>
         </div>
 

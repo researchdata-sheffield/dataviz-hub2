@@ -36,6 +36,7 @@
     "eslint-plugin-import": "2.20.1",
     "eslint-plugin-react": "7.18.3",
     "gatsby-plugin-eslint": "2.0.8",
+    "gh-pages": "^2.2.0",
     "prettier": "1.19.1",
     "tailwindcss": "1.2.0"
   },
@@ -61,5 +62,8 @@
   },
   "bugs": {
     "url": "https://github.com/researchdata-sheffield/dataviz-hub2/issues"
+  },
+  "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }
