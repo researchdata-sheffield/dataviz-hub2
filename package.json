@@ -24,7 +24,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "react-helmet": "^5.2.1"
+    "react-helmet": "^5.2.1",
+    "react-icons": "^3.9.0"
   },
   "devDependencies": {
     "@tailwindcss/custom-forms": "0.2.1",
@@ -54,7 +55,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
@@ -62,8 +64,5 @@
   },
   "bugs": {
     "url": "https://github.com/researchdata-sheffield/dataviz-hub2/issues"
-  },
-  "scripts": {
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }

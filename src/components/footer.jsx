@@ -1,8 +1,7 @@
 import { Link } from "gatsby"
 import React from "react"
 import university_logo from "../images/TUOSlogo.png"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faGoogle, faSlack } from '@fortawesome/free-brands-svg-icons'
+import { FaGoogle, FaSlack } from "react-icons/fa"
 
 function Footer() {
   
@@ -70,8 +69,8 @@ function Footer() {
         <div className="sm:w-1/3 pl-8">
           <a className="p-20" href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-3/4" src={university_logo}></img></a>
           <div className="justify-center justify-between">
-            <button className="mx-2 hover:text-highlight_2 text-gray-500"><a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faGoogle}/></a></button>
-            <button className="mx-2 hover:text-highlight_2 text-gray-500 "><a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FontAwesomeIcon icon={faSlack}/></a></button>
+            <button className="mx-2 hover:text-highlight_2 text-gray-500"><a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a></button>
+            <button className="mx-2 hover:text-highlight_2 text-gray-500 "><a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a></button>
           </div>
           
 
