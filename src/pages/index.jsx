@@ -1,8 +1,8 @@
 import React from "react"
 
 import Layout from "../components/layout";
-import Home_main from "../components_images/home_main_background"
 import SEO from "../components/seo"
+import BackgroundSection from "../components_images/home_background";
 
 const IndexPage = () => (
   <Layout>
@@ -11,9 +11,12 @@ const IndexPage = () => (
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
     />
     
-    <div className="bg-local" style={{ width: "100%", height: "auto", display: "fixed" }}>
-      <Home_main />
-    </div>
+    <BackgroundSection className="">
+        <p className="text-white text-2xl">Write something <br />  <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /></p>
+      <div className="text-white text-2xl">
+       Data Visualisation Hub
+      </div>
+    </BackgroundSection>
 
 
     <h1>Hi people</h1>

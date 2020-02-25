@@ -2,6 +2,7 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import university_logo from "../images/TUOS_LOGO_REVERSED.png"
+// import university_logo_Color from "../images/TUOSlogo.png"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
@@ -24,11 +25,11 @@ function Header() {
 
   return (
     <header className="font-semibold">
-      <nav className="flex items-center justify-between flex-wrap px-6 py-4 fixed w-full z-10 top-0" style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}` }}> 
-        <div className="flex items-center flex-shrink-0 text-white mr-6">
-          <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-24" src={university_logo}></img></a>
-          <div className="ml-6 text-2xl ">
-            <a href="/">Dataviz.Shef</a>
+      <nav className="flex items-center justify-between flex-wrap px-5 py-4 fixed w-full z-10 top-0" style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.5)" : ""}` }}> 
+        <div className="flex items-center flex-shrink-0 text-white mr-5">
+          <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-24" src={ `${isScroll ? university_logo : university_logo}` }></img></a>
+          <div className="ml-4 text-2xl ">
+            <a href="/" className={`${isScroll ? "text-highlight_2" : "text-white"}`}>Dataviz.Shef</a>
           </div>
         </div>
 

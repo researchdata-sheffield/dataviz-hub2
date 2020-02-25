@@ -6,6 +6,9 @@ module.exports = {
         'highlight': '#337ab7',
         'highlight_2': '#00aeef',
       },
+      backgroundColor: {
+        'footer': '#414042',
+      }
     },
  
   },
