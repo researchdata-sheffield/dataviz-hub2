@@ -1,5 +1,4 @@
 import React from "react"
-
 import Layout from "../components/layout";
 import SEO from "../components/seo"
 import BackgroundSection from "../components_images/home_background";
