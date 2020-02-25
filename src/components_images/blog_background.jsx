@@ -18,7 +18,7 @@ const BackgroundSection = ({className, children}) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "earth.jpg" }) {
+        desktop: file(relativePath: { eq: "blog_b.jpg" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64
@@ -35,13 +35,12 @@ const BackgroundSection = ({className, children}) => (
         className={className}
         fluid={imageData}
         style={{
-          height: `100vh`,
-          width: `100%`,
+          height: `70vh`,
+          width: `100vw`,
           display: `flex`,
         }}
         >
         <div>{children}</div>
-
         </BackgroundImage>
       )
     }}

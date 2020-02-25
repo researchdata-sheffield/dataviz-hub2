@@ -20,8 +20,8 @@ const BackgroundSection = ({className, children}) => (
       query {
         desktop: file(relativePath: { eq: "shape_light.jpg" }) {
           childImageSharp {
-            fluid(quality: 80, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
+            fluid(quality: 100, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
@@ -40,7 +40,7 @@ const BackgroundSection = ({className, children}) => (
           display: `flex`,
         }}
         >
-        <div className="mt-24 mx-24">{children}</div>
+        <div>{children}</div>
         </BackgroundImage>
       )
     }}

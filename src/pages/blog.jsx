@@ -1,8 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BackgroundSection from "../components_images/blog_background";
 
 const Blog = () => (
   <Layout>
@@ -11,9 +10,15 @@ const Blog = () => (
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
     />
     
-    <h1>Hi from the Blog page</h1>
-    <p>Welcome to page Blog</p>
-    <Link to="/">Go back to the homepage</Link>
+    <BackgroundSection className="">
+      <div className="mx-12 my-24">
+        <p className="text-white text-2xl">Write something <br /> <br /> <br /> <br /> <br /></p>
+      </div>
+        
+      <div className="text-white text-2xl">
+       Blog
+      </div>
+    </BackgroundSection>
   </Layout>
 )
 

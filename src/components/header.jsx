@@ -8,6 +8,7 @@ import { FaSearch } from "react-icons/fa"
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
   const [isScroll, toggleScrolled] = useState(false);
+/*   const [isActive, toggleActive] = useState(false); */
 
   useEffect( () => {
     function handleScroll() {
@@ -24,7 +25,7 @@ function Header() {
 
   return (
     <header className="font-semibold">
-      <nav className="flex items-center justify-between flex-wrap px-5 py-4 fixed w-full z-10 top-0" style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}` }}> 
+      <nav className="flex items-center justify-between flex-wrap px-5 py-4 fixed w-full z-10 top-0 transition duration-300 ease-in-out" style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}` }}> 
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-24" src={ `${isScroll ? university_logo : university_logo}` }></img></a>
           <div className="ml-4 text-2xl ">
@@ -66,17 +67,23 @@ function Header() {
                 title: `About`
               },
               ].map(link => ( link.title != 'Showcase' ? 
-                <Link
-                  className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} mr-5 inline-block no-underline py-2 px-4`}
-                  key={link.title} to={link.route}> {link.title}
-                </Link> : 
-                <a className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} mr-5 inline-block no-underline py-2 px-4`}
-                    href={link.route} target="_blank" rel="noopener noreferrer" key={link.title}>{link.title}
+                <Link 
+                  /* activeClassName={`${isScroll ? `text-highlight_2 hover:text-gray-300` : `text-white hover:text-gray-300`}`} */
+                  activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }` }}
+                  className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}
+                  key={link.title} to={link.route} 
+                > 
+                  {link.title}
+                </Link> 
+                : 
+                <a className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}
+                  href={link.route} target="_blank" rel="noopener noreferrer" key={link.title}>
+                  {link.title}
                 </a>  
               )) 
             }
             {/* FIXME: Search button dropdown */}
-            <button className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} mr-5 inline-block no-underline py-2 px-4`}>
+            <button className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}>
               <FaSearch />
             </button>
 
