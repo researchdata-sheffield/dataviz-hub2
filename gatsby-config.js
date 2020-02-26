@@ -14,6 +14,21 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `blog`,
+        path: `${__dirname}/content/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          `gatsby-remark-images`,
+        ],
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-eslint',
@@ -53,7 +68,14 @@ module.exports = {
         // add your own characters to escape, replacing the default ':/'
         specialChars: '/:',
       },
-    }
+    },
+/*     {
+      resolve: `gatsby-source-drupal`,
+      options: {
+        baseUrl: `http://gatsby-drupal.ddev.local/`,
+        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
+      },
+    } */
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
