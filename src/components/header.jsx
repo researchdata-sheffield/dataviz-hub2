@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 import university_logo from "../images/TUOS_LOGO_REVERSED.png"
 // import university_logo_Color from "../images/TUOSlogo.png"
-import { FaSearch } from "react-icons/fa"
+import { FiSearch } from "react-icons/fi"
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -22,6 +22,7 @@ function Header() {
       document.removeEventListener('scroll', handleScroll);
     };
   }, [toggleScrolled, isScroll]);
+  
 
   return (
     <header className="font-semibold">
@@ -68,23 +69,26 @@ function Header() {
               },
               ].map(link => ( link.title != 'Showcase' ? 
                 <Link 
-                  /* activeClassName={`${isScroll ? `text-highlight_2 hover:text-gray-300` : `text-white hover:text-gray-300`}`} */
-                  activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }` }}
+                  activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }` }} 
+                  partiallyActive={true}
                   className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}
                   key={link.title} to={link.route} 
+                  
                 > 
                   {link.title}
                 </Link> 
                 : 
                 <a className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}
-                  href={link.route} target="_blank" rel="noopener noreferrer" key={link.title}>
+                  href={link.route} target="_blank" rel="noopener noreferrer" 
+                  key={link.title}
+                >
                   {link.title}
                 </a>  
               )) 
             }
             {/* FIXME: Search button dropdown */}
-            <button className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}>
-              <FaSearch />
+            <button className={`${isScroll ? `text-white hover:text-highlight_2` : ` text-gray-400 hover:text-white`} text-xl transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}>
+              <FiSearch />
             </button>
 
           </div>
