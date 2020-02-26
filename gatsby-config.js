@@ -29,6 +29,19 @@ module.exports = {
         ],
       },
     },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        // Apply gatsby-mdx to both .mdx and .md files
+        extensions: ['.mdx', '.md'],
+        defaultLayout: {
+          default: require.resolve('./src/templates/blogTemplate.jsx'),
+        },
+        plugins: [
+          `gatsby-remark-images`,
+        ]
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-eslint',

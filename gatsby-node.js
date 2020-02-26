@@ -4,41 +4,79 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require(`path`)
+const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = async ({ actions, graphql, reporter }) => {
+// Here we're adding extra stuff to the "node" (like the slug)
+// so we can query later for all blogs and get their slug
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+
+  if (node.internal.type === 'Mdx') {
+    const value = createFilePath({ node, getNode })
+    
+    const [month, day, year] = new Date(node.frontmatter.date)
+      .toLocaleDateString("en-EN", {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      })
+      .split("/")
+    
+    const slug = value.replace("/blog/", "").replace(/\/$/, "")
+    const url = `/blog/${day}/${month}/${year}${slug}`
+    
+    createNodeField({
+      // Individual MDX node
+      node,
+      // Name of the field you are adding
+      name: `slug`,
+      // Generated value based on filepath with "blog" prefix
+      value: url,
+    })
+  }
+}
+
+
+
+
+const path = require("path")
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  // Destructure the createPage function from the actions object
   const { createPage } = actions
-
-  const blogPostTemplate = path.resolve(`src/templates/blogTemplate.jsx`)
-
+  const blogTemplate = path.resolve(`./src/templates/blogTemplate.jsx`)
   const result = await graphql(`
-    {
-      allMarkdownRemark(
-        sort: { order: DESC, fields: [frontmatter___date] }
-        limit: 1000
-      ) {
+    query {
+      allMdx {
         edges {
           node {
-            frontmatter {
-              path
+            id
+            fields {
+              slug
             }
           }
         }
       }
     }
   `)
-
-  // Handle errors
   if (result.errors) {
-    reporter.panicOnBuild(`Error while running GraphQL query.`)
-    return
+    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-
-  result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+  // Create blog post pages.
+  const posts = result.data.allMdx.edges
+  // you'll call `createPage` for each result
+  posts.forEach( ( {node} )  => {
+    
     createPage({
-      path: node.frontmatter.path,
-      component: blogPostTemplate,
-      context: {}, // additional data can be passed via context
+      // This is the slug you created before
+      // (or `node.frontmatter.slug`)
+      path: node.fields.slug,
+      // This component will wrap our MDX content
+      component: blogTemplate,
+      // You can use the values in this context in
+      // our page layout component
+      context: { 
+        id: node.id,
+    },
     })
   })
 }
