@@ -7,7 +7,7 @@ import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 
-export default function Template({ data: { mdx } }) {
+export default function blogTemplate({ data: { mdx } }) {
     const { title, author, date } = mdx.frontmatter
     
     return (
@@ -33,7 +33,7 @@ export default function Template({ data: { mdx } }) {
     )
 }
 
-Template.propTypes = {
+blogTemplate.propTypes = {
   data: PropTypes.any,
 
 }

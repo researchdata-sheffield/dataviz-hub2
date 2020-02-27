@@ -24,12 +24,12 @@ function Blog({data}) {
       </BackgroundSection>
 
       {posts.map(({ node }) => {
-        const { title, author } = node.frontmatter
+        const { title, author, date } = node.frontmatter
         return (
           <div key={node.id}>
             <header>
               <div>{title}</div>
-              <div>Posting By {author}</div>
+              <div>Posting By {author} on {date} </div>
             </header>
             <p>{node.excerpt}</p>
             <Link to={node.fields.slug}>View Article</Link>
@@ -49,7 +49,7 @@ Blog.propTypes = {
 
 export const pageQuery = graphql`
   query blog {
-    allMdx {
+    allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
           id

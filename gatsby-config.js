@@ -1,3 +1,6 @@
+const capitalize = require(`remark-capitalize`)
+const emoji = require(`remark-emoji`)
+
 module.exports = {
   pathPrefix: "/dataviz-hub2",
   siteMetadata: {
@@ -37,9 +40,18 @@ module.exports = {
         defaultLayout: {
           default: require.resolve('./src/templates/blogTemplate.jsx'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              
+            }
+          }
+        ],
         plugins: [
-          `gatsby-remark-images`,
-        ]
+          `gatsby-remark-images`
+        ],
+        remarkPlugins: [capitalize, emoji],
       }
     },
     `gatsby-transformer-sharp`,
