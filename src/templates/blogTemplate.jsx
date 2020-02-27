@@ -23,12 +23,13 @@ export default function blogTemplate({ data: { mdx } }) {
           <h2 className="text-white">{author}</h2>
         </div>
       </BackgroundSection>
-        <article>
-        <MDXProvider>
-        <MDXRenderer>{mdx.body}</MDXRenderer>
+      
+
+      <MDXProvider className="justify-center">
+        <MDXRenderer className="mx-12 my-32 text-center">{mdx.body}</MDXRenderer>
       </MDXProvider>
 
-        </article>
+
       </Layout>
     )
 }
@@ -46,7 +47,7 @@ export const pageQuery = graphql`
       frontmatter {
         title
         author
-        date
+        date(formatString: "dddd Do MMMM YYYY")
       }
     }
   }

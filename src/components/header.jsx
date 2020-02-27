@@ -27,9 +27,10 @@ function Header() {
   return (
     <header className="font-semibold">
       <nav className="flex items-center justify-between flex-wrap px-5 py-4 fixed w-full z-10 top-0 transition duration-300 ease-in-out" style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}` }}> 
+        
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-24" src={ `${isScroll ? university_logo : university_logo}` }></img></a>
-          <div className="ml-4 text-2xl ">
+          <div className="ml-4 text-2xl">
             <Link to="/" className={`${isScroll ? "text-highlight_2" : "text-white"}`}>Dataviz.Shef</Link>
           </div>
         </div>
@@ -40,7 +41,7 @@ function Header() {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block` : `hidden`} md:block md:flex md:items-center w-full md:w-auto`}>
+        <div className={`${isExpanded ? `block` : `hidden`} md:block md:flex md:items-center w-full md:w-auto`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(0,0,0,0.7)" ] : ""}` }}>
           <div className="list-reset lg:flex justify-end flex-1 items-center">
             {[
 /*               {

@@ -1,5 +1,4 @@
-const capitalize = require(`remark-capitalize`)
-const emoji = require(`remark-emoji`)
+
 
 module.exports = {
   pathPrefix: "/dataviz-hub2",
@@ -43,17 +42,14 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
-            options: {
-              
-            }
           }
         ],
         plugins: [
           `gatsby-remark-images`
         ],
-        remarkPlugins: [capitalize, emoji],
       }
     },
+
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-eslint',
