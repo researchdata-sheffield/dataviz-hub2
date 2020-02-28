@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import PropTypes from 'prop-types'
 import BackgroundSection from "../components_images/blog_background";
+import no_image_thumbnail from "../images/no_image.png"
 
 function Blog({data}) {
   const { edges: posts } = data.allMdx
@@ -29,8 +30,13 @@ function Blog({data}) {
           <p>There are {data.allMdx.totalCount} posts</p>
           {posts.map(({ node }) => {
             const { title, author, date,} = node.frontmatter
+            let imagesrc
             
-            const imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src
+            if(node.frontmatter && node. frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
+              imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
+            } else {
+              imagesrc = no_image_thumbnail
+            }
            
             return (
               <div key={node.id}>
@@ -40,7 +46,8 @@ function Blog({data}) {
                   <div>Posting By {author} on {date} </div>
                 </header>
                 <p>{node.excerpt}</p>
-                <p>Time to read: {node.timeToRead} {node.timeToRead===1 ? "min" : "mins"}</p>
+                <p>{node.fields.readingTime.minutes} {node.fields.readingTime.minutes === 1 ? "min" : "mins"} read</p>
+
                 <Link to={node.fields.slug}>View Article</Link>
                 <hr />
               </div>
@@ -73,6 +80,9 @@ export const pageQuery = graphql`
           excerpt
           fields {
             slug
+            readingTime {
+              minutes
+            }
           }
           frontmatter {
             title
@@ -88,7 +98,6 @@ export const pageQuery = graphql`
               }
             }
           } 
-          timeToRead
         }
       }
       totalCount

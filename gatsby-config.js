@@ -24,14 +24,6 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
-          `gatsby-remark-images`,
-        ],
-      },
-    },
-    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         // Apply gatsby-mdx to both .mdx and .md files
@@ -42,6 +34,10 @@ module.exports = {
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 1000,
+              quality: 80,
+            }
           }
         ],
         plugins: [
@@ -49,7 +45,7 @@ module.exports = {
         ],
       }
     },
-
+    `gatsby-remark-reading-time`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     'gatsby-plugin-eslint',

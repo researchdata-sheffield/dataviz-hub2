@@ -44,6 +44,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
   const blogTemplate = path.resolve(`./src/templates/blogTemplate.jsx`)
+  const blogTemplate_custom = path.resolve(`./src/templates/blogTemplate_custom.jsx`)
+
   const result = await graphql(`
     query {
       allMdx {
@@ -52,6 +54,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             id
             fields {
               slug
+            }
+            frontmatter {
+              template
             }
           }
         }
@@ -65,13 +70,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.edges
   // you'll call `createPage` for each result
   posts.forEach( ( {node} )  => {
-    
+
+    // Check what template the markdown file have choosen 
+    const template = node.frontmatter.template === "custom" ? blogTemplate_custom : blogTemplate
+
     createPage({
       // This is the slug you created before
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
-      component: blogTemplate,
+      component: template,
       // You can use the values in this context in
       // our page layout component
       context: { 
