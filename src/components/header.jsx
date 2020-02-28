@@ -26,12 +26,13 @@ function Header() {
 
   return (
     <header className="font-semibold">
-      <nav className="flex items-center justify-between flex-wrap px-5 py-4 fixed w-full z-10 top-0 transition duration-300 ease-in-out" style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}` }}> 
+     
+      <nav className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-4 fixed w-full z-10 top-0 transition duration-300 ease-in-out`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}`}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-24" src={ `${isScroll ? university_logo : university_logo}` }></img></a>
-          <div className="ml-4 text-2xl">
-            <Link to="/" className={`${isScroll ? "text-highlight_2" : "text-white"}`}>Dataviz.Shef</Link>
+          <div className="ml-4 text-2xl transition duration-2000 ease-in-out">
+            <Link to="/" style={{fontFamily: `${isScroll ? "ink free" : ""}`}}>Dataviz.Shef</Link>
           </div>
         </div>
 

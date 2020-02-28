@@ -4,6 +4,11 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+
+/**
+ *  Create file path for blog posts
+ */
+
 const { createFilePath } = require('gatsby-source-filesystem')
 
 // Here we're adding extra stuff to the "node" (like the slug)
@@ -36,15 +41,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
   }
 }
 
-
+/**
+ *  Create blog posts
+ */
 
 
 const path = require("path")
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
+  const blogPostTemplate = path.resolve(`./src/templates/blogPostTemplate.jsx`)
+  const blogPostTemplate_custom = path.resolve(`./src/templates/blogPostTemplate_custom.jsx`)
   const blogTemplate = path.resolve(`./src/templates/blogTemplate.jsx`)
-  const blogTemplate_custom = path.resolve(`./src/templates/blogTemplate_custom.jsx`)
 
   const result = await graphql(`
     query {
@@ -57,6 +65,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               template
+              author
+              title
+              date(formatString: "dddd Do MMMM YYYY")
+              category
+              tag
+              thumbnail {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
             }
           }
         }
@@ -68,11 +88,36 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   }
   // Create blog post pages.
   const posts = result.data.allMdx.edges
+
+  const postsPerPage = 2
+  const numPages = Math.ceil(posts.length / postsPerPage)
+
+  // Creating blog list with pagination
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+      component: blogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        currentPage: i + 1,
+        numPages,
+      },
+    })
+  })
+  
+  
+
+  
   // you'll call `createPage` for each result
-  posts.forEach( ( {node} )  => {
+  posts.forEach( ( {node}, index, arr )  => {
+
+    const prev = arr[index - 1]
+    const next = arr[index + 1]
+
 
     // Check what template the markdown file have choosen 
-    const template = node.frontmatter.template === "custom" ? blogTemplate_custom : blogTemplate
+    const template = node.frontmatter.template === "custom" ? blogPostTemplate_custom : blogPostTemplate
 
     createPage({
       // This is the slug you created before
@@ -84,7 +129,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       // our page layout component
       context: { 
         id: node.id,
-    },
+        slug: node.fields.slug,
+        prev: prev,
+        next: next,
+      },
     })
   })
+
+
+
+
 }
+
