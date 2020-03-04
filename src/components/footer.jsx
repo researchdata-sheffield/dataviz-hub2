@@ -6,7 +6,7 @@ import { FaGoogle, FaSlack } from "react-icons/fa"
 function Footer() {
   
   return (
-  <div className="bg-gray-900 px-10 py-8">
+  <div className="bg-black px-10 py-8">
     <div className="sm:flex mb-4">
       <div className="sm:w-1/6 h-auto">
           <div className="text-gray-100 mb-2 font-semibold text-lg"><Link to="/">Dataviz.Shef</Link></div>
@@ -55,7 +55,7 @@ function Footer() {
         <div className="sm:w-2/3 text-gray-100 text-lg mb-2 pr-8">
           <div className="font-semibold text-highlight_2">Data Visualisation Hub </div>
           <div className="text-gray-100 text-lg mb-2 font-medium">The University of Sheffield.</div>
-          <p className="text-gray-500 leading-normal text-sm">Promoting and building community around data visualisation at the University of Sheffield. 
+          <p className="text-gray-500 leading-normal text-sm">
             To help our researchers make the most of their data and take advantage of such tools, we (Research Software Engineering, the University Library and IT Services) 
             have been working on dataviz.shef, a multi-pronged initiative to provide tools, training and build a community around interactive data visualisation at TUoS.</p>
 {/*           <div className="mt-4 flex">

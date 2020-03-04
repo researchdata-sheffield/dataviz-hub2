@@ -25,8 +25,8 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
         </div>
       </BackgroundSection>
       
-      <div className="justify-center container mx-auto py-16 px-8 text-lg">
-        <MDXProvider>
+      <div className="justify-center container mx-auto py-16 px-10 text-lg">
+        <MDXProvider> 
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
       </div>

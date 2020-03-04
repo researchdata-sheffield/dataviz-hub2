@@ -5,11 +5,15 @@
  */
 
 
+
+
+const { createFilePath } = require('gatsby-source-filesystem')
+const kebabCase = require(`lodash.kebabcase`)
+const path = require("path")
+
 /**
  *  Create file path for blog posts
  */
-
-const { createFilePath } = require('gatsby-source-filesystem')
 
 // Here we're adding extra stuff to the "node" (like the slug)
 // so we can query later for all blogs and get their slug
@@ -46,13 +50,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  */
 
 
-const path = require("path")
+
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`./src/templates/blogPostTemplate.jsx`)
   const blogPostTemplate_custom = path.resolve(`./src/templates/blogPostTemplate_custom.jsx`)
   const blogTemplate = path.resolve(`./src/templates/blogTemplate.jsx`)
+  const blogTagTemplate = path.resolve(`./src/templates/blogTagTemplate.jsx`)
+  const blogCategoryTemplate = path.resolve(`./src/templates/blogCategoryTemplate.jsx`)
 
   const result = await graphql(`
     query {
@@ -89,29 +95,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create blog post pages.
   const posts = result.data.allMdx.edges
 
-  const postsPerPage = 2
+  const postsPerPage = 9
   const numPages = Math.ceil(posts.length / postsPerPage)
+  const categories = []
+  const tags = []
 
-  // Creating blog list with pagination
-  Array.from({ length: numPages }).forEach((_, i) => {
-    createPage({
-      path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-      component: blogTemplate,
-      context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
-        currentPage: i + 1,
-        numPages,
-      },
-    })
-  })
-  
-  
 
-  
   // you'll call `createPage` for each result
   posts.forEach( ( {node}, index, arr )  => {
-
+    node.frontmatter.category.forEach(cat => categories.push(cat))
+    node.frontmatter.tag.forEach(tag => tags.push(tag))
     const prev = arr[index - 1]
     const next = arr[index + 1]
 
@@ -136,8 +129,79 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+  const countCategories = categories.reduce((prev, curr) => {
+    prev[curr] = (prev[curr] || 0) + 1
+    return prev
+  }, {})
+  const allCategories = Object.keys(countCategories).sort()
 
+  const countTags = tags.reduce((prev, curr) => {
+    prev[curr] = (prev[curr] || 0) + 1
+    return prev
+  }, {})
+  const allTags = Object.keys(countTags).sort()
 
+  // Creating blog list with pagination
+  Array.from({ length: numPages }).forEach((_, i) => {
+    createPage({
+      path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
+      component: blogTemplate,
+      context: {
+        limit: postsPerPage,
+        skip: i * postsPerPage,
+        currentPage: i + 1,
+        numPages,
+        categories: allCategories,
+        tags: allTags
+      },
+    })
+  })
+  
+
+  allTags.forEach((tag) => {
+    const link = `/blog/tag/${kebabCase(tag)}`
+
+    Array.from({
+      length: Math.ceil(countTags[tag] / postsPerPage),
+    }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? link : `${link}/page/${i + 1}`,
+        component: blogTagTemplate,
+        context: {
+          categories: allCategories,
+          tag: tag,
+          tags: allTags,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          currentPage: i + 1,
+          numPages: Math.ceil(countTags[tag] / postsPerPage),
+        },
+      })
+    })
+  })
+  
+
+  allCategories.forEach((cat) => {
+    const link = `/blog/category/${kebabCase(cat)}`
+
+    Array.from({
+      length: Math.ceil(countCategories[cat] / postsPerPage),
+    }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? link : `${link}/page/${i + 1}`,
+        component: blogCategoryTemplate,
+        context: {
+          categories: allCategories,
+          category: cat,
+          tags: allTags,
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+          currentPage: i + 1,
+          numPages: Math.ceil(countCategories[cat] / postsPerPage),
+        },
+      })
+    })
+  })
 
 }
 

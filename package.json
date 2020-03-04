@@ -24,6 +24,7 @@
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.3.16",
     "intersection-observer": "^0.7.0",
+    "lodash.kebabcase": "^4.1.1",
     "prop-types": "^15.7.2",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

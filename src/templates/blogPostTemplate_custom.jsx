@@ -17,7 +17,7 @@ export default function blogPostTemplate_custom({ data: { mdx }, pageContext }) 
       />
 
       
-      <div className="justify-center mx-auto text-2xl pb-24">
+      <div className="justify-center mx-auto text-xl pb-24">
         <MDXProvider>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
