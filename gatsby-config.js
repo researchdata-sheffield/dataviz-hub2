@@ -42,7 +42,7 @@ module.exports = {
             options: {
               maxwidth: 800,
               ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
-              // Optional: Overrides optional.ratio
+              Height: 400, // Optional: Overrides optional.ratio
               related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
               noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
               urlOverrides: [
@@ -63,7 +63,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem, margin-left: auto, margin-right: auto, max-width: 500px`,
+              wrapperStyle: `margin-bottom: 1.0725rem, margin-left: auto, margin-right: auto, margin-top: 2rem, max-width: 50%`,
 
             },
           },   
@@ -85,7 +85,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/TUOSlogo-black.png` // This path is relative to the root of the site.
+        icon: `src/images/icon.png` // This path is relative to the root of the site.
       },
     },
     {

@@ -29,6 +29,7 @@ function SEO({ description, lang, meta, title, keywords }) {
 
   return (
     <Helmet
+    
       htmlAttributes={{
         lang,
       }}
@@ -73,6 +74,7 @@ function SEO({ description, lang, meta, title, keywords }) {
                         content: keywords.join(',')
                     } : [] )
           }
+    
     />
   )
 }
