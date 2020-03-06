@@ -31,20 +31,47 @@ module.exports = {
         defaultLayout: {
           default: require.resolve('./src/templates/blogTemplate.jsx'),
         },
+        plugins: [
+          `gatsby-remark-embed-video`,
+          `gatsby-remark-images`,
+          `gatsby-remark-responsive-iframe`,
+        ],
         gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-embed-video`,
+            options: {
+              maxwidth: 800,
+              ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
+              // Optional: Overrides optional.ratio
+              related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
+              noIframeBorder: true, //Optional: Disable insertion of <style> border: 0
+              urlOverrides: [
+                {
+                  id: 'youtube',
+                  embedURL: (videoId) => `https://www.youtube-nocookie.com/embed/${videoId}`,
+                }
+              ]
+            }
+          },
           {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 1000,
-              quality: 80,
+              quality: 100,
             }
-          }
-        ],
-        plugins: [
-          `gatsby-remark-images`
-        ],
+          },
+          {
+            resolve: `gatsby-remark-responsive-iframe`,
+            options: {
+              wrapperStyle: `margin-bottom: 1.0725rem, margin-left: auto, margin-right: auto, max-width: 500px`,
+
+            },
+          },   
+        ]
       }
     },
+    "gatsby-remark-embed-video",
+    `gatsby-remark-responsive-iframe`,
     `gatsby-remark-reading-time`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

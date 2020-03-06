@@ -21,6 +21,9 @@ module.exports = {
       minHeight: {
         '90': '90vh',
         '100': '100vh',
+      },
+      maxHeight: {
+        '12': '12vh',
       }
 
     },

@@ -25,9 +25,9 @@ function Header() {
   
 
   return (
-    <header className="font-semibold">
+    <header className="font-semibold" >
      
-      <nav className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-1 fixed w-full z-10 top-0 transition duration-300 ease-in-out`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}`}} > 
+      <nav className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10 top-0 transition duration-300 ease-in-out`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}`}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "9.4vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
@@ -42,9 +42,8 @@ function Header() {
           </button>
         </div>
         
-        
-        <div className={`${isExpanded ? `block` : `hidden`} md:block md:flex md:items-center w-full md:w-auto`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(0,0,0,0.7)" ] : ""}` }}>
-          <div className="list-reset lg:flex justify-end flex-1 items-center">
+        <div className={`${isExpanded ? `block` : `hidden`} text-sm md:block md:flex md:items-center w-full md:w-auto`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(0,0,0,0.7)" ] : ""}` }}>
+          <div className="list-reset lg:flex justify-end flex flex-wrap items-center">
             {[
 /*               {
                 route: `/`,
@@ -74,23 +73,18 @@ function Header() {
                 <Link 
                   activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }` }} 
                   partiallyActive={true}
-                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} md:text-xs transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}
-                  key={link.title} to={link.route} 
-                  
-                > 
-                  {link.title}
+                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-3 inline-block no-underline py-2 px-4`}
+                  key={link.title} to={link.route}>{link.title}
                 </Link> 
                 : 
-                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} md:text-xs transition duration-500 ease-in-out mr-5 inline-block no-underline py-2 px-4`}
+                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-3 inline-block no-underline py-2 px-4`}
                   href={link.route} target="_blank" rel="noopener noreferrer" 
-                  key={link.title}
-                >
-                  {link.title}
+                  key={link.title}>{link.title}
                 </a>  
               )) 
             }
             {/* FIXME: Search button dropdown */}
-            <button title="Search function is under development" className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-xl transition duration-500 ease-in-out md:mr-3 inline-block no-underline py-2 px-4`}>
+            <button title="Search function is under development" className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-lg transition duration-500 ease-in-out md:mr-3 inline-block no-underline py-2 px-4`}>
               <FiSearch  />
             </button>
 
