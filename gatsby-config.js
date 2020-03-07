@@ -70,6 +70,12 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-load-script',
+      options: {
+        src: 'https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js',
+      },
+    },
     "gatsby-remark-embed-video",
     `gatsby-remark-responsive-iframe`,
     `gatsby-remark-reading-time`,

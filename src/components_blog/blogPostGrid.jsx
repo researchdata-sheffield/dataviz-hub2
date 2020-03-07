@@ -2,7 +2,11 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
-import no_image_thumbnail from "../images/no_image.png"
+import no_image_1 from "../images/no_image_1.png"
+import no_image_2 from "../images/no_image_2.png"
+import no_image_3 from "../images/no_image_3.png"
+import no_image_4 from "../images/no_image_4.png"
+import no_image_5 from "../images/no_image_5.png"
 
 const blogPostGrid = ({allMdx}) => {
   
@@ -10,14 +14,15 @@ const blogPostGrid = ({allMdx}) => {
   return(
     <div className="flex flex-wrap">
     {allMdx.edges.map(({ node }) => {
-      let imagesrc
+      let imagesrc 
       
       if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
         imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
       } else {
-        imagesrc = no_image_thumbnail
+        let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
+        imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
       }
-
+      
       let description = node.frontmatter.description
       if(description.length >= 120){
         description = description.substring(0,120).concat(" ...")

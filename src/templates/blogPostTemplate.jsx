@@ -11,20 +11,21 @@ import Helmet from "react-helmet"
 export default function blogPostTemplate({ data: { mdx }, pageContext }) {
     const { title, author, date } = mdx.frontmatter
     const {prev, next} = pageContext
-    /* const myExtScript = require('https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js') */
+    
+    
 
     return (
       <Layout>
       <SEO 
       title={title}
-      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"].concat({title})} 
+      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} 
       />
-      <Helmet>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js" type="text/javascript" />
+      <Helmet >
         <script >{`
           
           var element = document.getElementById("headElement");
           var dimensions = element.getClientRects()[0];
+          
           var pattern = Trianglify({
             width: dimensions.width, 
             height: dimensions.height
@@ -40,10 +41,10 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
         <div className="text-center text-white">
           <div style={{textShadow: "black 0px 0px 3px"}}>
             <h1 className="text-3xl font-semibold" >{title}</h1>
-            <h2 className="mt-8">{date}</h2>
+            <h2 className="mt-6">{date}</h2>
             <h2 className="">{author}</h2>
           </div>
-          <div className="mt-10 text-sm">
+          <div className="mt-8 text-sm">
                 {mdx.frontmatter.category.map((cat) => (
                   <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
                     className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-500 text-gray-200 rounded-md">{cat}
