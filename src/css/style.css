@@ -41,6 +41,11 @@
  * @import "components/forms";
  */
 
+ img.w-full.blog-image {
+   filter: grayscale(100%);
+   border-bottom: 4px solid white;
+ }
+
 a.group:hover > img.w-full.blog-image {
   border-bottom: 4px solid #00aeef;
   transition: 0.4s ease;

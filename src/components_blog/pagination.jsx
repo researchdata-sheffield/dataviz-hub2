@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
 
 const Pagination = ({numPages, currentPage, typePage}) => {
@@ -14,9 +14,9 @@ const Pagination = ({numPages, currentPage, typePage}) => {
   function handleChange(e) {
 		const page_no = e.target.value;
 		if(page_no != 1){
-			window.location = `${typePage}/page/${page_no}`;
+			navigate(`${typePage}/page/${page_no}`);
 		} else { 
-			window.location = `${typePage}`;
+			navigate(`${typePage}`);
 		}
 	}
 
