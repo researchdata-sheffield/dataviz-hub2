@@ -15,7 +15,7 @@ import Footer from "./footer"
 function Layout ({ children }) {
 
   return (
-    <div className="flex flex-col font-sans min-h-screen text-gray-900 ">
+    <div id="website" className="flex flex-col font-sans min-h-screen text-gray-900 high-specificity">
       <Header />
         <div>{children}</div>
       <Footer />

@@ -3,6 +3,8 @@ To contribute, please visit the [guide](./content/blog/example/index.mdx).
 
 
 
+
+
 ## 🧐 What's inside?
 
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.

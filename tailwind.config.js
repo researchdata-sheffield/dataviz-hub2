@@ -1,5 +1,6 @@
 // See https://tailwindcss.com/docs/configuration for details 
 module.exports = {
+  important: '#website',  //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
   theme: {
     extend: {
       textColor: {

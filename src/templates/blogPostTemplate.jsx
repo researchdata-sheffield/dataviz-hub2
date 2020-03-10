@@ -7,7 +7,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, A, Ol, Li } from "../components_style/blogPost_style"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li } from "../components_style/blogPost_style"
 
 export default function blogPostTemplate({ data: { mdx }, pageContext }) {
     const { title, author, date } = mdx.frontmatter
@@ -78,7 +78,7 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
                     
 
         <div className="justify-center container mx-auto py-16 px-10 leading-8 text-lg" markdown="1">
-          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, a: A, ol: Ol, li: Li}}>
+          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li}}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>

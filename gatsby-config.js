@@ -132,6 +132,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     'gatsby-plugin-eslint',
     `gatsby-plugin-styled-components`,
+    `babel-plugin-styled-components`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
