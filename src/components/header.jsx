@@ -30,7 +30,7 @@ function Header() {
       <nav className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10 top-0 transition duration-300 ease-in-out`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}`}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
-          <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "9.4vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
+          <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "4.4vw"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
           <div className={`${isScroll ? `text-gray-300` : `text-white`} ml-4 text-xl transition duration-1000 ease-in-out`}>
             <Link to="/">Dataviz.Shef</Link>
           </div>

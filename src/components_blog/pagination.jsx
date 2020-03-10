@@ -14,9 +14,9 @@ const Pagination = ({numPages, currentPage, typePage}) => {
   function handleChange(e) {
 		const page_no = e.target.value;
 		if(page_no != 1){
-			window.location = typePage + "/page/" + page_no;
+			window.location = `${typePage}/page/${page_no}`;
 		} else { 
-			window.location = typePage;
+			window.location = `${typePage}`;
 		}
 	}
 

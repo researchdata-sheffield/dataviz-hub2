@@ -8,46 +8,95 @@ category: ["Articles"]
 tag: ["Blog"]
 ---
 
-<div>
-  <h1 className="text-3xl mt-10">
-    Introduction <br/><br/>
-  </h1>
-  <div>
-    This is a template for blog posts. You can write the post use <a classname="text-blue-700" href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS syntax. 
-    This website is built from Gatsby framework and the way of styling is different from in HTML/CSS. 
 
-  </div>
+<h1 className="text-3xl mt-10 mb-5">Introduction</h1>
+This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is different from in HTML/CSS. 
+You can write the post use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS (preferable, because some syntax of markdown doesn't work, for example ##heading ). 
+A copy of this blog file is available <a href="./index.mdx">here</a>.
+
+
+<h1 className="text-3xl mt-16 mb-5">Setup</h1>
+
+
+If you want to preview the post you've written, then you'll need to setup a gatsby development environment in order to preview the website.
+
+  1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
+  For other OS visit <a href="https://www.gatsbyjs.org/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system">here</a>. 
+  
+  2. Install <a href="https://gitforwindows.org/">Git</a>. 
+  
+  3. Install Gatsby CLI by running   `npm install -g gatsby-cli`
+
+  4. Open up your terminal (and navigate to a directory you want to place the site) and run `gatsby new dataviz-hub https://github.com/researchdata-sheffield/dataviz-hub2` then run `cd dataviz-hub` and `npm install` (install dependencies), then `gatsby develop`.
+Now you can view the site at `http://localhost:8000/`. Any changes you made to posts locally will be updated instantly on preview.
+
+
+
+<h1 className="text-3xl mt-16 mb-5">Write a post</h1>
+
+To contribute, raise an issue on GitHub or make a pull request that adds or modifies files in the `/content/blog/` directory. 
+You will probably want to install Gatsby so that you can test your contribution before submitting it. 
+
+1. Make a new directory under the `/content/blog/` directory, give a name (e.g. a keyword relevant to your post).
+
+2. Create a file `index.mdx` (or with .md extension, but we recommend use .mdx because it’s a superset of Markdown syntax that also supports importing, exporting, and JSX. <a href="https://mdxjs.com/">learn more about mdx</a>). Then add content to the file.
+
+3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be `/content/blog/yourdirname/post.jpg`. Sections below will tell you how to embed images and videos.
+
+
+## HEADING
+
+<h1 className="mt-16 mb-5 text-3xl">Styling</h1>
+<div className="leading-">
+There are many ways to add styles to your md/mdx elements, in here we listed two methods to do this. 
+
+1. Use the style attribute as usual with slightly different syntax:
+
+```html
+In HTML we normally style a div tag like this:
+<div style="font-size: 25px, display: flex">
+  Write something
 </div>
 
-<div>
-  <h1 className="text-3xl mt-10">
-    Setup <br/><br/>
-  </h1>
+-----------------------
+
+In Gatsby we transform it into:
+<div style={{font-size: "25px", display: "flex"}}>
+  Write something
 </div>
-
-<div>
-  <h1 className="text-3xl mt-10">
-    Write a post <br/><br/>
-  </h1>
-</div>
-
-<div>
-  <h1 className="text-3xl mt-10">
-    Styling <br/><br/>
-  </h1>
-</div>
-
-<div>
-  <h1 className="text-3xl mt-10">Video</h1>
-
 ```
 
-This is how you would embed a video: 
-`video: https://www.youtube.com/watch?v=_V8eKsto3Ug`
 
+Make sure the target element are wrap within HTML Tags, e.g.  div, a, h1, and p.
+
+</div>
+
+
+
+
+
+<h1 className="text-3xl mt-16 mb-5">Image</h1>
+This is how you would embed add an image (remember to add your images in the same directory of your md/mdx file):
+
+```js
+![my image description](./temp.jpg)
+```
+
+Alternatively: 
+
+```js
+<img alt="my image description" src="./temp.jpg" />
+```
+
+
+
+
+<h1 className="text-3xl mt-16 mb-5">Video</h1>
+This is how you would embed a video:
+
+```js
+`video: https://www.youtube.com/watch?v=N5yRLFcbv4s`
+```
 Note: you can't styling videos at the moment.
-```
-
-`video: https://www.youtube.com/watch?v=_V8eKsto3Ug`
+`video: https://www.youtube.com/watch?v=N5yRLFcbv4s`
 for more informtion about embedding videos, visit  <a style={{color: "blue"}} href="https://www.gatsbyjs.org/packages/gatsby-remark-embed-video/#usage">here</a>.
-</div>

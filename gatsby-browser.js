@@ -6,6 +6,8 @@
 
 
 import "./src/css/style.css";
+import "./src/css/prismjs.css";
+import "./src/css/post.css";
 
 export const onClientEntry = () => {
     // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
@@ -15,3 +17,5 @@ export const onClientEntry = () => {
     }
   }
 
+require("prismjs/themes/prism-okaidia.css")
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
