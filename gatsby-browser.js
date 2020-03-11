@@ -18,5 +18,7 @@ export const onClientEntry = () => {
     }
   }
 
+export const onServiceWorkerUpdateReady = () => window.location.reload();
+
 require("prismjs/themes/prism-okaidia.css")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")

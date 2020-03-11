@@ -57,7 +57,25 @@ You will probably want to install Gatsby so that you can test your contribution 
 1. Make a new directory under the `/content/blog/` directory, give a name (e.g. a keyword relevant to your post).
 
 2. Create a file `index.mdx` (or with .md extension, but we recommend use .mdx because it’s a superset of Markdown syntax that also supports importing, exporting, and JSX. <a href="https://mdxjs.com/">learn more about mdx</a>). 
-Then add content to the file. 
+
+ -> At the very beginning of your index file, you have the following parameters to specify:
+
+  ```
+  ---
+  title: "This is a template for posts"
+  author: ["A", "B"]   
+  date: "2020-03-06"                    //Please use Y-M-D format required by mdx syntax
+  description: "Shown at blog page"
+  category: "Articles"
+  tag: ["blog", "test"]
+  thumbnail: ./image.jpg                // an image to use for your post thumbnail
+  template:                             // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
+  ---
+  ```
+
+  -> Wrap parameters with triple hyphens. Use double quotation marks for all text, use square brackets in parameters with two or more items.
+
+  -> Then add content to the file.
 
 3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be `/content/blog/yourdirname/post.jpg`. Sections below will tell you how to embed images and videos.
 

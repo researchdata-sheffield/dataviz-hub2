@@ -8,6 +8,8 @@ import { graphql, Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li } from "../components_style/blogPost_style"
+import PaginationPost from "../components_blog/pagination_post"
+
 
 export default function blogPostTemplate({ data: { mdx }, pageContext }) {
     const { title, author, date } = mdx.frontmatter
@@ -55,18 +57,19 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
           <div className="text-center text-white">
             <div style={{textShadow: "black 0px 0px 3px"}}>
               <h1 className="text-3xl font-semibold" >{title}</h1>
-              <h2 className="mt-6">{date}</h2>
-              <h2 className="">{author}</h2>
+              <h2 className="mt-2" style={{fontFamily: "TUoS Stephenson"}}>{author.join(' · ')}</h2>
+              <h2 className="mt-6 text-sm">{date}</h2>
+              
             </div>
             <div className="mt-8 text-sm">
                   {mdx.frontmatter.category.map((cat) => (
                     <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-500 text-gray-200 rounded-md">{cat}
+                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-600 text-gray-200 rounded-md">{cat}
                     </Link>
                   ))}
                   {mdx.frontmatter.tag.map((tag) => (
                     <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-300 text-gray-500 rounded-md">{tag}
+                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-500 rounded-md">{tag}
                     </Link>
                   ))}
             </div>
@@ -83,18 +86,9 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
           </MDXProvider>
         </div>
         
-        <div className="flex text-black">
-          {prev && (
-            <Link to={prev.node.fields.slug}>
-              {'<'} {prev.node.frontmatter.title}
-            </Link>
-          )}
-          {next && (
-            <Link to={next.node.fields.slug}>
-              {next.node.frontmatter.title} {'>'}
-            </Link>
-          )}
-        </div>
+        <PaginationPost mdx={mdx} prev={prev} next={next} />
+        
+
 
       </Layout>
     )
