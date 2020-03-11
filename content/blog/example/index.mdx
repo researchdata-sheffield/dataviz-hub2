@@ -10,13 +10,13 @@ tag: ["Blog"]
 
 
 <h1 className="mart">Introduction</h1>
-This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is different from in HTML/CSS. 
-You can write the post use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS (preferable, because some syntax of markdown doesn't work, for example space ). 
+This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
+You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS (preferable, because some syntax of markdown doesn't work). 
 A copy of this blog file is available <a href="./index.mdx">here</a>.
 
 <h1 className="mt-24">Setup</h1>
 
-If you want to preview the post you've written, then you'll need to setup a gatsby development environment in order to preview the website.
+If you want to preview the post while you're writing, then you'll need to setup a gatsby development environment in order to preview the website.
 
   1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
   For other OS visit <a href="https://www.gatsbyjs.org/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system">here</a>. (You might also need to download Visual Studio installer to install node.js development tools).
@@ -25,26 +25,49 @@ If you want to preview the post you've written, then you'll need to setup a gats
   
   3. Install Gatsby CLI by running   `npm install -g gatsby-cli`
 
-  4. Open up your Git Bash (and navigate to a directory you want to place the site) and run `git clone https://github.com/researchdata-sheffield/dataviz-hub2.git dataviz-hub` then run `cd dataviz-hub` and `npm install` (install dependencies), then `gatsby develop`.
-Now you can view the site at `http://localhost:8000/`. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop it running locally.
+  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run `git clone https://github.com/yourusername/dataviz-hub2.git` then run `cd dataviz-hub2` and `npm install` (install dependencies).
+  
+  5. Create a new local branch with commands `git checkout master` (make sure you're in master branch), `git branch newBranchName` (create a new branch from master), and `git checkout newBranchName` (switch to new branch).
+    Now make any commits you wish to.
+   
+<b>NOTE:</b> At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
 
-<b>NOTE:</b> At step 4, if you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run `npm install` etc.
+If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run `npm install` etc.
+
+
+
+
+```
+If you cloned a while a ago, fetch the latest commits from origin repository:
+
+git checkout master
+git pull upstream master
+```
 
 <br />
 <br />
 
 # Write a post
+Once you've setup, run `gatsby develop`.
+Now you can view the site at `http://localhost:8000/`. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop it running locally.
 
 To contribute, raise an issue on GitHub or make a pull request that adds or modifies files in the `/content/blog/` directory. 
-You will probably want to install Gatsby so that you can test your contribution before submitting it. 
+You will probably want to install Gatsby so that you can test your contribution before submitting it. Steps on below assuming you've setup everything mentioned above. 
 
 1. Make a new directory under the `/content/blog/` directory, give a name (e.g. a keyword relevant to your post).
 
-2. Create a file `index.mdx` (or with .md extension, but we recommend use .mdx because it’s a superset of Markdown syntax that also supports importing, exporting, and JSX. <a href="https://mdxjs.com/">learn more about mdx</a>). Then add content to the file.
+2. Create a file `index.mdx` (or with .md extension, but we recommend use .mdx because it’s a superset of Markdown syntax that also supports importing, exporting, and JSX. <a href="https://mdxjs.com/">learn more about mdx</a>). 
+Then add content to the file. 
 
 3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be `/content/blog/yourdirname/post.jpg`. Sections below will tell you how to embed images and videos.
 
+4. Commit any changes you've made.
+
+5. Now create a pull request. If it comes from a fork repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
+If it comes from a branch in origin repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
 <br />
+
+<p className="text-red-600 mb-24">If you do not want to setup the environment, you can write a post by upload <i>index.mdx</i> file and any resources related to the post on Github too.</p>
 
 # Styling
 <div>
