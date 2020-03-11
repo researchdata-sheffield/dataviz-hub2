@@ -13,8 +13,8 @@ class PaginationPost extends React.Component {
 
   render() {
     let pruneLen = 40
-    let prevTitle = this.props.prev.node.frontmatter.title
-    let nextTitle = this.props.next.node.frontmatter.title
+    let prevTitle = this.props.prev ? this.props.prev.node.frontmatter.title : ""
+    let nextTitle = this.props.next ? this.props.next.node.frontmatter.title : ""
     
     if(prevTitle.length > pruneLen){
       prevTitle = prevTitle.substring(0,pruneLen).concat(" ...")
@@ -25,7 +25,7 @@ class PaginationPost extends React.Component {
 
     return(
       <div>
-        <div className="flex text-gray-200 justify-center items-center content-center mx-auto mt-16 py-3 bg-gray-100 text-sm" style={{fontFamily: "TUoS Blake"}}>
+        <div className="flex text-gray-200 justify-center items-center content-center mx-auto mt-16 pt-3 bg-gray-100 text-sm" style={{fontFamily: "TUoS Blake"}}>
           {this.props.mdx.frontmatter.category.map((cat) => (
             <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
               className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mr-2 bg-gray-500 text-gray-200 rounded-md">{cat}
@@ -38,7 +38,7 @@ class PaginationPost extends React.Component {
           ))}
         </div>
 
-        <div className="flex text-gray-500 justify-center py-3 bg-gray-100 mx-auto font-semibold" >
+        <div className="flex text-gray-500 justify-center py-8 bg-gray-100 mx-auto font-semibold" >
           {this.props.prev && (
             <a value="prev" className="flex items-center pr-12 hover:text-highlight_2" href={withPrefix(this.props.prev.node.fields.slug)}>
               <TiArrowLeftThick className="mr-3" /> {prevTitle}

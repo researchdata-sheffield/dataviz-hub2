@@ -160,7 +160,7 @@ module.exports = {
       options: {
         tailwind: true,
         purgeOnly: [`src/css/style.css`],
-        ignore: ["fontawesome-svg-core/"]
+        // ignore: ["fontawesome-svg-core/"]
       }
     },
     {

@@ -1,42 +1,41 @@
-## Add a blog post
+# Add a blog post?
 To contribute, please visit the [guide](./content/blog/example/index.mdx).
 
 
+# Contribute to the website
+
+This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework that is based on [React](https://reactjs.org/).
+
+You'll need to setup a gatsby development environment in order to preview the website. 
+
+  1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
+  For other OS visit <a href="https://www.gatsbyjs.org/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system">here</a>. (You might also need to download Visual Studio installer to install node.js development tools).
+  
+  2. Install <a href="https://gitforwindows.org/">Git</a>. 
+  
+  3. Install Gatsby CLI by running   `npm install -g gatsby-cli`
+
+  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run `git clone https://github.com/yourusername/dataviz-hub2.git` then run `cd dataviz-hub2` and `npm install` (install dependencies).
+  
+  5. Create a new local branch with commands `git checkout master` (make sure you're in master branch), `git branch newBranchName` (create a new branch from master), and `git checkout newBranchName` (switch to new branch).
+    Now make any commits you wish to.
+   
+<b>NOTE:</b> At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
+
+If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run `npm install` etc.
 
 
+```
+If you cloned a while a ago, fetch the latest commits from origin repository:
 
-## 🧐 What's inside?
-
-1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
-
-2.  **`/src`**: This directory will contain all of the code related to what you will see on the front-end of your site (what you see in the browser) such as your site header or a page template. `src` is a convention for “source code”.
-
-3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
-
-4.  **`.prettierrc`**: This is a configuration file for [Prettier](https://prettier.io/). Prettier is a tool to help keep the formatting of your code consistent.
-
-5.  **`gatsby-browser.js`**: This file is where Gatsby expects to find any usage of the [Gatsby browser APIs](https://www.gatsbyjs.org/docs/browser-apis/) (if any). These allow customization/extension of default Gatsby settings affecting the browser.
-
-6.  **`gatsby-config.js`**: This is the main configuration file for a Gatsby site. This is where you can specify information about your site (metadata) like the site title and description, which Gatsby plugins you’d like to include, etc. (Check out the [config docs](https://www.gatsbyjs.org/docs/gatsby-config/) for more detail).
-
-7.  **`gatsby-node.js`**: This file is where Gatsby expects to find any usage of the [Gatsby Node APIs](https://www.gatsbyjs.org/docs/node-apis/) (if any). These allow customization/extension of default Gatsby settings affecting pieces of the site build process.
-
-8.  **`gatsby-ssr.js`**: This file is where Gatsby expects to find any usage of the [Gatsby server-side rendering APIs](https://www.gatsbyjs.org/docs/ssr-apis/) (if any). These allow customization of default Gatsby settings affecting server-side rendering.
-
-9.  **`LICENSE`**: Gatsby is licensed under the MIT license.
-
-10. **`package-lock.json`** (See `package.json` below, first). This is an automatically generated file based on the exact versions of your npm dependencies that were installed for your project. **(You won’t change this file directly).**
-
-11. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
-
-12. **`README.md`**: A text file containing useful reference information about your project.
-
-## 🎓 Learning Gatsby
-
-Looking for more guidance? Full documentation for Gatsby lives [on the website](https://www.gatsbyjs.org/). Here are some places to start:
-
-- **For most developers, we recommend starting with our [in-depth tutorial for creating a site with Gatsby](https://www.gatsbyjs.org/tutorial/).** It starts with zero assumptions about your level of ability and walks through every step of the process.
-
-- **To dive straight into code samples, head [to our documentation](https://www.gatsbyjs.org/docs/).** In particular, check out the _Guides_, _API Reference_, and _Advanced Tutorials_ sections in the sidebar.
+git checkout master
+git pull upstream master
+```
 
 
+## Useful resources
+
+[Gatsby plugins](https://www.gatsbyjs.org/plugins/)
+[TailwindCSS](https://tailwindcss.com/docs/preflight)
+[React-Icons](https://react-icons.netlify.com/#/)
+[Unplash](https://unsplash.com/)
