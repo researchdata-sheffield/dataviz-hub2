@@ -132,6 +132,15 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
     {
+      resolve: `gatsby-source-eventbrite`,
+      options: {
+        organizationId: `394692913883`,
+        accessToken: `DYMSC6OLAPPBHLFZ6DKJ`,
+        // OPTIONAL: Defaults are Events and Venues
+        entities: ['events', 'venues']
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `dataviz-hub-tuos`,

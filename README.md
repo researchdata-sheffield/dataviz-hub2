@@ -43,11 +43,19 @@ A list of extensions I've installed:
   - Prettier - Code formatter
   - Tailwind CSS IntelliSense
   - vscode-icons
-
+  - HTML CSS support
+  - npm Intellisense
+  - Babel JavaScript
+  
 
 ## Useful resources
 
+EventBrite API - https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
+
 [Gatsby plugins](https://www.gatsbyjs.org/plugins/)
+
 [TailwindCSS](https://tailwindcss.com/docs/preflight)
+
 [React-Icons](https://react-icons.netlify.com/#/)
+
 [Unplash](https://unsplash.com/)

@@ -44,9 +44,9 @@ const BackgroundSection = ({className, children, style}) => (
 )
 
 BackgroundSection.propTypes = {
-  className: PropTypes.string,
+  className: PropTypes.any,
   children: PropTypes.node,
-  style: PropTypes.string,
+  style: PropTypes.any,
 }
 
 export default BackgroundSection
