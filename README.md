@@ -32,6 +32,18 @@ git checkout master
 git pull upstream master
 ```
 
+## IDE
+I'm using Visual Studio Code for developments.
+A list of extensions I've installed:
+  - Bracket Pair Colorizer
+  - ES7 React/Redux/GraphQL/React-Native snippets
+  - ESLint
+  - HTML Snippets
+  - MDX
+  - Prettier - Code formatter
+  - Tailwind CSS IntelliSense
+  - vscode-icons
+
 
 ## Useful resources
 

@@ -32,9 +32,7 @@ module.exports = {
           default: require.resolve('./src/templates/blogPostTemplate.jsx'),
         },
         plugins: [
-          `gatsby-remark-embed-video`,
           `gatsby-remark-images`,
-          `gatsby-remark-responsive-iframe`,
           `gatsby-remark-prismjs`
         ],
 
@@ -65,7 +63,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem, margin-left: auto, margin-right: auto, margin-top: 2rem, max-width: 50%`,
+              wrapperStyle: `margin-bottom: 1.0725rem, margin-left: auto, margin-right: auto, margin-top: 2rem, width: 800px, height: 600px`,
 
             },
           },

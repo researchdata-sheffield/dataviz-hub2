@@ -1,8 +1,7 @@
 import React from "react"
-import { Link } from "gatsby"
-
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import BackgroundSection from "../components_images/community_background"
 
 const Community = () => (
   <Layout>
@@ -11,9 +10,13 @@ const Community = () => (
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
     />
     
-    <h1>Hi from the community page</h1>
-    <p>Welcome to page 2</p>
-    <Link to="/">Go back to the homepage</Link>
+    <BackgroundSection className="items-center justify-center text-center">
+      <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
+        <h1 className="text-5xl">Community</h1>
+        <p className="text-lg mt-2">knowledge | connection | inspiration | resources | support</p>
+      </div>
+    </BackgroundSection>
+  
   </Layout>
 )
 

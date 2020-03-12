@@ -14,13 +14,13 @@ import PropTypes from 'prop-types'
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const BackgroundSection = ({className, children, style}) => (
+const BackgroundSection = ({className, children}) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "event.jpg" }) {
+        desktop: file(relativePath: { eq: "community.jpg" }) {
           childImageSharp {
-            fluid(quality: 100, maxWidth: 1920) {
+            fluid(quality: 90, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64
             }
           }
@@ -34,9 +34,13 @@ const BackgroundSection = ({className, children, style}) => (
         <BackgroundImage
         className={className}
         fluid={imageData}
-        style={style}
+        style={{
+          height: `100vh`,
+          width: `100%`,
+          display: `flex`,
+        }}
         >
-        {children}
+        <div>{children}</div>
         </BackgroundImage>
       )
     }}
@@ -46,7 +50,6 @@ const BackgroundSection = ({className, children, style}) => (
 BackgroundSection.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  style: PropTypes.string,
 }
 
 export default BackgroundSection
