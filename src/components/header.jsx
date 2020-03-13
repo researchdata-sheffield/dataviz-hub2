@@ -8,7 +8,6 @@ import { FiSearch } from "react-icons/fi"
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
   const [isScroll, toggleScrolled] = useState(false);
-/*   const [isActive, toggleActive] = useState(false); */
 
   useEffect( () => {
     function handleScroll() {

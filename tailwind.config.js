@@ -15,6 +15,7 @@ module.exports = {
       },
       borderColor: {
         'highlight_2': '#00aeef',
+
       },
       screens: {
         'laptop': '1300px'
@@ -32,6 +33,9 @@ module.exports = {
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
+    borderColor: ['responsive', 'hover', 'group-hover'],
+    borderWidth: ['responsive', 'hover', 'group-hover'],
+
   },
   plugins: [require("@tailwindcss/custom-forms")],
 }

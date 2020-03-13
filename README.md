@@ -46,6 +46,9 @@ A list of extensions I've installed:
   - HTML CSS support
   - npm Intellisense
   - Babel JavaScript
+  - Color Highlight
+  - Color Info
+  - Color Pick
   
 
 ## Useful resources
