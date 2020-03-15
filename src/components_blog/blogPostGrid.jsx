@@ -2,11 +2,11 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
-import no_image_1 from "../images/no_image_1.png"
-import no_image_2 from "../images/no_image_2.png"
-import no_image_3 from "../images/no_image_3.png"
-import no_image_4 from "../images/no_image_4.png"
-import no_image_5 from "../images/no_image_5.png"
+import no_image_1 from "../images/blog/no_image_1.png"
+import no_image_2 from "../images/blog/no_image_2.png"
+import no_image_3 from "../images/blog/no_image_3.png"
+import no_image_4 from "../images/blog/no_image_4.png"
+import no_image_5 from "../images/blog/no_image_5.png"
 
 const blogPostGrid = ({allMdx}) => {
   

@@ -5,8 +5,9 @@ import SEO from "../components/seo"
 import BackgroundSection from "../components_images/events_background"
 import PropTypes from "prop-types"
 import UpcomingEvents from "../components_events/upcomingEvents"
+import PastEvents from "../components_events/pastEvents"
 
-function events({data: {eventBrite}}) {
+function events({data: {eventBrite, pastEvent}}) {
   
 
   return (
@@ -19,13 +20,8 @@ function events({data: {eventBrite}}) {
       <BackgroundSection className="flex flex-wrap flex-grow-0 items-center justify-center content-center" style={{height: "100%", width: "100%"}}>
         
         <UpcomingEvents allEventbriteEvents={eventBrite} />
-          
-        <div className="w-full sm:w-full md:w-full lg:w-3/12 xl:w-3/12 text-gray-100 px-8 pt-8 pb-16 lg:py-16" style={{background: "rgba(0,0,0,.6)", }}>
-          <h1 className="text-xl">Past Events</h1>
-          <p className="text-center mt-32">Coming soon</p>
-          
-          
-        </div>
+        <PastEvents pastEvent={pastEvent} />    
+  
       </BackgroundSection>
 
     </Layout>
@@ -35,14 +31,15 @@ function events({data: {eventBrite}}) {
 export default events
 
 events.propTypes = {
-		pageContext: PropTypes.any,
 		data: PropTypes.any
   }
   
   
+
 export const query = graphql`
   query {
-    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, filter: {start: {local: {lt: "TODAY"}}}, limit: 3) {
+    eventBrite: 
+    allEventbriteEvents(sort: {fields: start___local, order: ASC}, ) {
       edges {
         node {
           id
@@ -52,6 +49,7 @@ export const query = graphql`
           }
           description {
             text
+            html
           }
           logo {
             original {
@@ -67,13 +65,37 @@ export const query = graphql`
             }
           }
           online_event
+          summary
           start {
-            local(formatString: "ddd, DD MMMM YYYY @ hh:mm A", locale: "en-GB")
+            local(formatString: "ddd DD MMMM YYYY, hh:mm A", locale: "en-GB")
           }
         }
       }
     }
 
     pastEvent: 
+    allMdx(limit: 5, filter: {frontmatter: {category: {in: "Events"}}}, sort: {order: DESC, fields: frontmatter___date}) {
+      edges {
+        node {
+          fields {
+            slug
+            readingTime {
+              text
+            }
+          }
+          id
+          frontmatter {
+            date(formatString: "ddd, DD MMMM YYYY")
+            title
+            description
+          }
+        }
+      }
+    }
+  
   }
-`
+`;
+
+
+
+

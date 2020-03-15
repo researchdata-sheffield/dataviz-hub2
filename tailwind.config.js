@@ -17,6 +17,12 @@ module.exports = {
         'highlight_2': '#00aeef',
 
       },
+      borderWidth: {
+        '3': '3px',
+        '5': '5px',
+        '6': '6px',
+        '7': '7px',
+      },
       screens: {
         'laptop': '1300px'
       },
@@ -35,6 +41,10 @@ module.exports = {
     textColor: ['responsive', 'hover', 'focus', 'group-hover'],
     borderColor: ['responsive', 'hover', 'group-hover'],
     borderWidth: ['responsive', 'hover', 'group-hover'],
+    fontWeight: ['group-hover'],
+    display: ['responsive', 'hover', 'focus', 'group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    zIndex: ['responsive', 'hover', 'focus', 'group-hover'],
 
   },
   plugins: [require("@tailwindcss/custom-forms")],

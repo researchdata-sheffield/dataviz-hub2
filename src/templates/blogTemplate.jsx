@@ -27,7 +27,7 @@ function blogTemplate({ data: {allMdx}, pageContext }) {
 				</div>
 				
 				<MenuCategory pageContext = {pageContext} />
-
+				
 			</BackgroundSection>
 
 			<div className="flex flex-wrap-reverse">
