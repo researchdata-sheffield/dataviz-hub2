@@ -25,11 +25,9 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
 
 
     {allEventbriteEvents.edges.map(({node}) => {
-      console.log( moment(node.start.local))
-      console.log(moment(todayDate()))
 
       // Check if event's date is later than today's date
-      if(moment(node.start.local) >= moment(todayDate()) && eventLimit < 3 ) {
+      if(moment(node.start.local, "DD-MMMM-YYYY") >= moment() && eventLimit < 3 ) {
         eventLimit = eventLimit + 1
         let description = node.description.text
         if(description.length >= 140) {

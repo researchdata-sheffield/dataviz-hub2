@@ -51,48 +51,47 @@ const Community = () => (
             ~ Dataviz using vegalite  <br /> </p>
           </p>
         </div>
-
-
       </div>
       
-      <div id="joinus" className="lg:p-16 flex flex-wrap justify-center content-center mx-auto">
-        <div className="text-highlight_2 text-6xl w-full p-12 lg:px-16">Join us.</div>
 
-        <div className="max-w-md rounded overflow-hidden shadow-lg mx-8 lg:mx-16 my-4 hover:shadow-2xl group flex relative hover:opacity-50">
-          <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="">
+      <div id="joinus" className="lg:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000">
+        <div className="text-highlight_2 text-6xl w-full p-12 lg:px-16">Join us.</div>
+  
+        <div className="max-w-md rounded overflow-hidden shadow-lg mx-8 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
+          <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25">
+          <img className="w-full" src={google} alt="Google Group" />
             <div className="px-6 pt-8">
               <div className="font-semibold text-xl mb-2 text-center text-gray-500">Google group</div>
               <p className="text-gray-700 text-base px-4 lg:px-10 py-4 text-center">
                 Sign in use your Sheffield Google account, Join the TUoS google group.
               </p>
             </div>
-            <img className="w-full" src={google} alt="Google Group" />
           </a>
 
           <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" 
-            className="hidden group-hover:block absolute justify-center content-center text-center rounded py-1 px-6 shadow-sm text-xl text-white bg-highlight_2 group-hover:opacity-100"
-            style={{ position: "absolute", top: "50%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
+            className="hidden group-hover:block absolute justify-center content-center text-center rounded py-1 px-10 shadow-sm text-xl text-white bg-black hover:bg-highlight_2"
+            style={{ position: "absolute", top: "74%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
           >
-            Join Group  
+          Join Group  
           </a>
         </div>
 
-        <div className="max-w-md rounded overflow-hidden shadow-lg mx-8 lg:mx-16 my-4 hover:shadow-2xl group flex relative hover:opacity-50">
-          <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer">
-            <img className="w-full p-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
-            <div className="px-6 py-2">
-              <div className="font-semibold text-xl mb-2 text-center text-gray-500">shef-dataviz.slack.com</div>
-              <p className="text-gray-700 text-base p-4 lg:p-10 text-center">
+        <div className="max-w-md rounded overflow-hidden shadow-lg mx-8 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
+          <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25">
+            <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
+            <div className="px-6">
+              <div className="font-semibold text-xl text-center text-gray-500 mb-2">shef-dataviz.slack</div>
+              <p className="text-gray-700 text-base p-4 text-center">
                 Sign in use your Sheffield University email, Say hello in our <b>#welcome channel</b>.
               </p>
             </div>
           </a>
 
           <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" 
-            className="hidden group-hover:block absolute justify-center content-center text-center rounded py-1 px-6 shadow-sm text-xl text-white bg-highlight_2 group-hover:opacity-100"
-            style={{ position: "absolute", top: "50%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
+            className="hidden group-hover:block absolute justify-center content-center text-center rounded py-1 px-16 shadow-sm text-xl text-white bg-black hover:bg-highlight_2"
+            style={{ position: "absolute", top: "74%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
           >
-            Sign up
+          Sign up
           </a>
 
         </div>
@@ -105,6 +104,7 @@ const Community = () => (
             We will also be putting together more formal contributing guidance should you wish to contribute to our online resources
             directly through <a className="text-highlight_2 font-semibold" href="https://github.com/researchdata-sheffield/dataviz-hub2" target="_blank" rel="noopener noreferrer">github</a> including blogposts and turtorials.</p>
       </div>
+
 
     </div>
 

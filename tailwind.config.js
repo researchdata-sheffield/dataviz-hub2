@@ -32,6 +32,10 @@ module.exports = {
       },
       maxHeight: {
         '12': '12vh',
+      },
+      transitionProperty: {
+        'hover': 'hover',
+        'group-hover': 'group-hover',
       }
 
     },
@@ -45,6 +49,9 @@ module.exports = {
     display: ['responsive', 'hover', 'focus', 'group-hover'],
     opacity: ['responsive', 'hover', 'focus', 'group-hover'],
     zIndex: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionDuration: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionProperty: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover'],
 
   },
   plugins: [require("@tailwindcss/custom-forms")],
