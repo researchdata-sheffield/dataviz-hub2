@@ -47,8 +47,14 @@
    border-bottom: 4px solid white;
  }
 
+@media only screen and (max-width: 1030px) {
+  img.w-full.blog-image {
+    filter: none;
+    border-bottom: 4px solid white;
+  }
+}
+
 a.group:hover > img.w-full.blog-image {
-  border-bottom: 4px solid #00aeef;
   transition: 0.4s ease;
   filter: none;
   position: relative;

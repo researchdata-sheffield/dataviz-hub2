@@ -6,7 +6,7 @@ const PastEvents = ({pastEvent}) => {
   
   return (
     <div className="flex flex-wrap w-full sm:w-full md:w-full lg:w-3/12 xl:w-3/12 text-gray-100 px-6 lg:mt-16 pb-16 lg:py-6 border-t-4 border-gray-800" style={{background: "rgba(0,0,0,.6)", }}>
-      <h1 className="text-xl pb-6 font-semibold">Past Events</h1>
+      <h1 className="text-xl py-6 font-semibold">Past Events</h1>
       
       {pastEvent.edges.map(({ node }) => {
 

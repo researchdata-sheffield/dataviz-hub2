@@ -19,7 +19,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
   }
   
   return (
-    <div className="w-full sm:w-full md:w-full lg:w-8/12 xl:w-8/12 text-white px-8 lg:pt-6 pt-16 text-gray-800 lg:my-24 pb-16 flex-col flex-wrap overflow-auto border-t-8 border-red-700" style={{background: "rgba(255,255,255,.90)", }}>
+    <div className="w-full sm:w-full md:w-full lg:w-8/12 text-white px-8 lg:pt-6 pt-16 text-gray-800 lg:my-24 pb-16 flex-col flex-wrap overflow-auto border-t-8 border-red-700" style={{background: "rgba(255,255,255,.90)", }}>
     <h1 className="inline-block text-3xl font-semibold">Upcoming Events</h1>
     <div className="text-gray-500 mb-8" >Today: {todayDate()}</div>
 
@@ -35,8 +35,8 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
         }
 
         return (
-          <a className="flex flex-wrap w-full rounded overflow-auto shadow-md hover:shadow-xl bg-white my-4 text-gray-700 group border-solid hover:border-l-5 hover:border-highlight_2" style={{ fontFamily: "TUoS Blake"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer">
-            <img className="w-full sm:w-full md:w-3/12 lg:w-3/12 xl:w-3/12" src={node.logo.original.url} style={{minHeight: "15vh", maxHeight: "25vh", objectFit: "cover", objectPosition: "center"}} ></img>
+          <a className="flex flex-wrap w-full rounded overflow-hidden shadow-md hover:shadow-xl bg-white my-4 text-gray-700 group border-solid hover:border-l-5 hover:border-highlight_2" style={{fontFamily: "TUoS Blake"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer">
+            <img className="w-full sm:w-full md:w-3/12 lg:w-3/12 xl:w-3/12" src={node.logo.original.url} style={{minHeight: "18vh", maxHeight:"18vh", objectFit: "cover", objectPosition: "center"}} ></img>
             <div className="w-full sm:w-full md:w-9/12 lg:w-9/12 xl:w-9/12 p-4">
               <p className="font-semibold text-lg text-gray-900 group-hover:text-highlight_2">{node.name.text}</p>
               <p className="text-gray-500 mt-1 hidden md:flex lg:flex xl:flex leading-tight">{description}</p>

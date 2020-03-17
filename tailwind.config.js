@@ -27,11 +27,17 @@ module.exports = {
         'laptop': '1300px'
       },
       minHeight: {
+        '80': '80vh',
         '90': '90vh',
+        '95': '95vh',
         '100': '100vh',
       },
       maxHeight: {
         '12': '12vh',
+        '80': '80vh',
+        '90': '90vh',
+        '95': '95vh',
+        '100': '100vh',
       },
       transitionProperty: {
         'hover': 'hover',

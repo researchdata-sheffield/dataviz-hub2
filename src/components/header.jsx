@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react"
 import university_logo from "../images/TUOS_LOGO_REVERSED.png"
 // import university_logo_Color from "../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
+import { FaGoogle, FaSlack } from "react-icons/fa"
 
 function Header() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -22,11 +23,29 @@ function Header() {
     };
   }, [toggleScrolled, isScroll]);
   
+  
+  if (typeof window !== 'undefined') {
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      const maxScroll = document.body.clientHeight - window.innerHeight;
+      let currentScrollPos = window.pageYOffset;
+      if (
+          (maxScroll > 0 && prevScrollpos > currentScrollPos && prevScrollpos <= maxScroll) 
+        || (maxScroll <= 0 && prevScrollpos > currentScrollPos)
+        || (prevScrollpos <= 0 && currentScrollPos <= 0)
+        ) {
+        document.getElementById("navbar").style.top = "0";
+      } else {
+        document.getElementById("navbar").style.top = "-100px";
+      }
+      prevScrollpos = currentScrollPos;
+    }
+  }
 
   return (
     <header className="font-semibold" >
      
-      <nav className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10 top-0 transition duration-300 ease-in-out`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}`}} > 
+      <nav id="navbar" className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}`, transition: "top 0.5s"}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
@@ -82,6 +101,8 @@ function Header() {
                 </a>  
               )) 
             }
+            <button className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-md transition duration-500 ease-in-out inline-block no-underline py-2 px-4`}><a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a></button>
+            <button className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-md transition duration-500 ease-in-out inline-block no-underline py-2 px-4`}><a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a></button>
             {/* FIXME: Search button dropdown */}
             <button title="Search function is under development" className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline py-2 px-4`}>
               <FiSearch  />

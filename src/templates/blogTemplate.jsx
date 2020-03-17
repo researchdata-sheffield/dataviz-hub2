@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/layout"
 import Pagination from "../components_blog/pagination"
 import BlogPostGrid from "../components_blog/blogPostGrid"
@@ -20,17 +20,20 @@ function blogTemplate({ data: {allMdx}, pageContext }) {
 					keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 
-			<BackgroundSection className="items-center justify-center text-center">
-				<div className="text-white">
-					<h1 className="text-4xl">Blog</h1>
-					<p className="text-sm">scientia potentia est.</p>
+			<BackgroundSection className="items-center justify-center text-center" Height={`${pageContext.currentPage != 1 ? `35vh` : ``}`} >
+				<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>
+					<h1 className="text-5xl">Blog</h1>
+					<p className="text-md" >scientia potentia est.</p>
 				</div>
-				
+				<Link to="/blog/#read" >
+					<button className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-bold py-2 px-6 border border-transparent rounded text-sm`}>Start reading</button>
+				</Link>
+
 				<MenuCategory pageContext = {pageContext} />
 				
 			</BackgroundSection>
 
-			<div className="flex flex-wrap-reverse">
+			<div  className="flex flex-wrap-reverse">
 				<div className="w-full xs:w-full sm:w-full lg:w-full laptop:w-4/5">
 					<BlogPostGrid allMdx = {allMdx} />
 					<Pagination numPages = {pageContext.numPages} currentPage = {pageContext.currentPage} typePage = {"/blog"} />

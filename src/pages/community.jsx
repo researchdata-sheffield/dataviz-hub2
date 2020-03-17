@@ -16,17 +16,16 @@ const Community = () => (
     
     <BackgroundSection className="items-center justify-center text-center">
       <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
-        <h1 className="text-5xl">Community at Dataviz.Shef</h1>
-        <p className="text-xl mt-1 text-gray-100" style={{textShadow: "#000000 0px 0px 1px"}}>knowledge | connection | inspiration | resources | support</p>
+        <h1 className="text-5xl font-bold leading-tight">Community at Dataviz.Shef</h1>
+        <p className="text-xl mt-3 text-gray-100" style={{textShadow: "#000000 0px 0px 1px"}}>knowledge | connection | inspiration | resources | support</p>
       </div>
 
-      <button className="mt-16 mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border border-gray-400 rounded shadow">
-        <Link to="/community/#discover" >Discover</Link>
-      </button>
-  
-      <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border border-gray-400 rounded shadow">
-      <Link to="/community/#joinus" >Join community</Link>
-      </button>
+      <Link to="/community/#discover" >
+        <button className="mt-16 mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent rounded shadow">Discover</button>
+      </Link>
+      <Link to="/community/#joinus">
+        <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent rounded shadow">Join community</button>
+      </Link>
     </BackgroundSection>
 
     <div id="discover" className="container mx-auto py-32 text-gray-800 flex flex-wrap" style={{fontFamily: "TUoS Blake"}}>
@@ -41,8 +40,8 @@ const Community = () => (
 
         <div className="w-full xs:w-full md:w-full lg:w-1/2 text-gray-600 text-xl px-4">
           <img src={com_1} style={{borderRadius: "20%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
-          <p className="pt-24"> We’ve started with a <Link ><b>TUoS google group</b></Link> which can be joined through a TUoS google account. <br />
-            We have also added <Link ><b>slack channel</b></Link> for more informal communication and chat. Remember to say hello in our <i>#welcome channel</i>.</p>
+          <p className="pt-24"> We’ve started with a <Link to="/community/#joinus"><b>TUoS google group</b></Link> which can be joined through a TUoS google account. <br />
+            We have also added <Link to="/community/#joinus"><b>slack channel</b></Link> for more informal communication and chat. Remember to say hello in our <i>#welcome channel</i>.</p>
           <p className="text-highlight_2 text-2xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
           <p className="text-gray-500">But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
             <p className="pl-4"> <br />
@@ -62,9 +61,7 @@ const Community = () => (
           <img className="w-full" src={google} alt="Google Group" />
             <div className="px-6 pt-8">
               <div className="font-semibold text-xl mb-2 text-center text-gray-500">Google group</div>
-              <p className="text-gray-700 text-base px-4 lg:px-10 py-4 text-center">
-                Sign in use your Sheffield Google account, Join the TUoS google group.
-              </p>
+              <p className="text-gray-700 text-base px-4 lg:px-10 py-4 text-center">Sign in use your Sheffield Google account, Join the TUoS google group.</p>
             </div>
           </a>
 
@@ -72,7 +69,7 @@ const Community = () => (
             className="hidden group-hover:block absolute justify-center content-center text-center rounded py-1 px-10 shadow-sm text-xl text-white bg-black hover:bg-highlight_2"
             style={{ position: "absolute", top: "74%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
           >
-          Join Group  
+          Join group  
           </a>
         </div>
 
@@ -81,9 +78,7 @@ const Community = () => (
             <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
             <div className="px-6">
               <div className="font-semibold text-xl text-center text-gray-500 mb-2">shef-dataviz.slack</div>
-              <p className="text-gray-700 text-base p-4 text-center">
-                Sign in use your Sheffield University email, Say hello in our <b>#welcome channel</b>.
-              </p>
+                <p className="text-gray-700 text-base p-4 text-center">Sign in use your Sheffield University email, Say hello in our <b>#welcome channel</b>.</p>
             </div>
           </a>
 

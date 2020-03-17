@@ -35,7 +35,7 @@ const BackgroundSection = ({className, children, Height}) => (
         className={className}
         fluid={imageData}
         style={{
-          height: Height ? Height : `55vh`,
+          height: Height ? Height : `100vh`,
           width: `100%`,
           display: `flex`,
         }}

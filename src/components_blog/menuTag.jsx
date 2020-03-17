@@ -7,7 +7,7 @@ import { FaTags } from "react-icons/fa"
 function menuTag({ pageContext }) {
 
   return (
-    <div>
+    <div className="sticky top-0 overflow-hidden lg:py-8">
       <h1 className="text-2xl pb-4 font-semibold"><FaTags style={{display: "inline-block"}} /> Tags</h1>
       {pageContext.tags.map((tag) => (
           <Link key={tag} activeStyle={{ color: "white", backgroundColor: "#00aeef" }} partiallyActive={true} to={`/blog/tag/${kebabCase(tag)}`} 
