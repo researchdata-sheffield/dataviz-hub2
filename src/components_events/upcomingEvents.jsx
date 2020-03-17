@@ -36,7 +36,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
 
         return (
           <a className="flex flex-wrap w-full rounded overflow-hidden shadow-md hover:shadow-xl bg-white my-4 text-gray-700 group border-solid hover:border-l-5 hover:border-highlight_2" style={{fontFamily: "TUoS Blake"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer">
-            <img className="w-full sm:w-full md:w-3/12 lg:w-3/12 xl:w-3/12" src={node.logo.original.url} style={{minHeight: "18vh", maxHeight:"18vh", objectFit: "cover", objectPosition: "center"}} ></img>
+            <img className="w-full sm:w-full md:w-3/12 lg:w-3/12 xl:w-3/12" src={node.logo.original.url} style={{minHeight: "18vh", maxHeight:"22vh", objectFit: "cover", objectPosition: "center"}} ></img>
             <div className="w-full sm:w-full md:w-9/12 lg:w-9/12 xl:w-9/12 p-4">
               <p className="font-semibold text-lg text-gray-900 group-hover:text-highlight_2">{node.name.text}</p>
               <p className="text-gray-500 mt-1 hidden md:flex lg:flex xl:flex leading-tight">{description}</p>

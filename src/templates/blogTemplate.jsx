@@ -41,7 +41,7 @@ function blogTemplate({ data: {allMdx}, pageContext }) {
 
 				{/* TODO: Add number of articles next to tag/cat name */}
 				{/* TODO: Add filter form */}
-        <div className="w-full xs:w-full sm:w-full lg:w-full laptop:w-1/5 px-8 pt-6 pb-6 text-gray-100 shadow-2xl bg-gray-900 text-sm" style={{fontFamily: "TUoS Blake"}}>
+        <div className="w-full xs:w-full sm:w-full lg:w-full laptop:w-1/5 px-6 pt-3 pb-3 text-gray-100 shadow-2xl bg-gray-900 text-sm" style={{fontFamily: "TUoS Blake"}}>
 					<MenuTag pageContext = {pageContext} />
         </div>
 			</div>

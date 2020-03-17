@@ -25,15 +25,15 @@ const blogPostGrid = ({allMdx}) => {
       
       let description = node.frontmatter.description
       if(description.length >= 120){
-        description = description.substring(0,120).concat(" ...")
+        description = description.split(" ").splice(0, 30).join(" ").concat(" ...");
       }
 
       return (
         <div key={node.id} className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3 min-h-100 max-h-100 pb-24 overflow-hidden" style={{fontFamily: "TUoS  Blake"}}>
           <Link className="group" to={node.fields.slug}>
-            <img className="w-full blog-image group-hover:border-b-4 group-hover:border-highlight_2 border-solid" style={{minHeight: "65%", maxHeight: "65%",  objectFit: "cover", objectPosition: "center"}} src={imagesrc}></img>
+            <img className="w-full blog-image group-hover:border-b-4 group-hover:border-highlight_2 border-solid" style={{minHeight: "60%", maxHeight: "60%",  objectFit: "cover", objectPosition: "center"}} src={imagesrc}></img>
             <div className="px-8 py-5 leading-none text-gray-500 pb-36">
-              <h1 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-highlight_2 max-h-12 overflow-y-hidden" style={{fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
+              <h1 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "10vh", fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
               <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
               <p className=" my-2 text-xs pt-2" >{node.frontmatter.date}</p>
               <p className="my-2 text-xs">{node.frontmatter.author.join(' · ')}</p>

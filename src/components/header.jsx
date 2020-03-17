@@ -36,7 +36,7 @@ function Header() {
         ) {
         document.getElementById("navbar").style.top = "0";
       } else {
-        document.getElementById("navbar").style.top = "-100px";
+        document.getElementById("navbar").style.top = "-300px";
       }
       prevScrollpos = currentScrollPos;
     }
@@ -60,8 +60,8 @@ function Header() {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block` : `hidden`} text-sm lg:block lg:flex lg:items-center w-full lg:w-auto`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(0,0,0,0.7)" ] : ""}` }}>
-          <div className="list-reset lg:flex justify-end flex flex-wrap items-center">
+        <div className={`${isExpanded ? `block flex-col` : `hidden`} text-sm lg:block flex items-center w-full lg:w-auto`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "" ] : ""}` }}>
+          <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {
                 route: `/`,
@@ -91,11 +91,11 @@ function Header() {
                 <Link 
                   activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }` }} 
                   partiallyActive={true}
-                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-2 inline-block no-underline py-2 px-4`}
+                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline py-2 px-4`}
                   key={link.title} to={link.route}>{link.title}
                 </Link> 
                 : 
-                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out mr-2 inline-block no-underline py-2 px-4`}
+                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline py-2 px-4`}
                   href={link.route} target="_blank" rel="noopener noreferrer" 
                   key={link.title}>{link.title}
                 </a>  

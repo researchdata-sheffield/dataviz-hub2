@@ -25,7 +25,7 @@ const About = () => (
       </Link>
     </BackgroundSection>
 
-    <div id="more" className="container py-32 text-gray-800 mx-auto flex flex-wrap" style={{fontFamily: "TUoS Blake"}}>
+    <div id="more" className="container pt-12 pb-24 text-gray-800 mx-auto flex flex-wrap" style={{fontFamily: "TUoS Blake"}}>
       <div className="flex flex-wrap mx-auto justify-center content-center border-solid border-gray-100 border-b-2"> 
         
         <a className="max-w-md rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3" href="https://www.sheffield.ac.uk/library/index" target="_blank" rel="noopener noreferrer">
@@ -61,7 +61,7 @@ const About = () => (
         <p className="text-highlight_2 text-4xl py-8">Contribute</p>  
         
         <p>From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
-          the <Link className="text-highlight_2" to="/community/#joinus">google group</Link> or <Link className="text-highlight_2" to="/community/#joinus">slack team</Link>.
+          the <a className="text-highlight_2" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, <Link className="text-highlight_2" to="/community/#joinus">google group</Link> or <Link className="text-highlight_2" to="/community/#joinus">slack team</Link>.
         </p>
       </div>
     </div>
