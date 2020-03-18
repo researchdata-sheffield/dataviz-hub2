@@ -23,9 +23,11 @@ const blogPostGrid = ({allMdx}) => {
         imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
       }
       
-      let description = node.frontmatter.description
-      if(description.length >= 120){
-        description = description.split(" ").splice(0, 30).join(" ").concat(" ...");
+      let description = node.frontmatter.description.split(" ").splice(0, 30)
+      if(description.length < 30){
+        description = description.join(" ");
+      } else {
+        description = description.join(" ").concat(" ...");
       }
 
       return (

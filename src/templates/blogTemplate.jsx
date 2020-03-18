@@ -26,7 +26,7 @@ function blogTemplate({ data: {allMdx}, pageContext }) {
 					<p className="text-md" >scientia potentia est.</p>
 				</div>
 				<Link to="/blog/#read" >
-					<button className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-bold py-2 px-6 border border-transparent rounded text-sm`}>Start reading</button>
+					<button className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-bold py-2 px-6 border border-transparent text-sm`}>Start reading</button>
 				</Link>
 
 				<MenuCategory pageContext = {pageContext} />

@@ -10,11 +10,16 @@ const IndexPage = () => (
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
     />
     
-    <BackgroundSection className="">
-      <div className="text-white md:p-32 px-4 py-10" style={{fontFamily: "TUoS Blake"}}>
-        <h1 className="text-5xl">Data Visualisation Hub <br />The University of Sheffield</h1>
-        <p className="text-lg mt-1 text-gray-100" style={{textShadow: "#000000 0px 0px 1px"}}>Promoting and building community around data visualisation at the University of Sheffield. </p>
+    <BackgroundSection className="flex flex-wrap" style={{height: "100vh", width: "100%"}}>
+    <div className="flex w-full lg:w-5/12 text-white text-gray-800 overflow-hidden" style={{background: "rgba(255,255,255,.90)", }}>
+      <div className="p-48">
+        asdasdsd
       </div>
+    </div>
+
+    <div className="flex flex-wrap w-full lg:w-7/12 text-gray-100">
+      dfdf
+    </div>
     </BackgroundSection>
       
 

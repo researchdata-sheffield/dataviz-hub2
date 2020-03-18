@@ -21,7 +21,7 @@ const About = () => (
       </div>
 
       <Link to="/about/#more" >
-        <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border border-transparent rounded shadow">Learn more</button>
+        <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
       </Link>
     </BackgroundSection>
 
@@ -61,7 +61,7 @@ const About = () => (
         <p className="text-highlight_2 text-4xl py-8">Contribute</p>  
         
         <p>From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
-          the <a className="text-highlight_2" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, <Link className="text-highlight_2" to="/community/#joinus">google group</Link> or <Link className="text-highlight_2" to="/community/#joinus">slack team</Link>.
+          the <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, <Link to="/community/#joinus">google group</Link> or <Link to="/community/#joinus">slack team</Link>.
         </p>
       </div>
     </div>

@@ -21,10 +21,10 @@ const Community = () => (
       </div>
 
       <Link to="/community/#discover" >
-        <button className="mt-16 mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent rounded shadow">Discover</button>
+        <button className="mt-16 mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Discover</button>
       </Link>
       <Link to="/community/#joinus">
-        <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent rounded shadow">Join community</button>
+        <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Join community</button>
       </Link>
     </BackgroundSection>
 
@@ -56,7 +56,7 @@ const Community = () => (
       <div id="joinus" className="lg:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000">
         <div className="text-highlight_2 text-6xl w-full p-12 lg:px-16">Join us.</div>
   
-        <div className="max-w-md rounded overflow-hidden shadow-lg mx-8 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
+        <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
           <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25">
           <img className="w-full" src={google} alt="Google Group" />
             <div className="px-6 pt-8">
@@ -66,14 +66,14 @@ const Community = () => (
           </a>
 
           <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" 
-            className="hidden group-hover:block absolute justify-center content-center text-center rounded py-1 px-10 shadow-sm text-xl text-white bg-black hover:bg-highlight_2"
+            className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-10 shadow-sm text-xl text-white bg-black hover:bg-highlight_2"
             style={{ position: "absolute", top: "74%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
           >
           Join group  
           </a>
         </div>
 
-        <div className="max-w-md rounded overflow-hidden shadow-lg mx-8 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
+        <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
           <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25">
             <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
             <div className="px-6">
@@ -83,7 +83,7 @@ const Community = () => (
           </a>
 
           <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" 
-            className="hidden group-hover:block absolute justify-center content-center text-center rounded py-1 px-16 shadow-sm text-xl text-white bg-black hover:bg-highlight_2"
+            className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-16 shadow-sm text-xl text-white bg-black hover:bg-highlight_2"
             style={{ position: "absolute", top: "74%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
           >
           Sign up

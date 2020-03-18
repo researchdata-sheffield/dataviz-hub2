@@ -134,6 +134,8 @@ module.exports = {
     {
       resolve: `gatsby-source-eventbrite`,
       options: {
+        // organizationId: `121727010915`, 
+        // accessToken: `6NKTPFLQPPWWPPVRVZGI`,  
         organizationId: `394692913883`,
         accessToken: `DYMSC6OLAPPBHLFZ6DKJ`,
         // OPTIONAL: Defaults are Events and Venues

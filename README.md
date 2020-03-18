@@ -49,6 +49,8 @@ A list of extensions I've installed:
   - Color Highlight
   - Color Info
   - Color Pick
+  - CSS Peek
+
   
 
 ## Useful resources

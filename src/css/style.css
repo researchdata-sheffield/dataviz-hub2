@@ -41,6 +41,13 @@
  * @import "components/buttons";
  * @import "components/forms";
  */
+a {
+  color: #4e4e4e;
+}
+
+ a:hover {
+   color: #00aeef;
+ }
 
  img.w-full.blog-image {
    filter: grayscale(100%);
@@ -66,51 +73,76 @@ a.group:hover > img.w-full.blog-image {
 }
 
 .textanimate {
-  -webkit-animation: color-change 9s infinite;
-  -moz-animation: color-change 9s infinite;
-  -o-animation: color-change 9s infinite;
-  -ms-animation: color-change 9s infinite;
-  animation: color-change 9s infinite;
+  -webkit-animation: color-change 23s infinite;
+  -moz-animation: color-change 23s infinite;
+  -o-animation: color-change 23s infinite;
+  -ms-animation: color-change 23s infinite;
+  animation: color-change 23s infinite;
 }
 
 @-webkit-keyframes color-change {
   0% { color: white; }
-  20% { color: #00aeef; }
-  40% { color: #ff5e5e; }
-  60% { color: #677B8C; }
-  80% { color: #00ff6b; }
+  10% { color: #00aeef; }
+  20% { color: #e6cd00; }
+  30% { color: #ff5e5e; }
+  40% { color: #ea005e; }
+  50% { color: #db00ea; }
+  60% { color: #5800ea; }
+  70% { color: #eaaf00; }
+  80% { color: #cbea00; }
+  90% { color: #677B8C; }
   100% { color: white; }
 }
 @-moz-keyframes color-change {
   0% { color: white; }
-  20% { color: #00aeef; }
-  40% { color: #ff5e5e; }
-  60% { color: #677B8C; }
-  80% { color: #00ff6b; }
+  10% { color: #00aeef; }
+  20% { color: #e6cd00; }
+  30% { color: #ff5e5e; }
+  40% { color: #ea005e; }
+  50% { color: #db00ea; }
+  60% { color: #5800ea; }
+  70% { color: #eaaf00; }
+  80% { color: #cbea00; }
+  90% { color: #677B8C; }
   100% { color: white; }
 }
 @-ms-keyframes color-change {
   0% { color: white; }
-  20% { color: #00aeef; }
-  40% { color: #ff5e5e; }
-  60% { color: #677B8C; }
-  80% { color: #00ff6b; }
+  10% { color: #00aeef; }
+  20% { color: #e6cd00; }
+  30% { color: #ff5e5e; }
+  40% { color: #ea005e; }
+  50% { color: #db00ea; }
+  60% { color: #5800ea; }
+  70% { color: #eaaf00; }
+  80% { color: #cbea00; }
+  90% { color: #677B8C; }
   100% { color: white; }
 }
 @-o-keyframes color-change {
   0% { color: white; }
-  20% { color: #00aeef; }
-  40% { color: #ff5e5e; }
-  60% { color: #677B8C; }
-  80% { color: #00ff6b; }
+  10% { color: #00aeef; }
+  20% { color: #e6cd00; }
+  30% { color: #ff5e5e; }
+  40% { color: #ea005e; }
+  50% { color: #db00ea; }
+  60% { color: #5800ea; }
+  70% { color: #eaaf00; }
+  80% { color: #cbea00; }
+  90% { color: #677B8C; }
   100% { color: white; }
 }
 @keyframes color-change {
   0% { color: white; }
-  20% { color: #00aeef; }
-  40% { color: #ff5e5e; }
-  60% { color: #677B8C; }
-  80% { color: #00ff6b; }
+  10% { color: #00aeef; }
+  20% { color: #e6cd00; }
+  30% { color: #ff5e5e; }
+  40% { color: #ea005e; }
+  50% { color: #db00ea; }
+  60% { color: #5800ea; }
+  70% { color: #eaaf00; }
+  80% { color: #cbea00; }
+  90% { color: #677B8C; }
   100% { color: white; }
 }
 

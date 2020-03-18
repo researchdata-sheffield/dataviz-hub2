@@ -1,8 +1,8 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
-import university_logo from "../images/TUOS_LOGO_REVERSED.png"
-// import university_logo_Color from "../images/TUOSlogo.png"
+//import university_logo from "../images/TUOS_LOGO_REVERSED.png"
+ import university_logo from "../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack } from "react-icons/fa"
 
@@ -45,7 +45,7 @@ function Header() {
   return (
     <header className="font-semibold" >
      
-      <nav id="navbar" className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.7)" : ""}`, transition: "top 0.5s"}} > 
+      <nav id="navbar" className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.9)" : ""}`, transition: "top 0.5s"}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
@@ -60,7 +60,7 @@ function Header() {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block flex-col` : `hidden`} text-sm lg:block flex items-center w-full lg:w-auto`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "" ] : ""}` }}>
+        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block flex items-center w-full lg:w-auto text-md md:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "" ] : ""}` }}>
           <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {
@@ -91,20 +91,24 @@ function Header() {
                 <Link 
                   activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }` }} 
                   partiallyActive={true}
-                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline py-2 px-4`}
+                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
                   key={link.title} to={link.route}>{link.title}
                 </Link> 
                 : 
-                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline py-2 px-4`}
+                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
                   href={link.route} target="_blank" rel="noopener noreferrer" 
                   key={link.title}>{link.title}
                 </a>  
               )) 
             }
-            <button className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-md transition duration-500 ease-in-out inline-block no-underline py-2 px-4`}><a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a></button>
-            <button className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-md transition duration-500 ease-in-out inline-block no-underline py-2 px-4`}><a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a></button>
+            <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-4 pr-2">
+              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white` } `} href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
+            </button>
+            <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2">
+              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
+            </button>
             {/* FIXME: Search button dropdown */}
-            <button title="Search function is under development" className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline py-2 px-4`}>
+            <button className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} pl-2 pr-4 text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline`} title="Search function is under development" >
               <FiSearch  />
             </button>
 
