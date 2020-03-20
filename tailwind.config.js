@@ -23,7 +23,9 @@ module.exports = {
         '5': '5px',
         '6': '6px',
         '7': '7px',
+        '15': '15px',
         '7vh': '7vh',
+
       },
       screens: {
         'ipadp': '1030px',
@@ -75,6 +77,15 @@ module.exports = {
         '5/12': '41.6666666%',
         'full': '100%',
       },
+      maxWidth: {
+        '0': '0',
+        '10': '10vw',
+        '15': '15vw',
+        '25': '25vw',
+        '30': '30vw',
+        '40': '40vw',
+        '50': '50vw',
+      },
       padding: {
         '10vh': '10vh',
         '15vh': '15vh',
@@ -87,6 +98,10 @@ module.exports = {
         '90vh': '90vh',
         '95vh': '95vh',
         '100vh': '100vh',
+      },
+      margin: {
+        '28': '7rem',
+        
       },
       transitionProperty: {
         'hover': 'hover',
