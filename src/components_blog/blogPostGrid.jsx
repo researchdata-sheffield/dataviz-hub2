@@ -43,12 +43,12 @@ const blogPostGrid = ({allMdx}) => {
               <div className="py-2 text-sm">
                 {node.frontmatter.category.map((cat) => (
                   <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-500 text-gray-200 rounded-md">{cat}
+                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-500 text-gray-200 rounded-full">{cat}
                   </Link>
                 ))}
                 {node.frontmatter.tag.map((tag) => (
                   <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-300 text-gray-500 rounded-md">{tag}
+                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-300 text-gray-500 rounded-full">{tag}
                   </Link>
                 ))}
               </div>

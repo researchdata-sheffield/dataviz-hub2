@@ -26,6 +26,11 @@ function Header() {
   
   if (typeof window !== 'undefined') {
     let prevScrollpos = window.pageYOffset;
+    
+    if(window.location.pathname == ""){
+      document.getElementById("navbar").style.backgroundColor = "rgba(0,0,0,0.9)";
+    }
+
     window.onscroll = function () {
       const maxScroll = document.body.clientHeight - window.innerHeight;
       let currentScrollPos = window.pageYOffset;
@@ -60,7 +65,7 @@ function Header() {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block flex items-center w-full lg:w-auto text-md md:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "" ] : ""}` }}>
+        <div className={`${isExpanded ? `block flex-col py-2` : `hidden`} lg:block flex items-center w-full lg:w-auto text-md md:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(0,0,0,0.9)" ] : ""}` }}>
           <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {

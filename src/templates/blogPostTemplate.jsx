@@ -53,15 +53,15 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
         </Helmet>
 
 
-        <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-xl border-b-2 border-white" style={{height: "45vh", fontFamily: "TUoS Blake"}}>
+        <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-xl border-b-2 border-white" style={{height: "50vh", fontFamily: "TUoS Blake"}}>
           <div className="text-center text-white">
-            <div style={{textShadow: "black 0px 0px 3px"}}>
-              <h1 className="text-3xl font-semibold" >{title}</h1>
-              <h2 className="mt-2" style={{fontFamily: "TUoS Stephenson"}}>{author.join(' · ')}</h2>
-              <h2 className="mt-6 text-sm">{date}</h2>
-              
+            <div className="px-10 leading-tight" style={{textShadow: "black 0px 0px 3px"}}>
+              <h1 className="text-2xl font-semibold" >{title}</h1>
+              <h2 className="mt-3" style={{fontFamily: "TUoS Stephenson"}}>{author.join(' · ')}</h2>
+              <h2 className="mt-3 text-sm">{date}</h2> 
             </div>
-            <div className="mt-8 text-sm">
+
+            <div className="mt-4 text-sm">
                   {mdx.frontmatter.category.map((cat) => (
                     <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
                       className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-600 text-gray-200 rounded-md">{cat}

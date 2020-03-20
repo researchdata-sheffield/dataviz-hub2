@@ -22,15 +22,15 @@ const Pagination = ({numPages, currentPage, typePage}) => {
 
   return (
     <div className="flex flex-wrap justify-between">
-      <div className="flex justify-center items-center content-center mx-auto mt-8 mb-16">
+      <div className="flex justify-center items-center content-center mx-auto mt-16 mb-16">
 
         <Link to={ `${ numPages === 1 ? `${typePage}/page/${currentPage}` : [ (currentPage === 1 || currentPage === 2)  ? `${typePage}` : `${typePage}/page/${currentPage -1}` ] }` } 
-              className={`${numPages === 1 ? `hidden` : [currentPage === 1 ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 rounded shadow`}
+              className={`${numPages === 1 ? `hidden` : [currentPage === 1 ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow`}
         >
           <FaArrowAltCircleLeft className="mr-3" /> Newer posts
         </Link>
         <Link to={ `${ numPages === 1 ? `${typePage}/page/${currentPage}` : [ currentPage === numPages  ? `${typePage}/page/${currentPage}` : `${typePage}/page/${currentPage +1}`] }`}
-              className={`${numPages === 1 ? `hidden` : [currentPage === numPages ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 rounded shadow ml-16`}
+              className={`${numPages === 1 ? `hidden` : [currentPage === numPages ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow ml-16`}
         >
           Older posts <FaArrowAltCircleRight className="ml-3" />
         </Link>
@@ -40,7 +40,7 @@ const Pagination = ({numPages, currentPage, typePage}) => {
       <div className="flex justify-end mt-4 mb-8 px-16 items-center text-base" style={{fontFamily: "Comic Sans MS"}}>
         <p>Showing page</p>
         <div className="inline-block relative w-16 mx-2">
-          <select value={currentPage} onChange={handleChange} className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 pr-3 rounded shadow leading-tight focus:outline-none">
+          <select value={currentPage} onChange={handleChange} className="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-2 py-2 pr-3 shadow leading-tight focus:outline-none">
 
             {Array.from({ length: numPages }).map((item, i) => {
               const index = i + 1

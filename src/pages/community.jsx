@@ -56,7 +56,7 @@ const Community = () => (
       <div id="joinus" className="lg:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000">
         <div className="text-highlight_2 text-6xl w-full p-12 lg:px-16">Join us.</div>
   
-        <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
+        <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 xl:mx-16 my-4 hover:shadow-2xl group flex relative">
           <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25">
           <img className="w-full" src={google} alt="Google Group" />
             <div className="px-6 pt-8">
@@ -73,7 +73,7 @@ const Community = () => (
           </a>
         </div>
 
-        <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 lg:mx-16 my-4 hover:shadow-2xl group flex relative">
+        <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 xl:mx-16 my-4 hover:shadow-2xl group flex relative">
           <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25">
             <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
             <div className="px-6">

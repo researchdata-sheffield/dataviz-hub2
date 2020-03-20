@@ -146,6 +146,52 @@ a.group:hover > img.w-full.blog-image {
   100% { color: white; }
 }
 
+.searchIcon {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.typewriter p {
+  white-space:nowrap;
+  overflow:hidden;
+  -webkit-animation: typing 2s steps(30, end), blink .75s step-end infinite;
+  animation: typing 2s steps(30, end), blink .75s step-end infinite;
+}
+
+.typewriter p:nth-child(2) {
+    white-space:nowrap;
+    overflow:hidden;
+    opacity: 0;    
+    -webkit-animation: typing 2s steps(30, end), blink .75s step-end infinite;
+    animation: typing 2s steps(30, end), blink .75s step-end infinite;
+    -webkit-animation-delay: 2.8s; 
+    animation-delay: 2.8s;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@keyframes typing {
+  from { 
+      width: 0%;
+      opacity: 0;
+      border-right: 2px solid #00aeef;
+  }
+  to { 
+      opacity: 1;
+      width: 100%;
+      border-right: 0;
+  }
+}
+
+
+@keyframes blink {
+  from, to { 
+      border-color: transparent 
+  }
+  50% { 
+      border-color: #00aeef; 
+  }
+}
+
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

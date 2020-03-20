@@ -121,6 +121,8 @@ module.exports = {
       resolve: 'gatsby-plugin-load-script',
       options: {
         src: 'https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js',
+        src1: "https://cdn.jsdelivr.net/npm/typed.js@2.0.11",
+        jquery: "https://code.jquery.com/jquery-3.4.1.min.js",
       },
     },
     "gatsby-remark-embed-video",
