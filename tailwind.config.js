@@ -87,6 +87,9 @@ module.exports = {
         '50': '50vw',
       },
       padding: {
+        '26': '6.5rem',
+        '28': '7rem',
+        '36': '9rem',
         '10vh': '10vh',
         '15vh': '15vh',
         '18vh': '18vh',
@@ -100,8 +103,9 @@ module.exports = {
         '100vh': '100vh',
       },
       margin: {
+        '26': '6.5rem',
         '28': '7rem',
-        
+
       },
       transitionProperty: {
         'hover': 'hover',

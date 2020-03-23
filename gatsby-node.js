@@ -50,7 +50,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  */
 
 
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
@@ -62,7 +61,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     query {
-      allMdx {
+      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
         edges {
           node {
             id
@@ -101,13 +100,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const tags = []
 
 
-  // you'll call `createPage` for each result
+  // Call `createPage` for each result/post
+  // index: current index of element
   posts.forEach( ( {node}, index, arr )  => {
+
+    // For each post, add their tags/categories to arrays
     node.frontmatter.category.forEach(cat => categories.push(cat))
     node.frontmatter.tag.forEach(tag => tags.push(tag))
     const prev = arr[index - 1]
     const next = arr[index + 1]
-
 
     // Check what template the markdown file have choosen 
     const template = node.frontmatter.template === "custom" ? blogPostTemplate_custom : blogPostTemplate
@@ -128,6 +129,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
+
 
   const countCategories = categories.reduce((prev, curr) => {
     prev[curr] = (prev[curr] || 0) + 1
@@ -152,7 +154,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         currentPage: i + 1,
         numPages,
         categories: allCategories,
-        tags: allTags
+        tags: allTags,
+        countTags
       },
     })
   })
@@ -175,6 +178,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           skip: i * postsPerPage,
           currentPage: i + 1,
           numPages: Math.ceil(countTags[tag] / postsPerPage),
+          countTags
         },
       })
     })
@@ -198,6 +202,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           skip: i * postsPerPage,
           currentPage: i + 1,
           numPages: Math.ceil(countCategories[cat] / postsPerPage),
+          countTags
         },
       })
     })

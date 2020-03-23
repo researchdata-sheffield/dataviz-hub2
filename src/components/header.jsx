@@ -26,11 +26,7 @@ function Header() {
   
   if (typeof window !== 'undefined') {
     let prevScrollpos = window.pageYOffset;
-    
-    if(window.location.pathname == ""){
-      document.getElementById("navbar").style.backgroundColor = "rgba(0,0,0,0.9)";
-    }
-
+  
     window.onscroll = function () {
       const maxScroll = document.body.clientHeight - window.innerHeight;
       let currentScrollPos = window.pageYOffset;
@@ -42,6 +38,8 @@ function Header() {
         document.getElementById("navbar").style.top = "0";
       } else {
         document.getElementById("navbar").style.top = "-300px";
+        document.getElementById("navbar").style.paddingTop = "0";
+        document.getElementById("navbar").style.paddingBottom = "0";
       }
       prevScrollpos = currentScrollPos;
     }
@@ -50,7 +48,7 @@ function Header() {
   return (
     <header className="font-semibold" >
      
-      <nav id="navbar" className={`${isScroll ? `shadow-2xl ` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(0,0,0,0.9)" : ""}`, transition: "top 0.5s"}} > 
+      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(34,34,34,0.9)" : ""}`, transition: "top 0.5s", overflow: "hidden"}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
@@ -65,7 +63,7 @@ function Header() {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block flex-col py-2` : `hidden`} lg:block flex items-center w-full lg:w-auto text-md md:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(0,0,0,0.9)" ] : ""}` }}>
+        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-md md:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(34,34,34,0.9)" ] : ""}` }}>
           <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {

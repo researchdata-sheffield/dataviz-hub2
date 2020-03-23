@@ -56,12 +56,12 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
         <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-xl border-b-2 border-white" style={{height: "50vh", fontFamily: "TUoS Blake"}}>
           <div className="text-center text-white">
             <div className="px-10 leading-tight" style={{textShadow: "black 0px 0px 3px"}}>
-              <h1 className="text-2xl font-semibold" >{title}</h1>
-              <h2 className="mt-3" style={{fontFamily: "TUoS Stephenson"}}>{author.join(' · ')}</h2>
-              <h2 className="mt-3 text-sm">{date}</h2> 
+              <h1 className="text-4xl 2xl:text-5xl font-semibold xl:px-16" >{title}</h1>
+              <h2 className="mt-4" style={{fontFamily: "TUoS Stephenson"}}>{author.join(' · ')}</h2>
+              <h2 className="mt-1 text-sm">{date}</h2> 
             </div>
 
-            <div className="mt-4 text-sm">
+            <div className="mt-1 text-sm">
                   {mdx.frontmatter.category.map((cat) => (
                     <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
                       className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-600 text-gray-200 rounded-md">{cat}
@@ -80,7 +80,7 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
         {/* <img className="justify-center items-center m-auto -mt-10 shadow-2xl" src={mdx.frontmatter.thumbnail.childImageSharp.fluid.src} style={{minHeight: "20%", maxHeight: "20%", maxWidth: "40%", minWidth: "40%",  objectFit: "cover", objectPosition: "center"}}></img>  */}
                     
 
-        <div className="justify-center container mx-auto py-16 px-10 leading-8 text-lg" markdown="1">
+        <div className="justify-center container mx-auto py-16 px-4 ipadp:px-10 leading-8 text-lg" markdown="1">
           <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li}}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
@@ -88,8 +88,6 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
         
         <PaginationPost mdx={mdx} prev={prev} next={next} />
         
-
-
       </Layout>
     )
 }

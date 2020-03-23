@@ -182,7 +182,6 @@ a.group:hover > img.w-full.blog-image {
   }
 }
 
-
 @keyframes blink {
   from, to { 
       border-color: transparent 
@@ -191,6 +190,11 @@ a.group:hover > img.w-full.blog-image {
       border-color: #00aeef; 
   }
 }
+
+
+
+
+
 
 
 /**
@@ -202,7 +206,7 @@ a.group:hover > img.w-full.blog-image {
  * @import "tailwindcss/utilities";
  */
 
- @tailwind utilities;
+  @tailwind utilities;
 /**
  * Here you would add any custom utilities you need that don't come out of the
  * box with Tailwind.
@@ -218,3 +222,24 @@ a.group:hover > img.w-full.blog-image {
  * @import "utilities/skew-transforms";
  */
 
+@variants hover, group-hover {
+  .greyScale-0 {
+    filter: grayscale(0%);
+  }
+  .greyScale-20 {
+    filter: grayscale(20%);
+  }
+  .greyScale-40 {
+    filter: grayscale(40%);
+  }
+  .greyScale-60 {
+    filter: grayscale(60%);
+  }
+  .greyScale-80 {
+    filter: grayscale(80%);
+  }
+  .greyScale-100 {
+    filter: grayscale(100%);
+  }
+  
+}

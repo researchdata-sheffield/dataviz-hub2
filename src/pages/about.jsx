@@ -46,7 +46,7 @@ const About = () => (
           This community website exists to provide research staff and students at the University of Sheffield with information and inspiration about the visual presentation of data.
         </p>
         
-        <p className="pt-8 pb-16 text-gray-500">Visualisation has always been at the core of extracting understanding from data, but powerful, modern, open source, interactive and web-based visualisation tools have 
+        <p className="pt-8 pb-16 text-gray-600">Visualisation has always been at the core of extracting understanding from data, but powerful, modern, open source, interactive and web-based visualisation tools have 
           revolutionised the potential for research data impact. We are here to help to unlock the potential of your data.
         </p>
         
