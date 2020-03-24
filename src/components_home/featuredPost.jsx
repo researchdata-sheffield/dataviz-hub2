@@ -4,15 +4,15 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaStar } from "react-icons/fa"
 
-function featuredPost({ featuredPost }) {
+const featuredPost = ({ featuredPost }) => {
 
   return (
     <div className="w-full flex flex-wrap">
       {featuredPost.edges.map(({ node }) => {
         let imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
 
-        let description = node.frontmatter.description.split(" ").splice(0, 40)
-        if(description.length < 40){
+        let description = node.frontmatter.description.split(" ").splice(0, 50)
+        if(description.length < 50){
           description = description.join(" ");
         } else {
           description = description.join(" ").concat(" ...");

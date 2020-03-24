@@ -11,7 +11,7 @@ import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li } from "../components_style/blogPo
 import PaginationPost from "../components_blog/pagination_post"
 
 
-export default function blogPostTemplate({ data: { mdx }, pageContext }) {
+const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     const { title, author, date } = mdx.frontmatter
     const {prev, next} = pageContext
     /* const tableOfContent = mdx.tableOfContents */
@@ -91,6 +91,8 @@ export default function blogPostTemplate({ data: { mdx }, pageContext }) {
       </Layout>
     )
 }
+
+export default blogPostTemplate
 
 blogPostTemplate.propTypes = {
   data: PropTypes.any,

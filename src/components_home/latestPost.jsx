@@ -10,7 +10,7 @@ import no_image_5 from "../images/blog/no_image_5.png"
 import {MdFiberNew } from "react-icons/md"
 
 
-function latestPost({ latestPost }) {
+const latestPost = ({ latestPost }) => {
 
   return (
     

@@ -5,7 +5,7 @@ import moment from "moment"
 
 
 
-function eventNotice({ eventBrite }) {
+const eventNotice = ({ eventBrite }) => {
   let eventLimit = 0
   
   function todayDate() {

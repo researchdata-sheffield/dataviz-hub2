@@ -12,7 +12,7 @@ import Header from "./header"
 import Footer from "./footer"
 
 
-function Layout ({ children }) {
+const Layout = ({ children }) => {
 
   return (
     <div id="website" className="flex flex-col font-sans min-h-screen text-gray-900 high-specificity">

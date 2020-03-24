@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 
-function menuCategory({ pageContext }) {
+const menuCategory = ({ pageContext }) => {
 
   return (
     <div id="read" className="flex flex-wrap absolute bottom-0 p-1 mr-2 right-0" style={{fontFamily: "TUoS Blake"}}>

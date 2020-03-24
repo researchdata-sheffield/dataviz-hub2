@@ -11,7 +11,7 @@ import BackgroundSection from "../components_images/blog_background";
 
 
 
-function blogTemplate({ data: {allMdx}, pageContext }) {
+const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 
 	return (
 		<Layout>

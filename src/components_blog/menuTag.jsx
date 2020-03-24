@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaTags } from "react-icons/fa"
 
-function menuTag({ pageContext }) {
+const menuTag = ({ pageContext }) => {
 
   return (
     /* TODO: Add number of articles next to tag/cat name */

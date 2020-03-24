@@ -11,7 +11,7 @@ import BackgroundSection from "../components_images/blog_background";
 import kebabCase from "lodash.kebabcase"
 
 
-function blogTagTemplate({ data: {allMdx}, pageContext }) {
+const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 
 	return (
 		<Layout>

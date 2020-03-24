@@ -3,7 +3,7 @@ import React from "react"
 import university_logo from "../images/TUOSlogo.png"
 import { FaGoogle, FaSlack } from "react-icons/fa"
 
-function Footer() {
+const Footer = () => {
   
   return (
   <div className="bg-black px-10 py-8 text-sm">

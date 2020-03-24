@@ -10,7 +10,6 @@ class PaginationPost extends React.Component {
     super(props);
   }
 
-
   render() {
     let pruneLen = 40
     let prevTitle = this.props.prev ? this.props.prev.node.frontmatter.title : ""

@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Why from "../images/home/why.jpg"
 import How from "../images/home/how.jpg"
 
-function guide() {
+const guide = () => {
   
   return (
     <div className="flex flex-wrap ipadp:pt-40 2xl:px-48">

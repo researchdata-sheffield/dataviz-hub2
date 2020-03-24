@@ -7,7 +7,7 @@ import PropTypes from "prop-types"
 import UpcomingEvents from "../components_events/upcomingEvents"
 import PastEvents from "../components_events/pastEvents"
 
-function events({data: {eventBrite, pastEvent}}) {
+const events = ({data: {eventBrite, pastEvent}}) => {
   
 
   return (

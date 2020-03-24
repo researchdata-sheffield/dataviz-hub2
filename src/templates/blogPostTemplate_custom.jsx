@@ -8,7 +8,7 @@ import { graphql } from "gatsby"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li } from "../components_style/blogPost_style"
 import PaginationPost from "../components_blog/pagination_post"
 
-export default function blogPostTemplate_custom({ data: { mdx }, pageContext }) {
+const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
     const {prev, next} = pageContext  
 
     return (
@@ -31,10 +31,15 @@ export default function blogPostTemplate_custom({ data: { mdx }, pageContext }) 
     )
 }
 
+export default blogPostTemplate_custom
+
+
 blogPostTemplate_custom.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any,
 }
+
+
 
 export const query = graphql`
   query BlogPostQuery_custom($id: String) {

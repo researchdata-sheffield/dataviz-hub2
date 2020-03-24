@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack } from "react-icons/fa"
 
-function Header() {
+const Header = () => {
   const [isExpanded, toggleExpansion] = useState(false);
   const [isScroll, toggleScrolled] = useState(false);
 
@@ -48,7 +48,7 @@ function Header() {
   return (
     <header className="font-semibold" >
      
-      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(34,34,34,0.9)" : ""}`, transition: "top 0.5s", overflow: "hidden"}} > 
+      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(34,34,34,0.9)" : ""}`, transition: "top 0.8s", overflow: "hidden"}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>

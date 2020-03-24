@@ -12,7 +12,7 @@ import moment from "moment"
 import Earth from "../images/home/earth.jpg"
 
 
-function IndexPage ({data: {featuredPost, latestPost, eventBrite}}) {
+const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   const [isOffset, toggleOffset] = useState(false)
   let datePrev = moment()
   

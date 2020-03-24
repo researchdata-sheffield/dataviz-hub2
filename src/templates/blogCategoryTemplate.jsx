@@ -11,7 +11,7 @@ import SEO from "../components/seo"
 import BackgroundSection from "../components_images/blog_background";
 
 
-function blogCategoryTemplate({ data: {allMdx}, pageContext }) {
+const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 
 	return (
 		<Layout>
