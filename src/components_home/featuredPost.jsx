@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { Link } from "gatsby"
+import { Link, navigate } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaStar } from "react-icons/fa"
 
@@ -19,8 +19,7 @@ const featuredPost = ({ featuredPost }) => {
         }
 
         return (
-          <div key={node.id} className="flex flex-wrap w-full min-h-40 ipadp:min-h-100 max-h-100 overflow-hidden group relative min-w-20" style={{fontFamily: "TUoS  Blake", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}}>
-            <Link to={node.fields.slug}>
+          <div key={node.id} onClick={() => {navigate(`${node.fields.slug}`)}} className="flex flex-wrap w-full min-h-40 ipadp:min-h-100 max-h-100 overflow-hidden group relative min-w-20 cursor-pointer" style={{fontFamily: "TUoS  Blake", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}}>
               <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300">
                 <FaStar className="mr-2 text-yellow-300 text-3xl" />
                 <p className="ipadp:opacity-0 group-hover:opacity-100 text-xl" style={{fontFamily: "ink free"}}>Featured</p>
@@ -50,7 +49,6 @@ const featuredPost = ({ featuredPost }) => {
                   ))}
                 </div>
               </div>
-            </Link>
           </div>
         )
       })}

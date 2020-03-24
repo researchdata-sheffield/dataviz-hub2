@@ -20,7 +20,7 @@ const guide = () => {
       <div className="flex flex-wrap w-full ipadp:w-9/12  text-gray-600 mt-24">
         
         <div id="what" className="flex-wrap ipadp:min-h-100 px-5 ipadp:px-24 my-12">
-          <p className="font-semibold text-3xl"><h1 className="inline-block text-highlight_2 font-bold text-6xl">What</h1> is data visualisation?</p>
+          <h1 className="font-semibold text-3xl"><p className="inline-block text-highlight_2 font-bold text-6xl">What</p> is data visualisation?</h1>
           <p className="leading-7 text-lg text-gray-600 py-10">
             Data visualisation generally considered as the graphical representation of information and data. The main purpose of data visualisation is to communicate information clearly and effectively by means of graphical representation. 
             However, this does not mean that data visualisation must be boring for its functional purpose, or extremely complicated to look gorgeous. <br /><br /> In order to effectively communicate ideas and concepts, 
@@ -30,7 +30,7 @@ const guide = () => {
         </div> 
       
         <div id="why" className="flex-wrap ipadp:min-h-100 px-5 ipadp:px-24 my-12">
-          <p className="font-semibold text-3xl"><h1 className="inline-block text-highlight_2 font-bold text-6xl">Why</h1> is it important?</p>
+          <h1 className="font-semibold text-3xl"><p className="inline-block text-highlight_2 font-bold text-6xl">Why</p> is it important?</h1>
           <p className="leading-7 text-lg text-gray-600 py-10">
           The huge amount of data is one of the characteristics of the Internet era. Learn to quickly digest and absorb useful information in huge data groups can greatly help to seize 
           opportunities. Studies have shown that the amount of information we use visually is far greater than other senses. This also means that the possibility of finding relevant 
@@ -42,7 +42,7 @@ const guide = () => {
         </div> 
 
         <div id="how" className="flex-wrap ipadp:min-h-100 px-5 ipadp:px-24 my-12">
-          <p className="font-semibold text-3xl"><h1 className="inline-block text-highlight_2 font-bold text-6xl">How</h1> this site could help?</p>
+          <h1 className="font-semibold text-3xl"><p className="inline-block text-highlight_2 font-bold text-6xl">How</p> this site could help?</h1>
           <p className="leading-9 text-lg text-gray-600 py-10">
             
             Support through: <br />
@@ -57,7 +57,7 @@ const guide = () => {
         </div>  
 
         <div id="start" className="flex-wrap ipadp:min-h-100 px-5 ipadp:px-24 my-12">
-          <p className="font-semibold text-3xl"><h1 className="inline-block text-highlight_2 font-bold text-6xl">Get</h1> started</p>
+          <h1 className="font-semibold text-3xl"><p className="inline-block text-highlight_2 font-bold text-6xl">Get</p> started</h1>
           <p className="leading-9 text-lg text-gray-600 py-10">
             - Learn from documentations <br />
             - Share your data visualisations on ORDA showcase <br />
