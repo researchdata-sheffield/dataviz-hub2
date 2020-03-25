@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql, Link, navigate } from "gatsby"
@@ -13,7 +13,7 @@ import Earth from "../images/home/earth.jpg"
 
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
-  const [isOffset, toggleOffset] = useState(false)
+  
   let datePrev = moment()
   
   var words = ["research", "past event", "statistical method", "introduction to R", "What are you looking for?", "how to write a blog post", "slack channel", "dataset",
@@ -34,20 +34,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
     }, 5000);
 
-    function handleOffset() {
-      const offsetValue = window.pageYOffset > 0;
-      if(isOffset !== offsetValue){
-        toggleOffset(!isOffset);
-      }
-    }
-    document.addEventListener('scroll', handleOffset, {passive: true});
     
     return () => {
       clearInterval(interval)
-      document.removeEventListener('scroll', handleOffset);
     };
 
-  }, [words, toggleOffset, isOffset]);
+  }, [words,]);
 
 
   return (
@@ -59,9 +51,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
       {/* Top part of the page */}
       <div className="flex flex-wrap" style={{backgroundImage: `url(${Earth})`, backgroundAttachment: "fixed", backgroundSize: "cover"}}>
-        <div className={`${isOffset ? `` : ``} flex flex-wrap`}>
+        <div className="flex flex-wrap">
           {/* Left component */}
-          <div id="homeBar" className={`${isOffset ? `md:w-5/12` : ``} sm:sticky sm:top-0 flex-col flex-wrap w-full text-white text-gray-600 overflow-hidden md:min-h-100 md:max-h-100`} style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
+          <div id="homeBar" className="sm:sticky sm:top-0 flex-col flex-wrap w-full md:w-5/12 text-white text-gray-600 overflow-hidden md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
             <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
               <p className="text-gray-700 text-xl ipadp:text-3xl 2xl:text-5xl font-bold">Data Visualisation Hub</p>
               <div className="hidden ipadp:block text-gray-500 mt-6 mb-2 px-6 typewriter text-lg 2xl:text-xl">
@@ -118,10 +110,15 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className={`${isOffset ? `` : ``} flex flex-wrap w-full text-gray-100 md:w-7/12 mt-26`} style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+          <div className="flex flex-wrap w-full text-gray-100 md:w-7/12" style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="flex flex-wrap min-h-100 text-center items-center mx-auto">
+            <div className="flex flex-wrap min-h-100 text-center items-center mx-auto relative">
               <p>An example of visualisation, update weekly/monthly?</p>
+              
+              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-5  text-center cursor-pointer group pt-14" style={{left: "45%"}} onClick={() => navigate('/#eventNotice')}>
+                <a href="/#eventNotice" className="text-gray-200 hover:text-gray-500 inline-block" ><span style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
+                <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
+              </div>
             </div>
 
             <EventNotice eventBrite={eventBrite} />     

@@ -87,6 +87,7 @@ module.exports = {
         '50': '50vw',
       },
       padding: {
+        '14': '3.5rem',
         '26': '6.5rem',
         '28': '7rem',
         '36': '9rem',

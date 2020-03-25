@@ -20,7 +20,7 @@ const eventNotice = ({ eventBrite }) => {
   
   return (
     
-    <div className="w-full text-white text-gray-800 flex-col flex-wrap overflow-auto border-red-700 border-4 bg-white">
+    <div id="eventNotice" className="w-full text-white text-gray-800 flex-col flex-wrap overflow-auto border-red-700 border-4 bg-white">
       {eventBrite.edges.map(({node}) => {
         // Check if event's date is later than today's date
         //moment(node.start.local, "DD-MMMM-YYYY") >= moment() &&
