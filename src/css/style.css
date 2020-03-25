@@ -72,6 +72,10 @@ a.group:hover > img.w-full.blog-image {
   width: 80%;
 }
 
+
+
+/******* Logo animation ********/
+
 .textanimate {
   -webkit-animation: color-change 23s infinite;
   -moz-animation: color-change 23s infinite;
@@ -146,6 +150,10 @@ a.group:hover > img.w-full.blog-image {
   100% { color: white; }
 }
 
+
+
+
+/*********  Home Search bar & animation ***************/
 .searchIcon {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
@@ -192,6 +200,7 @@ a.group:hover > img.w-full.blog-image {
 }
 
 
+/*********  Home Scroll down button & animation  ***************/
 #scrollDown-btn a span {
   position: absolute;
   top: 0;
@@ -259,6 +268,15 @@ a.group:hover > img.w-full.blog-image {
  * @import "utilities/skew-transforms";
  */
 
+.noScrollBar {
+-ms-overflow-style: none;  /* Internet Explorer 10+ */
+scrollbar-width: none;  /* Firefox */
+}
+
+.noScrollBar::-webkit-scrollbar { 
+display: none;  /* Safari and Chrome */
+}
+
 @variants hover, group-hover {
   .greyScale-0 {
     filter: grayscale(0%);
@@ -280,3 +298,4 @@ a.group:hover > img.w-full.blog-image {
   }
   
 }
+

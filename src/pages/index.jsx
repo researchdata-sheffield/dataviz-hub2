@@ -7,10 +7,9 @@ import EventNotice from "../components_home/eventNotice"
 import FeaturedPost from "../components_home/featuredPost"
 import LatestPost from "../components_home/latestPost"
 import Guide from "../components_home/guide"
-import { FiSearch } from "react-icons/fi"
 import moment from "moment"
 import Earth from "../images/home/earth.jpg"
-
+import Search from "../components/search"
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
@@ -53,7 +52,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div className="flex flex-wrap" style={{backgroundImage: `url(${Earth})`, backgroundAttachment: "fixed", backgroundSize: "cover"}}>
         <div className="flex flex-wrap">
           {/* Left component */}
-          <div id="homeBar" className="sm:sticky sm:top-0 flex-col flex-wrap w-full md:w-5/12 text-white text-gray-600 overflow-hidden md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
+          <div id="homeBar" className="sm:sticky sm:top-0 flex-col flex-wrap w-full md:w-5/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
             <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
               <p className="text-gray-700 text-xl ipadp:text-3xl 2xl:text-5xl font-bold">Data Visualisation Hub</p>
               <div className="hidden ipadp:block text-gray-500 mt-6 mb-2 px-6 typewriter text-lg 2xl:text-xl">
@@ -63,11 +62,13 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               <p className="ipadp:hidden text-gray-500 mt-4 px-2">Promoting and building community around data visualisation at the University of Sheffield.</p>
             </div>
 
-            <div className="mt-12 2xl:mt-32 relative text-gray-600 w-full text-center">
+            {/* <div className="mt-12 2xl:mt-32 relative text-gray-600 w-full text-center">
               <div className="bg-white inline-block focus:outline-none" style={{boxShadow: "-10px 5px 40px -11px rgba(0, 0, 0, 0.25)", padding: "0.9rem", paddingTop: "1.04rem"}}><FiSearch className="inline-block text-center text-3xl -mt-2" /></div>
               <input id="homeSearch" className="bg-white pl-1 pr-10 lg:pr-16 ipadp:pr-16 2xl:pr-48 text-lg focus:outline-none shadow-2xl" style={{boxShadow: "10px 5px 40px -17px rgba(0, 0, 0, 0.25)", height: "3.5rem"}}
                 type="search" name="search" placeholder="What are you looking for?"  />
-            </div>
+            </div> */}
+
+            <Search />
 
             <div className="hidden ipadp:flex justify-center py-4 xl:py-8">
               <div className="w-1/7 mr-24">
@@ -115,7 +116,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <div className="flex flex-wrap min-h-100 text-center items-center mx-auto relative">
               <p>An example of visualisation, update weekly/monthly?</p>
               
-              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-5  text-center cursor-pointer group pt-14" style={{left: "45%"}} onClick={() => navigate('/#eventNotice')}>
+              {/* Scroll down animation */}
+              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%"}} onClick={() => navigate('/#eventNotice')}>
                 <a href="/#eventNotice" className="text-gray-200 hover:text-gray-500 inline-block" ><span style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
                 <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
               </div>

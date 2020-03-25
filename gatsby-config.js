@@ -181,6 +181,85 @@ module.exports = {
         specialChars: '/:',
       },
     },
+    {
+      resolve: 'gatsby-plugin-flexsearch',
+      options: {
+        // L
+        languages: ['en'],
+        type: 'Mdx', // Filter the node types you want to index
+        // Fields to index.
+        fields: [
+          {
+            name: 'title',
+            indexed: true, // If indexed === true, the field will be indexed.
+            resolver: 'frontmatter.title',
+            // Attributes for indexing logic. Check https://github.com/nextapps-de/flexsearch#presets for details.
+            attributes: {
+              encode: 'extra',
+              tokenize: 'forward',
+              resolution: 6,
+            },
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
+            name: 'description',
+            indexed: true,
+            resolver: 'frontmatter.description',
+            attributes: {
+              encode: 'extra',
+              tokenize: 'forward',
+              resolution: 6,
+            },
+            store: true,
+          },
+          {
+            name: 'author',
+            indexed: true,
+            resolver: 'frontmatter.author',
+            attributes: {
+              encode: 'extra',
+              tokenize: 'forward',
+              resolution: 6,
+            },
+            store: true,
+          },
+          {
+            name: 'category',
+            indexed: true,
+            resolver: 'frontmatter.category',
+            attributes: {
+              encode: 'extra',
+              tokenize: 'forward',
+              resolution: 6,
+            },
+            store: true,
+          },
+          {
+            name: 'tag',
+            indexed: true,
+            resolver: 'frontmatter.tag',
+            attributes: {
+              encode: 'extra',
+              tokenize: 'forward',
+              resolution: 6,
+            },
+            store: true,
+          },
+          {
+            name: 'url',
+            indexed: false,
+            resolver: 'fields.slug',
+            store: true,
+          },
+          {
+            name: 'imagesrc',
+            indexed: false,
+            resolver: 'frontmatter.thumbnail.childImageSharp.fluid.src',
+            store: true,
+          },
+        ],
+      },
+    }
 /*     {
       resolve: `gatsby-source-drupal`,
       options: {
