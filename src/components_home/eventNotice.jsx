@@ -40,7 +40,7 @@ const eventNotice = ({ eventBrite }) => {
               <a className="flex flex-wrap w-full overflow-hidden max-h-80 md:max-h-20 xl:max-h-15 bg-white text-gray-700 group px-4 my-1" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
                 <img className="w-full md:w-3/12 overflow-hidden self-center md:max-h-25 xl:max-h-15" src={node.logo.original.url} style={{objectFit: "cover", objectPosition: "center"}} />
                 <div className="w-full md:w-9/12 pt-1 px-2">
-                  <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-lg group-hover:text-highlight_2">{description}</p>
+                  <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-lg">{description}</p>
                   <p className="flex pt-2 group-hover:text-highlight_2 text-sm xl:text-lg"><FaClock className="mr-1" />{node.start.local}</p>
                   <div className="flex flex-wrap">
                     <div className="w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 text-sm xl:text-lg">

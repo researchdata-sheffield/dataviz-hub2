@@ -53,7 +53,7 @@ const Header = () => {
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
           <div className={`${isScroll ? `text-gray-300` : `text-white`} ml-4 text-xl transition duration-1000 ease-in-out`}>
-            <Link className="textanimate" to="/">Dataviz.Shef</Link>
+            <Link className="textanimate" to="/">StayHome.Shef</Link>
           </div>
         </div>
 
@@ -111,8 +111,8 @@ const Header = () => {
               <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
             </button>
             {/* FIXME: Search button dropdown */}
-            <button className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} pl-2 pr-4 text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline`} title="Search function is under development" >
-              <FiSearch  />
+            <button className="pl-2 pr-4 text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline" title="Search function is under development" >
+              <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} `} to="/search"><FiSearch  /></Link>
             </button>
 
           </div>

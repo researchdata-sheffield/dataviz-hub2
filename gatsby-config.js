@@ -190,6 +190,12 @@ module.exports = {
         // Fields to index.
         fields: [
           {
+            name: 'id',
+            indexed: false, // If indexed === true, the field will be indexed.
+            resolver: 'id',
+            store: true, // In case you want to make the field available in the search results.
+          },
+          {
             name: 'title',
             indexed: true, // If indexed === true, the field will be indexed.
             resolver: 'frontmatter.title',

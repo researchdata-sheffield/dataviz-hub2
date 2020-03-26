@@ -32,7 +32,7 @@ const latestPost = ({ latestPost }) => {
         }
 
         return (
-          <div key={node.id} onClick={() => {navigate(`${node.fields.slug}`)}} className="border-1 ipadp:border-2 border-black flex-auto flex-wrap min-h-30 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 greyScale-100 hover:greyScale-0 cursor-pointer" style={{fontFamily: "TUoS  Blake", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}}>
+          <div key={node.id} onClick={() => {navigate(`${node.fields.slug}`)}} className="border-1 ipadp:border-2 border-black flex-auto flex-wrap greyScale-100 hover:greyScale-0 min-h-30 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 cursor-pointer" style={{fontFamily: "TUoS  Blake", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}}>
               <div className="flex top-0 left-0 absolute ml-3 mt-3 text-yellow-300 ipadp:text-gray-300">
                 <MdFiberNew className="text-red-700 text-3xl greyScale-0" />
               </div>
@@ -42,7 +42,7 @@ const latestPost = ({ latestPost }) => {
                 <p className="text-sm xl:text-lg font-bold pt-1" style={{textShadow: "#000000 0px 0px 5px"}}>{node.fields.readingTime.text}</p>
               </h1>
               
-              <div className="px-4 xl:px-8 leading-none text-gray-500 max-h-40 ipadp:min-h-70 ipadp:opacity-0 group-hover:opacity-100 " style={{paddingTop: "7vh", paddingBottom: "20vh", backgroundColor: "rgba(0,0,0, .8)", width: "auto", }}>
+              <div className="px-4 xl:px-8 leading-none text-gray-500 max-h-40 ipadp:min-h-70 ipadp:opacity-0 group-hover:opacity-100 " style={{paddingTop: "7vh", paddingBottom: "20vh", backgroundColor: "rgba(0,0,0, .6)", width: "auto", }}>
                 <h1 className="ipadp:hidden font-bold text-xl leading-tight text-white overflow-y-hidden">{node.frontmatter.title}</h1>
                 <p className="my-3 text-sm leading-tight group-hover:text-highlight_2 xl:text-xl" >{description}</p>
                 <p className="my-2 text-xs pt-2" >{node.frontmatter.date}</p>

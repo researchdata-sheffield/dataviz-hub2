@@ -3,13 +3,14 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { graphql, Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
+import BackgroundSection from "../components_images/home_background"
 import EventNotice from "../components_home/eventNotice"
 import FeaturedPost from "../components_home/featuredPost"
 import LatestPost from "../components_home/latestPost"
 import Guide from "../components_home/guide"
 import moment from "moment"
-import Earth from "../images/home/earth.jpg"
-import Search from "../components/search"
+import Search_Home from "../components/search_home"
+
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
@@ -49,7 +50,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       />
 
       {/* Top part of the page */}
-      <div className="flex flex-wrap" style={{backgroundImage: `url(${Earth})`, backgroundAttachment: "fixed", backgroundSize: "cover"}}>
+      <BackgroundSection>
         <div className="flex flex-wrap">
           {/* Left component */}
           <div id="homeBar" className="sm:sticky sm:top-0 flex-col flex-wrap w-full md:w-5/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
@@ -68,7 +69,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 type="search" name="search" placeholder="What are you looking for?"  />
             </div> */}
 
-            <Search />
+            <Search_Home />
 
             <div className="hidden ipadp:flex justify-center py-4 xl:py-8">
               <div className="w-1/7 mr-24">
@@ -146,7 +147,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           {/* End of right component */}
 
         </div>
-      </div>
+      </BackgroundSection>
       {/* End of top page */}     
       
       <Guide />
