@@ -11,7 +11,7 @@ const Community = () => (
   <Layout>
     <SEO 
       title="Community" 
-      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
+      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz community", "dataviz.shef"]} 
     />
     
     <BackgroundSection className="items-center justify-center text-center">

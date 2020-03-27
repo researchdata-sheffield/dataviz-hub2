@@ -5,19 +5,18 @@ import BackgroundSection from "../components_images/search_background"
 import PropTypes from "prop-types"
 import Search from "../components/search"
 
-const searchPage = () => {
-  
+const searchPage = ({location}) => {
 
   return (
     <Layout>
       <SEO 
-        title="Events" 
-        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "events"]} 
+        title="Search" 
+        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz.shef", "search dataviz"]} 
       />
       
       <BackgroundSection className="flex flex-wrap">
         
-        <Search />
+        <Search location={location} />
   
       </BackgroundSection>
 
@@ -28,7 +27,8 @@ const searchPage = () => {
 export default searchPage
 
 searchPage.propTypes = {
-		data: PropTypes.any
+    data: PropTypes.any,
+    location: PropTypes.any
   }
   
   

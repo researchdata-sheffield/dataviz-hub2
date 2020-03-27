@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, graphql, useStaticQuery } from 'gatsby'
+import { Link, graphql, useStaticQuery, withPrefix } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
@@ -18,9 +18,22 @@ class Search extends Component {
     results: [],
   }
 
+  componentDidMount = () => {
+    setTimeout(() => {
+      if(this.props.location.state.searchWord) {
+        var queryHome = this.props.location.state.searchWord
+        var input = document.getElementById("pageSearch")
+        this.setState({query: queryHome})
+        input.setAttribute("value", queryHome)
+        this.searchFromHome(queryHome)
+      }
+    }, 100);
+  }
+
   render() {
 
     const ResultList = () => {
+
       if (this.state.results.length > 0 && this.state.query.length > 2) {
       
         const data = useStaticQuery(graphql`
@@ -30,6 +43,7 @@ class Search extends Component {
                 node {
                   id
                   frontmatter {
+                    date(formatString: "ddd, DD MMM YYYY")
                     thumbnail {
                       childImageSharp {
                         fluid {
@@ -47,10 +61,11 @@ class Search extends Component {
         return (
           <div>
             <div>Found {this.state.results.length} results</div>
+
             <div className="flex flex-wrap my-5 xl:my-8 justify-center">
               {this.state.results.map((item, i) => {
                 let imagesrc
-
+  
                 {data.allMdx.edges.map(({ node }) => {
                   if(item.id == node.id){
                     if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
@@ -63,35 +78,33 @@ class Search extends Component {
                 })}
 
 
-                let description = item.description.split(" ").splice(0, 22)
-                if(description.length < 22){
+                let description = item.description.split(" ").splice(0, 30)
+                if(description.length < 30){
                   description = description.join(" ").concat(".");
                 } else {
                   description = description.join(" ").concat(" ...");
                 }
-                let category = item.category
 
                 return( 
-                  <div className="text-gray-800 group w-full md:w-1/3 lg:w-1/4 xl:w-1/5 bg-white m-3 xl:m-4 text-left cursor-pointer rounded-lg shadow-2xl min-h-80 max-h-90 xl:min-h-60 xl:max-h-60" style={{borderRadius: "1rem"}} key={i} onClick={() => {window.open(item.url, '_blank','noopener', 'noreferrer')}} >
-                    <img className="w-full rounded-t-lg" style={{minHeight: "60%", maxHeight: "60%",  objectFit: "cover", objectPosition: "center", borderTopLeftRadius: "1rem", borderTopRightRadius: "1rem"}} src={imagesrc}></img>
-                    <div className="px-6 pt-4 pb-2 flex flex-wrap">
-                      <h1 className="font-bold leading-4 mb-3"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>
-                      <h1 className="leading-4 text-xs xl:text-sm"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>
-                      
-                      <div className="border-t-1 border-gray-300 w-full mt-3">
-                        <Link className="inline-block text-gray-600 text-xs hover:text-highlight_2 mr-2" to={`/blog/category/${kebabCase(category)}`}>
-                          <p className="text-xs">{category}</p>
-                        </Link>
-                        {item.tag.map((tag) => (
-                          <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`}className="inline-block text-gray-600 text-xs hover:text-highlight_2 mr-2">{tag}</Link>
-                        ))}
-
+                  <div className="text-gray-800 group relative w-full md:w-1/3 lg:w-1/4 xl:w-1/5 bg-white m-3 xl:m-4 text-left cursor-pointer min-h-60 ipadp:min-h-80 2xl:min-h-55 2xl:max-h-55 hover:shadow-2xl ipadp:overflow-hidden" style={{borderRadius: "1rem"}} key={i}  >
+                    <a href={withPrefix(`${item.url}`)} target="_blank" rel="noopener noreferrer">
+                      <img className="w-full rounded-t-lg min-h-1/2 max-h-1/2 ipadp:min-h-3/5 ipadp:max-h-3/5 group-hover:max-h-1/2 group-hover:min-h-1/2" style={{objectFit: "cover", objectPosition: "center", borderTopLeftRadius: "1rem", borderTopRightRadius: "1rem", transition: ".3s ease"}} src={imagesrc}></img>
+                      <div className="pt-2 pb-2 flex flex-wrap">
+                        <p className="px-6 mb-2 text-xxs text-gray-400 w-full font-semibold ipadp:hidden group-hover:block"><Highlighter highlightClassName="text-red-500 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
+                        <h1 className="px-6 font-bold leading-4 mt-2 mb-3 group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>
+                        <h1 className="px-6 leading-4 text-xs xl:text-sm group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>                
+                        <h1 className="text-gray-500 px-6 leading-4 text-xs xl:text-sm mt-2"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
+                        
+                        <div className="border-t-1 border-gray-300 w-full absolute bottom-0 pb-2 bg-white" style={{borderBottomLeftRadius: "1rem", borderBottomRightRadius: "1rem"}}>
+                          <Link className="inline-block text-gray-700 text-xs hover:text-highlight_2 font-semibold ml-4 mr-2" to={`/blog/category/${kebabCase(item.category[0])}`}><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.category[0]} searchWords={this.state.query.split()} /></Link>
+                          {item.tag.map((tag) => (
+                            <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} className="inline-block text-gray-600 text-xs hover:text-highlight_2 mr-2"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={tag} searchWords={this.state.query.split()} /></Link>
+                          ))}
+                        </div>
                       </div>
-                      
-                    </div>
+                    </a>
                   </div>
                 )
-              
                 })}
           </div>
          </div>
@@ -105,29 +118,38 @@ class Search extends Component {
       } else {
         return ''
       }
+
     }
-    // pr-10 lg:pr-16 ipadp:pr-24 2xl:pr-70
+
     return (
       <div className={`${this.props.classNames} mt-16 2xl:mt-20 mb-32 relative text-gray-300 w-full text-center`}>
         <p className="text-3xl xl:text-4xl text-white my-4 xl:my-8">What&apos;s next? </p>
         <div className="bg-white inline-block focus:outline-none rounded-l-lg text-gray-600" style={{boxShadow: "-10px 5px 40px -11px rgba(0, 0, 0, 0.25)", padding: "0.9rem", paddingTop: "1.1rem"}}><FiSearch className="inline-block text-center text-3xl -mt-2" /></div>
-        <input id="homeSearch" onChange={this.search} className="search__input bg-white pl-1 text-lg focus:outline-none shadow-2xl pr-5 rounded-r-lg text-gray-600" style={{boxShadow: "10px 5px 40px -17px rgba(0, 0, 0, 0.25)", height: "3.6rem", minWidth: "26.3vw", maxWidth: "100vw"}}
-          type="search" name="search" placeholder="What are you looking for?" />
+        <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input bg-white -ml-1 pl-2 text-lg focus:outline-none shadow-2xl pr-5 rounded-r-lg text-gray-600" style={{boxShadow: "10px 5px 40px -17px rgba(0, 0, 0, 0.25)", height: "3.59rem", minWidth: "26.3vw", maxWidth: "100vw"}}
+          type="text" name="search" placeholder="What are you looking for?" />
+        
         <div className="search__list">
           <ResultList />
         </div>
       </div>
     )
+
+    
   }
 
+  
+
   getSearchResults(query) {
-    // adicionar variável para língua
+    //index - a flexsearch index instance (variables set in gatsby-config)
+    //store - object that stores the indexed gatsby nodes where the id of each node corresponds to the id the filter, according with flexsearch.js best practices (https://github.com/nextapps-de/flexsearch#best-practices)).
+
     var index = window.__FLEXSEARCH__.en.index
     var store = window.__FLEXSEARCH__.en.store
     if (!query || !index) {
       return []
     } else {
       var results = []
+      console.log(index)
       // search the indexed fields
       Object.keys(index).forEach(idx => {
         results.push(...index[idx].values.search(query)) // more search options at https://github.com/nextapps-de/flexsearch#index.search
@@ -145,8 +167,18 @@ class Search extends Component {
     }
   }
 
-  search = event => {
+  search = (event) => {
     const query = event.target.value
+    if (this.state.query.length > 1) {
+      const results = this.getSearchResults(query)
+      this.setState({ results: results, query: query })
+    } else {
+      this.setState({ results: [], query: query })
+    }
+  }
+
+  searchFromHome = (homeQuery) => {
+    const query = homeQuery
     if (this.state.query.length > 1) {
       const results = this.getSearchResults(query)
       this.setState({ results: results, query: query })
@@ -158,9 +190,12 @@ class Search extends Component {
 
 export default Search
 
+
+
 Search.propTypes = {
   classNames: PropTypes.any,
   data: PropTypes.any,
+  location: PropTypes.any,
 }
 
 

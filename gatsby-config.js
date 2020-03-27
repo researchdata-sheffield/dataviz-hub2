@@ -201,9 +201,11 @@ module.exports = {
             resolver: 'frontmatter.title',
             // Attributes for indexing logic. Check https://github.com/nextapps-de/flexsearch#presets for details.
             attributes: {
-              encode: 'extra',
-              tokenize: 'forward',
-              resolution: 6,
+              encode: "extra",
+              tokenize: "strict",
+              threshold: 1,
+              resolution: 9,
+              depth: 4
             },
             store: true, // In case you want to make the field available in the search results.
           },
@@ -212,9 +214,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.description',
             attributes: {
-              encode: 'extra',
-              tokenize: 'forward',
-              resolution: 6,
+              encode: "extra",
+              tokenize: "strict",
+              threshold: 1,
+              resolution: 9,
+              depth: 4
             },
             store: true,
           },
@@ -223,9 +227,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.author',
             attributes: {
-              encode: 'extra',
-              tokenize: 'forward',
-              resolution: 6,
+              encode: "extra",
+              tokenize: "strict",
+              threshold: 1,
+              resolution: 9,
+              depth: 4
             },
             store: true,
           },
@@ -234,9 +240,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.category',
             attributes: {
-              encode: 'extra',
-              tokenize: 'forward',
-              resolution: 6,
+              encode: "extra",
+              tokenize: "strict",
+              threshold: 1,
+              resolution: 9,
+              depth: 4
             },
             store: true,
           },
@@ -245,22 +253,18 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.tag',
             attributes: {
-              encode: 'extra',
-              tokenize: 'forward',
-              resolution: 6,
+              encode: "extra",
+              tokenize: "strict",
+              threshold: 1,
+              resolution: 9,
+              depth: 4
             },
             store: true,
           },
           {
             name: 'url',
-            indexed: false,
+            indexed: true,
             resolver: 'fields.slug',
-            store: true,
-          },
-          {
-            name: 'imagesrc',
-            indexed: false,
-            resolver: 'frontmatter.thumbnail.childImageSharp.fluid.src',
             store: true,
           },
         ],

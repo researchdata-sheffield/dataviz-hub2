@@ -14,7 +14,7 @@ const events = ({data: {eventBrite, pastEvent}}) => {
     <Layout>
       <SEO 
         title="Events" 
-        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "events"]} 
+        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz events", "dataviz.shef"]} 
       />
       
       <BackgroundSection className="flex flex-wrap flex-grow-0 items-center justify-center content-center" style={{height: "100%", width: "100%"}}>

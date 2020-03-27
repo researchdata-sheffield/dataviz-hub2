@@ -11,7 +11,7 @@ const About = () => (
   <Layout>
     <SEO 
       title="About" 
-      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
+      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz"]} 
     />
     
     <BackgroundSection className="items-center justify-center text-center">

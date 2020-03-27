@@ -16,8 +16,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
   let datePrev = moment()
   
-  var words = ["research", "past event", "statistical method", "introduction to R", "What are you looking for?", "how to write a blog post", "slack channel", "dataset",
-               "online research data", "sheffield", "Python tutorial", "Library", "software engineering", "IT Services" ]
+  var words = ["research", "past event", "introduction to R", "What are you looking for?", "how to write a blog post", "slack", "dataset",
+               "online research data", "sheffield", "Python tutorial", "DD/MM/YYYY"]
 
   useEffect( () => {
     var input = document.getElementById("homeSearch");
