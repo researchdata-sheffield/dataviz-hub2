@@ -11,12 +11,17 @@ import "./src/css/post.css";
 
 
 export const onClientEntry = () => {
-    // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-    if (!(`IntersectionObserver` in window)) {
-      import(`intersection-observer`)
-      console.log(`# IntersectionObserver is polyfilled!`)
-    }
+  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
+  if (!(`IntersectionObserver` in window)) {
+    import(`intersection-observer`)
+    console.log(`# IntersectionObserver is polyfilled!`)
   }
+}
+
+// Disable default scroll-to-top
+export const shouldUpdateScroll = () => {
+  return false;
+};
 
 export const onServiceWorkerUpdateReady = () => window.location.reload();
 

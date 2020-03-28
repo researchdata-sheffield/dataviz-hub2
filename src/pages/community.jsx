@@ -1,5 +1,6 @@
 import React from "react"
-import Layout from "../components/layout"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import SEO from "../components/seo"
 import BackgroundSection from "../components_images/community_background"
 import { Link } from "gatsby"
@@ -9,12 +10,12 @@ import google from "../images/community/google.png"
 import scroll_To from 'gatsby-plugin-smoothscroll'
 
 const Community = () => (
-  <Layout>
+  <>
     <SEO 
       title="Community" 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz community", "dataviz.shef"]} 
     />
-    
+    <Header />
     <BackgroundSection className="items-center justify-center text-center">
       <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
         <h1 className="text-5xl font-bold leading-tight">Community at Dataviz.Shef</h1>
@@ -103,8 +104,8 @@ const Community = () => (
 
 
     </div>
-
-  </Layout>
+    <Footer />
+  </>
 )
 
 export default Community

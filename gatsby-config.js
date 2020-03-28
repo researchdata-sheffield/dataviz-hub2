@@ -133,6 +133,12 @@ module.exports = {
     `babel-plugin-styled-components`,
     `gatsby-plugin-smoothscroll`,
     {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/layout.jsx`),
+      },
+    },
+    {
       resolve: `gatsby-source-eventbrite`,
       options: {
         // organizationId: `121727010915`, 

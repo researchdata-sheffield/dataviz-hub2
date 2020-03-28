@@ -1,26 +1,29 @@
 import React from "react"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import BackgroundSection from "../components_images/search_background"
 import PropTypes from "prop-types"
 import Search from "../components/search"
 
+
 const searchPage = ({location}) => {
 
   return (
-    <Layout>
+    
+    <>
       <SEO 
         title="Search" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz.shef", "search dataviz"]} 
       />
-      
+      <Header />
       <BackgroundSection className="flex flex-wrap">
         
         <Search location={location} />
   
       </BackgroundSection>
-
-    </Layout>
+      <Footer />
+    </>
   )
 }
 

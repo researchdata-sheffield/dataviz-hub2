@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, Link } from "gatsby"
@@ -31,11 +32,12 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     
 
     return (
-      <Layout>
+      <>
         <SEO 
         title={title}
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} 
         />
+        <Header />
         <Helmet >
           <script >{`
             
@@ -87,8 +89,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>
         
         <PaginationPost mdx={mdx} prev={prev} next={next} />
-        
-      </Layout>
+        <Footer />
+      </>
     )
 }
 

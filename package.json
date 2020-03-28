@@ -13,6 +13,7 @@
     "gatsby-background-image": "^0.10.2",
     "gatsby-image": "^2.3.1",
     "gatsby-plugin-flexsearch": "^1.0.3",
+    "gatsby-plugin-layout": "^1.2.1",
     "gatsby-plugin-load-script": "^1.0.6",
     "gatsby-plugin-manifest": "^2.3.2",
     "gatsby-plugin-mdx": "^1.1.2",
@@ -24,6 +25,7 @@
     "gatsby-plugin-sharp": "^2.5.3",
     "gatsby-plugin-smoothscroll": "^1.1.0",
     "gatsby-plugin-styled-components": "^3.2.1",
+    "gatsby-plugin-transitions": "^2.1.6",
     "gatsby-remark-copy-linked-files": "^2.2.1",
     "gatsby-remark-embed-video": "^2.0.1",
     "gatsby-remark-images": "^3.2.1",
@@ -45,6 +47,7 @@
     "react-helmet": "^5.2.1",
     "react-highlight-words": "^0.16.0",
     "react-icons": "^3.9.0",
+    "react-spring": "^8.0.27",
     "styled-components": "^5.0.1"
   },
   "devDependencies": {

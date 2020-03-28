@@ -1,7 +1,8 @@
 import React from "react"
 import PropTypes from "prop-types"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
@@ -12,12 +13,12 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
     const {prev, next} = pageContext  
 
     return (
-      <Layout>
+      <>
       <SEO 
       title={mdx.frontmatter.title} 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} 
       />
-
+      <Header />
       
       <div className="justify-center mx-auto text-xl pb-24">
         <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li}}>
@@ -26,8 +27,8 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
       </div>
       
       <PaginationPost mdx={mdx} prev={prev} next={next} />
-
-      </Layout>
+      <Footer />
+      </>
     )
 }
 

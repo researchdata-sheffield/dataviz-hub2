@@ -1,7 +1,8 @@
 import React from "react"
 import { Link } from "gatsby"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import BackgroundSection from "../components_images/about_background"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
 import RSE from "../images/about/rse.png"
 import ITS from "../images/about/its.png"
@@ -9,12 +10,12 @@ import ORDA from "../images/about/orda_logo.png"
 import scroll_To from 'gatsby-plugin-smoothscroll'
 
 const About = () => (
-  <Layout>
+  <>
     <SEO 
       title="About" 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz"]} 
     />
-    
+    <Header />
     <BackgroundSection className="items-center justify-center text-center">
       <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
         <h1 className="text-5xl font-bold " style={{textShadow: "#000000 0px 0px 10px"}}>Library · IT Services · RSE</h1>
@@ -66,8 +67,8 @@ const About = () => (
         </p>
       </div>
     </div>
-
-  </Layout>
+    <Footer />
+  </>
 )
 
 export default About

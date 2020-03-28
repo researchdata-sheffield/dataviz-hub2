@@ -1,7 +1,8 @@
 import React from "react"
 import kebabCase from "lodash.kebabcase"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import Pagination from "../components_blog/pagination"
 import BlogPostGrid from "../components_blog/blogPostGrid"
 import MenuCategory from "../components_blog/menuCategory"
@@ -14,12 +15,12 @@ import BackgroundSection from "../components_images/blog_background";
 const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 
 	return (
-		<Layout>
+		<>
 			<SEO 
 				title= {`Blog - ${pageContext.category}`}
 				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
-
+			<Header />
 			<BackgroundSection className="flex items-center justify-center text-center" Height="35vh">
 				<div className="text-white">
 					<h1 className="text-4xl">Category: {pageContext.category}</h1>
@@ -39,8 +40,8 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 				<MenuTag pageContext = {pageContext} />
 			
 			</div>
-
-		</Layout>
+			<Footer />
+		</>
 	)
 }
 

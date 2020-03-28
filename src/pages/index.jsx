@@ -1,5 +1,6 @@
 import React, { useEffect } from "react"
-import Layout from "../components/layout"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import SEO from "../components/seo"
 import { graphql, Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
@@ -44,17 +45,17 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
 
   return (
-    <Layout>
+    <>
       <SEO 
         title="Home" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research",]} 
       />
-
+      <Header />
       {/* Top part of the page */}
       <BackgroundSection>
         <div className="flex flex-wrap">
           {/* Left component */}
-          <div id="homeBar" className="sm:sticky sm:top-0 flex-col flex-wrap w-full md:w-5/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
+          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full md:w-5/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
             <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
               <p className="text-gray-700 text-xl ipadp:text-3xl 2xl:text-5xl font-bold">Data Visualisation Hub</p>
               <div className="hidden ipadp:block text-gray-500 mt-6 mb-2 px-6 typewriter text-lg 2xl:text-xl">
@@ -72,7 +73,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
             <Search_Home />
 
-            <div className="hidden ipadp:flex justify-center py-4 xl:py-8">
+            <div className="hidden ipadp:flex justify-center py-4 xl:py-8 z-10">
               <div className="w-1/7 mr-24">
                 <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                   <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
@@ -118,7 +119,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               
               {/* Scroll down animation */}
               <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%"}} onClick={() => scroll_To('#eventNotice')}>
-                <a href="/#eventNotice" className="text-gray-200 hover:text-gray-500 inline-block" ><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
+                <a className="text-gray-200 hover:text-gray-500 inline-block" ><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
                 <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
               </div>
             </div>
@@ -150,8 +151,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       {/* End of top page */}     
       
       <Guide />
-
-    </Layout>
+      <Footer />        
+  </>
   )
 }
 

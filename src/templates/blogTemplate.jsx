@@ -1,6 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import Pagination from "../components_blog/pagination"
 import BlogPostGrid from "../components_blog/blogPostGrid"
 import MenuCategory from "../components_blog/menuCategory"
@@ -14,12 +15,12 @@ import scroll_To from 'gatsby-plugin-smoothscroll'
 const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 
 	return (
-		<Layout>
+		<>
 			<SEO 
 					title="Blog" 
 					keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
-
+			<Header />
 			<BackgroundSection className="items-center justify-center text-center" Height={`${pageContext.currentPage != 1 ? `35vh` : ``}`} >
 				<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>
 					<h1 className="text-5xl">Blog</h1>
@@ -43,8 +44,8 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 				<MenuTag pageContext = {pageContext} />
 
 			</div>
-
-		</Layout>
+			<Footer />
+		</>
 	)
 }
 

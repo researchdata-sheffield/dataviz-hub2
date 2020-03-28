@@ -1,7 +1,8 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import BackgroundSection from "../components_images/events_background"
 import PropTypes from "prop-types"
 import UpcomingEvents from "../components_events/upcomingEvents"
@@ -11,20 +12,20 @@ const events = ({data: {eventBrite, pastEvent}}) => {
   
 
   return (
-    <Layout>
+    <>
       <SEO 
         title="Events" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz events", "dataviz.shef"]} 
       />
-      
+      <Header />
       <BackgroundSection className="flex flex-wrap flex-grow-0 items-center justify-center content-center" style={{height: "100%", width: "100%"}}>
         
         <UpcomingEvents allEventbriteEvents={eventBrite} />
         <PastEvents pastEvent={pastEvent} />    
   
       </BackgroundSection>
-
-    </Layout>
+      <Footer />
+    </>
   )
 }
 

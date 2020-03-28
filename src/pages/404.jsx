@@ -1,15 +1,17 @@
 import React from "react"
-import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Header from "../components/header"
+import Footer from "../components/footer"
 import BackgroundSection from "../components_images/404_background"
 import { Link } from "gatsby"
 
 const NotFoundPage = () => (
-  <Layout>
+  <> 
     <SEO 
       title="404 Not found" 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "404 - Not found"]} 
     />
+    <Header />
     <BackgroundSection className="items-center justify-center text-center">
       <div className="text-white px-4" style={{fontFamily: "TUoS Blake"}}>
         <h1 className="text-5xl font-bold leading-tight">Page Not Found</h1>
@@ -19,7 +21,8 @@ const NotFoundPage = () => (
         </Link>
       </div>
     </BackgroundSection>
-  </Layout>
+    <Footer />
+  </>
 )
 
 export default NotFoundPage
