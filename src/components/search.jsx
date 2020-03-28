@@ -90,10 +90,10 @@ class Search extends Component {
                     <a href={withPrefix(`${item.url}`)} target="_blank" rel="noopener noreferrer">
                       <img className="w-full rounded-t-lg min-h-1/2 max-h-1/2 ipadp:min-h-3/5 ipadp:max-h-3/5 group-hover:max-h-1/2 group-hover:min-h-1/2" style={{objectFit: "cover", objectPosition: "center", borderTopLeftRadius: "1rem", borderTopRightRadius: "1rem", transition: ".3s ease"}} src={imagesrc}></img>
                       <div className="pt-2 pb-2 flex flex-wrap">
-                        <p className="px-6 mb-2 text-xxs text-gray-400 w-full font-semibold ipadp:hidden group-hover:block"><Highlighter highlightClassName="text-red-500 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
-                        <h1 className="px-6 font-bold leading-4 mt-2 mb-3 group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>
-                        <h1 className="px-6 leading-4 text-xs xl:text-sm group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>                
-                        <h1 className="text-gray-500 px-6 leading-4 text-xs xl:text-sm mt-2"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
+                        <p className="px-2 ipadp:px-6 mb-2 text-xxs text-gray-400 w-full font-semibold ipadp:hidden group-hover:block"><Highlighter highlightClassName="text-red-500 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
+                        <h1 className="px-2 ipadp:px-6 font-bold leading-4 mt-2 mb-3 group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>
+                        <h1 className="px-2 ipadp:px-6 leading-4 text-xs xl:text-sm group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>                
+                        <h1 className="text-gray-500 px-2 ipadp:px-6 leading-4 text-xs xl:text-sm mt-2"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
                         
                         <div className="border-t-1 border-gray-300 w-full absolute bottom-0 pb-2 bg-white" style={{borderBottomLeftRadius: "1rem", borderBottomRightRadius: "1rem"}}>
                           <Link className="inline-block text-gray-700 text-xs hover:text-highlight_2 font-semibold ml-4 mr-2" to={`/blog/category/${kebabCase(item.category[0])}`}><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.category[0]} searchWords={this.state.query.split()} /></Link>
@@ -124,10 +124,10 @@ class Search extends Component {
     return (
       <div className={`${this.props.classNames} mt-16 2xl:mt-20 mb-32 relative text-gray-300 w-full text-center`}>
         <p className="text-3xl xl:text-4xl text-white my-4 xl:my-8">What&apos;s next? </p>
-        <div className="bg-white inline-block focus:outline-none rounded-l-lg text-gray-600" style={{boxShadow: "-10px 5px 40px -11px rgba(0, 0, 0, 0.25)", padding: "0.9rem", paddingTop: "1.1rem"}}><FiSearch className="inline-block text-center text-3xl -mt-2" /></div>
-        <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input bg-white -ml-1 pl-2 text-lg focus:outline-none shadow-2xl pr-5 rounded-r-lg text-gray-600" style={{boxShadow: "10px 5px 40px -17px rgba(0, 0, 0, 0.25)", height: "3.59rem", minWidth: "26.3vw", maxWidth: "100vw"}}
-          type="text" name="search" placeholder="What are you looking for?" />
-        
+        <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
+          <FiSearch className="inline-block text-center text-3xl -mt-1" />
+          <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="What are you looking for?" />
+        </div>
         <div className="search__list">
           <ResultList />
         </div>
