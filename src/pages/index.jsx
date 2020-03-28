@@ -10,6 +10,7 @@ import LatestPost from "../components_home/latestPost"
 import Guide from "../components_home/guide"
 import moment from "moment"
 import Search_Home from "../components/search_home"
+import scroll_To from 'gatsby-plugin-smoothscroll'
 
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
@@ -94,10 +95,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </div>
             </div>
             
-            <div onClick={() => {navigate('/#what')}} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
-              <Link to="/#what">
+            <div onClick={() => scroll_To('#what')} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
                 <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">Explore</p>
-              </Link>
             </div> 
 
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center">
@@ -118,8 +117,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               <p>An example of visualisation, update weekly/monthly?</p>
               
               {/* Scroll down animation */}
-              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%"}} onClick={() => navigate('/#eventNotice')}>
-                <a href="/#eventNotice" className="text-gray-200 hover:text-gray-500 inline-block" ><span style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
+              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%"}} onClick={() => scroll_To('#eventNotice')}>
+                <a href="/#eventNotice" className="text-gray-200 hover:text-gray-500 inline-block" ><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
                 <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
               </div>
             </div>

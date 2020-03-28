@@ -6,6 +6,7 @@ import SEO from "../components/seo"
 import RSE from "../images/about/rse.png"
 import ITS from "../images/about/its.png"
 import ORDA from "../images/about/orda_logo.png"
+import scroll_To from 'gatsby-plugin-smoothscroll'
 
 const About = () => (
   <Layout>
@@ -20,9 +21,9 @@ const About = () => (
         <p className="text-lg my-4 text-gray-100 font-semibold px-2" style={{textShadow: "#000000 0px 2px 10px"}}>Dataviz.Shef is a joint initiative between three partners.</p>
       </div>
 
-      <Link to="/about/#more" >
+      <div onClick={() => scroll_To('#more')}>
         <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
-      </Link>
+      </div>
     </BackgroundSection>
 
     <div id="more" className="container pt-12 pb-24 text-gray-800 mx-auto flex flex-wrap" style={{fontFamily: "TUoS Blake"}}>

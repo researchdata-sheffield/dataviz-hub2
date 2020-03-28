@@ -6,6 +6,7 @@ import { Link } from "gatsby"
 import com_1 from "../images/community/com_1.jpg"
 import com_2 from "../images/community/com_2.jpg"
 import google from "../images/community/google.png"
+import scroll_To from 'gatsby-plugin-smoothscroll'
 
 const Community = () => (
   <Layout>
@@ -20,12 +21,12 @@ const Community = () => (
         <p className="text-xl mt-3 text-gray-100" style={{textShadow: "#000000 0px 0px 1px"}}>knowledge | connection | inspiration | resources | support</p>
       </div>
 
-      <Link to="/community/#discover" >
+      <div onClick={() => scroll_To('#discover')} className="inline-block">
         <button className="mt-16 mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Discover</button>
-      </Link>
-      <Link to="/community/#joinus">
+      </div>
+      <div onClick={() => scroll_To('#joinus')} className="inline-block">
         <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Join community</button>
-      </Link>
+      </div>
     </BackgroundSection>
 
     <div id="discover" className="container mx-auto py-32 text-gray-800 flex flex-wrap" style={{fontFamily: "TUoS Blake"}}>

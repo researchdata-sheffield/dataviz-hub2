@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import Pagination from "../components_blog/pagination"
 import BlogPostGrid from "../components_blog/blogPostGrid"
@@ -8,7 +8,7 @@ import MenuTag from "../components_blog/menuTag"
 import PropTypes from "prop-types"
 import SEO from "../components/seo"
 import BackgroundSection from "../components_images/blog_background";
-
+import scroll_To from 'gatsby-plugin-smoothscroll'
 
 
 const blogTemplate = ({ data: {allMdx}, pageContext }) => {
@@ -25,9 +25,9 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					<h1 className="text-5xl">Blog</h1>
 					<p className="text-md" >scientia potentia est.</p>
 				</div>
-				<Link to="/blog/#read" >
+				<div onClick={() => scroll_To('#read')} >
 					<button className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-bold py-2 px-6 border border-transparent text-sm`}>Start reading</button>
-				</Link>
+				</div>
 
 				<MenuCategory pageContext = {pageContext} />
 				

@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link } from "gatsby"
 import Why from "../images/home/why.jpg"
 import How from "../images/home/how.jpg"
+import scroll_To from 'gatsby-plugin-smoothscroll'
 
 const guide = () => {
   
@@ -10,10 +10,10 @@ const guide = () => {
 
       <div className="hidden ipadp:block ipadp:sticky ipadp:top-0 flex-col flex-wrap w-full ipadp:w-3/12 overflow-hidden ipadp:max-h-100 px-12 ipadp:py-32 leading-8">
         <div className="ipadp:border-r-1 border-gray-400 ipadp:py-16">
-          <p><Link to="/#what" activeStyle={{color: "#00aeef"}} partiallyActive={true}>What is data visualisation</Link></p>
-          <p><Link to="/#why" activeStyle={{color: "#00aeef"}} partiallyActive={true}>Why is it important</Link></p>
-          <p><Link to="/#how" activeStyle={{color: "#00aeef"}} partiallyActive={true}>How this site could help</Link></p>
-          <p><Link to="/#start" activeStyle={{color: "#00aeef"}} partiallyActive={true}>Get started</Link></p>
+          <p onClick={() => scroll_To('#what')} className="hover:text-highlight_2 cursor-pointer">What is data visualisation</p>
+          <p onClick={() => scroll_To('#why')} className="hover:text-highlight_2 cursor-pointer">Why is it important</p>
+          <p onClick={() => scroll_To('#how')} className="hover:text-highlight_2 cursor-pointer">How this site could help</p>
+          <p onClick={() => scroll_To('#start')} className="hover:text-highlight_2 cursor-pointer">Get started</p>
         </div>
       </div>
       
