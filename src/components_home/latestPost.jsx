@@ -8,13 +8,13 @@ import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 import {MdFiberNew } from "react-icons/md"
-
+import Fade from 'react-reveal/Fade'
 
 const latestPost = ({ latestPost }) => {
 
   return (
     
-    <div className="w-full flex flex-wrap border-l-1 xl:border-l-2 border-black">
+    <div className="w-full flex flex-wrap border-l-1 xl:border-l-2 border-black bg-black">
       {latestPost.edges.map(({ node }) => {
         let imagesrc 
         if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
@@ -32,7 +32,8 @@ const latestPost = ({ latestPost }) => {
         }
 
         return (
-          <div key={node.id} onClick={() => {navigate(`${node.fields.slug}`)}} className="border-1 ipadp:border-2 border-black flex-auto flex-wrap ipadp:greyScale-100 hover:greyScale-0 min-h-30 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 cursor-pointer" style={{fontFamily: "TUoS  Blake", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}}>
+          <Fade  key={node.id} duration={2000} fraction={0.3}>
+            <div onClick={() => {navigate(`${node.fields.slug}`)}} className="border-1 ipadp:border-2 border-black flex-auto flex-wrap ipadp:greyScale-100 hover:greyScale-0 min-h-30 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 cursor-pointer" style={{fontFamily: "TUoS  Blake", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}}>
               <div className="flex top-0 left-0 absolute ml-3 mt-3 text-yellow-300 ipadp:text-gray-300">
                 <MdFiberNew className="text-red-700 text-3xl greyScale-0" />
               </div>
@@ -60,8 +61,10 @@ const latestPost = ({ latestPost }) => {
                     </Link>
                   ))}
                 </div>
-              </div>     
-          </div>
+              </div> 
+                  
+            </div>
+          </Fade>
         )
       })}
     </div>

@@ -82,13 +82,14 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* <img className="justify-center items-center m-auto -mt-10 shadow-2xl" src={mdx.frontmatter.thumbnail.childImageSharp.fluid.src} style={{minHeight: "20%", maxHeight: "20%", maxWidth: "40%", minWidth: "40%",  objectFit: "cover", objectPosition: "center"}}></img>  */}
                     
 
-        <div className="justify-center container mx-auto py-16 px-4 ipadp:px-10 leading-8 text-lg" markdown="1">
+        <div className="justify-center container mx-auto py-16 px-4 ipadp:px-32 leading-7 text-base" markdown="1">
           <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li}}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>
         
         <PaginationPost mdx={mdx} prev={prev} next={next} />
+        
         <Footer />
       </>
     )

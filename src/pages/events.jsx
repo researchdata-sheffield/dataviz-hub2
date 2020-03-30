@@ -18,7 +18,7 @@ const events = ({data: {eventBrite, pastEvent}}) => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz events", "dataviz.shef"]} 
       />
       <Header />
-      <BackgroundSection className="flex flex-wrap flex-grow-0 items-center justify-center content-center" style={{height: "100%", width: "100%"}}>
+      <BackgroundSection className="flex flex-wrap flex-grow-0 items-center justify-center content-center min-h-100" style={{backgroundAttachment: "fixed", }}>
         
         <UpcomingEvents allEventbriteEvents={eventBrite} />
         <PastEvents pastEvent={pastEvent} />    

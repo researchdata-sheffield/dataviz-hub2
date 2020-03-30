@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import SEO from "../components/seo"
 import BackgroundSection from "../components_images/blog_background";
 import scroll_To from 'gatsby-plugin-smoothscroll'
-
+import Flip from 'react-reveal/Flip'
 
 const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 
@@ -22,16 +22,21 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 			/>
 			<Header />
 			<BackgroundSection className="items-center justify-center text-center" Height={`${pageContext.currentPage != 1 ? `35vh` : ``}`} >
+
 				<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>
-					<h1 className="text-5xl">Blog</h1>
-					<p className="text-md" >scientia potentia est.</p>
+					<Flip cascade top delay={700}>
+						<h1 className="text-5xl">Blog</h1>
+						<p className="text-md" >scientia potentia est.</p>
+					</Flip>
 				</div>
-				<div onClick={() => scroll_To('#read')} >
-					<button className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-bold py-2 px-6 border border-transparent text-sm`}>Start reading</button>
-				</div>
+				<Flip cascade top delay={700}>
+					<div onClick={() => scroll_To('#read')} >
+						<button className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-bold py-2 px-6 border border-transparent text-sm`}>Start reading</button>
+					</div>
+				</Flip>
 
 				<MenuCategory pageContext = {pageContext} />
-				
+
 			</BackgroundSection>
 
 			<div className="flex flex-wrap-reverse">

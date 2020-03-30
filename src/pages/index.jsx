@@ -12,7 +12,9 @@ import Guide from "../components_home/guide"
 import moment from "moment"
 import Search_Home from "../components/search_home"
 import scroll_To from 'gatsby-plugin-smoothscroll'
-
+import Tada from 'react-reveal/Tada'
+import Slide from 'react-reveal/Slide'
+import Fade from 'react-reveal/Fade'
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
@@ -65,40 +67,38 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               <p className="ipadp:hidden text-gray-500 mt-4 px-2">Promoting and building community around data visualisation at the University of Sheffield.</p>
             </div>
 
-            {/* <div className="mt-12 2xl:mt-32 relative text-gray-600 w-full text-center">
-              <div className="bg-white inline-block focus:outline-none" style={{boxShadow: "-10px 5px 40px -11px rgba(0, 0, 0, 0.25)", padding: "0.9rem", paddingTop: "1.04rem"}}><FiSearch className="inline-block text-center text-3xl -mt-2" /></div>
-              <input id="homeSearch" className="bg-white pl-1 pr-10 lg:pr-16 ipadp:pr-16 2xl:pr-48 text-lg focus:outline-none shadow-2xl" style={{boxShadow: "10px 5px 40px -17px rgba(0, 0, 0, 0.25)", height: "3.5rem"}}
-                type="search" name="search" placeholder="What are you looking for?"  />
-            </div> */}
-
             <Search_Home  />
-
-            <div className="hidden ipadp:flex justify-center py-4 xl:py-8 z-10">
-              <div className="w-1/7 mr-24">
-                <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
-                  <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/news">News</Link></li>
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/articles">Articles</Link></li>
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/events">Events</Link></li>
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/tutorial">Tutorials</Link></li>
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/about/#more">About us</Link></li>
-                  </ul>
-              </div>
-              
-              <div className="w-1/7">
-                <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Highly searched</div>
-                  <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/">Visualisation</Link></li>
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/">Python</Link></li>
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="/">R</Link></li>
-                    <li><Link className="text-gray-500 hover:text-highlight_2" to="">Statistics</Link></li>
-                  </ul>
-              </div>
-            </div>
             
-            <div onClick={() => scroll_To('#what')} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
-                <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">Explore</p>
-            </div> 
+            <Slide left>
+              <div className="hidden ipadp:flex justify-center py-4 xl:py-8 z-10">
+                <div className="w-1/7 mr-24">
+                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
+                    <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/news">News</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/articles">Articles</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/events">Events</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/tutorial">Tutorials</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/about/#more">About us</Link></li>
+                    </ul>
+                </div>
+                
+                <div className="w-1/7">
+                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Highly searched</div>
+                    <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/">Visualisation</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/">Python</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/">R</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="">Statistics</Link></li>
+                    </ul>
+                </div>
+              </div>
+            </Slide>
+
+            <Fade bottom delay={700}>
+              <div onClick={() => scroll_To('#what')} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
+                  <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">Explore</p>
+              </div> 
+            </Fade>
 
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center">
               {/* <a className="text-gray-500 hover:text-highlight_2">Library &nbsp;</a> | 
@@ -136,10 +136,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex w-full bg-gray-900 hover:bg-gray-100 text-center cursor-pointer group py-3 hover:py-0 text-center shadow-2xl justify-center self-center items-center" style={{transition: ".3s ease", height: "3.6rem"}} onClick={() => {navigate('/blog')}}>
-              <Link to="/blog"><p className="group-hover:text-highlight_2 text-gray-200 font-bold text-xl group-hover:text-2xl">Read more</p></Link>
-            </div> 
             
+            <div className="flex w-full bg-gray-900 hover:bg-gray-100 text-center cursor-pointer group py-3 hover:py-0 text-center shadow-lg hover:shadow-2xl justify-center self-center items-center" style={{transition: ".3s ease", height: "3.6rem"}} onClick={() => {navigate('/blog')}}>
+              <Link to="/blog"><p className="group-hover:text-highlight_2 text-gray-200 font-bold text-xl group-hover:text-2xl"><Tada duration={2000}>Read more </Tada></p></Link>
+            </div> 
+           
+
             <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
               <p className="text-gray-600 mx-auto">What goes here?</p>
             </div>

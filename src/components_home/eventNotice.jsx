@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
 import moment from "moment"
-
+import Zoom from 'react-reveal/Zoom'
 
 
 const eventNotice = ({ eventBrite }) => {
@@ -19,7 +19,7 @@ const eventNotice = ({ eventBrite }) => {
   }
   
   return (
-    
+    <Zoom duration={1000} appear={true}>
     <div id="eventNotice" className="w-full text-white text-gray-800 flex-col flex-wrap overflow-auto border-red-700 border-4 bg-white">
       {eventBrite.edges.map(({node}) => {
         // Check if event's date is later than today's date
@@ -69,7 +69,7 @@ const eventNotice = ({ eventBrite }) => {
           )
         }
       })}
-    </div>
+    </div></Zoom>
   )
 
 }

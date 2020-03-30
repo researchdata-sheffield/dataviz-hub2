@@ -9,6 +9,8 @@ import no_image_2 from "../images/blog/no_image_2.png"
 import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
+import Zoom from 'react-reveal/Zoom'
+import Fade from 'react-reveal/Fade'
 
 // Search component
 class Search extends Component {
@@ -123,11 +125,13 @@ class Search extends Component {
 
     return (
       <div className={`${this.props.classNames} mt-16 2xl:mt-20 mb-32 relative text-gray-300 w-full text-center`}>
-        <p className="text-3xl xl:text-4xl text-white my-4 xl:my-8">What&apos;s next? </p>
-        <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
-          <FiSearch className="inline-block text-center text-3xl -mt-1" />
-          <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="What are you looking for?" />
-        </div>
+        <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white my-4 xl:my-8">what&apos;s next? </p></Zoom>
+        <Fade bottom duration={1500}>
+          <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
+            <FiSearch className="inline-block text-center text-3xl -mt-1" />
+            <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="What are you looking for?" />
+          </div>
+        </Fade>
         <div className="search__list">
           <ResultList />
         </div>
