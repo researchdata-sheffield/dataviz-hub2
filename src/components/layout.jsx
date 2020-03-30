@@ -19,13 +19,19 @@ const Layout = ({ children, location }) => {
         location={location}
         enter={{
           opacity: 0,
+          config: {
+            duration: 200
+          }
         }}
         usual={{
           opacity: 1,
+
         }}
         leave={{
           opacity: 0,
-
+          config: {
+            duration: 200
+          }
         }}
       >
         <TransitionViews>
@@ -43,4 +49,5 @@ Layout.propTypes = {
 }
 
 export default Layout
+
 

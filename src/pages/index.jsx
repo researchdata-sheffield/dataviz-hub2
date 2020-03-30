@@ -71,7 +71,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 type="search" name="search" placeholder="What are you looking for?"  />
             </div> */}
 
-            <Search_Home />
+            <Search_Home  />
 
             <div className="hidden ipadp:flex justify-center py-4 xl:py-8 z-10">
               <div className="w-1/7 mr-24">
@@ -128,10 +128,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <FeaturedPost featuredPost={featuredPost} />
 
             <div className="flex flex-wrap w-full text-white font-bold text-center text-2xl cursor-pointer" style={{fontFamily: "TUoS Stephenson", }} >
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0 transform hover:scale-105 hover:z-10" onClick={() => {navigate('/blog/category/articles')}} style={{backgroundColor: "#ff5e5e"}}>ARTICLES</div>
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0 transform hover:scale-105 hover:z-10" onClick={() => {navigate('/blog/category/events')}} style={{backgroundColor: "#f3f218"}}>EVENT</div>
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0 transform hover:scale-105 hover:z-10" onClick={() => {navigate('/blog/category/news')}} style={{backgroundColor: "#00aeef"}}>NEWS</div>
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0 transform hover:scale-105 hover:z-10" onClick={() => {navigate('/blog/category/tutorial')}} style={{backgroundColor: "#99f318"}}>TUTORIAL</div>
+              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/articles')}} style={{backgroundColor: "#ff5e5e"}}>ARTICLES</div>
+              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/events')}} style={{backgroundColor: "#f3f218"}}>EVENT</div>
+              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/news')}} style={{backgroundColor: "#00aeef"}}>NEWS</div>
+              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/tutorial')}} style={{backgroundColor: "#99f318"}}>TUTORIAL</div>
             </div>
 
             <LatestPost latestPost={latestPost} />
