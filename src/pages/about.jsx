@@ -21,7 +21,7 @@ const About = () => (
     />
     <Header />
     <BackgroundSection className="items-center justify-center text-center">
-      <Bounce cascade delay={1000} duration={2000}>
+      <Bounce cascade delay={700} duration={2000}>
         <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
           <h1 className="text-5xl font-bold " style={{textShadow: "#000000 0px 0px 10px"}}>Library · IT Services · RSE</h1>
           <p className="text-lg my-4 text-gray-100 font-semibold px-2" style={{textShadow: "#000000 0px 2px 10px"}}>Dataviz.Shef is a joint initiative between three partners.</p>

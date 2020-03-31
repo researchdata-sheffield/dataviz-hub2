@@ -32,7 +32,7 @@ const blogPostGrid = ({allMdx}) => {
       }
 
       return (
-        <Slide bottom key={node.id} duration={400} fraction={0.6}>
+        <Slide bottom key={node.id} duration={400} fraction={0.55}>
           <div className="w-full sm:w-1/2 md:w-1/2 lg:w-1/3 xl:w-1/3 min-h-100 max-h-100 pb-24 overflow-hidden" style={{fontFamily: "TUoS  Blake"}}>
             <Link className="group" to={node.fields.slug}>
               <img className="w-full blog-image group-hover:border-b-4 group-hover:border-highlight_2 border-solid min-h-3/5 max-h-3/5" style={{objectFit: "cover", objectPosition: "center"}} src={imagesrc}></img>
