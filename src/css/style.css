@@ -152,6 +152,45 @@ a.group:hover > img.w-full.blog-image {
 }
 
 
+/******** Scroll to Top button ********/
+
+.scrollTop-btn {
+position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  border-radius: 35px;
+  display: block;
+  transition: all 0.7s ease;
+  z-index: 99;
+  text-align: center;
+}
+
+.scrollTop-btn:hover {
+/*     background: rgba(0, 0, 0, 0.9); */
+	background: #00aeef;
+  z-index: 99;
+}
+
+.scrollTop-btn > .scrollTopArrow {
+  top: 7px;
+  left: 10px;
+  transition: all .4s ease;
+}
+
+.scrollTop-btn:hover > .scrollTopArrow {
+  top: 2px;
+  left: 10px;
+  z-index: 99;
+  color: white;
+  transition: all .4s ease;
+}
+
+
 
 
 /*********  Home Search bar & animation ***************/

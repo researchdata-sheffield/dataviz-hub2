@@ -20,8 +20,7 @@ const menuTag = ({ pageContext }) => {
   }
 
   return (
-    /* TODO: Add number of articles next to tag/cat name */
-		/* TODO: Add filter form */
+
 		<div className="w-full xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 text-gray-100 shadow-2xl bg-gray-900 text-sm" style={{fontFamily: "TUoS Blake"}}>
       <div className="sticky top-0 overflow-hidden lg:py-2 xl:py-6">
         <div>

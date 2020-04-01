@@ -8,13 +8,14 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
+import ScrollTopBtn from "./scrollTop"
 
 const Layout = ({ children, location }) => {
 
   return (
 
     <div id="website" className="flex flex-col font-sans min-h-screen text-gray-900 high-specificity">
-
+      <ScrollTopBtn />
       <TransitionProvider 
         location={location}
         enter={{

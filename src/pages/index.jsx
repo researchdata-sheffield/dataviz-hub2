@@ -16,6 +16,8 @@ import Tada from 'react-reveal/Tada'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 
+
+
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
   let datePrev = moment()
@@ -53,18 +55,16 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research",]} 
       />
       <Header />
+   
+
       {/* Top part of the page */}
       <BackgroundSection>
         <div className="flex flex-wrap">
           {/* Left component */}
-          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full md:w-5/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
+          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full md:w-4/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
             <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
-              <p className="text-gray-700 text-xl ipadp:text-3xl 2xl:text-5xl font-bold">Data Visualisation Hub</p>
-              <div className="hidden ipadp:block text-gray-500 mt-6 mb-2 px-6 typewriter text-lg 2xl:text-xl">
-                <p>Promoting and building community around data</p> 
-                <p>visualisation at the University of Sheffield.</p>
-              </div>
-              <p className="ipadp:hidden text-gray-500 mt-4 px-2">Promoting and building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-gray-700 text-lg ipadp:text-2xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
+              <p className="text-gray-500 text-sm xl:text-lg mt-4 px-3 xl:px-6">Promoting and building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />
@@ -112,7 +112,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className="flex flex-wrap w-full text-gray-100 md:w-7/12" style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+          <div className="flex flex-wrap w-full text-gray-100 md:w-8/12" style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="flex flex-wrap min-h-100 text-center items-center mx-auto relative">
               <p>An example of visualisation, update weekly/monthly?</p>
@@ -136,11 +136,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
             <LatestPost latestPost={latestPost} />
             
-            
             <div className="flex w-full bg-gray-900 hover:bg-gray-100 text-center cursor-pointer group py-3 hover:py-0 text-center shadow-lg hover:shadow-2xl justify-center self-center items-center" style={{transition: ".3s ease", height: "3.6rem"}} onClick={() => {navigate('/blog')}}>
-              <Link to="/blog"><p className="group-hover:text-highlight_2 text-gray-200 font-bold text-xl group-hover:text-2xl"><Tada duration={2000}>Read more </Tada></p></Link>
+              <Link to="/blog"><h1 className="group-hover:text-highlight_2 text-gray-200 font-bold text-xl group-hover:text-2xl"><Tada duration={2000}>Read more </Tada></h1></Link>
             </div> 
-           
 
             <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
               <p className="text-gray-600 mx-auto">What goes here?</p>

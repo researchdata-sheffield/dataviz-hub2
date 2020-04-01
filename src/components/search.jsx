@@ -129,7 +129,7 @@ class Search extends Component {
         <Fade bottom duration={1500}>
           <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
             <FiSearch className="inline-block text-center text-3xl -mt-1" />
-            <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="What are you looking for?" />
+            <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Title, description, date..." />
           </div>
         </Fade>
         <div className="search__list">
