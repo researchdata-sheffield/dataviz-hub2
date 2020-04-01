@@ -6,8 +6,5 @@ node_js:
 deploy:
   provider: script
   script: npm install && npm run deploy
-  skip_cleanup: true
-  github-token: $GH_TOKEN
-  keep-history: true
   on:
     branch: master
