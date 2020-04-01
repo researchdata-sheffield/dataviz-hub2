@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect} from 'react'
 import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
 import moment from "moment"
@@ -6,22 +6,15 @@ import moment from "moment"
 const UpcomingEvents = ({allEventbriteEvents}) => {
   var eventLimit = 0
 
-  function todayDate() {
-    var options = {
-      weekday: 'long', year: 'numeric', month: 'long', day: 'numeric',
-      timeZoneName: 'short'
-    };
-    
-    var today = new Date();
-    today = new Intl.DateTimeFormat('en-UK', options).format(today);
-
-    return today;
-  }
+  const [currentDate, setDate] = useState(moment().format('ddd DD MMMM YYYY, hh:mm A'));
+  useEffect(() => {
+    setDate(moment().format('ddd DD MMMM YYYY, hh:mm A'))
+  }, [])
   
   return (
     <div className="w-full lg:w-8/12 text-white px-8 lg:pt-6 pt-16 text-gray-800 lg:my-24 pb-16 flex-col flex-wrap overflow-auto border-t-8 border-red-700" style={{background: "rgba(255,255,255,.90)", }}>
       <h1 className="inline-block text-2xl font-semibold">Upcoming Events</h1>
-      <div className="text-gray-500 mb-8" >Today: {todayDate()}</div>
+      <div className="text-gray-500 mb-8" >Today: {currentDate}</div>
 
 
       {allEventbriteEvents.edges.map(({node}) => {
