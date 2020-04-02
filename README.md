@@ -1,5 +1,5 @@
 # Add a blog post?
-To contribute, please visit the [guide](./content/blog/example/index.mdx).
+To contribute, please visit the [guide](./content/blog/how_to_write_blog_post/index.mdx).
 
 
 # Contribute to the website

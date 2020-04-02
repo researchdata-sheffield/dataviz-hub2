@@ -15,7 +15,7 @@ import scroll_To from 'gatsby-plugin-smoothscroll'
 import Tada from 'react-reveal/Tada'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
-
+import Covid from "../images/covid-19.jpg"
 
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
@@ -114,11 +114,16 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           {/* Right component */}
           <div className="flex flex-wrap w-full text-gray-100 md:w-8/12" style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="flex flex-wrap min-h-100 text-center items-center mx-auto relative">
-              <p>An example of visualisation, update weekly/monthly?</p>
-              
+            <div className="flex flex-wrap min-h-100 w-full justify-center text-center items-center relative" style={{backgroundImage: `url(${Covid})`, backgroundSize: "cover" }}>
+              <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px"}}>Coronavirus COVID-19 Global Cases by CSSE at Johns Hopkins University</h1>
+              <div className="flex bg-gray-900 hover:bg-white text-center cursor-pointer group px-5 py-1 xl:py-2 2xl:py-3 hover:shadow-2xl shadow-lg items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} 
+                onClick={() => window.open("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6", "_blank", "noopener, noreferrer")} 
+              >
+                  <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">View live</p>
+              </div> 
+
               {/* Scroll down animation */}
-              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%"}} onClick={() => scroll_To('#eventNotice')}>
+              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}} onClick={() => scroll_To('#eventNotice')}>
                 <a className="text-gray-200 hover:text-gray-500 inline-block" ><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
                 <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
               </div>

@@ -50,7 +50,7 @@ a[alt]:hover:after {
   font-weight: 700;
   font-size: 13px;
   position: absolute;
-  letter-spacing: 1px;
+
   margin-top: -3vh;
   margin-left: -1vw;
 }
