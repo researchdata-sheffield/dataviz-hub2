@@ -8,6 +8,24 @@ import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 import Slide from 'react-reveal/Slide'
+import styled from "styled-components"
+
+export let IMG = styled.img`
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-color: rgba(0, 0, 0, 1) rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 15px 15px 0;
+    bottom: -13px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 0;
+  }
+
+`
 
 
 const blogPostGrid = ({allMdx}) => {
@@ -35,7 +53,7 @@ const blogPostGrid = ({allMdx}) => {
         <Slide bottom key={node.id} duration={400} fraction={0.45}>
           <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 max-h-100 pb-24 overflow-hidden" style={{fontFamily: "TUoS  Blake"}}>
             <Link className="group" to={node.fields.slug}>
-              <img className="w-full blog-image group-hover:border-b-4 group-hover:border-highlight_2 border-solid min-h-3/5 max-h-3/5" style={{objectFit: "cover", objectPosition: "center"}} src={imagesrc}></img>
+              <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 border-b-4 broder-white group-hover:border-highlight_2 border-solid min-h-3/5 max-h-3/5" style={{objectFit: "cover", objectPosition: "center", transition:".5s ease"}} src={imagesrc} />
               <div className="px-8 py-4 leading-none text-gray-500 pb-36">
                 <h1 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "10vh", fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
                 <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>

@@ -156,7 +156,7 @@ module.exports = {
     transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover'],
     minHeight: ['responsive', 'hover', 'focus', 'group-hover'],
     maxHeight: ['responsive', 'hover', 'focus', 'group-hover'],
-
+    greyScale: ['responsive', 'hover', 'focus', 'group-hover'],
   },
   plugins: [require("@tailwindcss/custom-forms")],
 }

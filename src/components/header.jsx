@@ -99,7 +99,7 @@ const Header = () => {
                 </Link> 
                 : 
                 <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
-                  href={link.route} target="_blank" rel="noopener noreferrer" 
+                  href={link.route} target="_blank" rel="noopener noreferrer" alt="orda.shef.ac.uk"
                   key={link.title}>{link.title}
                 </a>  
               )) 

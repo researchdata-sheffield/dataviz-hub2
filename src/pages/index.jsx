@@ -74,9 +74,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/news">News</Link></li>
-                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/articles">Articles</Link></li>
-                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/events">Events</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/news" alt="blog/category/news">News</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/articles" alt="blog/category/articles">Articles</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/events" alt="/events">Events</Link></li>
                       <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/tutorial">Tutorials</Link></li>
                       <li><Link className="text-gray-500 hover:text-highlight_2" to="/about/#more">About us</Link></li>
                     </ul>
