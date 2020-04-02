@@ -80,7 +80,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve --prefix-paths -o",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "test": "echo \"no test specified\" && exit 0",
     "deploy": "rm -rf public .cache && gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git"
   },
   "repository": {
