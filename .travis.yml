@@ -5,6 +5,6 @@ node_js:
   - "13"
 deploy:
   provider: script
-  script: npm install && npm run deploy
+  script: npm run deploy
   on:
     branch: master
