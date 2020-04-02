@@ -168,6 +168,7 @@ position: fixed;
   transition: all 0.7s ease;
   z-index: 99;
   text-align: center;
+  opacity: 0;
 }
 
 .scrollTop-btn:hover {

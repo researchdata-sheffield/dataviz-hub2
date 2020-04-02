@@ -34,6 +34,7 @@ module.exports = {
       },
       screens: {
         'ipadp': '1030px',
+        'xl': '1281px',
         '2xl': '1441px',
       },
       minHeight: {

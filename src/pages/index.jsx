@@ -64,7 +64,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full md:w-4/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
             <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
               <p className="text-gray-700 text-lg ipadp:text-2xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
-              <p className="text-gray-500 text-sm xl:text-lg mt-4 px-3 xl:px-6">Promoting and building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-gray-500 text-sm 2xl:text-lg mt-4 px-3 xl:px-6">Promoting and building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />
