@@ -37,6 +37,11 @@ module.exports = {
         'xl': '1281px',
         '2xl': '1441px',
       },
+      height: {
+        '30px': '30px',
+        '40px': '40px',
+        '50px': '50px',
+      },
       minHeight: {
         '30': '30vh',
         '40': '40vh',
@@ -77,6 +82,11 @@ module.exports = {
         '3/5': '60%',
         '3/4': '75%',
         'full': '100%',
+      },
+      width: {
+        '30px': '30px',
+        '40px': '40px',
+        '50px': '50px',
       },
       minWidth: {
         '0': '0',

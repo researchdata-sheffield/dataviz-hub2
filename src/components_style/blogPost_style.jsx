@@ -91,8 +91,47 @@ export let Ol = styled.ol`
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+
+  .li {
+    list-style-type: square;
+  }
 `
 
-export let Li = styled.li` {
+export let Li = styled.li` 
   display: list-item;
 `
+
+export let Ul = styled.ul`
+  display: block;
+  list-style-type: disc;
+  margin-top: 1em;
+  margin-bottom: 1 em;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 40px;
+
+  .li {
+    list-style-type: square;
+  }
+`
+
+export let Hr = styled.hr`
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+`
+export let Del = styled.del`
+  text-decoration: line-through;
+`
+export let Pre = styled.pre`
+  display: block;
+  font-family: monospace;
+  white-space: pre;
+  margin: 1em 0;
+`
+
+

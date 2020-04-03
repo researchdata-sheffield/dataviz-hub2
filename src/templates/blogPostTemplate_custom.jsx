@@ -49,7 +49,17 @@ export const query = graphql`
       body
       frontmatter {
         title
-        author
+        author {
+          name
+          email
+          avatar {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
         date(formatString: "dddd Do MMMM YYYY")
         category
         tag

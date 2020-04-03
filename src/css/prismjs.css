@@ -25,6 +25,7 @@
   overflow: initial;
   float: left; /* 1 */
   min-width: 100%; /* 2 */
+  font-size: .83rem;
 }
 
 .gatsby-highlight pre[class*="language-"].line-numbers {

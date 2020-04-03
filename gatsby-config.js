@@ -24,6 +24,13 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'author',
+        path: `./src/author`,
+      },
+    },
+    {
       resolve: `gatsby-plugin-mdx`,
       options: {
         // Apply gatsby-mdx to both .mdx and .md files
@@ -132,6 +139,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
     `gatsby-plugin-smoothscroll`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {

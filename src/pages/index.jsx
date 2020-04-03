@@ -186,7 +186,17 @@ export const query = graphql`
               }
             }
             date(formatString: "ddd, DD MMMM YYYY")
-            author
+            author {
+              name
+              email
+              avatar {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
             category
             title
           }
@@ -215,7 +225,17 @@ export const query = graphql`
               }
             }
             date(formatString: "ddd, DD MMMM YYYY")
-            author
+            author {
+              name
+              email
+              avatar {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+            }
             category
             title
           }

@@ -70,7 +70,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               template
-              author
+              author {
+                name
+                email
+                avatar {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
               title
               date(formatString: "dddd Do MMMM YYYY")
               category
@@ -210,3 +220,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 }
 
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions
+  const typeDefs = `
+    type Mdx implements Node {
+      frontmatter: Frontmatter
+    }
+    type Frontmatter {
+      author: [AuthorJson] @link(by: "name")
+    }
+  `
+  createTypes(typeDefs)
+}

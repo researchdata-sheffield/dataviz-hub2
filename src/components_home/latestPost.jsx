@@ -47,7 +47,11 @@ const latestPost = ({ latestPost }) => {
                 <h1 className="ipadp:hidden font-bold text-xl leading-tight text-white overflow-y-hidden">{node.frontmatter.title}</h1>
                 <p className="my-3 text-sm leading-tight group-hover:text-highlight_2 xl:text-xl" >{description}</p>
                 <p className="my-2 text-xs pt-2" >{node.frontmatter.date}</p>
-                <p className="my-2 text-xs">{node.frontmatter.author.join(' · ')}</p>
+                <p className="my-2 text-xs">
+                  {node.frontmatter.author.map((author, idx) => (
+                    (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
+                  ))}
+                </p>
                 <p className="mt-5 text-base group-hover:text-highlight_2 font-semibold">{node.fields.readingTime.text}</p>
                 <div className="py-2 text-sm">
                   {node.frontmatter.category.map((cat) => (

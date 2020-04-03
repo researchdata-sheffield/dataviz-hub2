@@ -82,7 +82,17 @@ export const query = graphql`
 						title
 						description 
 						date(formatString: "ddd, DD MMMM YYYY")
-						author
+						author {
+							name
+							email
+							avatar {
+								childImageSharp {
+									fluid {
+										src
+									}
+								}
+							}
+						}
 						category
 						tag
 						thumbnail {

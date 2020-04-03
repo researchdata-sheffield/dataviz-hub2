@@ -8,12 +8,12 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li } from "../components_style/blogPost_style"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul } from "../components_style/blogPost_style"
 import PaginationPost from "../components_blog/pagination_post"
 
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
-    const { title, author, date } = mdx.frontmatter
+    const { title, date } = mdx.frontmatter
     const {prev, next} = pageContext
     /* const tableOfContent = mdx.tableOfContents */
     
@@ -55,26 +55,38 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </Helmet>
 
 
-        <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-xl border-b-2 border-white" style={{height: "50vh", fontFamily: "TUoS Blake"}}>
-          <div className="text-center text-white">
-            <div className="px-10 leading-tight" style={{textShadow: "black 0px 0px 3px"}}>
-              <h1 className="text-4xl 2xl:text-5xl font-semibold xl:px-16" >{title}</h1>
-              <h2 className="mt-4" style={{fontFamily: "TUoS Stephenson"}}>{author.join(' · ')}</h2>
-              <h2 className="mt-1 text-sm">{date}</h2> 
+        <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-md border-b-2 border-white" style={{minHeight: "50vh", }}>
+          <div className="flex flex-wrap text-center text-white pt-24 pb-16">
+            <div className="px-10 leading-tight w-full">
+              <h1 className="text-3xl xl:text-5xl font-semibold lg:px-24" style={{fontFamily:"TUoS Stephenson", textShadow: "black 0px 0px 3px"}}>{title}</h1>
+              <div className="mt-2 text-xs 2xl:text-sm">
+                {mdx.frontmatter.category.map((cat) => (
+                  <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
+                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-600 text-gray-200 rounded-md">{cat}
+                  </Link>
+                ))}
+                {mdx.frontmatter.tag.map((tag) => (
+                  <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
+                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-600 rounded-md">{tag}
+                  </Link>
+                ))}
+              </div>
             </div>
 
-            <div className="mt-1 text-sm">
-                  {mdx.frontmatter.category.map((cat) => (
-                    <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-600 text-gray-200 rounded-md">{cat}
-                    </Link>
+            <div className="flex justify-center mt-16 items-center mx-auto px-8">
+              {mdx.frontmatter.author.map((author) => (
+                <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} src={author.avatar.childImageSharp.fluid.src}  />
+              ))}
+              <div className="inline-block px-2 text-left font-bold" style={{textShadow: "black 0px 0px 2px"}}>
+                <h1 className="text-sm xl:text-base">
+                  {mdx.frontmatter.author.map((author, idx) => (
+                      (mdx.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
                   ))}
-                  {mdx.frontmatter.tag.map((tag) => (
-                    <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-500 rounded-md">{tag}
-                    </Link>
-                  ))}
-            </div>
+                </h1>
+                <h1 className="text-xs xl:text-sm">{date}</h1>
+              </div>
+            </div>        
+
           </div>
         </div>
         
@@ -82,8 +94,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* <img className="justify-center items-center m-auto -mt-10 shadow-2xl" src={mdx.frontmatter.thumbnail.childImageSharp.fluid.src} style={{minHeight: "20%", maxHeight: "20%", maxWidth: "40%", minWidth: "40%",  objectFit: "cover", objectPosition: "center"}}></img>  */}
                     
 
-        <div className="justify-center container mx-auto py-16 px-4 ipadp:px-32 leading-7 text-base" markdown="1">
-          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li}}>
+        <div className="justify-center container mx-auto py-8 px-4 lg:px-48 xl:px-70 leading-7 text-base">
+          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, }}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>
@@ -110,8 +122,18 @@ export const query = graphql`
       tableOfContents
       frontmatter {
         title
-        author
-        date(formatString: "dddd Do MMMM YYYY")
+        author {
+          name
+          email
+          avatar {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
+        date(formatString: "ddd, D MMMM YYYY")
         description
         tag
         category

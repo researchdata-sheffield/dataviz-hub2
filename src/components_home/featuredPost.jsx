@@ -27,17 +27,21 @@ const featuredPost = ({ featuredPost }) => {
                   <FaStar className="mr-2 text-yellow-300 text-3xl" />
                   <p className="ipadp:opacity-0 group-hover:opacity-100 text-xl" style={{fontFamily: "ink free"}}>Featured</p>
                 </div>
-                <h1 className="px-16 opacity-0 ipadp:opacity-100 font-bold text-5xl leading-tight text-white group-hover:hidden overflow-y-hidden absolute" style={{fontFamily: "TUoS Stephenson", textShadow: "#000000 0px 0px 5px", paddingTop: "20vh", paddingBottom: "20vh",}}>
+                {/* <h1 className="px-16 opacity-0 ipadp:opacity-100 font-bold text-5xl leading-tight text-white group-hover:hidden overflow-y-hidden absolute" style={{fontFamily: "TUoS Stephenson", textShadow: "#000000 0px 0px 5px", paddingTop: "20vh", paddingBottom: "20vh",}}>
                   {node.frontmatter.title}
                 <p className="text-2xl font-normal pt-6">{node.frontmatter.date}</p>
                 <p className="text-2xl font-semibold pt-3">{node.fields.readingTime.text}</p>
-                </h1>
+                </h1> */}
                 
-                <div className="px-8 ipadp:px-16 xl:px-32 py-24 leading-none text-gray-500 max-h-70  ipadp:min-h-100 ipadp:opacity-0 group-hover:opacity-100 ipadp:pt-48" style={{paddingBottom: "20vh", backgroundColor: "rgba(0,0,0, .8)", transition: ".8s ease"}}>
+                <div className="px-8 ipadp:px-16 xl:px-32 py-24 leading-none text-gray-500 max-h-70  ipadp:min-h-100 ipadp:pt-48" style={{paddingBottom: "20vh", backgroundColor: "rgba(0,0,0, .8)", transition: ".8s ease"}}>
                   <h1 className="font-bold text-3xl xl:text-4xl leading-tight text-white group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "15vh", fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
                   <p className="my-3 text-md leading-tight group-hover:text-highlight_2 ipadp:text-lg" >{description}</p>
                   <p className=" my-2 text-md pt-2" >{node.frontmatter.date}</p>
-                  <p className="my-2 text-md">{node.frontmatter.author.join(' · ')}</p>
+                  <p className="my-2 text-md">
+                    {node.frontmatter.author.map((author, idx) => (
+                      (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
+                    ))}
+                  </p>
                   <p className="mt-5 text-base group-hover:text-highlight_2 font-semibold">{node.fields.readingTime.text}</p>
                   <div className="py-2 text-md">
                     {node.frontmatter.category.map((cat) => (
