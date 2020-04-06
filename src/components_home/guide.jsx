@@ -40,7 +40,7 @@ const guide = () => {
             The huge amount of data is one of the characteristics of the Internet era. Learn to quickly digest and absorb useful information in huge data groups can greatly help to seize 
             opportunities. Studies have shown that the amount of information we use visually is far greater than other senses. This also means that the possibility of finding relevant 
             information through data visualization is far greater than other methods, and it allow viewers to get more information.  <br /><br />
-            <img src={Why} className="max-w-30 mx-auto border-4 border-gray-700" /> <br />
+            <img src={Why} className="w-full lg:max-w-30 mx-auto border-4 border-gray-700" /> <br />
             While many organisations and companies across different sectors relying on data to gain insights and optimising their products, data visualisation is not yet an integral part of research communication. 
             Today, powerful, modern, open source, interactive and web-based visualisation tools have revolutionised the potential for research data impact, we are here to help our researchers make the most of their data and take advantage of such tools. 
             </p>

@@ -63,7 +63,7 @@ const Header = () => {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(34,34,34,0.9)" ] : ""}` }}>
+        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-xs xl:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(34,34,34,0.9)" ] : ""}` }}>
           <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {
@@ -111,7 +111,7 @@ const Header = () => {
               <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
             </button>
             {/* FIXME: Search button dropdown */}
-            <button className="pl-2 pr-4 text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline" title="Search function is under development" >
+            <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline" title="Search function is under development" >
               <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} `} to="/search"><FiSearch  /></Link>
             </button>
 

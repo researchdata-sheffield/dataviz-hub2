@@ -61,7 +61,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <BackgroundSection>
         <div className="flex flex-wrap">
           {/* Left component */}
-          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full md:w-4/12 text-white text-gray-600 overflow-hidden min-h-100 md:min-h-100 md:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
+          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full lg:w-4/12 text-white text-gray-600 overflow-hidden lg:min-h-100 lg:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
             <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
               <p className="text-gray-700 text-lg ipadp:text-2xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
               <p className="text-gray-500 text-sm 2xl:text-lg mt-4 px-3 xl:px-6">Promoting and building community around data visualisation at the University of Sheffield.</p>
@@ -70,7 +70,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <Search_Home  />
             
             <Slide left>
-              <div className="hidden ipadp:flex justify-center py-4 xl:py-8 z-10">
+              <div className="hidden md:flex justify-center py-4 xl:py-8 z-10">
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
@@ -112,7 +112,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className="flex flex-wrap w-full text-gray-100 md:w-8/12" style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+          <div className="flex flex-wrap w-full text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="flex flex-wrap min-h-100 w-full justify-center text-center items-center relative" style={{backgroundImage: `url(${Covid})`, backgroundSize: "cover" }}>
               <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px"}}>Coronavirus COVID-19 Global Cases by CSSE at Johns Hopkins University</h1>
@@ -123,7 +123,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </div> 
 
               {/* Scroll down animation */}
-              <div id="scrollDown-btn" className="hidden ipadp:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}} onClick={() => scroll_To('#eventNotice')}>
+              <div id="scrollDown-btn" className="hidden md:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}} onClick={() => scroll_To('#eventNotice')}>
                 <a className="text-gray-200 hover:text-gray-500 inline-block" ><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
                 <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
               </div>

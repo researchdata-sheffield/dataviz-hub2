@@ -63,7 +63,7 @@ const eventNotice = ({ eventBrite }) => {
                           {node.venue.address.localized_multi_line_address_display}
                       </div>
                       <div className="flex flex-wrap w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 content-center justify-center">
-                        <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex rounded shadow-sm -mt-4 py-1 px-3 text-md bg-gray-600 text-white hover:bg-highlight_2">
+                        <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex rounded shadow-sm -mt-4 py-1 px-3 text-md bg-gray-500 text-white hover:bg-highlight_2">
                           Register
                         </button>
                       </div>
