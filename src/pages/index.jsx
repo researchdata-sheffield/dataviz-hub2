@@ -119,7 +119,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               <div className="flex bg-gray-900 hover:bg-white text-center cursor-pointer group px-5 py-1 xl:py-2 2xl:py-3 hover:shadow-2xl shadow-lg items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} 
                 onClick={() => window.open("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6", "_blank", "noopener, noreferrer")} 
               >
-                  <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">View live</p>
+                  <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">Statistics dashborad</p>
               </div> 
 
               {/* Scroll down animation */}
