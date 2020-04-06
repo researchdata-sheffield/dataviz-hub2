@@ -63,7 +63,7 @@ const Header = () => {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-sm xl:text-base`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(34,34,34,0.9)" ] : ""}` }}>
+        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(34,34,34,0.9)" ] : ""}` }}>
           <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {

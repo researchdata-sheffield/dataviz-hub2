@@ -40,7 +40,7 @@ If you have <b>Github Desktop</b> installed then just clone the repository into 
 
 
 ```
-If you cloned a while a ago, fetch the latest commits from origin repository:
+If you have cloned the repository a while a ago, fetch the latest commits from origin repository:
 
 git checkout master
 git pull upstream master
@@ -62,41 +62,41 @@ You will probably want to install Gatsby so that you can test your contribution 
 
 2. Create a file `index.mdx` (or with .md extension, but we recommend use .mdx because it’s a superset of Markdown syntax that also supports importing, exporting, and JSX. <a href="https://mdxjs.com/">learn more about mdx</a>). 
 
-  2.1. At the very beginning of your index file, you have the following parameters to specify:
+    + At the very beginning of your index file, you have the following parameters to specify:
 
-  ```mdx
-  ---
-  title: "This is a template for posts"
-  author: ["A", "B"]                   
-  date: "2020-03-06"                    // Please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
-  description: "Shown at blog page"
-  category: "Articles"				  //One category only, use pre-set categories
-  tag: ["blog", "test"]
-  thumbnail: ./image.jpg                // an image to use for your post thumbnail
-  template:                             // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
-  featured: "true"					  // Set it to true if you want show the post on home page
-  ---
-  ```
+    ```mdx
+    ---
+    title: "This is a template for posts"
+    author: ["A", "B"]                   
+    date: "2020-03-06"                    // Please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
+    description: "Shown at blog page"
+    category: "Articles"				  //One category only, use pre-set categories
+    tag: ["blog", "test"]
+    thumbnail: ./image.jpg                // an image to use for your post thumbnail
+    template:                             // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
+    featured: "true"					  // Set it to true if you want show the post on home page
+    ---
+    ```
+
   <br />
 
-  2.2. Wrap parameters with triple hyphens. Use double quotation marks for all text, use square brackets in parameters with two or more items.
+    + Wrap parameters with triple hyphens. Use double quotation marks for all text, use square brackets in parameters with two or more items.
 
-  2.3. Then add content to the file.
+    + Then add content to the file.
 
-  2.4. (Optional): For the <i>first time writer</i> you're required to add your name, email and avatar to the file **author.json** located at `dataviz-hub2/src/author`, otherwise author info will not be shown on the post (and the website produce errors).
+    + (Optional): For the <i>first time writer</i> you're required to add your name, email and avatar to the file **author.json** located at `dataviz-hub2/src/author`, otherwise author info will not be shown on the post (and the website produce errors).
     Format: 
 
+    ```json
+    ...
+    },                                 // Make sure you've added comma after the previous right curly bracket
+    {                                  // Start with left curly bracket     
+      "name": "New Author",            // The exact same name you've put in mdx file, use same name for all mdx file consistently
+      "avatar": "./default.jpg",       // If you want to add your own avatar, place it under the same folder and replace default.jpg with your image name and extension
+      "email": "youremail@email.com"    
+    }                                  // No comma
+    ```
 
-  ```json
-  ...
-  },                                 // Make sure you've added comma after the previous right curly bracket
-  {                                  // Start with left curly bracket     
-    "name": "New Author",            // The exact same name you've put in mdx file, use same name for all mdx file consistently
-    "avatar": "./default.jpg",       // If you want to add your own avatar, place it under the same folder and replace default.jpg with your image name and extension
-    "email": "youremail@email.com"    
-  }                                  // No comma
-
-  ```
 <br />
 
 ---
