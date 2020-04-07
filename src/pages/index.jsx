@@ -10,7 +10,7 @@ import FeaturedPost from "../components_home/featuredPost"
 import LatestPost from "../components_home/latestPost"
 import Guide from "../components_home/guide"
 import moment from "moment"
-import Search_Home from "../components/search_home"
+import Search_Home from "../components/searchHome"
 import scroll_To from 'gatsby-plugin-smoothscroll'
 import Tada from 'react-reveal/Tada'
 import Slide from 'react-reveal/Slide'
