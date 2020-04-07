@@ -32,7 +32,6 @@
     "gatsby-remark-prismjs": "^3.4.1",
     "gatsby-remark-reading-time": "1.1.0",
     "gatsby-remark-responsive-iframe": "^2.3.1",
-    "gatsby-source-eventbrite": "^1.1.0",
     "gatsby-source-filesystem": "^2.2.2",
     "gatsby-transformer-json": "^2.3.1",
     "gatsby-transformer-sharp": "^2.4.2",
@@ -72,7 +71,8 @@
     "the university of sheffield",
     "data visualisation",
     "data visualisation hub",
-    "research"
+    "research",
+    "dataviz"
   ],
   "scripts": {
     "build": "gatsby build",

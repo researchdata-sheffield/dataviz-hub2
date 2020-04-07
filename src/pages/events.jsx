@@ -40,7 +40,7 @@ events.propTypes = {
 export const query = graphql`
   query {
     eventBrite: 
-    allEventbriteEvents(sort: {fields: start___local, order: ASC}, filter: {end: {local: {gt: "2020-03-14"}}},) {
+    allEventbriteEvents(sort: {fields: start___local, order: ASC}) {
       edges {
         node {
           id
