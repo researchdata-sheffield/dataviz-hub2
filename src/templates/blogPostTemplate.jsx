@@ -8,8 +8,8 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul } from "../components_style/blogPost_style"
-import PaginationPost from "../components_blog/pagination_post"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul } from "../components_style/blogPostStyle"
+import PaginationPost from "../components_blog/paginationPost"
 
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
