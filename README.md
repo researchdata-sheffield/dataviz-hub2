@@ -15,7 +15,7 @@ You'll need to setup a gatsby development environment in order to preview the we
   
   3. Install Gatsby CLI by running   `npm install -g gatsby-cli`
 
-  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run `git clone https://github.com/yourusername/dataviz-hub2.git` then run `cd dataviz-hub2` and `npm install` (install dependencies).
+  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run `git clone https://github.com/yourusername/dataviz-hub2.git` then run `cd dataviz-hub2` and `npm install` (install dependencies). Then go to **dataviz-hub2/plugins/gatsby-source-eventbrite-multi-accounts/** and run `npm install` as well.
   
   5. Create a new local branch with commands `git checkout master` (make sure you're in master branch), `git branch newBranchName` (create a new branch from master), and `git checkout newBranchName` (switch to new branch).
     Now make any commits you wish to.
@@ -55,7 +55,9 @@ A list of extensions I've installed:
 
 ## Useful resources
 
-EventBrite API - https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
+EventBrite API 
++ https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
++ https://www.eventbriteapi.com/v3/organizations/OrgId/venues/?token=YOURTOKEN
 
 [Gatsby plugins](https://www.gatsbyjs.org/plugins/)
 

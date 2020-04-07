@@ -147,15 +147,20 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-eventbrite`,
+      resolve: `gatsby-source-eventbrite-multi-accounts`,
       options: {
-        // organizationId: `121727010915`, 
-        // accessToken: `6NKTPFLQPPWWPPVRVZGI`,  
-        organizationId: `394692913883`,
-        accessToken: `DYMSC6OLAPPBHLFZ6DKJ`,
-        // OPTIONAL: Defaults are Events and Venues
+        organisations: [
+          {
+            organisationId: ***REMOVED***,
+            accessToken: ***REMOVED***
+          },
+          {
+            organisationId: ***REMOVED***,
+            accessToken: ***REMOVED***
+          },
+        ],
         entities: ['events', 'venues']
-      },
+      }
     },
     {
       resolve: `gatsby-plugin-manifest`,

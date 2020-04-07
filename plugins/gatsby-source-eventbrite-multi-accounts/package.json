@@ -1,0 +1,18 @@
+{
+  "name": "gatsby-source-eventbrite-multi-accounts",
+  "version": "1.0.0",
+  "description": "This plugin source events from multiple accounts in eventbrite",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"no test specified\" && exit 0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "gatsby-plugin-sharp": "^2.5.4",
+    "json-stringify-safe": "^5.0.1",
+    "lodash": "^4.17.15"
+  }
+}
