@@ -2,7 +2,7 @@ language: node_js
 
 before_script:
   - npm install -g gatsby-cli
-  - cd plugins/gatsby-source-eventbrite-multi-accounts/node_modules
+  - cd plugins/gatsby-source-eventbrite-multi-accounts/
   - npm install && cd .. && cd ..
 
 node_js:
