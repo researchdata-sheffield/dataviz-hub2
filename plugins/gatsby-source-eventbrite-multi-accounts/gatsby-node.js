@@ -42,7 +42,7 @@ exports.sourceNodes = async ({ actions, createNodeId }, options) => {
       if (entity === 'events') {
         nodes[entity].forEach(() => {
           const joinVenueToEvent = (eventVenueId, nodes) => {
-            nodes.venues.filter(venue => venue.id === eventVenueId)[0]
+            return nodes.venues.filter(venue => venue.id === eventVenueId)[0]
           }
           
           // For each event node, add venue from venue node
