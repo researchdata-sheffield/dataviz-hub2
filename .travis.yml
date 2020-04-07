@@ -3,9 +3,7 @@ language: node_js
 before_script:
   - npm install -g gatsby-cli
   - cd plugins/gatsby-source-eventbrite-multi-accounts/node_modules
-  - npm install
-  - cd..
-  - cd..
+  - npm install && cd .. && cd ..
 
 node_js:
 - "13"
