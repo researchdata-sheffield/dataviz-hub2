@@ -169,6 +169,7 @@ IndexPage.propTypes = {
   data: PropTypes.any
 }
 
+// TODO: clean up queries
 export const query = graphql`
   query {
     featuredPost: allMdx(filter: {frontmatter: {featured: {eq: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 2) {
