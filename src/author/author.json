@@ -13,6 +13,10 @@
     "name": "Test Author2",
     "avatar": "./test2.jpg",
     "email": "test.Name1@sheffield.ac.uk"
+  },
+  {
+    "name": "Gemma Ives",
+    "avatar": "./PPCirc.png",
+    "email": "g.l.ives@sheffield.ac.uk"
   }
 ]
-
