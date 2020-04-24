@@ -77,10 +77,10 @@ class Search_Home extends Component {
     }
 
     return (
-      <div className={`${this.props.classNames} mt-12 2xl:mt-20 relative text-gray-600 w-full text-center`} >
-        <div className="inline-block focus:outline-none text-gray-600 bg-white p-3 rounded-lg" style={{boxShadow: "#4e4e4e 0px 5px 30px -20px"}}>
+      <div className={`${this.props.classNames} mt-16 2xl:mt-20 relative text-gray-600 w-full text-center`} >
+        <div className="inline-block focus:outline-none text-gray-600 bg-white p-3 rounded-lg" style={{boxShadow: "#4e4e4e 0px 5px 20px -16px"}}>
           <FiSearch className="inline-block text-center text-3xl -mt-1" />
-          <input id="homeSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "23vw"}} type="text" name="search" placeholder="What are you looking for?" />
+          <input id="homeSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "21vw"}} type="text" name="search" placeholder="What are you looking for?" />
         </div>
         <div className="search__list">
           <ResultList />

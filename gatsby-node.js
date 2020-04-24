@@ -115,8 +115,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   posts.forEach( ( {node}, index, arr )  => {
 
     // For each post, add their tags/categories to arrays
-    node.frontmatter.category.forEach(cat => categories.push(cat))
-    node.frontmatter.tag.forEach(tag => tags.push(tag))
+    node.frontmatter.category.forEach((cat) => {
+      categories.push(cat)
+    })
+    node.frontmatter.tag.forEach((tag) => {
+      tags.push(tag)
+    })
+    
+    
     const prev = arr[index - 1]
     const next = arr[index + 1]
 

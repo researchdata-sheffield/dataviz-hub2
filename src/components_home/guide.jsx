@@ -7,11 +7,11 @@ import Fade from 'react-reveal/Fade'
 const guide = () => {
   
   return (
-    <div className="flex flex-wrap ipadp:pt-40 2xl:px-48">
+    <div className="flex flex-wrap ipadp:pt-8 2xl:px-24">
 
       <Fade left duration={2000}>
         <div className="hidden ipadp:block ipadp:sticky ipadp:top-0 flex-col flex-wrap w-full ipadp:w-3/12 overflow-hidden ipadp:max-h-100 px-12 ipadp:py-32 leading-8">
-          <div className="ipadp:border-r-1 border-gray-400 ipadp:py-16">
+          <div className="ipadp:border-r-1 border-gray-400 ipadp:py-16 text-right pr-6">
             <p onClick={() => scroll_To('#what')} className="hover:text-highlight_2 cursor-pointer">What is data visualisation</p>
             <p onClick={() => scroll_To('#why')} className="hover:text-highlight_2 cursor-pointer">Why is it important</p>
             <p onClick={() => scroll_To('#how')} className="hover:text-highlight_2 cursor-pointer">How this site could help</p>

@@ -17,10 +17,14 @@ module.exports = {
         'footer': '#414042',
         'highlight_2': '#00aeef',
         'light_grey': '#f1f1f1',
+        'light_black': 'rgba(0,0,0, .5)',
       },
       borderColor: {
         'highlight_2': '#00aeef',
-
+        'menu_red': '#ff5e5e',
+        'menu_yellow': '#f3f218',
+        'menu_green': '#99f318',
+        'black': '#000',
       },
       borderWidth: {
         '1': '1px',
@@ -43,6 +47,10 @@ module.exports = {
         '50px': '50px',
       },
       minHeight: {
+        '15': '15vh',
+        '18': '18vh',
+        '20': '20vh',
+        '25': '25vh',
         '30': '30vh',
         '40': '40vh',
         '50': '50vh',
