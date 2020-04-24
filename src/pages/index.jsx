@@ -4,7 +4,7 @@ import Footer from "../components/footer"
 import SEO from "../components/seo"
 import { graphql, Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import BackgroundSection from "../components_images/home_background"
+//import BackgroundSection from "../components_images/home_background"
 import EventNotice from "../components_home/eventNotice"
 import FeaturedPost from "../components_home/featuredPost"
 import LatestPost from "../components_home/latestPost"
@@ -58,13 +58,13 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
    
 
       {/* Top part of the page */}
-      <BackgroundSection>
+      <div>
         <div className="flex flex-wrap">
           {/* Left component */}
-          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full lg:w-4/12 text-white text-gray-600 overflow-hidden lg:min-h-100 lg:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)"}}>
+          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full lg:w-4/12 text-white text-gray-600 overflow-hidden lg:min-h-100 lg:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
               <p className="text-gray-700 text-lg ipadp:text-2xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
-              <p className="text-gray-500 text-sm 2xl:text-lg mt-4 px-3 xl:px-6">Promoting and building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-gray-500 text-sm 2xl:text-lg mt-2 px-3 xl:px-6">Promoting and building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />
@@ -77,8 +77,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                       <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/news" alt="blog/category/news">News</Link></li>
                       <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/articles" alt="blog/category/articles">Articles</Link></li>
                       <li><Link className="text-gray-500 hover:text-highlight_2" to="/events" alt="/events">Events</Link></li>
-                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/tutorial">Tutorials</Link></li>
-                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/about/#more">About us</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog/category/tutorial" alt="blog/category/tutorial">Tutorials</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" to="/about/#more" alt="/about">About us</Link></li>
                     </ul>
                 </div>
                 
@@ -96,7 +96,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
             <Fade bottom delay={700}>
               <div onClick={() => scroll_To('#what')} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
-                  <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">Explore</p>
+                  <Link className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg" to="#what">Explore</Link>
               </div> 
             </Fade>
 
@@ -112,32 +112,37 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className="flex flex-wrap w-full text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+          <div className="flex flex-wrap w-full text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease", zIndex: "2"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+            
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="flex flex-wrap min-h-100 w-full justify-center text-center items-center relative" style={{backgroundImage: `url(${Covid})`, backgroundSize: "cover" }}>
               <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px"}}>Coronavirus COVID-19 Global Cases by CSSE at Johns Hopkins University</h1>
-              <div className="flex bg-gray-900 hover:bg-white text-center cursor-pointer group px-5 py-1 xl:py-2 2xl:py-3 hover:shadow-2xl shadow-lg items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} 
+              <div className="flex bg-gray-900 hover:bg-white text-center cursor-pointer group px-5 py-1 xl:py-2 2xl:py-3 hover:shadow-2xl shadow-lg items-center" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} 
                 onClick={() => window.open("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6", "_blank", "noopener, noreferrer")} 
               >
-                  <p className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg">Statistics dashborad</p>
+                <a className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank" rel="noopener noreferrer">Statistics dashborad</a>
               </div> 
+
+
 
               {/* Scroll down animation */}
               <div id="scrollDown-btn" className="hidden md:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}} onClick={() => scroll_To('#eventNotice')}>
-                <a className="text-gray-200 hover:text-gray-500 inline-block" ><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></a>
+                <Link className="text-gray-200 hover:text-gray-500 inline-block" to="#eventNotice"><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></Link>
                 <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
               </div>
             </div>
 
-            <EventNotice eventBrite={eventBrite} />     
-            <FeaturedPost featuredPost={featuredPost} />
 
-            <div className="flex flex-wrap w-full text-white font-bold text-center text-2xl cursor-pointer" style={{fontFamily: "TUoS Stephenson", }} >
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/articles')}} style={{backgroundColor: "#ff5e5e"}}>ARTICLES</div>
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/events')}} style={{backgroundColor: "#f3f218"}}>EVENT</div>
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/news')}} style={{backgroundColor: "#00aeef"}}>NEWS</div>
-              <div className="w-1/2 ipadp:w-1/4 py-12 ipadp:py-24 2xl:py-32 greyScale-60 hover:greyScale-0" onClick={() => {navigate('/blog/category/tutorial')}} style={{backgroundColor: "#99f318"}}>TUTORIAL</div>
-            </div>
+            <EventNotice eventBrite={eventBrite} />   
+
+            <div className="flex flex-wrap w-full text-white font-bold text-center text-base cursor-pointer bg-gray-900 pt-1 shadow-2xl">
+              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-menu_red" onClick={() => {navigate('/blog/category/articles')}}>ARTICLES</div>
+              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-menu_yellow" onClick={() => {navigate('/blog/category/events')}}>EVENT</div>
+              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-highlight_2" onClick={() => {navigate('/blog/category/news')}}>NEWS</div>
+              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-menu_green" onClick={() => {navigate('/blog/category/tutorial')}}>TUTORIAL</div>
+            </div>  
+            
+            <FeaturedPost featuredPost={featuredPost} />
 
             <LatestPost latestPost={latestPost} />
             
@@ -145,14 +150,15 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               <Link to="/blog"><h1 className="group-hover:text-highlight_2 text-gray-200 font-bold text-xl group-hover:text-2xl"><Tada duration={2000}>Read more </Tada></h1></Link>
             </div> 
 
-            <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
+            {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
               <p className="text-gray-600 mx-auto">What goes here?</p>
-            </div>
+            </div> */}
+          
           </div> 
           {/* End of right component */}
 
         </div>
-      </BackgroundSection>
+      </div>
       {/* End of top page */}     
       
       <Guide />
@@ -250,7 +256,7 @@ export const query = graphql`
       }
     }
     
-    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}) {
+    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1) {
       edges {
         node {
           id

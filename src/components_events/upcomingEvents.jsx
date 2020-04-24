@@ -28,8 +28,8 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
           }
 
           return (
-            <a className="flex flex-wrap w-full overflow-y-hidden max-h-80 md:max-h-30 xl:max-h-25 shadow-lg hover:shadow-2xl bg-white my-1 text-gray-700 group border-solid " style={{fontFamily: "TUoS Blake", transition: ".5s ease"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer">
-              <img className="w-full md:w-3/12 overflow-hidden self-center" src={node.logo.original.url} style={{objectFit: "cover", objectPosition: "center"}} />
+            <a className="flex flex-wrap w-full overflow-y-hidden max-h-80 md:max-h-25 xl:max-h-15 shadow-lg hover:shadow-2xl bg-white my-1 text-gray-700 group border-solid " style={{fontFamily: "TUoS Blake", transition: ".5s ease"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer">
+              <img className="w-full md:w-3/12 overflow-hidden self-center md:min-h-25 xl:min-h-15" src={node.logo.original.url} style={{objectFit: "cover", objectPosition: "center"}} />
               <div className="w-full md:w-9/12 py-4 px-4">
                 <p className="font-semibold text-lg text-gray-900 group-hover:text-highlight_2">{node.name.text}</p>
                 <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm">{description}</p>
@@ -47,7 +47,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
                     </p>
                   </div>
                   <div className="flex flex-wrap w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 content-center justify-center">
-                    <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex rounded shadow-sm -mt-4 py-1 px-3 text-md bg-gray-500 text-white hover:bg-highlight_2">
+                    <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex shadow-sm -mt-4 py-1 px-3 text-md bg-gray-800 text-white hover:bg-highlight_2">
                       Register
                     </button>
                   </div>

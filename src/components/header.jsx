@@ -46,13 +46,13 @@ const Header = () => {
   }
 
   return (
-    <header className="font-semibold" >
+    <header className="font-semibold z-50" >
      
       <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 py-2 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(34,34,34,0.9)" : ""}`, transition: "top 0.8s", overflow: "hidden"}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
-          <a href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
-          <div className={`${isScroll ? `text-gray-300` : `text-white`} ml-4 text-xl transition duration-1000 ease-in-out`}>
+          <a className={`${isScroll ? `` : [window.location.pathname === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
+          <div className={`${isScroll ? [window.location.pathname === "/" ? `text-gray-300` : ``] : [window.location.pathname === "/" ? `hidden` : `text-white`]} ml-4 text-lg transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">StayHome.Shef</Link>
           </div>
         </div>
