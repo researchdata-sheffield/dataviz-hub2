@@ -58,34 +58,36 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-md border-b-2 border-white" style={{minHeight: "50vh", }}>
           <div className="flex flex-wrap text-center text-white pt-24 pb-16">
             <div className="px-10 leading-tight w-full">
-              <h1 className="text-3xl xl:text-5xl font-semibold lg:px-24" style={{fontFamily:"TUoS Stephenson", textShadow: "black 0px 0px 3px"}}>{title}</h1>
-              <div className="mt-2 text-xs 2xl:text-sm">
+              <h1 className="text-3xl xl:text-5xl font-semibold lg:px-24" style={{textShadow: "black 0px 0px 3px"}}>{title}</h1>
+              <div className="flex justify-center mt-10 items-center mx-auto px-8">
+                {mdx.frontmatter.author.map((author) => (
+                  <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} src={author.avatar.childImageSharp.fluid.src}  />
+                ))}
+                <div className="inline-block px-2 text-left font-bold" style={{textShadow: "black 0px 0px 2px"}}>
+                  <h1 className="text-sm xl:text-base">
+                    {mdx.frontmatter.author.map((author, idx) => (
+                        (mdx.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
+                    ))}
+                  </h1>
+                  <h1 className="text-xs xl:text-sm">{date}</h1>
+                </div>
+              </div> 
+            </div>
+
+            <div className="mt-2 text-xs 2xl:text-sm mx-auto flex">
                 {mdx.frontmatter.category.map((cat) => (
                   <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-600 text-gray-200 rounded-md">{cat}
+                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent">{cat}
                   </Link>
                 ))}
                 {mdx.frontmatter.tag.map((tag) => (
                   <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-600 rounded-md">{tag}
+                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent">{tag}
                   </Link>
                 ))}
               </div>
-            </div>
 
-            <div className="flex justify-center mt-16 items-center mx-auto px-8">
-              {mdx.frontmatter.author.map((author) => (
-                <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} src={author.avatar.childImageSharp.fluid.src}  />
-              ))}
-              <div className="inline-block px-2 text-left font-bold" style={{textShadow: "black 0px 0px 2px"}}>
-                <h1 className="text-sm xl:text-base">
-                  {mdx.frontmatter.author.map((author, idx) => (
-                      (mdx.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
-                  ))}
-                </h1>
-                <h1 className="text-xs xl:text-sm">{date}</h1>
-              </div>
-            </div>        
+       
 
           </div>
         </div>

@@ -40,15 +40,15 @@ const featuredPost = ({ featuredPost }) => {
                     ))}
                   </p>
                   <p className="mt-5 text-base 2xl:text-xl group-hover:text-highlight_2 font-semibold">{node.fields.readingTime.text}</p>
-                  <div className="py-2 text-sm 2xl:text-base">
+                  <div className="py-3 text-sm 2xl:text-sm">
                     {node.frontmatter.category.map((cat) => (
                       <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                        className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-600 text-gray-200 rounded-md">{cat}
+                        className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent">{cat}
                       </Link>
                     ))}
                     {node.frontmatter.tag.map((tag) => (
                       <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                        className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-600 rounded-md">{tag}
+                        className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent">{tag}
                       </Link>
                     ))}
                   </div>

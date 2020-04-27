@@ -22,7 +22,7 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 			/>
 			<Header />
 			<BackgroundSection className="flex items-center justify-center text-center" Height="35vh">
-				<div className="text-white">
+				<div className="text-white" style={{textShadow: "#000000 0px 0px 5px"}}>
 					<h1 className="text-4xl">{pageContext.category}</h1>
 					<p className="text-sm">scientia potentia est.</p>
 				</div>

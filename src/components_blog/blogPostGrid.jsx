@@ -32,7 +32,7 @@ const blogPostGrid = ({allMdx}) => {
       }
 
       return (
-        <Slide bottom key={node.id} duration={400} fraction={0.45}>
+        <Slide bottom key={node.id} duration={400} fraction={0.4}>
           <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 max-h-100 pb-24 overflow-hidden bg-white" style={{fontFamily: "TUoS  Blake"}}>
             <Link className="group" to={node.fields.slug}>
               <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 min-h-3/5 max-h-3/5" style={{transition: ".5s ease", backgroundImage: `url(${imagesrc})`}}  />
@@ -49,12 +49,12 @@ const blogPostGrid = ({allMdx}) => {
                 <div className="py-2 text-sm">
                   {node.frontmatter.category.map((cat) => (
                     <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-500 text-gray-200 rounded-full">{cat}
+                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100">{cat}
                     </Link>
                   ))}
                   {node.frontmatter.tag.map((tag) => (
                     <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-300 text-gray-500 rounded-full">{tag}
+                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300">{tag}
                     </Link>
                   ))}
                 </div>
