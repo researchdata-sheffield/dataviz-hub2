@@ -27,7 +27,7 @@ const menuTag = ({ pageContext }) => {
           <h1 className="inline-block text-2xl pb-2 xl:pb-5 font-semibold mr-4"><FaTags style={{display: "inline-block"}} /> Tags</h1>
           <div className="inline-block focus:outline-none text-gray-600 bg-white shadow px-2 rounded-lg ml-6 xl:ml-2 mb-4">
             <FiSearch className="inline-block text-center text-xl -mt-2" />
-            <input id="tagSearch" onChange={handleChange}  className="search__input py-1 pl-2 text-base focus:outline-none pr-3 text-gray-600" style={{minWidth: "5vw"}} type="text" name="search" placeholder="Search for tag" />
+            <input id="tagSearch" onChange={handleChange}  className="search__input py-1 pl-2 text-base focus:outline-none pr-3 text-gray-600" style={{minWidth: "5vw"}} type="text" name="search" placeholder="Search for tags" />
           </div>
         </div>
 

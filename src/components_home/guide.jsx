@@ -23,7 +23,7 @@ const guide = () => {
       <div className="flex flex-wrap w-full ipadp:w-9/12  text-gray-600 mt-24">
         
         <Fade>
-          <div id="what" className="flex-wrap ipadp:min-h-100 px-5 ipadp:px-24 my-12">
+          <div id="what" className="flex-wrap ipadp:min-h-80 px-5 ipadp:px-24 my-12">
             <h1 className="font-semibold text-3xl"><p className="inline-block text-highlight_2 font-bold text-6xl">What</p> is data visualisation?</h1>
             <p className="leading-7 text-lg text-gray-600 py-10">
               Data visualisation generally considered as the graphical representation of information and data. The main purpose of data visualisation is to communicate information clearly and effectively by means of graphical representation. 
