@@ -1,4 +1,7 @@
 import styled from "styled-components"
+import tw from 'twin.macro'
+import { Link } from "gatsby"
+import styled_emotion from '@emotion/styled/macro'
 
 export const ArrowBox = styled.div`
   position: relative;
@@ -22,8 +25,8 @@ export const ArrowBox = styled.div`
     border-color: transparent;
     ${'' /* triangle border */}
     border-bottom-color: transparent;  
-    border-width: 28px;   
-    margin-left: -28px;
+    border-width: 30px;   
+    margin-left: -30px;
   }
 
   &:after {
@@ -59,8 +62,16 @@ export const IMG = styled.div`
   background-position: center;
 
   .group:hover > & {
-    -webkit-box-shadow: inset 0 -3px 0 #00aeef;
-    -moz-box-shadow: inset 0 -3px 0 #00aeef;
-    box-shadow: inset 0 -3px 0 #00aeef;
+    -webkit-box-shadow: inset 0 -4px 0 #00aeef;
+    -moz-box-shadow: inset 0 -4px 0 #00aeef;
+    box-shadow: inset 0 -4px 0 #00aeef;
   }
 `
+
+export const CatBtn = styled_emotion(Link)([
+  tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent`
+])
+
+export const TagBtn = styled_emotion(Link)([
+  tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent`
+])

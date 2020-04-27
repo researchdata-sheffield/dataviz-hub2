@@ -5,11 +5,12 @@ import Header from "../components/header"
 import Footer from "../components/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul } from "../components_style/blogPostStyle"
 import PaginationPost from "../components_blog/paginationPost"
+import {CatBtn, TagBtn} from "../components_style/styled"
 
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
@@ -75,20 +76,13 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             </div>
 
             <div className="mt-2 text-xs 2xl:text-sm mx-auto flex">
-                {mdx.frontmatter.category.map((cat) => (
-                  <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent">{cat}
-                  </Link>
-                ))}
-                {mdx.frontmatter.tag.map((tag) => (
-                  <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                    className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent">{tag}
-                  </Link>
-                ))}
-              </div>
-
-       
-
+              {mdx.frontmatter.category.map((cat) => (
+                <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
+              ))}
+              {mdx.frontmatter.tag.map((tag) => (
+                <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
+              ))}
+            </div>
           </div>
         </div>
         

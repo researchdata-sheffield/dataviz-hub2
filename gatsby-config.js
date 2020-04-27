@@ -140,6 +140,7 @@ module.exports = {
     `babel-plugin-styled-components`,
     `gatsby-plugin-smoothscroll`,
     `gatsby-transformer-json`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {

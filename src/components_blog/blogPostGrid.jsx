@@ -8,7 +8,7 @@ import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 import Slide from 'react-reveal/Slide'
-import {ArrowBox, IMG} from "../components_style/styled"
+import {ArrowBox, IMG, CatBtn, TagBtn} from "../components_style/styled"
 
 const blogPostGrid = ({allMdx}) => {
   
@@ -33,7 +33,7 @@ const blogPostGrid = ({allMdx}) => {
 
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 max-h-100 pb-24 overflow-hidden bg-white" style={{fontFamily: "TUoS  Blake"}}>
+          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 pb-24 overflow-hidden bg-white" style={{fontFamily: "TUoS  Blake"}}>
             <Link className="group" to={node.fields.slug}>
               <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 min-h-3/5 max-h-3/5" style={{transition: ".5s ease", backgroundImage: `url(${imagesrc})`}}  />
               <ArrowBox className="px-8 py-6 leading-none text-gray-500 pb-60">
@@ -48,14 +48,10 @@ const blogPostGrid = ({allMdx}) => {
                 <p className="mt-5 text-base group-hover:text-highlight_2 font-semibold">{node.fields.readingTime.text}</p>
                 <div className="py-2 text-sm">
                   {node.frontmatter.category.map((cat) => (
-                    <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100">{cat}
-                    </Link>
+                    <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
                   ))}
                   {node.frontmatter.tag.map((tag) => (
-                    <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                      className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300">{tag}
-                    </Link>
+                    <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
                   ))}
                 </div>
               </ArrowBox
