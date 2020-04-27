@@ -309,7 +309,6 @@ position: fixed;
 .group:hover > .arrow_box {
   border-top: 4px solid #00aeef;
 }
-
 .group:hover > .arrow_box:before {
   border-bottom-color: #00aeef;
 }

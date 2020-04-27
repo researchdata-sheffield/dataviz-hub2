@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export let H1 = styled.h1`
+export const H1 = styled.h1`
   display: block;
   font-size: 2em;
   margin-top: 0.67em;
@@ -10,7 +10,7 @@ export let H1 = styled.h1`
   font-weight: bold;
 `
 
-export let H2 = styled.h2`
+export const H2 = styled.h2`
   display: block;
   font-size: 1.5em;
   margin-top: 0.83em;
@@ -20,7 +20,7 @@ export let H2 = styled.h2`
   font-weight: bold;
 `
 
-export let H3 = styled.h3`
+export const H3 = styled.h3`
   display: block;
   font-size: 1.17em;
   margin-top: 1em;
@@ -30,7 +30,7 @@ export let H3 = styled.h3`
   font-weight: bold;
 `
 
-export let H4 = styled.h4`
+export const H4 = styled.h4`
   display: block;
   font-size: 1em;
   margin-top: 1.33em;
@@ -40,7 +40,7 @@ export let H4 = styled.h4`
   font-weight: bold;
 `
 
-export let H5 = styled.h5`
+export const H5 = styled.h5`
   display: block;
   font-size: .83em;
   margin-top: 1.67em;
@@ -50,7 +50,7 @@ export let H5 = styled.h5`
   font-weight: bold;
 `
 
-export let H6 = styled.h6`
+export const H6 = styled.h6`
   display: block;
   font-size: .67em;
   margin-top: 2.33em;
@@ -60,17 +60,17 @@ export let H6 = styled.h6`
   font-weight: bold;
 `
 
-export let P = styled.p`
+export const P = styled.p`
   display: block;
   margin-top: 1em;
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-  word-wrap: break-word; /* if you want to cut the complete word */
+  word-wrap: break-word; /* if you want to cut the compconste word */
   white-space: normal;
 `
 
-export let A = styled.a`
+export const A = styled.a`
   color: #00729b;
 
   &:hover, &:link:active, &:visited:active, &:visited:hover {
@@ -83,7 +83,7 @@ export let A = styled.a`
 
 `
 
-export let Ol = styled.ol`
+export const Ol = styled.ol`
   display: block;
   list-style-type: decimal;
   margin-top: 1em;
@@ -97,11 +97,11 @@ export let Ol = styled.ol`
   }
 `
 
-export let Li = styled.li` 
+export const Li = styled.li` 
   display: list-item;
 `
 
-export let Ul = styled.ul`
+export const Ul = styled.ul`
   display: block;
   list-style-type: disc;
   margin-top: 1em;
@@ -115,7 +115,7 @@ export let Ul = styled.ul`
   }
 `
 
-export let Hr = styled.hr`
+export const Hr = styled.hr`
   display: block;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
@@ -124,10 +124,10 @@ export let Hr = styled.hr`
   border-style: inset;
   border-width: 1px;
 `
-export let Del = styled.del`
+export const Del = styled.del`
   text-decoration: line-through;
 `
-export let Pre = styled.pre`
+export const Pre = styled.pre`
   display: block;
   font-family: monospace;
   white-space: pre;
