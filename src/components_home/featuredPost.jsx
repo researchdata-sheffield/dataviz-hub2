@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaStar } from "react-icons/fa"
 import Fade from 'react-reveal/Fade'
-import {ArrowBox_featured, IMG} from "../components_style/styled"
+import {ArrowBox_featured, IMG, CatBtn, TagBtn} from "../components_style/styled"
 
 const featuredPost = ({ featuredPost }) => {
 
@@ -42,14 +42,10 @@ const featuredPost = ({ featuredPost }) => {
                   <p className="mt-5 text-base 2xl:text-xl group-hover:text-highlight_2 font-semibold">{node.fields.readingTime.text}</p>
                   <div className="py-3 text-sm 2xl:text-sm">
                     {node.frontmatter.category.map((cat) => (
-                      <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} 
-                        className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent">{cat}
-                      </Link>
+                      <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
                     ))}
                     {node.frontmatter.tag.map((tag) => (
-                      <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} 
-                        className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent">{tag}
-                      </Link>
+                      <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
                     ))}
                   </div>
                 </ArrowBox_featured>

@@ -21,7 +21,7 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 			<Header />
-			<BackgroundSection className="flex items-center justify-center text-center" Height="35vh">
+			<BackgroundSection className="flex items-center justify-center text-center shadow-2xl" Height="35vh">
 				<div className="text-white" style={{textShadow: "#000000 0px 0px 5px"}}>
 					<h1 className="text-4xl">{pageContext.category}</h1>
 					<p className="text-sm">scientia potentia est.</p>
