@@ -33,10 +33,10 @@ const blogPostGrid = ({allMdx}) => {
 
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 pb-24 overflow-hidden bg-white" style={{fontFamily: "TUoS  Blake"}}>
+          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 pb-48 2xl:pb-24 overflow-hidden bg-white" style={{fontFamily: "TUoS  Blake"}}>
             <Link className="group" to={node.fields.slug}>
               <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 min-h-3/5 max-h-3/5" style={{transition: ".5s ease", backgroundImage: `url(${imagesrc})`}}  />
-              <ArrowBox className="px-8 py-6 leading-none text-gray-500 pb-60">
+              <ArrowBox className="px-8 pt-6 leading-none text-gray-500">
                 <h1 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "10vh", fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
                 <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
                 <p className=" my-2 text-xs pt-2" >{node.frontmatter.date}</p>
@@ -46,17 +46,16 @@ const blogPostGrid = ({allMdx}) => {
                   ))}
                 </p>
                 <p className="mt-5 text-base group-hover:text-highlight_2 font-semibold">{node.fields.readingTime.text}</p>
-                <div className="py-2 text-sm">
-                  {node.frontmatter.category.map((cat) => (
-                    <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
-                  ))}
-                  {node.frontmatter.tag.map((tag) => (
-                    <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
-                  ))}
-                </div>
-              </ArrowBox
->
+              </ArrowBox>
             </Link>
+            <div className="py-3 px-8 text-sm ">
+              {node.frontmatter.category.map((cat) => (
+                <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
+              ))}
+              {node.frontmatter.tag.map((tag) => (
+                <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
+              ))}
+            </div>        
           </div>
         </Slide>
       )

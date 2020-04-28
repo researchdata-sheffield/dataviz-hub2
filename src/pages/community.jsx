@@ -54,12 +54,12 @@ const Community = () => (
               <p className="pt-24"> We’ve started with a <Link to="/community/#joinus"><b>TUoS google group</b></Link> which can be joined through a TUoS google account. <br />
                 We have also added <Link to="/community/#joinus"><b>slack channel</b></Link> for more informal communication and chat. Remember to say hello in our <i>#welcome channel</i>.</p>
               <p className="text-highlight_2 text-2xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
-              <p className="text-gray-500">But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
+              <h1 className="text-gray-500">But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
                 <p className="pl-4"> <br />
                 ~ Data visualisation in R <br />
                 ~ R, htmlwidgets & Shiny  <br />
                 ~ Dataviz using vegalite  <br /> </p>
-              </p>
+              </h1>
             </Fade>
           </div>
        
