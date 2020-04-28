@@ -11,25 +11,55 @@ import Helmet from "react-helmet"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul } from "../components_style/blogPostStyle"
 import PaginationPost from "../components_blog/paginationPost"
 import {CatBtn, TagBtn} from "../components_style/styled"
-
+import Scrollspy from 'react-scrollspy'
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     const { title, date } = mdx.frontmatter
     const {prev, next} = pageContext
-    /* const tableOfContent = mdx.tableOfContents */
+    const tableOfContent = mdx.tableOfContents 
     
-/*     const renderItem = item => (
-      <li key={item.title}>
+    const renderItem = (item) => (
+      <li key={item.title} className="pb-2">
+        <a href={item.url}><p>{item.title}</p></a>
         {item.items ? (
-          <ul>
-            <a href={item.url}>{item.title}</a>
-            {item.items.map(renderItem)}
+          <ul className="pl-4">
+            {item.items.map(renderSubItem)}
           </ul>
         ) : (
-          <a href={item.url}>{item.title}</a>
+          <a></a>
         )}
       </li>
-    ); */
+    ); 
+
+    const renderSubItem = (item) => (
+      <li key={item.title} className="pt-2">
+        <a href={item.url}><p>{item.title}</p></a>
+        {item.items ? (
+          <ul className="pl-4">
+            {item.items.map(renderSubItem)}
+          </ul>
+        ) : (
+          <a></a>
+        )}
+      </li>
+    ); 
+
+    const tocHighlight = (toc) => {
+      const itemList = [];
+
+      const scrollItem = (item) => (
+        item.items ? (
+          item.items.map(scrollItem)
+        ) : (
+          itemList.push(`${item.url.substring(1,)}`)
+        )
+      );
+
+      toc.items.map(scrollItem)
+      console.log(itemList)
+      return itemList
+
+    };
     
 
     return (
@@ -86,15 +116,27 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           </div>
         </div>
         
-        {/* {tableOfContent && <ul>{tableOfContent.items.map(renderItem)}</ul>}  */}           
-        {/* <img className="justify-center items-center m-auto -mt-10 shadow-2xl" src={mdx.frontmatter.thumbnail.childImageSharp.fluid.src} style={{minHeight: "20%", maxHeight: "20%", maxWidth: "40%", minWidth: "40%",  objectFit: "cover", objectPosition: "center"}}></img>  */}
+                   
+        <div className="flex flex-wrap relative">
+          <div className={` ${ tableOfContent.items ? `lg:w-10/12`: ``} justify-center mx-auto container py-8 px-3 lg:px-36 2xl:px-70 leading-7 text-lg`}>
+            <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, }}>
+              <MDXRenderer>{mdx.body}</MDXRenderer>
+            </MDXProvider>
+          </div>
+
+          <div className={` ${ tableOfContent.items ? `lg:w-2/12`: ``} sm:sticky sm:top-0 sm:right-0 pt-18 pb-10 pr-6 max-h-100 overflow-auto`}>
+            {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
+            { tableOfContent && 
+              tableOfContent.items && 
+              <Scrollspy className="text-gray-500" currentClassName="underline " scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+                {tableOfContent.items.map(renderItem)}
+              </Scrollspy>
+            }      
+          </div>        
+        </div>        
                     
 
-        <div className="justify-center container mx-auto py-8 px-3 lg:px-36 2xl:px-78 leading-7 text-lg">
-          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, }}>
-            <MDXRenderer>{mdx.body}</MDXRenderer>
-          </MDXProvider>
-        </div>
+
         
         <PaginationPost mdx={mdx} prev={prev} next={next} />
         

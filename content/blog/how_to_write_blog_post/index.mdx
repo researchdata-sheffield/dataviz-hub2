@@ -10,12 +10,6 @@ template:
 featured: "true"
 ---
 
-# Table of Contents
-1. [Example](#Introduction)
-2. [Example2](#Setup)
-3. [Third Example](#Write a post)
-4. [Fourth Example](#Styling)
-
 
 # Introduction
 This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
@@ -28,22 +22,30 @@ A copy of this blog file is available <a href="./index.mdx">here</a>.
 
 If you want to preview the post while you're writing, then you'll need to setup a gatsby development environment in order to preview the website.
 
+  ## Installation
   1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
   For other OS visit <a href="https://www.gatsbyjs.org/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system">here</a>. (You might also need to download Visual Studio installer to install node.js development tools).
   
   2. Install <a href="https://gitforwindows.org/">Git</a>. 
   
-  3. Install Gatsby CLI by running   `npm install -g gatsby-cli`
+  3. Install Gatsby CLI by running  `npm install -g gatsby-cli`
 
-  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run `git clone https://github.com/yourusername/dataviz-hub2.git` then run `cd dataviz-hub2` and `npm install` (install dependencies). 
-    Then go to **dataviz-hub2/plugins/gatsby-source-eventbrite-multi-accounts/** and run `npm install` as well.
-  
-  5. Create a new local branch with commands `git checkout master` (make sure you're in master branch), `git branch newBranchName` (create a new branch from master), and `git checkout newBranchName` (switch to new branch).
+  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run:
+    
+    ```
+    git clone https://github.com/yourusername/dataviz-hub2.git
+    cd dataviz-hub2
+    npm install                                                 //install dependencies
+    cd plugins/gatsby-source-eventbrite-multi-accounts
+    npm install                                                 //install plugin dependencies
+    ```
+
+  5. Create a new local branch with commands **git checkout master** (make sure you're in master branch), **git branch newBranchName** (create a new branch from master), and **git checkout newBranchName** (switch to new branch).
     Now make any commits you wish to.
-   
-<b>NOTE:</b> At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
 
-If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run `npm install` etc.
+## Note
+  At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
+  If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run **npm install** etc.
 
 
 
@@ -121,8 +123,10 @@ If it comes from a branch in origin repository, [read here](https://help.github.
 <p className="text-red-600 mb-24">If you do not want to setup the environment, you can write a post by upload <i>index.mdx</i> file and any resources related to the post on Github too.</p>
 
 # Styling
-<div>
+
 There are many ways to add styles to your md/mdx elements, in here we listed two methods to do this. 
+
+## Inline style
 
 1. Use the style attribute as usual with slightly different syntax:
 
@@ -142,6 +146,8 @@ For any declaration in HTML with hyphen,
 in Gatsby we remove the hyphen and capitalise the letter after the hyphen.
 ```
 
+## tailwindCSS
+
 2. This website has integrated <b>tailwindcss</b> framework therefore you can style elements by applying <b>pre-existing classes</b> directly in your HTML. 
 Explore [tailwindCSS](https://tailwindcss.com/docs/width) to see available classes you can utilise.
 
@@ -158,13 +164,14 @@ mb-24: bottom margin with size 24.
 Output:
 <p className="text-3xl text-gray-500 mb-24">TAILwindCSS</p>
 
-</div>
+
 
 Of course you can also add your own class, just need to make sure all classes you've created need to be place in the file `dataviz-hub/src/css/post.css`. Specificity is important, 
 to avoid your classes being override by other styling plugins, add `body` before each class. Alternatively, use style attribute. 
 
 <br />
 <br />
+
 
 # Code
 
@@ -187,7 +194,7 @@ You can also specify what programming language after first triple backticks.
 
 
 
-<h1 className="text-3xl mt-24 mb-5">Image</h1>
+# Image
 This is how you would embed add an local image (remember to add your images in the same directory of your md/mdx file):
 
 ```js
@@ -203,7 +210,7 @@ Alternatively:
 For images available online just use its url.
 
 
-<h1 className="text-3xl mt-24 mb-5">Video</h1>
+# Video
 This is how you would embed a video:
 
 ```js
@@ -216,7 +223,7 @@ for more informtion about embedding videos, visit  <a style={{color: "blue"}} hr
 
 
 
-<h1 className="text-3xl mt-24 mb-5">Files</h1>
+# Files
 To make a file available to readers, place the file under the post directory and add something like this:
 
 ```
