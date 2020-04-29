@@ -35,15 +35,15 @@ const Community = () => (
       </Bounce>
     </BackgroundSection>
 
-    <div id="discover" className="container mx-auto py-32 text-gray-800 flex flex-wrap" style={{fontFamily: "TUoS Blake"}}>
+    <div id="discover" className="container mx-auto py-32 text-gray-800 flex flex-wrap">
       
       <div className="flex flex-wrap lg:mx-16">
         
-          <div className="text-2xl w-full xs:w-full md:w-full lg:w-1/2 px-4">
+          <div className="text-xl w-full xs:w-full md:w-full lg:w-1/2 px-4">
             <Fade cascade duration={2000}>
               <p className="text-highlight_2 text-6xl text-center py-12">Stay tuned!</p>
               <p className="pb-12 text-gray-600">The most important part of the initiative is to build community around data visualisation, we hope to achieve this in a number of ways.</p>
-              <p className="font-semibold pb-8">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
+              <p className="font-semibold pb-8 ">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
               <img className="my-24" src={com_2} style={{borderRadius: "50%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
             </Fade>
           </div>
@@ -108,7 +108,7 @@ const Community = () => (
         </Zoom>
       </div>
 
-      <div className="lg:px-16 pt-24 pb-16 text-gray-600 text-2xl">
+      <div className="lg:px-16 pt-24 pb-16 text-gray-600 text-xl">
           <p className="text-highlight_2 text-5xl px-2">Contributing!</p>
           <p className="p-6">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
             Feel free to get in touch with us through the google group or slack team with any suggestions. 

@@ -39,8 +39,8 @@ const blogPostGrid = ({allMdx}) => {
               <ArrowBox className="px-8 pt-6 leading-none text-gray-500">
                 <h1 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "10vh", fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
                 <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
-                <p className=" my-2 text-xs pt-2" >{node.frontmatter.date}</p>
-                <p className="my-2 text-xs">
+                <p className=" my-2 text-sm pt-2" >{node.frontmatter.date}</p>
+                <p className="my-2 text-sm">
                   {node.frontmatter.author.map((author, idx) => (
                     (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
                   ))}
