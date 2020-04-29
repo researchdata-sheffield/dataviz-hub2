@@ -13,8 +13,10 @@ import PaginationPost from "../components_blog/paginationPost"
 import {CatBtn, TagBtn} from "../components_style/styled"
 import Scrollspy from 'react-scrollspy'
 
+
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
-    const { title, date } = mdx.frontmatter
+
+  const { title, date } = mdx.frontmatter
     const {prev, next} = pageContext
     const tableOfContent = mdx.tableOfContents 
     
@@ -54,11 +56,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           itemList.push(`${item.url.substring(1,)}`)
         )
       );
-
       toc.items.map(scrollItem)
-      console.log(itemList)
       return itemList
-
     };
     
 
@@ -115,20 +114,32 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             </div>
           </div>
         </div>
-        
-                   
+
+
         <div className="flex flex-wrap relative">
-          <div className={` ${ tableOfContent.items ? `lg:w-10/12`: ``} justify-center mx-auto container py-8 px-3 lg:px-36 2xl:px-70 leading-7 text-lg`}>
+          <div className="w-full bg-gray-900 flex justify-center">
+            <div className={` ${ tableOfContent.items ? ``: ``} lg:hidden pt-10 pb-5 mx-auto overflow-auto text-white`}>
+                {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
+                { tableOfContent && 
+                  tableOfContent.items && 
+                  <Scrollspy className="text-gray-500" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+                    {tableOfContent.items.map(renderItem)}
+                  </Scrollspy>
+                }      
+            </div>       
+          </div>   
+
+          <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} justify-center mx-auto container py-8 px-3 lg:px-36 2xl:px-70 leading-7 text-lg`}>
             <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, }}>
               <MDXRenderer>{mdx.body}</MDXRenderer>
             </MDXProvider>
           </div>
 
-          <div className={` ${ tableOfContent.items ? `lg:w-2/12`: ``} sm:sticky sm:top-0 sm:right-0 pt-18 pb-10 pr-6 max-h-100 overflow-auto`}>
+          <div className={` ${ tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden lg:sticky lg:top-0 lg:right-0 pt-24 pb-10 mx-auto max-h-100 overflow-auto`}>
             {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
             { tableOfContent && 
               tableOfContent.items && 
-              <Scrollspy className="text-gray-500" currentClassName="underline " scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+              <Scrollspy className="text-gray-500" currentClassName="underline" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
                 {tableOfContent.items.map(renderItem)}
               </Scrollspy>
             }      

@@ -122,11 +122,30 @@ If it comes from a branch in origin repository, [read here](https://help.github.
 
 <p className="text-red-600 mb-24">If you do not want to setup the environment, you can write a post by upload <i>index.mdx</i> file and any resources related to the post on Github too.</p>
 
+
+# Table of content
+
+If you have created headings using markdown syntax like below:
+```
+# table of content
+Write something
+
+## Subtitle
+...
+
+# Another Title
+...
+
+## Another Title - subtitle
+...
+```
+
+then this website will automatically create a table of content list for you on the right hand side of the post.
+<br /><br />
+
 # Styling
 
 There are many ways to add styles to your md/mdx elements, in here we listed two methods to do this. 
-
-## Inline style
 
 1. Use the style attribute as usual with slightly different syntax:
 
@@ -145,8 +164,6 @@ In Gatsby we transform it into:
 For any declaration in HTML with hyphen, 
 in Gatsby we remove the hyphen and capitalise the letter after the hyphen.
 ```
-
-## tailwindCSS
 
 2. This website has integrated <b>tailwindcss</b> framework therefore you can style elements by applying <b>pre-existing classes</b> directly in your HTML. 
 Explore [tailwindCSS](https://tailwindcss.com/docs/width) to see available classes you can utilise.
@@ -229,4 +246,3 @@ To make a file available to readers, place the file under the post directory and
 ```
 <a href="./filename.pdf">Download</a>
 ```
-

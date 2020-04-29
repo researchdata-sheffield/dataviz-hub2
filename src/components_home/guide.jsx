@@ -1,8 +1,8 @@
 import React from 'react'
 import Why from "../images/home/why.jpg"
 import How from "../images/home/how.jpg"
-import scroll_To from 'gatsby-plugin-smoothscroll'
 import Fade from 'react-reveal/Fade'
+import Scrollspy from 'react-scrollspy'
 
 const guide = () => {
   
@@ -11,11 +11,13 @@ const guide = () => {
 
       <Fade left duration={2000}>
         <div className="hidden ipadp:block ipadp:sticky ipadp:top-0 flex-col flex-wrap w-full ipadp:w-3/12 overflow-hidden ipadp:max-h-100 px-12 ipadp:py-32 leading-8">
-          <div className="ipadp:border-r-1 border-gray-400 ipadp:py-16 text-right pr-6">
-            <p onClick={() => scroll_To('#what')} className="hover:text-highlight_2 cursor-pointer">What is data visualisation</p>
-            <p onClick={() => scroll_To('#why')} className="hover:text-highlight_2 cursor-pointer">Why is it important</p>
-            <p onClick={() => scroll_To('#how')} className="hover:text-highlight_2 cursor-pointer">How this site could help</p>
-            <p onClick={() => scroll_To('#start')} className="hover:text-highlight_2 cursor-pointer">Get started</p>
+          <div className="ipadp:border-r-1 border-gray-400 ipadp:py-16 text-right pr-6 text-gray-500">
+            <Scrollspy items={ ['what', 'why', 'how', 'start'] } currentClassName="text-highlight_2" scrolledPastClassName="text-gray-700">
+              <li><a href="#what" className="hover:text-highlight_2 cursor-pointer">What is data visualisation</a></li>
+              <li><a href="#why" className="hover:text-highlight_2 cursor-pointer">Why is it important</a></li>
+              <li><a href="#how" className="hover:text-highlight_2 cursor-pointer">How this site could help</a></li>
+              <li><a href="#start" className="hover:text-highlight_2 cursor-pointer">Get started</a></li>
+            </Scrollspy>
           </div>
         </div>
       </Fade>
