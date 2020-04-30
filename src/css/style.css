@@ -69,6 +69,19 @@ a {
   width: 80%;
 }
 
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: normal;
+  line-break: strict;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;  
+}
+
+::-moz-selection { background: #00aeef; color: white }
+::selection { background: #00aeef; color: white }
+
 
 
 /******* Logo animation ********/

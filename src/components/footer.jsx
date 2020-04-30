@@ -20,7 +20,7 @@ const Footer = () => {
             </ul>
       </div>
       <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
-          <div className="text-gray-100 text-md mb-2 font-semibold">Online Research Data</div>
+          <div className="text-gray-100 text-md mb-2 font-semibold"><a href="https://orda.shef.ac.uk">Online Research Data</a></div>
             <ul className="list-reset leading-normal">
               <li><a className="text-gray-500 hover:text-highlight_2" href="https://orda.shef.ac.uk/articles/list/desc/published_date/all" target="_blank" rel="noopener noreferrer">Datasets</a></li>
               <li><a className="text-gray-500 hover:text-highlight_2" href="https://orda.shef.ac.uk/#orda-fac" target="_blank" rel="noopener noreferrer">Faculties</a></li>

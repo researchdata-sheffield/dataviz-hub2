@@ -84,7 +84,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </div>
                 
                 <div className="w-1/7">
-                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">New vistors</div>
+                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">New Visitors</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
                       <li onClick={() => scroll_To('#what')}><Link className="text-gray-500 hover:text-highlight_2" to="#what">What is dataviz</Link></li>
                       <li onClick={() => scroll_To('#why')}><Link className="text-gray-500 hover:text-highlight_2" to="#why">Why is it important</Link></li>

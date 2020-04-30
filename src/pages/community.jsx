@@ -43,7 +43,7 @@ const Community = () => (
             <Fade cascade duration={2000}>
               <p className="text-highlight_2 text-6xl text-center py-12">Stay tuned!</p>
               <p className="pb-12 text-gray-600">The most important part of the initiative is to build community around data visualisation, we hope to achieve this in a number of ways.</p>
-              <p className="font-semibold pb-8 ">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
+              <p className="font-semibold pb-8">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
               <img className="my-24" src={com_2} style={{borderRadius: "50%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
             </Fade>
           </div>
