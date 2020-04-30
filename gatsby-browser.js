@@ -26,5 +26,5 @@ export const shouldUpdateScroll = () => {
 
 export const onServiceWorkerUpdateReady = () => window.location.reload();
 
-require("prismjs/themes/prism-okaidia.css")
+require("./src/css/prism-custom.css")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")

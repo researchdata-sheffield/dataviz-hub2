@@ -1,0 +1,194 @@
+
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #d4d4d4;
+  background: none;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+ 
+/* Code blocks */
+pre[class*="language-"] {
+  padding: 1em;
+  margin: .5em 0;
+  overflow: auto;
+  border-radius: 0.3em;
+}
+ 
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  background-color: #000000;
+  border-radius: 0.5em;
+  margin: 0.5em auto;
+  padding: .1em 1em;
+  overflow: auto;
+  width: 100%;
+  box-shadow: rgb(153, 153, 153) 0px 0px 10px;
+}
+
+
+:not(pre) > code[class*="language-"],
+pre[class*="language-"] {
+  background: #000000;
+}
+ 
+ 
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .15em;
+  border-radius: 0.5em;
+  white-space: normal;
+  background: #000000;
+  color: white;
+  box-shadow: none;
+}
+
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+
+.gatsby-highlight pre[class*="language-"] {
+/*   background-color: transparent; */
+  padding: 0;
+  overflow: initial;
+  float: left; /* 1 */
+  min-width: 100%; /* 2 */
+  font-size: .91rem;
+}
+
+.gatsby-highlight pre[class*="language-"].line-numbers {
+  padding-left: 2.5em;
+}
+
+/* Highlight lines */
+.gatsby-highlight-code-line {
+  background-color: #252525;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 4px solid #00aeef;
+}
+
+
+
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: #7C7C7C;
+}
+
+.token.punctuation {
+	color: #c5c8c6;
+}
+
+.namespace {
+	opacity: .7;
+}
+
+.token.property,
+.token.keyword,
+.token.tag {
+	color: #66d9ef;
+}
+
+.token.class-name {
+	color: rgb(255, 98, 87);
+}
+
+.token.boolean,
+.token.constant {
+	color: #99CC99;
+}
+
+.token.symbol,
+.token.deleted {
+	color: #f92672;
+}
+
+.token.number {
+	color: #FF73FD;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: #A8FF60;
+}
+
+.token.variable {
+	color: #C6C5FE;
+}
+
+.token.operator {
+	color: #EDEDED;
+}
+
+.token.entity {
+	color: #FFFFB6;
+	cursor: help;
+}
+
+.token.url {
+	color: #66d9ef;
+}
+
+.language-css .token.string,
+.style .token.string {
+	color: #87C38A;
+}
+
+.token.atrule,
+.token.attr-value {
+	color: #F9EE98;
+}
+
+.token.function {
+	color: #DAD085;
+}
+
+.token.regex {
+	color: #E9C062;
+}
+
+.token.important {
+	color: #fd971f;
+}
+
+.token.important,
+.token.bold {
+	font-weight: bold;
+}
+
+.token.italic {
+	font-style: italic;
+}

@@ -51,7 +51,8 @@ If you want to preview the post while you're writing, then you'll need to setup 
 
 
 ```
-If you have cloned the repository a while a ago, fetch the latest commits from origin repository:
+If you have cloned the repository a while a ago, 
+fetch the latest commits from origin repository:
 
 git checkout master
 git pull upstream master
@@ -75,7 +76,7 @@ You will probably want to install Gatsby so that you can test your contribution 
 
     + At the very beginning of your index file, you have the following parameters to specify:
 
-    ```mdx
+    ```md
     ---
     title: "This is a template for posts"
     author: ["A", "B"]                   
@@ -149,11 +150,11 @@ There are many ways to add styles to your md/mdx elements, in here we listed two
 
 1. Use the style attribute as usual with slightly different syntax:
 
-```html
+```html{7-10}
 In HTML we normally style a div tag like this:
 <div style="font-size: 25px, display: flex">
   Write something
-</div>
+</div> 
 
 -----------------------
 In Gatsby we transform it into:
@@ -167,8 +168,8 @@ in Gatsby we remove the hyphen and capitalise the letter after the hyphen.
 
 2. This website has integrated <b>tailwindcss</b> framework therefore you can style elements by applying <b>pre-existing classes</b> directly in your HTML. 
 Explore [tailwindCSS](https://tailwindcss.com/docs/width) to see available classes you can utilise.
-
 ```html
+
 // In Gatsby, class is replaced by className
 An example of using tailwindCSS
 
@@ -199,13 +200,19 @@ To add inline code, surround your code by single backtick.
 
 For a code block, use triple backticks.
 
-```
+```md{6-7}
 1```html
 code block
 1```
 
 1 is for illustration, remove it in practice.
 You can also specify what programming language after first triple backticks.
+To highlight lines, specify line numbers within curly brackets after triple backticks.
+
+1```js{1-2, 4, 5, 6}
+code
+1```
+
 ```
 
 
