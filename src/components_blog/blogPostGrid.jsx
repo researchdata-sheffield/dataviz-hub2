@@ -33,7 +33,7 @@ const blogPostGrid = ({allMdx}) => {
 
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 pb-48 2xl:pb-24 overflow-hidden bg-white" style={{fontFamily: "TUoS  Blake"}}>
+          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-100 pb-48 2xl:pb-24 overflow-hidden bg-white">
             <Link className="group" to={node.fields.slug}>
               <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 min-h-3/5 max-h-3/5" style={{transition: ".5s ease", backgroundImage: `url(${imagesrc})`}}  />
               <ArrowBox className="px-8 pt-6 leading-none text-gray-500">

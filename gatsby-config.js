@@ -30,6 +30,7 @@ module.exports = {
         path: `./src/author`,
       },
     },
+    /******************************* MDX Plugins *******************************************/
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -44,6 +45,7 @@ module.exports = {
         ],
 
         gatsbyRemarkPlugins: [
+          `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-embed-video`,
             options: {
@@ -140,6 +142,7 @@ module.exports = {
         ]
       }
     },
+    /************************** END MDX Plugins *********************************/
     {
       resolve: 'gatsby-plugin-load-script',
       options: {
@@ -157,6 +160,8 @@ module.exports = {
     `gatsby-plugin-smoothscroll`,
     `gatsby-transformer-json`,
     `gatsby-plugin-emotion`,
+    //`gatsby-plugin-twitter`,
+    `gatsby-plugin-instagram-embed`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
@@ -188,7 +193,8 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png` // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        cache_busting_mode: 'none'   // Work with offline plugin
       },
     },
     {
@@ -216,6 +222,7 @@ module.exports = {
         specialChars: '/:',
       },
     },
+    /***************** FLEXSEARCH ********************/
     {
       resolve: 'gatsby-plugin-flexsearch',
       options: {
@@ -304,17 +311,47 @@ module.exports = {
           },
         ],
       },
-    }
-/*     {
-      resolve: `gatsby-source-drupal`,
-      options: {
-        baseUrl: `http://gatsby-drupal.ddev.local/`,
-        apiBase: `jsonapi`, // optional, defaults to `jsonapi`
-      },
-    } */
+    },
+    /***************** END FLEXSEARCH ********************/
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: 'gatsby-plugin-offline',
+      options: {
+         workboxConfig: {
+            globPatterns: ['**/*']
+         }
+      }
+   },
+   {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        // The property ID; the tracking code won't be generated without it
+        trackingId: ***REMOVED***,
+        // Defines where to place the tracking script - `true` in the head and `false` in the body
+        head: true,
+        // Setting this parameter is optional
+        anonymize: true,
+        // Setting this parameter is also optional
+        respectDNT: true,
+        // Avoids sending pageview hits from custom paths
+        exclude: ["/preview/**", "/do-not-track/me/too/"],
+        // Delays sending pageview hits on route update (in milliseconds)
+        pageTransitionDelay: 1000,
+        // Enables Google Optimize using your container Id
+        optimizeId: "YOUR_GOOGLE_OPTIMIZE_TRACKING_ID",
+        // Enables Google Optimize Experiment ID
+        experimentId: "YOUR_GOOGLE_EXPERIMENT_ID",
+        // Set Variation ID. 0 for original 1,2,3....
+        variationId: "YOUR_GOOGLE_OPTIMIZE_VARIATION_ID",
+        // Defers execution of google analytics script after page load
+        defer: false,
+        // Any additional optional fields
+        sampleRate: 5,
+        siteSpeedSampleRate: 10,
+        cookieDomain: "example.com",
+      },
+    },
   ],
 }

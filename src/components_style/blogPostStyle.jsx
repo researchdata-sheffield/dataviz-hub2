@@ -134,4 +134,24 @@ export const Pre = styled.pre`
   margin: 1em 0;
 `
 
+export const BlockQuote = styled.blockquote`
+  background: #f9f9f9;
+  border-left: 10px solid #ccc;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+
+  &:before {
+    color: #ccc;
+    content: open-quote;
+    font-size: 4em;
+    line-height: 0.1em;
+    margin-right: 0.25em;
+    vertical-align: -0.4em;
+  }
+
+  & p {
+    display: inline;
+  }
+
+`
 

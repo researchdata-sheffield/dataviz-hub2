@@ -209,36 +209,88 @@ You can also specify what programming language after first triple backticks.
 ```
 
 
-
+<br />
 
 # Image
 This is how you would embed add an local image (remember to add your images in the same directory of your md/mdx file):
 
-```js
+```md
 ![my image description](./temp.jpg)
 ```
 
 Alternatively: 
 
-```js
+```md
 <img alt="my image description" src="./temp.jpg" />
 ```
 
-For images available online just use its url.
+For images available online use their url.
 
+<br />
 
-# Video
-This is how you would embed a video:
+# Embed well known services
+You can embed many services (like CodePen, CodeSandbox, GIPHY, Instagram, Lichess, Slides, SoundCloud, Spotify, Streamable, Twitch, Twitter or YouTube) into blog posts by their URLs. 
+Please ensure the URLs are wrapped by empty lines.
 
-```js
+This is how you would embed a youtube video:
+
+```md
 `video: https://www.youtube.com/watch?v=N5yRLFcbv4s`
+or 
+https://www.youtube.com/watch?v=dKno6ojJd_Q
 ```
+
 Note: you can't styling videos at the moment.
 `video: https://www.youtube.com/watch?v=N5yRLFcbv4s`
-for more informtion about embedding videos, visit  <a style={{color: "blue"}} href="https://www.gatsbyjs.org/packages/gatsby-remark-embed-video/#usage">here</a>.
+for more informtion about embedding videos using the first option, visit  <a href="https://www.gatsbyjs.org/packages/gatsby-remark-embed-video/#usage" target="_blank" rel="noreferrer noopener">here</a>.
+
+https://www.youtube.com/watch?v=dKno6ojJd_Q
 
 
+Embed twitter:
+```md
+https://twitter.com/OpenResShef/status/1255448310271356932
+or 
+On Twitter, find the tweet you'd like to display.
+In the top right-hand corner of the tweet, click the caret (∨) and select "Embed tweet".
+Take the code you're given and copy it into your markdown page.
 
+Note: when copying the embed code, copy only the blockquote section and not the script.
+<blockquote class="twitter-tweet">
+<p lang="en" dir="ltr">UKRI-funded researchers will know that the current open access policy only applies to journal articles &amp; conference proceedings - the new one will also apply to monographs, edited collections &amp; chapters 📚 (so particular heads up to our A&amp;H and social sciences researchers)</p>&mdash; Open Research TUoS (@OpenResShef) 
+<a href="https://twitter.com/OpenResShef/status/1255448311953309702?ref_src=twsrc%5Etfw">April 29, 2020</a>
+</blockquote> 
+
+To center the twitter card, use second option and wrap it with DIV with className "flex justify-center"
+```
+https://twitter.com/OpenResShef/status/1255448310271356932
+
+<div className="flex justify-center">
+<blockquote class="twitter-tweet">
+  <p lang="en" dir="ltr">We&#39;re running an online consultation on 5th May to gather feedback on proposed changes to the UKRI open access policy - Sheffield researchers (incl. PGRs) sign up using the link below, and see our thread for more info 👇 
+    <a href="https://t.co/WEmd2E31AN">https://t.co/WEmd2E31AN</a>
+  </p>&mdash; Open Research TUoS (@OpenResShef) 
+    <a href="https://twitter.com/OpenResShef/status/1255448310271356932?ref_src=twsrc%5Etfw">April 29, 2020</a>
+</blockquote> 
+</div>
+
+<br />
+
+Embed codepen:
+
+https://codepen.io/melvinidema/pen/ExVXzML
+
+
+Embed CodeSandbox:
+```
+// Add "?view=split" to the end
+https://codesandbox.io/s/ynn88nx9x?view=split
+```
+
+https://codesandbox.io/s/ynn88nx9x?view=split
+
+
+<br /><br />
 
 # Files
 To make a file available to readers, place the file under the post directory and add something like this:
