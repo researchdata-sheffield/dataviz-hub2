@@ -7,9 +7,11 @@ import Fade from 'react-reveal/Fade'
 import {ArrowBox_featured, IMG, CatBtn, TagBtn} from "../components_style/styled"
 
 const featuredPost = ({ featuredPost }) => {
+  if(featuredPost) {
 
+  
   return (
-
+    
     <div className="w-full flex flex-wrap bg-black">
       {featuredPost.edges.map(({ node }) => {
         let imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
@@ -23,7 +25,7 @@ const featuredPost = ({ featuredPost }) => {
 
         return (
           <Fade key={node.id} duration={2000} fraction={0.3}>
-            <div className="w-full sm:w-1/2 min-h-100 pb-36 overflow-hidden bg-black relative leading-none text-gray-500">
+            <div className="w-full sm:w-1/2 min-h-100 pb-36 overflow-hidden bg-black relative leading-none text-gray-500 flex-grow">
               <Link className="group" to={node.fields.slug}>
                 <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300" style={{zIndex: "3"}}>
                   <FaStar className="mr-2 text-yellow-300 text-2xl" />
@@ -57,7 +59,7 @@ const featuredPost = ({ featuredPost }) => {
       })}
     </div>
   )
-
+  }
 }
 
 export default featuredPost
