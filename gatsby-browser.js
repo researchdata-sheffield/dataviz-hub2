@@ -6,7 +6,6 @@
 
 
 import "./src/css/style.css";
-import "./src/css/prismjs.css";
 import "./src/css/post.css";
 import "tailwindcss/dist/base.css"
 

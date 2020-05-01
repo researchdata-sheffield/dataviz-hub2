@@ -1,4 +1,16 @@
 import styled from "styled-components"
+import { Link as gatsby_Link } from "gatsby"
+
+export const Link = styled(gatsby_Link)`
+  color: #006aa6;
+  
+
+  &:hover {
+    color: #00aeef;
+  }
+
+`
+
 
 export const H1 = styled.h1`
   display: block;
@@ -8,6 +20,7 @@ export const H1 = styled.h1`
   margin-left: 0;
   margin-right: 0;
   font-weight: bold;
+  line-height: 1.2;
 `
 
 export const H2 = styled.h2`
@@ -68,17 +81,18 @@ export const P = styled.p`
   margin-right: 0;
   word-wrap: break-word; /* if you want to cut the compconste word */
   white-space: normal;
+  line-height: 1.6;
 `
 
 export const A = styled.a`
-  color: #00729b;
+  color: #006aa6;
 
   &:hover, &:link:active, &:visited:active, &:visited:hover {
     color: #00aeef;
   }
 
   &:visited {
-    color: #00729b;
+    color: #006aa6;
   }
 
 `

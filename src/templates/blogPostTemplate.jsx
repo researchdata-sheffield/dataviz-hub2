@@ -8,11 +8,11 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote } from "../components_style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link } from "../components_style/blogPostStyle"
 import PaginationPost from "../components_blog/paginationPost"
 import {CatBtn, TagBtn} from "../components_style/styled"
 import Scrollspy from 'react-scrollspy'
-
+import "katex/dist/katex.min.css"
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
@@ -82,11 +82,11 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           element.style['background-image'] = 'url(' + pattern.png() + ')';
 
         `}</script>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" /> 
       </Helmet>
 
 
-      <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-md border-b-2 border-white" style={{minHeight: "50vh", }}>
+      <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-lg" style={{minHeight: "50vh", }}>
         <div className="flex flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-10 leading-tight w-full">
             <h1 className="text-3xl xl:text-5xl font-semibold lg:px-24" style={{textShadow: "black 0px 0px 3px"}}>{title}</h1>
@@ -95,12 +95,12 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
                 <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} src={author.avatar.childImageSharp.fluid.src}  />
               ))}
               <div className="inline-block px-2 text-left font-bold" style={{textShadow: "black 0px 0px 2px"}}>
-                <h1 className="text-sm xl:text-base">
+                <h1 className="text-sm xl:text-base pb-1">
                   {mdx.frontmatter.author.map((author, idx) => (
                       (mdx.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
                   ))}
                 </h1>
-                <h1 className="text-xs xl:text-sm">{date}</h1>
+                <h1 className="text-xs xl:text-sm">{date} · {mdx.fields.readingTime.text}</h1>
               </div>
             </div> 
           </div>
@@ -117,7 +117,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>
 
 
-      <div className="flex flex-wrap relative">
+      <div className="flex flex-wrap relative justify-center lg:px-10 2xl:px-48">
         <div className="w-full bg-gray-900 flex justify-center">
           <div className={` ${ tableOfContent.items ? ``: ``} lg:hidden pt-10 pb-5 mx-auto overflow-auto text-white`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
@@ -130,13 +130,13 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           </div>       
         </div>   
 
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} mx-auto container py-8 px-3 lg:px-36 2xl:px-70 leading-7 text-lg`}>
-          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} mx-auto container py-8 px-3 lg:px-32 2xl:px-52 leading-7 text-xl`}>
+          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link}}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>
 
-        <div className={` ${ tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden lg:sticky lg:top-0 lg:right-0 pt-24 pb-10 mx-auto max-h-100 overflow-auto`}>
+        <div className={` ${ tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
           { tableOfContent && 
             tableOfContent.items && 
@@ -164,6 +164,11 @@ export const query = graphql`
   query BlogPostQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
+      fields {
+        readingTime {
+          text
+        }
+      }
       body
       tableOfContents
       frontmatter {
@@ -179,7 +184,7 @@ export const query = graphql`
             }
           }
         }
-        date(formatString: "ddd, D MMMM YYYY")
+        date(formatString: "D MMMM YYYY")
         description
         tag
         category

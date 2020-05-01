@@ -104,7 +104,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Create blog post pages.
   const posts = result.data.allMdx.edges
 
-  const postsPerPage = 9
+  const postsPerPage = 12
   const numPages = Math.ceil(posts.length / postsPerPage)
   const categories = []
   const tags = []

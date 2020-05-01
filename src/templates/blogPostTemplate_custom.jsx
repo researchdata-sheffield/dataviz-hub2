@@ -8,6 +8,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li } from "../components_style/blogPostStyle"
 import PaginationPost from "../components_blog/paginationPost"
+import "katex/dist/katex.min.css"
 
 const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
     const {prev, next} = pageContext  
