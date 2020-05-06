@@ -8,7 +8,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link } from "../components_style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, } from "../components_style/blogPostStyle"
 import PaginationPost from "../components_blog/paginationPost"
 import {CatBtn, TagBtn} from "../components_style/styled"
 import Scrollspy from 'react-scrollspy'
@@ -131,7 +131,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
 
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} mx-auto container py-8 px-3 lg:px-32 2xl:px-52 leading-7 text-xl`}>
-          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link}}>
+          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, }}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>

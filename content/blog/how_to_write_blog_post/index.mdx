@@ -2,7 +2,7 @@
 author: ["Y.L Weng"]
 title: "How to upload a blog post - v1.3"
 thumbnail: ./temp.jpg
-description: "This is a template for blog posts. This website is built from Gatsby framework and the way of styling is slightly different from HTML/CSS. "
+description: "(UPDATED on 06 May 2020) This is a template for blog posts. This website is built from Gatsby framework and the way of styling is slightly different from HTML/CSS. "
 date: "2020-03-22"
 category: ["Tutorial"]
 tag: ["Blog", "Markdown"]
@@ -12,7 +12,7 @@ featured: "false"
 
 
 # Introduction
-(UPDATED on 01 May 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
+(UPDATED on 06 May 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
 You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS. 
 A copy of this blog file is available <a href="./index.mdx">here</a>.
 
@@ -74,7 +74,7 @@ You will probably want to install Gatsby so that you can test your contribution 
 
 2. Create a file `index.mdx` (or with .md extension, but we recommend use .mdx because it’s a superset of Markdown syntax that also supports importing, exporting, and JSX. <a href="https://mdxjs.com/">learn more about mdx</a>). 
 
-    + At the very beginning of your index file, you have the following parameters to specify:
+    + At the very beginning of your index file, you have the following parameters to specify in the **header**:
 
 ```md
 ---
@@ -238,6 +238,16 @@ $$
 
 <br />
 
+# Internal website link
+The post you're writing might be a part of your blog series, and if you wish to include link of previous posts (or any other part of the website) within a post, you'll need **Link** tag.
+To use **Link** tag:  
+1. Make sure the file extension is .mdx  
+2. Under the header, insert `import { Link } from "gatsby"` and surround it with empty lines.  
+3. Use *to* parameter instead of *href*, for internal pages you don't need to specify hostname (dataviz.shef.ac.uk):  
+   `<Link className="text-gray-700" to="/blog">To blog</Link>`
+
+<br />
+
 # Image
 This is how you would embed add an local image (remember to add your images in the same directory of your md/mdx file):
 
@@ -253,16 +263,27 @@ Alternatively:
 
 To add caption for image: 
 
-```
+```jsx
 ![my image description](./temp.jpg)        
 *This is my image caption*
 ```
 Make sure you pressed SPACE key twice followed by ENTER key after the closing bracket, if successful captions should had become italic:
 
 ![my image description](./temp.jpg)  
-*This is my image caption*
+*This is my image caption*  
+  
+
+Alternatively (so you can add style for images):
+```jsx
+<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
+<em>image_caption</em>
+```
+
+<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
+<em>image_caption</em>
 
 
+  
 For images available online use their url.
 
 <br />
@@ -296,7 +317,8 @@ Take the code you're given and copy it into your markdown page.
 
 Note: when copying the embed code, copy only the blockquote section and not the script.
 <blockquote class="twitter-tweet">
-<p lang="en" dir="ltr">UKRI-funded researchers will know that the current open access policy only applies to journal articles &amp; conference proceedings - the new one will also apply to monographs, edited collections &amp; chapters 📚 (so particular heads up to our A&amp;H and social sciences researchers)</p>&mdash; Open Research TUoS (@OpenResShef) 
+<p lang="en" dir="ltr">UKRI-funded researchers will know that the current open access policy only applies to journal articles &amp; conference proceedings - the new one will also apply 
+to monographs, edited collections &amp; chapters 📚 (so particular heads up to our A&amp;H and social sciences researchers)</p>&mdash; Open Research TUoS (@OpenResShef) 
 <a href="https://twitter.com/OpenResShef/status/1255448311953309702?ref_src=twsrc%5Etfw">April 29, 2020</a>
 </blockquote> 
 

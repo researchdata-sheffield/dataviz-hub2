@@ -1,16 +1,15 @@
 import styled from "styled-components"
 import { Link as gatsby_Link } from "gatsby"
 
+
 export const Link = styled(gatsby_Link)`
   color: #006aa6;
-  
 
   &:hover {
     color: #00aeef;
   }
 
 `
-
 
 export const H1 = styled.h1`
   display: block;

@@ -40,7 +40,6 @@ module.exports = {
           default: require.resolve('./src/templates/blogPostTemplate.jsx'),
         },
         plugins: [
-          `gatsby-remark-images`,
           `gatsby-remark-prismjs`
         ],
 
@@ -56,7 +55,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-embed-video`,
             options: {
-              maxwidth: 800,
+              maxwidth: 700,
               ratio: 1.77, // Optional: Defaults to 16/9 = 1.77
               Height: 400, // Optional: Overrides optional.ratio
               related: false, //Optional: Will remove related videos from the end of an embedded YouTube video.
@@ -70,16 +69,9 @@ module.exports = {
             }
           },
           {
-            resolve: `gatsby-remark-images`,
-            options: {
-              maxWidth: 1000,
-              quality: 100,
-            }
-          },
-          {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
-              wrapperStyle: `margin-bottom: 1.0725rem, margin-left: auto, margin-right: auto, margin-top: 2rem, width: 800px, height: 600px`,
+              wrapperStyle: `margin: 2rem auto 1.075rem auto, max-width: 800px, height: 600px`,
 
             },
           },
@@ -142,7 +134,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
-              ignoreFileExtensions: [`png`, `jpg`, `jpeg`, `bmp`, `tiff`],
+              ignoreFileExtensions: [`bmp`, `tiff`],
             },
           },
 
