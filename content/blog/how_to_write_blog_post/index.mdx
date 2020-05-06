@@ -20,7 +20,7 @@ A copy of this blog file is available <a href="./index.mdx">here</a>.
 
 # Setup
 
-If you want to preview the post while you're writing, then you'll need to setup a gatsby development environment in order to preview the website.
+If you want to preview the post while you're writing, then you'll need to setup a gatsby development environment in order to preview the website. If not, go to <a href="#write-a-post">next section</a>.
 
   ## Installation
   1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
@@ -62,13 +62,14 @@ git pull upstream master
 <br />
 
 # Write a post
+If you didn't setup, skip the following text and look at steps to write a post.  
 Once you've setup, run `gatsby develop`.
 Now you can view the site at `http://localhost:8000/`. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally.
 
 To contribute, raise an issue on GitHub or make a pull request that adds or modifies files in the `/content/blog/` directory. 
 You will probably want to install Gatsby so that you can test your contribution before submitting it. Steps on below assuming you've setup everything mentioned above. 
 
-1. Make a new directory under the `/content/blog/` directory, give a name (e.g. a keyword relevant to your post).
+1. Make a new directory under the `/content/blog/` directory, give a name (e.g. a keyword relevant to your post). If you didn't setup, create the directory anywhere you wish to.
 
 ---
 
@@ -94,11 +95,10 @@ featured: "true"					                     // Set it to true if you want show the
 
   + Wrap parameters with triple hyphens. Use double quotation marks for all text, use square brackets in parameters with two or more items.
 
-  + Then add content to the file.
+  + Then add content to the file, read <a href="#table-of-content">next section</a> and beyond to know more about how to style your post.
 
-  + (Optional): For the <i>first time</i> you're required to add your name, email and avatar to the file **author.json** located at `dataviz-hub2/src/author`, otherwise author info will not be shown on the post (and the website produce errors).
+  + (**Compulsory** for your first post): On first time you're required to add your name, email and avatar to the file **author.json** located at `dataviz-hub2/src/author`, otherwise author info will not be shown on the post (and the website produce errors).
   Format: 
-
 
 ```json
 ...
@@ -117,14 +117,31 @@ featured: "true"					                     // Set it to true if you want show the
 
 3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be `/content/blog/yourdirname/post.jpg`. Sections below will tell you how to embed images and videos.
 
-4. Commit any changes you've made.
+4. Commit any changes you've made. If you didn't setup, see *Upload through github.com* section.
 
 5. Now create a pull request. If it comes from a fork repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
 If it comes from a branch in origin repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
+
 <br />
 
-<p className="text-red-600 mb-24">If you do not want to setup the environment, you can write a post by upload <i>index.mdx</i> file and any resources related to the post on Github too.</p>
+## Upload through github.com
 
+If you do not want to setup the environment, you can write a post by upload **index.mdx** file and any resources related to the post on Github too. To do this,  
+
+  1. Go to *https://github.com/researchdata-sheffield/dataviz-hub2* and click on content/blog directory.  
+    
+  2. Click the *Create new file* button on the top right, and type `folder_name/index.mdx` in the **name your file...** box, this will create a new directory with the name - `folder_name` 
+  of your choice (make sure this name is not exists).  
+    
+  3. Copy contents of your local **index.mdx** file into the box below. Fill in all the details under the **Propose new file** section and submit. Now Github has already forked the project for you and you're on the **Comparing changes** page.  
+
+  4. If you don't have any other files (images etc.) to upload, click on **Create pull request** button, complete the form and submit (and you're done). Otherwise ignore this and go to your own *dataviz-hub2* repository. 
+    
+  5. Once you're in forked repository page, you'll see github has created a new branch *patch-1* for you. Select this branch and go to the directory you've created e.g. **content/blog/folder_name/**.  
+    
+  6. Upload all neccessary files and commit directly to the *patch-1* branch. Once this was done, go to *https://github.com/researchdata-sheffield/dataviz-hub2* and click on **Compare & pull request**, complete the form and submit.  
+     
+<br />
 
 # Table of content
 

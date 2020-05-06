@@ -5,7 +5,7 @@ import { Link } from "gatsby"
 const PastEvents = ({pastEvent}) => {
   
   return (
-    <div className="w-full sm:w-full md:w-full lg:w-3/12 xl:w-2/12 text-gray-100 px-6 lg:mt-16 pb-16 lg:py-6 border-t-4 border-gray-800 min-h-50" style={{background: "rgba(0,0,0,.6)", }}>
+    <div className="w-full sm:w-full md:w-full lg:w-3/12 xl:w-3/12 2xl:w-2/12 text-gray-100 px-6 lg:mt-16 pb-16 lg:py-6 border-t-4 border-gray-800 min-h-50" style={{background: "rgba(0,0,0,.6)", }}>
       <h1 className="text-xl pt-2 pb-6 font-semibold">Past Events</h1>
       
       {pastEvent.edges.map(({ node }) => {
