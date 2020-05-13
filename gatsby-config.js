@@ -1,4 +1,6 @@
-
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
 
 module.exports = {
   pathPrefix: "/dataviz-hub2",
@@ -172,12 +174,12 @@ module.exports = {
       options: {
         organisations: [
           {
-            organisationId: ***REMOVED***,
-            accessToken: ***REMOVED***
+            organisationId: process.env.EVENT_ORG_ID_1,
+            accessToken: process.env.EVENT_API_KEY_1
           },
           {
-            organisationId: ***REMOVED***,
-            accessToken: ***REMOVED***
+            organisationId: process.env.EVENT_ORG_ID_2,
+            accessToken: process.env.EVENT_API_KEY_2
           },
         ],
         entities: ['events', 'venues']
@@ -327,7 +329,7 @@ module.exports = {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         // The property ID; the tracking code won't be generated without it
-        trackingId: ***REMOVED***,
+        trackingId: process.env.GA_ANALYTICS_TRACKING_ID,
         // Defines where to place the tracking script - `true` in the head and `false` in the body
         head: true,
         // Setting this parameter is optional
