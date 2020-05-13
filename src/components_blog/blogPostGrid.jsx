@@ -8,7 +8,7 @@ import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 import Slide from 'react-reveal/Slide'
-import {ArrowBox, IMG, CatBtn, TagBtn} from "../components_style/styled"
+import { ArrowBox, IMG, CatBtn, TagBtn } from "../components_style/styled"
 
 const blogPostGrid = ({allMdx}) => {
   
