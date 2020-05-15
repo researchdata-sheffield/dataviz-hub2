@@ -16,7 +16,7 @@ const guide = () => {
               <li><a href="#what" className="hover:text-highlight_2 cursor-pointer">What is data visualisation</a></li>
               <li><a href="#why" className="hover:text-highlight_2 cursor-pointer">Why is it important</a></li>
               <li><a href="#how" className="hover:text-highlight_2 cursor-pointer">How this site could help</a></li>
-              <li><a href="#start" className="hover:text-highlight_2 cursor-pointer">Get started</a></li>
+              <li><a href="#start" className="hover:text-highlight_2 cursor-pointer">Where should I start?</a></li>
             </Scrollspy>
           </div>
         </div>
@@ -53,25 +53,25 @@ const guide = () => {
             <p className="leading-9 text-lg text-gray-600 py-10">
               
               Support through: <br />
-                - Documentation on dataviz best practice and use of tools  <br />
-                - Communication channels  <br />
-                - Capacity building opportunities through Events  <br />
-                - Help when you needed <br />
-                - Contribution <br />
+                &bull; Documentation on dataviz best practice and use of tools  <br />
+                &bull; Communication channels  <br />
+                &bull; Capacity building opportunities through Events  <br />
+                &bull; Help when you needed <br />
+                &bull; Contribution <br />
 
               <img src={How} className="max-w-30 mx-auto mt-10" /> <br />
             </p>
           </div>  
 
           <div id="start" className="flex-wrap ipadp:min-h-100 px-5 ipadp:px-24 my-12">
-            <h1 className="font-semibold text-3xl"><p className="inline-block text-highlight_2 font-bold text-6xl">Get</p> started</h1>
+            <h1 className="font-semibold text-3xl"><p className="inline-block text-highlight_2 font-bold text-6xl">Where</p> should I start?</h1>
             <p className="leading-9 text-lg text-gray-600 py-10">
-              - Learn from documentations <br />
-              - Share your data visualisations on ORDA showcase <br />
-              - Join the google group &/or slack community <br />
-              - Contribute to the blog <br />
-              - Contribute to the documentation <br />
-              - Get in touch with ideas for training, coding clubs, hackathons <br />
+              &bull; Learn from documentations <br />
+              &bull; Share your data visualisations on ORDA showcase <br />
+              &bull; Join the google group &/or slack community <br />
+              &bull; Contribute to the blog <br />
+              &bull; Contribute to the documentation <br />
+              &bull; Get in touch with ideas for training, coding clubs, hackathons <br />
             </p>
           </div>  
         </Fade>

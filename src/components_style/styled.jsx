@@ -75,3 +75,8 @@ export const CatBtn = styled_emotion(Link)([
 export const TagBtn = styled_emotion(Link)([
   tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent`
 ])
+
+
+export const HomeBlogNav = styled_emotion.div([
+  tw`w-1/2 md:w-1/4 py-2 ipadp:py-3 hover:text-white border-b-2 border-black transition duration-700 ease-in-out`
+])
