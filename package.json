@@ -39,7 +39,7 @@
     "gatsby-remark-table-of-contents": "0.0.9",
     "gatsby-source-filesystem": "^2.3.0",
     "gatsby-transformer-json": "^2.4.0",
-    "gatsby-transformer-sharp": "^2.5.0",
+    "gatsby-transformer-sharp": "^2.5.2",
     "intersection-observer": "^0.7.0",
     "katex": "^0.11.1",
     "lodash.kebabcase": "^4.1.1",
