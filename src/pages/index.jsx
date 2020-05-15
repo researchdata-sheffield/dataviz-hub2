@@ -4,20 +4,23 @@ import Footer from "../components/footer"
 import SEO from "../components/seo"
 import { graphql, Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-//import BackgroundSection from "../components_images/home_background"
 import EventNotice from "../components_home/eventNotice"
 import FeaturedPost from "../components_home/featuredPost"
 import LatestPost from "../components_home/latestPost"
-import Guide from "../components_home/guide"
 import moment from "moment"
 import Search_Home from "../components/searchHome"
 import scroll_To from 'gatsby-plugin-smoothscroll'
-import Tada from 'react-reveal/Tada'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
+import Zoom from 'react-reveal/Zoom'
 import Covid from "../images/covid-19.jpg"
+import { HomeBlogNav } from "../components_style/styled"
 
+import BackgroundOne from "../components_images/home/home_1"
+import BackgroundTwo from "../components_images/home/home_2"
+import { MdKeyboardArrowRight, MdPeople } from "react-icons/md"
 
+import { RiCalendarEventLine, RiBookReadLine, RiMenuAddLine } from "react-icons/ri"
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
@@ -63,9 +66,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         <div className="flex flex-wrap">
           {/* Left component */}
           <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full lg:w-4/12 text-white text-gray-600 overflow-hidden lg:min-h-100 lg:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
-            <div className="px-12 text-center pt-24 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
-              <p className="text-gray-700 text-lg ipadp:text-2xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
-              <p className="text-gray-500 text-sm 2xl:text-lg mt-2 px-3 xl:px-6">Promoting and building community around data visualisation at the University of Sheffield.</p>
+            <div className="px-8 text-center pt-28 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
+              <p className="text-gray-700 text-lg ipadp:text-3xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
+              <p className="text-gray-600 text-base 2xl:text-lg mt-2 px-6 xl:px-16">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />
@@ -84,20 +87,20 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </div>
                 
                 <div className="w-1/7">
-                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">New Visitors</div>
+                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li onClick={() => scroll_To('#what')}><Link className="text-gray-500 hover:text-highlight_2" to="#what">What is dataviz</Link></li>
-                      <li onClick={() => scroll_To('#why')}><Link className="text-gray-500 hover:text-highlight_2" to="#why">Why is it important</Link></li>
-                      <li onClick={() => scroll_To('#how')}><Link className="text-gray-500 hover:text-highlight_2" to="#how">How dataviz could help</Link></li>
-                      <li onClick={() => scroll_To('#start')}><Link className="text-gray-500 hover:text-highlight_2" to="#start">Get started</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" onClick={ () => {navigate("/search", {state: {searchWord: "Chart"}} )} }>Chart</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" onClick={ () => {navigate("/search", {state: {searchWord: "Colour"}} )} }>Colour</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" onClick={ () => {navigate("/search", {state: {searchWord: "Python"}} )} }>Python</Link></li>
+                      <li><Link className="text-gray-500 hover:text-highlight_2" onClick={ () => {navigate("/search", {state: {searchWord: "Statistics"}} )} }>Statistics</Link></li>
                     </ul>
                 </div>
               </div>
             </Slide>
 
             <Fade bottom delay={700}>
-              <div onClick={() => scroll_To('#what')} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
-                  <Link className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg" to="/#what">Explore</Link>
+              <div onClick={() => scroll_To('#explore')} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
+                  <Link className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg" to="/#explore">Explore</Link>
               </div> 
             </Fade>
 
@@ -133,24 +136,26 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </div>
             </div>
 
-
             <EventNotice eventBrite={eventBrite} />   
-
-            <div className="flex flex-wrap w-full text-white font-bold text-center text-base cursor-pointer bg-gray-900 pt-1 shadow-2xl">
-              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-menu_red" onClick={() => {navigate('/blog/category/articles')}}>ARTICLES</div>
-              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-menu_yellow" onClick={() => {navigate('/blog/category/events')}}>EVENT</div>
-              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-highlight_2" onClick={() => {navigate('/blog/category/news')}}>NEWS</div>
-              <div className="w-1/2 md:w-1/4 py-2 ipadp:py-3 2xl:py-5 greyScale-80 hover:greyScale-0 bg-gray-900 border-b-2 border-gray-900 hover:border-menu_green" onClick={() => {navigate('/blog/category/tutorial')}}>TUTORIAL</div>
+              
+            <div className="flex flex-wrap w-full text-white font-semibold text-center text-sm cursor-pointer bg-black pt-1 shadow-2xl">
+              <HomeBlogNav id="homeBlog" className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_red" onClick={() => {navigate('/blog/category/articles')}}>ARTICLES</HomeBlogNav>
+              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_yellow" onClick={() => {navigate('/blog/category/events')}}>EVENT</HomeBlogNav>
+              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-highlight_2" onClick={() => {navigate('/blog/category/news')}}>NEWS</HomeBlogNav>
+              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_green" onClick={() => {navigate('/blog/category/tutorial')}}>TUTORIAL</HomeBlogNav>
             </div>  
             
             <FeaturedPost featuredPost={featuredPost} />
 
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex w-full bg-gray-900 hover:bg-gray-100 text-center cursor-pointer group py-3 hover:py-0 text-center shadow-lg hover:shadow-2xl justify-center self-center items-center" style={{transition: ".3s ease", height: "3.6rem"}} onClick={() => {navigate('/blog')}}>
-              <Link to="/blog"><h1 className="group-hover:text-highlight_2 text-gray-200 font-bold text-xl group-hover:text-2xl"><Tada duration={2000}>Read more </Tada></h1></Link>
+            <div className="flex flex-wrap w-full bg-gray-900 py-10 px-3 shadow-lg justify-center items-center" style={{transition: ".3s ease"}}>
+              <div className="text-gray-200">Discover a range of articles and posts at our blog.</div>
+              <button onClick={() => {navigate('/blog')}} className="px-5 py-2 bg-black ml-16 group"><h1 className="group-hover:text-white text-gray-400 font-semibold">Read more</h1></button>
             </div> 
 
+
+            
             {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
               <p className="text-gray-600 mx-auto">What goes here?</p>
             </div> */}
@@ -162,7 +167,103 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       </div>
       {/* End of top page */}     
       
-      <Guide />
+      <div id="explore" />
+      <BackgroundOne className="ipadp:min-h-100 flex flex-wrap items-center text-left">
+        <Fade cascade delay={700} duration={1500}>
+          <div className="px-3 md:px-24 xl:px-36 2xl:px-52 py-10">
+            <div className="text-white">
+              <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{textShadow: "#000000 0px 0px 10px", fontFamily: "TUoS Stephenson"}}>Data and visualisation</h1>
+              <p className="2xl:text-lg my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 10px"}}>
+                Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 
+                information clearly and effectively by means of graphical representation. However, this does not mean that data visualisation must be boring for its functional purpose, 
+                or extremely complicated ... 
+              </p>
+            </div>
+            <button onClick={() => navigate('/blog/22/03/2020/datavizhub_guide/#what')} className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">
+              Read more <MdKeyboardArrowRight className="inline-block" />
+            </button>
+          </div>
+        </Fade>
+      </BackgroundOne>
+
+      <div className="ipadp:min-h-100 flex flex-wrap justify-center items-center">
+        <Fade>
+          <div className="pt-20 container mx-auto justify-center flex flex-wrap">
+            <div className="text-6xl font-semibold text-highlight_2 text-box w-full text-center">Your community.</div>
+            <Link to="/community" className="text-box mt-5 text-gray-500 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /></Link>
+            {/* <p className="border-t-6 border-highlight_2 w-1/12 text-box"></p> */}
+          </div>
+        </Fade>
+        <div className="flex flex-wrap text-gray-800 pb-20 justify-center">
+          <Zoom bottom duration={700} delay={500}>
+            <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
+              <RiCalendarEventLine className="text-5xl" />
+              <p className="text-xl font-semibold py-3">Events</p>
+              <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+                Discover a variety of events including talks and symposia, workshops, vis-coding clubs and data visualisation hackathons!
+              </div>
+              <button onClick={() => navigate('/events')} className="mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
+                Upcoming events <MdKeyboardArrowRight className="inline-block" />
+              </button>
+            </div>
+          </Zoom>
+          <Zoom bottom duration={700} delay={750}>
+            <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
+              <RiBookReadLine className="text-5xl" />
+              <p className="text-xl font-semibold py-3">Training</p>
+              <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+                Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
+              </div>
+              <button className="mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
+                Coming soon <MdKeyboardArrowRight className="inline-block" />
+              </button>
+            </div>
+          </Zoom>
+          <Zoom bottom duration={700} delay={1000}>
+            <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
+              <MdPeople className="text-5xl" />
+              <p className="text-xl font-semibold py-3">Consultation</p>
+              <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+                Get in touch with us. It is natural that you have found something diffcult to understand or you need more specific guidance and direction.
+              </div>
+              <button className="mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
+                Coming soon <MdKeyboardArrowRight className="inline-block" />
+              </button>
+            </div>
+          </Zoom>
+          <Zoom bottom duration={700} delay={1250}>
+          <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
+            <div>
+              <RiMenuAddLine className="text-5xl" />
+              <p className="text-xl font-semibold py-3">Contribution</p>
+              <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+                We love to see people actively sharing their thought and creativity. We have prepared a tutorial for you to upload your own blog posts.
+              </div>
+            </div>
+            <button onClick={() => window.open("https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md", '_blank','noopener, noreferrer')} className="mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
+              Our repository <MdKeyboardArrowRight className="inline-block" />
+            </button>
+          </div>
+          </Zoom>
+        </div>
+      </div>
+
+      <BackgroundTwo className="ipadp:min-h-100 flex items-center justify-end">
+
+          <div className="px-3 md:px-24 xl:px-36 2xl:px-52 py-10 flex flex-wrap justify-end">
+            <div className="text-5xl 2xl:text-6xl font-semibold text-white" style={{textShadow: "#000000 0px 0px 10px", fontFamily: "TUoS Stephenson"}}>ORDA Showcase</div>
+            <div className="2xl:text-lg my-4 text-gray-100 font-semibold ipadp:pl-50vh 2xl:pl-55vh" style={{textShadow: "#000000 0px 2px 10px"}}>
+              ORDA (Online Research Data) is the University of Sheffield&apos;s hub for sharing data, code, and other non-traditional research artefacts. ORDA includes a showcase of visual 
+              representations of data built by staff and students at the University of Sheffield.
+            </div>
+            <button onClick={() => window.open("https://orda.shef.ac.uk/visualisations", "_blank", "noopener")} className="mt-4 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">
+              Discover <MdKeyboardArrowRight className="inline-block" />
+            </button>
+          </div>
+      </BackgroundTwo>
+
+
+
       <Footer />        
   </>
   )
@@ -218,7 +319,7 @@ export const query = graphql`
       }
     }
 
-    latestPost: allMdx(filter: {frontmatter: {featured: {ne: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
+    latestPost: allMdx(filter: {frontmatter: {featured: {ne: "true"}, hide: {ne: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
       edges {
         node {
           id

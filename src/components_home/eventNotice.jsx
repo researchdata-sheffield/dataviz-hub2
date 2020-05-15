@@ -15,7 +15,7 @@ const eventNotice = ({ eventBrite }) => {
   return (
     <div className="bg-black w-full">
       <Fade duration={1000}>
-      <div id="eventNotice" className="w-full text-white text-gray-800 flex-col flex-wrap overflow-auto border-red-700 border-4 bg-white">
+      <div id="eventNotice" className="w-full text-white text-gray-800 flex-col flex-wrap overflow-auto border-gray-100 border-4 bg-white">
         {eventBrite.edges.map(({node}) => {
 
             let description = node.description.text.split(" ").splice(0, 15)
@@ -27,7 +27,7 @@ const eventNotice = ({ eventBrite }) => {
             
             return (
               <div key={node.id}>
-                <div className="text-white text-sm w-full bg-red-700 font-bold px-4 py-2" >Today: {currentDate}</div>
+                <div className="text-gray-600 text-sm w-full bg-gray-100 font-bold px-2 py-2" >Today: {currentDate}</div>
                 
                 <a className="flex flex-wrap w-full overflow-hidden max-h-80 md:max-h-20 xl:max-h-20 bg-white text-gray-700 group" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
                   <img className="w-full md:w-3/12 overflow-hidden self-center md:min-h-20 xl:min-h-20" src={node.logo.original.url} style={{objectFit: "cover", objectPosition: "center"}} />

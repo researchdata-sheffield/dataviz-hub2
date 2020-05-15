@@ -9,7 +9,7 @@ import ITS from "../images/about/its.png"
 import ORDA from "../images/about/orda_logo.png"
 import scroll_To from 'gatsby-plugin-smoothscroll'
 import Bounce from 'react-reveal/Bounce'
-import Roll from 'react-reveal/Roll'
+import Fade from 'react-reveal/Fade'
 import LightSpeed from 'react-reveal/LightSpeed'
 
 
@@ -33,9 +33,9 @@ const About = () => (
       </Bounce>
     </BackgroundSection>
 
-    <div id="more" className="container pt-12 pb-24 text-gray-800 mx-auto flex flex-wrap" style={{fontFamily: "TUoS Blake"}}>
+    <div id="more" className="container pt-12 pb-24 text-gray-800 mx-auto flex flex-wrap">
       <div className="flex flex-wrap mx-auto justify-center content-center border-solid border-gray-100 border-b-2"> 
-        <Roll>
+        <Fade>
           <a className="max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3" href="https://www.sheffield.ac.uk/library/index" target="_blank" rel="noopener noreferrer">
             <p className="font-medium text-4xl leading-tight" style={{fontFamily: "TUoS Stephenson"}}>The<br />University<br />Library.</p>
           </a>
@@ -45,10 +45,10 @@ const About = () => (
           <a className="max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3" href="https://rse.shef.ac.uk/" target="_blank" rel="noopener noreferrer">
             <img src={RSE} />
           </a>
-        </Roll>
+        </Fade>
       </div>
 
-      <div className="flex flex-wrap text-gray-600 text-xl px-3 lg:px-48 py-16">
+      <div className="flex flex-wrap text-gray-600 text-xl px-3 lg:px-32 xl:px-48 py-16">
         <LightSpeed>
           <p className="text-2xl"><b className="text-highlight_2">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
             This community website exists to provide research staff and students at the University of Sheffield with information and inspiration about the visual presentation of data.

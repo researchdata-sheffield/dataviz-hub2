@@ -82,7 +82,14 @@ p {
 ::-moz-selection { background: #00aeef; color: white }
 ::selection { background: #00aeef; color: white }
 
-
+text-box::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 4px;
+  margin: .9em 0 1em;
+  background: #F0CC71;
+}
 
 /******* Logo animation ********/
 

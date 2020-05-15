@@ -53,7 +53,7 @@ const Header = () => {
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a className={`${isScroll ? `` : [window.location.pathname === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
           <div className={`${isScroll ? [window.location.pathname === "/" ? `text-gray-300` : ``] : [window.location.pathname === "/" ? `hidden` : `text-white`]} ml-4 text-lg transition duration-1000 ease-in-out`}>
-            <Link className="textanimate" to="/">StayHome.Shef</Link>
+            <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
 

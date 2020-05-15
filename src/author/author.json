@@ -5,14 +5,9 @@
     "email": "y.weng@sheffield.ac.uk"
   },
   {
-    "name": "Test Author1",
-    "avatar": "./test1.jpg",
-    "email": "test.Name@sheffield.ac.uk"
-  },
-  {
-    "name": "Test Author2",
-    "avatar": "./test2.jpg",
-    "email": "test.Name1@sheffield.ac.uk"
+    "name": "Dataviz Team",
+    "avatar": "./dataviz.png",
+    "email": "rdm@sheffield.ac.uk"
   },
   {
     "name": "Gemma Ives",

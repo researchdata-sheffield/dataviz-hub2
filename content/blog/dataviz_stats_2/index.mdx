@@ -14,11 +14,12 @@ better understanding of selected datasets. Datasets we're using are Road Safety 
 it can be download on <a href="https://data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data">data.gov.uk</a>. You'll probably want to look at *Variable lookup data guide* on the website as well, 
 since some of variables are coded and represented by numbers.
 
+<br />
+
 # Setup
 One of quickest way to use python and packages is to install <a href="https://www.anaconda.com/products/individual" target="_blank" rel="noreferrer noopener">Anaconda</a>. 
-Then go to **Environments** and change the dropdown menu from *installed* to *all*, search and install packages <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer noopener">pandas</a>, 
-<a href="https://docs.scipy.org/doc/numpy/reference/" target="_blank" rel="noreferrer noopener">numpy</a> and <a href="https://seaborn.pydata.org/index.html" target="_blank" rel="noreferrer noopener">seaborn</a>. 
-Once you've done this, open either **JupyterLab** or **Notebook** at the home page and create a new *ipynb* file. Make sure datasets are placed in the same directory as the file.
+Then go to **Environments** and change the dropdown menu from *installed* to *all*, search and install packages <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer noopener">pandas</a>, <a href="https://docs.scipy.org/doc/numpy/reference/" target="_blank" rel="noreferrer noopener">numpy</a> and <a href="https://seaborn.pydata.org/index.html" target="_blank" rel="noreferrer noopener">seaborn</a>.
+ Once you've done this, open either **JupyterLab** or **Notebook** at the home page and create a new *ipynb* file. Make sure datasets are placed in the same directory as the file.
 
 
 ```python
@@ -80,6 +81,8 @@ df_acc['Road_Type'] = df_acc['Road_Type'] \
           12: "One way street/Slip road", -1: "Data missing or out of range"})
 ```
 
+<br />
+
 # Accidents by year, week, and day
 
 Start with time and date, we can use barplot to visualise number of accidents by year, week, and day. From the plot below, we can see that the number of accidents decreases over three years period.
@@ -96,12 +99,10 @@ plot.get_yaxis()
     .set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
 plot.set_title("Number of accidents for each year 2016-2018")
 ```
+  
+![png](./output_10_1.png)  
 
-![png](./output_10_1.png)
-
-
-The distribution of accidents by day of the week looks a bit more interesting - more accidents occured on days towards weekend. Working days has higher number of accidents and over a sixth of overall accidents occured on Friday.
-
+The distribution of accidents by day of the week looks a bit more interesting - more accidents occured on days towards weekend. Working days has higher number of accidents and over a sixth of overall accidents occured on Friday.  
 
 ```python
 # calculate proportion of accidents for each day of the week.
@@ -111,14 +112,11 @@ sns.barplot(Week_Days.index, Week_Days.values, alpha=0.8, color="black")
 plt.title("Distribution of Accidents by Day of the Week")
 for i, val in enumerate(Week_Days.values):
     plt.text(i-0.1, val-1,  str( "{:.{}f}".format( val, 1 )), color='white', fontweight='bold')
-```
+```  
 
+![png](./output_12_0.png)  
 
-![png](./output_12_0.png)
-
-
-Most accidents occured around communte time.
-
+Most accidents occured around communte time.  
 
 ```python
 acc_by_time = df_acc.Time.value_counts()
@@ -128,13 +126,12 @@ sns.barplot(acc_by_hour.index, acc_by_hour.values, alpha=0.86, palette="husl") \
     .set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
 plt.xlabel("Hour of Day")
 plt.ylabel("Number of Accidents")
-```
+```  
 
-![png](./output_14_1.png)
+![png](./output_14_1.png)  
 
 
-What if we sort it by hour?
-
+What if we sort it by hour?  
 
 ```python
 acc_by_hour_sorted = acc_by_hour.sort_values()
@@ -142,13 +139,12 @@ sns.barplot(acc_by_hour_sorted.index, acc_by_hour_sorted.values, order=acc_by_ho
     .get_yaxis().set_major_formatter(matplotlib.ticker.FuncFormatter(lambda x, p: format(int(x), ',')))
 plt.xlabel("Hour of Day")
 plt.ylabel("Number of Accidents")
-```
+```  
 
-![png](./output_16_1.png)
+![png](./output_16_1.png)  
 
 
-Now we look at density distrbutions to see average, median and standard deviation of number of accidents for each year. The plot has also includes the day of which the highest number of accident occured (mostly on Friday).
-
+Now we look at density distrbutions to see average, median and standard deviation of number of accidents for each year. The plot has also includes the day of which the highest number of accident occured (mostly on Friday).  
 
 ```python
 fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(16,7))
@@ -169,14 +165,11 @@ for i, col in enumerate(df_acc["Year"].unique()):
     ax[i].text(70, 0.0064,'SD:'+ str( "{: .{}f}".format( acc_per_year.std(), 1 )), fontsize=12)
     
 plt.show()
-```
+```  
 
+![png](./output_18_0.png)  
 
-![png](./output_18_0.png)
-
-
-We can also use boxplot to illustrate the outliers, minimum, maximum, median and quartiles.
-
+We can also use boxplot to illustrate the outliers, minimum, maximum, median and quartiles.  
 
 ```python
 sns.set(style="whitegrid")
@@ -191,18 +184,19 @@ for i, col in enumerate(df_acc["Year"].unique()):
 box_data = pd.concat(df_box)
 sns.boxplot(x="Year", y="Count", data=box_data)
 plt.title("Box plots - a different representation for distribution of number of accidents occured each year")
-```
+```  
 
-![png](./output_20_1.png)
+![png](./output_20_1.png)  
 
+<br />
 
 # Conditions
 
-Now we look at some categorical variables such as *Weather_Conditions*, *Road_Type* and *Accident_Severity*.
+Now we look at some categorical variables such as *Weather_Conditions*, *Road_Type* and *Accident_Severity*.  
 
-Count number of accidents under each weather condition.
-
-
+Count number of accidents under each weather condition.  
+  
+  
 ```python
 sns.set_style("whitegrid", {'axes.grid' : False})
 df_wc = df_acc.Weather_Conditions.value_counts()
@@ -213,8 +207,8 @@ df_wc[0]/len(df_acc)*100
 
 
 *Fine no high winds* condition appeared in over 80% of all accidents, what about other conditions?  
-
-
+  
+  
 ```python
 df_wc = df_wc.drop("Fine no high winds")
 plot_wc = sns.barplot(df_wc.index, df_wc.values)
@@ -223,9 +217,9 @@ plt.ylabel("Number of Accidents")
 plot_wc.set_xticklabels(plot_wc.get_xticklabels(), rotation=30)
 ```
 
-![png](./output_26_1.png)
+![png](./output_26_1.png)  
 
-Let's do the same for road types.
+Let's do the same for road types.  
 
 ```python
 df_rt = df_acc.Road_Type.value_counts()
@@ -237,7 +231,7 @@ plot_rt.set_xticklabels(plot_rt.get_xticklabels(), rotation=30)
 
 ![png](./output_28_1.png)
 
-Base on *Road_Type*, let's find out accident servity for each road.
+Base on *Road_Type*, let's find out accident servity for each road.  
 
 ```python
 acc_sev = { 1: "Fatal", 2: "Serious", 3: "Slight" }
