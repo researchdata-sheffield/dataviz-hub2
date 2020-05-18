@@ -88,16 +88,16 @@ class Search extends Component {
                 }
 
                 return( 
-                  <div className="text-gray-800 group relative w-full md:w-1/3 lg:w-1/4 xl:w-1/5 bg-white m-3 xl:m-4 text-left cursor-pointer min-h-60 ipadp:min-h-80 2xl:min-h-55 2xl:max-h-55 hover:shadow-2xl ipadp:overflow-hidden" style={{borderRadius: "1rem"}} key={i}  >
+                  <div className="rounded-lg text-gray-800 group relative w-full md:w-1/3 lg:w-1/4 xl:w-1/5 bg-white m-3 xl:m-4 text-left cursor-pointer min-h-60 ipadp:min-h-80 2xl:min-h-55 2xl:max-h-55 hover:shadow-2xl ipadp:overflow-hidden" key={i}  >
                     <a href={withPrefix(`${item.url}`)} target="_blank" rel="noopener noreferrer">
-                      <img className="w-full rounded-t-lg min-h-1/2 max-h-1/2 ipadp:min-h-3/5 ipadp:max-h-3/5 group-hover:max-h-1/2 group-hover:min-h-1/2" style={{objectFit: "cover", objectPosition: "center", borderTopLeftRadius: "1rem", borderTopRightRadius: "1rem", transition: ".3s ease"}} src={imagesrc}></img>
+                      <img className="rounded-t-lg w-full min-h-1/2 max-h-1/2 ipadp:min-h-3/5 ipadp:max-h-3/5 group-hover:max-h-1/2 group-hover:min-h-1/2" style={{objectFit: "cover", objectPosition: "center", transition: ".3s ease"}} src={imagesrc}></img>
                       <div className="pt-2 pb-2 flex flex-wrap">
                         <p className="px-2 ipadp:px-6 mb-2 text-xxs text-gray-500 w-full font-semibold ipadp:hidden group-hover:block"><Highlighter highlightClassName="text-red-500 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
                         <h1 className="px-2 ipadp:px-6 font-bold leading-4 mt-2 mb-3 group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>
                         <h1 className="px-2 ipadp:px-6 leading-4 text-xs xl:text-sm group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>                
-                        <h1 className="text-gray-500 px-2 ipadp:px-6 leading-4 text-xs xl:text-sm mt-2"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
+                        <h1 className="text-gray-500 px-2 ipadp:px-6 leading-4 text-xs xl:text-sm mt-2 w-full"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
                         
-                        <div className="border-t-1 border-gray-300 w-full absolute bottom-0 pb-2 bg-gray-900" style={{borderBottomLeftRadius: "1rem", borderBottomRightRadius: "1rem"}}>
+                        <div className="border-t-1 border-gray-300 w-full absolute bottom-0 pb-2 bg-black" >
                           <Link className="inline-block text-gray-100 text-xs hover:text-highlight_2 font-semibold ml-4 mr-2" to={`/blog/category/${kebabCase(item.category[0])}`}><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.category[0]} searchWords={this.state.query.split()} /></Link>
                           {item.tag.map((tag) => (
                             <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} className="inline-block text-gray-500 text-xs hover:text-highlight_2 mr-2"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={tag} searchWords={this.state.query.split()} /></Link>
@@ -153,7 +153,6 @@ class Search extends Component {
       return []
     } else {
       var results = []
-      console.log(index)
       // search the indexed fields
       Object.keys(index).forEach(idx => {
         results.push(...index[idx].values.search(query)) // more search options at https://github.com/nextapps-de/flexsearch#index.search

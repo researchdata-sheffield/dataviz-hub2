@@ -49,7 +49,7 @@ const Footer = () => {
           <div className="font-semibold text-highlight_2">Data Visualisation Hub </div>
           <div className="text-gray-100 text-lg mb-2 font-medium">The University of Sheffield.</div>
           <p className="text-gray-500 leading-normal text-sm">
-            To help our researchers make the most of their data and take advantage of such tools, we have been working on Dataviz.Shef, a multi-pronged initiative to provide tools, training and build a community around interactive data visualisation at TUoS.</p>
+            To help our researchers make the most of their data and take advantage of tools, we have been working on Dataviz.Shef, a multi-pronged initiative to provide tools, training and build a community around interactive data visualisation at TUoS.</p>
 {/*           <div className="mt-4 flex">
               <input type="text" className="p-2 border border-gray-light round text-gray-dark text-sm h-auto" placeholder="Your email address"></input>
               <button className="bg-orange text-white rounded-sm h-auto text-xs p-3">Subscribe</button>

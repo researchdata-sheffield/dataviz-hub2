@@ -151,6 +151,8 @@ module.exports = {
         '50vh': '50vh',
         '55vh': '55vh',
         '60vh': '60vh',
+        '65vh': '65vh',
+        '70vh': '70vh',
         '80vh': '80vh',
         '90vh': '90vh',
         '95vh': '95vh',
