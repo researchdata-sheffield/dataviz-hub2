@@ -3,16 +3,6 @@ module.exports = {
   important: '#website',  //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
   theme: {
     extend: {
-      textColor: {
-        'highlight': '#337ab7',
-        'highlight_2': '#00aeef',
-        'highlight_2t': '#73d8ff',
-        'logo_blue': '#009fe3',
-      },
-      fontSize: {
-        'xxs': '.65rem',
-        'med': '.94rem',
-      },
       backgroundColor: {
         'footer': '#414042',
         'highlight_2': '#00aeef',
@@ -36,15 +26,52 @@ module.exports = {
         '7vh': '7vh',
 
       },
-      screens: {
-        'ipadp': '1030px',
-        'xl': '1281px',
-        '2xl': '1441px',
+      fontSize: {
+        'xxs': '.65rem',
+        'med': '.94rem',
       },
       height: {
         '30px': '30px',
         '40px': '40px',
         '50px': '50px',
+      },
+      margin: {
+        '26': '6.5rem',
+        '28': '7rem',
+
+      },
+      maxHeight: {
+        '15': '15vh',
+        '18': '18vh',
+        '20': '20vh',
+        '25': '25vh',
+        '30': '30vh',
+        '40': '40vh',
+        '50': '50vh',
+        '55': '55vh',
+        '60': '60vh',
+        '70': '70vh',
+        '80': '80vh',
+        '90': '90vh',
+        '95': '95vh',
+        '100': '100vh',
+        '0': '0',
+        '1/4': '25%',
+        '2/5': '40%',
+        '1/2': '50%',
+        '3/5': '60%',
+        '3/4': '75%',
+        'full': '100%',
+      },
+      maxWidth: {
+        '0': '0',
+        '10': '10vw',
+        '15': '15vw',
+        '25': '25vw',
+        '27': '27vw',
+        '30': '30vw',
+        '40': '40vw',
+        '50': '50vw',
       },
       minHeight: {
         '15': '15vh',
@@ -70,34 +97,6 @@ module.exports = {
         '3/4': '75%',
         'full': '100%',
       },
-      maxHeight: {
-        '15': '15vh',
-        '18': '18vh',
-        '20': '20vh',
-        '25': '25vh',
-        '30': '30vh',
-        '40': '40vh',
-        '50': '50vh',
-        '55': '55vh',
-        '60': '60vh',
-        '70': '70vh',
-        '80': '80vh',
-        '90': '90vh',
-        '95': '95vh',
-        '100': '100vh',
-        '0': '0',
-        '1/4': '25%',
-        '2/5': '40%',
-        '1/2': '50%',
-        '3/5': '60%',
-        '3/4': '75%',
-        'full': '100%',
-      },
-      width: {
-        '30px': '30px',
-        '40px': '40px',
-        '50px': '50px',
-      },
       minWidth: {
         '0': '0',
         '10': '10vw',
@@ -115,16 +114,6 @@ module.exports = {
         '3/4': '75%',
         '5/12': '41.6666666%',
         'full': '100%',
-      },
-      maxWidth: {
-        '0': '0',
-        '10': '10vw',
-        '15': '15vw',
-        '25': '25vw',
-        '27': '27vw',
-        '30': '30vw',
-        '40': '40vw',
-        '50': '50vw',
       },
       padding: {
         '14': '3.5rem',
@@ -158,15 +147,26 @@ module.exports = {
         '95vh': '95vh',
         '100vh': '100vh',
       },
-      margin: {
-        '26': '6.5rem',
-        '28': '7rem',
-
+      screens: {
+        'ipadp': '1030px',
+        'xl': '1281px',
+        '2xl': '1441px',
+      },
+      textColor: {
+        'highlight': '#337ab7',
+        'highlight_2': '#00aeef',
+        'highlight_2t': '#73d8ff',
+        'logo_blue': '#009fe3',
       },
       transitionProperty: {
         'hover': 'hover',
         'group-hover': 'group-hover',
-      }
+      },
+      width: {
+        '30px': '30px',
+        '40px': '40px',
+        '50px': '50px',
+      },
 
     },
  

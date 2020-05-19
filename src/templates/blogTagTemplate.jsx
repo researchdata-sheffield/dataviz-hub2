@@ -59,7 +59,7 @@ blogTagTemplate.propTypes = {
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
-			filter: { frontmatter: { tag: { in: [$tag] } } }
+			filter: { frontmatter: { tag: { in: [$tag] }, hide: { ne: "true" } } }
 		) {
 			edges {
 				node {
