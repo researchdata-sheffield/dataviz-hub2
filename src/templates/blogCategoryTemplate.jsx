@@ -58,7 +58,7 @@ blogCategoryTemplate.propTypes = {
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
-			filter: { frontmatter: { category: { in: [$category] } } }
+			filter: { frontmatter: { category: { in: [$category] }, hide: { ne: "true" } } }
 		) {
 			edges {
 				node {
