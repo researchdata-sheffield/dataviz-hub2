@@ -52,7 +52,7 @@ blogCategoryTemplate.propTypes = {
 		data: PropTypes.any
 	}
 
-	export const query = graphql`
+export const query = graphql`
 	query blogCategory($category: String, $skip: Int!, $limit: Int!) {
 		allMdx(
 			sort: { fields: [frontmatter___date], order: DESC }
@@ -60,42 +60,7 @@ blogCategoryTemplate.propTypes = {
 			skip: $skip
 			filter: { frontmatter: { category: { in: [$category] }, hide: { ne: "true" } } }
 		) {
-			edges {
-				node {
-					id
-					fields {
-						slug
-						readingTime {
-								text
-						}
-					}
-					frontmatter {
-						title
-						description
-						date(formatString: "ddd, DD MMMM YYYY")
-						author {
-							name
-							email
-							avatar {
-								childImageSharp {
-									fluid {
-										src
-									}
-								}
-							}
-						}
-						category
-						tag
-						thumbnail {
-							childImageSharp {
-								fluid {
-									src
-								}
-							}
-						}
-					}
-				}
-			}
+			...MdxEdge
 		}
 	}
 `

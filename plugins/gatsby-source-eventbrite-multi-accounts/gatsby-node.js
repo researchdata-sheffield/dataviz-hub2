@@ -10,7 +10,6 @@ exports.sourceNodes = async ({ actions, createNodeId }, options) => {
   const { organisations, entities = [] } = options
 
   if(organisations && organisations[0].organisationId) {
-    console.log(organisations)
     // Entities(events etc...) to fetch data from 
     const defaultEntities = ['events', 'venues']
     const entitiesToFetch = [...new Set([...defaultEntities, ...entities])]

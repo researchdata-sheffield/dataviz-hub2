@@ -119,17 +119,20 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
 
       <div className="flex flex-wrap relative justify-center lg:px-10 2xl:px-48">
+        {/* mobile toc */}
         <div className="w-full bg-gray-900 flex justify-center">
           <div className={` ${ tableOfContent.items ? ``: ``} lg:hidden pt-10 pb-5 mx-auto overflow-auto text-white`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
               { tableOfContent && 
                 tableOfContent.items && 
-                <Scrollspy className="text-gray-500" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+                <Scrollspy className="text-gray-700" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
                   {tableOfContent.items.map(renderItem)}
                 </Scrollspy>
               }      
           </div>       
         </div>   
+        {/* mobile toc */}   
+
 
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} mx-auto container py-8 px-3 lg:px-32 2xl:px-52 leading-7 text-xl`}>
           <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, }}>
@@ -137,15 +140,18 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           </MDXProvider>
         </div>
 
+        {/* toc hidden in mobile */}
         <div className={` ${ tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
           { tableOfContent && 
             tableOfContent.items && 
-            <Scrollspy className="text-gray-500" currentClassName="underline" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+            <Scrollspy className="text-gray-700" currentClassName="underline" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
               {tableOfContent.items.map(renderItem)}
             </Scrollspy>
           }      
-        </div>        
+        </div>  
+        {/* toc hidden in mobile */}
+
       </div>        
                   
       <PaginationPost mdx={mdx} prev={prev} next={next} />
@@ -176,7 +182,6 @@ export const query = graphql`
         title
         author {
           name
-          email
           avatar {
             childImageSharp {
               fluid {
