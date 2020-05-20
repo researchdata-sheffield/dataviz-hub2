@@ -61,42 +61,7 @@ blogTagTemplate.propTypes = {
 			skip: $skip
 			filter: { frontmatter: { tag: { in: [$tag] }, hide: { ne: "true" } } }
 		) {
-			edges {
-				node {
-					id
-					fields {
-						slug
-						readingTime {
-								text
-						}
-					}
-					frontmatter {
-						title
-						description
-						date(formatString: "ddd, DD MMMM YYYY")
-						author {
-							name
-							email
-							avatar {
-								childImageSharp {
-									fluid {
-										src
-									}
-								}
-							}
-						}
-						category
-						tag
-						thumbnail {
-							childImageSharp {
-								fluid {
-									src
-								}
-							}
-						}
-					}
-				}
-			}
+			...MdxEdge
 		}
 	}
 `

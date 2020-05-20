@@ -72,7 +72,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               template
               author {
                 name
-                email
                 avatar {
                   childImageSharp {
                     fluid {

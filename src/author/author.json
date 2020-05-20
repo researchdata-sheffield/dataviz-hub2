@@ -1,17 +1,14 @@
 [
   {
     "name": "Y.L Weng",
-    "avatar": "./Y.L_Weng.jpg",
-    "email": "y.weng@sheffield.ac.uk"
+    "avatar": "./Y.L_Weng.jpg"
   },
   {
     "name": "Dataviz Team",
-    "avatar": "./dataviz.png",
-    "email": "rdm@sheffield.ac.uk"
+    "avatar": "./dataviz.png"
   },
   {
     "name": "Gemma Ives",
-    "avatar": "./PPCirc.png",
-    "email": "g.l.ives@sheffield.ac.uk"
+    "avatar": "./PPCirc.png"
   }
 ]

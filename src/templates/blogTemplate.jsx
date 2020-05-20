@@ -64,48 +64,12 @@ blogTemplate.propTypes = {
 export const query = graphql`
 	query blogList($skip: Int!, $limit: Int!) {
 		allMdx(
-			filter: {frontmatter: {hide: {ne: "true"}}}
+			filter: { frontmatter: { hide: { ne: "true" } } }
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
 		) {
-			edges {
-				node {
-					id
-					body
-					fields {
-						slug
-						readingTime {
-							text
-						}
-					}
-					frontmatter {
-						title
-						description 
-						date(formatString: "ddd, DD MMMM YYYY")
-						author {
-							name
-							email
-							avatar {
-								childImageSharp {
-									fluid {
-										src
-									}
-								}
-							}
-						}
-						category
-						tag
-						thumbnail {
-							childImageSharp {
-								fluid {
-									src
-								}
-							}
-						}
-					}
-				}
-			}
+			...MdxEdge
 		}
 	}
 `

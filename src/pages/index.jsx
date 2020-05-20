@@ -199,121 +199,19 @@ IndexPage.propTypes = {
   data: PropTypes.any
 }
 
-// TODO: clean up queries
 export const query = graphql`
   query {
     featuredPost: allMdx(filter: {frontmatter: {featured: {eq: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 2) {
-      edges {
-        node {
-          id
-          frontmatter {
-            description
-            tag
-            thumbnail {
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
-            }
-            date(formatString: "ddd, DD MMMM YYYY")
-            author {
-              name
-              email
-              avatar {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-            }
-            category
-            title
-          }
-          fields {
-            slug
-            readingTime {
-              text
-            }
-          }
-        }
-      }
+      ...MdxEdge
     }
 
     latestPost: allMdx(filter: {frontmatter: {featured: {ne: "true"}, hide: {ne: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
-      edges {
-        node {
-          id
-          frontmatter {
-            description
-            tag
-            thumbnail {
-              childImageSharp {
-                fluid {
-                  src
-                }
-              }
-            }
-            date(formatString: "ddd, DD MMMM YYYY")
-            author {
-              name
-              email
-              avatar {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-            }
-            category
-            title
-          }
-          fields {
-            slug
-            readingTime {
-              text
-            }
-          }
-        }
-      }
+      ...MdxEdge
     }
     
     eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1, filter: {organization_id: {ne: "777"}}) {
-      edges {
-        node {
-          id
-          url
-          name{
-            text
-          }
-          description {
-            text
-            html
-          }
-          logo {
-            original {
-              url
-            }
-          }
-          venue {
-            name
-            address {
-              address_1
-              city
-              postal_code
-            }
-          }
-          online_event
-          summary
-          start {
-            local(formatString: "ddd DD MMMM YYYY, hh:mm A", locale: "en-GB")
-          }
-        }
-      }
+      ...EventbriteEventsEdge
     }  
-
   }
 `
 
