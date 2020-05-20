@@ -36,7 +36,7 @@ const blogPostGrid = ({allMdx}) => {
           <div className="w-full sm:w-1/2 lg:w-1/3 min-h-80 ipadp:min-h-120 2xl:min-h-100 pb-24 2xl:pb-24 overflow-hidden bg-white">
             <Link className="group" to={node.fields.slug}>
               <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 ipap:min-h-3/5 ipap:max-h-3/5" style={{transition: ".5s ease", backgroundImage: `url(${imagesrc})`}}  />
-              <ArrowBox className="px-8 pt-6 leading-none text-gray-500">
+              <ArrowBox className="px-8 pt-6 leading-none text-gray-700">
                 <h1 className="font-bold text-2xl leading-tight text-gray-900 group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "10vh", fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
                 <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
                 <p className=" my-2 text-sm pt-2" >{node.frontmatter.date}</p>

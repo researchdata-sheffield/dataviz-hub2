@@ -15,19 +15,18 @@ import scroll_To from 'gatsby-plugin-smoothscroll'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/covid-19.jpg"
-// import { HomeBlogNav } from "../components_style/styled"
+import { GreyButton, BlackWhiteButton, ButtonWithArrow } from "../components_style/styled"
 
 import BackgroundOne from "../components_images/home/home_1"
 
-import { MdKeyboardArrowRight } from "react-icons/md"
 
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
   let datePrev = moment()
   
-  var words = ["research", "past event", "introduction to R", "What are you looking for?", "how to write a blog post", "slack", "dataset",
-               "online research data", "sheffield", "Python tutorial", "DD/MM/YYYY"]
+  var words = ["Colour", "What are you looking for?", "how to write a blog post", "slack", "dataset",
+               "Chart", "visualisation", "Python", "DD/MM/YYYY"]
 
   useEffect( () => {
     var input = document.getElementById("homeSearch");
@@ -64,50 +63,50 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div>
         <div className="flex flex-wrap">
           {/* Left component */}
-          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex-col flex-wrap w-full lg:w-4/12 text-white text-gray-600 overflow-hidden lg:min-h-100 lg:max-h-100" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
+          <div id="homeBar" className="sm:sticky sm:top-0 sm:left-0 flex flex-wrap w-full lg:w-4/12 text-white text-gray-600 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center pt-28 ipadp:pt-10vh" style={{fontFamily: "TUoS Blake"}}>
-              <p className="text-gray-700 text-lg ipadp:text-3xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
-              <p className="text-gray-600 text-base 2xl:text-lg mt-2 px-6 xl:px-16">Building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-gray-800 text-lg ipadp:text-3xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
+              <p className="text-gray-700 text-base 2xl:text-lg mt-2 px-6 xl:px-16">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />
             
             <Slide left>
-              <div className="hidden md:flex justify-center py-4 xl:py-8 z-10">
+              <div className="hidden md:flex justify-center py-4 xl:py-8 z-10 w-full">
                 <div className="w-1/7 mr-24">
-                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
+                  <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className="text-gray-500 hover:underline" onClick={() => scroll_To('#explore')} alt="#Data and visualisation">Data visualisation</a></li>
-                      <li><a className="text-gray-500 hover:underline" to="#" alt="Coming soon">Learning path</a></li>
-                      <li><a className="text-gray-500 hover:underline" onClick={() => scroll_To('#home_community')} alt="#Community">Community</a></li>
-                      <li><a className="text-gray-500 hover:underline" onClick={() => scroll_To('#home_showcase')} alt="#Showcase">Showcase</a></li>
-                      <li><a className="text-gray-500 hover:underline" to="#" alt="Comming soon">Collaboration</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#explore')} alt="#Data and visualisation">Data visualisation</a></li>
+                      <li><a className="text-gray-700 hover:underline" to="#" alt="Coming soon">Learning path</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_community')} alt="#Community">Community</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_showcase')} alt="#Showcase">Showcase</a></li>
+                      <li><a className="text-gray-700 hover:underline" to="#" alt="Coming soon">Collaboration</a></li>
                     </ul>
                 </div>
                 
                 <div className="w-1/7">
-                  <div className="mb-1 text-gray-600 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
+                  <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className="text-gray-500 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Chart"}} )} }>Chart</a></li>
-                      <li><a className="text-gray-500 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Colour"}} )} }>Colour</a></li>
-                      <li><a className="text-gray-500 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Python"}} )} }>Python</a></li>
-                      <li><a className="text-gray-500 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Statistics"}} )} }>Statistics</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Chart"}} )} }>Chart</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Colour"}} )} }>Colour</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Python"}} )} }>Python</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Statistics"}} )} }>Statistics</a></li>
                     </ul>
                 </div>
               </div>
             </Slide>
 
             <Fade bottom delay={700}>
-              <div onClick={() => scroll_To('#explore')} className="flex my-10 2xl:my-16 mx-auto bg-gray-900 hover:bg-white text-center cursor-pointer group py-1 xl:py-2 2xl:py-3 hover:shadow-2xl text-center shadow-lg justify-center self-center items-center max-w-25 ipadp:max-w-15" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} >
-                  <Link className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg" to="/#explore">Get started</Link>
-              </div> 
+              <a onClick={() => scroll_To('#explore')}>
+                <BlackWhiteButton className="py-2 px-10">Get Started</BlackWhiteButton>
+              </a>
             </Fade>
 
-            <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center">
+            <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
               {/* <a className="text-gray-500 hover:text-highlight_2">Library &nbsp;</a> | 
               <a className="text-gray-500 hover:text-highlight_2">&nbsp; IT Services &nbsp;</a> |
-              <a className="text-gray-500 hover:text-highlight_2">&nbsp; RSE &nbsp;</a> | */}
-              <a className="text-gray-500 hover:underline">&nbsp; Not sure where to start? &nbsp;</a>
+              <a className="text-gray-500 hover:text-highlight_2">&nbsp; RSE &nbsp;</a> | 
+              <a className="text-gray-500 hover:underline">&nbsp; Not sure where to start? &nbsp;</a> */}
             </div>
             
           </div>
@@ -120,18 +119,15 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="flex flex-wrap min-h-100 justify-center text-center items-center relative" style={{backgroundImage: `url(${Covid})`, backgroundSize: "cover" }}>
               <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px"}}>Coronavirus COVID-19 Global Cases by CSSE at Johns Hopkins University</h1>
-              <div className="flex bg-gray-900 hover:bg-white text-center cursor-pointer group px-5 py-1 xl:py-2 2xl:py-3 hover:shadow-2xl shadow-lg items-center" style={{transition: ".3s ease", minHeight: "2.7rem", maxHeight: "3.6rem"}} 
-                onClick={() => window.open("https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6", "_blank", "noopener, noreferrer")} 
-              >
-                <a className="group-hover:text-highlight_2 text-gray-200 font-bold text-sm xl:text-lg" href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank" rel="noopener noreferrer">Statistics dashboard</a>
-              </div> 
-
+              <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank" rel="noopener noreferrer">
+                <BlackWhiteButton className="hover:text-gray-700 hover:bg-white transition duration-500">Statistics dashboard</BlackWhiteButton>
+              </a>
 
 
               {/* Scroll down animation */}
               <div id="scrollDown-btn" className="hidden md:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}} onClick={() => scroll_To('#eventNotice')}>
-                <Link className="text-gray-200 hover:text-gray-500 inline-block" to="#eventNotice"><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></Link>
-                <a className="text-gray-200 group-hover:text-gray-500 font-bold tracking-widest">Scroll</a>
+                <Link className="text-white inline-block" to="#eventNotice"><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></Link>
+                <a className="text-white font-bold tracking-widest">Scroll</a>
               </div>
             </div>
 
@@ -148,8 +144,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <LatestPost latestPost={latestPost} />
             
             <div className="flex flex-wrap w-full bg-gray-900 py-10 px-3 shadow-lg justify-center items-center" style={{transition: ".3s ease"}}>
-              <div className="text-gray-200">Discover a range of articles and posts at our blog.</div>
-              <button onClick={() => {navigate('/blog')}} className="px-5 py-2 bg-black ml-16 group"><h1 className="group-hover:text-white text-gray-400 font-semibold">Read more</h1></button>
+              <div className="text-gray-200 mr-10">Discover a range of articles and posts at our blog.</div>
+              <Link to="/blog"><GreyButton className="bg-black inline-block px-5 py-2 mt-0 text-gray-400 hover:text-white">Read more</GreyButton></Link>
             </div> 
 
             {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
@@ -175,9 +171,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 or extremely complicated ... 
               </p>
             </div>
-            <button onClick={() => navigate('/blog/22/03/2020/datavizhub_guide/#what')} className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">
-              Read more <MdKeyboardArrowRight className="inline-block" />
-            </button>
+            <Link to="/blog/22/03/2020/datavizhub_guide/#what">
+              <ButtonWithArrow type="GreyButton">Read more</ButtonWithArrow>
+            </Link> 
           </div>
         </Fade>
       </BackgroundOne>
@@ -189,7 +185,6 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         <h1 className="text-3xl ipadp:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUoS Stephenson"}}>Collaboration and Partnership.</h1>
         <p className="text-gray-500">Further details to come.</p>
       </div>
-            
     
       <Footer />        
     </>
@@ -285,7 +280,7 @@ export const query = graphql`
       }
     }
     
-    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1) {
+    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1, filter: {organization_id: {ne: "777"}}) {
       edges {
         node {
           id

@@ -105,7 +105,7 @@ const Community = () => (
         </Zoom>
       </div>
 
-      <div className="lg:px-16 pt-24 pb-16 text-gray-600 text-xl">
+      <div className="lg:px-16 pt-24 pb-16 text-gray-700 text-xl">
           <p className="text-highlight_2 text-5xl px-2">Contributing!</p>
           <p className="p-6">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
             Feel free to get in touch with us through the google group or slack team with any suggestions. 
