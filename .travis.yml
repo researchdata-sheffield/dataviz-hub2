@@ -14,10 +14,10 @@ cache:
 
 deploy:
   provider: pages
-  skip-cleanup: true
+  cleanup: true
   github-token: $GH_TOKEN
   local_dir: public
-  keep-history: true
+  keep_history: true
   on:
     branch: master
 

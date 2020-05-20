@@ -1,9 +1,11 @@
 import React from 'react'
-import { Link, navigate } from "gatsby"
+import { Link } from "gatsby"
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import { MdKeyboardArrowRight, MdPeople } from "react-icons/md"
 import { RiCalendarEventLine, RiBookReadLine, RiMenuAddLine } from "react-icons/ri"
+import { ButtonWithArrow } from "../components_style/styled"
+
 
 const HomeCommunity = () => {
   
@@ -17,56 +19,57 @@ const HomeCommunity = () => {
         </div>
       </Fade>
       <div className="flex flex-wrap text-gray-800 pt-10 pb-20 justify-center">
-        <Zoom bottom duration={700} delay={500}>
-          <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
+        
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+          <Zoom bottom duration={700} delay={500}>
             <RiCalendarEventLine className="text-5xl" />
             <p className="text-xl font-bold py-3">Events</p>
             <div className="border-t-4 border-gray-700 py-3 text-gray-600">
               Discover a variety of events including talks and symposia, workshops, vis-coding clubs and data visualisation hackathons!
             </div>
-            <button onClick={() => navigate('/events')} className="mt-8 2xl:mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
-              <Link to="/events" className="hover:text-white">Upcoming events <MdKeyboardArrowRight className="inline-block" /></Link>
-            </button>
-          </div>
-        </Zoom>
-        <Zoom bottom duration={700} delay={750}>
-          <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
+            <Link to="/events">
+              <ButtonWithArrow type="BlackButton">Upcoming events</ButtonWithArrow>
+            </Link>
+          </Zoom>
+        </div>
+
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+          <Zoom bottom duration={700} delay={750}>
             <RiBookReadLine className="text-5xl" />
             <p className="text-xl font-bold py-3">Training</p>
             <div className="border-t-4 border-gray-700 py-3 text-gray-600">
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <button className="mt-8 2xl:mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
-              Coming soon <MdKeyboardArrowRight className="inline-block" />
-            </button>
-          </div>
-        </Zoom>
-        <Zoom bottom duration={700} delay={1000}>
-          <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
+            <ButtonWithArrow type="BlackButton">Coming soon</ButtonWithArrow>
+          </Zoom>
+        </div>
+      
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+          <Zoom bottom duration={700} delay={1000}>
             <MdPeople className="text-5xl" />
             <p className="text-xl font-bold py-3">Support</p>
             <div className="border-t-4 border-gray-700 py-3 text-gray-600">
               Get in touch with us. It is natural that you have found something diffcult to understand or you need more specific guidance and direction.
             </div>
-            <button className="mt-8 2xl:mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
-              Coming soon <MdKeyboardArrowRight className="inline-block" />
-            </button>
-          </div>
-        </Zoom>
-        <Zoom bottom duration={700} delay={1250}>
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10">
-          <div>
-            <RiMenuAddLine className="text-5xl" />
-            <p className="text-xl font-bold py-3">Contribution</p>
-            <div className="border-t-4 border-gray-700 py-3 text-gray-600">
-              We love to see people actively sharing their thought and creativity. We have prepared a tutorial for you to upload your own blog posts.
-            </div>
-          </div>
-          <button onClick={() => window.open("https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md", '_blank','noopener, noreferrer')} className="mt-8 2xl:mt-12 bg-gray-800 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow">
-            <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md" target="_blank" rel="noopener noreferrer">Our repository <MdKeyboardArrowRight className="inline-block" /></a>
-          </button>
+            <ButtonWithArrow type="BlackButton">Coming soon</ButtonWithArrow>
+          </Zoom>
         </div>
-        </Zoom>
+        
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+          <Zoom bottom duration={700} delay={1250}>
+            <div>
+              <RiMenuAddLine className="text-5xl" />
+              <p className="text-xl font-bold py-3">Contribution</p>
+              <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+                We love to see people actively sharing their thought and creativity. We have prepared a tutorial for you to upload your own blog posts.
+              </div>
+            </div>
+            <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md" target="_blank" rel="noopener noreferrer">
+              <ButtonWithArrow type="BlackButton">Our repository</ButtonWithArrow>
+            </a>
+          </Zoom>
+        </div>
+        
       </div>
     </div>
   )

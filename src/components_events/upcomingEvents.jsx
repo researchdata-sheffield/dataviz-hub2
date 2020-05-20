@@ -1,22 +1,14 @@
-import React, { useState, useEffect} from 'react'
+import React from 'react'
 import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
-import moment from "moment"
+
 
 const UpcomingEvents = ({allEventbriteEvents}) => {
   var eventLimit = 0
-
-  const [currentDate, setDate] = useState(moment().format('ddd DD MMMM YYYY, hh:mm A'));
-  useEffect(() => {
-    setDate(moment().format('ddd DD MMMM YYYY, hh:mm A'))
-  }, [])
   
-  return (
-    <div className="w-full lg:w-8/12 text-white px-12 lg:pt-6 pt-16 text-gray-800 lg:my-24 pb-16 overflow-auto border-t-8 border-red-700 min-h-70" style={{background: "rgba(255,255,255,.95)", }}>
-      <h1 className="inline-block text-2xl font-semibold">Upcoming Events</h1>
-      <div className="text-gray-500 mb-8" >Today: {currentDate}</div>
-
-
+  if(allEventbriteEvents && allEventbriteEvents.edges) {
+    return (
+      <> 
       {allEventbriteEvents.edges.map(({node}) => {
         //moment(node.start.local, "DD-MMMM-YYYY hh:mm") >= moment() && 
         // Check if event's date is later than today's date, restrict number of events to 3
@@ -58,10 +50,9 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
           )
         }
       })}
-
-    </div>
-  )
-  
+      </>
+    )
+  }
 }
 
 export default UpcomingEvents
