@@ -85,15 +85,15 @@ export const HomeBlogNav = styled_emotion.div([
 ])
 
 export const BlackButton = styled_emotion.button([
-  tw`mt-8 bg-gray-900 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow`
+  tw`mt-8 bg-gray-900 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow transition duration-500`
 ])
 
 export const GreyButton = styled_emotion.button([
-  tw`mt-8 bg-gray-100 text-gray-700 hover:bg-highlight_2 text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent shadow`
+  tw`mt-8 bg-gray-100 text-gray-700 hover:bg-highlight_2 text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent shadow transition duration-500`
 ])
 
 export const BlackWhiteButton = styled_emotion.button([
-  tw`mt-8 bg-gray-900 text-center hover:text-highlight_2 hover:bg-white transition duration-300 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow`
+  tw`mt-8 bg-gray-900 text-center hover:text-highlight_2 hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow`
 ])
 
 export const ButtonWithArrow = (props) => {

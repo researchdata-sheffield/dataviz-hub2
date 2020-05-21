@@ -8,6 +8,8 @@ module.exports = {
         'highlight_2': '#00aeef',
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',
+        'black-45': 'rgba(0, 0, 0, .45)',
+        'black-85': 'rgba(0, 0, 0, .85)'
       },
       borderColor: {
         'highlight_2': '#00aeef',
@@ -25,6 +27,10 @@ module.exports = {
         '15': '15px',
         '7vh': '7vh',
 
+      },
+      boxShadow: {
+        'c1': '0px 12px 15px 0px #C8C4C1',
+        'c2': '0px 12.3px 15.37px 0px #3A3631',
       },
       fontSize: {
         'xxs': '.65rem',
@@ -99,6 +105,9 @@ module.exports = {
         '30': '30vw',
         '40': '40vw',
         '50': '50vw',
+        '60': '60vw',
+        '70': '70vw',
+        '80': '80vw',
       },
       minHeight: {
         '15': '15vh',
@@ -164,6 +173,10 @@ module.exports = {
         '18vh': '18vh',
         '20vh': '20vh',
         '25vh': '25vh',
+        '30vh': '30vh',
+        '35vh': '35vh',
+        '40vh': '40vh',
+        '45vh': '45vh',
         '50vh': '50vh',
         '55vh': '55vh',
         '60vh': '60vh',
@@ -186,8 +199,9 @@ module.exports = {
         'logo_blue': '#009fe3',
       },
       transitionProperty: {
-        'hover': 'hover',
-        'group-hover': 'group-hover',
+        'hover': 'hover, group-hover',
+        'opacity': 'opacity',
+        'display': 'display'
       },
       width: {
         '30px': '30px',
@@ -215,6 +229,7 @@ module.exports = {
     minHeight: ['responsive', 'hover', 'focus', 'group-hover'],
     maxHeight: ['responsive', 'hover', 'focus', 'group-hover'],
     greyScale: ['responsive', 'hover', 'focus', 'group-hover'],
+    translate: ['responsive', 'hover', 'focus', 'active', 'group-hover'],
   },
   plugins: [require("@tailwindcss/custom-forms")],
 }

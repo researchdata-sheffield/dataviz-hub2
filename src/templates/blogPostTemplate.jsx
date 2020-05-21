@@ -86,7 +86,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         
       </Helmet>
 
-
       <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-lg" style={{minHeight: "50vh", }}>
         <div className="flex flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-10 leading-tight w-full">
@@ -125,7 +124,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
               { tableOfContent && 
                 tableOfContent.items && 
-                <Scrollspy className="text-gray-700" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+                <Scrollspy className="text-gray-300" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
                   {tableOfContent.items.map(renderItem)}
                 </Scrollspy>
               }      

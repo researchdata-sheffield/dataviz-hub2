@@ -11,6 +11,7 @@ import SEO from "../components/seo"
 import BackgroundSection from "../components_images/blog_background";
 import scroll_To from 'gatsby-plugin-smoothscroll'
 import Flip from 'react-reveal/Flip'
+import { GreyButton } from "../components_style/styled"
 
 const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 
@@ -31,7 +32,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 				</div>
 				<Flip cascade top delay={700}>
 					<div onClick={() => scroll_To('#read')} >
-						<button className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-bold py-2 px-6 border border-transparent text-sm`}>Start reading</button>
+						<GreyButton className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 text-sm`}>Start reading</GreyButton>
 					</div>
 				</Flip>
 
