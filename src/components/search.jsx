@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
-import { Link, graphql, useStaticQuery, withPrefix } from 'gatsby'
+import { graphql, useStaticQuery, withPrefix } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
-import kebabCase from "lodash.kebabcase"
+//import kebabCase from "lodash.kebabcase"
 import no_image_1 from "../images/blog/no_image_1.png"
 import no_image_2 from "../images/blog/no_image_2.png"
 import no_image_3 from "../images/blog/no_image_3.png"
@@ -11,6 +11,7 @@ import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 import Zoom from 'react-reveal/Zoom'
 import Fade from 'react-reveal/Fade'
+import bg from "../images/search/pat.jpg"
 
 // Search component
 class Search extends Component {
@@ -62,7 +63,7 @@ class Search extends Component {
 
         return (
           <div>
-            <div>Found {this.state.results.length} results</div>
+            <div className="bg-black text-gray-100 py-2">Found {this.state.results.length} results</div>
 
             <div className="flex flex-wrap my-5 xl:my-8 justify-center">
               {this.state.results.map((item, i) => {
@@ -80,58 +81,70 @@ class Search extends Component {
                 })}
 
 
-                let description = item.description.split(" ").splice(0, 30)
-                if(description.length < 30){
+                let description = item.description.split(" ").splice(0, 35)
+                if(description.length < 35){
                   description = description.join(" ").concat(".");
                 } else {
                   description = description.join(" ").concat(" ...");
                 }
 
                 return( 
-                  <div className="rounded-lg text-gray-800 group relative w-full md:w-1/3 lg:w-1/4 xl:w-1/5 bg-white m-3 xl:m-4 text-left cursor-pointer min-h-60 ipadp:min-h-80 2xl:min-h-55 2xl:max-h-55 hover:shadow-2xl ipadp:overflow-hidden" key={i}  >
-                    <a href={withPrefix(`${item.url}`)} target="_blank" rel="noopener noreferrer">
-                      <img className="rounded-t-lg w-full min-h-1/2 max-h-1/2 ipadp:min-h-3/5 ipadp:max-h-3/5 group-hover:max-h-1/2 group-hover:min-h-1/2" style={{objectFit: "cover", objectPosition: "center", transition: ".3s ease"}} src={imagesrc}></img>
-                      <div className="pt-2 pb-2 flex flex-wrap">
-                        <p className="px-2 ipadp:px-6 mb-2 text-xxs text-gray-500 w-full font-semibold ipadp:hidden group-hover:block"><Highlighter highlightClassName="text-red-500 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
-                        <h1 className="px-2 ipadp:px-6 font-bold leading-4 mt-2 mb-3 group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>
-                        <h1 className="px-2 ipadp:px-6 leading-4 text-xs xl:text-sm group-hover:text-gray-800"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>                
-                        <h1 className="text-gray-500 px-2 ipadp:px-6 leading-4 text-xs xl:text-sm mt-2 w-full"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
-                        
-                        <div className="border-t-1 border-gray-300 w-full absolute bottom-0 pb-2 bg-black" >
-                          <Link className="inline-block text-gray-100 text-xs hover:text-highlight_2 font-semibold ml-4 mr-2" to={`/blog/category/${kebabCase(item.category[0])}`}><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.category[0]} searchWords={this.state.query.split()} /></Link>
-                          {item.tag.map((tag) => (
-                            <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} className="inline-block text-gray-500 text-xs hover:text-highlight_2 mr-2"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={tag} searchWords={this.state.query.split()} /></Link>
-                          ))}
+
+                  <a href={withPrefix(`${item.url}`)} target="_blank" rel="noopener noreferrer" key={i}>
+                    <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-80 2xl:min-h-60 mx-6 my-6 transform hover:scale-105 transition duration-500">
+                      <div className="min-h-80 2xl:min-h-60 max-h-80 w-full rounded-lg p-6 transition duration-700 bg-black-45 group-hover:bg-black-85">
+                        <div className="absolute pt-25vh 2xl:pt-30vh">
+                          <h1 className="text-white font-bold leading-10 text-4xl transform group-hover:-translate-y-16 transition duration-100"><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>  
+                          <h1 className="text-highlight_2 leading-9 my-6 font-bold text-2xl group-hover:hidden transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
+                          <h1 className="text-gray-400 font-bold group-hover:hidden transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
+                          <h1 className="text-gray-400 font-bold group-hover:hidden transition duration-500">
+                            TAG: &nbsp;{item.tag.map((tag, i, arr) => (
+                                    <Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} />
+                                  ))}
+                          </h1>
+                          <p className="hidden group-hover:block my-3 text-xxs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
+                          <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>      
                         </div>
                       </div>
-                    </a>
-                  </div>
+
+
+                    </div>
+                  </a>
                 )
                 })}
           </div>
          </div>
         )
       } else if (this.state.query.length > 2) {
-        return 'No results for ' + this.state.query
+        return (
+          <div className="bg-black text-gray-100 py-2">No results for {this.state.query}</div>
+        )
+          
       } else if (
         this.state.query.length > 0
       ) {
-        return 'Please insert at least 3 characters'
+        return (
+          <div className="bg-black text-gray-100 py-2">Please insert at least 3 characters</div>
+        )
       } else {
-        return ''
+        return (
+          <div className="bg-black text-gray-100 py-2"> </div>
+        )
       }
 
     }
 
     return (
-      <div className={`${this.props.classNames} mt-16 2xl:mt-20 mb-32 relative text-gray-300 w-full text-center`}>
-        <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white my-4 xl:my-8">what&apos;s next? </p></Zoom>
-        <Fade bottom duration={1500}>
-          <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
-            <FiSearch className="inline-block text-center text-3xl -mt-1" />
-            <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Title, description, date..." />
-          </div>
-        </Fade>
+      <div className={`${this.props.classNames} mb-32 relative text-gray-700 w-full text-center`}>
+        <div className="min-h-30 pt-24 pb-16" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
+          <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white">what&apos;s next? </p></Zoom>
+          <Fade bottom duration={1500}>
+            <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
+              <FiSearch className="inline-block text-center text-3xl -mt-1" />
+              <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Title, description, date..." />
+            </div>
+          </Fade>
+        </div>
         <div className="search__list">
           <ResultList />
         </div>

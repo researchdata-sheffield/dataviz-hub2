@@ -171,7 +171,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 or extremely complicated ... 
               </p>
             </div>
-            <Link to="/blog/22/03/2020/datavizhub_guide/#what">
+            <Link to="/blog/22/03/2020/datavizhub_guide">
               <ButtonWithArrow type="GreyButton">Read more</ButtonWithArrow>
             </Link> 
           </div>
