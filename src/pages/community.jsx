@@ -103,9 +103,9 @@ const Community = () => (
         </Zoom>
       </div>
 
-      <div className="lg:px-24 pt-24 pb-16 text-gray-700 text-xl">
+      <div className="lg:px-12 2xl:px-24 pt-24 pb-16 text-gray-700 text-xl">
           <p className="text-highlight_2 text-5xl px-2">Contribute!</p>
-          <p className="p-6">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
+          <p className="p-3">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
             Feel free to get in touch with us through the google group or slack team with any suggestions. 
             We will also be putting together more formal contributing guidance should you wish to contribute to our online resources
             directly through <a className="text-highlight_2 font-semibold" href="https://github.com/researchdata-sheffield/dataviz-hub2" target="_blank" rel="noopener noreferrer">github</a> including blogposts and turtorials.</p>

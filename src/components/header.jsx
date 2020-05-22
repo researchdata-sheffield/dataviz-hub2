@@ -99,7 +99,7 @@ const Header = () => {
                 </Link> 
                 : 
                 <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
-                  href={link.route} target="_blank" rel="noopener noreferrer" alt="orda.shef.ac.uk"
+                  href={link.route} target="_blank" rel="noopener noreferrer"
                   key={link.title}>{link.title}
                 </a>  
               )) 
@@ -110,8 +110,7 @@ const Header = () => {
             <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2">
               <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
             </button>
-            {/* FIXME: Search button dropdown */}
-            <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline" title="Search function is under development" >
+            <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline">
               <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} `} to="/search"><FiSearch  /></Link>
             </button>
 
