@@ -8,6 +8,7 @@ module.exports = {
     title: `Data Visualisation Hub - The University of Sheffield `,
     description: `Promoting and building community around data visualisation at the University of Sheffield.`,
     author: 'Yu Liang Weng <y.weng@sheffield.ac.uk>',
+    siteUrl: "https://dataviz.shef.ac.uk"
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

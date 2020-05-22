@@ -120,7 +120,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       <div className="flex flex-wrap relative justify-center lg:px-10 2xl:px-48">
         {/* mobile toc */}
         <div className="w-full bg-gray-900 flex justify-center">
-          <div className={` ${ tableOfContent.items ? ``: ``} lg:hidden pt-10 pb-5 mx-auto overflow-auto text-white`}>
+          <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} lg:hidden  mx-auto overflow-auto text-white`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
               { tableOfContent && 
                 tableOfContent.items && 
