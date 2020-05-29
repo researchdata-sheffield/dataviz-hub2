@@ -92,26 +92,26 @@ const Header = () => {
               },
               ].map(link => ( link.title != 'Showcase' ? 
                 <Link 
-                  activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }` }} 
+                  activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }`, fontWeight: "bold" }} 
                   partiallyActive={true}
-                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
+                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
                   key={link.title} to={link.route}>{link.title}
                 </Link> 
                 : 
-                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
+                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
                   href={link.route} target="_blank" rel="noopener noreferrer"
                   key={link.title}>{link.title}
                 </a>  
               )) 
             }
             <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-4 pr-2">
-              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white` } `} href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
+              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white` } `} href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
             </button>
             <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2">
-              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
+              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
             </button>
             <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline">
-              <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-400 hover:text-white`} `} to="/search"><FiSearch  /></Link>
+              <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white`} `} to="/search"><FiSearch  /></Link>
             </button>
 
           </div>
