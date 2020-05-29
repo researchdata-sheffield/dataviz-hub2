@@ -14,7 +14,7 @@ import Search_Home from "../components/searchHome"
 import scroll_To from 'gatsby-plugin-smoothscroll'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
-import Covid from "../images/covid-19.jpg"
+import Covid from "../images/home/COVID1.png"
 import { GreyButton, BlackWhiteButton, ButtonWithArrow } from "../components_style/styled"
 
 import BackgroundOne from "../components_images/home/home_1"
@@ -117,19 +117,23 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           <div className="flex flex-wrap text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease", zIndex: "2"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="flex flex-wrap min-h-100 justify-center text-center items-center relative" style={{backgroundImage: `url(${Covid})`, backgroundSize: "cover" }}>
-              <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px"}}>Coronavirus COVID-19 Global Cases by CSSE at Johns Hopkins University</h1>
-              <a href="https://gisanddata.maps.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6" target="_blank" rel="noopener noreferrer">
-                <BlackWhiteButton className="hover:text-gray-700 hover:bg-white transition duration-500">Statistics dashboard</BlackWhiteButton>
-              </a>
-
+            <div className="min-h-100 justify-center text-center items-center relative w-full brightness-80 hover:brightness-100" style={{transition: ".8s ease"}}>
+              <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center relative greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
+                <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.7)"}}>
+                  CoVid Plots and Analysis
+                  <p className="text-lg font-normal">by Colin Angus in ScHARR, University of Sheffield</p>
+                </h1>
+                <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
+                  <BlackWhiteButton>Data Repository</BlackWhiteButton>
+                </a>
+              </div>
 
               {/* Scroll down animation */}
               <div id="scrollDown-btn" className="hidden md:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}} onClick={() => scroll_To('#eventNotice')}>
-                <Link className="text-white inline-block" to="#eventNotice"><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></Link>
-                <a className="text-white font-bold tracking-widest">Scroll</a>
+                <Link className="inline-block" to="#eventNotice"><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></Link>
+                <a className="text-black font-bold text-center" style={{textShadow: "#fff 0px 0px 10px"}}>&nbsp;Scroll</a>
               </div>
-            </div>
+            </div>  
 
             <EventNotice eventBrite={eventBrite} />   
               
@@ -194,10 +198,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
 export default IndexPage
 
+
 IndexPage.propTypes = {
   pageContext: PropTypes.any,
   data: PropTypes.any
 }
+
 
 export const query = graphql`
   query {

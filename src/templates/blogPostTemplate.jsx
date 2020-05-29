@@ -14,7 +14,7 @@ import {CatBtn, TagBtn} from "../components_style/styled"
 import Scrollspy from 'react-scrollspy'
 import "katex/dist/katex.min.css"
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
-//import Fade from "react-reveal/Fade"
+import Fade from "react-reveal/Fade"
 import Bounce from 'react-reveal/Bounce'
 
 
@@ -102,10 +102,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <Bounce cascade delay={500} duration={1300}>
         <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-5 leading-tight">
-            <h1 className="text-3xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
+            <h1 className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
           </div>
           
-          <div className="flex justify-center mt-8 items-center">
+          <div className="flex justify-center mt-12 items-center">
             {mdx.frontmatter.author.map((author) => (
               <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} src={author.avatar.childImageSharp.fluid.src}  />
             ))}
@@ -132,15 +132,19 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>
 
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
-        <div className="absolute left-0 top-0 sticky hidden lg:block" style={{maxWidth: "50px", height: "0", overflow: "visible", zIndex: "-1"}}>
-          <div className="flex flex-col text-sm" >
+        
+        <div className="absolute left-0 top-0 sticky hidden lg:block">
+          <Fade left cascade delay={1500} duration={1300}>   
+          <div className="flex flex-col text-sm" style={{maxWidth: "50px", height: "0", overflow: "visible"}}>
             <Twitter className="bg-gray-400 hover:bg-highlight_2 mt-24" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
             <Facebook className="bg-gray-400 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />
             <Mail className="bg-gray-400 hover:bg-highlight_2" solid small subject={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
             <Linkedin className="bg-gray-400 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
           </div>
+          </Fade> 
         </div>   
-        
+
+
         {/* mobile toc & share buttons */}
         <div className="w-full bg-gray-900 rounded-lg shadow-xl flex flex-wrap justify-center">
           <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
@@ -149,6 +153,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             <Mail className="bg-gray-500 hover:bg-highlight_2" solid small subject={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
             <Linkedin className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
           </div>    
+          
           <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
               { tableOfContent && 
