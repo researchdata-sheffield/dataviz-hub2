@@ -14,12 +14,13 @@ hide: "true"
 import React from 'react'
 import Scrollspy from 'react-scrollspy'
 import Fade from 'react-reveal/Fade'
-import bg from './dataviz.jpg'
+import bg from './bg.jpg'
+import bg1 from './earth.jpg'
 import scroll_To from 'gatsby-plugin-smoothscroll'
 
 <!-- TODO: beautify guide -->
 
-<div className="shadow-xl flex justify-center items-center text-center" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundAttachment: "fixed", width: "100%", flexDirection: "column", paddingTop: "35vh", paddingBottom: "35vh"}}>
+<div className="shadow-xl flex justify-center items-center text-center" style={{backgroundImage: `url(${bg1})`, backgroundSize: "cover",  width: "100%", flexDirection: "column", paddingTop: "37vh", paddingBottom: "37vh"}}>
   <div className="text-5xl text-white" style={{textShadow: "#000 0px 0px 5px", fontFamily: "TUoS Stephenson"}}>Data Visualisation - What, Why, How?</div>
   <div className="text-lg text-gray-100 mt-5" style={{textShadow: "#000 0px 0px 5px"}}>Dataviz.Shef Team</div>
 </div>
@@ -30,59 +31,57 @@ import scroll_To from 'gatsby-plugin-smoothscroll'
   <a onClick={() => scroll_To('#start')} className="text-white hover:text-highlight_2 cursor-pointer">Where should I start</a>
 </div>
 
-<div className="flex flex-wrap text-gray-700 container mx-auto px-3 lg:px-36 2xl:px-78 mt-10">
-  <Fade duration={2000} fraction={.5}>
-    <div id="what" className="ipadp:min-h-80">
-      <p className="text-highlight_2 font-bold text-5xl">What is data visualisation?</p>
+<div style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundAttachment: "fixed"}} className="bg-black py-24">
+  <div className="flex flex-wrap text-gray-700 mx-auto px-3 lg:px-16 2xl:px-16 py-8 lg:max-w-70 2xl:max-w-50" style={{backgroundColor: "rgba(255, 255, 255, 0.97)"}}>
+    <Fade duration={2000} fraction={.5}>
+      <div id="what" className="ipadp:min-h-80">
+        <p className="text-highlight_2 font-bold text-5xl">What is data visualisation?</p>
+        <p>
+          Data visualisation generally considered as the graphical representation of information and data. The main purpose of data visualisation is to communicate information clearly and effectively by means of graphical representation. 
+          However, this does not mean that data visualisation must be boring for its functional purpose, or extremely complicated to look gorgeous. <br /><br /> In order to effectively communicate ideas and concepts, 
+          aesthetic and functions need to go hand in hand, and by visually communicating key aspects and features, deep insights into fairly sparse and complex data sets are achieved. Data visualisation is closely related to information graphics, 
+          information visualisation, scientific visualisation, and statistical graphics. Data visualisation is currently an extremely active and critical aspect in research, teaching, and development.
+        </p>
+      </div> 
+    </Fade>
+    <Fade duration={2000}>
+    <div id="why" className="flex-wrap ipadp:min-h-80">
+      <p className="text-highlight_2 font-bold text-5xl">Why is it important?</p>
       <p>
-        Data visualisation generally considered as the graphical representation of information and data. The main purpose of data visualisation is to communicate information clearly and effectively by means of graphical representation. 
-        However, this does not mean that data visualisation must be boring for its functional purpose, or extremely complicated to look gorgeous. <br /><br /> In order to effectively communicate ideas and concepts, 
-        aesthetic and functions need to go hand in hand, and by visually communicating key aspects and features, deep insights into fairly sparse and complex data sets are achieved. Data visualisation is closely related to information graphics, 
-        information visualisation, scientific visualisation, and statistical graphics. Data visualisation is currently an extremely active and critical aspect in research, teaching, and development.
+      The huge amount of data is one of the characteristics of the Internet era. Learn to quickly digest and absorb useful information in huge data groups can greatly help to seize 
+      opportunities. Studies have shown that the amount of information we use visually is far greater than other senses. This also means that the possibility of finding relevant 
+      information through data visualization is far greater than other methods, and it allow viewers to get more information.  <br /><br />
+      While many organisations and companies across different sectors relying on data to gain insights and optimising their products, data visualisation is not yet an integral part of research communication. 
+      Today, powerful, modern, open source, interactive and web-based visualisation tools have revolutionised the potential for research data impact, we are here to help our researchers make the most of their data and take advantage of such tools. 
       </p>
-    </div> 
-  </Fade>
-
-  <Fade duration={2000}>
-  <div id="why" className="flex-wrap ipadp:min-h-80">
-    <p className="text-highlight_2 font-bold text-5xl">Why is it important?</p>
-    <p>
-    The huge amount of data is one of the characteristics of the Internet era. Learn to quickly digest and absorb useful information in huge data groups can greatly help to seize 
-    opportunities. Studies have shown that the amount of information we use visually is far greater than other senses. This also means that the possibility of finding relevant 
-    information through data visualization is far greater than other methods, and it allow viewers to get more information.  <br /><br />
-    While many organisations and companies across different sectors relying on data to gain insights and optimising their products, data visualisation is not yet an integral part of research communication. 
-    Today, powerful, modern, open source, interactive and web-based visualisation tools have revolutionised the potential for research data impact, we are here to help our researchers make the most of their data and take advantage of such tools. 
-    </p>
+    </div>
+    </Fade>
+    <Fade duration={2000}>
+    <div id="how" className="flex-wrap ipadp:min-h-80">
+      <p className="text-highlight_2 font-bold text-5xl">How this site could help?</p>
+      <p>
+        Support through: <br />
+          &bull; Documentation on dataviz best practice and use of tools  <br />
+          &bull; Communication channels  <br />
+          &bull; Capacity building opportunities through Events  <br />
+          &bull; Help when you needed <br />
+          &bull; Contribution <br />
+      </p>
+      <img className="py-16" style={{maxWidth: "80%"}} src="./how.jpg" />
+    </div>
+    </Fade>
+    <Fade duration={2000}>
+    <div id="start" className="flex-wrap ipadp:min-h-50">
+      <p className="text-highlight_2 font-bold text-5xl">Where should I start?</p>
+      <p>
+        &bull; Learn from documentations <br />
+        &bull; Share your data visualisations on ORDA showcase <br />
+        &bull; Join the google group &/or slack community <br />
+        {/* &bull; Contribute to the blog <br />
+        &bull; Contribute to the documentation <br /> */}
+        &bull; Get in touch with ideas for training, coding clubs, hackathons <br />
+      </p>
+    </div>
+    </Fade>
   </div>
-  </Fade>
-
-  <Fade duration={2000}>
-  <div id="how" className="flex-wrap ipadp:min-h-80">
-    <p className="text-highlight_2 font-bold text-5xl">How this site could help?</p>
-    <p>
-      Support through: <br />
-        &bull; Documentation on dataviz best practice and use of tools  <br />
-        &bull; Communication channels  <br />
-        &bull; Capacity building opportunities through Events  <br />
-        &bull; Help when you needed <br />
-        &bull; Contribution <br />
-    </p>
-    <img className="py-16" style={{maxWidth: "80%"}} src="./how.jpg" />
-  </div>
-  </Fade>
-
-  <Fade duration={2000}>
-  <div id="start" className="flex-wrap ipadp:min-h-50">
-    <p className="text-highlight_2 font-bold text-5xl">Where should I start?</p>
-    <p>
-      &bull; Learn from documentations <br />
-      &bull; Share your data visualisations on ORDA showcase <br />
-      &bull; Join the google group &/or slack community <br />
-      {/* &bull; Contribute to the blog <br />
-      &bull; Contribute to the documentation <br /> */}
-      &bull; Get in touch with ideas for training, coding clubs, hackathons <br />
-    </p>
-  </div>
-  </Fade>
-
 </div>

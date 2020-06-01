@@ -107,7 +107,7 @@ export const AnimateButton = styled_twin.button`
   position: relative;
   text-align: center;
   overflow: hidden;
-  transition: color 0.4s ease-in-out;
+  transition: color 0.85s ease-in-out;
   display: inline-block;
 
   &::before {
@@ -123,7 +123,7 @@ export const AnimateButton = styled_twin.button`
     background-color: #fff;
     transform-origin: center;
     transform: translate3d(10%, 10%, 0) scale3d(0, 0, 0);
-    transition: transform 0.45s ease-in-out;
+    transition: transform 0.55s ease-in-out;
   }
 
   &:hover {

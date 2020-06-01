@@ -7,6 +7,7 @@ import PropTypes from "prop-types"
 import EventNotice from "../components_home/eventNotice"
 import FeaturedPost from "../components_home/featuredPost"
 import LatestPost from "../components_home/latestPost"
+import LearningPath from "../components_home/learningPath"
 import HomeCommunity from "../components_home/homeCommunity"
 import HomeShowcase from "../components_home/homeShowcase"
 import moment from "moment"
@@ -80,7 +81,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                       <li><a className="text-gray-700 hover:underline" to="#" data-tip="Coming soon">Learning path</a></li>
                       <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_community')} data-tip="#Community">Community</a></li>
                       <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_showcase')} data-tip="#Showcase">Showcase</a></li>
-                      <li><a className="text-gray-700 hover:underline" to="#" data-tip="Coming soon">Collaboration</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#collaboration')} data-tip="Coming soon">Collaboration</a></li>
                       <ReactTooltip />
                     </ul>
                 </div>
@@ -120,16 +121,16 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="min-h-100 justify-center relative w-full brightness-80 hover:brightness-100" style={{transition: ".8s ease"}}>
               <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
-                <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.7)"}}>
+                <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
                 <div className="mt-10">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                    <AnimateButton external>Data Repository</AnimateButton>
+                    <AnimateButton external className="rounded-full">Data Repository</AnimateButton>
                   </a>
                   <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
-                    <AnimateButton className="mt-0">Blog post</AnimateButton>
+                    <AnimateButton className="mt-0 rounded-full">Blog post</AnimateButton>
                   </Link>
                 </div>
               </div>
@@ -188,10 +189,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         </Fade>
       </BackgroundOne>
 
+      <LearningPath />
       <HomeCommunity />
       <HomeShowcase />
       
-      <div className="container mx-auto min-h-40 flex flex-wrap py-20 justify-center">
+      <div id="collaboration" className="container mx-auto min-h-40 flex flex-wrap py-20 justify-center">
         <h1 className="text-3xl ipadp:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUoS Stephenson"}}>Collaboration and Partnership.</h1>
         <p className="text-gray-500">Further details to come.</p>
       </div>
