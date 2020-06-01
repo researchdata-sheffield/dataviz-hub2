@@ -36,26 +36,30 @@ exports.sourceNodes = async ({ actions, createNodeId }, options) => {
       processedEntries = [...processedEntries, ...currentOrgEntries];
     });
 
-    
-    /* Returns a single promise that fulfills when all of the above promises passed as an iterable have been fulfilled or when the iterable 
-    contains no promises or when the iterable contains promises that have been fulfilled and non-promises that have been returned. */
-    await Promise.all(processedEntries).then(() => {
-      Object.keys(nodes).forEach(entity => {
-        if (entity === 'events') {
-          nodes[entity].forEach(() => {
-            const joinVenueToEvent = (eventVenueId, nodes) => {
-              return nodes.venues.filter(venue => venue.id === eventVenueId)[0]
-            }
-            
-            // For each event node, add venue from venue node
-            nodes[entity].forEach(node => {
-              node['venue'] = joinVenueToEvent(node.venue_id, nodes)
+    if(nodes["events"] === undefined) {
+      createNode(dummyEvent);
+    }else {  
+      /* Returns a single promise that fulfills when all of the above promises passed as an iterable have been fulfilled or when the iterable 
+      contains no promises or when the iterable contains promises that have been fulfilled and non-promises that have been returned. */
+      await Promise.all(processedEntries).then(() => {
+        Object.keys(nodes).forEach(entity => {
+          if (entity === 'events') {
+            nodes[entity].forEach(() => {
+              const joinVenueToEvent = (eventVenueId, nodes) => {
+                return nodes.venues.filter(venue => venue.id === eventVenueId)[0]
+              }
+              
+              // For each event node, add venue from venue node
+              nodes[entity].forEach(node => {
+                node['venue'] = joinVenueToEvent(node.venue_id, nodes)
+              })
             })
-          })
-        }
-        nodes[entity].forEach(entry => {createNode(entry); })
+          }
+          nodes[entity].forEach(entry => {createNode(entry); })
+        })
       })
-    })
+    }
+
   } else {
     createNode(dummyEvent);
   }

@@ -21,11 +21,11 @@ const HomeCommunity = () => {
       </Fade>
       <div className="flex flex-wrap text-gray-800 pt-10 pb-20 justify-center">
         
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
           <Zoom bottom duration={700} delay={500}>
             <RiCalendarEventLine className="text-5xl" />
             <p className="text-xl font-bold py-3">Events</p>
-            <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+            <div className="border-t-4 border-gray-700 py-3 text-gray-600 group-hover:text-gray-900">
               Discover a variety of events including talks and symposia, workshops, vis-coding clubs and data visualisation hackathons!
             </div>
             <Link to="/events">
@@ -34,11 +34,11 @@ const HomeCommunity = () => {
           </Zoom>
         </div>
 
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
           <Zoom bottom duration={700} delay={750}>
             <RiBookReadLine className="text-5xl" />
             <p className="text-xl font-bold py-3">Training</p>
-            <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+            <div className="border-t-4 border-gray-700 py-3 text-gray-600 group-hover:text-gray-900">
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
             <ButtonWithArrow type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
@@ -46,26 +46,26 @@ const HomeCommunity = () => {
           </Zoom>
         </div>
       
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
           <Zoom bottom duration={700} delay={1000}>
             <MdPeople className="text-5xl" />
             <p className="text-xl font-bold py-3">Support</p>
-            <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+            <div className="border-t-4 border-gray-700 py-3 text-gray-600 group-hover:text-gray-900">
               Get in touch with us. It is natural that you have found something diffcult to understand or need more specific guidance and direction.
             </div>
             <ButtonWithArrow type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
-            <ReactTooltip id="ReactTooltip1" delayShow={700} delayHide={1000} effect="float">
+            <ReactTooltip id="ReactTooltip1" delayShow={500} delayHide={1000} effect="float">
               Why not join our slack channel and get live updates?
             </ReactTooltip>
           </Zoom>
         </div>
         
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
           <Zoom bottom duration={700} delay={1250}>
             <div>
               <RiMenuAddLine className="text-5xl" />
               <p className="text-xl font-bold py-3">Contribution</p>
-              <div className="border-t-4 border-gray-700 py-3 text-gray-600">
+              <div className="border-t-4 border-gray-700 py-3 text-gray-600 group-hover:text-gray-900">
                 We love to see people actively sharing their thought and creativity. We have prepared a tutorial for you to upload your own blog posts.
               </div>
             </div>

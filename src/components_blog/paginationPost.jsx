@@ -24,7 +24,7 @@ class PaginationPost extends React.Component {
 
     return(
       <div className="bg-gray-900 relative z-10">
-        <div className="flex text-gray-200 justify-center items-center content-center mx-auto mt-16 pt-6 text-sm">
+        <div className="flex text-gray-200 justify-center items-center content-center mx-auto pt-6 text-sm">
           {this.props.mdx.frontmatter.category.map((cat) => (
             <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
           ))}

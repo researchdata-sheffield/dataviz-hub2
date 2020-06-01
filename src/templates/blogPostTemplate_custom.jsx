@@ -21,7 +21,7 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
       />
       <Header />
       
-      <div className="justify-center mx-auto text-xl pb-24">
+      <div className="justify-center mx-auto text-xl">
         <MDXProvider components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link }}>
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
