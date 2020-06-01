@@ -21,7 +21,7 @@ const HomeCommunity = () => {
       </Fade>
       <div className="flex flex-wrap text-gray-800 pt-10 pb-20 justify-center">
         
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group">
           <Zoom bottom duration={700} delay={500}>
             <RiCalendarEventLine className="text-5xl" />
             <p className="text-xl font-bold py-3">Events</p>
@@ -34,7 +34,7 @@ const HomeCommunity = () => {
           </Zoom>
         </div>
 
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group">
           <Zoom bottom duration={700} delay={750}>
             <RiBookReadLine className="text-5xl" />
             <p className="text-xl font-bold py-3">Training</p>
@@ -46,7 +46,7 @@ const HomeCommunity = () => {
           </Zoom>
         </div>
       
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group">
           <Zoom bottom duration={700} delay={1000}>
             <MdPeople className="text-5xl" />
             <p className="text-xl font-bold py-3">Support</p>
@@ -60,7 +60,7 @@ const HomeCommunity = () => {
           </Zoom>
         </div>
         
-        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group hover:shadow-2xl">
+        <div className="md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 group">
           <Zoom bottom duration={700} delay={1250}>
             <div>
               <RiMenuAddLine className="text-5xl" />
