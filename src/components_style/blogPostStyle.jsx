@@ -134,8 +134,9 @@ export const Hr = styled.hr`
   margin-bottom: 0.5em;
   margin-left: auto;
   margin-right: auto;
-  border-style: inset;
+  border-style: solid;
   border-width: 1px;
+  border-color: #eee;
 `
 export const Del = styled.del`
   text-decoration: line-through;

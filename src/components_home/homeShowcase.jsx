@@ -21,8 +21,8 @@ const HomeShowcase = () => {
               ORDA (Online Research Data) is the University of Sheffield&apos;s hub for sharing data, code, and other non-traditional research artefacts. ORDA includes a showcase of visual 
               representations of data built by staff and students at the University of Sheffield.
             </div>
-            <a href="https://orda.shef.ac.uk/visualisations" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow type="GreyButton">Discover</ButtonWithArrow>
+            <a className="mt-8" href="https://orda.shef.ac.uk/visualisations" target="_blank" rel="noopener noreferrer">
+              <ButtonWithArrow external type="GreyButton">Discover</ButtonWithArrow>
             </a>
             </Fade>
           </div>
@@ -40,8 +40,8 @@ const HomeShowcase = () => {
           <p className="text- gray-600">ORDA has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>
-          <a href="https://orda.shef.ac.uk" target="_blank" rel="noopener noreferrer">
-            <ButtonWithArrow className="mt-10 hover:bg-gray-100 hover:shadow-2xl hover:text-highlight_2 transition duration-500 ease-in-out">Go to ORDA</ButtonWithArrow>
+          <a className="mt-8" href="https://orda.shef.ac.uk" target="_blank" rel="noopener noreferrer">
+            <ButtonWithArrow external className="hover:bg-white hover:shadow-2xl hover:text-highlight_2 transition duration-500 ease-in-out">Go to ORDA</ButtonWithArrow>
           </a>
         </div>
         </Zoom>
