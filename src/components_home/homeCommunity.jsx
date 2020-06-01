@@ -5,6 +5,7 @@ import Zoom from 'react-reveal/Zoom'
 import { MdKeyboardArrowRight, MdPeople } from "react-icons/md"
 import { RiCalendarEventLine, RiBookReadLine, RiMenuAddLine } from "react-icons/ri"
 import { ButtonWithArrow } from "../components_style/styled"
+import ReactTooltip from 'react-tooltip'
 
 
 const HomeCommunity = () => {
@@ -40,7 +41,8 @@ const HomeCommunity = () => {
             <div className="border-t-4 border-gray-700 py-3 text-gray-600">
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <ButtonWithArrow type="BlackButton">Coming soon</ButtonWithArrow>
+            <ButtonWithArrow type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
+           
           </Zoom>
         </div>
       
@@ -49,9 +51,12 @@ const HomeCommunity = () => {
             <MdPeople className="text-5xl" />
             <p className="text-xl font-bold py-3">Support</p>
             <div className="border-t-4 border-gray-700 py-3 text-gray-600">
-              Get in touch with us. It is natural that you have found something diffcult to understand or you need more specific guidance and direction.
+              Get in touch with us. It is natural that you have found something diffcult to understand or need more specific guidance and direction.
             </div>
-            <ButtonWithArrow type="BlackButton">Coming soon</ButtonWithArrow>
+            <ButtonWithArrow type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
+            <ReactTooltip id="ReactTooltip1" delayShow={700} delayHide={1000} effect="float">
+              Why not join our slack channel and get live updates?
+            </ReactTooltip>
           </Zoom>
         </div>
         
@@ -69,9 +74,9 @@ const HomeCommunity = () => {
             </a>
           </Zoom>
         </div>
-        
       </div>
     </div>
+    
   )
 
 }

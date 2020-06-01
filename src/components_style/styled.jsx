@@ -1,9 +1,8 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import styled from "styled-components"
-import tw from 'twin.macro'
+import tw, { styled as styled_twin } from 'twin.macro'
 import { Link } from "gatsby"
-import styled_emotion from '@emotion/styled/macro'
 import { MdKeyboardArrowRight } from "react-icons/md"
 
 // ************ Box style for blogposts ************//
@@ -72,29 +71,74 @@ export const IMG = styled.div`
   }
 `
 
-export const CatBtn = styled_emotion(Link)([
-  tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent`
-])
+export const CatBtn = styled_twin(Link)`
+  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent`}
+`
 
-export const TagBtn = styled_emotion(Link)([
-  tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent`
-])
+export const TagBtn = styled_twin(Link)`
+  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent`}
+`
 
-export const HomeBlogNav = styled_emotion.div([
-  tw`w-1/2 md:w-1/4 py-2 ipadp:py-3 hover:text-white border-b-2 border-black transition duration-700 ease-in-out`
-])
+export const HomeBlogNav = styled_twin.div`
+  ${tw`w-1/2 md:w-1/4 py-2 ipadp:py-3 hover:text-white border-b-2 border-black transition duration-700 ease-in-out`}
+`
 
-export const BlackButton = styled_emotion.button([
-  tw`mt-8 bg-gray-900 hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow transition duration-500`
-])
+export const BlackButton = styled_twin.button`
+  ${ ({ external }) => !external && tw`mt-8` };
+  ${tw`bg-gray-900 relative inline-block hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow transition duration-500`}
+`
 
-export const GreyButton = styled_emotion.button([
-  tw`mt-8 bg-gray-100 text-gray-700 hover:bg-highlight_2 text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent shadow transition duration-500`
-])
+export const GreyButton = styled_twin.button`
+  ${ ({ external }) => !external && tw`mt-8` };
+  ${tw`bg-gray-100 text-gray-700 hover:bg-highlight_2 text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent shadow transition duration-500`}
+`
 
-export const BlackWhiteButton = styled_emotion.button([
-  tw`mt-8 bg-gray-900 text-center hover:text-highlight_2 hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow`
-])
+export const BlackWhiteButton = styled_twin.button`
+  ${ ({ external }) => !external && tw`mt-8` };
+  ${tw`bg-gray-900 text-center hover:text-highlight_2 hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent shadow`}
+
+`
+
+export const AnimateButton = styled_twin.button`
+  ${ ({ external }) => !external && tw`mt-8` };
+  ${tw`bg-gray-900 text-center font-semibold py-2 px-6 shadow`};
+  border: none;
+  z-index: 1;
+  position: relative;
+  text-align: center;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+  display: inline-block;
+
+  &::before {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    bottom: 100%;
+    right: 100%;
+    width: 5em;
+    height: 1em;
+    border-radius: 50%;
+    color: #fff;
+    background-color: #fff;
+    transform-origin: center;
+    transform: translate3d(10%, 10%, 0) scale3d(0, 0, 0);
+    transition: transform 0.45s ease-in-out;
+  }
+
+  &:hover {
+    cursor: pointer;
+    color:  #00aeef;
+    transform: scale(1.039) perspective(1px) translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+  &:hover::before {
+    transform: translate3d(10%, 10%, 0) scale3d(15, 15, 15);
+  }
+
+`
 
 export const ButtonWithArrow = (props) => {
   switch(props.type){

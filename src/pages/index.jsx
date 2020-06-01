@@ -15,8 +15,8 @@ import scroll_To from 'gatsby-plugin-smoothscroll'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/COVID1.png"
-import { GreyButton, BlackWhiteButton, ButtonWithArrow } from "../components_style/styled"
-
+import { GreyButton, BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
+import ReactTooltip from "react-tooltip"
 import BackgroundOne from "../components_images/home/home_1"
 
 
@@ -76,11 +76,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#explore')} alt="#Data and visualisation">Data visualisation</a></li>
-                      <li><a className="text-gray-700 hover:underline" to="#" alt="Coming soon">Learning path</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_community')} alt="#Community">Community</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_showcase')} alt="#Showcase">Showcase</a></li>
-                      <li><a className="text-gray-700 hover:underline" to="#" alt="Coming soon">Collaboration</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#explore')} data-tip="#Data and visualisation">Data visualisation</a></li>
+                      <li><a className="text-gray-700 hover:underline" to="#" data-tip="Coming soon">Learning path</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_community')} data-tip="#Community">Community</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_showcase')} data-tip="#Showcase">Showcase</a></li>
+                      <li><a className="text-gray-700 hover:underline" to="#" data-tip="Coming soon">Collaboration</a></li>
+                      <ReactTooltip />
                     </ul>
                 </div>
                 
@@ -98,7 +99,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
             <Fade bottom delay={700}>
               <a onClick={() => scroll_To('#explore')}>
-                <BlackWhiteButton className="py-2 px-10">Get Started</BlackWhiteButton>
+                <BlackWhiteButton className="py-2 px-10" link>Get Started</BlackWhiteButton>
               </a>
             </Fade>
 
@@ -117,15 +118,20 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           <div className="flex flex-wrap text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease", zIndex: "2"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="min-h-100 justify-center text-center items-center relative w-full brightness-80 hover:brightness-100" style={{transition: ".8s ease"}}>
-              <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center relative greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
+            <div className="min-h-100 justify-center relative w-full brightness-80 hover:brightness-100" style={{transition: ".8s ease"}}>
+              <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
                 <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.7)"}}>
                   CoVid Plots and Analysis
-                  <p className="text-lg font-normal">by Colin Angus in ScHARR, University of Sheffield</p>
+                  <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
-                <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                  <BlackWhiteButton>Data Repository</BlackWhiteButton>
-                </a>
+                <div className="mt-10">
+                  <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
+                    <AnimateButton external>Data Repository</AnimateButton>
+                  </a>
+                  <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
+                    <AnimateButton className="mt-0">Blog post</AnimateButton>
+                  </Link>
+                </div>
               </div>
 
               {/* Scroll down animation */}
@@ -147,9 +153,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-gray-900 py-10 px-3 shadow-lg justify-center items-center" style={{transition: ".3s ease"}}>
+            <div className="flex flex-wrap w-full bg-gray-900 py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-gray-200 mr-10">Discover a range of articles and posts at our blog.</div>
-              <Link to="/blog"><GreyButton className="bg-black inline-block px-5 py-2 mt-0 text-gray-400 hover:text-white">Read more</GreyButton></Link>
+              <Link to="/blog"><GreyButton className="bg-black px-5 py-2 text-gray-400 hover:text-white mt-0">Read more</GreyButton></Link>
             </div> 
 
             {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
@@ -189,7 +195,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         <h1 className="text-3xl ipadp:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUoS Stephenson"}}>Collaboration and Partnership.</h1>
         <p className="text-gray-500">Further details to come.</p>
       </div>
-    
+
       <Footer />        
     </>
   )
