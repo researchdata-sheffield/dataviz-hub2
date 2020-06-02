@@ -1,6 +1,5 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { withPrefix } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti"
 import {CatBtn, TagBtn} from "../components_style/styled"
@@ -43,13 +42,13 @@ class PaginationPost extends React.Component {
 
         <div className="flex justify-center py-8 mx-auto font-semibold" >
           {this.props.prev && (
-            <a value="prev" className="flex items-center pr-6 hover:text-highlight_2 text-gray-300 min-w-20" href={withPrefix(this.props.prev.node.fields.slug)}>
+            <a value="prev" className="flex items-center pr-6 hover:text-highlight_2 text-gray-300 min-w-20" href={this.props.prev.node.fields.slug}>
               <TiArrowLeftThick className="mr-3 text-xl" /> {prevTitle}
             </a>
           )}
 
           {this.props.next && (
-            <a value="next" className="flex items-center pl-6 hover:text-highlight_2 text-gray-300 min-w-20" href={withPrefix(this.props.next.node.fields.slug)}>
+            <a value="next" className="flex items-center pl-6 hover:text-highlight_2 text-gray-300 min-w-20" href={this.props.next.node.fields.slug}>
               {nextTitle} <TiArrowRightThick className="ml-3 text-xl" />
             </a>
           )}
