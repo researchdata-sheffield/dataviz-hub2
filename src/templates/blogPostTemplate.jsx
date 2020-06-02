@@ -119,7 +119,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             </div>
           </div> 
 
-          <div className="mt-4 text-xs 2xl:text-sm mx-auto flex">
+          <div className="mt-4 text-xs 2xl:text-sm mx-auto flex flex-wrap px-2">
             {mdx.frontmatter.category.map((cat) => (
               <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
             ))}
@@ -145,8 +145,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
 
 
-        {/* mobile toc & share buttons */}
-        <div className="w-full bg-gray-900 rounded-lg shadow-xl flex flex-wrap justify-center">
+        {/* mobile: toc & share buttons */}
+        <div className="w-full bg-gray-900 shadow-xl flex flex-wrap justify-center -mt-10">
           <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
             <Twitter className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
             <Facebook className="bg-gray-500 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />
@@ -154,7 +154,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             <Linkedin className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
           </div>    
           
-          <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden`}>
+          <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
               { tableOfContent && 
                 tableOfContent.items && 
@@ -164,7 +164,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               }      
           </div>       
         </div>   
-        {/* mobile toc */}   
+        {/* mobile */}   
 
 
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} mx-auto container pt-6 pb-16 px-3 lg:px-32 2xl:px-52 leading-7 text-xl`}>
@@ -186,8 +186,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* toc hidden in mobile */}
         
 
-      </div>        
-                  
+      </div>       
+           
       <PaginationPost mdx={mdx} prev={prev} next={next} />
       <Footer />
     </div>
