@@ -13,6 +13,7 @@ cache:
   - node_modules
 
 deploy:
+  fqdn: dataviz.shef.ac.uk
   provider: pages
   skip_cleanup: true
   github-token: $GH_TOKEN
