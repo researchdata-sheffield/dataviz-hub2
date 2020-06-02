@@ -23,7 +23,7 @@ class Search extends Component {
 
   componentDidMount = () => {
     setTimeout(() => {
-      if(this.props.location.state.searchWord) {
+      if(this.props && this.props.location && this.props.location.state) {
         var queryHome = this.props.location.state.searchWord
         var input = document.getElementById("pageSearch")
         this.setState({query: queryHome})

@@ -64,6 +64,9 @@ export const query = graphql`
         category
         tag
       }
+      fields {
+        slug
+      }
     }
   }
 `
