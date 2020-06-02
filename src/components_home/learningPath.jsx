@@ -13,11 +13,12 @@ const LearningPath = () => {
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap">
           <div className="text-6xl font-semibold text-white text-box w-full text-center" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
-          <p className="text-box mt-5 text-gray-100">Discover how to get the most out of statistics, visualisation and tool sets.</p>
+          <p className="text-box mt-5 text-gray-100 px-2">Discover how to get the most out of statistics, visualisation and tool sets.</p>
         </div>
       </Fade>
       
       <div className="flex flex-wrap text-gray-800 pt-10 pb-20 justify-center">
+        <h1 className="w-full text-white text-center">Share your suggestions on our <a className="text-gray-500 hover:text-highlight_2" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.</h1>
         <div className="md:w-1/4 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 bg-white shadow-xs hover:shadow-2xl rounded-lg">
           <Zoom bottom duration={700} delay={500}>
             We are working on it, come back later...

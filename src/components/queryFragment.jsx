@@ -51,7 +51,7 @@ export const mdxEdge = graphql`
               }
             }
           }
-          date(formatString: "ddd, DD MMMM YYYY")
+          date(formatString: "DD MMMM YYYY")
           author {
             name
             avatar {

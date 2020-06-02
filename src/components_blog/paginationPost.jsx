@@ -4,6 +4,7 @@ import { withPrefix } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti"
 import {CatBtn, TagBtn} from "../components_style/styled"
+import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 
 class PaginationPost extends React.Component {
   constructor(props) {
@@ -11,6 +12,7 @@ class PaginationPost extends React.Component {
   }
 
   render() {
+    const mdx = this.props.mdx
     let pruneLen = 40
     let prevTitle = this.props.prev ? this.props.prev.node.frontmatter.title : ""
     let nextTitle = this.props.next ? this.props.next.node.frontmatter.title : ""
@@ -24,11 +26,17 @@ class PaginationPost extends React.Component {
 
     return(
       <div className="bg-gray-900 relative z-10">
-        <div className="flex text-gray-200 justify-center items-center content-center mx-auto pt-6 text-sm">
-          {this.props.mdx.frontmatter.category.map((cat) => (
+        <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
+          <Twitter className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
+          <Facebook className="bg-gray-500 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />
+          <Mail className="bg-gray-500 hover:bg-highlight_2" solid small subject={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
+          <Linkedin className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
+        </div> 
+        <div className="flex flex-wrap text-gray-200 justify-center items-center content-center mx-auto pt-6 text-sm">
+          {mdx.frontmatter.category.map((cat) => (
             <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
           ))}
-          {this.props.mdx.frontmatter.tag.map((tag) => (
+          {mdx.frontmatter.tag.map((tag) => (
             <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
           ))}
         </div>

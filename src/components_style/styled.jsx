@@ -10,7 +10,7 @@ export const ArrowBox = styled.div`
   position: relative;
   background-color: #fff;
   border-top: 0px solid white;
-  transition: .3s ease;
+  transition: .5s ease;
   
   &:before, &:after {
     bottom: 100%;
@@ -28,8 +28,8 @@ export const ArrowBox = styled.div`
     border-color: transparent;
     ${'' /* triangle border */}
     border-bottom-color: transparent;  
-    border-width: 30px;   
-    margin-left: -30px;
+    border-width: 24px;   
+    margin-left: -24px;
   }
 
   &:after {
@@ -37,8 +37,8 @@ export const ArrowBox = styled.div`
     ${'' /* triangle inside color */}
     border-bottom-color: #fff;
     ${'' /* 4px less than :before */}
-    border-width: 24px;
-    margin-left: -24px;
+    border-width: 18px;
+    margin-left: -18px;
   }
 
   .group:hover > & {
