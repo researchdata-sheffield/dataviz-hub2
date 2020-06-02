@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link, navigate, withPrefix } from 'gatsby'
+import { Link, navigate } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
@@ -31,7 +31,7 @@ class Search_Home extends Component {
 
               return( 
                 <div className="text-gray-800 group" key={i} style={{fontFamily: "TUoS Blake"}}>
-                  <a href={withPrefix(`${page.url}`)} target="_blank" rel="noopener noreferrer">
+                  <a href={`${page.url}`} target="_blank" rel="noopener noreferrer">
                     <div className="flex bg-gray-900 self-center items-center justify-end">
                       <div className="w-5/6">
                         <h1 className="font-bold text-sm xl:text-lg w-full px-1 py-1 text-white">

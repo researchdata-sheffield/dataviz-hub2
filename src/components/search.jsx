@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { graphql, useStaticQuery, withPrefix } from 'gatsby'
+import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
@@ -90,7 +90,7 @@ class Search extends Component {
 
                 return( 
 
-                  <a href={withPrefix(`${item.url}`)} target="_blank" rel="noopener noreferrer" key={i}>
+                  <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
                     <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-80 2xl:min-h-60 mx-6 my-6 transform hover:scale-105 transition duration-500">
                       <div className="min-h-80 2xl:min-h-60 max-h-80 w-full rounded-lg p-6 transition duration-700 bg-black-45 group-hover:bg-black-85">
                         <div className="absolute pt-25vh 2xl:pt-30vh">
