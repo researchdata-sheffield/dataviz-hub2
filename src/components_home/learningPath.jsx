@@ -18,22 +18,22 @@ const LearningPath = () => {
       </Fade>
       
       <div className="flex flex-wrap text-gray-800 pt-10 pb-20 justify-center">
-        <h1 className="w-full text-white text-center">Share your suggestions on our <a className="text-gray-500 hover:text-highlight_2" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.</h1>
+        <h1 className="w-full text-white text-center">We are working on it, please come back later. <br/> Share your suggestions on our <a className="text-gray-500 hover:text-highlight_2" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.</h1>
         <div className="md:w-1/4 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 bg-white shadow-xs hover:shadow-2xl rounded-lg">
           <Zoom bottom duration={700} delay={500}>
-            We are working on it, come back later...
+            
           </Zoom>
         </div>
 
         <div className="md:w-1/4 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 bg-white shadow-xs hover:shadow-2xl rounded-lg">
           <Zoom bottom duration={700} delay={750}>
-            We are working on it, come back later...
+            
           </Zoom>
         </div>
       
         <div className="md:w-1/4 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-6 transition duration-500 bg-white shadow-xs hover:shadow-2xl rounded-lg">
           <Zoom bottom duration={700} delay={1000}>
-            We are working on it, come back later...
+           
           </Zoom>
         </div>
 
