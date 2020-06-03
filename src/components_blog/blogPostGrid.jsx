@@ -7,6 +7,7 @@ import no_image_2 from "../images/blog/no_image_2.png"
 import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
+import { FaStar } from "react-icons/fa"
 import Slide from 'react-reveal/Slide'
 import { ArrowBox, IMG, CatBtn, TagBtn } from "../components_style/styled"
 
@@ -33,8 +34,14 @@ const blogPostGrid = ({allMdx}) => {
 
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-80 ipadp:min-h-120 2xl:min-h-100 pb-24 2xl:pb-24 overflow-hidden bg-white">
+          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-80 ipadp:min-h-120 2xl:min-h-100 pb-24 2xl:pb-24 overflow-hidden bg-white relative">
             <Link className="group" to={node.fields.slug}>
+              { node.frontmatter.featured === "true" && 
+                <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300" style={{zIndex: "3"}}>
+                  <FaStar className="mr-2 text-yellow-300 text-2xl" />
+                  <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold bg-black px-2" style={{fontFamily: "TUoS Blake", textShadow: "#000000 0px 0px 20px"}}>Featured</p>
+                </div>
+              }
               <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-7/12 lg:max-h-7/12" style={{transition: ".5s ease", backgroundImage: `url(${imagesrc})`}}  />
               <ArrowBox className="px-8 pt-6 leading-none text-gray-600">
                 <h1 className="font-bold text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "15vh", fontFamily: "TUoS Stephenson" }}>{node.frontmatter.title}</h1>

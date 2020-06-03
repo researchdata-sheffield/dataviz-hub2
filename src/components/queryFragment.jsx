@@ -64,6 +64,7 @@ export const mdxEdge = graphql`
           }
           category
           title
+          featured
         }
         fields {
           slug

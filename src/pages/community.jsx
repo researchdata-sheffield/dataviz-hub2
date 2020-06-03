@@ -8,7 +8,6 @@ import com_1 from "../images/community/com_1.jpg"
 import com_2 from "../images/community/com_2.jpg"
 import google from "../images/community/google.png"
 import scroll_To from 'gatsby-plugin-smoothscroll'
-import Bounce from 'react-reveal/Bounce'
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 
@@ -20,7 +19,7 @@ const Community = () => (
     />
     <Header />
     <BackgroundSection className="items-center justify-center text-center">
-      <Bounce cascade delay={700} duration={2000}>
+      <Fade cascade delay={700} duration={2000}>
         <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
           <h1 className="text-5xl font-bold leading-tight">Community at Dataviz.Shef</h1>
           <h1 className="text-xl mt-3 text-gray-100" style={{textShadow: "#000000 0px 0px 1px"}}>knowledge | connection | inspiration | resources | support</h1>
@@ -32,7 +31,7 @@ const Community = () => (
         <div onClick={() => scroll_To('#joinus')} className="inline-block">
           <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Join community</button>
         </div>
-      </Bounce>
+      </Fade>
     </BackgroundSection>
 
     <div id="discover" className="container mx-auto py-32 text-gray-800 flex flex-wrap">

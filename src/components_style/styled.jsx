@@ -54,8 +54,12 @@ export const ArrowBox = styled.div`
 export const ArrowBox_featured = styled(ArrowBox)`
   background-color: #000;
 
-  &:before, &:after {
+  &:after {
     border-bottom-color: #000;
+  }
+
+  .group:hover > & {
+    border-top: 0px solid #000;
   }
 
 `
@@ -72,11 +76,11 @@ export const IMG = styled.div`
 `
 
 export const CatBtn = styled_twin(Link)`
-  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent`}
+  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full`}
 `
 
 export const TagBtn = styled_twin(Link)`
-  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent`}
+  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent rounded-full`}
 `
 
 export const HomeBlogNav = styled_twin.div`

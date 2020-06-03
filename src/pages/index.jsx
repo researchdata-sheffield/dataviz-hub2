@@ -78,7 +78,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                   <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
                       <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#explore')} data-tip="#Data and visualisation">Data visualisation</a></li>
-                      <li><a className="text-gray-700 hover:underline" to="#" data-tip="Coming soon">Learning path</a></li>
+                      <li><a className="text-gray-700 hover:underline" to="#learning_path" data-tip="Coming soon">Learning path</a></li>
                       <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_community')} data-tip="#Community">Community</a></li>
                       <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_showcase')} data-tip="#Showcase">Showcase</a></li>
                       <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#collaboration')} data-tip="Coming soon">Collaboration</a></li>

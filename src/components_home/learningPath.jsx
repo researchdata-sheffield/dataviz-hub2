@@ -9,7 +9,7 @@ import Zoom from 'react-reveal/Zoom'
 const LearningPath = () => {
   
   return (
-    <div id="learningPath" className="ipadp:min-h-100 flex flex-wrap justify-center items-center py-10 bg-gray-900">
+    <div id="learning_path" className="ipadp:min-h-100 flex flex-wrap justify-center items-center py-10 bg-gray-900">
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap">
           <div className="text-6xl font-semibold text-white text-box w-full text-center" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
