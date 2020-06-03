@@ -48,7 +48,7 @@ const Header = () => {
   return (
     <header className="font-semibold z-50 relative" >
      
-      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(34,34,34,0.9)" : [window.location.pathname === "/search" ? "" : ""]}`, transition: "top 0.8s", overflow: "hidden"}} > 
+      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(73,73,73,.9)" : [window.location.pathname === "/" ? "" : ""]}`, transition: "top 0.8s", overflow: "hidden"}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
           <a className={`${isScroll ? `` : [window.location.pathname === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
@@ -94,24 +94,24 @@ const Header = () => {
                 <Link 
                   activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }`, fontWeight: "bold" }} 
                   partiallyActive={true}
-                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
+                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
                   key={link.title} to={link.route}>{link.title}
                 </Link> 
                 : 
-                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
+                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
                   href={link.route} target="_blank" rel="noopener noreferrer"
                   key={link.title}>{link.title}
                 </a>  
               )) 
             }
             <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-4 pr-2">
-              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white` } `} href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
+              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white` } `} href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
             </button>
             <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2">
-              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
+              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
             </button>
             <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline">
-              <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-300 hover:text-white`} `} to="/search"><FiSearch  /></Link>
+              <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white`} `} to="/search"><FiSearch  /></Link>
             </button>
 
           </div>

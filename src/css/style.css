@@ -379,6 +379,9 @@ display: none;  /* Safari and Chrome */
     .brightness-80 {
       filter: brightness(80%);
     }
+    .brightness-90 {
+      filter: brightness(90%);
+    }
     .brightness-100 {
       filter: brightness(100%);
     }
