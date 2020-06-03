@@ -22,7 +22,6 @@
     "gatsby-plugin-offline": "^3.2.6",
     "gatsby-plugin-page-creator": "^2.3.6",
     "gatsby-plugin-postcss": "^2.3.2",
-    "gatsby-plugin-purgecss": "^4.0.1",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-sharp": "^2.6.8",
     "gatsby-plugin-smoothscroll": "^1.1.0",
@@ -93,7 +92,7 @@
     "develop": "rm -rf public .cache && gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "start": "npm run develop",
-    "serve": "gatsby serve --prefix-paths -o",
+    "serve": "rm -rf public .cache && gatsby build && gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"no test specified\" && exit 0",
     "deploy": "rm -rf public .cache && gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git"

@@ -22,7 +22,7 @@ class PaginationPost extends React.Component {
     if(nextTitle.length > pruneLen){
       nextTitle = nextTitle.substring(0,pruneLen).concat(" ...")
     }
-    console.log(this.props.mdx.fields)
+
     return(
       <div className="bg-gray-900 relative z-10">
         <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
