@@ -210,14 +210,7 @@ module.exports = {
         ]
       }
     },
-    {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        tailwind: true,
-        purgeOnly: [`src/css/style.css`],
-        // ignore: ["fontawesome-svg-core/"]
-      }
-    },
+
     {
       resolve: 'gatsby-background-image',
       options: {
