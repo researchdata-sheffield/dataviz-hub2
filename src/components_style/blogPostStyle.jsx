@@ -1,6 +1,8 @@
 import styled from "styled-components"
 import { Link as gatsby_Link } from "gatsby"
-
+import React from 'react'
+import PropTypes from "prop-types"
+import tw, { styled as styled_twin } from 'twin.macro'
 
 export const Link = styled(gatsby_Link)`
   color: #006aa6;
@@ -83,7 +85,7 @@ export const P = styled.p`
   line-height: 1.6;
 `
 
-export const A = styled.a`
+export const A_a = styled.a`
   color: #006aa6;
 
   &:hover, &:link:active, &:visited:active, &:visited:hover {
@@ -93,8 +95,15 @@ export const A = styled.a`
   &:visited {
     color: #006aa6;
   }
-
 `
+
+export const A = (props) => {
+  return (
+    <A_a {...props} target="_blank" rel="noopener noreferrer">
+      {props.children}
+    </A_a>
+  )
+}
 
 export const Ol = styled.ol`
   display: block;
@@ -166,6 +175,12 @@ export const BlockQuote = styled.blockquote`
   & p {
     display: inline;
   }
-
 `
 
+export const IMG = styled_twin.img`
+  ${tw`my-12`}
+`
+
+A.propTypes = {
+  children: PropTypes.any,
+}

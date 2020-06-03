@@ -24,7 +24,7 @@ class PaginationPost extends React.Component {
     }
 
     return(
-      <div className="bg-gray-900 relative z-10">
+      <div className="bg-gray-900">
         <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
           <Twitter className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
           <Facebook className="bg-gray-500 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />

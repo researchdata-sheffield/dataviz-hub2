@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react"
  import university_logo from "../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack } from "react-icons/fa"
+//import tw, { styled as styled_twin } from 'twin.macro'
+import { A } from "../components_style/blogPostStyle"
 
 const Header = () => {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -45,13 +47,49 @@ const Header = () => {
     }
   }
 
+  
+  const NavLink = (props) => {
+    const condition = `${isScroll ? `text-white hover:text-highlight_2t` : [ window.location.pathname.includes("/blog/") ? `text-gray-300 hover:text-white` : `text-gray-500 hover:text-white`]}`
+    
+    switch(props.type){
+      case 'a':
+        return (
+          <A {...props} className={`${condition} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}>
+            {props.children}
+          </A>
+        )
+    
+      case 'Link':
+        return (
+          <Link {...props} className={`${condition} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}>
+            {props.children}
+          </Link>
+        )
+      
+      case 'a-icon':
+        return (
+          <A {...props} className={`${condition}`}>
+            {props.children}
+          </A>
+        )
+
+      case 'Link-icon':
+        return (
+          <Link {...props} className={`${condition}`}>
+            {props.children}
+          </Link>
+        )
+    }
+  }
+
+
   return (
     <header className="font-semibold z-50 relative" >
      
-      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(73,73,73,.9)" : [window.location.pathname === "/" ? "" : ""]}`, transition: "top 0.8s", overflow: "hidden"}} > 
+      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(73,73,73,.9)" : [window.location.pathname.includes("/blog/") ? "" : ""]}`, transition: "top 0.8s", overflow: "hidden"}} > 
         
         <div className="flex items-center flex-shrink-0 text-white mr-5">
-          <a className={`${isScroll ? `` : [window.location.pathname === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></a>
+          <A className={`${isScroll ? `` : [window.location.pathname === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></A>
           <div className={`${isScroll ? [window.location.pathname === "/" ? `text-gray-300` : ``] : [window.location.pathname === "/" ? `hidden` : `text-white`]} ml-4 text-lg transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
@@ -91,27 +129,23 @@ const Header = () => {
                 title: `About`
               },
               ].map(link => ( link.title != 'Showcase' ? 
-                <Link 
-                  activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }`, fontWeight: "bold" }} 
-                  partiallyActive={true}
-                  className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
-                  key={link.title} to={link.route}>{link.title}
-                </Link> 
+                <NavLink type="Link" activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }`, fontWeight: "bold" }} partiallyActive={true} key={link.title} to={link.route}>
+                  {link.title}
+                </NavLink> 
                 : 
-                <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white`} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}
-                  href={link.route} target="_blank" rel="noopener noreferrer"
-                  key={link.title}>{link.title}
-                </a>  
+                <NavLink type="a" href={link.route} key={link.title}>
+                  {link.title}
+                </NavLink>  
               )) 
             }
             <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-4 pr-2">
-              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white` } `} href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a>
+              <NavLink type="a-icon" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"><FaGoogle /></NavLink>
             </button>
             <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2">
-              <a className={`${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white` } `} href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a>
+              <NavLink type="a-icon" href="https://join.slack.com/t/shef-dataviz/signup"><FaSlack /></NavLink>
             </button>
             <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline">
-              <Link className={ `${isScroll ? `text-white hover:text-highlight_2t` : ` text-gray-500 hover:text-white`} `} to="/search"><FiSearch  /></Link>
+              <NavLink type="Link-icon" to="/search"><FiSearch  /></NavLink>
             </button>
 
           </div>
@@ -121,12 +155,12 @@ const Header = () => {
     </header>
   )
 
-
-
 }
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  type: PropTypes.string,
+  children: PropTypes.any,
 }
 
 Header.defaultProps = {

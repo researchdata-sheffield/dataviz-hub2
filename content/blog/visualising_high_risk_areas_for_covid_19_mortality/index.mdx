@@ -9,15 +9,15 @@ tag: ["Covid-19 mortality", "Pandemic", "Epidemiology", "COVID-19 virus (SARS-Co
 featured: "true"
 ---
 
-<div className="flex flex-wrap">
-  <div className="md:w-5/6">
+<div className="flex flex-wrap p-2 items-center">
+  <div className="md:w-5/6 pr-6">
     <h3>Colin Angus recently demonstrated various visualisations that he had created for Covid-19 mortality on 
-    <a href="https://twitter.com/VictimOfMaths/status/1254812649264680960" target="_blank" rel="noopener noreferrer"> Twitter</a>. Here he elaborates on his approach to this work.</h3>
+    <a href="https://twitter.com/VictimOfMaths/status/1254812649264680960"> Twitter</a>. Here he elaborates on his approach to this work.</h3>
   </div>
   <img src="./Colin_Angus.png" className="md:w-1/6" />
 </div>
 
-*CREDIT: This post was originally published by Neil Dymond-Green on the UK Data Service <a href="http://lab.ukdataservice.ac.uk/" target="_blank" rel="noopener noreferrer">Impact and Innovation Lab</a>.*
+*CREDIT: This post was originally published by Neil Dymond-Green on the UK Data Service <a href="http://lab.ukdataservice.ac.uk/">Impact and Innovation Lab</a>.*
   
 ---  
 
@@ -25,8 +25,8 @@ featured: "true"
 Sometimes the best and most interesting ideas come from seeing a new application of other people’s work.
 
 By mid-March, emerging data from Northern Italy clearly showed that COVID-19 fatality rates were substantially higher in older age groups, particularly for men. 
-Demographers <a href="https://twitter.com/ikashnitsky" target="_blank" rel="noopener noreferrer">Ilya Kashnitsky</a> and <a href="https://twitter.com/jm_aburto" target="_blank" rel="noopener noreferrer">José Aburto</a> combined this data with data from 
-EUROSTAT on the age-sex distribution of the population across European regions and published <a href="https://osf.io/abx7s/" target="_blank" rel="noopener noreferrer">a fascinating pre-print</a>.
+Demographers <a href="https://twitter.com/ikashnitsky" >Ilya Kashnitsky</a> and <a href="https://twitter.com/jm_aburto">José Aburto</a> combined this data with data from 
+EUROSTAT on the age-sex distribution of the population across European regions and published <a href="https://osf.io/abx7s/">a fascinating pre-print</a>.
 
 This displayed the potential risk that each area faced from a large-scale COVID-19 outbreak. Areas with large populations of older men, such as parts of former East Germany, faced an expected 
 mortality rate more than four times greater than areas with younger, more female populations, such as south-eastern Turkey.
@@ -34,10 +34,10 @@ mortality rate more than four times greater than areas with younger, more female
 We are blessed in the UK with some wonderfully rich data, including estimates of the population structure at very low levels of geography, right down to Lower Super Output Area (LSOA) level. 
 I thought it would be interesting to replicate this approach to calculate potential COVID-19 exposure for LSOAs in England.
 
-This was relatively straightforward using ONS population data, data from <a href="https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf" target="_blank" rel="noopener noreferrer">the Imperial College modelling study</a> that 
-estimated age-specific Infection Fatality Rates (IFRs) from COVID-19 and sex-specific Case Fatality Rates from <a href="https://www.epicentro.iss.it/coronavirus/bollettino/Bollettino-sorveglianza-integrata-COVID-19_23-aprile-2020.pdf" target="_blank" rel="noopener noreferrer">Northern Italy</a>, 
+This was relatively straightforward using ONS population data, data from <a href="https://www.imperial.ac.uk/media/imperial-college/medicine/sph/ide/gida-fellowships/Imperial-College-COVID19-NPI-modelling-16-03-2020.pdf">the Imperial College modelling study</a> that 
+estimated age-specific Infection Fatality Rates (IFRs) from COVID-19 and sex-specific Case Fatality Rates from <a href="https://www.epicentro.iss.it/coronavirus/bollettino/Bollettino-sorveglianza-integrata-COVID-19_23-aprile-2020.pdf">Northern Italy</a>, 
 published by the Italian Statistical Institute ISS. There are a lot of LSOAs in the country (almost 35,000), so I decided to visualise my results for Sheffield, using an LSOA shapefile 
-from <a href="https://geoportal.statistics.gov.uk/" target="_blank" rel="noopener noreferrer">the ONS Open Geography portal</a>.
+from <a href="https://geoportal.statistics.gov.uk/">the ONS Open Geography portal</a>.
 
 ![Fig1_Sheffield_Deprivation](./Fig1.png)
 
@@ -51,7 +51,7 @@ In addition to the evidence on age-sex risks of COVID-19, it was becoming very c
 
 As part of the calculation of the Index of Multiple Deprivation, the Ministry of Housing, Communities & Local Government (MHCLG) calculate a ‘health and disability deprivation’ score 
 which reflects the levels of ill health and rates of hospital admissions within each LSOA. I wondered how the COVID-19 mortality exposure measure might be related to this measure of health, 
-and so I brought in IMD data from the MHCLG <a href="https://opendatacommunities.org/resource?uri=http%3A%2F%2Fopendatacommunities.org%2Fdata%2Fsocietal-wellbeing%2Fimd2019%2Findices" target="_blank" rel="noopener noreferrer">Open Data portal</a>.
+and so I brought in IMD data from the MHCLG <a href="https://opendatacommunities.org/resource?uri=http%3A%2F%2Fopendatacommunities.org%2Fdata%2Fsocietal-wellbeing%2Fimd2019%2Findices">Open Data portal</a>.
 
 I expected the relationship between health deprivation and the exposure measure to be complex, since greater deprivation is associated with poorer health, but lower deprivation is associated 
 with older age, which is also associated with poorer health. This complexity was borne out when I plotted the relationship between the two for every LSOA – with a clear correlation between 
@@ -66,7 +66,7 @@ In the end, I decided this was a perfect candidate for a bivariate map. These ar
 particularly interested in picking out the outliers in your data – either areas with high levels of both variables, or high levels of one and low levels of the other.
 
 In this case I wanted to pick out areas with high levels of health deprivation and age-sex-specific risk. For more background on this sort of map, there’s a nice 
-overview <a href="https://www.joshuastevens.net/cartography/make-a-bivariate-choropleth-map/" target="_blank" rel="noopener noreferrer">here</a>. Here’s what the bivariate map for Sheffield looks like:
+overview <a href="https://www.joshuastevens.net/cartography/make-a-bivariate-choropleth-map/">here</a>. Here’s what the bivariate map for Sheffield looks like:
 
 ![Fig3_Sheffield_BivariateMap](./Fig3.png)
 
@@ -77,29 +77,29 @@ won’t be familiar with this kind of two-dimensional colour scale, I generally 
 
 The final step was to work out how to make these maps accessible to people working in Local Authorities around the country.
 
-I posted the R code that I had used to make the map, in as user-friendly a form as possible, on <a href="https://github.com/VictimOfMaths/COVID-19/blob/master/COVIDExposures.R" target="_blank" rel="noopener noreferrer">GitHub</a> so 
-that people could easily create their own maps, but that still felt quite limiting. So I built <a href="https://victimofmaths.shinyapps.io/covidmapper/" target="_blank" rel="noopener noreferrer">a Shiny app</a>. This was quite an 
+I posted the R code that I had used to make the map, in as user-friendly a form as possible, on <a href="https://github.com/VictimOfMaths/COVID-19/blob/master/COVIDExposures.R">GitHub</a> so 
+that people could easily create their own maps, but that still felt quite limiting. So I built <a href="https://victimofmaths.shinyapps.io/covidmapper/">a Shiny app</a>. This was quite an 
 adventure, because I’ve not used Shiny before, but it ended up being a lot easier than I initially feared.
 
-The trickiest thing was working out how to get the huge LSOA-level shapefile onto Shiny’s hosting platform. In the end I used the excellent <a href="https://mapshaper.org/" target="_blank" rel="noopener noreferrer">mapshaper</a> tool 
+The trickiest thing was working out how to get the huge LSOA-level shapefile onto Shiny’s hosting platform. In the end I used the excellent <a href="https://mapshaper.org/">mapshaper</a> tool 
 to simplify the polygons in the shapefile until the whole thing was small enough. That’s why the maps in the app look much ‘blockier’ than the ones from the original R script.
 
 ![Fig4_BivariateMap_from_ShinyApp](./Fig4.png)
 
 In order to satisfy my aesthetic sense, I also made some large composite maps for a few major cities which are spread across multiple Local Authorities, such as Greater Manchester.
 
-At the suggestion of <a href="https://twitter.com/ikashnitsky" target="_blank" rel="noopener noreferrer">Ilya Kashnitsky</a> I made these maps slightly transparent and added some background road features using stamen maps to help 
+At the suggestion of <a href="https://twitter.com/ikashnitsky">Ilya Kashnitsky</a> I made these maps slightly transparent and added some background road features using stamen maps to help 
 place the various areas on the map in context. I’ve shared these maps with Public Health colleagues in various parts of the country and hopefully they were useful in helping to plan the 
 early phases of the pandemic response.
 
-You can find the R code used to generate these maps and the other plots in this blog <a href="https://github.com/VictimOfMaths/COVID-19/blob/master/Exposure%20mapping/COVIDExposures.R" target="_blank" rel="noopener noreferrer">here</a>.
+You can find the R code used to generate these maps and the other plots in this blog <a href="https://github.com/VictimOfMaths/COVID-19/blob/master/Exposure%20mapping/COVIDExposures.R">here</a>.
 
 <br />
 
 ---
 
-**<a href="https://www.sheffield.ac.uk/scharr/sections/heds/staff/angus_c" target="_blank" rel="noopener noreferrer">Colin Angus</a> (<a href="https://twitter.com/VictimOfMaths" target="_blank" rel="noopener noreferrer">@VictimOfMaths</a>) is a Senior Research Fellow 
-in the Sheffield Alcohol Research Group within <a href="https://www.sheffield.ac.uk/scharr" target="_blank" rel="noopener noreferrer">ScHARR</a>.**
+**<a href="https://www.sheffield.ac.uk/scharr/sections/heds/staff/angus_c">Colin Angus</a> (<a href="https://twitter.com/VictimOfMaths" >@VictimOfMaths</a>) is a Senior Research Fellow 
+in the Sheffield Alcohol Research Group within <a href="https://www.sheffield.ac.uk/scharr">ScHARR</a>.**
 
 His work focuses on the design, development and adaptation of complex health economic models and their use to appraise key policy questions in the field of alcohol research. 
 The majority of his research is based on the development of the Sheffield Alcohol Policy Model to incorporate new methodological developments, new data and to answer new policy questions, 
