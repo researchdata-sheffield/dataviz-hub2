@@ -8,9 +8,7 @@ import RSE from "../images/about/rse.png"
 import ITS from "../images/about/its.png"
 import ORDA from "../images/about/orda_logo.png"
 import scroll_To from 'gatsby-plugin-smoothscroll'
-import Bounce from 'react-reveal/Bounce'
 import Fade from 'react-reveal/Fade'
-import LightSpeed from 'react-reveal/LightSpeed'
 
 
 const About = () => (
@@ -21,7 +19,7 @@ const About = () => (
     />
     <Header />
     <BackgroundSection className="items-center justify-center text-center">
-      <Bounce cascade delay={700} duration={2000}>
+      <Fade cascade delay={700} duration={2000}>
         <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
           <h1 className="text-5xl font-bold " style={{textShadow: "#000000 0px 0px 10px"}}>Library · IT Services · RSE</h1>
           <p className="text-lg my-4 text-gray-100 font-semibold px-2" style={{textShadow: "#000000 0px 2px 10px"}}>Dataviz.Shef is a joint initiative between three partners.</p>
@@ -30,7 +28,7 @@ const About = () => (
         <div onClick={() => scroll_To('#more')}>
           <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
         </div>
-      </Bounce>
+      </Fade>
     </BackgroundSection>
 
     <div id="more" className="container pt-12 pb-24 text-gray-800 mx-auto flex flex-wrap">
@@ -49,7 +47,7 @@ const About = () => (
       </div>
 
       <div className="flex flex-wrap text-gray-600 text-xl px-3 lg:px-32 xl:px-48 py-16">
-        <LightSpeed>
+        <Fade>
           <p className="text-2xl"><b className="text-highlight_2">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
             This community website exists to provide research staff and students at the University of Sheffield with information and inspiration about the visual presentation of data.
           </p>
@@ -71,7 +69,7 @@ const About = () => (
           <p>From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
             the <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, <Link to="/community/#joinus">google group</Link> or <Link to="/community/#joinus">slack team</Link>.
           </p>
-        </LightSpeed>
+        </Fade>
       </div>
     
     </div>

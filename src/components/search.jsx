@@ -23,7 +23,8 @@ class Search extends Component {
 
   componentDidMount = () => {
     setTimeout(() => {
-      if(this.props && this.props.location && this.props.location.state) {
+      if(this.props.location.state.searchWord !== undefined) {
+        console.log(`PRINT!!!!!: ${this.props.location.state.searchWord}`)
         var queryHome = this.props.location.state.searchWord
         var input = document.getElementById("pageSearch")
         this.setState({query: queryHome})
@@ -93,11 +94,11 @@ class Search extends Component {
                   <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
                     <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-80 2xl:min-h-60 mx-6 my-6 transform hover:scale-105 transition duration-500">
                       <div className="min-h-80 2xl:min-h-60 max-h-80 w-full rounded-lg p-6 transition duration-700 bg-black-45 group-hover:bg-black-85">
-                        <div className="absolute pt-25vh 2xl:pt-30vh">
-                          <h1 className="text-white font-bold leading-10 text-4xl transform group-hover:-translate-y-16 transition duration-100"><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>  
-                          <h1 className="text-highlight_2 leading-9 my-6 font-bold text-2xl group-hover:hidden transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
-                          <h1 className="text-gray-400 font-bold group-hover:hidden transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
-                          <h1 className="text-gray-400 font-bold group-hover:hidden transition duration-500">
+                        <div className="absolute pt-25vh 2xl:pt-30vh overflow-hidden" style={{maxWidth:"320px"}}>
+                          <h1 className="group-hover:-translate-y-16 text-white font-bold leading-10 text-4xl transform transition duration-100"><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>  
+                          <h1 className="group-hover:hidden text-highlight_2 leading-9 my-6 font-bold text-2xl transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
+                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
+                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
                             TAG: &nbsp;{item.tag.map((tag, i, arr) => (
                                     <Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} />
                                   ))}
@@ -106,8 +107,6 @@ class Search extends Component {
                           <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>      
                         </div>
                       </div>
-
-
                     </div>
                   </a>
                 )
@@ -141,7 +140,7 @@ class Search extends Component {
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
               <FiSearch className="inline-block text-center text-3xl -mt-1" />
-              <input id="pageSearch" onChange={this.search} onInput={this.search} className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Title, description, date..." />
+              <input id="pageSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Title, description, date..." />
             </div>
           </Fade>
         </div>
@@ -150,11 +149,7 @@ class Search extends Component {
         </div>
       </div>
     )
-
-    
   }
-
-  
 
   getSearchResults(query) {
     //index - a flexsearch index instance (variables set in gatsby-config)

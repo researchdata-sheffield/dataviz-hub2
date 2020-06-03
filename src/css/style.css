@@ -45,14 +45,8 @@ a {
   color: #4e4e4e;
 }
 
- a:hover {
-   color: #00aeef;
- }
-
-
-.embedVideoIframe {
-  margin: auto;
-  width: 80%;
+a:hover {
+  color: #00aeef;
 }
 
 p {
@@ -80,77 +74,52 @@ text-box::after {
 /******* Logo animation ********/
 
 .textanimate {
-  -webkit-animation: color-change 23s infinite;
-  -moz-animation: color-change 23s infinite;
-  -o-animation: color-change 23s infinite;
-  -ms-animation: color-change 23s infinite;
-  animation: color-change 23s infinite;
+  -webkit-animation: color-change 18s infinite;
+  -moz-animation: color-change 18s infinite;
+  -o-animation: color-change 18s infinite;
+  -ms-animation: color-change 18s infinite;
+  animation: color-change 18s infinite;
 }
 
 @-webkit-keyframes color-change {
   0% { color: white; }
-  10% { color: #00aeef; }
-  20% { color: #e6cd00; }
-  30% { color: #ff5e5e; }
+  25% { color: #00aeef; }
   40% { color: #ea005e; }
-  50% { color: #db00ea; }
-  60% { color: #5800ea; }
-  70% { color: #eaaf00; }
-  80% { color: #cbea00; }
-  90% { color: #677B8C; }
-  100% { color: white; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
 }
 @-moz-keyframes color-change {
   0% { color: white; }
-  10% { color: #00aeef; }
-  20% { color: #e6cd00; }
-  30% { color: #ff5e5e; }
+  25% { color: #00aeef; }
   40% { color: #ea005e; }
-  50% { color: #db00ea; }
-  60% { color: #5800ea; }
-  70% { color: #eaaf00; }
-  80% { color: #cbea00; }
-  90% { color: #677B8C; }
-  100% { color: white; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
 }
 @-ms-keyframes color-change {
   0% { color: white; }
-  10% { color: #00aeef; }
-  20% { color: #e6cd00; }
-  30% { color: #ff5e5e; }
+  25% { color: #00aeef; }
   40% { color: #ea005e; }
-  50% { color: #db00ea; }
-  60% { color: #5800ea; }
-  70% { color: #eaaf00; }
-  80% { color: #cbea00; }
-  90% { color: #677B8C; }
-  100% { color: white; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
 }
 @-o-keyframes color-change {
   0% { color: white; }
-  10% { color: #00aeef; }
-  20% { color: #e6cd00; }
-  30% { color: #ff5e5e; }
+  25% { color: #00aeef; }
   40% { color: #ea005e; }
-  50% { color: #db00ea; }
-  60% { color: #5800ea; }
-  70% { color: #eaaf00; }
-  80% { color: #cbea00; }
-  90% { color: #677B8C; }
-  100% { color: white; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
 }
 @keyframes color-change {
   0% { color: white; }
-  10% { color: #00aeef; }
-  20% { color: #e6cd00; }
-  30% { color: #ff5e5e; }
+  25% { color: #00aeef; }
   40% { color: #ea005e; }
-  50% { color: #db00ea; }
-  60% { color: #5800ea; }
-  70% { color: #eaaf00; }
-  80% { color: #cbea00; }
-  90% { color: #677B8C; }
-  100% { color: white; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
 }
 
 
@@ -330,7 +299,7 @@ position: fixed;
  * @import "tailwindcss/utilities";
  */
 
-  @tailwind utilities;
+@tailwind utilities;
 /**
  * Here you would add any custom utilities you need that don't come out of the
  * box with Tailwind.
