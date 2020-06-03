@@ -8,7 +8,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, } from "../components_style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG } from "../components_style/blogPostStyle"
 import PaginationPost from "../components_blog/paginationPost"
 import {CatBtn, TagBtn} from "../components_style/styled"
 import Scrollspy from 'react-scrollspy'
@@ -24,7 +24,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const { title, date } = mdx.frontmatter
   const {prev, next} = pageContext
   const tableOfContent = mdx.tableOfContents 
-  
+
+  const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
+  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
+
   const renderItem = (item) => (
     <li key={item.title} className="pb-2">
       <a href={item.url}><p>{item.title}</p></a>
@@ -98,9 +101,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         
       </Helmet>
       
-      <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-lg" style={{minHeight: "50vh", }}>
+      {/* Top background, title and author etc. */}
+      <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-c1" style={{minHeight: "50vh", }}>
         <Bounce cascade delay={500} duration={1300}>
-        <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
+        <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-6">
           <div className="px-5 leading-tight">
             <h1 className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
           </div>
@@ -127,12 +131,20 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
             ))}
           </div>
+          
+          <Fade bottom delay={800}>
+            <div className="mt-16 hover:scale-105 transform">
+              <A className="text-white underline font-semibold" href={githubLink}>Edit this post?</A>
+            </div>
+          </Fade>
         </div>
         </Bounce>
       </div>
 
+
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
         
+        {/* desktop share buttons */}
         <div className="absolute left-0 top-0 sticky hidden lg:block">
           <Fade left cascade delay={1500} duration={1300}>   
           <div className="flex flex-col text-sm" style={{maxWidth: "50px", height: "0", overflow: "visible"}}>
@@ -146,7 +158,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
 
         {/* mobile: toc & share buttons */}
-        <div className="w-full bg-gray-900 shadow-xl flex flex-wrap justify-center -mt-10 lg:mt-0">
+        <div className="w-full bg-gray-900 shadow-xl flex flex-wrap justify-center -mt-12 lg:mt-0">
           <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
             <Twitter className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
             <Facebook className="bg-gray-500 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />
@@ -164,11 +176,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               }      
           </div>       
         </div>   
-        {/* mobile */}   
-
-
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} mx-auto container pt-6 pb-16 px-3 lg:px-32 2xl:px-52 leading-7 text-xl`}>
-          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, }}>
+  
+        {/* main mdx content  */}
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12`: ``} mx-auto container pt-6 pb-16 px-3 lg:px-32 2xl:px-52 leading-7 text-xl`} style={{fontFamily: "Helvetica"}}>
+          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, img: IMG, }}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>
@@ -183,9 +194,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             </Scrollspy>
           }      
         </div>  
-        {/* toc hidden in mobile */}
-        
-
       </div>       
            
       <PaginationPost mdx={mdx} prev={prev} next={next} />

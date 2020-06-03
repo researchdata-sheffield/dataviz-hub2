@@ -2,7 +2,7 @@
   "name": "datavizhub-tuos",
   "private": true,
   "description": "Promoting and building community around data visualisation at the University of Sheffield",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "author": "Yu Liang Weng <y.weng@sheffield.ac.uk>",
   "dependencies": {
     "@mdx-js/mdx": "^1.6.1",
