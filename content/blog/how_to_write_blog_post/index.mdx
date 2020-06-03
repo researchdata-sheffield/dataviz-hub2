@@ -1,8 +1,8 @@
 ﻿---
 author: ["Y.L Weng"]
-title: "How to upload a blog post - v1.3"
+title: "How to upload a blog post - v1.4"
 thumbnail: ./temp.jpg
-description: "(UPDATED on 06 May 2020) This is a template for blog posts. This website is built from Gatsby framework and the way of styling is slightly different from HTML/CSS. "
+description: "(UPDATED on 03 June 2020) This is a template for blog posts. This website is built from Gatsby framework and the way of styling is slightly different from HTML/CSS. "
 date: "2020-03-22"
 category: ["Tutorial", "News"]
 tag: ["Blog", "Markdown"]
@@ -13,7 +13,7 @@ hide: "false"
 
 
 # Introduction
-(UPDATED on 06 May 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
+(UPDATED on 03 June 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
 You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS. 
 A copy of this blog file is available <a href="./index.mdx">here</a>.
 
@@ -41,7 +41,7 @@ If you want to preview the post while you're writing, then you'll need to setup 
     npm install                                                 //install plugin dependencies
     ```
 
-  5. Create a new local branch with commands **git checkout master** (make sure you're in master branch), **git branch newBranchName** (create a new branch from master), and **git checkout newBranchName** (switch to new branch).
+  5. (optional) Create a new local branch with commands **git checkout development** (make sure you're in development branch), **git branch newBranchName** (create a new branch from development), and **git checkout newBranchName** (switch to new branch).
     Now make any commits you wish to.
 
 ## Note
@@ -55,8 +55,8 @@ If you want to preview the post while you're writing, then you'll need to setup 
 If you have cloned the repository a while a ago, 
 fetch the latest commits from origin repository:
 
-git checkout master
-git pull upstream master
+git checkout development
+git pull upstream development
 ```
 
 <br />
@@ -88,7 +88,7 @@ category: "Articles"				                   // one category only, use pre-set cat
 tag: ["Blog", "The University of Sheffield"]   // make sure tags & cate are capitalised
 thumbnail: ./image.jpg                         // an image to use for your post thumbnail
 template:                                      // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
-featured: "True"					                     // Set it to "True" if you want show the post on home page
+featured: "true"					                     // Set it to "true" if you want show the post on home page
 ---
 ```
 

@@ -119,9 +119,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           <div className="flex flex-wrap text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease", zIndex: "2"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="min-h-100 justify-center relative w-full brightness-80 hover:brightness-100" style={{transition: ".8s ease"}}>
+            <div className="min-h-100 justify-center relative w-full brightness-40 hover:brightness-100" style={{transition: ".6s ease",}}>
               <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
-                <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
+                <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.8)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
