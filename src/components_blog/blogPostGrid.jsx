@@ -9,7 +9,7 @@ import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 import { FaStar } from "react-icons/fa"
 import Slide from 'react-reveal/Slide'
-import { ArrowBox, IMG, CatBtn, TagBtn } from "../components_style/styled"
+import { ArrowBox, IMG, IMG_DIV,  CatBtn, TagBtn } from "../components_style/styled"
 
 const blogPostGrid = ({allMdx}) => {
   
@@ -42,7 +42,7 @@ const blogPostGrid = ({allMdx}) => {
                   <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold bg-black px-2" style={{fontFamily: "TUoS Blake", textShadow: "#000000 0px 0px 20px"}}>Featured</p>
                 </div>
               }
-              <IMG className="w-full ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-7/12 lg:max-h-7/12" style={{transition: ".5s ease", backgroundImage: `url(${imagesrc})`}}  />
+              <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-3/5 lg:max-h-3/5"><IMG src={imagesrc} /></IMG_DIV>
               <ArrowBox className="px-8 pt-6 leading-none text-gray-600">
                 <h1 className="font-bold text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "15vh", fontFamily: "TUoS Stephenson" }}>{node.frontmatter.title}</h1>
                 <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
