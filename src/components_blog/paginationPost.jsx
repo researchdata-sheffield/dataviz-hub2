@@ -25,7 +25,7 @@ class PaginationPost extends React.Component {
     }
 
     return(
-      <div className="bg-gray-900">
+      <div className="bg-gray-900 relative z-10">
         <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
           <Twitter className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
           <Facebook className="greyScale-100 hover:greyScale-0" solid small link={share[1]} />
@@ -63,8 +63,8 @@ class PaginationPost extends React.Component {
 export default PaginationPost
 
 PaginationPost.propTypes = {
-  mdx: PropTypes.node,
-  prev: PropTypes.node,
-  next: PropTypes.node,
+  mdx: PropTypes.any,
+  prev: PropTypes.any,
+  next: PropTypes.any,
   share: PropTypes.array,
 }

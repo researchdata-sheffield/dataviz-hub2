@@ -16,7 +16,7 @@ import "katex/dist/katex.min.css"
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import Fade from "react-reveal/Fade"
 import Bounce from 'react-reveal/Bounce'
-
+import { RiEditBoxLine } from "react-icons/ri"
 
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
@@ -106,7 +106,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       {/* Top background, title and author etc. */}
       <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-c1" style={{minHeight: "50vh", }}>
         <Bounce cascade delay={500} duration={1300}>
-        <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-6">
+        <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-5 leading-tight">
             <h1 className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
           </div>
@@ -134,26 +134,30 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             ))}
           </div>
           
-          <Fade bottom delay={800}>
+          {/* <Fade bottom delay={800}>
             <div className="mt-16 hover:scale-105 transform">
-              <A className="text-white underline font-semibold" href={githubLink}>Edit this post?</A>
+              <A className="text-white hover:underline font-semibold" href={githubLink}>EDIT THIS POST</A>
             </div>
-          </Fade>
+          </Fade> */}
         </div>
         </Bounce>
       </div>
 
 
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
-        
+
         {/* desktop share buttons */}
         <div className="absolute left-0 top-0 sticky hidden lg:block">
           <Fade left cascade delay={1500} duration={1300}>   
-          <div className="flex flex-col text-sm" style={{maxWidth: "50px", height: "0", overflow: "visible"}}>
-            <Twitter className="greyScale-100 hover:greyScale-0 mt-24" solid small message={shareMessage} link={shareLink} />
-            <Facebook className="greyScale-100 hover:greyScale-0" solid small link={shareLink} />
-            <Mail className="hover:bg-red-600" solid small subject={shareMessage} link={shareLink} />
-            <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={shareMessage} link={shareLink} />
+          <div className="flex flex-col text-sm" style={{maxWidth: "49px", height: "0", overflow: "visible"}}>
+            <Twitter className="greyScale-100 hover:greyScale-0 mt-24 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
+            <Facebook className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small link={shareLink} />
+            <Mail className="hover:bg-red-600 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small subject={shareMessage} link={shareLink} />
+            <Linkedin className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
+            <hr className="my-3" />
+            <a href={githubLink} target="_blank" rel="noopener noreferrer">
+              <div className="m-2 py-1 bg-white hover:bg-black hover:text-white text-gray-800 flex justify-center rounded-md text-xl transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}}><RiEditBoxLine /></div>
+            </a>
           </div>
           </Fade> 
         </div>   
@@ -162,10 +166,13 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* mobile: toc & share buttons */}
         <div className="w-full bg-gray-900 shadow-xl flex flex-wrap justify-center -mt-12 lg:mt-0">
           <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
-            <Twitter className="greyScale-100 hover:greyScale-0" solid small message={shareMessage} link={shareLink} />
-            <Facebook className="greyScale-100 hover:greyScale-0" solid small link={shareLink} />
-            <Mail className="hover:bg-red-600" solid small subject={shareMessage} link={shareLink} />
-            <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={shareMessage} link={shareLink} />
+            <Twitter solid small message={shareMessage} link={shareLink} />
+            <Facebook solid small link={shareLink} />
+            <Mail solid small subject={shareMessage} link={shareLink} />
+            <Linkedin solid small message={shareMessage} link={shareLink} />
+            <a href={githubLink} target="_blank" rel="noopener noreferrer">
+              <div className="m-2 py-1 px-2 bg-gray-100 hover:bg-highlight_2 text-gray-800 flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
+            </a>
           </div>    
           
           <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>

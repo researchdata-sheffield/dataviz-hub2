@@ -10,7 +10,6 @@ export const ArrowBox = styled.div`
   position: relative;
   background-color: #fff;
   border-top: 0px solid white;
-  transition: .5s ease;
   
   &:before, &:after {
     bottom: 100%;
@@ -21,7 +20,6 @@ export const ArrowBox = styled.div`
     width: 0;
     position: absolute;
     pointer-events: none;
-    transition: .5s ease;
   }
 
   &:before {
@@ -64,16 +62,40 @@ export const ArrowBox_featured = styled(ArrowBox)`
 
 `
 
-export const IMG = styled.div`
-  background-size: cover;
-  background-position: center;
+export const IMG = styled.img`
+  object-fit: cover;
+  transition: .5s ease;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  ${tw`transform group-hover:scale-110`}
+`
 
-  .group:hover > & {
+export const IMG_DIV = styled.div`
+  position: relative;
+  overflow: hidden;
+  background: black;
+
+  &::before {
+    transition: .5s ease;
+  }
+
+  .group:hover > &::before {
     -webkit-box-shadow: inset 0 -4px 0 #00aeef;
     -moz-box-shadow: inset 0 -4px 0 #00aeef;
     box-shadow: inset 0 -4px 0 #00aeef;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    content: "";
+    z-index: 1;
   }
 `
+
+
+
 
 export const CatBtn = styled_twin(Link)`
   ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full`}
