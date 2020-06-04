@@ -27,6 +27,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
   const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
+  const shareLink = `https://${window.location.host}${mdx.fields.slug}`
+  const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
 
   const renderItem = (item) => (
     <li key={item.title} className="pb-2">
@@ -148,10 +150,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <div className="absolute left-0 top-0 sticky hidden lg:block">
           <Fade left cascade delay={1500} duration={1300}>   
           <div className="flex flex-col text-sm" style={{maxWidth: "50px", height: "0", overflow: "visible"}}>
-            <Twitter className="bg-gray-400 hover:bg-highlight_2 mt-24" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
-            <Facebook className="bg-gray-400 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />
-            <Mail className="bg-gray-400 hover:bg-highlight_2" solid small subject={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
-            <Linkedin className="bg-gray-400 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
+            <Twitter className="greyScale-100 hover:greyScale-0 mt-24" solid small message={shareMessage} link={shareLink} />
+            <Facebook className="greyScale-100 hover:greyScale-0" solid small link={shareLink} />
+            <Mail className="hover:bg-red-600" solid small subject={shareMessage} link={shareLink} />
+            <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={shareMessage} link={shareLink} />
           </div>
           </Fade> 
         </div>   
@@ -160,10 +162,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* mobile: toc & share buttons */}
         <div className="w-full bg-gray-900 shadow-xl flex flex-wrap justify-center -mt-12 lg:mt-0">
           <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
-            <Twitter className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
-            <Facebook className="bg-gray-500 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />
-            <Mail className="bg-gray-500 hover:bg-highlight_2" solid small subject={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
-            <Linkedin className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
+            <Twitter className="greyScale-100 hover:greyScale-0" solid small message={shareMessage} link={shareLink} />
+            <Facebook className="greyScale-100 hover:greyScale-0" solid small link={shareLink} />
+            <Mail className="hover:bg-red-600" solid small subject={shareMessage} link={shareLink} />
+            <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={shareMessage} link={shareLink} />
           </div>    
           
           <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>
@@ -196,7 +198,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>  
       </div>       
            
-      <PaginationPost mdx={mdx} prev={prev} next={next} />
+      <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
       <Footer />
     </div>
   )

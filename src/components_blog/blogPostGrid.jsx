@@ -60,9 +60,10 @@ const blogPostGrid = ({allMdx}) => {
               {node.frontmatter.category.map((cat) => (
                 <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
               ))}
-              {node.frontmatter.tag.map((tag) => (
-                <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
-              ))}
+              {node.frontmatter.tag.map((tag, i) => {
+                return (i < 3 && <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>)         
+              })}
+              {node.frontmatter.tag.length > 3 && <TagBtn to={node.fields.slug}>+{node.frontmatter.tag.length - 3} more</TagBtn>}
             </div>        
           </div>
         </Slide>

@@ -48,20 +48,20 @@ const latestPost = ({ latestPost }) => {
                 <div className="px-4 xl:px-8 leading-none text-gray-500 min-h-50 ipadp:min-h-60 max-h-60 ipadp:opacity-0 group-hover:opacity-100" style={{paddingTop: "7vh", paddingBottom: "20vh", backgroundColor: "rgba(0,0,0, .67)"}}>
                   <h1 className="ipadp:hidden font-bold text-xl leading-tight text-white overflow-y-hidden">{node.frontmatter.title}</h1>
                   <p className="my-3 text-sm leading-tight group-hover:text-highlight_2 xl:text-xl" style={{textShadow: "#000000 0px 0px 8px"}}>{description}</p>
-                  <p className="my-2 text-xs pt-2" style={{textShadow: "#000000 0px 0px 5px"}}>{node.frontmatter.date}</p>
-                  <p className="my-2 text-xs" style={{textShadow: "#000000 0px 0px 5px"}}>
+                  <p className="my-2 text-xs pt-2" style={{textShadow: "#000000 0px 0px 5px"}}>
                     {node.frontmatter.author.map((author, idx) => (
                       (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
                     ))}
                   </p>
-                  <p className="mt-5 text-base group-hover:text-highlight_2 font-semibold">{node.fields.readingTime.text}</p>
+                  <p className="my-2 text-xs" style={{textShadow: "#000000 0px 0px 5px"}}>{node.frontmatter.date} · {node.fields.readingTime.text}</p>
                   <div className="py-2 text-sm">
                     {node.frontmatter.category.map((cat) => (
                       <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
                     ))}
-                    {node.frontmatter.tag.map((tag) => (
-                      <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
-                    ))}
+                    {node.frontmatter.tag.map((tag, i) => {
+                      return (i < 3 && <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>)         
+                    })}
+                    {node.frontmatter.tag.length > 3 && <TagBtn to={node.fields.slug}>+{node.frontmatter.tag.length - 3} more</TagBtn>}
                   </div>
                 </div> 
               </div>    
