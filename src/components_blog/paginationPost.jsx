@@ -11,10 +11,11 @@ class PaginationPost extends React.Component {
   }
 
   render() {
-    const { mdx } = this.props
+    const { mdx, share, prev, next } = this.props
+
     let pruneLen = 40
-    let prevTitle = this.props.prev ? this.props.prev.node.frontmatter.title : ""
-    let nextTitle = this.props.next ? this.props.next.node.frontmatter.title : ""
+    let prevTitle = prev ? prev.node.frontmatter.title : ""
+    let nextTitle = next ? next.node.frontmatter.title : ""
     
     if(prevTitle.length > pruneLen){
       prevTitle = prevTitle.substring(0,pruneLen).concat(" ...")
@@ -26,10 +27,10 @@ class PaginationPost extends React.Component {
     return(
       <div className="bg-gray-900">
         <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
-          <Twitter className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
-          <Facebook className="bg-gray-500 hover:bg-highlight_2" solid small link={`https://${window.location.host}${mdx.fields.slug}`} />
-          <Mail className="bg-gray-500 hover:bg-highlight_2" solid small subject={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
-          <Linkedin className="bg-gray-500 hover:bg-highlight_2" solid small message={`${mdx.frontmatter.title} - ${mdx.frontmatter.description}`} link={`https://${window.location.host}${mdx.fields.slug}`} />
+          <Twitter className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
+          <Facebook className="greyScale-100 hover:greyScale-0" solid small link={share[1]} />
+          <Mail className="hover:bg-red-600" solid small subject={share[0]} link={share[1]} />
+          <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
         </div> 
         <div className="flex flex-wrap text-gray-200 justify-center items-center content-center mx-auto pt-6 text-sm">
           {mdx.frontmatter.category.map((cat) => (
@@ -41,14 +42,14 @@ class PaginationPost extends React.Component {
         </div>
 
         <div className="flex justify-center py-8 mx-auto font-semibold" >
-          {this.props.prev && (
-            <a value="prev" className="flex items-center pr-6 hover:text-highlight_2 text-gray-300 min-w-20" href={this.props.prev.node.fields.slug}>
+          {prev && (
+            <a value="prev" className="flex items-center pr-6 hover:text-highlight_2 text-gray-300 min-w-20" href={prev.node.fields.slug}>
               <TiArrowLeftThick className="mr-3 text-xl" /> {prevTitle}
             </a>
           )}
 
-          {this.props.next && (
-            <a value="next" className="flex items-center pl-6 hover:text-highlight_2 text-gray-300 min-w-20" href={this.props.next.node.fields.slug}>
+          {next && (
+            <a value="next" className="flex items-center pl-6 hover:text-highlight_2 text-gray-300 min-w-20" href={next.node.fields.slug}>
               {nextTitle} <TiArrowRightThick className="ml-3 text-xl" />
             </a>
           )}
@@ -62,7 +63,8 @@ class PaginationPost extends React.Component {
 export default PaginationPost
 
 PaginationPost.propTypes = {
-  mdx: PropTypes.any,
-  prev: PropTypes.any,
-  next: PropTypes.any,
+  mdx: PropTypes.node,
+  prev: PropTypes.node,
+  next: PropTypes.node,
+  share: PropTypes.array,
 }
