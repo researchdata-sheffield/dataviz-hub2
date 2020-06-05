@@ -3,6 +3,7 @@ import { Link as gatsby_Link } from "gatsby"
 import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
+import scroll_To from 'gatsby-plugin-smoothscroll'
 
 export const Link = styled(gatsby_Link)`
   color: #006aa6;
@@ -10,8 +11,33 @@ export const Link = styled(gatsby_Link)`
   &:hover {
     color: #00aeef;
   }
-
 `
+
+export const A_a = styled.a`
+  color: #006aa6;
+
+  &:hover, &:link:active, &:visited:active, &:visited:hover {
+    color: #00aeef;
+  }
+
+  &:visited {
+    color: #006aa6;
+  }
+`
+
+export const A = (props) => {
+  const {href, ...props_noRef} = props
+  return (
+    props.anchor === true ? 
+      <A_a {...props_noRef} rel="noopener noreferrer" onClick={() => scroll_To(`${href}`)}>
+        {props.children}
+      </A_a>
+      :
+      <A_a {...props} target="_blank" rel="noopener noreferrer">
+      {props.children}
+      </A_a>
+  )  
+}
 
 export const H1 = styled.h1`
   display: block;
@@ -84,26 +110,6 @@ export const P = styled.p`
   white-space: normal;
   line-height: 1.6;
 `
-
-export const A_a = styled.a`
-  color: #006aa6;
-
-  &:hover, &:link:active, &:visited:active, &:visited:hover {
-    color: #00aeef;
-  }
-
-  &:visited {
-    color: #006aa6;
-  }
-`
-
-export const A = (props) => {
-  return (
-    <A_a {...props} target="_blank" rel="noopener noreferrer">
-      {props.children}
-    </A_a>
-  )
-}
 
 export const Ol = styled.ol`
   display: block;
@@ -181,6 +187,49 @@ export const IMG = styled_twin.img`
   ${tw`my-12`}
 `
 
+export const Table = styled.table`
+  ${tw`my-10 shadow-lg text-base`};
+    display: block;
+    overflow-x: auto;
+
+  & tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; 
+  }
+    
+  & tr:nth-child(2n) {
+    background-color: #f8f8f8; 
+  }
+  
+  & tr th {
+    font-weight: bold;
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px; 
+  }
+  
+  & tr td {
+    border: 1px solid #cccccc;
+    text-align: left;
+    margin: 0;
+    padding: 6px 13px;
+  }
+  
+  & tr th :first-child, & tr td :first-child {
+    margin-top: 0; 
+  }
+
+  & tr th :last-child, & tr td :last-child {
+    margin-bottom: 0; 
+  }
+`
+
+
 A.propTypes = {
   children: PropTypes.any,
+  anchor: PropTypes.any,
+  href: PropTypes.string
 }

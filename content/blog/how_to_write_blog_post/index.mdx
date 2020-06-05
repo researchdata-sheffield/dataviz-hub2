@@ -14,14 +14,14 @@ hide: "false"
 
 # Introduction
 (UPDATED on 03 June 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
-You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS. 
-A copy of this blog file is available <a href="./index.mdx">here</a>.
+You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS. A copy of this blog file is available <a href="./index.mdx">here</a>.  
+*We're working on transferring the editing process online so that you do not have to setup everything!*
 
 <br />
 
 # Setup
 
-If you want to preview the post while you're writing, then you'll need to setup a gatsby development environment in order to preview the website. If not, go to <a href="#write-a-post">next section</a>.
+If you want to preview the post while you're writing, then you'll need to setup a gatsby development environment in order to preview the website. If not, go to <a href="#write-a-post" anchor>next section</a>.
 
   ## Installation
   1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
@@ -65,7 +65,8 @@ git pull upstream development
 # Write a post
 If you didn't setup, skip the following text and look at steps to write a post.  
 Once you've setup, run `gatsby develop`.
-Now you can view the site at `http://localhost:8000/`. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally.
+Now you can view the site at **http://localhost:8000/**. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally. 
+Once you're happy with your post, you could also run `npm run serve` to make a production build and check everything is identical to the development version at **http://localhost:9000/**.
 
 To contribute, raise an issue on GitHub or make a pull request that adds or modifies files in the `/content/blog/` directory. 
 You will probably want to install Gatsby so that you can test your contribution before submitting it. Steps on below assuming you've setup everything mentioned above. 
@@ -84,11 +85,11 @@ title: "This is a template for posts"
 author: ["A", "B"]                   
 date: "2020-03-06"                             // please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
 description: "Shown at blog page"
-category: "Articles"				                   // one category only, use pre-set categories: "Articles", "News", "Tutorials", "Events"
+category: "Articles"				           // one category only, use pre-set categories: "Articles", "News", "Tutorials", "Events"
 tag: ["Blog", "The University of Sheffield"]   // make sure tags & cate are capitalised
 thumbnail: ./image.jpg                         // an image to use for your post thumbnail
 template:                                      // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
-featured: "true"					                     // Set it to "true" if you want show the post on home page
+featured: "true"					           // optional, Set it to "true" if you want to show the post on home page
 ---
 ```
 
@@ -96,7 +97,7 @@ featured: "true"					                     // Set it to "true" if you want show t
 
   + Wrap parameters with triple hyphens. Use double quotation marks for all text, use square brackets in parameters with two or more items.
 
-  + Then add content to the file, read <a href="#table-of-content">next section</a> and beyond to know more about how to style your post.
+  + Then add content to the file, read <a href="#table-of-content" anchor>next section</a> and beyond to know more about how to style your post.
 
   + (**Compulsory** for your first post): On first time you're required to add your name and avatar to the file **author.json** located at `dataviz-hub2/src/author`, otherwise author info will not be shown on the post (and the website produce errors).
   Format: 
@@ -115,7 +116,8 @@ featured: "true"					                     // Set it to "true" if you want show t
 
 ---
 
-3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be **/content/blog/yourdirname/post.jpg**. Sections below will tell you how to embed images and videos.
+3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be **/content/blog/yourdirname/post.jpg**. Sections 
+below will tell you how to embed <a href="#image" anchor>images</a> and <a href="#embed-well-known-services" anchor>videos</a>.
 
 4. Commit any changes you've made. If you didn't setup, see *Upload through github.com* section.
 
@@ -255,13 +257,33 @@ $$
 
 <br />
 
-# Internal website link
-The post you're writing might be a part of your blog series, and if you wish to include link of previous posts (or any other part of the website) within a post, you'll need **Link** tag.
-To use **Link** tag:  
-1. Make sure the file extension is .mdx  
-2. Under the header, insert `import { Link } from "gatsby"` and surround it with empty lines.  
-3. Use *to* parameter instead of *href*, for internal pages you don't need to specify hostname (dataviz.shef.ac.uk):  
-   `<Link className="text-gray-700" to="/blog">To blog</Link>`
+# Link
+- **URL within the website**  
+  
+  The post you're writing might be a part of your blog series, and if you wish to include link of previous posts (or any other part of the website) within a post, you'll need **Link** tag.
+  To use **Link** tag:  
+  1. Make sure the file extension is .mdx  
+  2. Use `to` parameter instead of `href`, for internal pages you don't need to specify hostname (dataviz.shef.ac.uk):  
+    `<Link className="text-gray-700" to="/blog">To blog</Link>`  
+      
+
+<br />
+
+- **Anchor within the post & URL outside the website**  
+  
+  Use `a` tag, add **anchor** keyword to the tag if the link is within the post.
+
+  ```html
+  Anchor:
+  <a href="#anchorLink" anchor>Link within the post</a>
+
+  External:
+  <a href="https://tailwindcss.com/docs/width">tailwindCSS</a>
+  or
+  [tailwindCSS](https://tailwindcss.com/docs/width)
+  ```  
+
+
 
 <br />
 

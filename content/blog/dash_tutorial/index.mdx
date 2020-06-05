@@ -6,15 +6,18 @@ description: "Dash is a user interface library for creating analytical web appli
 date: "2020-06-04"
 category: ["Tutorial"]
 tag: ["Python", "Dash", "Web", "Plotly", "Pandas"]
-template: "false"
-featured: "false"
-hide: "false"
+featured: "true"
 ---
 
 
-[Dash](https://plot.ly/dash/) is a user interface library for creating analytical web applications. Those who use [Python](https://www.python.org) for data analysis, data exploration, visualization, modelling, instrument control, and reporting will find immediate use for [Dash](https://plot.ly/dash/).
 
-------------------------------------------------------------------------------
+*[Dash](https://plot.ly/dash/) is a user interface library for creating analytical web applications. Those who use [Python](https://www.python.org) for data analysis, data exploration, visualization, 
+modelling, instrument control, and reporting will find immediate use for [Dash](https://plot.ly/dash/).*
+
+
+---
+  
+<br />
 
 ## 1. Prerequsites
 This documentation assumes some prior knowledge of [Python](https://www.python.org/). A minimum of being able to install Python, packages, and be able to execute code should get you a example visualisation.
@@ -25,6 +28,7 @@ The code in the snippets below is able to be copied verbatim into a file to crea
 In the interests of demonstrating the functionality, we have not presented best practice, rather focusing on demonstrating Dash.
 For example you might want to consider using a virtual environment to aid managing your third party packages.
 
+<br />
 
 ## 2. Installation
 
@@ -44,9 +48,13 @@ In order to run Dash in a Flask server the following libraries will need to be a
 
 Those have been pre-populated in a [requirements.txt](/dashtutorial/requirements.txt) file, compatible with [pip](https://pip.pypa.io/en/stable/installing/), to prepare a python environment.
 
+<br />
+
 ## 3. About this example
 
 In this example we are going to build a graph that shows life expectancy in comparison to GDP per capita based in all countries around the World.
+
+<br />
 
 ## 4. First step
 
@@ -63,6 +71,8 @@ import plotly.graph_objs as go
 import pandas as pd
 ```
 
+<br />
+
 ## 5. Download and read a CSV file
 
 Use Panda's `read_csv` function to download and extract your dataset. When you read a CSV, you get a `DataFrame`, which is made up of rows and columns. You access columns in a DataFrame the same way you access elements of a dictionary.
@@ -72,6 +82,8 @@ Use Panda's `read_csv` function to download and extract your dataset. When you r
 df = pd.read_csv('https://ndownloader.figsh.com/files/8261349')
 ```
 
+<br />
+
 ## 6. Preview Dataset
 
 Function `head()` gives you a preview of the downloaded dataset.
@@ -80,6 +92,72 @@ Function `head()` gives you a preview of the downloaded dataset.
 df.head()
 ```
 
+<div>
+
+<table className="dataframe">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>Country</th>
+      <th>Continent</th>
+      <th>Population</th>
+      <th>Life expectancy</th>
+      <th>GDP per capita</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>11</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>31889923.0</td>
+      <td>43.828</td>
+      <td>974.580338</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>23</td>
+      <td>Albania</td>
+      <td>Europe</td>
+      <td>3600523.0</td>
+      <td>76.423</td>
+      <td>5937.029526</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35</td>
+      <td>Algeria</td>
+      <td>Africa</td>
+      <td>33333216.0</td>
+      <td>72.301</td>
+      <td>6223.367465</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>47</td>
+      <td>Angola</td>
+      <td>Africa</td>
+      <td>12420476.0</td>
+      <td>42.731</td>
+      <td>4797.231267</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>59</td>
+      <td>Argentina</td>
+      <td>Americas</td>
+      <td>40301927.0</td>
+      <td>75.320</td>
+      <td>12779.379640</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<br />
 
 ## 7. Layout
 Dash apps are composed of two parts: __Layout__ and __Interactivity__.
@@ -132,6 +210,8 @@ app.layout = html.Div([
 ])
 ```
 
+<br />
+
 ## 8. Interactivity
 
 Dash provides a simple reactive decorator for binding your custom data analysis code to your Dash user interface.  
@@ -181,6 +261,8 @@ def update_graph(expectancy, country):
     }
 ```
 
+<br />
+
 ## 9. Style
 
 Every aesthetic element of the app is customisable: The sizing, the positioning, the colors, the fonts. Dash apps are built and published in the Web, so the full power of CSS is available.
@@ -193,6 +275,8 @@ app.css.append_css({
     "external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"
 })
 ```
+
+<br />
 
 ## 10. Running
 
@@ -208,7 +292,7 @@ It is strongly recommended you read this file to understand it before executing 
 
 If it all works correctly, your app should be running and accessible in your web browser; the default address is `http://127.0.0.1:8050/`. It should look something like this:
 
-<iframe src="https://dash-tutorial.herokuapp.com/" style="height: 600px; width: 100%;" frameBorder="0"></iframe>
+<iframe src="https://dash-tutorial.herokuapp.com/" style={{height: "600px", width: "100%", display: "block"}} frameBorder="0"></iframe>
 
 ------------------------------------------------------------------------------
 
