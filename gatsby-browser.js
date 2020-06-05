@@ -8,7 +8,7 @@
 import "./src/css/style.css";
 import "./src/css/post.css";
 import "tailwindcss/dist/base.css"
-
+import scroll_To from 'gatsby-plugin-smoothscroll'
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
@@ -19,11 +19,24 @@ export const onClientEntry = () => {
 }
 
 // Disable default scroll-to-top
-export const shouldUpdateScroll = () => {
-  return false;
-};
+// export const shouldUpdateScroll = () => {
+//   return false;
+// };
 
 export const onServiceWorkerUpdateReady = () => window.location.reload();
 
 require("./src/css/prism-custom.css")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+
+export const onRouteUpdate = (window) => {
+  if (window.location.hash) {
+    // fix for id starting with numbers
+    const hash = window.location.hash.replace(/^#(\d)/, '#\\3$1');
+    
+    setTimeout(() => {
+      //document.querySelector(`${hash}`).scrollIntoView();
+      scroll_To(`${hash}`)
+    }, 500);
+  }
+};
+

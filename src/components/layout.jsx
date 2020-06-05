@@ -10,14 +10,14 @@ import PropTypes from "prop-types"
 import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
 import ScrollTopBtn from "./scrollTop"
 
-const Layout = ({ children, location }) => {
+const Layout = (props) => {
 
   return (
 
     <div id="website" className="flex flex-col font-sans min-h-screen text-gray-900 high-specificity">
       <ScrollTopBtn />
-      <TransitionProvider 
-        location={location}
+      <TransitionProvider
+        location={props.location}
         enter={{
           opacity: 0,
           config: {
@@ -36,7 +36,7 @@ const Layout = ({ children, location }) => {
         }}
       >
         <TransitionViews>
-          {children}
+          {props.children}
         </TransitionViews>
       </TransitionProvider>
 
@@ -46,7 +46,8 @@ const Layout = ({ children, location }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  location: PropTypes.any
+  location: PropTypes.any,
+  props: PropTypes.any
 }
 
 export default Layout

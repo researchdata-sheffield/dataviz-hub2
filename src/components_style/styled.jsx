@@ -2,8 +2,14 @@ import React from 'react'
 import PropTypes from "prop-types"
 import styled from "styled-components"
 import tw, { styled as styled_twin } from 'twin.macro'
-import { Link } from "gatsby"
+import { Link as gatsby_Link } from "gatsby"
 import { MdKeyboardArrowRight } from "react-icons/md"
+
+
+export const Link = styled(gatsby_Link)`
+
+`
+
 
 // ************ Box style for blogposts ************//
 export const ArrowBox = styled.div`
@@ -97,11 +103,11 @@ export const IMG_DIV = styled.div`
 
 
 
-export const CatBtn = styled_twin(Link)`
+export const CatBtn = styled_twin(gatsby_Link)`
   ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full`}
 `
 
-export const TagBtn = styled_twin(Link)`
+export const TagBtn = styled_twin(gatsby_Link)`
   ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent rounded-full`}
 `
 
