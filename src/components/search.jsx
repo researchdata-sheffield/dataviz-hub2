@@ -82,8 +82,8 @@ class Search extends Component {
                 })}
 
 
-                let description = item.description.split(" ").splice(0, 35)
-                if(description.length < 35){
+                let description = item.description.split(" ").splice(0, 30)
+                if(description.length < 30){
                   description = description.join(" ").concat(".");
                 } else {
                   description = description.join(" ").concat(" ...");
@@ -94,14 +94,15 @@ class Search extends Component {
                   <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
                     <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-80 2xl:min-h-60 mx-6 my-6 transform hover:scale-105 transition duration-500">
                       <div className="min-h-80 2xl:min-h-60 max-h-80 w-full rounded-lg p-6 transition duration-700 bg-black-45 group-hover:bg-black-85">
-                        <div className="absolute pt-25vh 2xl:pt-30vh overflow-hidden" style={{maxWidth:"320px"}}>
+                        <div className="absolute pt-25vh 2xl:pt-25vh overflow-hidden" style={{maxWidth:"320px"}}>
                           <h1 className="group-hover:-translate-y-16 text-white font-bold leading-10 text-4xl transform transition duration-100"><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>  
                           <h1 className="group-hover:hidden text-highlight_2 leading-9 my-6 font-bold text-2xl transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
-                            TAG: &nbsp;{item.tag.map((tag, i, arr) => (
-                                    <Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} />
-                                  ))}
+                            TAG: &nbsp;{item.tag.map((tag, i, arr) => {
+                              return ( i < 3 && <Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} /> )
+                            })}
+                            {item.tag.length > 3 && <p className="inline-block text-white"> +{item.tag.length - 3} more</p>}
                           </h1>
                           <p className="hidden group-hover:block my-3 text-xxs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
                           <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>      
