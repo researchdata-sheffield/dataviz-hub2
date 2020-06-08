@@ -21,7 +21,7 @@ import ReactTooltip from "react-tooltip";
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
-  const { title, date } = mdx.frontmatter
+  const { title, date, author, category, tag } = mdx.frontmatter
   const {prev, next} = pageContext
   const tableOfContent = mdx.tableOfContents 
 
@@ -58,27 +58,20 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     
   return (
     <div className="relative">
-      <SEO 
-      title={title}
-      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} 
-      />
+      <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
       <Header />
       <Helmet >
         <script >{`
-          
           var element = document.getElementById("headElement");
           var dimensions = element.getClientRects()[0];
-          
           var pattern = Trianglify({
             width: dimensions.width, 
             height: dimensions.height
           });
-
           element.style['background-image'] = 'url(' + pattern.png() + ')';
-
         `}</script>
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" /> 
         
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" /> 
       </Helmet>
       
       {/* Top background, title and author etc. */}
@@ -90,26 +83,20 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           </div>
           
           <div className="flex justify-center mt-12 items-center">
-            {mdx.frontmatter.author.map((author) => (
+            {author.map((author) => (
               <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} src={author.avatar.childImageSharp.fluid.src}  />
             ))}
             <div className="inline-block px-2 text-left font-bold" style={{textShadow: "#000 0px 0px 5px"}}>
               <h1 className="text-sm xl:text-base pb-1">
-                {mdx.frontmatter.author.map((author, idx) => (
-                    (mdx.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
-                ))}
+                {author.map((author, idx) => ( (author.length == idx + 1) ? author.name : author.name + " · " ))}
               </h1>
               <h1 className="text-xs xl:text-sm">{date} · {mdx.fields.readingTime.text}</h1>
             </div>
           </div> 
 
           <div className="mt-4 text-xs 2xl:text-sm mx-auto flex flex-wrap px-2">
-            {mdx.frontmatter.category.map((cat) => (
-              <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
-            ))}
-            {mdx.frontmatter.tag.map((tag) => (
-              <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
-            ))}
+            {category.map((cat) => ( <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn> ))}
+            {tag.map((tag) => ( <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn> ))}
           </div>
         </div>
         </Bounce>
@@ -126,7 +113,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <Mail data-tip="" data-for="share_email" title="" className="hover:bg-red-600 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small subject={shareMessage} link={shareLink} />
               <Linkedin data-tip="" data-for="share_linkedin" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
               <hr className="my-3" />
-              <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost">
+              <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}}>
                 <div className="m-2 py-1 bg-white hover:bg-black hover:text-white text-gray-800 flex justify-center rounded-md text-xl transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}}><RiEditBoxLine /></div>
               </a>
 
@@ -151,11 +138,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <div className="m-2 py-1 px-2 bg-gray-100 hover:bg-highlight_2 text-gray-800 flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
             </a>
           </div>    
-          
           <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
-              { tableOfContent && 
-                tableOfContent.items && 
+              { tableOfContent && tableOfContent.items && 
                 <Scrollspy className="text-gray-300" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
                   {tableOfContent.items.map(renderItem)}
                 </Scrollspy>
@@ -170,7 +155,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           </MDXProvider>
         </div>
 
-        {/* toc hidden in mobile */}
+        {/* sidebar toc: hidden in mobile */}
         <div className={` ${ tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-5 text-gray-700">TABLE OF CONTENTS</p>}
           { tableOfContent && 
