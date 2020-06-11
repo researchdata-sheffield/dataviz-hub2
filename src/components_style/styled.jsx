@@ -68,12 +68,10 @@ export const ArrowBox_featured = styled(ArrowBox)`
 
 `
 
-export const IMG = styled.img`
-  object-fit: cover;
+export const IMG = styled.div`
   transition: .5s ease;
-  height: 100%;
-  width: 100%;
-  position: fixed;
+  background-size: cover;
+  background-position: center;
   ${tw`transform group-hover:scale-110`}
 `
 
@@ -81,7 +79,7 @@ export const IMG_DIV = styled.div`
   position: relative;
   overflow: hidden;
   background: black;
-
+  display: grid;
   &::before {
     transition: .5s ease;
   }

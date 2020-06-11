@@ -6,22 +6,26 @@ import tw, { styled as styled_twin } from 'twin.macro'
 import scroll_To from 'gatsby-plugin-smoothscroll'
 
 export const Link = styled(gatsby_Link)`
-  color: #006aa6;
+  color: #595959;
+  text-decoration: underline;
 
   &:hover {
     color: #00aeef;
+    text-decoration: none;
   }
 `
 
 export const A_a = styled.a`
-  color: #006aa6;
+  color: #595959;
+  text-decoration: underline;
 
   &:hover, &:link:active, &:visited:active, &:visited:hover {
     color: #00aeef;
+    text-decoration: none;
   }
 
   &:visited {
-    color: #006aa6;
+    color: #595959;
   }
 `
 

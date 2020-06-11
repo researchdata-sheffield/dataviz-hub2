@@ -179,6 +179,7 @@ module.exports = {
         '15vh': '15vh',
         '18vh': '18vh',
         '20vh': '20vh',
+        '22vh': '22vh',
         '25vh': '25vh',
         '30vh': '30vh',
         '35vh': '35vh',

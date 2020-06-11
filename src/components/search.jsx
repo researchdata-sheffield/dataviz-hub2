@@ -24,7 +24,6 @@ class Search extends Component {
   componentDidMount = () => {
     setTimeout(() => {
       if(this.props.location.state.searchWord !== undefined) {
-        console.log(`PRINT!!!!!: ${this.props.location.state.searchWord}`)
         var queryHome = this.props.location.state.searchWord
         var input = document.getElementById("pageSearch")
         this.setState({query: queryHome})
@@ -81,6 +80,12 @@ class Search extends Component {
                   }
                 })}
 
+                let title = item.title.split(" ").splice(0, 8)
+                if(title.length < 8){
+                  title = title.join(" ").concat(".");
+                } else {
+                  title = title.join(" ").concat(" ...");
+                }
 
                 let description = item.description.split(" ").splice(0, 30)
                 if(description.length < 30){
@@ -92,10 +97,10 @@ class Search extends Component {
                 return( 
 
                   <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
-                    <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-80 2xl:min-h-60 mx-6 my-6 transform hover:scale-105 transition duration-500">
-                      <div className="min-h-80 2xl:min-h-60 max-h-80 w-full rounded-lg p-6 transition duration-700 bg-black-45 group-hover:bg-black-85">
-                        <div className="absolute pt-25vh 2xl:pt-25vh overflow-hidden" style={{maxWidth:"320px"}}>
-                          <h1 className="group-hover:-translate-y-16 text-white font-bold leading-10 text-4xl transform transition duration-100"><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.title} searchWords={this.state.query.split()} /></h1>  
+                    <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-80 2xl:min-h-60 mx-6 my-6 transform hover:scale-105 transition duration-500">
+                      <div className="min-h-80 2xl:min-h-60 max-h-80 w-full p-6 transition duration-700 bg-black-45 group-hover:bg-black-85" style={{borderRadius: "15px"}}>
+                        <div className="absolute pt-10vh lg:pt-20vh 2xl:pt-22vh overflow-hidden" style={{maxWidth:"320px"}}>
+                          <h1 className="group-hover:-translate-y-16 text-white font-bold leading-10 text-4xl transform transition duration-100"><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={title} searchWords={this.state.query.split()} /></h1>  
                           <h1 className="group-hover:hidden text-highlight_2 leading-9 my-6 font-bold text-2xl transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
@@ -137,7 +142,7 @@ class Search extends Component {
     return (
       <div className={`${this.props.classNames} mb-32 relative text-gray-700 w-full text-center`}>
         <div className="min-h-30 pt-24 pb-16" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
-          <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white">what&apos;s next? </p></Zoom>
+          <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-2">what&apos;s next? </p></Zoom>
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
               <FiSearch className="inline-block text-center text-3xl -mt-1" />

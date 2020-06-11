@@ -78,17 +78,17 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-c1" style={{minHeight: "50vh", }}>
         <Bounce cascade delay={500} duration={1300}>
         <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
-          <div className="px-5 leading-tight">
+          <div className="px-3 lg:px-48 2xl:px-78 leading-tight">
             <h1 className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
           </div>
           
           <div className="flex justify-center mt-12 items-center">
-            {author.map((author) => (
-              <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} src={author.avatar.childImageSharp.fluid.src}  />
+            {author.map((authors) => (
+              <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={authors.name} src={authors.avatar.childImageSharp.fluid.src}  />
             ))}
             <div className="inline-block px-2 text-left font-bold" style={{textShadow: "#000 0px 0px 5px"}}>
               <h1 className="text-sm xl:text-base pb-1">
-                {author.map((author, idx) => ( (author.length == idx + 1) ? author.name : author.name + " · " ))}
+                {author.map((authors, idx) => ( (author.length === idx + 1) ? authors.name : authors.name + " · " ))}
               </h1>
               <h1 className="text-xs xl:text-sm">{date} · {mdx.fields.readingTime.text}</h1>
             </div>
