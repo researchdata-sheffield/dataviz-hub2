@@ -68,14 +68,14 @@ const Header = () => {
       
       case 'a-icon':
         return (
-          <A {...props} className={`${condition}`}>
+          <A {...props} className={`${condition} flex items-center`}>
             {props.children}
           </A>
         )
 
       case 'Link-icon':
         return (
-          <Link {...props} className={`${condition}`}>
+          <Link {...props} className={`${condition} flex items-center`}>
             {props.children}
           </Link>
         )
@@ -138,15 +138,15 @@ const Header = () => {
                 </NavLink>  
               )) 
             }
-            <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-4 pr-2">
-              <NavLink type="a-icon" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"><FaGoogle /></NavLink>
-            </button>
-            <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2">
-              <NavLink type="a-icon" href="https://join.slack.com/t/shef-dataviz/signup"><FaSlack /></NavLink>
-            </button>
-            <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline">
-              <NavLink type="Link-icon" to="/search"><FiSearch  /></NavLink>
-            </button>
+            <NavLink type="a-icon" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group">
+              <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-4 pr-2"><FaGoogle /></button>
+            </NavLink>
+            <NavLink type="a-icon" href="https://join.slack.com/t/shef-dataviz/signup">
+              <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2"><FaSlack /></button>
+            </NavLink>
+            <NavLink type="Link-icon" to="/search">
+              <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline"><FiSearch  /></button>
+            </NavLink>
 
           </div>
         </div>

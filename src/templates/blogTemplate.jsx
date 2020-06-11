@@ -42,7 +42,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 
 			<div className="flex flex-wrap-reverse">
 				
-				<div className="w-full xl:w-3/4 2xl:w-4/5">
+				<div className="w-full xl:w-4/5 2xl:w-4/5">
 					<BlogPostGrid allMdx = {allMdx} />
 					<Pagination numPages = {pageContext.numPages} currentPage = {pageContext.currentPage} typePage = {"/blog"} />
 				</div>
