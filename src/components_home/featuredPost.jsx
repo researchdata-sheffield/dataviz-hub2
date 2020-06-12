@@ -33,6 +33,13 @@ const featuredPost = ({ featuredPost }) => {
             description = description.join(" ").concat(" ...");
           }
 
+          let title = node.frontmatter.title.split(" ").splice(0, 14)
+          if(title.length < 14){
+            title = title.join(" ")
+          } else {
+            title = title.join(" ").concat(" ...")
+          }
+
           return (
             <Fade key={node.id} duration={2000} fraction={0.3}>
               <div className="w-full sm:w-1/2 min-h-100 pb-28 overflow-hidden bg-black relative leading-none text-gray-500 flex-grow">
@@ -43,7 +50,7 @@ const featuredPost = ({ featuredPost }) => {
                   </div>
                   <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-3/5 max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
                   <ArrowBox_featured className="pt-6 px-8">
-                    <h1 className="font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "10vh", fontFamily: "TUoS Stephenson"}}>{node.frontmatter.title}</h1>
+                    <h1 className="font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-highlight_2 overflow-y-hidden" style={{fontFamily: "TUoS Stephenson"}}>{title}</h1>
                     <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-highlight_2" >{description}</p>
                     <p className="my-2 text-xs 2xl:text-base pt-2">
                       {node.frontmatter.author.map((author, idx) => (
