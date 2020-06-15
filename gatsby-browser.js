@@ -8,7 +8,6 @@
 import "./src/css/style.css";
 import "./src/css/post.css";
 import "tailwindcss/dist/base.css"
-import scroll_To from 'gatsby-plugin-smoothscroll'
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
@@ -34,9 +33,9 @@ export const onRouteUpdate = (window) => {
     const hash = window.location.hash.replace(/^#(\d)/, '#\\3$1');
     
     setTimeout(() => {
-      //document.querySelector(`${hash}`).scrollIntoView();
-      scroll_To(`${hash}`)
-    }, 500);
+      document.querySelector(`${hash}`).scrollIntoView()
+    }, 700);
+
   }
 };
 

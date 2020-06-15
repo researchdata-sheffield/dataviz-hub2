@@ -12,7 +12,6 @@ import HomeCommunity from "../components_home/homeCommunity"
 import HomeShowcase from "../components_home/homeShowcase"
 import moment from "moment"
 import Search_Home from "../components/searchHome"
-import scroll_To from 'gatsby-plugin-smoothscroll'
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/COVID1.png"
@@ -77,11 +76,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#explore')} data-tip="#Data and visualisation">Data visualisation</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#learning_path')} data-tip="Coming soon">Learning path</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_community')} data-tip="#Community">Community</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#home_showcase')} data-tip="#Showcase">Showcase</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={() => scroll_To('#collaboration')} data-tip="Coming soon">Collaboration</a></li>
+                      <li><Link className="text-gray-700 hover:underline" to='#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='#learning_path' data-tip="Coming soon">Learning path</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='#home_community' data-tip="#Community">Community</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='#home_showcase' data-tip="#Showcase">Showcase</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='#collaboration' data-tip="Coming soon">Collaboration</Link></li>
                       <ReactTooltip />
                     </ul>
                 </div>
@@ -99,9 +98,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Slide>
 
             <Fade bottom delay={700}>
-              <a onClick={() => scroll_To('#explore')}>
+              <Link to='#explore'>
                 <BlackWhiteButton className="py-2 px-10" link>Get Started</BlackWhiteButton>
-              </a>
+              </Link>
             </Fade>
 
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -136,10 +135,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </div>
 
               {/* Scroll down animation */}
-              <div id="scrollDown-btn" className="hidden md:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}} onClick={() => scroll_To('#eventNotice')}>
-                <Link className="inline-block" to="#eventNotice"><span onClick={() => scroll_To('#eventNotice')} style={{marginLeft: "16px", width: "18px", height: "18px" }}></span></Link>
-                <a className="text-black font-bold text-center" style={{textShadow: "#fff 0px 0px 10px"}}>&nbsp;Scroll</a>
-              </div>
+              <Link to="#eventNotice">
+                <div id="scrollDown-btn" className="hidden md:block absolute bottom-0 left-0 mb-8 text-center cursor-pointer group pt-14" style={{left: "45%", right:"45%"}}>
+                  <span style={{marginLeft: "-7px", width: "18px", height: "18px" }}></span>
+                  <p className="text-black font-bold text-center" style={{textShadow: "#fff 0px 0px 10px"}}>&nbsp;Scroll</p>
+                </div>
+              </Link>
             </div>  
 
             <EventNotice eventBrite={eventBrite} />   

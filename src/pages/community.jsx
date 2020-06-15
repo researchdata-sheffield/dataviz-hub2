@@ -7,7 +7,6 @@ import { Link } from "gatsby"
 import com_1 from "../images/community/com_1.jpg"
 import com_2 from "../images/community/com_2.jpg"
 import google from "../images/community/google.png"
-import scroll_To from 'gatsby-plugin-smoothscroll'
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 
@@ -25,11 +24,13 @@ const Community = () => (
           <h1 className="text-xl mt-3 text-gray-100" style={{textShadow: "#000000 0px 0px 1px"}}>knowledge | connection | inspiration | resources | support</h1>
         </div>
 
-        <div onClick={() => scroll_To('#discover')} className="inline-block">
-          <button className="mt-16 mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Discover</button>
-        </div>
-        <div onClick={() => scroll_To('#joinus')} className="inline-block">
-          <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Join community</button>
+        <div className="mt-16">
+          <Link to='/community#discover'>
+            <div className="inline-block"><button className="mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Discover</button></div>
+          </Link>
+          <Link to='/community#joinus'>
+            <div className="inline-block"><button className="bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Join community</button></div>
+          </Link>
         </div>
       </Fade>
     </BackgroundSection>
