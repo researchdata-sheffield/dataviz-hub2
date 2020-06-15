@@ -3,7 +3,6 @@ import { Link as gatsby_Link } from "gatsby"
 import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
-import scroll_To from 'gatsby-plugin-smoothscroll'
 
 export const Link = styled(gatsby_Link)`
   color: #595959;
@@ -33,7 +32,7 @@ export const A = (props) => {
   const {href, ...props_noRef} = props
   return (
     props.anchor === true ? 
-      <A_a {...props_noRef} rel="noopener noreferrer" onClick={() => scroll_To(`${href}`)}>
+      <A_a {...props_noRef} rel="noopener noreferrer" href={href}>
         {props.children}
       </A_a>
       :
@@ -188,6 +187,9 @@ export const BlockQuote = styled.blockquote`
 `
 
 export const IMG = styled_twin.img`
+  margin-left: auto;
+  margin-right: auto;
+
   ${tw`my-12`}
 `
 

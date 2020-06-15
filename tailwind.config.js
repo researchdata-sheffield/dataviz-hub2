@@ -9,6 +9,11 @@ module.exports = {
   },
   theme: {
     extend: {
+      screens: {
+        'ipadp': '1030px',
+        'xl': '1281px',
+        '2xl': '1441px',
+      },
       backgroundColor: {
         'footer': '#414042',
         'highlight_2': '#00aeef',
@@ -169,6 +174,7 @@ module.exports = {
         '40': '10rem',
         '44': '11rem',
         '52': '13rem',
+        '56': '14rem',
         '60': '15rem',
         '68': '17rem',
         '70': '17.5rem',
@@ -194,11 +200,6 @@ module.exports = {
         '90vh': '90vh',
         '95vh': '95vh',
         '100vh': '100vh',
-      },
-      screens: {
-        'ipadp': '1030px',
-        'xl': '1281px',
-        '2xl': '1441px',
       },
       textColor: {
         'highlight': '#337ab7',

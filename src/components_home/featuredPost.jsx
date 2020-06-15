@@ -33,8 +33,8 @@ const featuredPost = ({ featuredPost }) => {
             description = description.join(" ").concat(" ...");
           }
 
-          let title = node.frontmatter.title.split(" ").splice(0, 14)
-          if(title.length < 14){
+          let title = node.frontmatter.title.split(" ").splice(0, 11)
+          if(title.length < 11){
             title = title.join(" ")
           } else {
             title = title.join(" ").concat(" ...")

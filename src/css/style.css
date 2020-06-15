@@ -41,6 +41,11 @@
  * @import "components/buttons";
  * @import "components/forms";
  */
+
+html {
+  scroll-behavior: smooth !important;
+}
+
 a {
   color: #4e4e4e;
 }
@@ -213,7 +218,7 @@ position: fixed;
 
 
 /*********  Home Scroll down button & animation  ***************/
-#scrollDown-btn a span {
+#scrollDown-btn span {
   position: absolute;
   top: 0;
   border-left: 2px solid rgb(61, 61, 61);

@@ -21,7 +21,7 @@ const menuTag = ({ pageContext }) => {
 
   return (
 
-		<div className="w-full xl:w-1/5 2xl:w-1/5 px-5 py-1 xl:py-3 text-gray-100 shadow-2xl text-sm" style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.75)"}}>
+		<div className="w-full xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 text-gray-100 shadow-2xl text-sm" style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.75)"}}>
       <div className="sticky top-0 overflow-hidden lg:py-2 xl:py-6">
         <div>
           <h1 className="inline-block text-2xl pb-2 xl:pb-5 font-semibold mr-4"><FaTags style={{display: "inline-block"}} /> {location.href.includes("/blog/tag/") ? <Link to="/blog/#read">ALL</Link> : "Tags"}</h1>

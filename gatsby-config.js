@@ -137,7 +137,7 @@ module.exports = {
     'gatsby-plugin-eslint',
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
-    `gatsby-plugin-smoothscroll`,
+    //`gatsby-plugin-smoothscroll`,
     `gatsby-transformer-json`,
     `gatsby-plugin-emotion`,
     //`gatsby-plugin-twitter`,

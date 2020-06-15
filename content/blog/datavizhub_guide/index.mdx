@@ -16,7 +16,6 @@ import Scrollspy from 'react-scrollspy'
 import Fade from 'react-reveal/Fade'
 import bg from './bg.jpg'
 import bg1 from './earth.jpg'
-import scroll_To from 'gatsby-plugin-smoothscroll'
 
 <!-- TODO: beautify guide -->
 
@@ -27,10 +26,10 @@ import scroll_To from 'gatsby-plugin-smoothscroll'
   </div>
 </div>
 <div className="flex flex-wrap justify-between px-3 text-white bg-black text-sm">
-  <a onClick={() => scroll_To('#what')} className="text-white hover:text-highlight_2 cursor-pointer py-2">What is data visualisation</a>
-  <a onClick={() => scroll_To('#why')} className="text-white hover:text-highlight_2 cursor-pointer py-2">Why is it important</a>
-  <a onClick={() => scroll_To('#how')} className="text-white hover:text-highlight_2 cursor-pointer py-2">How this site could help</a>
-  <a onClick={() => scroll_To('#start')} className="text-white hover:text-highlight_2 cursor-pointer py-2">Where should I start</a>
+  <a href="#what" anchor className="text-white hover:text-highlight_2 cursor-pointer py-2">What is data visualisation</a>
+  <a href="#why" anchor className="text-white hover:text-highlight_2 cursor-pointer py-2">Why is it important</a>
+  <a href="#how" anchor className="text-white hover:text-highlight_2 cursor-pointer py-2">How this site could help</a>
+  <a href="#start" anchor className="text-white hover:text-highlight_2 cursor-pointer py-2">Where should I start</a>
 </div>
 
 <div style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", backgroundAttachment: "fixed"}} className="py-24">
