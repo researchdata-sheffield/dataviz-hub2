@@ -5,26 +5,25 @@ import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
 
 export const Link = styled(gatsby_Link)`
-  color: #595959;
-  text-decoration: underline;
+  color: black;
+  background: linear-gradient(180deg, transparent calc(100% - 2px), rgba(0,173,239,1) 0);
 
   &:hover {
     color: #00aeef;
-    text-decoration: none;
   }
 `
 
 export const A_a = styled.a`
-  color: #595959;
-  text-decoration: underline;
+  color: black;
+  background: linear-gradient(180deg, transparent calc(100% - 2px), rgba(0,173,239,1) 0);
 
   &:hover, &:link:active, &:visited:active, &:visited:hover {
     color: #00aeef;
-    text-decoration: none;
   }
 
   &:visited {
-    color: #595959;
+    color: black;  
+    ${'' /* #595959 */}
   }
 `
 

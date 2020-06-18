@@ -16,6 +16,7 @@ module.exports = {
       },
       backgroundColor: {
         'footer': '#414042',
+        'highlight': '#1cbfff',
         'highlight_2': '#00aeef',
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',

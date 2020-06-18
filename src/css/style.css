@@ -64,6 +64,12 @@ p {
   -moz-hyphens: none;  
 }
 
+a, div, p, h1, h2, h3, h4, h5, h6 {
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
 ::-moz-selection { background: #00aeef; color: white }
 ::selection { background: #00aeef; color: white }
 
@@ -75,6 +81,7 @@ text-box::after {
   margin: .9em 0 1em;
   background: #F0CC71;
 }
+
 
 /******* Logo animation ********/
 

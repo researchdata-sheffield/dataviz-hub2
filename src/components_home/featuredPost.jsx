@@ -51,16 +51,16 @@ const featuredPost = ({ featuredPost }) => {
                   <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-3/5 max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
                   <ArrowBox_featured className="pt-6 px-8">
                     <h1 className="font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-highlight_2 overflow-y-hidden" style={{fontFamily: "TUoS Stephenson"}}>{title}</h1>
-                    <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-highlight_2" >{description}</p>
-                    <p className="my-2 text-xs 2xl:text-base pt-2">
+                    <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-gray-500" >{description}</p>
+                    <p className="my-2 text-xs 2xl:text-base pt-2 group-hover:text-gray-500">
                       {node.frontmatter.author.map((author, idx) => (
                         (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
                       ))}
                     </p>
-                    <p className="my-2 text-xs 2xl:text-base" >{node.frontmatter.date} · {node.fields.readingTime.text}</p>
+                    <p className="my-2 text-xs 2xl:text-base text-gray-500">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
                   </ArrowBox_featured>
                 </Link>
-                <div className="px-8 pt-3 pb-24 text-sm 2xl:text-sm">
+                <div className="px-8 pt-6 pb-24 text-sm 2xl:text-sm">
                   {node.frontmatter.category.map((cat) => (
                     <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
                   ))}

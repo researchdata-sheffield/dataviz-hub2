@@ -5,9 +5,18 @@ import tw, { styled as styled_twin } from 'twin.macro'
 import { Link as gatsby_Link } from "gatsby"
 import { MdKeyboardArrowRight } from "react-icons/md"
 
-
-export const Link = styled(gatsby_Link)`
-
+export const PostBox = styled.div`
+  display: block;
+  
+  &:before {
+    content:'';
+    width:100%;
+    height:100%;    
+    position:absolute;
+    left:0;
+    top:0;
+    background:linear-gradient(transparent 150px, white);
+ }
 `
 
 

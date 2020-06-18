@@ -41,7 +41,7 @@ const blogPostGrid = ({allMdx}) => {
 
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-80 ipadp:min-h-120 2xl:min-h-100 pb-24 2xl:pb-24 overflow-hidden bg-white relative">
+          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-80 ipadp:min-h-120 2xl:min-h-100 pb-24 2xl:pb-16 overflow-hidden bg-white relative">
             <Link className="group" to={node.fields.slug}>
               { node.frontmatter.featured === "true" && 
                 <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300 group-hover:bg-black items-center" style={{zIndex: "3"}}>

@@ -76,11 +76,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><Link className="text-gray-700 hover:underline" to='#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='#learning_path' data-tip="Coming soon">Learning path</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='#home_community' data-tip="#Community">Community</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='#home_showcase' data-tip="#Showcase">Showcase</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='#collaboration' data-tip="Coming soon">Collaboration</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="Coming soon">Learning path</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#home_community' data-tip="#Community">Community</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#collaboration' data-tip="Coming soon">Collaboration</Link></li>
                       <ReactTooltip />
                     </ul>
                 </div>
