@@ -2,34 +2,40 @@
 To contribute, please visit the [guide](./content/blog/how_to_write_blog_post/index.mdx).
 
 
-# Contribute to the website
-
-This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework that is based on [React](https://reactjs.org/).
-
-You'll need to setup a gatsby development environment in order to preview the website. 
-
+# Installation
   1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
   For other OS visit <a href="https://www.gatsbyjs.org/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system">here</a>. (You might also need to download Visual Studio installer to install node.js development tools).
   
   2. Install <a href="https://gitforwindows.org/">Git</a>. 
   
-  3. Install Gatsby CLI by running   `npm install -g gatsby-cli`
+  3. Install Gatsby CLI by running  `npm install -g gatsby-cli`
 
-  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run `git clone https://github.com/yourusername/dataviz-hub2.git` then run `cd dataviz-hub2` and `npm install` (install dependencies). Then go to **dataviz-hub2/plugins/gatsby-source-eventbrite-multi-accounts/** and run `npm install` as well.
-  
-  5. Create a new local branch with commands `git checkout master` (make sure you're in master branch), `git branch newBranchName` (create a new branch from master), and `git checkout newBranchName` (switch to new branch).
+  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run:
+    
+    ```
+    git clone https://github.com/yourusername/dataviz-hub2.git
+    cd dataviz-hub2
+    npm install                                                 //install dependencies
+    cd plugins/gatsby-source-eventbrite-multi-accounts
+    npm install                                                 //install plugin dependencies
+    ```
+
+  5. (optional) Create a new local branch with commands **git checkout development** (make sure you're in development branch), **git branch newBranchName** (create a new branch from development), and **git checkout newBranchName** (switch to new branch).
     Now make any commits you wish to.
-   
-<b>NOTE:</b> At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
 
-If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run `npm install` etc.
+## Note
+  At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
+  If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run **npm install** etc.
+
+
 
 
 ```
-If you cloned a while a ago, fetch the latest commits from origin repository:
+If you have cloned the repository a while a ago, 
+fetch the latest commits from origin repository:
 
-git checkout master
-git pull upstream master
+git checkout development
+git pull upstream development
 ```
 
 ## IDE
