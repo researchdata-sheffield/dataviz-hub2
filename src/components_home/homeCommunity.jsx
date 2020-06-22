@@ -14,9 +14,9 @@ const HomeCommunity = () => {
     <div id="home_community" className="ipadp:min-h-100 flex flex-wrap justify-center items-center py-10">
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap">
-          <div className="text-6xl font-semibold text-gray-800 text-box w-full text-center" style={{fontFamily: "TUoS Stephenson"}}>Your community.</div>
-          <Link to="/community" className="text-box mt-2 text-gray-500 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" />&#127881;</Link>
-          {/* <p className="border-t-6 border-highlight_2 w-1/12 text-box"></p> */}
+          <div className="text-6xl font-semibold text-gray-800 w-full text-center" style={{fontFamily: "TUoS Stephenson"}}>Your community.</div>
+          <Link to="/community" className=" mt-2 text-gray-500 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" />&#127881;</Link>
+          {/* <p className="border-t-6 border-highlight_2 w-1/12"></p> */}
         </div>
       </Fade>
       <div className="flex flex-wrap text-gray-800 pt-10 pb-20 justify-center">

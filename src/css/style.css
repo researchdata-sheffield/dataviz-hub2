@@ -73,14 +73,7 @@ a, div, p, h1, h2, h3, h4, h5, h6 {
 ::-moz-selection { background: #00aeef; color: white }
 ::selection { background: #00aeef; color: white }
 
-text-box::after {
-  content: '';
-  display: block;
-  width: 40px;
-  height: 4px;
-  margin: .9em 0 1em;
-  background: #F0CC71;
-}
+
 
 
 /******* Logo animation ********/
@@ -177,7 +170,10 @@ position: fixed;
 
 
 
-/*********  Home Search bar & animation ***************/
+/*********  
+Home Search bar & animation 
+**********
+*****/
 .searchIcon {
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
@@ -224,7 +220,9 @@ position: fixed;
 }
 
 
-/*********  Home Scroll down button & animation  ***************/
+/*********  
+Home Scroll down button & animation  
+***************/
 #scrollDown-btn span {
   position: absolute;
   top: 0;

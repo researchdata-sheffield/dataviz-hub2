@@ -25,8 +25,8 @@ const blogPostGrid = ({allMdx}) => {
         imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
       }
       
-      let description = node.frontmatter.description.split(" ").splice(0, 30)
-      if(description.length < 30){
+      let description = node.frontmatter.description.split(" ").splice(0, 20)
+      if(description.length < 20){
         description = description.join(" ");
       } else {
         description = description.join(" ").concat(" ...");
@@ -41,7 +41,7 @@ const blogPostGrid = ({allMdx}) => {
 
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full sm:w-1/2 lg:w-1/3 min-h-80 ipadp:min-h-120 2xl:min-h-100 pb-24 2xl:pb-16 overflow-hidden bg-white relative">
+          <div className="w-full sm:w-1/3 lg:w-1/4 min-h-80 ipadp:min-h-120 2xl:min-h-100 pb-24 overflow-hidden bg-white relative">
             <Link className="group" to={node.fields.slug}>
               { node.frontmatter.featured === "true" && 
                 <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300 group-hover:bg-black items-center" style={{zIndex: "3"}}>
@@ -50,9 +50,11 @@ const blogPostGrid = ({allMdx}) => {
                 </div>
               }
               <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-3/5 lg:max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
-              <ArrowBox className="px-6 pt-6 leading-none text-gray-600">
-                <h1 className="font-bold text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden font-sans" style={{minHeight: "0vh", maxHeight: "15vh"}}>{title}</h1>
-                <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
+              <ArrowBox className="px-4 pt-6 2xl:px-8 2xl:pt-8 leading-none text-gray-600">
+                <div style={{maxHeight: '25vh'}} className='overflow-hidden'>
+                  <h1 className="font-bold text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden font-sans">{title}</h1>
+                  <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
+                </div>
                 <p className="my-2 text-sm pt-2 font-semibold">
                   {node.frontmatter.author.map((author, idx) => (
                     (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
@@ -63,7 +65,7 @@ const blogPostGrid = ({allMdx}) => {
                 {/* <p className="mt-5 text-base  font-semibold">{node.fields.readingTime.text}</p> */}
               </ArrowBox>
             </Link>
-            <div className="py-3 px-8 text-sm">
+            <div className="py-3 px-4 2xl:px-8">
               {node.frontmatter.category.map((cat) => (
                 <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
               ))}

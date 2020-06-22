@@ -9,7 +9,7 @@ export const PostBox = styled.div`
   display: block;
   
   &:before {
-    content:'';
+    content:'T';
     width:100%;
     height:100%;    
     position:absolute;
@@ -30,7 +30,7 @@ export const ArrowBox = styled.div`
     bottom: 100%;
     left: 14%;
     border: solid white;
-    content: " ";
+    content: "";
     height: 0;
     width: 0;
     position: absolute;
@@ -111,11 +111,11 @@ export const IMG_DIV = styled.div`
 
 
 export const CatBtn = styled_twin(gatsby_Link)`
-  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full`}
+  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
 `
 
 export const TagBtn = styled_twin(gatsby_Link)`
-  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent rounded-full`}
+  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-300 hover:border-transparent rounded-full text-xs`}
 `
 
 export const HomeBlogNav = styled_twin.div`

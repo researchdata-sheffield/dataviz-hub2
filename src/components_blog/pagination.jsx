@@ -22,15 +22,15 @@ const Pagination = ({numPages, currentPage, typePage}) => {
 
   return (
     <div className="flex flex-wrap justify-between">
-      <div className="flex justify-center items-center content-center mx-auto mt-5 mb-5 md:mt-24 md:mb-16">
+      <div className="flex flex-wrap items-center mx-auto mt-10 mb-5 md:mt-24 md:mb-16">
 
         <Link to={ `${ numPages === 1 ? `${typePage}/page/${currentPage}` : [ (currentPage === 1 || currentPage === 2)  ? `${typePage}` : `${typePage}/page/${currentPage -1}` ] }` } 
-              className={`${numPages === 1 ? `hidden` : [currentPage === 1 ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow`}
+              className={`${numPages === 1 ? `hidden` : [currentPage === 1 ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow mr-4`}
         >
           <FaArrowAltCircleLeft className="mr-3" /> Newer posts
         </Link>
         <Link to={ `${ numPages === 1 ? `${typePage}/page/${currentPage}` : [ currentPage === numPages  ? `${typePage}/page/${currentPage}` : `${typePage}/page/${currentPage +1}`] }`}
-              className={`${numPages === 1 ? `hidden` : [currentPage === numPages ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow ml-16`}
+              className={`${numPages === 1 ? `hidden` : [currentPage === numPages ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow`}
         >
           Older posts <FaArrowAltCircleRight className="ml-3" />
         </Link>

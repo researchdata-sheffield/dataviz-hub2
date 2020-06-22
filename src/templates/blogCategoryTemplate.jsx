@@ -6,6 +6,7 @@ import Footer from "../components/footer"
 import Pagination from "../components_blog/pagination"
 import BlogPostGrid from "../components_blog/blogPostGrid"
 import MenuCategory from "../components_blog/menuCategory"
+import MenuTagSlide from "../components_blog/menuTagSlide"
 import MenuTag from "../components_blog/menuTag"
 import PropTypes from "prop-types"
 import SEO from "../components/seo"
@@ -33,12 +34,12 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 
 			<div className="flex flex-wrap-reverse">
 				
-				<div className="w-full xl:w-3/4 2xl:w-4/5">
+				<div className="w-full">
 					<BlogPostGrid allMdx = {allMdx} />
 					<Pagination numPages = {pageContext.numPages} currentPage = {pageContext.currentPage} typePage = {`/blog/category/${kebabCase(pageContext.tag)}`} />
 				</div>
 				<MenuTag pageContext = {pageContext} />
-			
+				<MenuTagSlide pageContext = {pageContext} />
 			</div>
 			<Footer />
 		</>
