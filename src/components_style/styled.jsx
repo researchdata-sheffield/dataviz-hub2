@@ -28,7 +28,7 @@ export const ArrowBox = styled.div`
   
   &:before, &:after {
     bottom: 100%;
-    left: 18%;
+    left: 14%;
     border: solid white;
     content: " ";
     height: 0;
@@ -41,8 +41,8 @@ export const ArrowBox = styled.div`
     border-color: transparent;
     ${'' /* triangle border */}
     border-bottom-color: transparent;  
-    border-width: 24px;   
-    margin-left: -24px;
+    border-width: 20px;   
+    margin-left: -20px;
   }
 
   &:after {
@@ -50,8 +50,8 @@ export const ArrowBox = styled.div`
     ${'' /* triangle inside color */}
     border-bottom-color: #fff;
     ${'' /* 4px less than :before */}
-    border-width: 18px;
-    margin-left: -18px;
+    border-width: 15px;
+    margin-left: -15px;
   }
 
   .group:hover > & {
@@ -94,9 +94,9 @@ export const IMG_DIV = styled.div`
   }
 
   .group:hover > &::before {
-    -webkit-box-shadow: inset 0 -4px 0 #00aeef;
-    -moz-box-shadow: inset 0 -4px 0 #00aeef;
-    box-shadow: inset 0 -4px 0 #00aeef;
+    -webkit-box-shadow: inset 0 -3px 0 #00aeef;
+    -moz-box-shadow: inset 0 -3px 0 #00aeef;
+    box-shadow: inset 0 -3px 0 #00aeef;
     position: absolute;
     top: 0;
     left: 0;

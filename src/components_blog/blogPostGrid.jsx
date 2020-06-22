@@ -50,8 +50,8 @@ const blogPostGrid = ({allMdx}) => {
                 </div>
               }
               <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-3/5 lg:max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
-              <ArrowBox className="px-8 pt-6 leading-none text-gray-600">
-                <h1 className="font-bold text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden" style={{minHeight: "0vh", maxHeight: "15vh", fontFamily: "TUoS Stephenson" }}>{title}</h1>
+              <ArrowBox className="px-6 pt-6 leading-none text-gray-600">
+                <h1 className="font-bold text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden font-sans" style={{minHeight: "0vh", maxHeight: "15vh"}}>{title}</h1>
                 <p className="my-2 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
                 <p className="my-2 text-sm pt-2 font-semibold">
                   {node.frontmatter.author.map((author, idx) => (
