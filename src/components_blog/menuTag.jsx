@@ -2,7 +2,7 @@ import React, {useState} from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
-import { FaTags, FaAngleUp, FaAngleDown } from "react-icons/fa"
+import { FaTags,  FaAngleDown } from "react-icons/fa"
 import {FiSearch} from "react-icons/fi"
 //import { slide as Menu } from 'react-burger-menu'
 
@@ -38,7 +38,7 @@ const menuTag = ({ pageContext }) => {
         </div>
       </div>
       <div onClick={() => toggleisOpen(!isOpen)} className='flex justify-center text-2xl absolute top-0 right-0 mr-4 mt-4'>
-        {isOpen ? <FaAngleUp /> : <FaAngleDown />}
+        <FaAngleDown className={` `} style={{transform: isOpen ? "rotate(180deg)" : "", transition: 'all .5s ease'}}  />
       </div>
     </div>
     

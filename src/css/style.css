@@ -42,6 +42,44 @@
  * @import "components/forms";
  */
 
+/* Small (sm) */
+@media (min-width: 640px) {
+
+}
+
+/* Medium (md) */
+@media (min-width: 768px) {
+  
+}
+
+/* Large (lg) */
+@media (min-width: 1024px) { 
+  .fade-box2 {
+    max-height: 125px;
+  }
+}
+
+/* ipap pro (ipadp) */
+@media (min-width: 1030px) { 
+
+}
+
+/* Extra Large (xl) */
+@media (min-width: 1281px) {
+
+}
+
+/* Extra 2 Large (2xl) */
+@media (min-width: 1441px) {
+  .fade-box2 {
+    max-height: 200px;
+  }
+  .fade-box2:after {
+    background-size: 0%;
+  }
+}
+
+
 html {
   scroll-behavior: smooth !important;
 }
@@ -74,7 +112,31 @@ a, div, p, h1, h2, h3, h4, h5, h6 {
 ::selection { background: #00aeef; color: white }
 
 
+.fade-box:before {
+  content:'';
+  width:100%;
+  height:10%;    
+  position:absolute;
+  left:0;
+  bottom:0;
+  z-index: 10;
+  background:linear-gradient(transparent 10px, white);
+}
 
+
+.fade-box2:after {
+  background-size: 100%;
+  background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,rgba(255,255,255,0)),color-stop(100%,#fff));
+  background-image: -moz-linear-gradient(rgba(255,255,255,0),#fff);
+  background-image: -webkit-linear-gradient(rgba(255,255,255,0),#fff);
+  background-image: linear-gradient(rgba(255,255,255,0),#fff);
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc((18.75vw - 30px)/ 2);
+}     
 
 /******* Logo animation ********/
 

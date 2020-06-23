@@ -22,8 +22,8 @@ const menuTagSlide = ({ pageContext }) => {
 
   return (
   
-		<div className="xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 text-gray-100 shadow-2xl text-sm fixed top-0 right-0 min-h-100 hidden xl:block flex flex-row border-l-2 border-gray-700 transition duration-500" 
-      style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.85)", transform: isOpen ? "translateX(0%)" : "translateX(101%)"}}
+		<div className="xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 text-gray-100 shadow-2xl text-sm fixed top-0 right-0 min-h-100 hidden xl:block flex flex-row border-l-2 border-black transition duration-500 z-20" 
+      style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.90)", transform: isOpen ? "translateX(0%)" : "translateX(101%)"}}
     >
       <div onClick={() => toggleisOpen(!isOpen)} className='absolute left-0 min-h-100 -ml-10 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500' style={{transform: 'translateY(-5%)', fontFamily: 'TUoS Blake'}}>
         <div className={`${isOpen ? `hidden` : `block`} px-3 py-4 hover:bg-highlight_2 bg-gray-700 transition duration-500`}>T<br />A<br />G</div>
