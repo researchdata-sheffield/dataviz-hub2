@@ -9,7 +9,7 @@ export const PostBox = styled.div`
   display: block;
   
   &:before {
-    content:'T';
+    content:'';
     width:100%;
     height:100%;    
     position:absolute;
