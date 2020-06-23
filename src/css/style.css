@@ -55,7 +55,7 @@
 /* Large (lg) */
 @media (min-width: 1024px) { 
   .fade-box2 {
-    max-height: 125px;
+    max-height: 120px;
   }
 }
 
@@ -75,7 +75,7 @@
     max-height: 200px;
   }
   .fade-box2:after {
-    background-size: 0%;
+    height: calc((8.75vw - 30px)/2) !important;
   }
 }
 

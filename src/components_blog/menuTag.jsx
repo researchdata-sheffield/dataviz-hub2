@@ -20,7 +20,7 @@ const menuTag = ({ pageContext }) => {
 
 
   return (
-		<div className="w-full px-5 py-1 xl:py-2 text-gray-100 shadow-2xl text-sm xl:hidden relative sticky top-0 left-0 z-10" style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.90)"}}>
+		<div className="w-full px-5 py-1 xl:py-2 text-gray-100 shadow-2xl text-sm xl:hidden relative z-10" style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.90)"}}>
       <div className={`${isOpen ? `` : ``} overflow-hidden pt-1 pb-2`}>
         <div>
           <h1 className="inline-block text-2xl font-semibold mr-4"><FaTags style={{display: "inline-block"}} /> {location.href.includes("/blog/tag/") ? <Link to="/blog/#read">ALL</Link> : "Tags"}</h1>
@@ -29,7 +29,7 @@ const menuTag = ({ pageContext }) => {
             <input id="tagSearch" onChange={handleChange}  className="search__input py-1 pl-2 text-base focus:outline-none pr-3 text-gray-600" style={{maxWidth: "40vw"}} type="text" name="search" placeholder="Search for tags" />
           </div>
         </div>
-        <div className={`${isOpen ? `` : `hidden`} pt-2`}>
+        <div className={`${isOpen ? `` : `hidden`} pt-4`}>
           {filterTag.map((tag) => (
               <Link key={tag} activeStyle={{ color: "white", backgroundColor: "#00aeef" }} partiallyActive={true} to={`/blog/tag/${kebabCase(tag)}`} 
               className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 m-1 bg-gray-100 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold">{tag} ({pageContext.countTags[`${tag}`]})

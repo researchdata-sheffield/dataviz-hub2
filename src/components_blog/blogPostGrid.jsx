@@ -25,23 +25,18 @@ const blogPostGrid = ({allMdx}) => {
         imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
       }
       
-      let description = node.frontmatter.description.split(" ").splice(0, 20)
-      if(description.length < 20){
+      let description = node.frontmatter.description.split(" ").splice(0, 25)
+      if(description.length < 25){
         description = description.join(" ");
       } else {
         description = description.join(" ").concat(" ...");
       }
 
-      let title = node.frontmatter.title.split(" ").splice(0, 14)
-      if(title.length < 14){
-        title = title.join(" ")
-      } else {
-        title = title.join(" ").concat(" ...")
-      }
+      let title = node.frontmatter.title
 
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full sm:w-1/3 xl:w-1/4 min-h-80 ipadp:min-h-120 2xl:min-h-100 overflow-hidden bg-white relative">
+          <div className="w-full md:w-1/3 xl:w-1/4 min-h-80 ipadp:min-h-120 2xl:min-h-100 overflow-hidden bg-white relative">
             <Link className="group" to={node.fields.slug}>
               { node.frontmatter.featured === "true" && 
                 <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300 group-hover:bg-black items-center" style={{zIndex: "3"}}>
@@ -55,18 +50,18 @@ const blogPostGrid = ({allMdx}) => {
                   <h1 className="font-bold text-xll xl:text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden font-sans">{title}</h1>
                   <p className="my-3 text-sm leading-tight group-hover:text-highlight_2" >{description}</p>
                 </div>
-                <div className="relative z-10">
-                  <p className="my-2 text-sm font-semibold">
+                <div className="relative z-10 text-xs">
+                  <p className="mt-3">
                     {node.frontmatter.author.map((author, idx) => (
                       (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
                     ))}
                   </p>
-                  <p className="my-2 text-sm font-semibold">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
+                  <p className="mt-1 mb-2">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
                 </div>         
                 {/* <p className="mt-5 text-base  font-semibold">{node.fields.readingTime.text}</p> */}
               </ArrowBox>
             </Link>
-            <div className="py-3 px-6 2xl:px-8">
+            <div className="px-6 2xl:px-8">
               {node.frontmatter.category.map((cat) => (
                 <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
               ))}
