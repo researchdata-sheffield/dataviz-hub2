@@ -38,7 +38,7 @@ between 2016-2018 [[1]](http://data.dft.gov.uk/road-accidents-safety-data/dftRoa
 <br />
 
 # 2. Setup
-Before we can build a Dash app, let's import all necessary packages and prepare dataset for visualisation.
+Before we can build a Dash app, import all necessary packages and prepare datasets for visualisation.
 
 ```python
 from jupyter_dash import JupyterDash
@@ -68,7 +68,7 @@ for year in years:
 df_acc = pd.concat(file_list)
 ```
 
-Of course you can download the stylesheets (same for other resources) of your choice but make sure it is placed under the **assets** subdirectory. Therefore, you can remove 
+Of course you can download stylesheets of your choice but make sure it is placed under the **assets** subdirectory. By doing this you can remove 
 the *external_stylesheets* parameter in **dash.Dash**. Do open the [stylesheet description](https://codepen.io/chriddyp/pen/bWLwgP) and note classes that you can utilise. The directory strcture 
 you should have is:  
   - Folder
@@ -84,8 +84,8 @@ Download complete files from [here](https://drive.google.com/open?id=1QhPb6r07Hw
 <br />
 
 # 3. Syntax of layout
-To create a layout for our app, we should first familarise with Dash's syntax. If you have used ReactJS before, you might notice there's a lot of similarity between ReactJS 
-and Dash's layout. Suppose I want to create a title and a subtile, in HTML I'll do:  
+To create a layout for our app, we should first familarise with Dash's syntax. If you have used ReactJS before, you might have noticed there's a lot of similarities between ReactJS 
+and Dash's layout. Suppose I want to create a title and a subtile in HTML:  
 ```html
 <div>
   <div>
@@ -94,7 +94,7 @@ and Dash's layout. Suppose I want to create a title and a subtile, in HTML I'll 
   </div>
 </div>
 ```  
-In Dash, the above translate to:  
+In Dash, these translates to:  
 ```python
 html.Div(children=[
   html.Div(children=[
@@ -103,7 +103,7 @@ html.Div(children=[
   ])
 ])
 ```
-Example on adding style and class:
+An example on adding styles and classes:
 ```python
 html.Div(children=[
   html.Div(children=[
@@ -112,7 +112,7 @@ html.Div(children=[
   ], className="seven columns", style={'marginTop': '30'})
 ], className="container")
 ```
-where *html* is the *dash_html_components* we imported. Note there are few differences:
+where *html* is the *dash_html_components* we have imported. Note there are few differences:
  - Tag name are capitalised
  - Nested elements are placed inside the children array
  - Elements are seperate by commas
@@ -120,8 +120,8 @@ where *html* is the *dash_html_components* we imported. Note there are few diffe
  - *className* is replacing *class*
  - You're no longer required to write *px* after numbers supplied to properties such as margin/padding
 
-For more inform on HTML components, visit [here](https://dash.plotly.com/dash-html-components).  
-To run the app, place and run the following line at the end of all your codes:
+For more information on HTML components, visit [here](https://dash.plotly.com/dash-html-components).  
+To run the app, place the following line at the end of all your codes:
 
 ```
 app.run_server(mode="jupyterlab")
@@ -130,7 +130,7 @@ app.run_server(mode="jupyterlab")
 <br />
 
 # 4. Create a layout
-Now let's create a actual layout for the app. The code below is the base of app's layout.
+Now let's create a actual layout for the app. The code block shown below is the base of an app's layout.
 ```python
 app.layout = html.Div(children=[
 ])
@@ -147,14 +147,19 @@ app.layout = html.Div(children=[
 we get the header below(and I have changed the background color in html class in style.css):
 ![header](./Fig2.png)
 
-Before you create a layout in Dash, it would be a good idea to have a sketch of what the app would look like, for example draw it on the paper (what I did) or even use powerpoint to 
-design the layout. You could also look at the [Dash Gallery](https://dash-gallery.plotly.host/Portal/) for some inspration. I'm using use the following template for my app:
+Before you create a layout in Dash, it would be a good idea to have a sketch of what the app would look like, 
+for example draw it on the paper (what I did) or even use powerpoint to design the layout. You could also 
+look at the [Dash Gallery](https://dash-gallery.plotly.host/Portal/) for some inspration. I'm using use 
+the following template for my app:
 ![fig3](./Fig3.png)
 
-To make the app interactive, **[Dash core components](https://dash.plotly.com/dash-core-components)** are vita, actions of app users on these components acts as inputs and we can modify 
-visualisations (outputs) accordingly. We will know more about connecting inputs and outputs in the <a href="#5-interactive" anchor>interactive section</a>, for now let's just focus on the 
-layout of inputs and output components. It is your choice of which components to use, of course it will also depends on your data. For datasets in this post, I've chosen 
-variables *Date*, *Day of Week*, *Accident Severity*, and *Speed limit* as **inputs**. Inside the layout, I've added the following:
+To make the app interactive, **[Dash core components](https://dash.plotly.com/dash-core-components)** are 
+vita, actions of app users on these components acts as inputs and we can modify visualisations (outputs) 
+accordingly. We will know more about connecting inputs and outputs in 
+the <a href="#5-interactive" anchor>interactive section</a>, for now we just focus on the 
+layout of inputs and output components. It is your choice of which components to use, of course it will 
+also depends on your data. For datasets in this post, I've chosen variables *Date*, *Day of Week*, 
+*Accident Severity*, and *Speed limit* as **inputs**. Inside the layout, I've added the following:
 
 ```python
 html.Div(children=[
@@ -333,7 +338,7 @@ def update_statistics(start_date, end_date, input_days, input_acc_sev, input_spe
     return len(df_update), sum(df_update['Number_of_Casualties']), sum(df_update['Number_of_Vehicles']), days.days
 ```
 
-The first part of the callback is to specify inputs and outputs for your interaction. If you have only one output/input, 
+The first part of the callback specify inputs and outputs for your interaction. If you have only one output/input, 
 do not use square bracket around it as this will cause errors. For both outputs and inputs, you'll need to specify 
 **component_id** and **component_property**.  **component_id** is the id you have previously given to components, and 
 **component_property** is the property of the component you would like to pass. For example, `Output('no_veh', 'children'),` 

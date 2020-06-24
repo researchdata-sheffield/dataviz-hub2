@@ -23,9 +23,9 @@ class Search_Home extends Component {
             {this.state.results.slice(0,5).map((page, i) => {
               let description = page.description.split(" ").splice(0, 28)
               if(description.length < 28){
-                description = description.join(" ").concat(".");
+                description = description.join(" ")
               } else {
-                description = description.join(" ").concat(" ...");
+                description = description.join(" ").concat(" ...")
               }
               let category = page.category
 

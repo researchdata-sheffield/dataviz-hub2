@@ -16,13 +16,15 @@ for your notebooks. You can also use widgets to synchronize stateful and statele
 <br />
 
 # 1. Prerequsites
-This documentation follows from <Link to="/blog/07/05/2020/dataviz_stats_2">'Plots with Python'</Link> and assumes some prior knowledge of [Python](https://www.python.org/). 
-If you need assistance with Python, [python.org](https://docs.python.org/3/tutorial/index.html) provides documentation and tutorials. While this post 
-introduces some basic elements of *ipywidgets*, you should also rely on the latest documentations 
-on [here](https://ipywidgets.readthedocs.io/en/latest/index.html).
+This documentation follows from <Link to="/blog/07/05/2020/dataviz_stats_2">'Plots with Python'</Link> and 
+assumes some prior knowledge of [Python](https://www.python.org/). 
+If you need assistance with Python, [python.org](https://docs.python.org/3/tutorial/index.html) provides 
+documentation and tutorials. While this post introduces some basic elements of *ipywidgets*, you should 
+also rely on the latest documentations on [here](https://ipywidgets.readthedocs.io/en/latest/index.html).
 
 To follow this tutorial, it is best to use [JupyterLab](https://jupyterlab.readthedocs.io/en/stable/getting_started/installation.html) (2.0 or above). If you have time, 
-read <Link to="/blog/07/05/2020/dataviz_stats_2">Plot with Python</Link> (you'll find codes are coming from this post). Make sure the following packages are installed:  
+read <Link to="/blog/07/05/2020/dataviz_stats_2">Plot with Python</Link> (you'll find codes are coming from 
+this post). Make sure the following packages are installed:  
  - [Numpy](https://numpy.org/)
  - [Pandas](https://pandas.pydata.org/)
  - [seaborn](https://seaborn.pydata.org/index.html)
@@ -94,7 +96,7 @@ After we have created widgets, how do we make it to interact with other componen
 several functions that creates user interface controls for interactive actions:  
  - **interact** - basic level function, generates and display UI for you
  - **interactive** - different to *interact*, returns a widget instance rather than display it 
- - **interact_manual** - provides restriction on execution so updates will not be trigger until permission grant by you
+ - **interact_manual** - provides restriction on execution so updates will not be trigger until permission granted by you
  - **interactive_output** - more flexibility in addition to *interact*, allows you to control layout of widgets 
 
 This post will only includes contents on *interactive_output*, if you're interested in other functions, visit 
@@ -110,7 +112,7 @@ widgets.HBox([widgets.VBox([start_date, end_date]), out])
 ```
 
 For all interact functions, you're required to provide a custom function for the first parameter, and specify 
-widgets as inputs for your custom function. In here we defined a function called **f** that takes two arguments 
+widgets as inputs for your custom function. In here I defined a function called **f** that takes two arguments 
 *start* and *end*, then return a message with their values onto the screen. Then in the *interactive_output* function 
 we pass the **f** function and two widgets (*start_date* and *end_date*) defined earlier. Note that in the **f** function
 *start* and *end* are values of two widgets rather than widget instances, that's why you can use it without calling 

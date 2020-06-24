@@ -15,10 +15,11 @@ import PropTypes from 'prop-types'
  */
 
 const BackgroundSection = ({className, children, Height}) => (
+  
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "blog/arts.jpg" }) {
+        desktop: file(relativePath: { eq: "blog/leaf.jpg" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64

@@ -23,16 +23,15 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 			/>
 			<Header />
 			<BackgroundSection className="items-center justify-center text-center" Height={`${pageContext.currentPage != 1 ? `35vh` : ``}`} >
-
-				<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>
-					<Flip cascade top delay={700}>
+				<Flip cascade top delay={700}>
+					<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>	
 						<h1 className="text-5xl">Blog</h1>
-						<p className="text-md" >scientia potentia est.</p>
-					</Flip>
-				</div>
+						<p className="text-md md:max-w-30">the greatest value of a picture is when it forces us to notice what we never expected to see.</p>
+					</div>
+				</Flip>
 				<Flip cascade top delay={700}>
 					<Link to="/blog#read">
-						<div><GreyButton className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 text-sm`}>Start reading</GreyButton></div>
+						<div><GreyButton className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 text-sm hover:bg-gray-700`}>Start reading</GreyButton></div>
 					</Link>
 				</Flip>
 

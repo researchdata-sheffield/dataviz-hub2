@@ -20,7 +20,7 @@ const menuTag = ({ pageContext }) => {
 
 
   return (
-		<div className="w-full px-5 py-1 xl:py-2 text-gray-100 shadow-2xl text-sm xl:hidden relative z-10" style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.90)"}}>
+		<div className="w-full px-5 py-1 xl:py-2 text-gray-100 shadow-2xl text-sm xl:hidden relative z-10" style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.80)"}}>
       <div className={`${isOpen ? `` : ``} overflow-hidden pt-1 pb-2`}>
         <div>
           <h1 className="inline-block text-2xl font-semibold mr-4"><FaTags style={{display: "inline-block"}} /> {location.href.includes("/blog/tag/") ? <Link to="/blog/#read">ALL</Link> : "Tags"}</h1>

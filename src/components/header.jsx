@@ -11,6 +11,7 @@ import { A } from "../components_style/blogPostStyle"
 const Header = () => {
   const [isExpanded, toggleExpansion] = useState(false);
   const [isScroll, toggleScrolled] = useState(false);
+  const wlp = window.location.pathname
 
   useEffect( () => {
     function handleScroll() {
@@ -49,33 +50,40 @@ const Header = () => {
 
   
   const NavLink = (props) => {
-    const condition = `${isScroll ? `text-white hover:text-highlight_2t` : [ window.location.pathname.includes("/blog/") ? `text-gray-300 hover:text-white` : `text-gray-500 hover:text-white`]}`
+    // Check path contains blog => check if it is tag/cat main page. Assign different colour
+    
+    const navColorInBlog = `${isScroll ? `text-white hover:text-highlight_2t` : [wlp.includes("/blog/") ? 
+                              [wlp.includes("/blog/category") ? 
+                                `text-gray-800 hover:text-white` : [wlp.includes("/blog/tag/") ? 
+                                  `text-gray-800 hover:text-white` : `text-gray-300 hover:text-white`]
+                              ] 
+                            : `text-gray-500 hover:text-white`]}`
     
     switch(props.type){
       case 'a':
         return (
-          <A {...props} className={`${condition} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`} style={{background: 'none'}}>
+          <A {...props} className={`${navColorInBlog} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`} style={{background: 'none'}}>
             {props.children}
           </A>
         )
     
       case 'Link':
         return (
-          <Link {...props} className={`${condition} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}>
+          <Link {...props} className={`${navColorInBlog} transition duration-500 ease-in-out md:mr-2 inline-block no-underline px-4 py-1`}>
             {props.children}
           </Link>
         )
       
       case 'a-icon':
         return (
-          <A {...props} className={`${condition} flex items-center`} style={{background: 'none'}}>
+          <A {...props} className={`${navColorInBlog} flex items-center`} style={{background: 'none'}}>
             {props.children}
           </A>
         )
 
       case 'Link-icon':
         return (
-          <Link {...props} className={`${condition} flex items-center`}>
+          <Link {...props} className={`${navColorInBlog} flex items-center`}>
             {props.children}
           </Link>
         )
@@ -85,12 +93,12 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative">
-     
-      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10`} style={{backgroundColor: `${isScroll ? "rgba(73,73,73,.9)" : [window.location.pathname.includes("/blog/") ? "" : ""]}`, transition: "top 0.8s", overflow: "hidden"}} > 
-        
+      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+        style={{backgroundColor: `${isScroll ? "rgba(73,73,73,.9)" : [wlp.includes("/blog/") ? "" : ""]}`, transition: "top 0.8s"}}
+      > 
         <div className="flex items-center flex-shrink-0 text-white mr-5">
-          <A className={`${isScroll ? `` : [window.location.pathname === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></A>
-          <div className={`${isScroll ? [window.location.pathname === "/" ? `text-gray-300` : ``] : [window.location.pathname === "/" ? `hidden` : `text-white`]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
+          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></A>
+          <div className={`${isScroll ? [wlp === "/" ? `text-gray-300` : ``] : [wlp === "/" ? `hidden` : `text-white`]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>

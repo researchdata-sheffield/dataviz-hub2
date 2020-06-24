@@ -95,7 +95,7 @@ a:hover {
 p {
   overflow-wrap: break-word;
   word-wrap: break-word;
-  word-break: normal;
+  word-break: keep-all;
   line-break: strict;
   hyphens: none;
   -webkit-hyphens: none;

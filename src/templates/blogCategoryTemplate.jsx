@@ -22,10 +22,10 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 			<Header />
-			<BackgroundSection className="flex items-center justify-center text-center shadow-2xl" Height="35vh">
+			<BackgroundSection className="flex items-center justify-center text-center shadow-2xl bg-black" Height="50vh">
 				<div className="text-white" style={{textShadow: "#000000 0px 0px 5px"}}>
 					<h1 className="text-4xl">{pageContext.category}</h1>
-					<p className="text-sm">scientia potentia est.</p>
+					<p className="text-sm md:max-w-30">the greatest value of a picture is when it forces us to notice what we never expected to see.</p>
 				</div>
 				
 				<MenuCategory pageContext = {pageContext} />

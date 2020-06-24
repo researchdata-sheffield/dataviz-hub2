@@ -82,16 +82,16 @@ class Search extends Component {
 
                 let title = item.title.split(" ").splice(0, 8)
                 if(title.length < 8){
-                  title = title.join(" ").concat(".");
+                  title = title.join(" ")
                 } else {
-                  title = title.join(" ").concat(" ...");
+                  title = title.join(" ").concat(" ...")
                 }
 
                 let description = item.description.split(" ").splice(0, 30)
                 if(description.length < 30){
-                  description = description.join(" ").concat(".");
+                  description = description.join(" ")
                 } else {
-                  description = description.join(" ").concat(" ...");
+                  description = description.join(" ").concat(" ...")
                 }
 
                 return( 
