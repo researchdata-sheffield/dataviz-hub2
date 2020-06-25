@@ -6,19 +6,33 @@ import tw, { styled as styled_twin } from 'twin.macro'
 
 export const Link = styled(gatsby_Link)`
   color: black;
-  background: linear-gradient(180deg, transparent calc(100% - 2px), rgba(0,173,239,1) 0);
+  padding-bottom: 4px;
+  background: linear-gradient(to right,#00aeef 0%, #00aeef 98%);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: right 85%;
+  text-shadow: none;
+  transition: .3s linear;
 
   &:hover {
     color: #00aeef;
+    animation: inline-link-hover.6s ease-out 1;
   }
 `
 
 export const A_a = styled.a`
   color: black;
-  background: linear-gradient(180deg, transparent calc(100% - 2px), rgba(0,173,239,1) 0);
+  padding-bottom: 4px;
+  background: linear-gradient(to right,#00aeef 0%,#00aeef 98%);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: right 85%;
+  text-shadow: none;
+  transition: .3s linear;
 
   &:hover, &:link:active, &:visited:active, &:visited:hover {
     color: #00aeef;
+    animation: inline-link-hover .6s ease-out 1;
   }
 
   &:visited {

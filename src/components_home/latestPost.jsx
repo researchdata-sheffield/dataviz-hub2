@@ -15,7 +15,7 @@ const latestPost = ({ latestPost }) => {
 
   return (
     
-    <div className="w-full flex flex-wrap border-l-1 xl:border-l-2 border-black bg-black">
+    <div className="w-full flex flex-wrap border-l-1 xl:border-l-2 border-black bg-black pt-16">
       {latestPost.edges.map(({ node }) => {
         let imagesrc 
         if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
@@ -35,7 +35,7 @@ const latestPost = ({ latestPost }) => {
         return (
           <Fade  key={node.id} duration={2000} fraction={0.3}>
             <div onClick={() => {navigate(`${node.fields.slug}`)}} 
-              className="rounded-lg border-1 ipadp:border-2 border-black flex-auto flex-wrap ipadp:greyScale-100 hover:greyScale-0 min-h-50 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 cursor-pointer" 
+              className=" border-1 ipadp:border-2 border-black flex-auto flex-wrap ipadp:greyScale-100 hover:greyScale-0 min-h-50 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 cursor-pointer" 
               style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center"}}
             >
               <div className="h-full w-full bg-light_black group-hover:bg-transparent transition ease-in-out duration-700">

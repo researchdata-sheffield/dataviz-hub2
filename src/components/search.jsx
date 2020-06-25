@@ -11,7 +11,7 @@ import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 import Zoom from 'react-reveal/Zoom'
 import Fade from 'react-reveal/Fade'
-import bg from "../images/search/pat.jpg"
+import bg from "../images/search/bg.jpg"
 
 // Search component
 class Search extends Component {
@@ -63,9 +63,9 @@ class Search extends Component {
 
         return (
           <div>
-            <div className="bg-black text-gray-100 py-2">Found {this.state.results.length} results</div>
+            <div className="bg-orange-700 text-gray-100 py-2">Found {this.state.results.length} results</div>
 
-            <div className="flex flex-wrap my-5 xl:my-8 justify-center">
+            <div className="flex flex-wrap py-8 xl:py-12 justify-center bg-gray-100">
               {this.state.results.map((item, i) => {
                 let imagesrc
   
@@ -122,27 +122,27 @@ class Search extends Component {
         )
       } else if (this.state.query.length > 2) {
         return (
-          <div className="bg-black text-gray-100 py-2">No results for {this.state.query}</div>
+          <div className="bg-orange-700 text-gray-100 py-2">No results for {this.state.query}</div>
         )
           
       } else if (
         this.state.query.length > 0
       ) {
         return (
-          <div className="bg-black text-gray-100 py-2">Please insert at least 3 characters</div>
+          <div className="bg-orange-700 text-gray-100 py-2">Please insert at least 3 characters</div>
         )
       } else {
         return (
-          <div className="bg-black text-gray-100 py-2"> </div>
+          <div className="bg-orange-700 text-gray-100 py-2">Awaiting for your input ...</div>
         )
       }
 
     }
 
     return (
-      <div className={`${this.props.classNames} mb-32 relative text-gray-700 w-full text-center`}>
-        <div className="min-h-30 pt-24 pb-16" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
-          <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-2">what&apos;s next? </p></Zoom>
+      <div className={`${this.props.classNames} relative text-gray-700 w-full text-center`}>
+        <div className="min-h-50 pt-36 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
+          <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-3 font-semibold">Search@dataviz.shef</p></Zoom>
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
               <FiSearch className="inline-block text-center text-3xl -mt-1" />
@@ -150,7 +150,7 @@ class Search extends Component {
             </div>
           </Fade>
         </div>
-        <div className="search__list">
+        <div className="search__list bg-gray-100">
           <ResultList />
         </div>
       </div>

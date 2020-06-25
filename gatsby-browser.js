@@ -5,8 +5,10 @@
  */
 
 
+import "./src/css/index.css";
 import "./src/css/style.css";
 import "./src/css/post.css";
+import "./src/css/animation.css";
 import "tailwindcss/dist/base.css"
 
 export const onClientEntry = () => {

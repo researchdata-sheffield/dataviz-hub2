@@ -1,0 +1,177 @@
+/**
+ * This injects Tailwind's base styles, which is a combination of
+ * Normalize.css and some additional base styles.
+ *
+ * You can see the styles here:
+ * https://github.com/tailwindcss/tailwindcss/blob/master/css/base.css
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/base";
+ */
+
+/* purgecss start ignore */
+@tailwind base;
+
+
+
+
+/**
+ * This injects any component classes registered by plugins.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/components";
+ */
+ @tailwind components;
+/* purgecss end ignore */
+
+/**
+ * Here you would add any of your custom component classes; stuff that you'd
+ * want loaded *before* the utilities so that the utilities could still
+ * override them.
+ *
+ * Example:
+ *
+ * .btn { ... }
+ * .form-input { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "components/buttons";
+ * @import "components/forms";
+ */
+
+html {
+  scroll-behavior: smooth !important;
+}
+
+a {
+  color: #4e4e4e;
+}
+
+a:hover {
+  color: #00aeef;
+}
+
+p {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: keep-all;
+  line-break: strict;
+  hyphens: none;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;  
+}
+
+a, div, p, h1, h2, h3, h4, h5, h6 {
+  text-overflow: ellipsis;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+}
+
+::-moz-selection { background: #00aeef; color: white }
+::selection { background: #00aeef; color: white }
+
+
+
+/**
+ * This injects all of Tailwind's utility classes, generated based on your
+ * config file.
+ *
+ * If using `postcss-import`, use this import instead:
+ *
+ * @import "tailwindcss/utilities";
+ */
+
+@tailwind utilities;
+/**
+ * Here you would add any custom utilities you need that don't come out of the
+ * box with Tailwind.
+ *
+ * Example :
+ *
+ * .bg-pattern-graph-paper { ... }
+ * .skew-45 { ... }
+ *
+ * Or if using a preprocessor or `postcss-import`:
+ *
+ * @import "utilities/background-patterns";
+ * @import "utilities/skew-transforms";
+ */
+
+.noScrollBar {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.noScrollBar::-webkit-scrollbar { 
+display: none;  /* Safari and Chrome */
+}
+
+@responsive{
+  @variants hover, group-hover {
+    .greyScale-0 {
+      filter: grayscale(0%);
+    }
+    .greyScale-20 {
+      filter: grayscale(20%);
+    }
+    .greyScale-40 {
+      filter: grayscale(40%);
+    }
+    .greyScale-60 {
+      filter: grayscale(60%);
+    }
+    .greyScale-80 {
+      filter: grayscale(80%);
+    }
+    .greyScale-100 {
+      filter: grayscale(100%);
+    }
+  
+    .blur-0 {
+      filter: blur(0px);
+    }
+    .blur-2 {
+      filter: blur(2px);
+    }
+    .blur-4 {
+      filter: blur(4px);
+    }
+    .blur-6 {
+      filter: blur(6px);
+    }
+    .blur-8 {
+      filter: blur(8px);
+    }
+    .blur-10 {
+      filter: blur(10px);
+    }
+
+    .brightness-0 {
+      filter: brightness(0%);
+    }
+    .brightness-20 {
+      filter: brightness(20%);
+    }
+    .brightness-40 {
+      filter: brightness(40%);
+    }
+    .brightness-60 {
+      filter: brightness(60%);
+    }
+    .brightness-80 {
+      filter: brightness(80%);
+    }
+    .brightness-90 {
+      filter: brightness(90%);
+    }
+    .brightness-100 {
+      filter: brightness(100%);
+    }
+
+  }
+}
+
+

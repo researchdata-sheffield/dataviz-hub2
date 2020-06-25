@@ -30,6 +30,14 @@ module.exports = {
         'menu_green': '#99f318',
         'black': '#000',
       },
+      borderRadius: {
+        'xl': '0.675rem',
+        '2xl': '0.85rem',
+        '3xl': '1.025rem',
+        '4xl': '1.2rem',
+        '5xl': '1.375rem',
+        '6xl': '1.5rem'
+      },
       borderWidth: {
         '1': '1px',
         '3': '3px',
@@ -117,6 +125,7 @@ module.exports = {
         '25': '25vw',
         '27': '27vw',
         '30': '30vw',
+        '35': '35vw',
         '40': '40vw',
         '50': '50vw',
         '55': '55vw',

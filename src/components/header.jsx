@@ -54,8 +54,8 @@ const Header = () => {
     
     const navColorInBlog = `${isScroll ? `text-white hover:text-highlight_2t` : [wlp.includes("/blog/") ? 
                               [wlp.includes("/blog/category") ? 
-                                `text-gray-800 hover:text-white` : [wlp.includes("/blog/tag/") ? 
-                                  `text-gray-800 hover:text-white` : `text-gray-300 hover:text-white`]
+                                `text-gray-500 hover:text-white` : [wlp.includes("/blog/tag/") ? 
+                                  `text-gray-500 hover:text-white` : `text-gray-300 hover:text-white`]
                               ] 
                             : `text-gray-500 hover:text-white`]}`
     

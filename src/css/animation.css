@@ -1,0 +1,148 @@
+/******* Logo animation ********/
+
+.textanimate {
+  -webkit-animation: color-change 18s infinite;
+  -moz-animation: color-change 18s infinite;
+  -o-animation: color-change 18s infinite;
+  -ms-animation: color-change 18s infinite;
+  animation: color-change 18s infinite;
+}
+
+@-webkit-keyframes color-change {
+  0% { color: white; }
+  25% { color: #00aeef; }
+  40% { color: #ea005e; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
+}
+@-moz-keyframes color-change {
+  0% { color: white; }
+  25% { color: #00aeef; }
+  40% { color: #ea005e; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
+}
+@-ms-keyframes color-change {
+  0% { color: white; }
+  25% { color: #00aeef; }
+  40% { color: #ea005e; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
+}
+@-o-keyframes color-change {
+  0% { color: white; }
+  25% { color: #00aeef; }
+  40% { color: #ea005e; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
+}
+@keyframes color-change {
+  0% { color: white; }
+  25% { color: #00aeef; }
+  40% { color: #ea005e; }
+  55% { color: #A3CE71; }
+  70% { color: #a0aec0; }
+  85% { color: rgb(0, 0, 0); }
+}
+
+
+/******
+* Typing
+*/
+@keyframes typing {
+  from { 
+      width: 0%;
+      opacity: 0;
+      border-right: 2px solid #00aeef;
+  }
+  to { 
+      opacity: 1;
+      width: 100%;
+      border-right: 0;
+  }
+}
+
+@keyframes blink {
+  from, to { 
+      border-color: transparent 
+  }
+  50% { 
+      border-color: #00aeef; 
+  }
+}
+
+
+/******
+* Scroll Down Button
+*/
+@-webkit-keyframes sdb {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+@keyframes sdb {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-45deg) translate(-20px, 20px);
+    opacity: 0;
+  }
+}
+
+/******
+* Hover link
+*/
+@keyframes inline-link-hover {
+  0% {
+    background-size:100% 2px;
+    background-position:left 85%;
+  }
+  49% {
+    background-size:0px 2px;
+    background-position:left 85%;
+  }
+  50%{ 
+    background-size:0px 2px;
+    background-position:right 85%;
+  }
+  100%{ 
+    background-size:100% 2px;
+    background-position:right 85%;
+}
+}
+
+@keyframes link-hover{ 
+  0% {
+    transform:scaleX(1);
+    transform-origin:top right;
+  }
+  49% {
+    transform:scaleX(0);
+    transform-origin:top right;
+  }
+  50% {
+    transform:scaleX(0);
+    transform-origin:top left;
+  } 
+  100%{ 
+    transform:scaleX(1);
+    transform-origin:top left;
+  }
+}

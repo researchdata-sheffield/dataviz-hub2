@@ -6,7 +6,7 @@ import { FaGoogle, FaSlack } from "react-icons/fa"
 const Footer = () => {
   
   return (
-  <div className="bg-black px-10 py-8 text-sm relative z-10">
+  <div className="bg-black px-10 py-8 lg:px-16 lg:py-10 text-sm relative z-10">
     <div className="sm:flex mb-4">
       <div className="sm:w-2/12 h-auto">
           <div className="mb-2"><Link className="text-gray-100 font-semibold text-md" to="/">Dataviz.Shef</Link></div>
@@ -38,9 +38,7 @@ const Footer = () => {
       <div className="sm:w-2/12 h-auto sm:mt-0 mt-8">
                 <div className="text-gray-100 text-md mb-2 font-semibold">Latest News</div>
           <ul className="list-reset leading-normal">
-            <li className="text-gray-500 hover:text-highlight_2">Coming soon</li>
-            <li className="text-gray-500 hover:text-highlight_2">Coming soon</li>
-            <li className="text-gray-500 hover:text-highlight_2">Coming soon</li>
+            <li className="text-gray-500 hover:text-highlight_2">In progress</li>
           </ul>
       </div>
       
@@ -68,7 +66,7 @@ const Footer = () => {
         
       </div>
   </div>
-  <p className="text-gray-500 leading-normal text-center text-sm pt-8"> © 2020  The University of Sheffield</p>
+  <p className="text-gray-500 leading-normal text-center text-sm pt-8"> © 2020  The University of Sheffield.</p>
 
 </div>
   )

@@ -1,47 +1,3 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://github.com/tailwindcss/tailwindcss/blob/master/css/base.css
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/base";
- */
-
-/* purgecss start ignore */
-@tailwind base;
-
-
-
-
-/**
- * This injects any component classes registered by plugins.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/components";
- */
- @tailwind components;
-/* purgecss end ignore */
-
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "components/buttons";
- * @import "components/forms";
- */
-
 /* Small (sm) */
 @media (min-width: 640px) {
 
@@ -79,39 +35,9 @@
   }
 }
 
-
-html {
-  scroll-behavior: smooth !important;
-}
-
-a {
-  color: #4e4e4e;
-}
-
-a:hover {
-  color: #00aeef;
-}
-
-p {
-  overflow-wrap: break-word;
-  word-wrap: break-word;
-  word-break: keep-all;
-  line-break: strict;
-  hyphens: none;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;  
-}
-
-a, div, p, h1, h2, h3, h4, h5, h6 {
-  text-overflow: ellipsis;
-  -ms-text-overflow: ellipsis;
-  -o-text-overflow: ellipsis;
-}
-
-::-moz-selection { background: #00aeef; color: white }
-::selection { background: #00aeef; color: white }
-
-
+/*****
+* Linear Faded box for blog grid
+*/
 .fade-box:before {
   content:'';
   width:100%;
@@ -138,62 +64,12 @@ a, div, p, h1, h2, h3, h4, h5, h6 {
   height: calc((18.75vw - 30px)/ 2);
 }     
 
-/******* Logo animation ********/
 
-.textanimate {
-  -webkit-animation: color-change 18s infinite;
-  -moz-animation: color-change 18s infinite;
-  -o-animation: color-change 18s infinite;
-  -ms-animation: color-change 18s infinite;
-  animation: color-change 18s infinite;
-}
-
-@-webkit-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
-}
-@-moz-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
-}
-@-ms-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
-}
-@-o-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
-}
-@keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
-}
-
-
-/******** Scroll to Top button ********/
-
+/*******
+* Scroll to Top button 
+*/
 .scrollTop-btn {
-position: fixed;
+  position: fixed;
   bottom: 20px;
   right: 20px;
   background: rgba(0, 0, 0, 0.8);
@@ -208,10 +84,10 @@ position: fixed;
   text-align: center;
   opacity: 0;
 }
-
+  
 .scrollTop-btn:hover {
 /*     background: rgba(0, 0, 0, 0.9); */
-	background: #00aeef;
+  background: #00aeef;
   z-index: 99;
 }
 
@@ -230,8 +106,6 @@ position: fixed;
 }
 
 
-
-
 /*********  
 Home Search bar & animation 
 **********
@@ -248,43 +122,21 @@ Home Search bar & animation
 }
 
 .typewriter p:nth-child(2) {
-    white-space:nowrap;
-    overflow:hidden;
-    opacity: 0;    
-    -webkit-animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
-    animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
-    -webkit-animation-delay: 2s; 
-    animation-delay: 2s;
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
-}
-
-@keyframes typing {
-  from { 
-      width: 0%;
-      opacity: 0;
-      border-right: 2px solid #00aeef;
-  }
-  to { 
-      opacity: 1;
-      width: 100%;
-      border-right: 0;
-  }
-}
-
-@keyframes blink {
-  from, to { 
-      border-color: transparent 
-  }
-  50% { 
-      border-color: #00aeef; 
-  }
+  white-space:nowrap;
+  overflow:hidden;
+  opacity: 0;    
+  -webkit-animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
+  animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
+  -webkit-animation-delay: 2s; 
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 
-/*********  
-Home Scroll down button & animation  
-***************/
+/******** 
+*Home Scroll down button & animation  
+**/
 #scrollDown-btn span {
   position: absolute;
   top: 0;
@@ -297,168 +149,28 @@ Home Scroll down button & animation
   box-sizing: border-box;
 }
 
-@-webkit-keyframes sdb {
-  0% {
-    -webkit-transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    -webkit-transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
-}
-@keyframes sdb {
-  0% {
-    transform: rotate(-45deg) translate(0, 0);
-    opacity: 0;
-  }
-  50% {
-    opacity: 1;
-  }
-  100% {
-    transform: rotate(-45deg) translate(-20px, 20px);
-    opacity: 0;
-  }
+
+/******** 
+* Link hover animation 
+**/
+.a-inline {
+  color: #000000;
+  padding-bottom: 4px;
+  background: linear-gradient(to right,#00aeef 0%,#00aeef 98%);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: right 85%;
+  text-shadow: none;
+  transition: .3s linear;
 }
 
-.arrow_box {
-  position: relative;
-  background-color: black;
-	border-top: 4px solid black;
-}
-.arrow_box:after, .arrow_box:before {
-	bottom: 100%;
-	left: 18%;
-	border: solid transparent;
-	content: " ";
-	height: 0;
-	width: 0;
-	position: absolute;
-  pointer-events: none;
+.a-line-hover {
+  background: none;
 }
 
-.arrow_box:after {
-	border-color: rgba(136, 183, 213, 0);
-	border-bottom-color: #000000;
-	border-width: 20px;
-  margin-left: -20px;
+.a-inline:hover, .a-inline:link:active, .a-inline:visited:active, .a-inline:visited:hover, 
+.a-inline-hover:hover, .a-inline-hover:link:active, .a-inline-hover:visited:active, .a-inline-hover:visited:hover
+{
+  color: #00aeef;
+  animation: inline-link-hover .6s ease-out 1;
 }
-.arrow_box:before {
-	border-color: rgba(194, 225, 245, 0);
-	border-bottom-color: #000000;
-	border-width: 26px;
-  margin-left: -26px;
-}
-
-.group:hover > .arrow_box {
-  border-top: 4px solid #00aeef;
-}
-.group:hover > .arrow_box:before {
-  border-bottom-color: #00aeef;
-}
-
-
-
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- *
- * If using `postcss-import`, use this import instead:
- *
- * @import "tailwindcss/utilities";
- */
-
-@tailwind utilities;
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- *
- * Or if using a preprocessor or `postcss-import`:
- *
- * @import "utilities/background-patterns";
- * @import "utilities/skew-transforms";
- */
-
-.noScrollBar {
-  -ms-overflow-style: none;  /* Internet Explorer 10+ */
-  scrollbar-width: none;  /* Firefox */
-}
-
-.noScrollBar::-webkit-scrollbar { 
-display: none;  /* Safari and Chrome */
-}
-
-@responsive{
-  @variants hover, group-hover {
-    .greyScale-0 {
-      filter: grayscale(0%);
-    }
-    .greyScale-20 {
-      filter: grayscale(20%);
-    }
-    .greyScale-40 {
-      filter: grayscale(40%);
-    }
-    .greyScale-60 {
-      filter: grayscale(60%);
-    }
-    .greyScale-80 {
-      filter: grayscale(80%);
-    }
-    .greyScale-100 {
-      filter: grayscale(100%);
-    }
-  
-    .blur-0 {
-      filter: blur(0px);
-    }
-    .blur-2 {
-      filter: blur(2px);
-    }
-    .blur-4 {
-      filter: blur(4px);
-    }
-    .blur-6 {
-      filter: blur(6px);
-    }
-    .blur-8 {
-      filter: blur(8px);
-    }
-    .blur-10 {
-      filter: blur(10px);
-    }
-
-    .brightness-0 {
-      filter: brightness(0%);
-    }
-    .brightness-20 {
-      filter: brightness(20%);
-    }
-    .brightness-40 {
-      filter: brightness(40%);
-    }
-    .brightness-60 {
-      filter: brightness(60%);
-    }
-    .brightness-80 {
-      filter: brightness(80%);
-    }
-    .brightness-90 {
-      filter: brightness(90%);
-    }
-    .brightness-100 {
-      filter: brightness(100%);
-    }
-
-  }
-}
-
-

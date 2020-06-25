@@ -26,8 +26,8 @@ const menuTagSlide = ({ pageContext }) => {
       style={{fontFamily: "TUoS Blake", backgroundColor: "rgba(0,0,0,0.90)", transform: isOpen ? "translateX(0%)" : "translateX(101%)"}}
     >
       <div onClick={() => toggleisOpen(!isOpen)} className='absolute left-0 min-h-100 -ml-10 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500' style={{transform: 'translateY(-5%)', fontFamily: 'TUoS Blake'}}>
-        <div className={`${isOpen ? `hidden` : `block`} px-3 py-4 hover:bg-highlight_2 bg-gray-700 transition duration-500`}>T<br />A<br />G</div>
-        <div className={`${isOpen ? `block` : `hidden`} px-3 py-4 bg-highlight_2 hover:bg-gray-700 transition duration-500 font-bold`}><IoMdClose /></div>
+        <div className={`${isOpen ? `hidden` : `block`} px-3 py-4 hover:bg-highlight_2 bg-gray-700 transition duration-500 shadow-xl`}>T<br />A<br />G</div>
+        <div className={`${isOpen ? `block` : `hidden`} px-3 py-4 bg-highlight_2 hover:bg-gray-700 transition duration-500 shadow-xl font-bold`}><IoMdClose /></div>
       </div>
       <div className="overflow-hidden lg:py-2 xl:py-6">
         <div>

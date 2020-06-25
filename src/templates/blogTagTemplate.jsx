@@ -25,7 +25,7 @@ const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 			<BackgroundSection className="flex items-center justify-center text-center shadow-2xl" Height="50vh">
 				<div className="text-white" style={{textShadow: "#000000 0px 0px 5px"}}>
 					<h1 className="text-4xl">Tag: {pageContext.tag}</h1>
-					<p className="text-sm md:max-w-30">the greatest value of a picture is when it forces us to notice what we never expected to see.</p>
+					<p className="text-sm md:max-w-35">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p>
 				</div>
 				
 				<MenuCategory pageContext = {pageContext} />

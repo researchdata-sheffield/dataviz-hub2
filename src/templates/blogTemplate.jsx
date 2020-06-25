@@ -26,13 +26,15 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 				<Flip cascade top delay={700}>
 					<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>	
 						<h1 className="text-5xl">Blog</h1>
-						<p className="text-md md:max-w-30">the greatest value of a picture is when it forces us to notice what we never expected to see.</p>
+						<p className="text-md md:max-w-35 mt-3">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p>
 					</div>
 				</Flip>
 				<Flip cascade top delay={700}>
-					<Link to="/blog#read">
-						<div><GreyButton className={`${pageContext.currentPage != 1 ? `hidden` : ``} mt-16 text-sm hover:bg-gray-700`}>Start reading</GreyButton></div>
-					</Link>
+					<div className="mt-16">
+						<Link to="/blog#read">
+							<GreyButton className={`${pageContext.currentPage != 1 ? `hidden` : ``} text-sm hover:bg-gray-700`}>Start reading</GreyButton>
+						</Link>
+					</div>
 				</Flip>
 
 				<MenuCategory pageContext = {pageContext} />

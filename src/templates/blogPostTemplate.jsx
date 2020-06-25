@@ -160,7 +160,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-5 text-gray-700">TABLE OF CONTENTS</p>}
           { tableOfContent && 
             tableOfContent.items && 
-            <Scrollspy className="text-gray-500" currentClassName="underline" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+            <Scrollspy className="text-gray-700" currentClassName="underline" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
               {tableOfContent.items.map(renderItem)}
             </Scrollspy>
           }      
