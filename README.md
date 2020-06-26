@@ -2,7 +2,7 @@
 
 <center>
 <h1 style="color: #00aeef"> Dataviz.Shef </h1>
-<h6 style="font-weight: 500">Data visualisation community website for The University of Sheffield, a multi-pronged initiative to provide tools, training and build a community around interactive data visualisation at TUoS.</h6>
+<h5 style="font-weight: 500">Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</h5>
 </center>
 <!-- <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
   <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
@@ -21,7 +21,7 @@
 
 <br />
 
-We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group](https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group), [slack team](https://shef-dataviz.slack.com) or [email](mailto:rdm@sheffield.ac.uk) with any suggestions. We will also be putting together more formal contributing guidance should you wish to contribute to our online resources directly through **this repository** including blogposts and turtorials.
+We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group](https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group), [slack team](https://shef-dataviz.slack.com) or [email](mailto:rdm@sheffield.ac.uk) with any suggestions. We encourage you to contribute to our online resources directly through **this repository** including blogposts and turtorials!
 
 
 <br />
@@ -29,9 +29,8 @@ We are constantly looking for new ideas and suggestions for events, workshops or
 ## Table of Contents
 
  - <a href="#contribute-blog-post">Contribute blog post</a>
- - <a href="#contribute-to-the-website">Contribute to the website</a>
- - <a href="#idecode-editor">IDE/Code Editor</a>
- - <a href="#idecode-editor">Useful resources</a>
+ - <a href="#contribute-to-the-website">Contribute to developments of the website</a>
+ - <a href="#code-of-conduct">Code of conduct</a>
 
 ## Contribute blog post
 To contribute, please visit the [guide](https://dataviz.shef.ac.uk/blog/22/03/2020/how_to_write_blog_post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
@@ -109,5 +108,5 @@ A list of extensions installed:
   - Color Pick
   - CSS Peek
 
-  
-
+## Code of Conduct
+We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
