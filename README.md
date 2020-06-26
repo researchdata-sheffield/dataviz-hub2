@@ -33,7 +33,7 @@ We are constantly looking for new ideas and suggestions for events, workshops or
  - <a href="#code-of-conduct">Code of conduct</a>
 
 ## Contribute blog post
-To contribute, please visit the [guide](https://dataviz.shef.ac.uk/blog/22/03/2020/how_to_write_blog_post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
+To contribute, please visit the [guide](https://dataviz.shef.ac.uk/blog/22/03/2020/contribute_blog_post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
 
 
 ## Contribute to the website
