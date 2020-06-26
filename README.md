@@ -1,19 +1,27 @@
+[![Build Status](https://travis-ci.com/researchdata-sheffield/dataviz-hub2.svg?branch=master)](https://travis-ci.com/researchdata-sheffield/dataviz-hub2)
+
 <center>
 <h1 style="color: #00aeef"> Dataviz.Shef </h1>
 <h6 style="font-weight: 500">Data visualisation community website for The University of Sheffield, a multi-pronged initiative to provide tools, training and build a community around interactive data visualisation at TUoS.</h6>
 </center>
-<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
-<a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer"><img src="https://cdn.brandfolder.io/5H442O3W/at/pl546j-7le8zk-6gwiyo/Slack_Mark.svg" style="max-height: 50px; width: 100%" /></a>
-<a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" style="max-height: 25px; width: 100%; margin-left: -40px" /></a>
-<a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer"><img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Antu-mail-folder-sent-16.svg" style="max-height: 35px; width: 100%; margin-left: -50px" /></a>
-</div>
+<!-- <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+  <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
+    <img src="https://cdn.brandfolder.io/5H442O3W/at/pl546j-7le8zk-6gwiyo/Slack_Mark.svg" style="max-width: 100px" />
+  </a>
+  <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" style="max-width: 100px; margin-left: -40px" />
+  </a>
+  <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Antu-mail-folder-sent-16.svg" style="max-width: 100px; margin-left: -50px" />
+  </a>
+</div> -->
 <br />
 
 ![Fig1](./src/images/readme/Fig1.png)
 
 <br />
 
-We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the google group, slack team or email with any suggestions. We will also be putting together more formal contributing guidance should you wish to contribute to our online resources directly through **this repository** including blogposts and turtorials.
+We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group](https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group), [slack team](https://shef-dataviz.slack.com) or [email](mailto:rdm@sheffield.ac.uk) with any suggestions. We will also be putting together more formal contributing guidance should you wish to contribute to our online resources directly through **this repository** including blogposts and turtorials.
 
 
 <br />
@@ -22,6 +30,8 @@ We are constantly looking for new ideas and suggestions for events, workshops or
 
  - <a href="#contribute-blog-post">Contribute blog post</a>
  - <a href="#contribute-to-the-website">Contribute to the website</a>
+ - <a href="#idecode-editor">IDE/Code Editor</a>
+ - <a href="#idecode-editor">Useful resources</a>
 
 ## Contribute blog post
 To contribute, please visit the [guide](https://dataviz.shef.ac.uk/blog/22/03/2020/how_to_write_blog_post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
@@ -66,8 +76,22 @@ git checkout development
 git pull upstream development
 ```
 
-## IDE/Code Editor
-This website was developed using Visual Studio Code.
+### Useful resources
+
+EventBrite API 
++ https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
++ https://www.eventbriteapi.com/v3/organizations/OrgId/venues/?token=YOURTOKEN
+
+[Gatsby plugins](https://www.gatsbyjs.org/plugins/)
+
+[TailwindCSS](https://tailwindcss.com/docs/preflight)
+
+[React-Icons](https://react-icons.netlify.com/#/)
+
+[Unplash](https://unsplash.com/)
+
+### IDE/Code Editor
+Visual Studio Code was used for development.
 A list of extensions installed:
   - Bracket Pair Colorizer
   - ES7 React/Redux/GraphQL/React-Native snippets
@@ -87,16 +111,3 @@ A list of extensions installed:
 
   
 
-## Useful resources
-
-EventBrite API 
-+ https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
-+ https://www.eventbriteapi.com/v3/organizations/OrgId/venues/?token=YOURTOKEN
-
-[Gatsby plugins](https://www.gatsbyjs.org/plugins/)
-
-[TailwindCSS](https://tailwindcss.com/docs/preflight)
-
-[React-Icons](https://react-icons.netlify.com/#/)
-
-[Unplash](https://unsplash.com/)
