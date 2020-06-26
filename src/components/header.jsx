@@ -147,13 +147,13 @@ const Header = () => {
               )) 
             }
             <NavLink type="a-icon" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group">
-              <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-4 pr-2"><FaGoogle /></button>
+              <button className="text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1"><FaGoogle /></button>
             </NavLink>
             <NavLink type="a-icon" href="https://join.slack.com/t/shef-dataviz/signup">
-              <button className="text-md transition duration-500 ease-in-out inline-block no-underline pl-2 pr-2"><FaSlack /></button>
+              <button className="text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1"><FaSlack /></button>
             </NavLink>
             <NavLink type="Link-icon" to="/search">
-              <button className="pl-2 pr-4 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline"><FiSearch  /></button>
+              <button className="mr-4 ml-2 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline"><FiSearch  /></button>
             </NavLink>
 
           </div>

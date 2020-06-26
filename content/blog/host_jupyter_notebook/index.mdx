@@ -84,19 +84,42 @@ Lastly, share your notebook by using the share button on the top right of the pa
 
 # Kaggle
 Kaggle is a popluar machine learning and data science community attracted more than one million users from over
-190 countries and regions. To host a notebook on Kaggle simply register an account and go to *My Profile*, at 
+190 countries and regions. To host a notebook on Kaggle simply register an account and go to *My Profile* - *Notebooks*, at 
 the bottom of the page click on *New Notebook* button.
 ![Fig5](./Fig5.jpg)  
 
-Use the editor to write a new notebook or upload your existing notebooks and data. Once finished, use the share
-button!
-
+Use the editor to write a new notebook or upload your existing notebooks and data. One of advantages of hosting 
+Kaggle notebook is you can use datasets that was published on Kaggle as data sources, without needing to download then 
+upload again. Kaggle notebook also comes with some pre-installed packages, installation of additional packages 
+or checking whether a package is installed can be done via console with the command 
+`!pip install my-package` (read more [here](https://github.com/Kaggle/docker-python/wiki/Missing-Packages)). 
 ![Fig6](./Fig6.png)
+
+Similar to the Google Colab, use the share button to let your notebook open to public!
+
 <br />
 
 # Microsoft Azure Notebooks
+Microsoft also provides a free hosted service allows you to run Jupyter notebook without any installation. 
+[Azure notebook](https://notebooks.azure.com/) have almost identical user interface to Jupyter notebook, so that anyone have used Jupyter before will
+find no trouble using it. To use it, create a microsoft account or log in with your existing account.
+![FIg7](./Fig7.jpg)
 
+Same as the Google Colab Microsoft have provided some examples for you to start and 
+you would not need to install any required packages. One particular feature that does not exist in other providers
+is a slideshow extension which allows you to use it for presentations of notebooks. 
+
+![Fig8](./Fig8.jpg)
+
+Learn more 
+about Azure notebook [here](https://docs.microsoft.com/en-us/azure/notebooks/azure-notebooks-overview).
 
 <br />
 
 # JupyterHub on ShARC
+[JupyterHub](https://jupyter.org/hub) is a multi-user version of the notebook which *gives users access to computational environments 
+and resources without burdening the users with installation and maintenance tasks*. Typically, you'll need to run 
+it on cloud or on your own hardware. Gracefully, you can run JupyterHub on 
+[ShARC](https://docs.hpc.shef.ac.uk/en/latest/sharc/index.html#sharc) (Sheffield Advanced Research Computer), 
+The University of Sheffield’s new High Performance Computing System and the successor to Iceberg. To learn more 
+how to run JupyterHub on ShARC, read the [documentation](https://docs.hpc.shef.ac.uk/en/latest/hpc/jupyterhub.html).
