@@ -21,9 +21,9 @@ import ReactTooltip from "react-tooltip";
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
-  const { title, date, author, category, tag } = mdx.frontmatter
+  const { title, date, author, category, tag, disableTOC } = mdx.frontmatter
   const {prev, next} = pageContext
-  const tableOfContent = mdx.tableOfContents 
+  const tableOfContent = disableTOC === "true" ? null : mdx.tableOfContents
 
   //Redering table of content
   const renderItem = (item) => (
@@ -105,7 +105,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
         
         {/* desktop share buttons */}
-        <div className="absolute left-0 top-0 sticky hidden lg:block">
+        <div className="left-0 top-0 sticky hidden lg:block">
           <Fade left cascade delay={1500} duration={1300}>   
             <div className="flex flex-col text-sm" style={{maxWidth: "49px", height: "0", overflow: "visible"}}>
               <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-24 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
@@ -138,7 +138,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <div className="m-2 py-1 px-2 bg-gray-100 hover:bg-highlight_2 text-gray-800 flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
             </a>
           </div>    
-          <div className={` ${ tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>
+          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
               { tableOfContent && tableOfContent.items && 
                 <Scrollspy className="text-gray-300" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
@@ -156,7 +156,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>
 
         {/* sidebar toc: hidden in mobile */}
-        <div className={` ${ tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-5 text-gray-700">TABLE OF CONTENTS</p>}
           { tableOfContent && 
             tableOfContent.items && 
@@ -215,6 +215,7 @@ export const query = graphql`
             }
           }
         }
+        disableTOC
       }
     }
   }
