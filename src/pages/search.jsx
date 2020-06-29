@@ -17,7 +17,7 @@ const searchPage = ({location}) => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz.shef", "search dataviz"]} 
       />
       <Header />
-      <div className="flex flex-wrap min-h-100">
+      <div className="flex flex-wrap">
         
         <Search location={location} />
   

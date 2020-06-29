@@ -1,9 +1,8 @@
 import React, { Component } from 'react'
-import { Link, navigate } from 'gatsby'
+import { navigate } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
-import kebabCase from "lodash.kebabcase"
 
 
 // Search component
@@ -19,7 +18,7 @@ class Search_Home extends Component {
       if (this.state.results.length > 0 && this.state.query.length > 2 ) {
         
         return (
-          <div className="z-30 text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-30 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar rounded-lg">
+          <div className="z-30 text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
             {this.state.results.slice(0,5).map((page, i) => {
               let description = page.description.split(" ").splice(0, 28)
               if(description.length < 28){
@@ -27,42 +26,28 @@ class Search_Home extends Component {
               } else {
                 description = description.join(" ").concat(" ...")
               }
-              let category = page.category
+              //let category = page.category
 
               return( 
-                <div className="text-gray-800 group" key={i} style={{fontFamily: "TUoS Blake"}}>
+                <div className="text-gray-800 group border-b-1 border-gray-200 hover:bg-gray-200" key={i}>
                   <a href={`${page.url}`} target="_blank" rel="noopener noreferrer">
-                    <div className="flex bg-gray-900 self-center items-center justify-end">
-                      <div className="w-5/6">
-                        <h1 className="font-bold text-sm xl:text-lg w-full px-1 py-1 text-white">
-                          <Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={page.title} searchWords={this.state.query.split()} />
+                    <div className="flex self-center items-center justify-end">
+                      <div className="w-full">
+                        <h1 className="font-bold text-sm xl:text-lg w-full px-3 py-3 text-gray-900">
+                          <Highlighter highlightClassName="text-blue-500 bg-transparent" textToHighlight={page.title} searchWords={this.state.query.split()} />
                         </h1>
                       </div>
 
-                      <div className="flex w-1/6 justify-end">
-                        <Link className="inline-block hover:bg-highlight_2 hover:text-white mx-2 px-1 py-1 bg-black rounded-lg text-white text-xs" to={`/blog/category/${kebabCase(category)}`}>
-                          <p className="text-xs">{category}</p>
-                        </Link>
-                      </div>
-                    </div>
-
-      
-                    <div className="flex py-1 group-hover:bg-light_grey group-hover:text-gray-900">
-                      <div className="w-3/12 text-xs py-1 px-1">
-                        {page.tag.map((tag) => (
-                          <Link key={tag} to={`/blog/tag/${kebabCase(tag)}`} className="inline-block text-gray-600 text-xxs hover:text-highlight_2 mr-1"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={tag} searchWords={this.state.query.split()} /></Link>
-                        ))}                       
-                      </div>
-                      <div className="w-9/12">
-                        {/* borderLeft: `solid 1px ${category == "Articles" ? "#ff5e5e" : [category == "Events" ? "#f3f218" : [category == "News" ? "#00aeef" : "#99f318"]]}` */}
-                        <h1 className="text-xs xl:text-med px-2 py-1 leading-4 xl:leading-6 border-l-1 border-gray-300" style={{ borderWidth: "20%" }}><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>
-                      </div>
                     </div>
                   </a>
                 </div>
               )
             })}
-            <div className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-highlight_2 border-t-1 cursor-pointer" onClick={ () => {navigate("/search", {state: {searchWord: this.state.query}} )} }>Full search result</div>
+            {this.state.results.length > 6 ? 
+              <div className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-highlight_2 border-t-1 cursor-pointer" onClick={ () => {navigate("/search", {state: {searchWord: this.state.query}} )} }>{this.state.results.length - 6} more results</div>
+              : <div className="text-center py-2 bg-gray-800 text-white font-semibold border-t-1">End of results</div>
+            }
+            
          </div>
         )
       } else if (this.state.query.length > 2) {

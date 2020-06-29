@@ -34,11 +34,8 @@ class Search extends Component {
   }
 
   render() {
-
     const ResultList = () => {
-
       if (this.state.results.length > 0 && this.state.query.length > 2) {
-      
         const data = useStaticQuery(graphql`
           query postList {
             allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
@@ -65,7 +62,7 @@ class Search extends Component {
           <div>
             <div className="bg-orange-700 text-gray-100 py-2">Found {this.state.results.length} results</div>
 
-            <div className="flex flex-wrap py-8 xl:py-12 justify-center bg-gray-100">
+            <div className="flex flex-wrap py-10 xl:pt-32 xl:pb-64 justify-center bg-gray-100">
               {this.state.results.map((item, i) => {
                 let imagesrc
   
@@ -94,23 +91,25 @@ class Search extends Component {
                   description = description.join(" ").concat(" ...")
                 }
 
+                const highlightClasses = "text-blue-400 bg-black"
+
                 return( 
 
                   <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
-                    <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-80 2xl:min-h-60 mx-6 my-6 transform hover:scale-105 transition duration-500">
-                      <div className="min-h-80 2xl:min-h-60 max-h-80 w-full p-6 transition duration-700 bg-black-45 group-hover:bg-black-85" style={{borderRadius: "15px"}}>
-                        <div className="absolute pt-10vh lg:pt-20vh 2xl:pt-22vh overflow-hidden" style={{maxWidth:"320px"}}>
-                          <h1 className="group-hover:-translate-y-16 text-white font-bold leading-10 text-4xl transform transition duration-100"><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={title} searchWords={this.state.query.split()} /></h1>  
-                          <h1 className="group-hover:hidden text-highlight_2 leading-9 my-6 font-bold text-2xl transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName="bg-transparent text-red-600" textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
-                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
+                    <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-50 2xl:min-h-40 mx-6 my-6 transform hover:scale-105 transition duration-500">
+                      <div className="min-h-60 2xl:min-h-40 max-h-60 w-full p-6 transition duration-700 bg-black-45 group-hover:bg-black-85" style={{borderRadius: "15px"}}>
+                        <div className="absolute pt-8 lg:pt-16 2xl:pt-24 overflow-hidden" style={{maxWidth:"320px"}}>
+                          <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100"><Highlighter highlightClassName={highlightClasses} textToHighlight={title} searchWords={this.state.query.split()} /></h1>  
+                          <h1 className="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName={highlightClasses} textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
+                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
                             TAG: &nbsp;{item.tag.map((tag, i, arr) => {
-                              return ( i < 3 && <Highlighter className="text-white" highlightClassName="bg-transparent text-red-600" textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} /> )
+                              return ( i < 3 && <Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} /> )
                             })}
                             {item.tag.length > 3 && <p className="inline-block text-white"> +{item.tag.length - 3} more</p>}
                           </h1>
-                          <p className="hidden group-hover:block my-3 text-xxs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
-                          <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName="text-red-600 bg-transparent" textToHighlight={description} searchWords={this.state.query.split()} /></h1>      
+                          <p className="hidden group-hover:block my-4 text-xxs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName={highlightClasses} textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
+                          <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName={highlightClasses} textToHighlight={description} searchWords={this.state.query.split()} /></h1>      
                         </div>
                       </div>
                     </div>
@@ -141,7 +140,7 @@ class Search extends Component {
 
     return (
       <div className={`${this.props.classNames} relative text-gray-700 w-full text-center`}>
-        <div className="min-h-50 pt-36 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
+        <div className="min-h-50 pt-24 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
           <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-3 font-semibold">Search@dataviz.shef</p></Zoom>
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
