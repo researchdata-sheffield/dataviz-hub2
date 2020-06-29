@@ -19,7 +19,7 @@ const Community = () => (
     <Header />
     <BackgroundSection className="items-center justify-center text-center">
       <Fade cascade delay={700} duration={2000}>
-        <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
+        <div className="text-white">
           <h1 className="text-5xl font-bold leading-tight">Community at Dataviz.Shef</h1>
           <h1 className="text-xl mt-3 text-gray-100" style={{textShadow: "#000000 0px 0px 1px"}}>knowledge | connection | inspiration | resources | support</h1>
         </div>

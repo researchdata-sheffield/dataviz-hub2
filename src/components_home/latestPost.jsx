@@ -35,14 +35,14 @@ const latestPost = ({ latestPost }) => {
         return (
           <Fade  key={node.id} duration={2000} fraction={0.3}>
             <div onClick={() => {navigate(`${node.fields.slug}`)}} 
-              className=" border-1 ipadp:border-2 border-black flex-auto flex-wrap ipadp:greyScale-100 hover:greyScale-0 min-h-50 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 cursor-pointer" 
+              className=" border-1 ipadp:border-2 border-black flex-auto flex-wrap min-h-50 ipadp:min-h-60 max-h-60 overflow-hidden group relative min-w-20 ipadp:w-1/3 2xl:w-1/4 cursor-pointer" 
               style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center"}}
             >
               <div className="h-full w-full bg-light_black group-hover:bg-transparent transition ease-in-out duration-700">
                 <div className="flex top-0 left-0 absolute ml-3 mt-3">
                   <MdFiberNew className="text-red-700 ipadp:text-white group-hover:text-red-700 text-3xl" />
                 </div>
-                <Link className="px-4 opacity-0 ipadp:opacity-100 font-bold text-2xl 2xl:text-3xl leading-tight text-white group-hover:hidden overflow-y-hidden absolute" to={`${node.fields.slug}`} style={{textShadow: "#000000 0px 0px 15px", paddingTop: "8vh", paddingBottom: "20vh",}}>
+                <Link className="px-4 opacity-0 ipadp:opacity-100 font-bold text-xl 2xl:text-2xl leading-tight text-white group-hover:hidden overflow-y-hidden absolute" to={`${node.fields.slug}`} style={{textShadow: "#000000 0px 0px 15px", paddingTop: "10vh", paddingBottom: "20vh",}}>
                   {node.frontmatter.title}
                   <p className="text-sm xl:text-lg font-semibold pt-4" style={{textShadow: "#000000 0px 0px 5px"}}>{node.frontmatter.date}</p>
                   <p className="text-sm xl:text-lg font-bold pt-1" style={{textShadow: "#000000 0px 0px 5px"}}>{node.fields.readingTime.text}</p>

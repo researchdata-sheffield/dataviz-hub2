@@ -2,13 +2,13 @@ import React from "react"
 import { Link } from "gatsby"
 import Header from "../components/header"
 import Footer from "../components/footer"
-import BackgroundSection from "../components_images/about_background"
+//import BackgroundSection from "../components_images/about_background"
 import SEO from "../components/seo"
 import RSE from "../images/about/rse.png"
 import ITS from "../images/about/its.png"
 import ORDA from "../images/about/orda_logo.png"
 import Fade from 'react-reveal/Fade'
-
+import bg from "../images/about/about.jpg"
 
 const About = () => (
   <>
@@ -17,7 +17,7 @@ const About = () => (
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz"]} 
     />
     <Header />
-    <BackgroundSection className="items-center justify-center text-center">
+    <div className="flex flex-col min-h-100 items-center justify-center text-center w-full" style={{backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.65) 100%), url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
       <Fade cascade delay={700} duration={2000}>
         <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
           <h1 className="text-5xl font-bold " style={{textShadow: "#000000 0px 0px 10px"}}>Library · IT Services · RSE</h1>
@@ -28,7 +28,7 @@ const About = () => (
           <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
         </Link>
       </Fade>
-    </BackgroundSection>
+    </div>
 
     <div id="more" className="container pt-12 pb-24 text-gray-800 mx-auto flex flex-wrap">
       <div className="flex flex-wrap mx-auto justify-center content-center border-solid border-gray-100 border-b-2"> 

@@ -22,13 +22,15 @@ const menuTagSlide = ({ pageContext }) => {
 
   return (
   
-		<div className="xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 text-gray-100 shadow-lg text-sm fixed top-0 right-0 min-h-100 xl:block flex flex-row border-l-2 border-white transition duration-500 z-50 bg-white" 
+		<div className="xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 text-gray-100 shadow-lg text-sm fixed top-0 right-0 min-h-100 hidden xl:flex flex-row border-l-2 border-white transition duration-500 z-50 bg-white" 
       style={{fontFamily: "TUoS Blake",  transform: isOpen ? "translateX(0%)" : "translateX(101%)"}}
     >
-      <div onClick={() => toggleisOpen(!isOpen)} className='absolute left-0 min-h-100 -ml-10 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500' style={{transform: 'translateY(-5%)', fontFamily: 'TUoS Blake'}}>
+      <div onClick={() => toggleisOpen(!isOpen)} className='absolute left-0 min-h-100 -ml-12 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500' style={{transform: 'translateY(-5%)', fontFamily: 'TUoS Blake'}}>
         <div className={`${isOpen ? `hidden` : `block`} px-3 py-4 hover:bg-highlight_2 bg-gray-900 transition duration-500 shadow-xl`}>T<br />A<br />G</div>
         <div className={`${isOpen ? `block` : `hidden`} px-3 py-4 bg-highlight_2 hover:bg-gray-900 transition duration-500 shadow-xl font-bold`}><IoMdClose /></div>
       </div>
+      
+      {/* main tag menu */}
       <div className="overflow-hidden lg:py-2 xl:py-6">
         <div>
           <h1 className="inline-block text-2xl pb-2 xl:pb-5 font-semibold mr-4 text-gray-900"><FaTags style={{display: "inline-block"}} /> {location.href.includes("/blog/tag/") ? <Link to="/blog/#read">ALL</Link> : "Tags"}</h1>
