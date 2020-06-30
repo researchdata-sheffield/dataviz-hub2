@@ -9,7 +9,7 @@ import { ButtonWithArrow } from "../components_style/styled"
 const HomeShowcase = () => {
 
   return (
-    <div className="relative overflow-x-hidden bg-gray-800">
+    <div className="relative overflow-x-hidden bg-gray-800 relative">
       <h1 className="absolute left-0 text-white text-2xl font-semibold transform -rotate-90 -ml-8 mt-44">Showcase</h1>
       <div id="home_showcase" />      
       <BackgroundTwo className="ipadp:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-12 transition duration-500">
@@ -30,7 +30,7 @@ const HomeShowcase = () => {
         
       </BackgroundTwo>
       
-      <div className="ipadp:min-h-40 flex flex-wrap py-6 ipadp:py-12 items-center justify-center bg-gray-100">
+      <div className="ipadp:min-h-40 flex flex-wrap pt-6 ipadp:pt-12 pb-64 items-center justify-center bg-gray-100">
         <div className="md:w-6/12 px-3 md:pl-8 transform hover:scale-110 transition duration-500">
           <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
         </div>
@@ -45,6 +45,12 @@ const HomeShowcase = () => {
           </a>
         </div>
         </Zoom>
+      </div>
+
+      <div className="w-full absolute bottom-0">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#fff" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+        </svg>
       </div>
     </div>
   )

@@ -44,7 +44,7 @@ const blogPostGrid = ({allMdx}) => {
                   <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake", textShadow: "#000000 0px 0px 20px"}}>Featured</p>
                 </div>
               }
-              <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-3/5 lg:max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
+              <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-3/5 lg:max-h-3/5 xl:min-h-1/2 xl:max-h-1/2"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
               <ArrowBox className="px-6 pt-6 2xl:px-8 2xl:pt-8 leading-none text-gray-600">
                 <div className='overflow-hidden fade-box2'>
                   <h1 className="font-bold text-xll xl:text-2xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden font-sans">{title}</h1>

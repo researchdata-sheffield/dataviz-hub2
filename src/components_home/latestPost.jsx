@@ -48,7 +48,7 @@ const latestPost = ({ latestPost }) => {
                   <p className="text-sm xl:text-lg font-bold pt-1" style={{textShadow: "#000000 0px 0px 5px"}}>{node.fields.readingTime.text}</p>
                 </Link>
                 
-                <div className="px-4 xl:px-8 leading-none text-gray-500 min-h-50 ipadp:min-h-60 max-h-60 ipadp:opacity-0 group-hover:opacity-100" style={{paddingTop: "9vh", paddingBottom: "20vh", backgroundColor: "rgba(0,0,0, .67)"}}>
+                <div className="px-4 leading-none text-gray-500 min-h-50 ipadp:min-h-60 max-h-60 ipadp:opacity-0 group-hover:opacity-100" style={{paddingTop: "9vh", paddingBottom: "20vh", backgroundColor: "rgba(0,0,0, .67)"}}>
                   <h1 className="ipadp:hidden font-bold text-xl leading-tight text-white overflow-y-hidden">{node.frontmatter.title}</h1>
                   <p className="my-3 text-sm leading-tight group-hover:text-highlight_2 xl:text-xl" style={{textShadow: "#000000 0px 0px 8px"}}>{description}</p>
                   <p className="my-2 text-xs pt-2" style={{textShadow: "#000000 0px 0px 5px"}}>
