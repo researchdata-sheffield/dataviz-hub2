@@ -15,7 +15,8 @@ import Scrollspy from 'react-scrollspy'
 import "katex/dist/katex.min.css"
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import Fade from "react-reveal/Fade"
-import Bounce from 'react-reveal/Bounce'
+import Pulse from 'react-reveal/Pulse';
+//import Bounce from 'react-reveal/Bounce';
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
 
@@ -81,8 +82,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </Helmet>
       
       {/* Top background, title and author etc. */}
+      <Fade top delay={300}>
       <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-c1" style={{minHeight: "50vh", }}>
-        <Bounce cascade delay={500} duration={1300}>
+        <Pulse cascade delay={1000} duration={500}>
         <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-3 lg:px-48 2xl:px-78 leading-tight">
             <h1 id="title" className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
@@ -105,9 +107,11 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             {tag.map((tag) => ( <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn> ))}
           </div>
         </div>
-        </Bounce>
+        </Pulse>
       </div>
+      </Fade>
 
+      <Fade cascade bottom delay={600} duration={1000}>
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
         
         {/* desktop share buttons */}
@@ -153,7 +157,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               }      
           </div>       
         </div>   
-  
+              
         {/* main mdx content  */}
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-60 2xl:pr-52`: `lg:px-44 2xl:px-72`} mx-auto container pt-6 pb-16 px-3  leading-7 text-xl`} style={{fontFamily: "Helvetica"}}>
           <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, img: IMG, table: Table, }}>
@@ -174,6 +178,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>       
            
       <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
+      </Fade>
+      
       <Footer />
     </div>
   )
