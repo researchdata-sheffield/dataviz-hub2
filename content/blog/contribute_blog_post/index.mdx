@@ -1,6 +1,6 @@
 ﻿---
 author: ["Yu Liang Weng"]
-title: "Contribute blog post - v1.4"
+title: "Contribute blog posts - v1.4"
 thumbnail: ./temp.jpg
 description: "(UPDATED on 03 June 2020) This is a template for blog posts. This website is built from Gatsby framework and the way of styling is slightly different from HTML/CSS. "
 date: "2020-03-22"
@@ -16,13 +16,13 @@ disableTOC: "false"
 # Introduction
 (UPDATED on 03 June 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
 You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS. A copy of this blog file is available <a href="./index.mdx">here</a>.  
-*We're working on transferring the editing process online so that you do not have to setup everything!*
+*We're working on improving the process!*
 
 <br />
 
 # Setup
-
-If you want to preview the post while you're writing, then you'll need to setup a gatsby development environment in order to preview the website. If not, go to <a href="#write-a-post" anchor>next section</a>.
+You will probably want to install Gatsby so that you can test your contribution before submitting it.
+To do this you'll need to setup a gatsby development environment in order to preview the website. Otherwise, go to <a href="#write-a-post" anchor>write a post</a> section.
 
   ## Installation
   1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
@@ -32,18 +32,13 @@ If you want to preview the post while you're writing, then you'll need to setup 
   
   3. Install Gatsby CLI by running  `npm install -g gatsby-cli`
 
-  4. Fork this repository and open up your Git Bash (and navigate to a directory you want to place the site) and run:
+  4. Fork this [repository](https://github.com/researchdata-sheffield/dataviz-hub2) and open up your Git Bash/terminal (and navigate to a directory you want to place the site) and run:
     
     ```
     git clone https://github.com/yourusername/dataviz-hub2.git
     cd dataviz-hub2
     npm install                                                 //install dependencies
-    cd plugins/gatsby-source-eventbrite-multi-accounts
-    npm install                                                 //install plugin dependencies
     ```
-
-  5. (optional) Create a new local branch with commands **git checkout development** (make sure you're in development branch), **git branch newBranchName** (create a new branch from development), and **git checkout newBranchName** (switch to new branch).
-    Now make any commits you wish to.
 
 ## Note
   At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
@@ -64,13 +59,15 @@ git pull upstream development
 <br />
 
 # Write a post
-If you didn't setup, skip the following text and look at steps to write a post.  
+If you didn't setup, skip the following text and look at <a anchor href='#write-post'>steps for writing a post</a>.  
+
 Once you've setup, run `gatsby develop`.
 Now you can view the site at **http://localhost:8000/**. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally. 
 Once you're happy with your post, you could also run `npm run serve` to make a production build and check everything is identical to the development version at **http://localhost:9000/**.
 
-To contribute, raise an issue on GitHub or make a pull request that adds or modifies files in the `/content/blog/` directory. 
-You will probably want to install Gatsby so that you can test your contribution before submitting it. Steps on below assuming you've setup everything mentioned above. 
+Steps on below assumed you've setup everything mentioned above. 
+
+<div id='write-post' />
 
 1. Make a new directory under the `/content/blog/` directory, give a name (e.g. a keyword relevant to your post). If you didn't setup, create the directory anywhere you wish to.
 
@@ -84,14 +81,14 @@ You will probably want to install Gatsby so that you can test your contribution 
 ---
 title: "This is a template for posts"
 author: ["A", "B"]                   
-date: "2020-03-06"                             // please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
+date: "2020-03-06"                // please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
 description: "Shown at blog page"
-category: "Articles"				           // one category only, use pre-set categories: "Articles", "News", "Tutorials", "Events"
-tag: ["Blog", "The University of Sheffield"]   // make sure tags & cate are capitalised
-thumbnail: ./image.jpg                         // an image to use for your post thumbnail
-template:                                      // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
-featured: "true"					           // optional, Set it to "true" if you want to show the post on home page
-disableTOC:                               // optional, set it to "true" if you wish to disable default table of contents
+category: "Articles"			  // one category only, use pre-set categories: "Articles", "News", "Tutorials", "Events"
+tag: ["SomeTag", "AnotherOne"]    // make sure tags & cate are capitalised
+thumbnail: ./image.jpg            // an image to use for your post thumbnail
+template:                         // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
+featured: "true"			      // optional, Set it to "true" if you want to show the post on home page
+disableTOC:                       // optional, set it to "true" if you wish to disable default table of contents
 ---
 ```
 
@@ -106,11 +103,11 @@ disableTOC:                               // optional, set it to "true" if you w
 
 ```json
 ...
-},                                 // Make sure you've added comma after the previous right curly bracket
-{                                  // Start with left curly bracket     
-  "name": "New Author",            // The exact same name you've put in mdx file, use same name for all mdx file consistently
-  "avatar": "./default.jpg",       // If you want to add your own avatar, place it under the same folder and replace default.jpg with your image name and extension   
-}                                  // No comma
+},                              // Make sure you've added comma after the previous right curly bracket
+{                               // Start with left curly bracket     
+  "name": "New Author",         // The exact same name you've put in mdx file, use same name for all mdx file consistently
+  "avatar": "./default.jpg",    // If you want to add your own avatar, place it under the same folder and replace default.jpg with your image name and extension   
+}                               // No comma
 ```
 
 
@@ -121,7 +118,7 @@ disableTOC:                               // optional, set it to "true" if you w
 3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be **/content/blog/yourdirname/post.jpg**. Sections 
 below will tell you how to embed <a href="#image" anchor>images</a> and <a href="#embed-well-known-services" anchor>videos</a>.
 
-4. Commit any changes you've made. If you didn't setup, see *Upload through github.com* section.
+4. Commit any changes you've made. If you didn't setup, see **<a href='#upload-through-githubcom' anchor>Upload through github.com</a>** section.
 
 5. Now create a pull request. If it comes from a fork repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
 If it comes from a branch in origin repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
@@ -132,7 +129,7 @@ If it comes from a branch in origin repository, [read here](https://help.github.
 
 If you do not want to setup the environment, you can write a post by upload **index.mdx** file and any resources related to the post on Github too. To do this,  
 
-  1. Go to *https://github.com/researchdata-sheffield/dataviz-hub2* and click on content/blog directory.  
+  1. Go to [repository](https://github.com/researchdata-sheffield/dataviz-hub2) and click on content/blog directory.  
     
   2. Click the *Create new file* button on the top right, and type `folder_name/index.mdx` in the **name your file...** box, this will create a new directory with the name - `folder_name` 
   of your choice (make sure this name is not exists).  

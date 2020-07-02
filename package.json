@@ -36,6 +36,7 @@
     "gatsby-remark-reading-time": "1.1.0",
     "gatsby-remark-responsive-iframe": "^2.4.3",
     "gatsby-remark-table-of-contents": "0.0.9",
+    "gatsby-source-eventbrite-multi-accounts": "^1.0.0",
     "gatsby-source-filesystem": "^2.3.7",
     "gatsby-transformer-json": "^2.4.3",
     "gatsby-transformer-sharp": "^2.5.3",

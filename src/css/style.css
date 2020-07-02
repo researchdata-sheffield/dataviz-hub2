@@ -11,7 +11,7 @@
 /* Large (lg) */
 @media (min-width: 1024px) { 
   .fade-box2 {
-    max-height: 125px;
+    max-height: 123px;
   }
 }
 

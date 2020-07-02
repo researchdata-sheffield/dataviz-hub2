@@ -61,13 +61,19 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
       <Header />
       <Helmet >
-        <script >{`
+        <script>{`
           var element = document.getElementById("headElement");
+          var title = document.getElementById("title").textContent;
           var dimensions = element.getClientRects()[0];
           var pattern = Trianglify({
             width: dimensions.width, 
-            height: dimensions.height
+            height: dimensions.height,
+            cell_size: 60 + Math.ceil(Math.random() * 100),
+            variance: Math.random(),
+            stroke_width: Math.random() * 5,
           });
+          pattern.seed = title
+          
           element.style['background-image'] = 'url(' + pattern.png() + ')';
         `}</script>
         
@@ -79,7 +85,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <Bounce cascade delay={500} duration={1300}>
         <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-3 lg:px-48 2xl:px-78 leading-tight">
-            <h1 className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
+            <h1 id="title" className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
           </div>
           
           <div className="flex justify-center mt-12 items-center">
@@ -160,7 +166,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-5 text-gray-700">TABLE OF CONTENTS</p>}
           { tableOfContent && 
             tableOfContent.items && 
-            <Scrollspy className="text-gray-700" currentClassName="underline" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+            <Scrollspy className="text-gray-700" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
               {tableOfContent.items.map(renderItem)}
             </Scrollspy>
           }      
