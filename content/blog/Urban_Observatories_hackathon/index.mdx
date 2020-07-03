@@ -45,8 +45,8 @@ on JavaScript Object Notation (JSON.) This provided the front-end discussed abov
 ![solution](./solution.jpg)
 
 Another team focussed on integrated data from the different platforms in each city. It developed data pipelines using Python to extract and transform data from the Newcastle and Sheffield observatories 
-respectively. These data were then loaded into a PostgreSQL database that ran in a Docker container hosted on a cloud container service provider. The database used a Postgres foreign data wrapper called 
-<a href="https://github.com/citusdata/cstore_fdw">cstore</a> to store the data in columnar form to facilitate faster analytics queries.
+respectively. These data were then loaded into a PostgreSQL database that ran in a Docker container hosted on a cloud container service provider. The database used a Postgres foreign data wrapper called <a href="https://github.com/citusdata/cstore_fdw">cstore</a> 
+to store the data in columnar form to facilitate faster analytics queries.
 
 A system was developed that allowed the end-user to use a simple web-based form to select the data they are interested in, run a query against this database and spawn a small container 
 running another PostgreSQL database containing only the data they selected. The container technology allows this analytics workload to be scaled, transported or replicated easily. 

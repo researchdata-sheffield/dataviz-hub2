@@ -76,7 +76,7 @@ pre[class*="language-"] {
   overflow: initial;
   float: left; /* 1 */
   min-width: 100%; /* 2 */
-  font-size: .91rem;
+  font-size: .95rem;
 }
 
 .gatsby-highlight pre[class*="language-"].line-numbers {
@@ -101,9 +101,9 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-	color: #7C7C7C;
+	color: #a7a7a7;
 }
-
+  
 .token.punctuation {
 	color: #c5c8c6;
 }

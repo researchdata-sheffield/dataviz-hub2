@@ -29,6 +29,7 @@ const menuTag = ({ pageContext }) => {
             <input id="tagSearch" onChange={handleChange}  className="search__input py-1 pl-2 text-base focus:outline-none pr-3 text-gray-600" style={{maxWidth: "40vw"}} type="text" name="search" placeholder="Search for tags" />
           </div>
         </div>
+        {/* tag menu */}
         <div className={`${isOpen ? `` : `hidden`} pt-4`}>
           {filterTag.map((tag) => (
               <Link key={tag} activeStyle={{ color: "white", backgroundColor: "#00aeef" }} partiallyActive={true} to={`/blog/tag/${kebabCase(tag)}`} 
@@ -37,6 +38,7 @@ const menuTag = ({ pageContext }) => {
           ))}
         </div>
       </div>
+      {/* arrow button */}
       <div onClick={() => toggleisOpen(!isOpen)} className='text-gray-900 flex justify-center text-2xl absolute top-0 right-0 mr-4 mt-4'>
         <FaAngleDown className={` `} style={{transform: isOpen ? "rotate(180deg)" : "", transition: 'all .5s ease'}}  />
       </div>

@@ -2,7 +2,8 @@
 author: ["Yu Liang Weng"]
 title: "Contribute blog posts - v1.4"
 thumbnail: ./temp.jpg
-description: "(UPDATED on 03 June 2020) This is a template for blog posts. This website is built from Gatsby framework and the way of styling is slightly different from HTML/CSS. "
+description: "(UPDATED on 02 July 2020) This article will guide you to setup a development environment, relevant steps for produce a blog post, and introduce 
+              you to useful syntax for styling the blog post and adding resources such as images, videos, and codes."
 date: "2020-03-22"
 category: ["Tutorial"]
 tag: ["Blog", "Markdown"]
@@ -14,8 +15,11 @@ disableTOC: "false"
 
 
 # Introduction
-(UPDATED on 03 June 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
+(UPDATED on 02 July 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
 You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS. A copy of this blog file is available <a href="./index.mdx">here</a>.  
+This article will guide you to setup a development environment, relevant steps for produce a blog post, and introduce 
+you to useful syntax for styling the blog post and adding resources such as images, videos, and codes.
+
 *We're working on improving the process!*
 
 <br />
@@ -37,7 +41,7 @@ To do this you'll need to setup a gatsby development environment in order to pre
     ```
     git clone https://github.com/yourusername/dataviz-hub2.git
     cd dataviz-hub2
-    npm install                                                 //install dependencies
+    npm install      //install dependencies
     ```
 
 ## Note
@@ -63,7 +67,7 @@ If you didn't setup, skip the following text and look at <a anchor href='#write-
 
 Once you've setup, run `gatsby develop`.
 Now you can view the site at **http://localhost:8000/**. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally. 
-Once you're happy with your post, you could also run `npm run serve` to make a production build and check everything is identical to the development version at **http://localhost:9000/**.
+If you're happy with your post, you could also run `npm run serve` to make a production build and check everything is identical to the development version at **http://localhost:9000/**.
 
 Steps on below assumed you've setup everything mentioned above. 
 
@@ -81,14 +85,14 @@ Steps on below assumed you've setup everything mentioned above.
 ---
 title: "This is a template for posts"
 author: ["A", "B"]                   
-date: "2020-03-06"                // please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
+date: "2020-03-06"                # please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
 description: "Shown at blog page"
-category: "Articles"			  // one category only, use pre-set categories: "Articles", "News", "Tutorials", "Events"
-tag: ["SomeTag", "AnotherOne"]    // make sure tags & cate are capitalised
-thumbnail: ./image.jpg            // an image to use for your post thumbnail
-template:                         // optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
-featured: "true"			      // optional, Set it to "true" if you want to show the post on home page
-disableTOC:                       // optional, set it to "true" if you wish to disable default table of contents
+category: "Articles"			  # one category only, use pre-set categories: "Articles", "News", "Tutorials", "Events"
+tag: ["SomeTag", "AnotherOne"]    # make sure tags & cate are capitalised
+thumbnail: ./image.jpg            # an image to use for your post thumbnail
+template:                         # optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
+featured: "true"			      # optional, Set it to "true" if you want to show the post on home page
+disableTOC:                       # optional, set it to "true" if you wish to disable default table of contents
 ---
 ```
 
@@ -118,14 +122,14 @@ disableTOC:                       // optional, set it to "true" if you wish to d
 3. Copy any other resources required for the post to the current directory. For example, if you want to include an image `post.jpg` then the file path for it would be **/content/blog/yourdirname/post.jpg**. Sections 
 below will tell you how to embed <a href="#image" anchor>images</a> and <a href="#embed-well-known-services" anchor>videos</a>.
 
-4. Commit any changes you've made. If you didn't setup, see **<a href='#upload-through-githubcom' anchor>Upload through github.com</a>** section.
+4. Commit any changes you've made. If you didn't setup, see **<a href='#upload-via-githubcom' anchor>Upload via github.com</a>** section.
 
 5. Now create a pull request. If it comes from a fork repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork).
 If it comes from a branch in origin repository, [read here](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#changing-the-branch-range-and-destination-repository).
 
 <br />
 
-## Upload through github.com
+## Upload via github.com
 
 If you do not want to setup the environment, you can write a post by upload **index.mdx** file and any resources related to the post on Github too. To do this,  
 

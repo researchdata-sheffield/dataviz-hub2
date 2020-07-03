@@ -62,7 +62,7 @@ app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 years = [2016, 2017, 2018]
 file_list = []
 for year in years:
-    df = pd.read_csv("acc_" + str(year) + ".csv", parse_dates=[9, 11])
+    df = pd.read_csv("data/acc_" + str(year) + ".csv", parse_dates=[9, 11])
     df["Year"] = year
     file_list.append(df)
 
@@ -75,10 +75,11 @@ you should have is:
   - Folder
     - assets
       - style.css
-    - acc_2016.csv
-    - acc_2017.csv
-    - acc_2018.csv
-    - dash.ipynb
+    - data
+		  - acc_2016.csv
+		  - acc_2017.csv
+		  - acc_2018.csv
+    - app.ipynb
 
 Download complete files from [here](https://drive.google.com/open?id=1QhPb6r07HwSIF3ZFYrLEFsZPtmtle_qS). 
 

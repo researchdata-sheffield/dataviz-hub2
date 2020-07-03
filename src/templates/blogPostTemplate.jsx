@@ -84,7 +84,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       {/* Top background, title and author etc. */}
       <Fade top delay={300}>
       <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-c1" style={{minHeight: "50vh", }}>
-        <Pulse cascade delay={1000} duration={500}>
+        <Pulse cascade delay={1200} duration={500}>
         <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-3 lg:px-48 2xl:px-78 leading-tight">
             <h1 id="title" className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
@@ -116,7 +116,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         
         {/* desktop share buttons */}
         <div className="left-0 top-0 sticky hidden lg:block">
-          <Fade left cascade delay={1500} duration={1300}>   
+          <Fade left cascade delay={1000} duration={1300}>   
             <div className="flex flex-col text-sm" style={{maxWidth: "49px", height: "0", overflow: "visible"}}>
               <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-24 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
               <Facebook data-tip="" data-for="share_facebook" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small link={shareLink} />

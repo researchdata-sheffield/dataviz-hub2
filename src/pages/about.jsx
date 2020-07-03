@@ -30,7 +30,7 @@ const About = () => (
       </Fade>
     </div>
 
-    <div id="more" className="container pt-12 pb-24 text-gray-800 mx-auto flex flex-wrap">
+    <div id="more" className="container pt-12 pb-24 text-gray-900 mx-auto flex flex-wrap">
       <div className="flex flex-wrap mx-auto justify-center content-center border-solid border-gray-100 border-b-2"> 
         <Fade>
           <a className="max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3" href="https://www.sheffield.ac.uk/library/index" target="_blank" rel="noopener noreferrer">
@@ -45,17 +45,17 @@ const About = () => (
         </Fade>
       </div>
 
-      <div className="flex flex-wrap text-gray-600 text-xl px-3 lg:px-32 xl:px-48 py-16">
+      <div className="flex flex-wrap text-gray-900 text-xl px-3 lg:px-32 xl:px-48 py-16">
         <Fade>
-          <p className="text-2xl"><b className="text-highlight_2">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
+          <p className=""><b className="text-highlight_2">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
             This community website exists to provide research staff and students at the University of Sheffield with information and inspiration about the visual presentation of data.
           </p>
           
-          <p className="pt-8 pb-16 text-gray-600">Visualisation has always been at the core of extracting understanding from data, but powerful, modern, open source, interactive and web-based visualisation tools have 
+          <p className="pt-8 pb-16">Visualisation has always been at the core of extracting understanding from data, but powerful, modern, open source, interactive and web-based visualisation tools have 
             revolutionised the potential for research data impact. We are here to help to unlock the potential of your data.
           </p>
           
-          <div className="pb-16 text-xl">
+          <div className="pb-16 ">
             <p className="pb-16">In 2017, <b>ORDA (Online Research Data)</b> was launched, a free platform for all University of Sheffield research staff and students to share their datasets, code, presentations, 
               posters, grey literature and other non-traditional research outputs. As part of ORDA, we&apos;ve developed a data visualisation showcase site where researchers are able to host 
               interactive data visualisations and also link them to reposited data in ORDA. 
@@ -65,8 +65,9 @@ const About = () => (
           
           <p className="text-highlight_2 text-4xl py-8">Contribute</p>  
           
-          <p>From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
-            the <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, <Link to="/community/#joinus">google group</Link> or <Link to="/community/#joinus">slack team</Link>.
+          <p className="text-gray-900">From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
+            the <a className="a-inline" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, 
+            <Link className="a-inline" to="/community/#joinus">google group</Link> or <Link className="a-inline" to="/community/#joinus">slack team</Link>.
           </p>
         </Fade>
       </div>
