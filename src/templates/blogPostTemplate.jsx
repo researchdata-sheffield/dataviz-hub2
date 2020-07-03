@@ -84,7 +84,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       {/* Top background, title and author etc. */}
       <Fade top delay={300}>
       <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-c1" style={{minHeight: "50vh", }}>
-        <Pulse cascade delay={1200} duration={500}>
+        <Pulse cascade delay={2000} duration={500}>
         <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-3 lg:px-48 2xl:px-78 leading-tight">
             <h1 id="title" className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
@@ -111,7 +111,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>
       </Fade>
 
-      <Fade cascade bottom delay={600} duration={1000}>
+      <Fade cascade bottom delay={300} duration={1000}>
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
         
         {/* desktop share buttons */}
