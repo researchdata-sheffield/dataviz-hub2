@@ -35,7 +35,7 @@ const latestPost = ({ latestPost }) => {
         return (
           <div key={node.id} className="group w-full">
             <Fade  key={node.id} duration={2000} fraction={0.3}>
-              <div className="flex flex-wrap w-full bg-black text-white border-b-1 border-gray-800 font-semibold hover:bg-white hover:text-black 2xl:text-xl">
+              <div className="flex flex-wrap w-full bg-black text-white border-t-1 first:border-t-0 border-gray-800 font-semibold hover:bg-white hover:text-black 2xl:text-xl">
                 <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full hover:text-black px-6 py-4">
                   <div className="flex flex-wrap items-center">
                     <MdFiberNew className="text-red-700 ipadp:text-gray-300 group-hover:text-red-700 text-3xl" />
@@ -49,7 +49,7 @@ const latestPost = ({ latestPost }) => {
 
               </div>    
             </Fade>
-            <div className="hidden lg:block fixed left-0 top-0 opacity-0 group-hover:opacity-100 transform -translate-x-64 group-hover:translate-x-0 transition duration-500 shadow-xl" 
+            <div className="hidden lg:block fixed left-0 top-0 opacity-0 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
                 style={{width: "33.333333%"}}
               >
               <img src={imagesrc} className="min-h-50 max-h-50 w-full" />

@@ -213,6 +213,10 @@ module.exports = {
         '95vh': '95vh',
         '100vh': '100vh',
       },
+      spacing: {
+        '110%': '110%',
+        
+      },
       textColor: {
         'highlight': '#337ab7',
         'highlight_2': '#00aeef',

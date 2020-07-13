@@ -4,6 +4,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
 
+// Underline effect Link
 export const Link = styled(gatsby_Link)`
   color: black;
   padding-bottom: 4px;
@@ -20,6 +21,7 @@ export const Link = styled(gatsby_Link)`
   }
 `
 
+// Underline effect 'a' tag
 export const A_a = styled.a`
   color: black;
   padding-bottom: 4px;
@@ -41,6 +43,12 @@ export const A_a = styled.a`
   }
 `
 
+/* Two version of underline effect 'a'
+* 1. anchor within page (use the anchor prop)
+* 2. external page (default)
+* & one version of normal 'a'
+  3. external page (use the a prop)
+*/
 export const A = (props) => {
   const {href, ...props_noRef} = props
   return (
@@ -49,9 +57,12 @@ export const A = (props) => {
         {props.children}
       </A_a>
       :
-      <A_a {...props} target="_blank" rel="noopener noreferrer">
-      {props.children}
-      </A_a>
+      [props.a === true ? 
+        <a {...props} target="_blank" rel="noopener noreferrer" >{props.children}</a>
+        :
+        <A_a {...props} target="_blank" rel="noopener noreferrer">{props.children}</A_a>
+      ]
+
   )  
 }
 
@@ -249,6 +260,7 @@ export const Table = styled.table`
 
 A.propTypes = {
   children: PropTypes.any,
-  anchor: PropTypes.any,
-  href: PropTypes.string
+  anchor: PropTypes.object,
+  href: PropTypes.string,
+  a: PropTypes.object,
 }

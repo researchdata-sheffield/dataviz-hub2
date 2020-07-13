@@ -165,7 +165,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       {/* End of top page */}     
       
       <div id="explore" />
-      <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative z-10" style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+      <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative " style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={700} duration={1500}>
           <div className="px-3 md:px-24 xl:px-36 2xl:px-52 mt-56 mb-72">
             <div className="text-white">
