@@ -185,7 +185,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <GitalkComponent options={{
           clientID: process.env.GH_APP_GITALK_ID,
           clientSecret: process.env.GH_APP_GITALK_SECRET,
-          repo: 'https://github.com/researchdata-sheffield/dataviz-hub2-comments',      // The repository of store comments,
+          repo: 'dataviz-hub2-comments',   
           owner: 'researchdata-sheffield',
           admin: ['ajtag', 'yld-weng', ' annakrystalli', 'GemmaRIT', 'rosiehigman'],
           id: location.pathname,
