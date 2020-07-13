@@ -25,7 +25,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
   let datePrev = moment()
   
-  var words = ["Colour", "What are you looking for?", "how to write a blog post", "slack", "dataset",
+  var words = ["Colour", "What are you looking for?", "blog post", "Dash", "dataset", "Shiny",
                "Chart", "visualisation", "Python", "DD/MM/YYYY"]
 
   useEffect( () => {
@@ -144,19 +144,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </Link>
             </div>  
 
-            <EventNotice eventBrite={eventBrite} />   
-              
-            {/* <div className="flex flex-wrap w-full text-white font-semibold text-center text-sm cursor-pointer bg-black pt-1 shadow-2xl">
-              <HomeBlogNav id="homeBlog" className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_red" onClick={() => {navigate('/blog/category/articles')}}>ARTICLES</HomeBlogNav>
-              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_yellow" onClick={() => {navigate('/blog/category/events')}}>EVENT</HomeBlogNav>
-              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-highlight_2" onClick={() => {navigate('/blog/category/news')}}>NEWS</HomeBlogNav>
-              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_green" onClick={() => {navigate('/blog/category/tutorial')}}>TUTORIAL</HomeBlogNav>
-            </div>   */}
-            
+            <EventNotice eventBrite={eventBrite} />             
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-white py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
+            <div className="flex flex-wrap w-full bg-white py-8 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-gray-800 mr-10">Discover a range of articles and posts at our blog.</div>
               <Link to="/blog"><GreyButton className="bg-black px-5 py-2 text-gray-400 hover:text-white mt-0">Read more</GreyButton></Link>
             </div> 
@@ -173,17 +165,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       {/* End of top page */}     
       
       <div id="explore" />
-      <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative" style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-        <div className="w-full absolute top-0 z-20">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#fff" fillOpacity="1" d="M0,32L1440,64L1440,0L0,0Z"></path>
-          </svg>
-        </div>
+      <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative z-10" style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={700} duration={1500}>
           <div className="px-3 md:px-24 xl:px-36 2xl:px-52 mt-56 mb-72">
             <div className="text-white">
               <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{textShadow: "#000 0px 0px 4px", fontFamily: "TUoS Stephenson"}}>Data and visualisation</h1>
-              <p className="2xl:text-lg my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 5px"}}>
+              <p className="text-lg 2xl:text-xl my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 5px"}}>
                 Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 
                 information clearly and effectively by means of graphical representation. However, this does not mean that data visualisation must be boring for its functional purpose, 
                 or extremely complicated ... 
@@ -194,7 +181,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Link> 
           </div>
         </Fade>
-        <div className="w-full absolute bottom-0">
+        <div className="w-full absolute bottom-0 -mb-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#1a202c" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>

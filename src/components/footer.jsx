@@ -6,7 +6,7 @@ import { FaGoogle, FaSlack } from "react-icons/fa"
 const Footer = () => {
   
   return (
-  <div className="bg-black px-10 py-8 lg:px-16 lg:py-10 text-sm relative z-10">
+  <div className="bg-black px-8 py-8 lg:px-12 lg:py-10 text-sm relative z-10">
     <div className="sm:flex mb-4">
       <div className="sm:w-2/12 h-auto">
           <div className="mb-2"><Link className="text-gray-100 font-semibold text-md" to="/">Dataviz.Shef</Link></div>

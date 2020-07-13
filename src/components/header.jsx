@@ -52,7 +52,7 @@ const Header = () => {
   const NavLink = (props) => {
     // Check path contains blog => check if it is tag/cat main page. Assign different colour
     
-    const navColorInBlog = `${isScroll ? `text-white hover:text-highlight_2t` : [wlp.includes("/blog/") ? 
+    const navColorInBlog = `${isScroll ? `text-black hover:text-highlight_2t` : [wlp.includes("/blog/") ? 
                               [wlp.includes("/blog/category") ? 
                                 `text-gray-500 hover:text-white` : [wlp.includes("/blog/tag/") ? 
                                   `text-gray-500 hover:text-white` : `text-gray-300 hover:text-white`]
@@ -93,12 +93,12 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative">
-      <nav id="navbar" className={`${isScroll ? `shadow-2xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
-        style={{backgroundColor: `${isScroll ? "rgba(73,73,73,.9)" : [wlp.includes("/blog/") ? "" : ""]}`, transition: "top 0.8s"}}
+      <nav id="navbar" className={`${isScroll ? `shadow-xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : [wlp.includes("/blog/") ? "" : ""]}`, transition: "top 0.8s"}}
       > 
-        <div className="flex items-center flex-shrink-0 text-white mr-5">
-          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/"><img style={{width: "11.6vh"}} src={ `${isScroll ? university_logo : university_logo}` }></img></A>
-          <div className={`${isScroll ? [wlp === "/" ? `text-gray-300` : ``] : [wlp === "/" ? `hidden` : `text-white`]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
+        <div className="flex items-center flex-shrink-0 mr-5">
+          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/"><img className="mt-1" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
+          <div className={`${isScroll ? [wlp === "/" ? `text-gray-300` : ``] : [wlp === "/" ? `hidden` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
