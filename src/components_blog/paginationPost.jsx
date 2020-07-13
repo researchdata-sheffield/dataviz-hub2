@@ -25,14 +25,14 @@ class PaginationPost extends React.Component {
     }
 
     return(
-      <div className="bg-gray-900 relative z-10">
+      <div className="relative z-20 mt-16" style={{backgroundColor: '#e5e5e5'}}>
         <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
           <Twitter className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
           <Facebook className="greyScale-100 hover:greyScale-0" solid small link={share[1]} />
           <Mail className="hover:bg-red-600" solid small subject={share[0]} link={share[1]} />
           <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
         </div> 
-        <div className="flex flex-wrap text-gray-200 justify-center items-center content-center mx-auto pt-6 text-sm">
+        <div className="flex flex-wrap text-gray-900 justify-center items-center content-center mx-auto pt-6 text-sm">
           {mdx.frontmatter.category.map((cat) => (
             <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
           ))}
@@ -43,13 +43,13 @@ class PaginationPost extends React.Component {
 
         <div className="flex justify-center py-8 mx-auto font-semibold" >
           {prev && (
-            <a value="prev" className="flex items-center pr-6 hover:text-highlight_2 text-gray-300 min-w-20" href={prev.node.fields.slug}>
+            <a value="prev" className="flex items-center pr-6 hover:text-highlight_2 text-gray-900 min-w-20" href={prev.node.fields.slug}>
               <TiArrowLeftThick className="mr-3 text-xl" /> {prevTitle}
             </a>
           )}
 
           {next && (
-            <a value="next" className="flex items-center pl-6 hover:text-highlight_2 text-gray-300 min-w-20" href={next.node.fields.slug}>
+            <a value="next" className="flex items-center pl-6 hover:text-highlight_2 text-gray-900 min-w-20" href={next.node.fields.slug}>
               {nextTitle} <TiArrowRightThick className="ml-3 text-xl" />
             </a>
           )}

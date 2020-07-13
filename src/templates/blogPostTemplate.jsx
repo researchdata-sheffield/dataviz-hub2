@@ -19,6 +19,8 @@ import Pulse from 'react-reveal/Pulse';
 //import Bounce from 'react-reveal/Bounce';
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
+import GitalkComponent from "gitalk/dist/gitalk-component";
+
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
@@ -176,12 +178,27 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           }      
         </div>  
       </div>       
-           
+ 
       <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
-      </Fade>
       
+      <div className="relative z-10 pt-5 pb-16 px-5 lg:px-24 xl:px-48 bg-white">
+        <GitalkComponent options={{
+          clientID: process.env.GH_APP_GITALK_ID,
+          clientSecret: process.env.GH_APP_GITALK_SECRET,
+          repo: 'https://github.com/researchdata-sheffield/dataviz-hub2-comments',      // The repository of store comments,
+          owner: 'researchdata-sheffield',
+          admin: ['ajtag', 'yld-weng', ' annakrystalli', 'GemmaRIT', 'rosiehigman'],
+          id: location.pathname,
+          title: mdx.frontmatter.title,
+          body: location.href + mdx.frontmatter.description,
+
+        }} /> 
+      </div>    
+      </Fade> 
+
       <Footer />
     </div>
+    
   )
 }
 

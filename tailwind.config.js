@@ -21,7 +21,8 @@ module.exports = {
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',
         'black-45': 'rgba(0, 0, 0, .45)',
-        'black-85': 'rgba(0, 0, 0, .85)'
+        'black-85': 'rgba(0, 0, 0, .85)',
+        'black-10': 'rgba(0, 0, 0, .1)',
       },
       borderColor: {
         'highlight_2': '#00aeef',
