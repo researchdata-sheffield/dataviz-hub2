@@ -25,7 +25,7 @@ class PaginationPost extends React.Component {
     }
 
     return(
-      <div className="relative z-20 mt-16" style={{backgroundColor: '#e5e5e5'}}>
+      <div className="relative z-20 mt-16" style={{backgroundColor: '#fafafa'}}>
         <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
           <Twitter className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
           <Facebook className="greyScale-100 hover:greyScale-0" solid small link={share[1]} />

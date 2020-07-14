@@ -180,17 +180,17 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>       
  
       <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
-      
-      <div className="relative z-10 pt-5 pb-16 px-5 lg:px-24 xl:px-48 bg-white">
+
+      <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
         <GitalkComponent options={{
           clientID: process.env.GATSBY_GH_APP_GITALK_ID,
           clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
           repo: 'dataviz-hub2-comments',   
           owner: 'researchdata-sheffield',
-          admin: ['yld-weng'],
+          admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
           id: mdx.fields.slug.substr(0,50),
           title: mdx.frontmatter.title,
-          body: location.href + mdx.frontmatter.description,
+          body: location.href + " | " + mdx.frontmatter.description,
           distractionFreeMode: false
 
         }} /> 

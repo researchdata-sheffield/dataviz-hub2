@@ -5,10 +5,11 @@
  */
 
 
-import "./src/css/index.css";
-import "./src/css/style.css";
-import "./src/css/post.css";
-import "./src/css/animation.css";
+import "./src/css/index.css"
+import "./src/css/style.css"
+import "./src/css/post.css"
+import "./src/css/animation.css"
+import "./src/css/gitalk.css"
 import "tailwindcss/dist/base.css"
 import 'gitalk/dist/gitalk.css'
 

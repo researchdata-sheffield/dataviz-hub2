@@ -22,17 +22,17 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 			<Header />
-			<BackgroundSection className="items-center justify-center text-center relative z-10" Height={`${pageContext.currentPage != 1 ? `35vh` : ``}`} >
+			<BackgroundSection className="items-center justify-center text-center relative z-10" Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`} >
 				<Flip cascade top delay={700}>
 					<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>	
-						<h1 className="text-5xl">Blog</h1>
-						<p className="text-md md:max-w-35 mt-3">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p>
+					<h1 className="text-5xl">Blog</h1>
+					<p className="text-md md:max-w-35 mt-3">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> 
 					</div>
 				</Flip>
 				<Flip cascade top delay={700}>
-					<div className="mt-16">
+					<div className={`${pageContext.currentPage !== 1 ? `hidden` : ``} mt-12`}>
 						<Link to="/blog#read">
-							<GreyButton className={`${pageContext.currentPage != 1 ? `hidden` : ``} text-sm hover:bg-gray-700`}>Start reading</GreyButton>
+							<GreyButton className="text-sm hover:bg-gray-700">Start reading</GreyButton>
 						</Link>
 					</div>
 				</Flip>
