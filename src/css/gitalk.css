@@ -28,7 +28,7 @@
   border: 1px solid black !important;
 }
 
-.gt-btn-login {
+.gt-btn-login, .gt-btn-public {
   background-color: black !important;
   color: white !important;
 }
@@ -65,6 +65,6 @@
   transition: .5s ease;
 }
 
-.gt-svg {
-  color: #00aeef !important;
+.gt-container .gt-svg svg {
+  fill: black !important;
 }
