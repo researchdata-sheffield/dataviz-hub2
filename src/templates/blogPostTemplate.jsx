@@ -60,7 +60,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
     
   return (
-    <div className="relative">
+    <div className="relative" key={mdx.id}>
       <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
       <Header />
       <Helmet >
@@ -188,7 +188,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           repo: 'dataviz-hub2-comments',   
           owner: 'researchdata-sheffield',
           admin: ['yld-weng'],
-          id: mdx.field.slug.substr(0,50),
+          id: mdx.fields.slug.substr(0,50),
           title: mdx.frontmatter.title,
           body: location.href + mdx.frontmatter.description,
           distractionFreeMode: false
