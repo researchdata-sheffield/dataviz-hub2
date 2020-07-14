@@ -183,14 +183,15 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       
       <div className="relative z-10 pt-5 pb-16 px-5 lg:px-24 xl:px-48 bg-white">
         <GitalkComponent options={{
-          clientID: process.env.GH_APP_GITALK_ID,
-          clientSecret: process.env.GH_APP_GITALK_SECRET,
+          clientID: process.env.GATSBY_GH_APP_GITALK_ID,
+          clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
           repo: 'dataviz-hub2-comments',   
           owner: 'researchdata-sheffield',
-          admin: ['ajtag', 'yld-weng', ' annakrystalli', 'GemmaRIT', 'rosiehigman'],
-          id: location.pathname,
+          admin: ['yld-weng'],
+          id: mdx.id,
           title: mdx.frontmatter.title,
           body: location.href + mdx.frontmatter.description,
+          distractionFreeMode: false
 
         }} /> 
       </div>    

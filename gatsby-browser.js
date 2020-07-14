@@ -12,7 +12,6 @@ import "./src/css/animation.css";
 import "tailwindcss/dist/base.css"
 import 'gitalk/dist/gitalk.css'
 
-
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
   if (!(`IntersectionObserver` in window)) {

@@ -148,7 +148,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-white py-16 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
+            <div className="flex flex-wrap w-full bg-white py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-gray-800 mr-10">Discover a range of articles and posts at our blog.</div>
               <Link to="/blog"><GreyButton className="bg-black px-5 py-2 text-gray-400 hover:text-white mt-0">Read more</GreyButton></Link>
             </div> 
