@@ -94,22 +94,22 @@ const Header = () => {
   return (
     <header className="font-semibold z-50 relative">
       <nav id="navbar" className={`${isScroll ? `shadow-xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
-        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : [wlp.includes("/blog/") ? "" : ""]}`, transition: "top 0.8s"}}
+        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.8s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
-          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/"><img className="mt-1" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
-          <div className={`${isScroll ? [wlp === "/" ? `text-gray-300` : ``] : [wlp === "/" ? `hidden` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
+          <A className={`${isScroll ? `` : [wlp === "/" ? `opacity-0` : ``]} `} href="https://www.sheffield.ac.uk/"><img className="mt-1" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
+          <div className={`${isScroll ? '' : [wlp === "/" ? `hidden` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
 
         <div onClick={() => toggleExpansion(!isExpanded)} className="block lg:hidden">
-          <button className="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-white hover:border-white">
+          <button className="flex items-center px-3 py-2 border rounded text-gray-900 border-gray-900 hover:text-gray-900 hover:border-gray-900">
           <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-xs xl:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? "" : "rgba(34,34,34,0.9)" ] : ""}` }}>
+        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-xs xl:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? '' : "rgba(255,255,255,1)" ] : ""}` }}>
           <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {
@@ -137,7 +137,7 @@ const Header = () => {
                 title: `About`
               },
               ].map(link => ( link.title != 'Showcase' ? 
-                <NavLink type="Link" activeStyle={{ color: `${isScroll ? "#00aeef" : "white" }`, fontWeight: "bold" }} partiallyActive={true} key={link.title} to={link.route}>
+                <NavLink type="Link" activeStyle={{ color: `${isScroll ? "#00aeef" : "black lg:white" }`, fontWeight: "bold" }} partiallyActive={true} key={link.title} to={link.route}>
                   {link.title}
                 </NavLink> 
                 : 

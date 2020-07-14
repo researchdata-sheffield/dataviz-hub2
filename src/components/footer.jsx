@@ -19,6 +19,7 @@ const Footer = () => {
               <li><A a href="https://orda.shef.ac.uk/visualisations/">Showcase</A></li>
               <li><Link to="/about">About</Link></li>
               <li><A a href="mailto:rdm@sheffield.ac.uk">Contact us</A></li>
+              <li><Link to="/privacy">Privacy Policy</Link></li>
             </ul>
       </div>
       <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
