@@ -188,7 +188,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           repo: 'dataviz-hub2-comments',   
           owner: 'researchdata-sheffield',
           admin: ['yld-weng'],
-          id: mdx.id,
+          id: mdx.field.slug.substr(0,50),
           title: mdx.frontmatter.title,
           body: location.href + mdx.frontmatter.description,
           distractionFreeMode: false
