@@ -53,14 +53,14 @@ export const A = (props) => {
   const {href, ...props_noRef} = props
   return (
     props.anchor === true ? 
-      <A_a {...props_noRef} rel="noopener noreferrer" href={href}>
+      <A_a {...props_noRef} rel="noopener noreferrer" href={href} key={props.href}>
         {props.children}
       </A_a>
       :
       [props.a === true ? 
-        <a {...props} target="_blank" rel="noopener noreferrer" >{props.children}</a>
+        <a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</a>
         :
-        <A_a {...props} target="_blank" rel="noopener noreferrer">{props.children}</A_a>
+        <A_a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</A_a>
       ]
 
   )  

@@ -6,6 +6,7 @@ import { MdEmail } from "react-icons/md"
 import { A } from "../components_style/blogPostStyle"
 
 const Footer = () => {
+  const currentYear = new Date()
   
   return (
   <div className="bg-black px-8 py-8 lg:px-12 lg:py-10 text-sm relative z-10">
@@ -70,7 +71,7 @@ const Footer = () => {
         
       </div>
   </div>
-  <p className="text-gray-500 leading-normal text-center text-sm pt-8"> © 2020  The University of Sheffield.</p>
+  <p className="text-gray-500 leading-normal text-center text-sm pt-8">Copyright © {currentYear.getFullYear()} The University of Sheffield.</p>
 
 </div>
   )

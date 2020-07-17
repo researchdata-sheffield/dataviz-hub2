@@ -96,13 +96,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </div>
               </div>
             </Slide>
-
-            <Fade bottom delay={700}>
-              <Link to='#explore'>
+            <Link to='#explore'>
+              <Fade bottom delay={700}>
                 <BlackWhiteButton className="py-2 px-10" link>Get Started</BlackWhiteButton>
-              </Link>
-            </Fade>
-
+              </Fade>
+            </Link>
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
               {/* <a className="text-gray-500 hover:text-highlight_2">Library &nbsp;</a> | 
               <a className="text-gray-500 hover:text-highlight_2">&nbsp; IT Services &nbsp;</a> |
@@ -150,7 +148,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             
             <div className="flex flex-wrap w-full bg-white py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-gray-800 mr-10">Discover a range of articles and posts at our blog.</div>
-              <Link to="/blog"><GreyButton className="bg-black px-5 py-2 text-gray-400 hover:text-white mt-0">Read more</GreyButton></Link>
+              <Link to="/blog"><GreyButton className="hover:bg-gray-900 px-5 py-2  hover:text-gray-100 text-black bg-gray-100 mt-0 border-gray-900 border-1">Read more</GreyButton></Link>
             </div> 
 
             {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
@@ -163,7 +161,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         </div>
       </div>
       {/* End of top page */}     
-      
+
       <div id="explore" />
       <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative " style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={700} duration={1500}>

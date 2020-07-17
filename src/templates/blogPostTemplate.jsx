@@ -120,13 +120,13 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <div className="left-0 top-0 sticky hidden lg:block z-10">
           <Fade left cascade delay={1000} duration={1300}>   
             <div className="flex flex-col text-sm" style={{maxWidth: "45px", height: "0", overflow: "visible"}}>
-              <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-28 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
-              <Facebook data-tip="" data-for="share_facebook" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small link={shareLink} />
-              <Mail data-tip="" data-for="share_email" title="" className="hover:bg-red-600 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small subject={shareMessage} link={shareLink} />
-              <Linkedin data-tip="" data-for="share_linkedin" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
+              <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-28 transition duration-500" solid small message={shareMessage} link={shareLink} />
+              <Facebook data-tip="" data-for="share_facebook" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small link={shareLink} />
+              <Mail data-tip="" data-for="share_email" title="" className="hover:bg-red-600 transition duration-500" solid small subject={shareMessage} link={shareLink} />
+              <Linkedin data-tip="" data-for="share_linkedin" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small message={shareMessage} link={shareLink} />
               <hr className="my-3" />
               <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}}>
-                <div className="m-2 py-1 bg-white hover:bg-black hover:text-white text-gray-800 flex justify-center rounded-md text-xl transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}}><RiEditBoxLine /></div>
+                <div className="m-2 py-1 bg-gray-900 text-white flex justify-center rounded-md text-xl transition duration-500"><RiEditBoxLine /></div>
               </a>
 
               <ReactTooltip id="share_twitter">Share on Twitter</ReactTooltip>

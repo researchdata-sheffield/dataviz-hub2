@@ -63,7 +63,7 @@ const Community = () => (
       </div>
 
       <div id="joinus" className="2xl:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000">
-        <div className="text-highlight_2 text-6xl w-full p-12 xl:px-12 font-semibold text-center">Join us.</div>
+        <div className="text-highlight_2 text-6xl w-full p-12 xl:px-12 font-semibold">Join us.</div>
         <Zoom>
           <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 2xl:mx-16 my-4 hover:shadow-2xl group flex relative transition duration-1000">
             <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">

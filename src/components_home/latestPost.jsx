@@ -15,7 +15,7 @@ const latestPost = ({ latestPost }) => {
 
   return (
     
-    <div className="w-full flex flex-wrap pt-8 bg-black">
+    <div className="w-full flex flex-wrap pt-6 bg-black">
       {latestPost.edges.map(({ node }) => { 
         let imagesrc 
         if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {

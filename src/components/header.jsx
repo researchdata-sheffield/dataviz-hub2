@@ -52,7 +52,7 @@ const Header = () => {
   const NavLink = (props) => {
     // Check path contains blog => check if it is tag/cat main page. Assign different colour
     
-    const navColorInBlog = `${isScroll ? `text-black hover:text-highlight_2t` : [wlp.includes("/blog/") ? 
+    const navColorInBlog = `${isScroll ? `text-black hover:text-highlight_2` : [wlp.includes("/blog/") ? 
                               [wlp.includes("/blog/category") ? 
                                 `text-gray-500 hover:text-white` : [wlp.includes("/blog/tag/") ? 
                                   `text-gray-500 hover:text-white` : `text-gray-300 hover:text-white`]
@@ -93,7 +93,7 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative">
-      <nav id="navbar" className={`${isScroll ? `shadow-xl` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+      <nav id="navbar" className={`${isScroll ? `shadow-lg` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.8s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
