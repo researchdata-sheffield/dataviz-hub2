@@ -35,7 +35,8 @@ class Search extends Component {
 
   render() {
     const ResultList = () => {
-      if (this.state.results.length > 0 && this.state.query.length > 2) {
+      // query length changed from 2 to 0
+      if (this.state.results.length > 0 && this.state.query.length > 0) {
         const data = useStaticQuery(graphql`
           query postList {
             allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
@@ -60,7 +61,7 @@ class Search extends Component {
 
         return (
           <div>
-            <div className="bg-orange-700 text-gray-100 py-2">Found {this.state.results.length} results</div>
+            <div className="bg-orange-700 text-gray-100 py-2">Found {this.state.results.length} results for you.</div>
 
             <div className="flex flex-wrap py-10 xl:pt-32 xl:pb-64 justify-center bg-gray-100">
               {this.state.results.map((item, i) => {
@@ -119,23 +120,27 @@ class Search extends Component {
           </div>
          </div>
         )
-      } else if (this.state.query.length > 2) {
+      } 
+      // else if (this.state.query.length > 2) {
+      //   return (
+      //     <div className="bg-orange-700 text-gray-100 py-2">No results for {this.state.query}</div>
+      //   )
+          
+      // } else if (this.state.query.length > 0) {
+      //   return (
+      //     <div className="bg-orange-700 text-gray-100 py-2">Please insert at least 3 characters</div>
+      //   )
+      // } 
+      else if (this.state.query.length > 0) {
         return (
           <div className="bg-orange-700 text-gray-100 py-2">No results for {this.state.query}</div>
         )
-          
-      } else if (
-        this.state.query.length > 0
-      ) {
-        return (
-          <div className="bg-orange-700 text-gray-100 py-2">Please insert at least 3 characters</div>
-        )
-      } else {
+      }
+      else {
         return (
           <div className="bg-orange-700 text-gray-100 py-2">Awaiting for your input ...</div>
         )
       }
-
     }
 
     return (
@@ -168,7 +173,10 @@ class Search extends Component {
       var results = []
       // search the indexed fields
       Object.keys(index).forEach(idx => {
-        results.push(...index[idx].values.search(query)) // more search options at https://github.com/nextapps-de/flexsearch#index.search
+        results.push(...index[idx].values.search({
+          query: query,
+          suggest: true,
+        }))
       })
 
       // find the unique ids of the nodes
@@ -185,7 +193,7 @@ class Search extends Component {
 
   search = (event) => {
     const query = event.target.value
-    if (this.state.query.length > 1) {
+    if (this.state.query.length > -1) {
       const results = this.getSearchResults(query)
       this.setState({ results: results, query: query })
     } else {
@@ -195,7 +203,7 @@ class Search extends Component {
 
   searchFromHome = (homeQuery) => {
     const query = homeQuery
-    if (this.state.query.length > 1) {
+    if (this.state.query.length > -1) {
       const results = this.getSearchResults(query)
       this.setState({ results: results, query: query })
     } else {

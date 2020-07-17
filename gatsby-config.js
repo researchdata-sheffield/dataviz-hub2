@@ -226,28 +226,27 @@ module.exports = {
           },
           {
             name: 'title',
-            indexed: true, // If indexed === true, the field will be indexed.
+            indexed: true,
             resolver: 'frontmatter.title',
-            // Attributes for indexing logic. Check https://github.com/nextapps-de/flexsearch#presets for details.
             attributes: {
-              encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              tokenize: "reverse",
+              encode: "advanced",
+              threshold: 0, 
+              resolution: 12,
+              depth: 1  // only supported by "strict" tokenize
             },
-            store: true, // In case you want to make the field available in the search results.
+            store: true,
           },
           {
             name: 'description',
             indexed: true,
             resolver: 'frontmatter.description',
             attributes: {
-              encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              tokenize: "forward",
+              encode: "advanced",
+              threshold: 0, 
+              resolution: 12,
+              depth: 1  // only supported by "strict" tokenize
             },
             store: true,
           },
@@ -256,11 +255,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.author',
             attributes: {
-              encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              tokenize: "reverse",
+              encode: "advanced",
+              threshold: 0, 
+              resolution: 12,
+              depth: 1  // only supported by "strict" tokenize
             },
             store: true,
           },
@@ -269,11 +268,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.category',
             attributes: {
-              encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              tokenize: "reverse",
+              encode: "advanced",
+              threshold: 0, 
+              resolution: 12,
+              depth: 1  // only supported by "strict" tokenize
             },
             store: true,
           },
@@ -282,11 +281,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.tag',
             attributes: {
-              encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              tokenize: "reverse",
+              encode: "advanced",
+              threshold: 0, 
+              resolution: 12,
+              depth: 1  // only supported by "strict" tokenize
             },
             store: true,
           },
@@ -294,6 +293,13 @@ module.exports = {
             name: 'url',
             indexed: true,
             resolver: 'fields.slug',
+            attributes: {
+              tokenize: "reverse",
+              encode: "advanced",
+              threshold: 0, 
+              resolution: 12,
+              depth: 1  // only supported by "strict" tokenize
+            },
             store: true,
           },
         ],
