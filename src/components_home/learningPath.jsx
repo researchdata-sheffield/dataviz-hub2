@@ -1,42 +1,87 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
-
-//import { ButtonWithArrow } from "../components_style/styled"
+import { FaUniversity, FaPython, FaRProject } from "react-icons/fa"
+import { FcWorkflow } from "react-icons/fc"
+import { ButtonWithArrow } from "../components_style/styled"
 
 
 
 const LearningPath = () => {
-  
+  const animationClasses = "transform transition duration-300 ease-in-out"
+  const cardClasses = `${animationClasses} w-4/5 lg:w-1/5 flex flex-wrap group justify-center mx-5 p-6 text-center mt-10 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-lg`
+  const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 opacity-100 group-hover:opacity-0`
+  const backCard = `${animationClasses} fixed top-0 left-0 p-6 text-left group-hover:translate-y-0 translate-y-40 invisible group-hover:visible group-hover:opacity-100 opacity-0`
+  const moreBtn = "mt-3 py-1 px-4 bg-black hover:bg-highlight_2"
+
   return (
-    <div id="learning_path" className="ipadp:min-h-100 flex flex-wrap justify-center items-center bg-gray-900 relative pb-10">
+    <div id="learning_path" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative pb-10" style={{backgroundColor: '#1d1d1d'}}>
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center">
-          <div className="text-6xl font-semibold text-highlight_2 w-full leading-tight" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
-          <p className="mt-3 text-gray-100 px-2">Discover how to get the most out of statistics, visualisation and tool sets.</p>
+          <div className="text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
+          <p className="mt-3 text-gray-100 px-2">Discover how to get the most out of statistics, visualisations and tool sets.</p>
         </div>
       </Fade>
       
-      <div className="flex flex-wrap text-gray-800 pt-24 pb-64 justify-center">
-        <h1 className="w-full text-white text-center">We are working on it, please come back later. <br/> Why not share your suggestions on our <a className="text-gray-500 hover:text-highlight_2 a-inline" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.</h1>
-        <div className="md:w-1/4 mx-5 p-3 mt-10 transform hover:-translate-y-6 transition duration-500 bg-highlight_2 shadow-xs hover:shadow-2xl rounded-lg">
-          <Zoom bottom duration={700} delay={500}>
-            
-          </Zoom>
-        </div>
+      <div className="flex flex-wrap text-gray-800 pt-10 pb-64 justify-center">
+        <Zoom bottom duration={700} delay={500}>
+          <div className={`${cardClasses} bg-gray-800 text-white`}>
+            <div className={frontCard}>
+              <FaUniversity className="w-full text-4xl" />
+              <div className="text-xl mt-5 font-bold">Concept</div>
+              <div className="text-sm mt-1">New to data visualisation and programming.</div>
+            </div>
+            <div className={backCard}>
+              <h1 className="font-bold">Concept</h1>
+              <p className="text-sm">Explore data visualisations through definitions, examples, videos, 
+                and relevant resources.
+              </p>
+              <ButtonWithArrow className={moreBtn}>Coming soon</ButtonWithArrow>
+            </div>
+          </div>
+        </Zoom>
+        <Zoom bottom duration={700} delay={750}>
+          <div className={`${cardClasses} bg-blue-700 text-white`}>
+            <div className={frontCard}>
+              <div className="flex flex-wrap justify-around text-4xl w-full">
+                <div><FaPython /></div>
+                <div><FaRProject /></div>
+              </div>
+              <h1 className="text-xl mt-5 font-bold">Practice</h1>
+              <p className="text-sm mt-1">Knowledge of programming languages Python / R.</p>
+            </div>
+            <div className={backCard}>
+              <h1 className="font-bold">Practice</h1>
+              <p className="text-sm">Step by step tutorials on create data visualisations using 
+              different tools and languages.
+              </p>
+              <ButtonWithArrow className={moreBtn}>Coming soon</ButtonWithArrow>
+            </div>
+          </div>
+        </Zoom>
+        <Zoom bottom duration={700} delay={750}>
+          <div className={`${cardClasses} bg-white`}>
+            <div className={frontCard}>
+              <FcWorkflow className="w-full text-4xl" />
+              <h1 className="text-xl mt-5 font-bold">Dataviz workflows</h1>
+              <p className="text-sm mt-1">Experienced in producing data visualisations.</p>
+            </div>
+            <div className={backCard}>
+              <h1 className="font-bold">Dataviz workflows</h1>
+              <p className="text-sm">Maximise your research impact through reproducible data visualisation 
+                workflows.
+              </p>
+              <ButtonWithArrow className={moreBtn}>Coming soon</ButtonWithArrow>
+            </div>
+          </div>
+        </Zoom>
 
-        <div className="md:w-1/4 mx-5 p-3 mt-10 transform hover:-translate-y-6 transition duration-500 bg-gray-500 shadow-xs hover:shadow-2xl rounded-lg">
-          <Zoom bottom duration={700} delay={750}>
-            
-          </Zoom>
-        </div>
-      
-        <div className="md:w-1/4 mx-5 p-3 mt-10 transform hover:-translate-y-6 transition duration-500 bg-white shadow-xs hover:shadow-2xl rounded-lg">
-          <Zoom bottom duration={700} delay={1000}>
-           
-          </Zoom>
-        </div>
+        <h1 className="w-full text-white text-center mt-10 px-2">
+          We are working on it, why not share your suggestions on 
+          our <a className="text-gray-200 hover:text-highlight_2 a-inline" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.
+        </h1>
       </div>
+
       <div className="w-full absolute bottom-0 -mb-1">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path fill="#ffffff" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>

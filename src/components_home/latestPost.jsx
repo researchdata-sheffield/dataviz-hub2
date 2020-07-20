@@ -33,7 +33,7 @@ const latestPost = ({ latestPost }) => {
         }
 
         return (
-          <div key={node.id} className="group w-full">
+          <div key={node.id} className="group w-full relative z-20">
             <Fade  key={node.id} duration={2000} fraction={0.3}>
               <div className="flex flex-wrap w-full bg-black text-white border-t-1 first:border-t-0 border-gray-800 font-semibold hover:bg-white hover:text-black 2xl:text-xl">
                 <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full hover:text-black px-6 py-4">

@@ -9,12 +9,12 @@ import { ButtonWithArrow } from "../components_style/styled"
 const HomeShowcase = () => {
 
   return (
-    <div className="relative overflow-hidden bg-gray-800 w-full">
-      <h1 className="absolute left-0 text-white text-2xl font-semibold transform -rotate-90 -ml-8 mt-44">Showcase</h1>
+    <div className="relative overflow-hidden bg-black w-full">
+      <h1 className="absolute left-0 text-white text-2xl font-semibold transform -rotate-90 -ml-20 mt-60">ORDA.SHEF.AC.UK</h1>
       <div id="home_showcase" />      
       <BackgroundTwo className="ipadp:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-12 transition duration-500">
-        <div className="flex flex-wrap justify-end">
-          <div className="lg:w-1/2 py-10 flex flex-wrap px-3 ipadp:pr-20 ipadp:pl-6">
+        <div className="flex flex-wrap justify-start">
+          <div className="lg:w-1/2 py-24 flex flex-wrap px-3 ipadp:pr-20 ipadp:pl-10">
             <Fade duration={1300} right>
             <div className="text-5xl 2xl:text-6xl font-semibold text-white" style={{textShadow: "#000000 0px 0px 0px", fontFamily: "TUoS Stephenson"}}>SHOWCASE</div>
             <div className="2xl:text-lg my-4 text-white font-semibold" style={{textShadow: "#8d8d8d 0px 0px 3px"}}>
@@ -30,7 +30,7 @@ const HomeShowcase = () => {
         
       </BackgroundTwo>
       
-      <div className="ipadp:min-h-40 flex flex-wrap pt-8 ipadp:pt-24 pb-64 items-center justify-center bg-gray-100">
+      <div className="ipadp:min-h-40 flex flex-wrap pt-8 ipadp:pt-24 pb-64 items-center justify-center" style={{background: '#fcfcfc'}}>
         <div className="md:w-6/12 px-3 md:pl-8 transform hover:scale-110 transition duration-500">
           <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
         </div>

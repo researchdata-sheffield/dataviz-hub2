@@ -213,7 +213,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-flexsearch',
       options: {
-        // L
         languages: ['en'],
         type: 'Mdx', // Filter the node types you want to index
         // Fields to index.
@@ -253,7 +252,7 @@ module.exports = {
           {
             name: 'author',
             indexed: true,
-            resolver: 'frontmatter.author',
+            resolver: 'frontmatter.author.name',
             attributes: {
               tokenize: "reverse",
               encode: "advanced",

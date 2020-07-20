@@ -9,6 +9,7 @@ import com_2 from "../images/community/com_2.jpg"
 import google from "../images/community/google.png"
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
+import { Link as Link_effect } from "../components_style/blogPostStyle"
 
 const Community = () => (
   <>
@@ -35,24 +36,28 @@ const Community = () => (
       </Fade>
     </BackgroundSection>
 
-    <div id="discover" className="container mx-auto py-32 text-gray-800 flex flex-wrap">
+    <div id="discover" className="container mx-auto py-24 text-gray-800 flex flex-wrap">
       
       <div className="flex flex-wrap lg:mx-16">
         <Fade cascade duration={2000}>
-          <div className="text-xl w-full xs:w-full md:w-full lg:w-1/2 px-4">
-            <p className="text-highlight_2 text-6xl text-center py-12">Stay tuned!</p>
-            <p className="pb-12 text-gray-600">The most important part of the initiative is to build community around data visualisation, we hope to achieve this in a number of ways.</p>
-            <p className="font-semibold pb-8">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
-            <img className="my-24" src={com_2} style={{borderRadius: "50%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
+          <div className="text-lg w-full lg:w-1/2 px-5">
+            <p className="text-highlight_2 text-5xl text-center py-3">Stay tuned!</p>
+            <p className="py-6 text-gray-900">The most important part of the initiative is to build community around data visualisation, we hope to achieve this in a number of ways.</p>
+            <p className="font-semibold pb-4">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
+            <img className="my-8 px-6" src={com_2} style={{borderRadius: "100%", minHeight: "55vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
+            <p className="text-base"> We’ve started with a <Link_effect to="/community/#joinus">TUoS google group</Link_effect> which 
+              can be joined through a TUoS google account. 
+              We have also added <Link_effect to="/community/#joinus">slack channel</Link_effect> for more informal 
+              communication and chat. Remember to say hello in our <i>#welcome channel</i>.
+            </p>
+            
           </div>
         </Fade>
         <Fade cascade duration={2000}>
-          <div className="w-full xs:w-full md:w-full lg:w-1/2 text-gray-600 text-xl px-4">
-            <img src={com_1} style={{borderRadius: "20%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
-            <p className="pt-24"> We’ve started with a <Link to="/community/#joinus"><b>TUoS google group</b></Link> which can be joined through a TUoS google account. <br />
-              We have also added <Link to="/community/#joinus"><b>slack channel</b></Link> for more informal communication and chat. Remember to say hello in our <i>#welcome channel</i>.</p>
-            <p className="text-highlight_2 text-2xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
-            <h1 className="text-gray-500">But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
+          <div className="w-full lg:w-1/2 text-gray-900 text-lg px-5">
+            <img src={com_1} className="mt-8" style={{borderRadius: "3%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
+            <p className="text-highlight_2 text-xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
+            <h1>But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
               <p className="pl-4"> <br />
               ~ Data visualisation in R <br />
               ~ R, htmlwidgets & Shiny  <br />
@@ -65,7 +70,7 @@ const Community = () => (
       <div id="joinus" className="2xl:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000">
         <div className="text-highlight_2 text-6xl w-full p-12 xl:px-12 font-semibold">Join us.</div>
         <Zoom>
-          <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 2xl:mx-16 my-4 hover:shadow-2xl group flex relative transition duration-1000">
+          <div className="md:w-2/5 rounded overflow-hidden shadow-md mx-6 my-4 hover:shadow-xl group flex relative transition duration-1000">
             <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">
               <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
               <div className="px-6">
@@ -75,8 +80,8 @@ const Community = () => (
             </a>
 
             <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" 
-              className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-16 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
-              style={{ position: "absolute", top: "74%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
+              className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-12 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
+              style={{ position: "absolute", top: "73%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
             >
             Sign up
             </a>
@@ -84,7 +89,7 @@ const Community = () => (
         </Zoom>
 
         <Zoom>
-          <div className="max-w-md rounded overflow-hidden shadow-lg mx-6 2xl:mx-16 my-4 hover:shadow-2xl group flex relative transition duration-1000">
+          <div className="md:w-2/5 rounded overflow-hidden shadow-md mx-6 my-4 hover:shadow-xl group flex relative transition duration-1000">
             <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">
             <img className="w-full" src={google} alt="Google Group" />
               <div className="px-6 pt-8">
@@ -94,8 +99,8 @@ const Community = () => (
             </a>
 
             <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" 
-              className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-10 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
-              style={{ position: "absolute", top: "74%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
+              className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-8 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
+              style={{ position: "absolute", top: "72%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
             >
             Join group  
             </a>
@@ -103,7 +108,7 @@ const Community = () => (
         </Zoom>
       </div>
 
-      <div className="lg:px-12 2xl:px-24 pt-24 pb-16 text-gray-700 text-xl">
+      <div className="lg:px-12 2xl:px-24 pt-24 pb-16 text-black text-lg">
           <p className="text-highlight_2 text-5xl px-2">Contribute!</p>
           <p className="p-3">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
             Feel free to get in touch with us through the google group or slack team with any suggestions. 

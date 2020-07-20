@@ -234,6 +234,9 @@ module.exports = {
         '40px': '40px',
         '50px': '50px',
       },
+      zIndex: {
+        '-10': '-10'
+      }
 
     },
  
@@ -245,17 +248,18 @@ module.exports = {
     borderWidth: ['responsive', 'hover', 'group-hover', 'first', 'last', 'odd', 'even'],
     fontWeight: ['group-hover', 'first', 'last', 'odd', 'even'],
     fontSize: ['responsive', 'hover', 'focus','group-hover', 'first', 'last', 'odd', 'even'],
-    display: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    opacity: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    zIndex: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
+    display: ['responsive', 'hover', 'focus', 'group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    zIndex: ['responsive', 'hover', 'focus', 'group-hover'],
     scale: ['responsive',  'focus', 'active', 'hover', 'group-hover', 'first', 'last', 'odd', 'even'],
-    transitionDuration: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    transitionProperty: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
+    transitionDuration: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionProperty: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover'],
     minHeight: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
     maxHeight: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    greyScale: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
+    greyScale: ['responsive', 'hover', 'focus', 'group-hover'],
     translate: ['responsive', 'hover', 'focus', 'active', 'group-hover', 'first', 'last', 'odd', 'even'],
+    visibility: ['responsive', 'hover', 'focus', 'group-hover']
   },
   plugins: [require("@tailwindcss/custom-forms")],
 }

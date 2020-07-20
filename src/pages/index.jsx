@@ -52,7 +52,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
 
   return (
-    <>
+    <div className="bg-white">
       <SEO 
         title="Home" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research",]} 
@@ -63,7 +63,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div>
         <div className="flex flex-wrap relative">
           {/* Left component */}
-          <div id="homeBar" className="shadow-lg sm:sticky sm:top-0 sm:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
+          <div id="homeBar" className="shadow-lg z-10 sm:sticky sm:top-0 sm:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center pt-28 ipadp:pt-10vh font-sans">
               <p className="text-gray-800 text-lg ipadp:text-3xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
               <p className="text-gray-700 text-base 2xl:text-lg mt-2 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
@@ -113,13 +113,13 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className="flex flex-wrap text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease", zIndex: "2"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+          <div className="flex flex-wrap text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease",}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="min-h-100 justify-center relative w-full brightness-40 hover:brightness-100" style={{transition: ".6s ease",}}>
+            <div className="min-h-100 justify-center relative w-full " style={{transition: ".6s ease",}}>
               
             <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
-                <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.8)"}}>
+                <h1 className="px-5 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
@@ -146,7 +146,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-white py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
+            <div className="flex flex-wrap w-full bg-white py-10 px-3 shadow-lg justify-center items-center self-center relative z-20" style={{transition: ".3s ease"}}>
               <div className="text-gray-800 mr-10">Discover a range of articles and posts at our blog.</div>
               <Link to="/blog"><GreyButton className="hover:bg-gray-900 px-5 py-2  hover:text-gray-100 text-black bg-gray-100 mt-0 border-gray-900 border-1">Read more</GreyButton></Link>
             </div> 
@@ -164,11 +164,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
       <div id="explore" />
       <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative " style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-        <Fade cascade delay={700} duration={1500}>
-          <div className="px-3 md:px-24 xl:px-36 2xl:px-52 mt-56 mb-72">
+        <Fade cascade delay={200} duration={1500}>
+          <div className="px-3 md:px-24 xl:px-36 2xl:px-52 mt-48 mb-72">
             <div className="text-white">
               <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{textShadow: "#000 0px 0px 4px", fontFamily: "TUoS Stephenson"}}>Data and visualisation</h1>
-              <p className="text-lg 2xl:text-xl my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 5px"}}>
+              <p className="text-base 2xl:text-xl my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 5px"}}>
                 Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 
                 information clearly and effectively by means of graphical representation. However, this does not mean that data visualisation must be boring for its functional purpose, 
                 or extremely complicated ... 
@@ -181,7 +181,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         </Fade>
         <div className="w-full absolute bottom-0 -mb-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#1a202c" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#1d1d1d" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
         </div>
       </div>
@@ -196,7 +196,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       </div>
 
       <Footer />        
-    </>
+    </div>
   )
 }
 
