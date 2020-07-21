@@ -119,14 +119,14 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* desktop share buttons */}
         <div className="left-0 top-0 sticky hidden lg:block z-10">
           <Fade left cascade delay={1000} duration={1300}>   
-            <div className="flex flex-col text-sm" style={{maxWidth: "45px", height: "0", overflow: "visible"}}>
+            <div className="flex flex-col text-xs" style={{maxWidth: "40px", height: "0", overflow: "visible"}}>
               <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-28 transition duration-500" solid small message={shareMessage} link={shareLink} />
               <Facebook data-tip="" data-for="share_facebook" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small link={shareLink} />
               <Mail data-tip="" data-for="share_email" title="" className="hover:bg-red-600 transition duration-500" solid small subject={shareMessage} link={shareLink} />
               <Linkedin data-tip="" data-for="share_linkedin" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small message={shareMessage} link={shareLink} />
               <hr className="my-3" />
               <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}}>
-                <div className="m-2 py-1 bg-gray-900 text-white flex justify-center rounded-md text-xl transition duration-500"><RiEditBoxLine /></div>
+                <div className="m-2 mt-1 bg-transparent text-black flex justify-center rounded-md text-xl transition duration-500"><RiEditBoxLine /></div>
               </a>
 
               <ReactTooltip id="share_twitter">Share on Twitter</ReactTooltip>
@@ -140,20 +140,20 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
 
         {/* mobile: toc & share buttons */}
-        <div className="w-full bg-gray-900 shadow-xl flex flex-wrap justify-center -mt-12 lg:mt-0">
-          <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
+        <div className="w-full shadow-lg flex flex-wrap justify-center -mt-12 lg:mt-0" style={{backgroundColor: '#f3f3f3'}}>
+          <div className="flex flex-col text-sm justify-center items-center w-1/4 py-2 lg:hidden ml-10" style={{maxWidth: '50px'}}>
             <Twitter solid small message={shareMessage} link={shareLink} />
             <Facebook solid small link={shareLink} />
-            <Mail solid small subject={shareMessage} link={shareLink} />
+            <Mail solid small className="bg-red-600" subject={shareMessage} link={shareLink} />
             <Linkedin solid small message={shareMessage} link={shareLink} />
             <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              <div className="m-2 py-1 px-2 bg-gray-100 hover:bg-highlight_2 text-gray-800 flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
+              <div className="m-2 py-1 px-2 bg-gray-800 hover:bg-highlight_2 text-white flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
             </a>
           </div>    
-          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>
-              {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
+          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-8 pb-5`: ``} mx-auto overflow-auto text-black lg:hidden px-2`}>
+              {tableOfContent && tableOfContent.items && <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">TABLE OF CONTENTS</p>}
               { tableOfContent && tableOfContent.items && 
-                <Scrollspy className="text-gray-300" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+                <Scrollspy className="text-gray-900" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
                   {tableOfContent.items.map(renderItem)}
                 </Scrollspy>
               }      
@@ -169,17 +169,19 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
         {/* sidebar toc: hidden in mobile */}
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
-          { tableOfContent && tableOfContent.items && <p className="font-bold mb-5 text-gray-700">TABLE OF CONTENTS</p>}
+          { tableOfContent && tableOfContent.items && <p className="font-bold mb-4 pb-2 text-gray-800" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>}
+          <div className="px-1 text-sm">
           { tableOfContent && 
             tableOfContent.items && 
             <Scrollspy className="text-gray-700" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
               {tableOfContent.items.map(renderItem)}
             </Scrollspy>
-          }      
+          }
+          </div>      
         </div>  
       </div>       
  
-      <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
+      <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
 
       <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
         <GitalkComponent options={{

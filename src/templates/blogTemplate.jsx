@@ -26,7 +26,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 				<Flip cascade top delay={700}>
 					<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>	
 					<h1 className="text-5xl">Blog</h1>
-					<p className="text-md md:max-w-35 mt-3">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> 
+					<p className="text-md md:max-w-35 mt-3 px-5">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> 
 					</div>
 				</Flip>
 				<Flip cascade top delay={700}>

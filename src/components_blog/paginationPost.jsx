@@ -4,6 +4,8 @@ import kebabCase from "lodash.kebabcase"
 import { TiArrowLeftThick, TiArrowRightThick } from "react-icons/ti"
 import {CatBtn, TagBtn} from "../components_style/styled"
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
+import { RiEditBoxLine } from "react-icons/ri"
+
 
 class PaginationPost extends React.Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class PaginationPost extends React.Component {
   }
 
   render() {
-    const { mdx, share, prev, next } = this.props
+    const { mdx, share, github, prev, next } = this.props
 
     let pruneLen = 40
     let prevTitle = prev ? prev.node.frontmatter.title : ""
@@ -31,6 +33,9 @@ class PaginationPost extends React.Component {
           <Facebook className="greyScale-100 hover:greyScale-0" solid small link={share[1]} />
           <Mail className="hover:bg-red-600" solid small subject={share[0]} link={share[1]} />
           <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
+          <a href={github} target="_blank" rel="noopener noreferrer">
+              <div className="m-2 py-1 px-2 bg-gray-800 hover:bg-highlight_2 text-white flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
+            </a>
         </div> 
         <div className="flex flex-wrap text-gray-900 justify-center items-center content-center mx-auto pt-6 text-sm">
           {mdx.frontmatter.category.map((cat) => (
@@ -41,7 +46,7 @@ class PaginationPost extends React.Component {
           ))}
         </div>
 
-        <div className="flex justify-center py-8 mx-auto font-semibold" >
+        <div className="flex justify-center py-8 px-3 mx-auto font-semibold" >
           {prev && (
             <a value="prev" className="flex items-center pr-6 hover:text-highlight_2 text-gray-900 min-w-20" href={prev.node.fields.slug}>
               <TiArrowLeftThick className="mr-3 text-xl" /> {prevTitle}
@@ -67,4 +72,5 @@ PaginationPost.propTypes = {
   prev: PropTypes.any,
   next: PropTypes.any,
   share: PropTypes.array,
+  github: PropTypes.string
 }

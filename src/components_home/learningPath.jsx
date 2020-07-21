@@ -24,7 +24,7 @@ const LearningPath = () => {
       </Fade>
       
       <div className="flex flex-wrap text-gray-800 pt-10 pb-64 justify-center">
-        <Zoom bottom duration={700} delay={500}>
+        <Zoom bottom duration={700} delay={100}>
           <div className={`${cardClasses} bg-gray-800 text-white`}>
             <div className={frontCard}>
               <FaUniversity className="w-full text-4xl" />
@@ -40,7 +40,7 @@ const LearningPath = () => {
             </div>
           </div>
         </Zoom>
-        <Zoom bottom duration={700} delay={750}>
+        <Zoom bottom duration={700} delay={250}>
           <div className={`${cardClasses} bg-blue-700 text-white`}>
             <div className={frontCard}>
               <div className="flex flex-wrap justify-around text-4xl w-full">
@@ -59,7 +59,7 @@ const LearningPath = () => {
             </div>
           </div>
         </Zoom>
-        <Zoom bottom duration={700} delay={750}>
+        <Zoom bottom duration={700} delay={300}>
           <div className={`${cardClasses} bg-white`}>
             <div className={frontCard}>
               <FcWorkflow className="w-full text-4xl" />
@@ -75,11 +75,12 @@ const LearningPath = () => {
             </div>
           </div>
         </Zoom>
-
-        <h1 className="w-full text-white text-center mt-10 px-2">
-          We are working on it, why not share your suggestions on 
-          our <a className="text-gray-200 hover:text-highlight_2 a-inline" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.
-        </h1>
+        <Zoom delay={1000}>
+          <h1 className="w-full text-white text-center mt-10 px-2">
+            We are working on it, why not share your suggestions on 
+            our <a className="text-gray-200 hover:text-highlight_2 a-inline" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.
+          </h1>
+        </Zoom>
       </div>
 
       <div className="w-full absolute bottom-0 -mb-1">
