@@ -228,11 +228,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.title',
             attributes: {
-              tokenize: "reverse",
-              encode: "advanced",
-              threshold: 0, 
+              tokenize: "strict",
+              encode: "extra",
+              threshold: 1, 
               resolution: 12,
-              depth: 1  // only supported by "strict" tokenize
+              depth: 1 
             },
             store: true,
           },
@@ -241,24 +241,24 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.description',
             attributes: {
-              tokenize: "forward",
-              encode: "advanced",
-              threshold: 0, 
+              tokenize: "strict",
+              encode: "extra",
+              threshold: 1, 
               resolution: 12,
-              depth: 1  // only supported by "strict" tokenize
+              depth: 1 
             },
             store: true,
           },
           {
             name: 'author',
             indexed: true,
-            resolver: 'frontmatter.author.name',
+            resolver: 'frontmatter.author',
             attributes: {
-              tokenize: "reverse",
-              encode: "advanced",
-              threshold: 0, 
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
               resolution: 12,
-              depth: 1  // only supported by "strict" tokenize
+              depth: 1
             },
             store: true,
           },
@@ -267,11 +267,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.category',
             attributes: {
-              tokenize: "reverse",
-              encode: "advanced",
-              threshold: 0, 
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
               resolution: 12,
-              depth: 1  // only supported by "strict" tokenize
+              depth: 1 
             },
             store: true,
           },
@@ -280,11 +280,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.tag',
             attributes: {
-              tokenize: "reverse",
-              encode: "advanced",
-              threshold: 0, 
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
               resolution: 12,
-              depth: 1  // only supported by "strict" tokenize
+              depth: 1 
             },
             store: true,
           },
@@ -293,11 +293,11 @@ module.exports = {
             indexed: true,
             resolver: 'fields.slug',
             attributes: {
-              tokenize: "reverse",
-              encode: "advanced",
-              threshold: 0, 
-              resolution: 12,
-              depth: 1  // only supported by "strict" tokenize
+              tokenize: "strict",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 9,
+              depth: 4 
             },
             store: true,
           },

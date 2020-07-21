@@ -100,9 +100,18 @@ class Search extends Component {
                     <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-50 2xl:min-h-40 mx-6 my-6 transform hover:scale-105 transition duration-500">
                       <div className="min-h-60 2xl:min-h-40 max-h-60 w-full p-6 transition duration-700 bg-black-45 group-hover:bg-black-85" style={{borderRadius: "15px"}}>
                         <div className="absolute pt-8 lg:pt-16 2xl:pt-24 overflow-hidden" style={{maxWidth:"320px"}}>
-                          <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100"><Highlighter highlightClassName={highlightClasses} textToHighlight={title} searchWords={this.state.query.split()} /></h1>  
-                          <h1 className="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}><Highlighter highlightClassName={highlightClasses} textToHighlight={item.author.join(' · ')} searchWords={this.state.query.split()} /></h1>
-                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">CAT: &nbsp;<Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} /></h1>
+                          <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
+                            <Highlighter highlightClassName={highlightClasses} textToHighlight={title} searchWords={this.state.query.split()} />
+                          </h1>  
+                          <h1 className="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}>
+                            {item.author.map((author, i, arr) => {
+                              return ( <Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={arr.length - 1 === i ? author : author.concat(", ")} searchWords={this.state.query.split()} key={author} /> )
+                            })}
+                          </h1>
+                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
+                            CAT: &nbsp;
+                            <Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} />
+                          </h1>
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
                             TAG: &nbsp;{item.tag.map((tag, i, arr) => {
                               return ( i < 3 && <Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} /> )
@@ -178,7 +187,6 @@ class Search extends Component {
           suggest: true,
         }))
       })
-
       // find the unique ids of the nodes
       results = Array.from(new Set(results))
 
@@ -195,6 +203,7 @@ class Search extends Component {
     const query = event.target.value
     if (this.state.query.length > -1) {
       const results = this.getSearchResults(query)
+      console.log(results)
       this.setState({ results: results, query: query })
     } else {
       this.setState({ results: [], query: query })
