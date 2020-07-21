@@ -57,7 +57,7 @@ export const A = (props) => {
         {props.children}
       </A_a>
       :
-      [props.a === true ? 
+      [props.a ? 
         <a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</a>
         :
         <A_a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</A_a>
@@ -262,5 +262,5 @@ A.propTypes = {
   children: PropTypes.any,
   anchor: PropTypes.object,
   href: PropTypes.string,
-  a: PropTypes.object,
+  a: PropTypes.any,
 }

@@ -5,8 +5,8 @@ import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
 
 const UpcomingEvents = ({allEventbriteEvents}) => {
   var eventLimit = 0
-  
-  if(allEventbriteEvents && allEventbriteEvents.edges) {
+
+  if(allEventbriteEvents && (allEventbriteEvents.edges.legnth > 0)) {
     return (
       <> 
       {allEventbriteEvents.edges.map(({node}) => {
@@ -54,7 +54,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
     )
   } else {
     return (
-      <div className="mt-16 text-gray-800">Sorry, no upcoming events available, please come back later.</div>
+      <div className="mt-16 text-blue-800">No upcoming events can be found, please come back later.</div>
     )
   }
 }

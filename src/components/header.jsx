@@ -57,7 +57,8 @@ const Header = () => {
                                 `text-gray-500 hover:text-white` : [wlp.includes("/blog/tag/") ? 
                                   `text-gray-500 hover:text-white` : `text-gray-300 hover:text-white`]
                               ] 
-                            : [wlp === "/" ? 'text-gray-900 hover:text-highlight_2' : `text-gray-500 hover:text-white`] ]}`
+                            : [wlp === "/" ? 
+                                'text-gray-900 hover:text-highlight_2' : `text-gray-400 hover:text-white`] ]}`  
     
     switch(props.type){
       case 'a':

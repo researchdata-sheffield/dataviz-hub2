@@ -28,7 +28,7 @@ const LearningPath = () => {
           <div className={`${cardClasses} bg-gray-800 text-white`}>
             <div className={frontCard}>
               <FaUniversity className="w-full text-4xl" />
-              <div className="text-xl mt-5 font-bold">Concept</div>
+              <div className="text-xl mt-5 font-bold">Dataviz Concept</div>
               <div className="text-sm mt-1">New to data visualisation and programming.</div>
             </div>
             <div className={backCard}>
@@ -36,7 +36,7 @@ const LearningPath = () => {
               <p className="text-sm">Explore data visualisations through definitions, examples, videos, 
                 and relevant resources.
               </p>
-              <ButtonWithArrow className={moreBtn}>Coming soon</ButtonWithArrow>
+              <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>
             </div>
           </div>
         </Zoom>
@@ -47,7 +47,7 @@ const LearningPath = () => {
                 <div><FaPython /></div>
                 <div><FaRProject /></div>
               </div>
-              <h1 className="text-xl mt-5 font-bold">Practice</h1>
+              <h1 className="text-xl mt-5 font-bold">Dataviz Lab</h1>
               <p className="text-sm mt-1">Knowledge of programming languages Python / R.</p>
             </div>
             <div className={backCard}>
@@ -55,7 +55,7 @@ const LearningPath = () => {
               <p className="text-sm">Step by step tutorials on create data visualisations using 
               different tools and languages.
               </p>
-              <ButtonWithArrow className={moreBtn}>Coming soon</ButtonWithArrow>
+              <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>
             </div>
           </div>
         </Zoom>

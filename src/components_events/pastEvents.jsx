@@ -16,11 +16,11 @@ const PastEvents = ({pastEvent}) => {
         }
 
         return (
-          <div style={{ fontFamily: "TUoS Blake",}} className="flex flex-wrap bg-gray-100 p-3 w-full overflow-auto shadow-md hover:shadow-xl bg-white text-gray-700 group border-t-2 border-solid border-r-8 border-gray-700 hover:border-r-8 hover:border-highlight_2" key={node.id}>
+          <div className="flex flex-wrap transition duration-500 p-3 w-full overflow-auto shadow-md hover:shadow-xl bg-white group border-t-2 border-solid border-r-8 border-gray-700 hover:border-r-8 hover:border-highlight_2" key={node.id}>
             <Link to={node.fields.slug}>
-            <p className="font-semibold text-sm text-gray-700 group-hover:text-highlight_2">{node.frontmatter.title}</p>
-            <p className="text-gray-500 mt-1 hidden md:flex lg:flex xl:flex text-sm leading-4">{description}</p>
-            <p className="mt-1 text-sm text-gray-700 group-hover:font-semibold">{node.frontmatter.date}</p>
+            <p style={{ fontFamily: "TUoS Stephenson",}} className="font-bold text-sm text-black">{node.frontmatter.title}</p>
+            <p className="text-gray-700 hidden md:flex text-sm leading-4">{description}</p>
+            <p className="mt-2 text-sm text-black">{node.frontmatter.date}</p>
             </Link>
           </div>
         )
