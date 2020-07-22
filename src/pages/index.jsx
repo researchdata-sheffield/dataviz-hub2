@@ -220,7 +220,7 @@ export const query = graphql`
       ...MdxEdge
     }
     
-    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1, filter: {organization_id: {ne: "777"}}) {
+    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1, filter: {id: {ne: "777"}}) {
       ...EventbriteEventsEdge
     }  
   }

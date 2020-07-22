@@ -133,7 +133,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <ReactTooltip id="share_facebook">Share on Facebook</ReactTooltip>
               <ReactTooltip id="share_email">Share on E-Mail</ReactTooltip>
               <ReactTooltip id="share_linkedin">Share on Linkedin</ReactTooltip>
-              <ReactTooltip id="share_editpost">Edit this post 😎</ReactTooltip>
+              <ReactTooltip id="share_editpost">Edit this post on GitHub</ReactTooltip>
             </div>
           </Fade> 
         </div>   

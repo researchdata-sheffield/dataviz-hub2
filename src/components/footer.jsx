@@ -17,32 +17,32 @@ const Footer = () => {
               <li><Link to="/blog">Blog</Link></li>
               <li><Link to="/events">Events</Link></li>
               <li><Link className="hover:text-highlight_2" to="/community">Community</Link></li>
-              <li><A a href="https://orda.shef.ac.uk/visualisations/">Showcase</A></li>
+              <li><A a="true" href="https://orda.shef.ac.uk/visualisations/">Showcase</A></li>
               <li><Link to="/about">About</Link></li>
-              <li><A a href="mailto:rdm@sheffield.ac.uk">Contact us</A></li>
+              <li><A a="true" href="mailto:rdm@sheffield.ac.uk">Contact us</A></li>
               <li><Link to="/privacy">Privacy Policy</Link></li>
             </ul>
       </div>
       <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
-          <div className="text-gray-100 text-md mb-2 font-semibold"><A a href="https://orda.shef.ac.uk">Online Research Data</A></div>
+          <div className="text-gray-100 text-md mb-2 font-semibold"><A a="true" href="https://orda.shef.ac.uk">Online Research Data</A></div>
             <ul className="list-reset leading-normal">
-              <li><A a href="https://orda.shef.ac.uk/articles/list/desc/published_date/all">Datasets</A></li>
-              <li><A a href="https://orda.shef.ac.uk/#orda-fac">Faculties</A></li>
-              <li><A a href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643">Visualised datasets</A></li>
+              <li><A a="true" href="https://orda.shef.ac.uk/articles/list/desc/published_date/all">Datasets</A></li>
+              <li><A a="true" href="https://orda.shef.ac.uk/#orda-fac">Faculties</A></li>
+              <li><A a="true" href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643">Visualised datasets</A></li>
             </ul>
 
-        <div className="mb-2 mt-4"><A a className="text-gray-100 text-md font-semibold" href="https://orda.shef.ac.uk/#orda-fac">The University of Sheffield</A></div>
+        <div className="mb-2 mt-4"><A a="true" className="text-gray-100 text-md font-semibold" href="https://orda.shef.ac.uk/#orda-fac">The University of Sheffield</A></div>
           <ul className="list-reset leading-normal">
-          <li><A a href="http://sheffield.ac.uk/library/rdm">Research Data Management support</A></li>
-              <li><A a href="https://www.sheffield.ac.uk/it-services">IT Services</A></li>
-              <li><A a href="http://rse.shef.ac.uk/">Research Software Engineering</A></li>
+          <li><A a="true" href="http://sheffield.ac.uk/library/rdm">Research Data Management support</A></li>
+              <li><A a="true" href="https://www.sheffield.ac.uk/it-services">IT Services</A></li>
+              <li><A a="true" href="http://rse.shef.ac.uk/">Research Software Engineering</A></li>
           </ul>
 
       </div>
       <div className="sm:w-2/12 h-auto sm:mt-0 mt-8">
                 <div className="text-gray-100 text-md mb-2 font-semibold">Collaboration</div>
           <ul className="list-reset leading-normal">
-            <li><A a href="https://github.com/researchdata-sheffield/dataviz-hub2">Github repository</A></li>
+            <li><A a="true" href="https://github.com/researchdata-sheffield/dataviz-hub2">Github repository</A></li>
           </ul>
       </div>
       
@@ -61,11 +61,11 @@ const Footer = () => {
         </div>
           
         <div className="sm:w-1/3 pl-6">
-          <A className="m-20" href="https://www.sheffield.ac.uk/"><img className="w-11/12" src={university_logo}></img></A>
+          <A a="true" className="m-20" href="https://www.sheffield.ac.uk/"><img className="w-11/12" src={university_logo}></img></A>
           <div className="text-center justify-between w-11/12 text-gray-300">
-            <button className="mx-2"><A a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"><FaGoogle /></A></button>
-            <button className="mx-2"><A a href="https://join.slack.com/t/shef-dataviz/signup"><FaSlack /></A></button>
-            <button className="mx-2"><A a href="mailto:rdm@sheffield.ac.uk"><MdEmail /></A></button>
+            <button className="mx-2"><A a="true" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"><FaGoogle /></A></button>
+            <button className="mx-2"><A a="true" href="https://join.slack.com/t/shef-dataviz/signup"><FaSlack /></A></button>
+            <button className="mx-2"><A a="true" href="mailto:rdm@sheffield.ac.uk"><MdEmail /></A></button>
           </div>
         </div>
         

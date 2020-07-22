@@ -12,7 +12,7 @@ export const eventbriteEdge = graphql`
         description {
           text
           html
-        }
+        } 
         logo {
           original {
             url
