@@ -11,7 +11,7 @@
 /* Large (lg) */
 @media (min-width: 1024px) { 
   .fade-box2 {
-    max-height: 120px;
+    max-height: 130px;
   }
 }
 
@@ -23,17 +23,17 @@
 /* Extra Large (xl) */
 @media (min-width: 1281px) {
   .fade-box2 {
-    max-height: 170px;
+    max-height: 175px;
   }
 }
 
 /* Extra 2 Large (2xl) */
-@media (min-width: 1441px) {
+@media (min-width: 1400px) {
   .fade-box2 {
-    max-height: 250px;
+    max-height: 232px;
   }
   .fade-box2:after {
-    height: calc((8.75vw - 30px)/2) !important;
+    height: calc((18.75vw - 30px)/2) !important;
   }
 }
 

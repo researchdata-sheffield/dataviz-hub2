@@ -8,7 +8,6 @@ import com_1 from "../images/community/com_1.jpg"
 import com_2 from "../images/community/com_2.jpg"
 import google from "../images/community/google.png"
 import Fade from 'react-reveal/Fade'
-import Zoom from 'react-reveal/Zoom'
 import { Link as Link_effect } from "../components_style/blogPostStyle"
 
 const Community = () => (
@@ -69,7 +68,7 @@ const Community = () => (
 
       <div id="joinus" className="2xl:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000">
         <div className="text-highlight_2 text-6xl w-full p-12 xl:px-12 font-semibold">Join us.</div>
-        <Zoom>
+        <Fade>
           <div className="md:w-2/5 rounded overflow-hidden shadow-md mx-6 my-4 hover:shadow-xl group flex relative transition duration-1000">
             <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">
               <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
@@ -86,9 +85,9 @@ const Community = () => (
             Sign up
             </a>
           </div>
-        </Zoom>
+        </Fade>
 
-        <Zoom>
+        <Fade>
           <div className="md:w-2/5 rounded overflow-hidden shadow-md mx-6 my-4 hover:shadow-xl group flex relative transition duration-1000">
             <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">
             <img className="w-full" src={google} alt="Google Group" />
@@ -105,7 +104,7 @@ const Community = () => (
             Join group  
             </a>
           </div>
-        </Zoom>
+        </Fade>
       </div>
 
       <div className="lg:px-12 2xl:px-24 pt-24 pb-16 text-black text-lg">

@@ -180,12 +180,14 @@ export const AnimateButton = styled_twin.button`
 `
 
 export const ButtonWithArrow = (props) => {
+  const arrowStyle = "inline-block transform group-hover:translate-x-1 transition duration-100"
+
   switch(props.type){
     case 'BlackButton':
       return (
         <BlackButton {...props}>
         {props.children}
-        <MdKeyboardArrowRight className="inline-block" />
+        <MdKeyboardArrowRight className={arrowStyle} />
         </BlackButton>
       )
     
@@ -193,7 +195,7 @@ export const ButtonWithArrow = (props) => {
       return (
         <GreyButton {...props}>
         {props.children}
-        <MdKeyboardArrowRight className="inline-block" />
+        <MdKeyboardArrowRight className={arrowStyle} />
         </GreyButton>
       )
 
@@ -201,7 +203,7 @@ export const ButtonWithArrow = (props) => {
       return (
         <BlackWhiteButton {...props}>
         {props.children}
-        <MdKeyboardArrowRight className="inline-block" />
+        <MdKeyboardArrowRight className={arrowStyle} />
         </BlackWhiteButton>
       )
 
@@ -209,7 +211,7 @@ export const ButtonWithArrow = (props) => {
       return (
         <BlackButton {...props}>
         {props.children}
-        <MdKeyboardArrowRight className="inline-block" />
+        <MdKeyboardArrowRight className={arrowStyle} />
         </BlackButton>
       )
   }

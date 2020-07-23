@@ -175,7 +175,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </p>
             </div>
             <Link to="/blog/22/03/2020/datavizhub_guide">
-              <ButtonWithArrow type="GreyButton">Read more</ButtonWithArrow>
+              <ButtonWithArrow type="GreyButton" className="group">Read more</ButtonWithArrow>
             </Link> 
           </div>
         </Fade>
@@ -212,15 +212,27 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query {
-    featuredPost: allMdx(filter: {frontmatter: {featured: {eq: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 2) {
+    featuredPost: 
+      allMdx(
+        filter: {frontmatter: {featured: {eq: "true"}}}, 
+        sort: {order: DESC, fields: frontmatter___date}, 
+        limit: 2 ) {
       ...MdxEdge
     }
 
-    latestPost: allMdx(filter: {frontmatter: {featured: {ne: "true"}, hide: {ne: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
+    latestPost: 
+      allMdx(
+        filter: {frontmatter: {featured: {ne: "true"}, hide: {ne: "true"}}}, 
+        sort: {order: DESC, fields: frontmatter___date}, 
+        limit: 6 ) {
       ...MdxEdge
     }
     
-    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1, filter: {id: {ne: "777"}, isFuture: {eq: true}}) {
+    eventBrite: 
+      allEventbriteEvents(
+        sort: {fields: start___local, order: ASC}, 
+        limit: 1, 
+        filter: {id: {ne: "777"}, isFuture: {eq: true}} ) {
       ...EventbriteEventsEdge
     }  
   }

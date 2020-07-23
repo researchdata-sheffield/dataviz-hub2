@@ -51,7 +51,7 @@ const LearningPath = () => {
               <p className="text-sm mt-1">Knowledge of programming languages Python / R.</p>
             </div>
             <div className={backCard}>
-              <h1 className="font-bold">Practice</h1>
+              <h1 className="font-bold">Dataviz Lab</h1>
               <p className="text-sm">Step by step tutorials on create data visualisations using 
               different tools and languages.
               </p>
@@ -63,11 +63,11 @@ const LearningPath = () => {
           <div className={`${cardClasses} bg-white`}>
             <div className={frontCard}>
               <FcWorkflow className="w-full text-4xl" />
-              <h1 className="text-xl mt-5 font-bold">Dataviz workflows</h1>
+              <h1 className="text-xl mt-5 font-bold">Dataviz Workflows</h1>
               <p className="text-sm mt-1">Experienced in producing data visualisations.</p>
             </div>
             <div className={backCard}>
-              <h1 className="font-bold">Dataviz workflows</h1>
+              <h1 className="font-bold">Dataviz Workflows</h1>
               <p className="text-sm">Maximise your research impact through reproducible data visualisation 
                 workflows.
               </p>
@@ -75,7 +75,7 @@ const LearningPath = () => {
             </div>
           </div>
         </Zoom>
-        <Zoom delay={1000}>
+        <Zoom delay={700}>
           <h1 className="w-full text-white text-center mt-10 px-2">
             We are working on it, why not share your suggestions on 
             our <a className="text-gray-200 hover:text-highlight_2 a-inline" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.

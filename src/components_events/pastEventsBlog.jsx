@@ -18,7 +18,7 @@ const PastEventsBlog = ({pastEventBlog}) => {
         }
 
         return (
-          <div className="flex flex-wrap transition duration-500 overflow-hidden p-3 md:w-1/2 lg:w-1/3 rounded-md bg-white group" key={node.id}>
+          <div className="flex flex-wrap transition duration-500 overflow-hidden p-3 md:w-1/2 lg:w-1/3 rounded-md bg-white group hover:bg-gray-100" key={node.id}>
             <Link to={node.fields.slug}>
             <p style={{ fontFamily: "TUoS Blake",}} className="font-bold text-black leading-5">{node.frontmatter.title}</p>
             <p className="text-gray-700 mt-1 text-sm leading-4">{description}</p>

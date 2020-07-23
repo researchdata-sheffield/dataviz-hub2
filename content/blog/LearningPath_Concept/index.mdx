@@ -27,53 +27,46 @@ import Fade from 'react-reveal/Fade'
   </div>
 </div>
 <div className="flex flex-wrap justify-between px-3 md:px-32 lg:px-48 2xl:px-78 text-black bg-white text-sm sticky top-0 left-0 relative z-10 shadow-md">
-  <a href="#what" anchor className=" hover:text-highlight_2 cursor-pointer py-2" style={{background: 'none'}}>What is data visualisation</a>
-  <a href="#why" anchor className=" hover:text-highlight_2 cursor-pointer py-2" style={{background: 'none'}}>Why is it important</a>
-  <a href="#how" anchor className=" hover:text-highlight_2 cursor-pointer py-2" style={{background: 'none'}}>How this site could help</a>
-  <a href="#start" anchor className=" hover:text-highlight_2 cursor-pointer py-2" style={{background: 'none'}}>Where should I start</a>
+  <a href="#what" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Welcome</a>
+  <a href="#why" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Data visualisation basics</a>
+  <a href="#how" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>What charts?</a>
+  <a href="#start" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Tools!</a>
 </div>
 
-<div className="py-16">
-  <div className="flex flex-wrap text-gray-900 mx-auto px-3 lg:px-16 2xl:px-16 py-8 lg:max-w-70 2xl:max-w-50 rounded-3xl" style={{backgroundColor: "rgba(255, 255, 255, .97)"}}>
+<div className="py-10">
+  <div className="flex flex-wrap text-black mx-auto px-3 lg:px-16 2xl:px-16 py-8 lg:max-w-70 2xl:max-w-50 rounded-3xl" style={{backgroundColor: "rgba(255, 255, 255, .97)"}}>
     <Fade duration={2000} fraction={.5}>
       <div id="what" className="ipadp:min-h-80">
-        <p className="text-highlight_2 font-bold text-5xl">What is data visualisation?</p>
+        <p className="text-highlight_2 font-bold text-5xl leading-8">WELCOME!</p>
         <p>
-          Data visualisation generally considered as the graphical representation of information and data, it 
-          is currently an extremely active and critical aspect in research, teaching, and development, and 
-          is closely related to information graphics, information visualisation, scientific visualisation, 
-          and statistical graphics.
-          <img src="./img1.jpg" />
-          The main purpose of data visualisation is to communicate information clearly and effectively by 
-          means of graphical representation. However, this does not mean that data visualisation must be 
-          boring for its functional purpose, or extremely complicated to look gorgeous. 
-          <br /> <br /> In order to effectively communicate ideas and concepts, 
-          aesthetic and functions need to go hand in hand, and by visually communicating key aspects and 
-          features, we get deep insights into fairly sparse and complex datasets.
-          
+          This is the <b>first learning path</b> prepared from the <b>Dataviz.Shef team</b> that helps you to get started. 
+          This learning path is specifically designed for those with no experience in data visualisation that 
+          wish to learn from the basics and explore a broad range of topics such as stages of visualising data, 
+          choosing the right charts, make use of powerful tools and libraries available out there, data exploratory 
+          techniques, and many more. <br /> <br /> 
+          You will soon find out that we are often referring to external resources this is because there are 
+          already enormous amazing resources available on the internet, we have organised them in relevant 
+          sections for you to check out. In addition, the university has a partnership 
+          with <a href="https://www.sheffield.ac.uk/nap/service/redirect/lilearning"><b>Linkedin Learning</b></a> providing thousands 
+          of online training courses to staff and students through MUSE, we have also included some useful 
+          courses to help you get started.
         </p>
       </div> 
     </Fade>
     <Fade duration={2000}>
-    <div id="why" className="flex-wrap ipadp:min-h-80">
-      <p className="text-highlight_2 font-bold text-5xl">Why is it important?</p>
+    <div id="why" className="flex-wrap ipadp:min-h-80 mt-24">
+      <p className="text-highlight_2 font-bold text-5xl leading-10">Data visualisation basics</p>
       <p>
-      The huge amount of data is one of the characteristics of the Internet era. Learn to quickly digest 
-      and absorb useful information in huge data groups can greatly help to seize opportunities. Studies 
-      have shown that the amount of information we use visually is far greater than other senses. This also 
-      means that the possibility of finding relevant information through data visualization is far greater 
-      than other methods, and it allow viewers to get more information.  <img style={{width: '100%'}} src="./img2.jpg" />
-      While many organisations and companies across different sectors relying on data to gain insights and 
-      optimising their products, data visualisation is not yet an integral part of research communication. 
-      Today, powerful, modern, open source, interactive and web-based visualisation tools have revolutionised 
-      the potential for research data impact, we are here to help our researchers make the most of their 
-      data and take advantage of such tools. 
+        This section included common knowledge of data visualisations that you might find useful. 
+        <ul>
+          <li><a href="https://www.oreilly.com/library/view/visualizing-data/9780596514556/ch01.html">The Seven Stages of Visualizing Data</a></li>
+        </ul>
       </p>
     </div>
     </Fade>
     <Fade duration={2000}>
     <div id="how" className="flex-wrap ipadp:min-h-80">
-      <p className="text-highlight_2 font-bold text-5xl">How this site could help?</p>
+      <p className="text-highlight_2 font-bold text-5xl leading-8">What charts?</p>
       <p>
         Support through: <br />
           &bull; Documentation on dataviz best practice and use of tools  <br />
@@ -86,7 +79,7 @@ import Fade from 'react-reveal/Fade'
     </Fade>
     <Fade duration={2000}>
     <div id="start" className="flex-wrap ipadp:min-h-50">
-      <p className="text-highlight_2 font-bold text-5xl">Where should I start?</p>
+      <p className="text-highlight_2 font-bold text-5xl leading-8">Tools!</p>
       <p>
         &bull; Learn from <Link to="/blog">documentations</Link> <br />
         &bull; Share your data visualisations on <a href="https://orda.shef.ac.uk/visualisations/">ORDA showcase</a> <br />

@@ -22,7 +22,7 @@ const HomeShowcase = () => {
               representations of data built by staff and students at the University of Sheffield.
             </div>
             <a className="mt-8" href="https://orda.shef.ac.uk/visualisations" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow external type="GreyButton">Discover</ButtonWithArrow>
+              <ButtonWithArrow external type="GreyButton" className="group">Discover</ButtonWithArrow>
             </a>
             </Fade>
           </div>
@@ -31,7 +31,7 @@ const HomeShowcase = () => {
       </BackgroundTwo>
       
       <div className="ipadp:min-h-40 flex flex-wrap pt-8 ipadp:pt-24 pb-64 items-center justify-center" style={{background: '#fcfcfc'}}>
-        <div className="md:w-6/12 px-3 md:pl-8 transform hover:scale-110 transition duration-500">
+        <div className="md:w-6/12 md:pl-8 transform hover:scale-110 transition duration-500">
           <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
         </div>
         <Zoom cascade duration={1300}>
@@ -41,7 +41,7 @@ const HomeShowcase = () => {
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>
           <a className="mt-8" href="https://orda.shef.ac.uk" target="_blank" rel="noopener noreferrer">
-            <ButtonWithArrow external className="hover:bg-white hover:shadow-2xl hover:text-highlight_2 transition duration-500 ease-in-out">Go to ORDA</ButtonWithArrow>
+            <ButtonWithArrow external className="group hover:bg-white hover:shadow-2xl hover:text-highlight_2 transition duration-500 ease-in-out">Go to ORDA</ButtonWithArrow>
           </a>
         </div>
         </Zoom>
