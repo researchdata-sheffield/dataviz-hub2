@@ -9,7 +9,7 @@ category: ["Articles"]
 tag: ["Learning Path"]
 template: "custom"
 featured: "false"
-hide: "true"
+hide: "false"
 ---
 
 import React from 'react'
@@ -27,16 +27,16 @@ import Fade from 'react-reveal/Fade'
   </div>
 </div>
 <div className="flex flex-wrap justify-between px-3 md:px-32 lg:px-48 2xl:px-78 text-black bg-white text-sm sticky top-0 left-0 relative z-10 shadow-md">
-  <a href="#what" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Welcome</a>
-  <a href="#why" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Data visualisation basics</a>
-  <a href="#how" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>What charts?</a>
-  <a href="#start" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Tools!</a>
+  <a href="#sec1" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Welcome</a>
+  <a href="#sec2" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Data visualisation basics</a>
+  <a href="#sec3" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>What charts?</a>
+  <a href="#sec4" anchor className="hover:text-highlight_2 cursor-pointer py-2 mx-3" style={{background: 'none'}}>Tools!</a>
 </div>
 
 <div className="py-10">
   <div className="flex flex-wrap text-black mx-auto px-3 lg:px-16 2xl:px-16 py-8 lg:max-w-70 2xl:max-w-50 rounded-3xl" style={{backgroundColor: "rgba(255, 255, 255, .97)"}}>
     <Fade duration={2000} fraction={.5}>
-      <div id="what" className="ipadp:min-h-80">
+      <div id="sec1" className="ipadp:min-h-80">
         <p className="text-highlight_2 font-bold text-5xl leading-8">WELCOME!</p>
         <p>
           This is the <b>first learning path</b> prepared from the <b>Dataviz.Shef team</b> that helps you to get started. 
@@ -48,24 +48,72 @@ import Fade from 'react-reveal/Fade'
           already enormous amazing resources available on the internet, we have organised them in relevant 
           sections for you to check out. In addition, the university has a partnership 
           with <a href="https://www.sheffield.ac.uk/nap/service/redirect/lilearning"><b>Linkedin Learning</b></a> providing thousands 
-          of online training courses to staff and students through MUSE, we have also included some useful 
+          of online training courses to staff and students through <a href="https://www.sheffield.ac.uk/muse"><b>MUSE</b></a>, we have also included some useful 
           courses to help you get started.
         </p>
       </div> 
     </Fade>
     <Fade duration={2000}>
-    <div id="why" className="flex-wrap ipadp:min-h-80 mt-24">
+    <div id="sec2" className="flex-wrap ipadp:min-h-80 mt-24">
       <p className="text-highlight_2 font-bold text-5xl leading-10">Data visualisation basics</p>
       <p>
-        This section included common knowledge of data visualisations that you might find useful. 
+        This section includes common knowledge of data visualisations that you might find useful. 
+        The following book chapter presented a nice overview of the typical process of producing data 
+        visualisation:
         <ul>
+          <li><a href="https://www.elsevier.com/connect/a-5-step-guide-to-data-visualization">A 5 step guide to data visualisation</a></li>
           <li><a href="https://www.oreilly.com/library/view/visualizing-data/9780596514556/ch01.html">The Seven Stages of Visualizing Data</a></li>
-        </ul>
+        </ul> <br />
+        When we visualise data, the basic process should be to first determine the goal of our visual analysis, 
+        then obtain the relevant data, organise the data, select the appropriate tools, display the data 
+        through appropriate charts, and finally display the visualised results. We have divided this 
+        section further into <b>five sections</b>, feel free to skip some sections if you are comfortable with 
+        the contents. 
       </p>
+      <br />
+      <h3>1. Ideas and questions</h3>
+      <p>
+        A piece of data visualisation often starts with good ideas/questions in mind, then we map data 
+        directly into perceptible graphics, symbols, colors, textures, etc., to communicate the idea or 
+        answer the question. Here are some interesting related articles:
+        <LPWrap>
+          <LPItem href="https://flowingdata.com/2018/10/17/ask-the-question-visualize-the-answer/">Ask the question visualize the answer</LPItem>
+          <LPItem href="https://dataviz.shef.ac.uk/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">Visualising high risk areas for covid-19 mortality</LPItem>
+          <LPItem href="https://medium.com/the-data-experience/four-questions-you-should-ask-before-visualizing-your-data-cd20a302eb65">Four questions you should ask before visualizing your data</LPItem>
+        </LPWrap>
+      </p>
+      <br />
+      <h3>2. Data preparation</h3>
+      <p>
+        Once you have a general understanding of what you want to produce, data collection can be 
+        carried out (or you might already have some data). We can collect the data we need to analyse 
+        according to the different methods of data acquisition, such as issuing questionnaires, obtaining 
+        data through experiments, or open source data. After we collect the data, it is likely that we 
+        need to <b>pre-process</b> the data, filter and delete invalid and unnecessary data. This process is 
+        extremely common in day-to-day work of professions such as Data Scientist, Data Engineer, 
+        Data analyst or Machine Learning Engineer. When the data is ready, we can import the data into 
+        the tool of our choice for <b>data exploratory analysis</b>. 
+      </p>
+      <LPWrap>
+        <LPItem href="https://developer.ibm.com/technologies/data-science/articles/data-preprocessing-in-detail/">Data preprocessing in details</LPItem>
+        <LPItem href="https://towardsdatascience.com/data-preprocessing-concepts-fa946d11c825">Data preprocessing concepts</LPItem>
+      </LPWrap>
+      <br />
+      <h3>3. Exploratory Analysis</h3>
+      <p>
+        Data exploratory analysis (DEA) is considered as an approach that explores the structure and laws 
+        of the data and verifies a set of hypotheses by means of drawing, tabulation, equation fitting, 
+        and calculating feature quantities. There are a broad range 
+        of <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis#Techniques_and_tools">techniques and tools</a> but 
+        it is not necessary to use all of these. Watch the following course to get started:
+      </p>
+      <LPWrap>
+        <LPItem video href="https://www.linkedin.com/learning/data-fluency-exploring-and-describing-data/gather-greater-insight-and-make-better-decisions-with-your-data?autoplay=true&resume=false&u=36248012">Data Fluency: Exploring and Describing Data</LPItem>
+      </LPWrap>
     </div>
     </Fade>
     <Fade duration={2000}>
-    <div id="how" className="flex-wrap ipadp:min-h-80">
+    <div id="sec3" className="flex-wrap ipadp:min-h-80">
       <p className="text-highlight_2 font-bold text-5xl leading-8">What charts?</p>
       <p>
         Support through: <br />
@@ -78,7 +126,7 @@ import Fade from 'react-reveal/Fade'
     </div>
     </Fade>
     <Fade duration={2000}>
-    <div id="start" className="flex-wrap ipadp:min-h-50">
+    <div id="sec4" className="flex-wrap ipadp:min-h-50">
       <p className="text-highlight_2 font-bold text-5xl leading-8">Tools!</p>
       <p>
         &bull; Learn from <Link to="/blog">documentations</Link> <br />

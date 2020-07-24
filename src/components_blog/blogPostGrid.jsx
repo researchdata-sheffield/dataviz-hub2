@@ -35,8 +35,8 @@ const blogPostGrid = ({allMdx}) => {
       let title = node.frontmatter.title
       let tag = node.frontmatter.tag
       return (
-        <Slide bottom key={node.id} duration={400} fraction={0.4}>
-          <div className="w-full md:w-1/3 xl:w-1/4 min-h-90 lg:min-h-100 2xl:max-h-90 overflow-hidden bg-white relative pb-10 2xl:pb-0">
+        <Slide bottom key={node.id} duration={400} fraction={0.3}>
+          <div className="w-full md:w-1/3 xl:w-1/4 min-h-90 lg:min-h-110 2xl:max-h-90 overflow-hidden bg-white relative pb-10 2xl:pb-0">
             <Link className="group" to={node.fields.slug}>
               { node.frontmatter.featured === "true" && 
                 <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300 group-hover:bg-black items-center" style={{zIndex: "3"}}>
@@ -45,26 +45,26 @@ const blogPostGrid = ({allMdx}) => {
                 </div>
               }
               <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-3/5 lg:max-h-3/5 xl:min-h-1/2 xl:max-h-1/2"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
-              <ArrowBox className="px-6 pt-6 2xl:px-8 2xl:pt-8 leading-none text-gray-700">
+              <ArrowBox className="px-6 pt-6 2xl:px-8 2xl:pt-8 leading-none">
                 <div className='overflow-hidden fade-box2'>
                   <h1 className="font-extrabold text-2xl xl:text-3xl leading-tight text-black group-hover:text-highlight_2 overflow-y-hidden font-sans">{title}</h1>
-                  <p className="my-3 text-base leading-tight group-hover:text-highlight_2" >{description}</p>
+                  <p className="my-3 text-base leading-tight group-hover:text-highlight_2 text-gray-800" >{description}</p>
                 </div>
-                <div className="relative z-10 text-xs">
-                  <p className="mt-2">
+                <div className="relative z-10 text-xs" style={{color: '#848484', fontWeight: '400'}}>
+                  {/* <p className="mt-2">
                     {node.frontmatter.author.map((author, idx) => (
                       (node.frontmatter.author.length == idx + 1) ? author.name : author.name + ", "      
                     ))}
-                  </p>
-                  <p className="mt-1 mb-1">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
+                  </p> */}
+                  <p className="mt-3 mb-1">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
                 </div>         
                 {/* <p className="mt-5 text-base  font-semibold">{node.fields.readingTime.text}</p> */}
               </ArrowBox>
             </Link>
-            <div className="px-6 2xl:px-8 text-xs text-gray-700">
+            <div className="px-6 2xl:px-8 text-xs" style={{color: '#848484', fontWeight: '400'}}>
               {node.frontmatter.category.map((cat) => (
                 <>
-                  <Link className="text-gray-700 font-semibold hover:underline" key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
+                  <Link className="font-semibold hover:underline" key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
                   <> · </> 
                 </>
               ))}

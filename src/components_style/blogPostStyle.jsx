@@ -3,6 +3,39 @@ import { Link as gatsby_Link } from "gatsby"
 import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
+import { ButtonWithArrow } from "./styled"
+
+export const LPWrap = (props) => {
+  return (
+    <div className="flex flex-wrap w-full justify-around my-10">
+      {props.children}
+    </div>
+  )
+}
+
+LPWrap.propTypes = {
+  children: PropTypes.any,
+}
+
+export const LPItem = (props) => {
+  return (
+    <a href={props.href} className="w-3/4 md:w-1/4 flex flex-col p-5 shadow-md hover:shadow-xl rounded-xl transition duration-500 text-lg 
+      bg-black-02 hover:bg-white group hover:text-black">
+      {props.children}
+      <a href={props.href}>
+        <ButtonWithArrow type="BlackButton" className="mt-5 p-0 text-sm bg-transparent text-black hover:underline">
+          {props.video ? 'watch videos' : 'read more'}
+        </ButtonWithArrow>
+      </a>
+    </a>
+  )
+}
+
+LPItem.propTypes = {
+  children: PropTypes.any,
+  href: PropTypes.any,
+  video: PropTypes.any,
+}
 
 // Underline effect Link
 export const Link = styled(gatsby_Link)`

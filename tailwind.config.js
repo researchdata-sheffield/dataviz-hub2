@@ -23,6 +23,7 @@ module.exports = {
         'black-45': 'rgba(0, 0, 0, .45)',
         'black-85': 'rgba(0, 0, 0, .85)',
         'black-10': 'rgba(0, 0, 0, .1)',
+        'black-02': 'rgba(0, 0, 0, .02)',
       },
       borderColor: {
         'highlight_2': '#00aeef',

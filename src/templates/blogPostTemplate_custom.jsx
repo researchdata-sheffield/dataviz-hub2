@@ -6,7 +6,7 @@ import Footer from "../components/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table } from "../components_style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table, LPWrap, LPItem } from "../components_style/blogPostStyle"
 import PaginationPost from "../components_blog/paginationPost"
 import "katex/dist/katex.min.css"
 import GitalkComponent from "gitalk/dist/gitalk-component"
@@ -28,7 +28,12 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
       <Header />
       
       <div className="justify-center mx-auto text-xl" style={{fontFamily: "Helvetica"}}>
-        <MDXProvider components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, img: IMG, table: Table, }}>
+        <MDXProvider 
+          components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
+                        hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, 
+                        img: IMG, table: Table, LPWrap: LPWrap, LPItem: LPItem
+                      }}
+        >
           <MDXRenderer>{mdx.body}</MDXRenderer>
         </MDXProvider>
       </div>
