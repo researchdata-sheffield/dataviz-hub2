@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "gatsby"
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import { FaUniversity, FaPython, FaRProject } from "react-icons/fa"
@@ -12,7 +13,7 @@ const LearningPath = () => {
   const cardClasses = `${animationClasses} w-4/5 lg:w-1/5 flex flex-wrap group justify-center mx-5 p-6 text-center mt-10 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-lg`
   const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 opacity-100 group-hover:opacity-0`
   const backCard = `${animationClasses} fixed top-0 left-0 p-6 text-left group-hover:translate-y-0 translate-y-40 invisible group-hover:visible group-hover:opacity-100 opacity-0`
-  const moreBtn = "mt-3 py-1 px-4 bg-black hover:bg-highlight_2"
+  const moreBtn = "mt-3 py-1 px-3 bg-black hover:bg-highlight_2 text-sm"
 
   return (
     <div id="learning_path" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative pb-10" style={{backgroundColor: '#1d1d1d'}}>
@@ -36,7 +37,7 @@ const LearningPath = () => {
               <p className="text-sm">Explore data visualisations through definitions, examples, videos, 
                 and relevant resources.
               </p>
-              <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>
+              <Link to="/blog/03/07/2020/LearningPath_Concept"><ButtonWithArrow className={moreBtn}>Learn more</ButtonWithArrow></Link>
             </div>
           </div>
         </Zoom>
