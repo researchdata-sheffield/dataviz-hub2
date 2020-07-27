@@ -7,7 +7,7 @@ import { ButtonWithArrow } from "./styled"
 
 export const LPWrap = (props) => {
   return (
-    <div className="flex flex-wrap w-full justify-around my-10">
+    <div className="flex flex-wrap w-full justify-start my-8">
       {props.children}
     </div>
   )
@@ -19,11 +19,11 @@ LPWrap.propTypes = {
 
 export const LPItem = (props) => {
   return (
-    <a href={props.href} className="w-3/4 md:w-1/4 flex flex-col p-5 shadow-md hover:shadow-xl rounded-xl transition duration-500 text-lg 
-      bg-black-02 hover:bg-white group hover:text-black">
+    <a href={props.href} className="w-3/4 md:w-1/4 md:mx-8 mb-8 flex flex-col p-5 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg 
+       hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1" style={{fontWeight: '600', background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)'}}>
       {props.children}
       <a href={props.href}>
-        <ButtonWithArrow type="BlackButton" className="mt-5 p-0 text-sm bg-transparent text-black hover:underline">
+        <ButtonWithArrow type="BlackButton" className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
           {props.video ? 'watch videos' : 'read more'}
         </ButtonWithArrow>
       </a>
@@ -41,7 +41,7 @@ LPItem.propTypes = {
 export const Link = styled(gatsby_Link)`
   color: black;
   padding-bottom: 4px;
-  background: linear-gradient(to right,#00aeef 0%, #00aeef 98%);
+  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
   background-size: 100% 2px;
   background-repeat: no-repeat;
   background-position: right 85%;
@@ -58,7 +58,7 @@ export const Link = styled(gatsby_Link)`
 export const A_a = styled.a`
   color: black;
   padding-bottom: 4px;
-  background: linear-gradient(to right,#00aeef 0%,#00aeef 98%);
+  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);   ${'' /* (to right,#00aeef 0%,#00aeef 98%) */}
   background-size: 100% 2px;
   background-repeat: no-repeat;
   background-position: right 85%;

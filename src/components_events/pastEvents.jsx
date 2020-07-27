@@ -18,7 +18,7 @@ const PastEvents = ({pastEvent}) => {
         }
 
         return (
-          <div className="flex flex-wrap transition duration-500 border-blue-800 p-3 w-full overflow-auto shadow-md hover:shadow-xl bg-white group border-t-2 border-solid border-r-8 hover:border-r-8 hover:border-highlight_2" key={node.id}>
+          <div className="flex flex-wrap p-3 w-full overflow-hidden bg-white group pastEvent" key={node.id}>
             <a href={node.url} target="_blank" rel="noopener noreferrer">
             <p style={{ fontFamily: "TUoS Blake",}} className="font-bold text-sm text-black leading-4">{node.name.text}</p>
             <p className="text-gray-700 text-xs leading-4 mt-1">{description}</p>

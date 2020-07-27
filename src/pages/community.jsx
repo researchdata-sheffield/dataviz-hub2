@@ -66,8 +66,8 @@ const Community = () => (
         </Fade>
       </div>
 
-      <div id="joinus" className="2xl:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000">
-        <div className="text-highlight_2 text-6xl w-full p-12 xl:px-12 font-semibold">Join us.</div>
+      <div id="joinus" className="2xl:p-16 flex flex-wrap justify-center content-center mx-auto transition ease-in-out duration-2000 mt-10">
+        <div className="text-gray-900 text-6xl w-full p-12 xl:px-12 font-semibold">Join us.</div>
         <Fade>
           <div className="md:w-2/5 rounded overflow-hidden shadow-md mx-6 my-4 hover:shadow-xl group flex relative transition duration-1000">
             <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">
@@ -108,11 +108,11 @@ const Community = () => (
       </div>
 
       <div className="lg:px-12 2xl:px-24 pt-24 pb-16 text-black text-lg">
-          <p className="text-highlight_2 text-5xl px-2">Contribute!</p>
+          <p className="text-gray-900 text-5xl px-2 font-semibold">Contribute!</p>
           <p className="p-3">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
             Feel free to get in touch with us through the google group or slack team with any suggestions. 
             We will also be putting together more formal contributing guidance should you wish to contribute to our online resources
-            directly through <a className="text-highlight_2 font-semibold" href="https://github.com/researchdata-sheffield/dataviz-hub2" target="_blank" rel="noopener noreferrer">github</a> including blogposts and turtorials.</p>
+            directly through our <a className="font-semibold link-effect" href="https://github.com/researchdata-sheffield/dataviz-hub2" target="_blank" rel="noopener noreferrer">GitHub repository</a> including blogposts and turtorials.</p>
       </div>
 
 

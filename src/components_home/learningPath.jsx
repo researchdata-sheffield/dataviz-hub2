@@ -78,7 +78,7 @@ const LearningPath = () => {
         <Zoom delay={700}>
           <h1 className="w-full text-white text-center mt-10 px-2">
             We are working on it, why not share your suggestions on 
-            our <a className="text-gray-200 hover:text-highlight_2 a-inline" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.
+            our <a className="text-gray-200 hover:text-highlight_2 link-effect" href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">slack channel</a>.
           </h1>
         </Zoom>
       </div>
