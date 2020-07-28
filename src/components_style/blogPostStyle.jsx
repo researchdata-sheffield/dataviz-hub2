@@ -19,10 +19,12 @@ LPWrap.propTypes = {
 
 export const LPItem = (props) => {
   return (
-    <a href={props.href} className="w-3/4 md:w-1/4 md:mx-8 mb-8 flex flex-col p-5 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg 
-       hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1" style={{fontWeight: '600', background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)'}}>
+    <a href={props.href} className="w-3/4 md:w-1/4 md:mx-8 mb-8 flex flex-col p-5 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1" 
+      style={{fontWeight: '600', background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)'}}
+      rel="noopener noreferrer" target="_blank"
+    >
       {props.children}
-      <a href={props.href}>
+      <a href={props.href} rel="noopener noreferrer" target="_blank">
         <ButtonWithArrow type="BlackButton" className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
           {props.video ? 'watch videos' : 'read more'}
         </ButtonWithArrow>

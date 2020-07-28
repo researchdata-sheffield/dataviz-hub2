@@ -53,7 +53,7 @@ const LearningPath = () => {
             </div>
             <div className={backCard}>
               <h1 className="font-bold">Dataviz Lab</h1>
-              <p className="text-sm">Step by step tutorials on create data visualisations using 
+              <p className="text-sm">Tutorials and guides on create data visualisations using 
               different tools and languages.
               </p>
               <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>

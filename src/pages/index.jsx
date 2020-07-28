@@ -63,10 +63,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div>
         <div className="flex flex-wrap relative">
           {/* Left component */}
-          <div id="homeBar" className="shadow-lg z-10 sm:sticky sm:top-0 sm:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
+          <div id="homeBar" className="shadow-lg z-10 lg:sticky lg:top-0 lg:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center pt-28 ipadp:pt-10vh font-sans">
-              <p className="text-gray-800 text-lg ipadp:text-3xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
-              <p className="text-gray-700 text-base 2xl:text-lg mt-2 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-2xl ipadp:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
+              <p className="text-gray-900 text-base 2xl:text-lg mt-5 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />

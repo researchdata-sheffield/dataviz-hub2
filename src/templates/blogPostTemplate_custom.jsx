@@ -87,6 +87,7 @@ export const query = graphql`
             }
           }
         }
+        template
         date(formatString: "dddd Do MMMM YYYY")
         category
         tag
