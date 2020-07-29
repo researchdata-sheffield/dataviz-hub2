@@ -25,7 +25,7 @@ const HomeCommunity = () => {
       
       <div className="flex flex-wrap text-gray-700 pt-10 pb-20 justify-center">
         <div className={cardClasses}>
-          <Zoom bottom duration={700} delay={500}>
+          <Zoom bottom duration={700} delay={300}>
             <RiCalendarEventLine className="text-3xl group-hover:text-red-700" />
             <p className="font-bold py-3">Events</p>
             <div className={cardTextClasses}>
@@ -38,7 +38,7 @@ const HomeCommunity = () => {
         </div>
 
         <div className={cardClasses}>
-          <Zoom bottom duration={700} delay={750}>
+          <Zoom bottom duration={700} delay={550}>
             <RiBookReadLine className="text-3xl group-hover:text-highlight_2" />
             <p className="font-bold py-3">Training</p>
             <div className={cardTextClasses}>
@@ -50,7 +50,7 @@ const HomeCommunity = () => {
         </div>
       
         <div className={cardClasses}>
-          <Zoom bottom duration={700} delay={1000}>
+          <Zoom bottom duration={700} delay={800}>
             <MdPeople className="text-3xl group-hover:text-green-500" />
             <p className="font-bold py-3">Support</p>
             <div className={cardTextClasses}>
@@ -64,7 +64,7 @@ const HomeCommunity = () => {
         </div>
         
         <div className={cardClasses}>
-          <Zoom bottom duration={700} delay={1250}>
+          <Zoom bottom duration={700} delay={1050}>
             <div>
               <RiMenuAddLine className="text-3xl group-hover:text-yellow-600" />
               <p className="font-bold py-3">Contribution</p>

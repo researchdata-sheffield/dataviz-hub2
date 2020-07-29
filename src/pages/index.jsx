@@ -98,7 +98,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Slide>
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <BlackWhiteButton className="py-2 px-10" link>Get Started</BlackWhiteButton>
+                <BlackWhiteButton className="py-2 px-4 font-bold hover:text-black border-1 border-black" link>Get Started</BlackWhiteButton>
               </Fade>
             </Link>
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -113,7 +113,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className="flex flex-wrap text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease",}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+          <div className="flex flex-wrap text-gray-100 lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease",}}>  {/*style={{borderTop: "50px solid #000000", }} */}
             
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="min-h-100 justify-center relative w-full " style={{transition: ".6s ease",}}>
