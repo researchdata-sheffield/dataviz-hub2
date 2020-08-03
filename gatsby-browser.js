@@ -10,8 +10,10 @@ import "./src/css/style.css"
 import "./src/css/post.css"
 import "./src/css/animation.css"
 import "./src/css/gitalk.css"
+import "./src/css/accordion.css"
 import "tailwindcss/dist/base.css"
 import 'gitalk/dist/gitalk.css'
+
 
 export const onClientEntry = () => {
   // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)

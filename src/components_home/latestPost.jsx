@@ -15,7 +15,7 @@ const latestPost = ({ latestPost }) => {
 
   return (
     
-    <div className="w-full flex flex-wrap mt-6" style={{background: 'linear-gradient(180deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
+    <div className="w-full flex flex-wrap mt-6" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
       {latestPost.edges.map(({ node }) => { 
         let imagesrc 
         if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {

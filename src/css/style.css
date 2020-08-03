@@ -188,3 +188,19 @@ Home Search bar & animation
   border-image-source: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
   border-image-slice: 1;
 }
+
+/* Text effect
+*
+*/
+.text-effect {
+  background: linear-gradient(225deg, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: .5s ease;
+}
+
+.text-effect:hover {
+  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,74 @@
+/**
+* ----------------------------------------------
+* Demo styles Copied from Github
+* ----------------------------------------------
+**/
+.accordion {
+  /* border: 1px solid rgba(231, 230, 230, 0.596); */
+  border-radius: 2px; 
+}
+.accordion:focus, .accordion__item:focus, .accordion__button:focus  {
+  outline: none;
+}
+
+/* + .accordion__item */
+.accordion__item {
+  border-top: 1px solid rgba(206, 206, 206, 0.288);
+}
+
+.accordion__button {
+  background-color: transparent;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  transition: .5s ease;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.accordion__button:hover {
+  background-color: #f0f0f09c;
+}
+
+.accordion__button:before {
+  display: inline-block;
+  content: '';
+  height: 10px;
+  width: 10px;
+  margin-right: 20px;
+  border-bottom: 3px solid currentColor;
+  border-right: 3px solid currentColor;
+  transform: rotate(-45deg) translate(2px, 0px);
+  transition: .5s ease;
+}
+
+.accordion__button[aria-expanded='true']::before,
+.accordion__button[aria-selected='true']::before {
+  transform: rotate(45deg) translate(-0px, -6px);
+}
+
+[hidden] {
+  display: none;
+}
+
+.accordion__panel {
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes fadein {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}

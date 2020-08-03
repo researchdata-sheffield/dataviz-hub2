@@ -14,7 +14,7 @@ import moment from "moment"
 import Search_Home from "../components/searchHome"
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
-import Covid from "../images/home/COVID1.png"
+import Covid from "../images/home/animation.gif"
 import { GreyButton, BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
 import ReactTooltip from "react-tooltip"
 import bg from "../images/home/earth.jpg"
@@ -66,7 +66,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           <div id="homeBar" className="shadow-lg z-10 lg:sticky lg:top-0 lg:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center pt-28 ipadp:pt-10vh font-sans">
               <p className="text-2xl ipadp:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
-              <p className="text-gray-900 text-base 2xl:text-lg mt-5 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-base 2xl:text-lg mt-5 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />
@@ -114,21 +114,21 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           {/* Right component */}
           <div className="flex flex-wrap text-gray-100 lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease",}}>  {/*style={{borderTop: "50px solid #000000", }} */}
-            
+
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="min-h-100 justify-center relative w-full " style={{transition: ".6s ease",}}>
-              
-            <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
-                <h1 className="px-5 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
+            <div className="pt-8 min-h-70 md:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease",}}>
+      
+              <div className="flex flex-col flex-wrap group min-h-70 md:min-h-100 justify-center text-center items-center" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "contain", backgroundPosition:"center", backgroundRepeat: 'no-repeat' }}>
+                <h1 className="md:-mt-24 px-2 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.2)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
-                <div className="mt-10">
+                <div className="mt-10 group-hover:visible md:invisible">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                    <AnimateButton external className="rounded-full">Data Repository</AnimateButton>
+                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800">Data Repository</AnimateButton>
                   </a>
                   <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
-                    <AnimateButton className="mt-0 rounded-full">Blog post</AnimateButton>
+                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800">Blog post</AnimateButton>
                   </Link>
                 </div>
               </div>
@@ -163,7 +163,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       {/* End of top page */}     
 
       <div id="explore" />
-      <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative " style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+      <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative" style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={200} duration={1500}>
           <div className="px-3 md:px-24 xl:px-36 2xl:px-52 mt-48 mb-72">
             <div className="text-white">

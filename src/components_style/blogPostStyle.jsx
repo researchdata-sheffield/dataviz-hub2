@@ -19,8 +19,9 @@ LPWrap.propTypes = {
 
 export const LPItem = (props) => {
   return (
-    <a href={props.href} className="w-3/4 md:w-1/4 md:mx-8 mb-8 flex flex-col p-5 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1" 
-      style={{fontWeight: '600', background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)'}}
+    <a href={props.href} className={`${props.className ? props.className : 'md:mx-8'} w-3/4 md:w-1/4 mb-8 flex flex-col p-5 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1`} 
+      style={{fontWeight: '600', 
+              background: `${props.Lab ? 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)' : 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)'}`}}
       rel="noopener noreferrer" target="_blank"
     >
       {props.children}
@@ -37,6 +38,8 @@ LPItem.propTypes = {
   children: PropTypes.any,
   href: PropTypes.any,
   video: PropTypes.any,
+  className: PropTypes.any,
+  Lab: PropTypes.any
 }
 
 // Underline effect Link
