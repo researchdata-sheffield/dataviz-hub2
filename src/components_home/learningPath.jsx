@@ -37,7 +37,7 @@ const LearningPath = () => {
               <p className="text-sm">Explore data visualisations through definitions, examples, videos, 
                 and relevant resources.
               </p>
-              <Link to="/blog/03/07/2020/LearningPath_Concept"><ButtonWithArrow className={moreBtn}>Learn more</ButtonWithArrow></Link>
+              <Link to="/blog/03/07/2020/LearningPath_Concept"><ButtonWithArrow className={moreBtn}>Learn concept</ButtonWithArrow></Link>
             </div>
           </div>
         </Zoom>
@@ -56,7 +56,7 @@ const LearningPath = () => {
               <p className="text-sm">Tutorials and guides on create data visualisations using 
               different tools and languages.
               </p>
-              <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>
+              <Link to="/blog/04/07/2020/LearningPath_Lab"><ButtonWithArrow className={moreBtn}>Go to Lab</ButtonWithArrow></Link>
             </div>
           </div>
         </Zoom>
@@ -72,7 +72,7 @@ const LearningPath = () => {
               <p className="text-sm">Maximise your research impact through reproducible data visualisation 
                 workflows.
               </p>
-              <ButtonWithArrow className={moreBtn}>Coming soon</ButtonWithArrow>
+              <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>
             </div>
           </div>
         </Zoom>
