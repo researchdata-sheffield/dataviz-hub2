@@ -154,7 +154,7 @@ class Search extends Component {
 
     return (
       <div className={`${this.props.classNames} relative text-gray-700 w-full text-center`}>
-        <div className="min-h-50 pt-24 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
+        <div className="min-h-90 pt-40 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
           <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-3 font-semibold">Search@dataviz.shef</p></Zoom>
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
@@ -203,7 +203,6 @@ class Search extends Component {
     const query = event.target.value
     if (this.state.query.length > -1) {
       const results = this.getSearchResults(query)
-      console.log(results)
       this.setState({ results: results, query: query })
     } else {
       this.setState({ results: [], query: query })

@@ -58,7 +58,7 @@ import {
           visualisations and guides for coding, this learning path will mainly focus on exploring what we 
           can do with each programming language to produce suitable data visualisations. In each of the languages 
           there are three sections for you to explore, <b>Data processing</b>, <b>Data visualisation</b>, 
-          and <b>Share</b>.
+          and <b>Share</b>. Choose a programming language to get started.
         </p>
       </div> 
     </Fade>
@@ -178,7 +178,7 @@ import {
               </tbody>
             </table>
             <p>
-              <i className="text-sm">[ Learning Curve ] ★☆☆☆☆: Shallowest &nbsp; ★★★★★: Steepest</i> <br/><br/>
+              <i className="text-sm">[Learning Curve] ★☆☆☆☆: Shallowest &nbsp; ★★★★★: Steepest</i> <br/><br/>
               Most of the time, knowing one or two packages/framework is sufficient for building an 
               interactive visualisation. For example, a common match is <b>Shiny</b> and <b>ggplot2</b> working together 
               to produce a web-based application.
@@ -238,13 +238,14 @@ import {
       </Fade>
     </div>
     
-    {/* What charts? */}
+    {/* Python */}
     <div id="sec3" className="flex-wrap ipadp:min-h-80 mt-24">
       <Fade duration={1200}>
       <p className="text-highlight_2 font-bold text-5xl leading-8">Python</p>
       <p>
-        Choosing the right chart for your data does not come easy. Fortunately, there are some great 
-        websites that can help you to make decisions.
+        Perhaps many of you have already used Jupyter Notebook or JupyterLab for writing Python codes, 
+        otherwise we suggest you take a look at this <a href="https://jupyter.org/">website</a> to learn 
+        more about them and why they are great for developing data visualisations with Python. 
       </p>
       <Accordion allowZeroExpanded="true">
         <AccordionItem>
@@ -255,23 +256,19 @@ import {
           </AccordionItemHeading>
           <AccordionItemPanel>
             <p>
-              <i>"The tidyverse is an opinionated collection of R packages designed for data science. 
-                All packages share an underlying design philosophy, grammar, and data structures."
-              </i><br/><br/>
-              The <b><a href="https://www.tidyverse.org/">tidyverse</a></b> contained some powerful packages that covered almost every stage in producing 
-              a data visualisation, read more 
-              at <a href="https://rviews.rstudio.com/2017/06/08/what-is-the-tidyverse/">here</a> to 
-              understand more about the Tidyverse. Bear in mind that this collection of packages 
-              could be difficult to grasp for those who have no coding experience previously, so make sure 
-              you have a good understanding of R and basic functions. <br/><br/>
-              The tidyverse provides <b>readr</b> to read data files, <b>tidyr</b> to tidy 
-              data, <b>dplyr</b> for manipulation, and <b>Tibble</b> for presenting data frames etc. 
-              Here are some useful resources for you to learn the tidyverse in more depth: <br/><br/>
+              <b><a href="https://pandas.pydata.org/docs/getting_started/index.html">Pandas</a></b> - a python package known for easy-to-use data structure and data analysis tool. <br/>
+              <b><a href="https://numpy.org/doc/stable/user/absolute_beginners.html">Numpy</a></b> - a package used for working with arrays, as well as supports for linear 
+              algebra calculations and many high-level mathematical functions. <br/>
+              <b><a href="https://scikit-learn.org/stable/index.html">Scikit-learn</a></b> - a popular machine learning package built on Numpy, Scipy, and Matplotlib.
             </p>
+            <p>
+              One thing to note is that all packages mentioned above are part of <b><a href="https://www.scipy.org/">Scipy</a></b> - a 
+              Python-based ecosystem of open-source software for mathematics, science, and engineering.
+            </p>
+            If you prefer video tutorials:
             <LPWrap>
-              <LPItem Lab video className="md:mx-7" href="https://www.linkedin.com/learning/learning-the-r-tidyverse/welcome?u=36248012">Learning the R Tidyverse</LPItem>
-              <LPItem Lab video className="md:mx-7" href="https://www.linkedin.com/learning/data-wrangling-in-r/welcome?u=36248012">Data Wranging in R</LPItem>
-              <LPItem Lab video className="md:mx-7" href="https://www.linkedin.com/learning/cleaning-bad-data-in-r/data-is-messy?u=36248012">Cleaning Bad Data in R</LPItem>
+              <LPItem Lab video className="md:mx-7" href="https://www.linkedin.com/learning/pandas-essential-training/welcome?u=36248012">Pandas Essential Training</LPItem>
+              <LPItem Lab video className="md:mx-7" href="https://www.linkedin.com/learning/numpy-data-science-essential-training/create-arrays-from-python-structures?u=36248012">Numpy Essential Training</LPItem>
             </LPWrap> 
           </AccordionItemPanel>
         </AccordionItem>
@@ -283,13 +280,13 @@ import {
           </AccordionItemHeading>
           <AccordionItemPanel>
             <p>
-              There are many data visulisation tools in R which offer you a broad range of choices. 
+              There are many data visulisation tools in Python which offer you a broad range of choices. 
               Some popular packages/libraries/framework are:
             </p>
             <table className="dataframe">
               <thead>
                 <tr>
-                  <th>Packges</th>
+                  <th>(Click for tutorials)</th>
                   <th>Description</th>
                   <th>Learning Curve</th>
                   <th>Written in</th>
@@ -297,22 +294,22 @@ import {
               </thead>
               <tbody>
                 <tr>
-                  <th><a href="https://ggplot2.tidyverse.org/">ggplot2</a></th>
-                  <td>Data visualisation package, part of the Tidyverse ecosystem</td>
+                  <th><a href="https://matplotlib.org/tutorials/introductory/usage.html#sphx-glr-tutorials-introductory-usage-py">Matplotlib</a></th>
+                  <td>Matplotlib is a comprehensive library for creating static, animated, and interactive visualizations in Python</td>
                   <td>★★☆☆☆</td>
-                  <td>R</td>
+                  <td>Python, C++</td>
                 </tr>
                 <tr>
-                  <th><a href="https://plotly.com/r/">Plotly</a></th>
-                  <td>Graphing library that creates interactive web-based graph available in both R and Python</td>
-                  <td>★★★☆☆</td>
-                  <td>Plotly.js, based on d3.js and stack.gl. Rendered locally through htmlwidgets</td>
+                  <th><a href="https://seaborn.pydata.org/tutorial.html">Seaborn</a></th>
+                  <td>A Python data visualization library based on matplotlib. It provides a high-level interface for drawing attractive and informative statistical graphics</td>
+                  <td>★★☆☆☆</td>
+                  <td>Python</td>
                 </tr>
                 <tr>
-                  <th><a href="https://dashr.plotly.com/">Dash for R</a></th>
-                  <td>A productive framework for building web applications in both R and Python</td>
+                  <th><a href="https://docs.bokeh.org/en/latest/">Bokeh</a></th>
+                  <td>Bokeh is an interactive visualization library for modern web browsers</td>
                   <td>★★★☆☆</td>
-                  <td>Plotly.js, React.js, d3.js</td>
+                  <td>Python, Typescript</td>
                 </tr>
                 <tr>
                   <th><a href="https://shiny.rstudio.com/">Shiny</a></th>
@@ -321,50 +318,24 @@ import {
                   <td>R, Javascript, HTML, CSS</td>
                 </tr>
                 <tr>
-                  <th><a href="https://rstudio.github.io/leaflet/">Leaflet</a></th>
-                  <td>One of most popular javascript framework for interactive map</td>
-                  <td>★☆☆☆☆</td>
-                  <td>Javascript, htmlwidgets</td>
-                </tr>
-                <tr>
-                  <th><a href="https://www.rdocumentation.org/packages/rgl">Rgl</a></th>
-                  <td>A package for producing interactive 3-D plots</td>
-                  <td>★☆☆☆☆</td>
-                  <td>Javascript, htmlwidgets</td>
-                </tr>
-                <tr>
-                  <th><a href="https://rstudio.github.io/dygraphs/">Dygraphs</a></th>
-                  <td>A package for producing interactive 3-D plots</td>
-                  <td>★★★★☆</td>
-                  <td>Javascript</td>
-                </tr>
-                <tr>
-                  <th><a href="https://lattice.r-forge.r-project.org/">Lattice</a></th>
-                  <td>A data visualisation library emphasis on multivariate data</td>
-                  <td>★★★★☆</td>
-                  <td>R, C</td>
+                  <th><a href="https://plotly.com/python/getting-started/">Plotly</a></th>
+                  <td>An interactive, open-source plotting library that supports over 40 unique chart types covering a wide range of statistical, financial, geographic, scientific, and 3-dimensional use-cases</td>
+                  <td>★★★☆☆</td>
+                  <td>Python, Javascript</td>
                 </tr>
               </tbody>
             </table>
             <p>
-              <i className="text-sm">[ Learning Curve ] ★☆☆☆☆: Shallowest &nbsp; ★★★★★: Steepest</i> <br/><br/>
-              Most of the time, knowing one or two packages/framework is sufficient for building an 
-              interactive visualisation. For example, a common match is <b>Shiny</b> and <b>ggplot2</b> working together 
-              to produce a web-based application.
-            </p>
-            <p>
+              <i className="text-sm">[Learning Curve] ★☆☆☆☆: Shallowest &nbsp; ★★★★★: Steepest</i> <br/><br/>
               Note: Ratings of difficulties are subjective, ratings are made mainly based on how much 
               extra knowledge required, quality of documentation and examples, and the size of the community. 
-              On the other hand, it really depends on the user's background. The following are some useful 
-              resources for you to explore: 
+              On the other hand, it really depends on the user's background. The following are some articles 
+              for you to read: 
             </p>
             <LPWrap>
-              <LPItem className="md:mx-7" Lab video href="https://www.linkedin.com/learning/r-essential-training-wrangling-and-visualizing-data/make-your-data-make-sense?u=36248012">R Essential Training - wrangling and visualizing data</LPItem>
-              <LPItem className="md:mx-7" Lab video href="https://www.linkedin.com/learning/data-visualization-in-r-with-ggplot2/welcome?u=36248012">Data visualisation with ggplot2</LPItem>
-              <LPItem className="md:mx-7" Lab href="https://shiny.rstudio.com/tutorial/">Shiny Tutorials</LPItem>
-              <LPItem className="md:mx-7" Lab video href="https://www.linkedin.com/learning/creating-interactive-presentations-with-shiny-and-r/welcome?u=36248012">Creating Interactive Presentation with Shiny</LPItem>
-              <LPItem className="md:mx-7" Lab href="https://plotly.com/r/getting-started/">Plotly - Getting Started</LPItem>
-              <LPItem className="md:mx-7" Lab video href="https://www.linkedin.com/learning/r-interactive-visualizations-with-htmlwidgets/what-is-the-leaflet-library?u=36248012">htmlwidgets</LPItem>
+              <LPItem className="md:mx-7" Lab href="https://dataviz.shef.ac.uk/blog/12/06/2020/dash_tutorial">Dash tutorial</LPItem>
+              <LPItem className="md:mx-7" Lab href="https://dataviz.shef.ac.uk/blog/12/06/2020/dash_tutorial_2">Dash tutorial 2</LPItem>
+              <LPItem className="md:mx-7" Lab href="https://dataviz.shef.ac.uk/blog/16/06/2020/Jupyter_Widgets">Jupyter widgets</LPItem>
             </LPWrap>
           </AccordionItemPanel>
         </AccordionItem>
@@ -377,25 +348,20 @@ import {
           <AccordionItemPanel>
             <p>
               It would be a good idea to share your data visualisation to the world via some web hosting 
-              services or some website. Amazingly, Shiny and Dash(by Plotly) both provide solutions that 
-              allow people around the world to interact with your data visualisations. For other javascript 
-              based packages, you can embed most of them into your website directly or via iframe.
+              services or some website. If you have decided to work with Plotly, then you can use 
+              Dash (also provided by Plotly) for hosting your application. For other packages, you can share 
+              your notebook with various platforms such as <b>binder</b>, <b>Microsoft Azure Notebook</b>, 
+              and <b>Google Collaboratory</b>.
             </p>
-            <h3>Shiny:</h3>
+            <h3>Host Jupyter Notebook:</h3>
             <LPWrap>
-              <LPItem className="md:mx-7" Lab href="https://docs.rstudio.com/shinyapps.io/index.html">R Essential Training - wrangling and visualizing data</LPItem>
-              <LPItem className="md:mx-7" Lab video href="https://www.linkedin.com/learning/creating-interactive-presentations-with-shiny-and-r/why-use-shinyapps-io?u=36248012">Why shinyapps.io?</LPItem>
-              <LPItem className="md:mx-7" Lab href="https://dataviz.shef.ac.uk/blog/13/07/2020/Shiny_Template">Shiny Template</LPItem>
+              <LPItem className="md:mx-7" Lab href="https://dataviz.shef.ac.uk/blog/24/06/2020/host_jupyter_notebook">Host Jupyter Notebook</LPItem>
             </LPWrap>
             <h3>Dash:</h3>
             <LPWrap>
-              <LPItem className="md:mx-7" Lab href="https://dashr.plotly.com/">R Essential Training - wrangling and visualizing data</LPItem>
-              <LPItem className="md:mx-7" Lab href="https://dataviz.shef.ac.uk/blog/03/07/2020/Deploy_Your_Dash_App">Deploy Your Dash App*</LPItem>
+              <LPItem className="md:mx-7" Lab href="https://dash.plotly.com/deployment">Dash: deployment</LPItem>
+              <LPItem className="md:mx-7" Lab href="https://dataviz.shef.ac.uk/blog/03/07/2020/Deploy_Your_Dash_App">Deploy Your Dash App</LPItem>
             </LPWrap>
-            <i className="text-base">
-              *: although this is a dash app written in python, you can replace all codes with your R codes 
-              and keep most of the existing dash component libraries.
-            </i>
             <p>
               We are also recommending you to store your code on a source code hosting website such as 
               <a href="https://github.com/">GitHub</a>, <a href="https://about.gitlab.com/">GitLab</a>, 
