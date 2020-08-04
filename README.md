@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/researchdata-sheffield/dataviz-hub2.svg?branch=master)](https://travis-ci.com/researchdata-sheffield/dataviz-hub2)
+[![Run on Repl.it](https://repl.it/badge/github/researchdata-sheffield/dataviz-hub2)](https://repl.it/github/researchdata-sheffield/dataviz-hub2)
 
 <center>
 <h1 style="color: #00aeef"> Dataviz.Shef </h1>
