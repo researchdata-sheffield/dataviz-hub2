@@ -15,7 +15,7 @@ const latestPost = ({ latestPost }) => {
 
   return (
     
-    <div className="w-full flex flex-wrap mt-6" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
+    <div className="w-full flex flex-wrap" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
       {latestPost.edges.map(({ node }) => { 
         let imagesrc 
         if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
@@ -33,14 +33,14 @@ const latestPost = ({ latestPost }) => {
         }
 
         return (
-          <div key={node.id} className="group w-full relative z-20">
-            <Fade  key={node.id} duration={2000} fraction={0.3}>
-              <div className="flex flex-wrap w-full bg-black hover:bg-transparent text-white border-t-1 first:border-t-0 border-gray-800 font-semibold 2xl:text-xl">
+          <div key={node.id} className="group w-full relative z-20 border-t-1 border-gray-800">
+            <Fade  key={node.id} duration={1000} fraction={0.1}>
+              <div className="flex flex-wrap w-full bg-gray-900 hover:bg-transparent text-white  font-semibold 2xl:text-xl">
                 <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full hover:text-white px-6 py-4">
                   <div className="flex flex-wrap items-center">
                     <MdFiberNew className="text-red-700 ipadp:text-gray-300 group-hover:text-red-700 text-3xl" />
                     {node.frontmatter.category.map((cat) => (
-                        <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-sm py-0 my-0 mx-2 border-none bg-black text-black group-hover:bg-white">{cat}</CatBtn>
+                        <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-sm py-0 my-0 mx-2 border-none bg-white text-black invisible group-hover:visible">{cat}</CatBtn>
                     ))}
                   </div>
                   <div className="inline-block">{node.frontmatter.title}</div>

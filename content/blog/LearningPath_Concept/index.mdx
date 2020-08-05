@@ -15,15 +15,20 @@ hide: "false"
 import React from 'react'
 import Scrollspy from 'react-scrollspy'
 import Fade from 'react-reveal/Fade'
+import { TiChevronLeft, TiChevronRight } from 'react-icons/ti'
 
-<!-- TODO: beautify guide -->
 
-<div className="shadow-xl flex justify-center items-center text-center w-full min-h-90 bg-blue-900">
+<div className="shadow-xl flex justify-center items-center text-center w-full min-h-100 bg-blue-900">
   <div >
     <div className="text-5xl text-white font-bold" style={{fontFamily: "TUoS Stephenson"}}>Learning Path - Concept</div>
     <div className="text-gray-400 text-base">Explore data visualisations through definitions, examples, videos, 
                 and relevant resources.</div>
     <div className="text-lg text-gray-100 mt-10">Dataviz.Shef Team</div>
+    <div className="flex flex-wrap justify-center mt-20">
+      <Link className="" to="/blog/04/07/2020/LearningPath_Lab">
+        <div className="text-white py-2 px-3 text-sm font-bold" style={{background: 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)'}}>Learning Path - Lab<TiChevronRight className="inline-block ml-1" /></div>
+      </Link>
+    </div>
   </div>
 </div>
 <div className="flex flex-wrap justify-between px-3 md:px-32 lg:px-48 2xl:px-78 text-black bg-white text-sm sticky top-0 left-0 relative z-10 shadow-md">
@@ -225,7 +230,9 @@ import Fade from 'react-reveal/Fade'
     <div className="border-t-1 border-gray-200 pt-10 mt-16">
       <h2 className="inline" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Congratulations!</h2> You have completed the <b>learning path - Concept</b>. Now you have more understanding 
       of the data visualisations and some knowledge of programming languages, get started to produce your
-      own visualisations and share it with other people in the community!
+      own visualisations and share it with other people in the community! Meanwhile, there 
+      is <Link to="/blog/04/07/2020/LearningPath_Lab">second learning path - Lab</Link> for you to explore 
+      tutorials and guides on create data visualisations using different tools and languages.
     </div>
   </div>
 </div>

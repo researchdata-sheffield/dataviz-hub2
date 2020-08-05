@@ -16,7 +16,7 @@ const featuredPost = ({ featuredPost }) => {
 
     return (
       
-      <div className="w-full flex flex-wrap bg-black">
+      <div className="w-full flex flex-wrap pb-6 bg-gray-900">
         {featuredPost.edges.map(({ node }) => {
           let imagesrc 
           if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
@@ -42,9 +42,9 @@ const featuredPost = ({ featuredPost }) => {
 
           return (
             <Fade key={node.id} duration={2000} fraction={0.3}>
-              <div className="w-full sm:w-1/2 min-h-100 pb-28 overflow-hidden bg-black relative leading-none text-gray-500 flex-grow">
+              <div className="w-full sm:w-1/2 min-h-100 pb-28 overflow-hidden bg-gray-900 relative leading-none text-gray-500 flex-grow">
                 <Link className="group" to={node.fields.slug}>
-                  <div className="flex top-0 left-0 absolute ml-6 mt-6 text-gray-900 ipadp:text-gray-300 group-hover:bg-black items-center" style={{zIndex: "3"}}>
+                  <div className="flex top-0 left-0 absolute ml-6 mt-6 text-gray-900 ipadp:text-gray-300 group-hover:bg-gray-900 items-center" style={{zIndex: "3"}}>
                     <FaStar className="text-yellow-300 text-2xl" />
                     <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake", textShadow: "#000000 0px 0px 20px"}}>Featured</p>
                   </div>

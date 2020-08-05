@@ -15,7 +15,7 @@ import Search_Home from "../components/searchHome"
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/animation.gif"
-import { GreyButton, BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
+import { BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
 import ReactTooltip from "react-tooltip"
 import bg from "../images/home/earth.jpg"
 
@@ -77,10 +77,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                   <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
                       <li><Link className="text-gray-700 hover:underline" to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="Coming soon">Learning path</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
                       <li><Link className="text-gray-700 hover:underline" to='/#home_community' data-tip="#Community">Community</Link></li>
                       <li><Link className="text-gray-700 hover:underline" to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#collaboration' data-tip="Coming soon">Collaboration</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
                       <ReactTooltip />
                     </ul>
                 </div>
@@ -98,7 +98,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Slide>
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <BlackWhiteButton className="py-2 px-4 font-bold hover:text-black border-1 border-black" link>Get Started</BlackWhiteButton>
+                <BlackWhiteButton className="py-2 px-5 hover:text-black border-1 border-black" link>Get Started</BlackWhiteButton>
               </Fade>
             </Link>
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -146,9 +146,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-white py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
-              <div className="text-gray-800 mr-10">Discover a range of articles and posts at our blog.</div>
-              <Link to="/blog"><GreyButton className="hover:bg-gray-900 px-5 py-2  hover:text-gray-100 text-black bg-gray-100 mt-0 border-gray-900 border-1">Read more</GreyButton></Link>
+            <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
+              <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
+              <Link to="/blog"><ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>Read more</ButtonWithArrow></Link>
             </div> 
 
             {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
