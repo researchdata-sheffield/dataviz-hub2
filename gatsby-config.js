@@ -106,7 +106,21 @@ module.exports = {
             options: {
               classPrefix: "language-",
               inlineCodeMarker: null,
-              aliases: {},
+              aliases: {
+                console: `bash`,
+                dosini: `ini`,
+                env: `bash`,
+                es6: `js`,
+                flowchart: `none`,
+                gitignore: `none`,
+                gql: `graphql`,
+                htaccess: `apacheconf`,
+                mdx: `markdown`,
+                ml: `fsharp`,
+                sh: `bash`,
+                styl: `stylus`,
+                terminal: `bash`,
+                },
               showLineNumbers: true,
               noInlineHighlight: false,
             },
@@ -199,7 +213,6 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-flexsearch',
       options: {
-        // L
         languages: ['en'],
         type: 'Mdx', // Filter the node types you want to index
         // Fields to index.
@@ -212,28 +225,27 @@ module.exports = {
           },
           {
             name: 'title',
-            indexed: true, // If indexed === true, the field will be indexed.
+            indexed: true,
             resolver: 'frontmatter.title',
-            // Attributes for indexing logic. Check https://github.com/nextapps-de/flexsearch#presets for details.
             attributes: {
-              encode: "extra",
               tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
             },
-            store: true, // In case you want to make the field available in the search results.
+            store: true,
           },
           {
             name: 'description',
             indexed: true,
             resolver: 'frontmatter.description',
             attributes: {
-              encode: "extra",
               tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
             },
             store: true,
           },
@@ -242,11 +254,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.author',
             attributes: {
+              tokenize: "full",
               encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              threshold: 1, 
+              resolution: 12,
+              depth: 1
             },
             store: true,
           },
@@ -255,11 +267,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.category',
             attributes: {
+              tokenize: "full",
               encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
             },
             store: true,
           },
@@ -268,11 +280,11 @@ module.exports = {
             indexed: true,
             resolver: 'frontmatter.tag',
             attributes: {
+              tokenize: "full",
               encode: "extra",
-              tokenize: "strict",
-              threshold: 1,
-              resolution: 9,
-              depth: 4
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
             },
             store: true,
           },
@@ -280,6 +292,13 @@ module.exports = {
             name: 'url',
             indexed: true,
             resolver: 'fields.slug',
+            attributes: {
+              tokenize: "strict",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 9,
+              depth: 4 
+            },
             store: true,
           },
         ],

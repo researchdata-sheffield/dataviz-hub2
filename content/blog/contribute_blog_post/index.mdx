@@ -79,7 +79,7 @@ Steps on below assumed you've setup everything mentioned above.
 
 2. Create a file `index.mdx` (or with .md extension, but we recommend use .mdx because it’s a superset of Markdown syntax that also supports importing, exporting, and JSX. <a href="https://mdxjs.com/">learn more about mdx</a>). 
 
-    + At the very beginning of your index file, you have the following parameters to specify in the **header**:
+    + At the very beginning of your index file, you have the following properties to specify in the **header**:
 
 ```md
 ---
@@ -98,7 +98,7 @@ disableTOC:                       # optional, set it to "true" if you wish to di
 
 <br />
 
-  + Wrap parameters with triple hyphens. Use double quotation marks for all text, use square brackets in parameters with two or more items.
+  + Wrap properties with triple hyphens. Use double quotation marks for all text, use square brackets in properties with two or more items.
 
   + Then add content to the file, read <a href="#table-of-content" anchor>next section</a> and beyond to know more about how to style your post.
 
@@ -269,7 +269,7 @@ $$
   The post you're writing might be a part of your blog series, and if you wish to include link of previous posts (or any other part of the website) within a post, you'll need **Link** tag.
   To use **Link** tag:  
   1. Make sure the file extension is .mdx  
-  2. Use `to` parameter instead of `href`, for internal pages you don't need to specify hostname (dataviz.shef.ac.uk):  
+  2. Use `to` property instead of `href`, for internal pages you don't need to specify hostname (dataviz.shef.ac.uk):  
     `<Link className="text-gray-700" to="/blog">To blog</Link>`  
       
 

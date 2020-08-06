@@ -2,48 +2,52 @@ import { Link } from "gatsby"
 import React from "react"
 import university_logo from "../images/TUOSlogo.png"
 import { FaGoogle, FaSlack } from "react-icons/fa"
+import { MdEmail } from "react-icons/md"
+import { A } from "../components_style/blogPostStyle"
 
 const Footer = () => {
+  const currentYear = new Date()
   
   return (
-  <div className="bg-black px-10 py-8 lg:px-16 lg:py-10 text-sm relative z-10">
-    <div className="sm:flex mb-4">
+  <div className="bg-black px-8 py-8 lg:px-12 lg:py-10 text-sm relative z-10">
+    <div className="sm:flex mb-4 text-gray-500">
       <div className="sm:w-2/12 h-auto">
           <div className="mb-2"><Link className="text-gray-100 font-semibold text-md" to="/">Dataviz.Shef</Link></div>
             <ul className="list-reset leading-normal">
-              <li><Link className="text-gray-500 hover:text-highlight_2" to="/blog">Blog</Link></li>
-              <li><Link className="text-gray-500 hover:text-highlight_2" to="/events">Events</Link></li>
-              <li><Link className="text-gray-500 hover:text-highlight_2" to="/community">Community</Link></li>
-              <li><a className="text-gray-500 hover:text-highlight_2" href="https://orda.shef.ac.uk/visualisations/" target="_blank" rel="noopener noreferrer">Showcase</a></li>
-              <li><Link className="text-gray-500 hover:text-highlight_2" to="/about">About</Link></li>
-              <li><a className="text-gray-500 hover:text-highlight_2" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">Contact us</a></li>
+              <li><Link to="/blog">Blog</Link></li>
+              <li><Link to="/events">Events</Link></li>
+              <li><Link className="hover:text-highlight_2" to="/community">Community</Link></li>
+              <li><A a="true" href="https://orda.shef.ac.uk/visualisations/">Showcase</A></li>
+              <li><Link to="/about">About</Link></li>
+              <li><A a="true" href="mailto:rdm@sheffield.ac.uk">Contact us</A></li>
+              <li><Link to="/privacy">Privacy Policy</Link></li>
             </ul>
       </div>
       <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
-          <div className="text-gray-100 text-md mb-2 font-semibold"><a href="https://orda.shef.ac.uk">Online Research Data</a></div>
+          <div className="text-gray-100 text-md mb-2 font-semibold"><A a="true" href="https://orda.shef.ac.uk">Online Research Data</A></div>
             <ul className="list-reset leading-normal">
-              <li><a className="text-gray-500 hover:text-highlight_2" href="https://orda.shef.ac.uk/articles/list/desc/published_date/all" target="_blank" rel="noopener noreferrer">Datasets</a></li>
-              <li><a className="text-gray-500 hover:text-highlight_2" href="https://orda.shef.ac.uk/#orda-fac" target="_blank" rel="noopener noreferrer">Faculties</a></li>
-              <li><a className="text-gray-500 hover:text-highlight_2" href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643" target="_blank" rel="noopener noreferrer">Visualised datasets</a></li>
+              <li><A a="true" href="https://orda.shef.ac.uk/articles/list/desc/published_date/all">Datasets</A></li>
+              <li><A a="true" href="https://orda.shef.ac.uk/#orda-fac">Faculties</A></li>
+              <li><A a="true" href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643">Visualised datasets</A></li>
             </ul>
 
-        <div className="mb-2 mt-4"><a className="text-gray-100 text-md font-semibold" href="https://orda.shef.ac.uk/#orda-fac" target="_blank" rel="noopener noreferrer">The University of Sheffield</a></div>
+        <div className="mb-2 mt-4"><A a="true" className="text-gray-100 text-md font-semibold" href="https://orda.shef.ac.uk/#orda-fac">The University of Sheffield</A></div>
           <ul className="list-reset leading-normal">
-          <li><a className="text-gray-500 hover:text-highlight_2" href="http://sheffield.ac.uk/library/rdm" target="_blank" rel="noopener noreferrer">Research Data Management support</a></li>
-              <li><a className="text-gray-500 hover:text-highlight_2" href="https://www.sheffield.ac.uk/it-services" target="_blank" rel="noopener noreferrer">IT Services</a></li>
-              <li><a className="text-gray-500 hover:text-highlight_2" href="http://rse.shef.ac.uk/" target="_blank" rel="noopener noreferrer">Research Software Engineering</a></li>
+          <li><A a="true" href="http://sheffield.ac.uk/library/rdm">Research Data Management support</A></li>
+              <li><A a="true" href="https://www.sheffield.ac.uk/it-services">IT Services</A></li>
+              <li><A a="true" href="http://rse.shef.ac.uk/">Research Software Engineering</A></li>
           </ul>
 
       </div>
       <div className="sm:w-2/12 h-auto sm:mt-0 mt-8">
-                <div className="text-gray-100 text-md mb-2 font-semibold">Latest News</div>
+                <div className="text-gray-100 text-md mb-2 font-semibold">Collaboration</div>
           <ul className="list-reset leading-normal">
-            <li className="text-gray-500 hover:text-highlight_2">In progress</li>
+            <li><A a="true" href="https://github.com/researchdata-sheffield/dataviz-hub2">Github repository</A></li>
           </ul>
       </div>
       
       <div className="sm:w-5/12 sm:flex sm:mt-0 mt-8 h-auto justify-center flex-wrap">
-        <div className="sm:w-2/3 text-gray-100 text-lg mb-2 pr-8">
+        <div className="sm:w-2/3 text-gray-100 text-lg mb-2 pr-6">
           <div className="font-semibold text-highlight_2">Data Visualisation Hub </div>
           <div className="text-gray-100 text-lg mb-2 font-medium">The University of Sheffield.</div>
           <p className="text-gray-500 leading-normal text-sm">
@@ -56,17 +60,18 @@ const Footer = () => {
           
         </div>
           
-        <div className="sm:w-1/3 pl-8">
-          <a className="p-20" href="https://www.sheffield.ac.uk/" target="_blank" rel="noopener noreferrer"><img className="w-11/12" src={university_logo}></img></a>
-          <div className="text-center justify-between w-11/12">
-            <button className="mx-2 hover:text-highlight_2 text-gray-500"><a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer"><FaGoogle /></a></button>
-            <button className="mx-2 hover:text-highlight_2 text-gray-500 "><a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer"><FaSlack /></a></button>
+        <div className="sm:w-1/3 pl-6">
+          <A a="true" className="m-20" href="https://www.sheffield.ac.uk/"><img className="w-11/12" src={university_logo}></img></A>
+          <div className="text-center justify-between w-11/12 text-gray-300">
+            <button className="mx-2"><A a="true" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"><FaGoogle /></A></button>
+            <button className="mx-2"><A a="true" href="https://join.slack.com/t/shef-dataviz/signup"><FaSlack /></A></button>
+            <button className="mx-2"><A a="true" href="mailto:rdm@sheffield.ac.uk"><MdEmail /></A></button>
           </div>
         </div>
         
       </div>
   </div>
-  <p className="text-gray-500 leading-normal text-center text-sm pt-8"> © 2020  The University of Sheffield.</p>
+  <p className="text-gray-500 leading-normal text-center text-sm pt-8">Copyright © {currentYear.getFullYear()} The University of Sheffield.</p>
 
 </div>
   )

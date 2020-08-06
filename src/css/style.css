@@ -11,7 +11,7 @@
 /* Large (lg) */
 @media (min-width: 1024px) { 
   .fade-box2 {
-    max-height: 123px;
+    max-height: 130px;
   }
 }
 
@@ -22,16 +22,18 @@
 
 /* Extra Large (xl) */
 @media (min-width: 1281px) {
-
+  .fade-box2 {
+    max-height: 175px;
+  }
 }
 
 /* Extra 2 Large (2xl) */
-@media (min-width: 1441px) {
+@media (min-width: 1400px) {
   .fade-box2 {
-    max-height: 200px;
+    max-height: 232px;
   }
   .fade-box2:after {
-    height: calc((8.75vw - 30px)/2) !important;
+    height: calc((18.75vw - 30px)/2) !important;
   }
 }
 
@@ -153,24 +155,52 @@ Home Search bar & animation
 /******** 
 * Link hover animation 
 **/
-.a-inline {
+.link-effect {
   color: #000000;
   padding-bottom: 4px;
-  background: linear-gradient(to right,#00aeef 0%,#00aeef 98%);
+  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
   background-size: 100% 2px;
   background-repeat: no-repeat;
   background-position: right 85%;
   text-shadow: none;
   transition: .3s linear;
 }
-
 .a-line-hover {
   background: none;
 }
-
-.a-inline:hover, .a-inline:link:active, .a-inline:visited:active, .a-inline:visited:hover, 
-.a-inline-hover:hover, .a-inline-hover:link:active, .a-inline-hover:visited:active, .a-inline-hover:visited:hover
+.link-effect:hover, .link-effect:link:active, .link-effect:visited:active, .link-effect:visited:hover, 
+.link-effect-hover:hover, .link-effect-hover:link:active, .link-effect-hover:visited:active, .link-effect-hover:visited:hover
 {
   color: #00aeef;
   animation: inline-link-hover .6s ease-out 1;
+}
+
+
+/* Past event effect 
+*
+*/
+.pastEvent {
+  border-top: solid 4px #2c5282;
+  border-right: solid 6px #2c5282;
+  transition: .2s ease;
+}
+.pastEvent:hover {
+  border-image-source: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+  border-image-slice: 1;
+}
+
+/* Text effect
+*
+*/
+.text-effect {
+  background: linear-gradient(225deg, rgb(0, 0, 0) 10%, rgb(0, 0, 0) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: .5s ease;
+}
+
+.text-effect:hover {
+  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

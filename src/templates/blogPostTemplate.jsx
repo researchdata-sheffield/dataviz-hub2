@@ -19,6 +19,8 @@ import Pulse from 'react-reveal/Pulse';
 //import Bounce from 'react-reveal/Bounce';
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
+import GitalkComponent from "gitalk/dist/gitalk-component";
+
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
@@ -58,7 +60,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
     
   return (
-    <div className="relative">
+    <div className="relative" key={mdx.id}>
       <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
       <Header />
       <Helmet >
@@ -84,7 +86,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       {/* Top background, title and author etc. */}
       <Fade top delay={300}>
       <div id="headElement" className="flex flex-wrap justify-center self-center content-center items-center m-auto shadow-c1" style={{minHeight: "50vh", }}>
-        <Pulse cascade delay={1200} duration={500}>
+        <Pulse cascade delay={2000} duration={500}>
         <div className="flex flex-col flex-wrap text-center text-white pt-24 pb-16">
           <div className="px-3 lg:px-48 2xl:px-78 leading-tight">
             <h1 id="title" className="text-4xl xl:text-5xl font-semibold" style={{textShadow: "black 0px 0px 45px"}}>{title}</h1>
@@ -111,47 +113,47 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>
       </Fade>
 
-      <Fade cascade bottom delay={600} duration={1000}>
+      <Fade cascade bottom delay={300} duration={1000}>
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
         
         {/* desktop share buttons */}
-        <div className="left-0 top-0 sticky hidden lg:block">
+        <div className="left-0 top-0 sticky hidden lg:block z-10">
           <Fade left cascade delay={1000} duration={1300}>   
-            <div className="flex flex-col text-sm" style={{maxWidth: "49px", height: "0", overflow: "visible"}}>
-              <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-24 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
-              <Facebook data-tip="" data-for="share_facebook" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small link={shareLink} />
-              <Mail data-tip="" data-for="share_email" title="" className="hover:bg-red-600 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small subject={shareMessage} link={shareLink} />
-              <Linkedin data-tip="" data-for="share_linkedin" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}} solid small message={shareMessage} link={shareLink} />
+            <div className="flex flex-col text-xs" style={{maxWidth: "40px", height: "0", overflow: "visible"}}>
+              <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-28 transition duration-500" solid small message={shareMessage} link={shareLink} />
+              <Facebook data-tip="" data-for="share_facebook" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small link={shareLink} />
+              <Mail data-tip="" data-for="share_email" title="" className="hover:bg-red-600 transition duration-500" solid small subject={shareMessage} link={shareLink} />
+              <Linkedin data-tip="" data-for="share_linkedin" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small message={shareMessage} link={shareLink} />
               <hr className="my-3" />
               <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}}>
-                <div className="m-2 py-1 bg-white hover:bg-black hover:text-white text-gray-800 flex justify-center rounded-md text-xl transition duration-500" style={{boxShadow: "#dddddd 0px 5px 10px"}}><RiEditBoxLine /></div>
+                <div className="m-2 mt-1 bg-transparent text-black flex justify-center rounded-md text-xl transition duration-500"><RiEditBoxLine /></div>
               </a>
 
               <ReactTooltip id="share_twitter">Share on Twitter</ReactTooltip>
               <ReactTooltip id="share_facebook">Share on Facebook</ReactTooltip>
               <ReactTooltip id="share_email">Share on E-Mail</ReactTooltip>
               <ReactTooltip id="share_linkedin">Share on Linkedin</ReactTooltip>
-              <ReactTooltip id="share_editpost">Edit this post 😎</ReactTooltip>
+              <ReactTooltip id="share_editpost">Edit this post on GitHub</ReactTooltip>
             </div>
           </Fade> 
         </div>   
 
 
         {/* mobile: toc & share buttons */}
-        <div className="w-full bg-gray-900 shadow-xl flex flex-wrap justify-center -mt-12 lg:mt-0">
-          <div className="flex flex-wrap text-sm justify-center w-full py-2 lg:hidden">
+        <div className="w-full shadow-lg flex flex-wrap justify-center -mt-12 lg:mt-0" style={{backgroundColor: '#f3f3f3'}}>
+          <div className="flex flex-col text-sm justify-center items-center w-1/4 py-2 lg:hidden ml-10" style={{maxWidth: '50px'}}>
             <Twitter solid small message={shareMessage} link={shareLink} />
             <Facebook solid small link={shareLink} />
-            <Mail solid small subject={shareMessage} link={shareLink} />
+            <Mail solid small className="bg-red-600" subject={shareMessage} link={shareLink} />
             <Linkedin solid small message={shareMessage} link={shareLink} />
             <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              <div className="m-2 py-1 px-2 bg-gray-100 hover:bg-highlight_2 text-gray-800 flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
+              <div className="m-2 py-1 px-2 bg-gray-800 hover:bg-highlight_2 text-white flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
             </a>
           </div>    
-          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-10 pb-5`: ``} mx-auto overflow-auto text-white lg:hidden px-2`}>
-              {tableOfContent && tableOfContent.items && <p className="font-bold mb-5">TABLE OF CONTENTS</p>}
+          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-8 pb-5`: ``} mx-auto overflow-auto text-black lg:hidden px-2`}>
+              {tableOfContent && tableOfContent.items && <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">TABLE OF CONTENTS</p>}
               { tableOfContent && tableOfContent.items && 
-                <Scrollspy className="text-gray-300" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
+                <Scrollspy className="text-gray-900" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
                   {tableOfContent.items.map(renderItem)}
                 </Scrollspy>
               }      
@@ -159,7 +161,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
               
         {/* main mdx content  */}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-60 2xl:pr-52`: `lg:px-44 2xl:px-72`} mx-auto container pt-6 pb-16 px-3  leading-7 text-xl`} style={{fontFamily: "Helvetica"}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-60 2xl:pr-52`: `lg:px-44 2xl:px-72`} mx-auto container pt-6 pb-16 px-3 leading-7 text-lg text-black`} style={{fontFamily: "Helvetica"}}>
           <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, img: IMG, table: Table, }}>
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
@@ -167,21 +169,39 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
         {/* sidebar toc: hidden in mobile */}
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
-          { tableOfContent && tableOfContent.items && <p className="font-bold mb-5 text-gray-700">TABLE OF CONTENTS</p>}
+          { tableOfContent && tableOfContent.items && <p className="font-bold mb-4 pb-2 text-gray-800" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>}
+          <div className="px-1 text-sm">
           { tableOfContent && 
             tableOfContent.items && 
             <Scrollspy className="text-gray-700" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
               {tableOfContent.items.map(renderItem)}
             </Scrollspy>
-          }      
+          }
+          </div>      
         </div>  
       </div>       
-           
-      <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
-      </Fade>
-      
+ 
+      <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
+
+      <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
+        <GitalkComponent options={{
+          clientID: process.env.GATSBY_GH_APP_GITALK_ID,
+          clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
+          repo: 'dataviz-hub2-comments',   
+          owner: 'researchdata-sheffield',
+          admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
+          id: mdx.fields.slug.substr(0,50),
+          title: mdx.frontmatter.title,
+          body: location.href + " | " + mdx.frontmatter.description,
+          distractionFreeMode: false
+
+        }} /> 
+      </div>    
+      </Fade> 
+
       <Footer />
     </div>
+    
   )
 }
 

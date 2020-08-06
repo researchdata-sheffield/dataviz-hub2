@@ -3,11 +3,50 @@ import { Link as gatsby_Link } from "gatsby"
 import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
+import { ButtonWithArrow } from "./styled"
 
+export const LPWrap = (props) => {
+  return (
+    <div className="flex flex-wrap w-full justify-start my-8">
+      {props.children}
+    </div>
+  )
+}
+
+LPWrap.propTypes = {
+  children: PropTypes.any,
+}
+
+export const LPItem = (props) => {
+  return (
+    <a href={props.href} className={`${props.className ? props.className : 'md:mx-8'} w-3/4 md:w-1/4 mb-8 flex flex-col p-5 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1`} 
+      style={{fontWeight: '600', 
+              background: `${props.Lab ? 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)' : 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)'}`}}
+      rel="noopener noreferrer" target="_blank"
+    >
+      {props.children}
+      <a href={props.href} rel="noopener noreferrer" target="_blank">
+        <ButtonWithArrow type="BlackButton" className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
+          {props.video ? 'watch videos' : 'read more'}
+        </ButtonWithArrow>
+      </a>
+    </a>
+  )
+}
+
+LPItem.propTypes = {
+  children: PropTypes.any,
+  href: PropTypes.any,
+  video: PropTypes.any,
+  className: PropTypes.any,
+  Lab: PropTypes.any
+}
+
+// Underline effect Link
 export const Link = styled(gatsby_Link)`
   color: black;
   padding-bottom: 4px;
-  background: linear-gradient(to right,#00aeef 0%, #00aeef 98%);
+  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
   background-size: 100% 2px;
   background-repeat: no-repeat;
   background-position: right 85%;
@@ -20,10 +59,11 @@ export const Link = styled(gatsby_Link)`
   }
 `
 
+// Underline effect 'a' tag
 export const A_a = styled.a`
   color: black;
   padding-bottom: 4px;
-  background: linear-gradient(to right,#00aeef 0%,#00aeef 98%);
+  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);   ${'' /* (to right,#00aeef 0%,#00aeef 98%) */}
   background-size: 100% 2px;
   background-repeat: no-repeat;
   background-position: right 85%;
@@ -41,17 +81,26 @@ export const A_a = styled.a`
   }
 `
 
+/* Two version of underline effect 'a'
+* 1. anchor within page (use the anchor prop)
+* 2. external page (default)
+* & one version of normal 'a'
+  3. external page (use the a prop)
+*/
 export const A = (props) => {
   const {href, ...props_noRef} = props
   return (
     props.anchor === true ? 
-      <A_a {...props_noRef} rel="noopener noreferrer" href={href}>
+      <A_a {...props_noRef} rel="noopener noreferrer" href={href} key={props.href}>
         {props.children}
       </A_a>
       :
-      <A_a {...props} target="_blank" rel="noopener noreferrer">
-      {props.children}
-      </A_a>
+      [props.a ? 
+        <a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</a>
+        :
+        <A_a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</A_a>
+      ]
+
   )  
 }
 
@@ -249,6 +298,7 @@ export const Table = styled.table`
 
 A.propTypes = {
   children: PropTypes.any,
-  anchor: PropTypes.any,
-  href: PropTypes.string
+  anchor: PropTypes.object,
+  href: PropTypes.string,
+  a: PropTypes.any,
 }

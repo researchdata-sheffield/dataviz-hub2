@@ -1,0 +1,83 @@
+---
+author: ["Gemma Ives"]
+title: "Template for Shiny applications"
+description: "A simple framework to get you started creating your own Shiny app"
+date: "2020-07-13"
+category: ["Tutorial"]
+tag: ["Shiny"]
+thumbnail: ./ShinyThumb.png
+---
+
+With the Shiny package you can build interactive web applications using R script.
+This tutorial will give you quick-start guide to help you begin to explore the
+versatile package and create your own applications.
+
+With the Shiny package installed you can start to develop your app.
+The basic components of a shiny app are ui commands and server commands.
+The ui commands make up the user facing part of the app, this is where users can declare inputs;
+common inputs are listed in this <a href = "https://shiny.rstudio.com/gallery/widget-gallery.html"> helpful widget gallery</a>.
+The server commands are where the bulk of your processing will take place.
+These two components can be created in a single app.r file as shown below:
+
+
+```R
+library(shiny)
+
+ui <- fluidPage(
+  <UI Commands>
+)
+
+server <- function(input, output) {
+  <Server Commands>
+}
+
+shinyApp(ui = ui, server = server)
+```
+However, these files can become lengthy and difficult to read, particularly for complex applications.
+Therefore it is common practice to separate the ui and server components into separate files, stored together in a new directory.
+Each component named ui.r and server.r respectively.
+
+### A Simple Shiny App
+
+The following code is an example of a simple shiny app which creates a sine wave with time equal to the user input.
+
+<iframe height = "500" width="100%" frameborder="no" src="https://gi-tuos.shinyapps.io/demo_shiny/"> </iframe>
+
+In this example the ui file is built in a fluid page format, containing a numeric input widget and a plot output.
+The numeric input widget allows users to specify the sample size. This value is referred to as input\$\<id\>.
+The plot output is refered to as output\$\<id\> and is called from the server.r file.
+
+```R
+ui <- fluidPage(
+  numericInput(inputId = "Num",
+               "Sample size", value = 15),
+  plotOutput(outputId = "LinePlot")
+)
+```
+The server.r file contains instructions on how to build the output objects called in the ui.
+Inputs from the ui file are called by name as specifed in the ui file, in this case, input$Num.
+renderPlot({}) specifies the code required to create the LinePlot object, which is called into the ui.r file.
+
+
+```R
+server <- function(input, output) {
+
+  output$LinePlot <- renderPlot({
+    x=seq(0, input$Num, 0.1)
+    y=sin(x)
+    df <- data.frame(x, y)
+
+    ggplot(data = df, aes(x, y)) +
+      geom_line() +
+      labs(x = "Time", y = "Sine Wave")
+  })
+ }
+ ```
+
+This Shiny app also uses a global.r file, stored in the same directory as the server.r and ui.r files.
+This file defines objects that are available to both sides of the application.
+Global.r files are executed only once as the app compiles. In this instance it contains the command to load relevant packages
+
+```R
+library("tidyverse")
+```

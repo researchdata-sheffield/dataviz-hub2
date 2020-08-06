@@ -4,57 +4,54 @@ import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
 
 
 const UpcomingEvents = ({allEventbriteEvents}) => {
-  var eventLimit = 0
+  let size = allEventbriteEvents.edges.length
   
-  if(allEventbriteEvents && allEventbriteEvents.edges) {
+  if(allEventbriteEvents && (size > 0)) {
     return (
       <> 
       {allEventbriteEvents.edges.map(({node}) => {
         //moment(node.start.local, "DD-MMMM-YYYY hh:mm") >= moment() && 
-        // Check if event's date is later than today's date, restrict number of events to 3
-        if(eventLimit < 4 ) {
-          eventLimit = eventLimit + 1
-          let description = node.description.text
-          if(description.length >= 130) {
-            description = description.substring(0, 130).concat(" ...")
-          }
-
-          return (
-            <a className="flex flex-wrap w-full overflow-y-hidden max-h-80 md:max-h-25 xl:max-h-20 shadow-lg hover:shadow-2xl bg-white my-1 text-gray-700 group border-solid " style={{fontFamily: "TUoS Blake", transition: ".5s ease"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer">
-              <img className="w-full md:w-3/12 overflow-hidden self-center md:min-h-25 xl:min-h-15" src={node.logo.original.url} style={{objectFit: "cover", objectPosition: "center"}} />
-              <div className="w-full md:w-9/12 py-4 px-4">
-                <p className="font-semibold text-lg text-gray-900 group-hover:text-highlight_2">{node.name.text}</p>
-                <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm">{description}</p>
-                <p className="flex pt-4 text-sm"><FaClock className="mr-1" />{node.start.local}</p>
-                
-                <div className="flex flex-wrap">
-                  <div className="w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 text-sm">
-                    <p className="flex">{node.online_event && (<FaMapMarkerAlt className="mr-1 mt-1" />)} {node.online_event && ("Online Event") }</p>
-                    <p className="flex">
-                      {node.venue && ( <FaMapMarkerAlt className="mr-1 mt-1" /> )} 
-                      {node.venue && node.venue.name && (node.venue.name + ", ")} 
-                      {node.venue && node.venue.address.address_1 && (node.venue.address.address_1 + ", ")} 
-                      {node.venue && node.venue.address.city && (node.venue.address.city + ", ")}
-                      {node.venue && node.venue.address.postal_code && (node.venue.address.postal_code)}
-                    </p>
-                  </div>
-                  <div className="flex flex-wrap w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 content-center justify-center">
-                    <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex shadow-sm -mt-4 py-1 px-3 text-md bg-gray-800 text-white hover:bg-highlight_2">
-                      Register
-                    </button>
-                  </div>
-                </div>
-
-              </div>
-            </a> 
-          )
+        let description = node.description.text ? node.description.text.split(" ").splice(0, 20) : ""
+        if(description.length < 20){
+          description = description.join(" ");
+        } else {
+          description = description.join(" ").concat(" ...");
         }
+
+        return (
+          <a className="flex flex-wrap w-full overflow-y-hidden shadow-lg hover:shadow-2xl bg-white my-3 lg:my-1 text-gray-700 group border-solid" 
+            style={{fontFamily: "TUoS Blake", transition: ".5s ease"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer"
+          >
+            <div className="w-full md:w-9/12 py-4 px-4">
+              <p className="font-semibold text-lg text-gray-900 group-hover:text-highlight_2 leading-5">{node.name.text}</p>
+              <p className="text-gray-500 mt-1 leading-tight text-sm">{description}</p>
+              <p className="flex pt-4 text-sm"><FaClock className="mr-1" />{node.start.local}</p>
+              
+              <div className="flex flex-wrap text-sm">
+                  <p className="flex">{node.online_event && (<FaMapMarkerAlt className="mr-1 mt-1" />)} {node.online_event && ("Online Event") }</p>
+                  <p className="flex">
+                    {node.venue && ( <FaMapMarkerAlt className="mr-1 mt-1" /> )} 
+                    {node.venue && node.venue.name && (node.venue.name + ", ")} 
+                    {node.venue && node.venue.address.address_1 && (node.venue.address.address_1 + ", ")} 
+                    {node.venue && node.venue.address.city && (node.venue.address.city + ", ")}
+                    {node.venue && node.venue.address.postal_code && (node.venue.address.postal_code)}
+                  </p>
+              </div>
+            </div>
+            <div className="w-full md:w-3/12 overflow-hidden relative min-h-20 2xl:min-h-15" style={{backgroundImage: `url(${node.logo.original.url})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: '.5s ease'}}>
+              <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex py-1 px-3 font-bold text-md bg-black text-white hover:bg-blue-700 absolute" style={{bottom: '0%', right: '0%', }}>
+                Register
+              </button>
+            </div>
+          </a> 
+        )
+        
       })}
       </>
     )
   } else {
     return (
-      <div className="mt-16 text-gray-800">Sorry, no upcoming events available, please come back later.</div>
+      <div className="mt-16 text-blue-800">No upcoming events can be found, please come back later.</div>
     )
   }
 }

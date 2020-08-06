@@ -21,7 +21,9 @@ module.exports = {
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',
         'black-45': 'rgba(0, 0, 0, .45)',
-        'black-85': 'rgba(0, 0, 0, .85)'
+        'black-85': 'rgba(0, 0, 0, .85)',
+        'black-10': 'rgba(0, 0, 0, .1)',
+        'black-02': 'rgba(0, 0, 0, .02)',
       },
       borderColor: {
         'highlight_2': '#00aeef',
@@ -64,6 +66,7 @@ module.exports = {
       },
       margin: {
         '-9': '-2.25rem',
+        '7': '1.75rem',
         '14': '3.5rem',
         '18': '4.5rem',
         '22': '5.5rem',
@@ -213,6 +216,10 @@ module.exports = {
         '95vh': '95vh',
         '100vh': '100vh',
       },
+      spacing: {
+        '110%': '110%',
+        
+      },
       textColor: {
         'highlight': '#337ab7',
         'highlight_2': '#00aeef',
@@ -229,6 +236,9 @@ module.exports = {
         '40px': '40px',
         '50px': '50px',
       },
+      zIndex: {
+        '-10': '-10'
+      }
 
     },
  
@@ -240,17 +250,18 @@ module.exports = {
     borderWidth: ['responsive', 'hover', 'group-hover', 'first', 'last', 'odd', 'even'],
     fontWeight: ['group-hover', 'first', 'last', 'odd', 'even'],
     fontSize: ['responsive', 'hover', 'focus','group-hover', 'first', 'last', 'odd', 'even'],
-    display: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    opacity: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    zIndex: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
+    display: ['responsive', 'hover', 'focus', 'group-hover'],
+    opacity: ['responsive', 'hover', 'focus', 'group-hover'],
+    zIndex: ['responsive', 'hover', 'focus', 'group-hover'],
     scale: ['responsive',  'focus', 'active', 'hover', 'group-hover', 'first', 'last', 'odd', 'even'],
-    transitionDuration: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    transitionProperty: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
+    transitionDuration: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionProperty: ['responsive', 'hover', 'focus', 'group-hover'],
+    transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover'],
     minHeight: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
     maxHeight: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    greyScale: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
+    greyScale: ['responsive', 'hover', 'focus', 'group-hover'],
     translate: ['responsive', 'hover', 'focus', 'active', 'group-hover', 'first', 'last', 'odd', 'even'],
+    visibility: ['responsive', 'hover', 'focus', 'group-hover']
   },
   plugins: [require("@tailwindcss/custom-forms")],
 }

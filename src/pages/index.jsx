@@ -14,8 +14,8 @@ import moment from "moment"
 import Search_Home from "../components/searchHome"
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
-import Covid from "../images/home/COVID1.png"
-import { GreyButton, BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
+import Covid from "../images/home/animation.gif"
+import { BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
 import ReactTooltip from "react-tooltip"
 import bg from "../images/home/earth.jpg"
 
@@ -25,7 +25,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   
   let datePrev = moment()
   
-  var words = ["Colour", "What are you looking for?", "how to write a blog post", "slack", "dataset",
+  var words = ["Colour", "What are you looking for?", "blog post", "Dash", "dataset", "Shiny",
                "Chart", "visualisation", "Python", "DD/MM/YYYY"]
 
   useEffect( () => {
@@ -52,7 +52,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
 
   return (
-    <>
+    <div className="bg-white">
       <SEO 
         title="Home" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research",]} 
@@ -63,10 +63,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div>
         <div className="flex flex-wrap relative">
           {/* Left component */}
-          <div id="homeBar" className="shadow-lg sm:sticky sm:top-0 sm:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
+          <div id="homeBar" className="shadow-lg z-10 lg:sticky lg:top-0 lg:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center pt-28 ipadp:pt-10vh font-sans">
-              <p className="text-gray-800 text-lg ipadp:text-3xl 2xl:text-4xl font-bold">Data Visualisation Hub</p>
-              <p className="text-gray-700 text-base 2xl:text-lg mt-2 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-2xl ipadp:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
+              <p className="text-base 2xl:text-lg mt-5 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 
             <Search_Home  />
@@ -77,10 +77,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                   <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
                       <li><Link className="text-gray-700 hover:underline" to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="Coming soon">Learning path</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
                       <li><Link className="text-gray-700 hover:underline" to='/#home_community' data-tip="#Community">Community</Link></li>
                       <li><Link className="text-gray-700 hover:underline" to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#collaboration' data-tip="Coming soon">Collaboration</Link></li>
+                      <li><Link className="text-gray-700 hover:underline" to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
                       <ReactTooltip />
                     </ul>
                 </div>
@@ -96,13 +96,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </div>
               </div>
             </Slide>
-
-            <Fade bottom delay={700}>
-              <Link to='#explore'>
-                <BlackWhiteButton className="py-2 px-10" link>Get Started</BlackWhiteButton>
-              </Link>
-            </Fade>
-
+            <Link to='#explore'>
+              <Fade bottom delay={700}>
+                <BlackWhiteButton className="py-2 px-5 hover:text-black border-1 border-black" link>Get Started</BlackWhiteButton>
+              </Fade>
+            </Link>
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
               {/* <a className="text-gray-500 hover:text-highlight_2">Library &nbsp;</a> | 
               <a className="text-gray-500 hover:text-highlight_2">&nbsp; IT Services &nbsp;</a> |
@@ -115,22 +113,22 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className="flex flex-wrap text-gray-100 lg:w-8/12" style={{marginLeft: "auto", transition: ".5s ease", zIndex: "2"}}>  {/*style={{borderTop: "50px solid #000000", }} */}
-            
+          <div className="flex flex-wrap text-gray-100 lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease",}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="min-h-100 justify-center relative w-full brightness-40 hover:brightness-100" style={{transition: ".6s ease",}}>
-              
-            <div className="flex flex-col flex-wrap min-h-100 justify-center text-center items-center greyScale-100 hover:greyScale-0" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "cover", backgroundPosition:"center" }}>
-                <h1 className="px-10 ipadp:px-24 text-3xl 2xl:text-5xl font-bold" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.8)"}}>
+            <div className="pt-8 min-h-70 md:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease",}}>
+      
+              <div className="flex flex-col flex-wrap group min-h-70 md:min-h-100 justify-center text-center items-center" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "contain", backgroundPosition:"center", backgroundRepeat: 'no-repeat' }}>
+                <h1 className="md:-mt-24 px-2 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.2)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
-                <div className="mt-10">
+                <div className="mt-10 group-hover:visible md:invisible">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                    <AnimateButton external className="rounded-full">Data Repository</AnimateButton>
+                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800">Data Repository</AnimateButton>
                   </a>
                   <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
-                    <AnimateButton className="mt-0 rounded-full">Blog post</AnimateButton>
+                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800">Blog post</AnimateButton>
                   </Link>
                 </div>
               </div>
@@ -144,21 +142,13 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </Link>
             </div>  
 
-            <EventNotice eventBrite={eventBrite} />   
-              
-            {/* <div className="flex flex-wrap w-full text-white font-semibold text-center text-sm cursor-pointer bg-black pt-1 shadow-2xl">
-              <HomeBlogNav id="homeBlog" className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_red" onClick={() => {navigate('/blog/category/articles')}}>ARTICLES</HomeBlogNav>
-              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_yellow" onClick={() => {navigate('/blog/category/events')}}>EVENT</HomeBlogNav>
-              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-highlight_2" onClick={() => {navigate('/blog/category/news')}}>NEWS</HomeBlogNav>
-              <HomeBlogNav className="greyScale-80 hover:greyScale-0 2xl:py-5 hover:border-menu_green" onClick={() => {navigate('/blog/category/tutorial')}}>TUTORIAL</HomeBlogNav>
-            </div>   */}
-            
+            <EventNotice eventBrite={eventBrite} />             
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-white py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
-              <div className="text-gray-800 mr-10">Discover a range of articles and posts at our blog.</div>
-              <Link to="/blog"><GreyButton className="bg-black px-5 py-2 text-gray-400 hover:text-white mt-0">Read more</GreyButton></Link>
+            <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
+              <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
+              <Link to="/blog"><ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>Read more</ButtonWithArrow></Link>
             </div> 
 
             {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
@@ -171,32 +161,27 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         </div>
       </div>
       {/* End of top page */}     
-      
+
       <div id="explore" />
       <div className="ipadp:min-h-120 flex flex-wrap items-center text-left relative" style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
-        <div className="w-full absolute top-0 z-20">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#fff" fillOpacity="1" d="M0,32L1440,64L1440,0L0,0Z"></path>
-          </svg>
-        </div>
-        <Fade cascade delay={700} duration={1500}>
-          <div className="px-3 md:px-24 xl:px-36 2xl:px-52 mt-56 mb-72">
+        <Fade cascade delay={200} duration={1500}>
+          <div className="px-3 md:px-24 xl:px-36 2xl:px-52 mt-48 mb-72">
             <div className="text-white">
               <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{textShadow: "#000 0px 0px 4px", fontFamily: "TUoS Stephenson"}}>Data and visualisation</h1>
-              <p className="2xl:text-lg my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 5px"}}>
+              <p className="text-base 2xl:text-xl my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 5px"}}>
                 Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 
                 information clearly and effectively by means of graphical representation. However, this does not mean that data visualisation must be boring for its functional purpose, 
                 or extremely complicated ... 
               </p>
             </div>
             <Link to="/blog/22/03/2020/datavizhub_guide">
-              <ButtonWithArrow type="GreyButton">Read more</ButtonWithArrow>
+              <ButtonWithArrow type="GreyButton" className="group">Read more</ButtonWithArrow>
             </Link> 
           </div>
         </Fade>
-        <div className="w-full absolute bottom-0">
+        <div className="w-full absolute bottom-0 -mb-1">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#1a202c" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            <path fill="#1d1d1d" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
           </svg>
         </div>
       </div>
@@ -211,7 +196,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       </div>
 
       <Footer />        
-    </>
+    </div>
   )
 }
 
@@ -227,15 +212,27 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query {
-    featuredPost: allMdx(filter: {frontmatter: {featured: {eq: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 2) {
+    featuredPost: 
+      allMdx(
+        filter: {frontmatter: {featured: {eq: "true"}}}, 
+        sort: {order: DESC, fields: frontmatter___date}, 
+        limit: 2 ) {
       ...MdxEdge
     }
 
-    latestPost: allMdx(filter: {frontmatter: {featured: {ne: "true"}, hide: {ne: "true"}}}, sort: {order: DESC, fields: frontmatter___date}, limit: 6) {
+    latestPost: 
+      allMdx(
+        filter: {frontmatter: {featured: {ne: "true"}, hide: {ne: "true"}}}, 
+        sort: {order: DESC, fields: frontmatter___date}, 
+        limit: 6 ) {
       ...MdxEdge
     }
     
-    eventBrite: allEventbriteEvents(sort: {fields: start___local, order: ASC}, limit: 1, filter: {organization_id: {ne: "777"}}) {
+    eventBrite: 
+      allEventbriteEvents(
+        sort: {fields: start___local, order: ASC}, 
+        limit: 1, 
+        filter: {id: {ne: "777"}, isFuture: {eq: true}} ) {
       ...EventbriteEventsEdge
     }  
   }

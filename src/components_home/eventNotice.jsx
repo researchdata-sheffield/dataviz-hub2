@@ -15,7 +15,7 @@ const eventNotice = ({ eventBrite }) => {
   return (
     <div className="bg-black w-full">
       <Fade duration={1000}>
-      <div id="eventNotice" className="w-full text-white text-gray-800 flex-col flex-wrap overflow-auto  bg-white">
+      <div id="eventNotice" className="w-full text-gray-800 flex-col flex-wrap overflow-auto shadow-lg z-10 relative" style={{backgroundColor: '#f8f8f8'}}>
         {eventBrite.edges.map(({node}) => {
 
             let description = node.description.text.split(" ").splice(0, 15)
@@ -26,10 +26,10 @@ const eventNotice = ({ eventBrite }) => {
             }
             
             return (
-              <div key={node.id} className="border-white border-t-4 border-l-6 border-r-6 border-b-8">
-                <div className="text-gray-700 text-sm w-full bg-white font-bold px-2 py-2" >Today: {currentDate}</div>
+              <div key={node.id}>
+                <div className="text-gray-700 text-sm w-full font-bold px-2 py-2">Today: {currentDate}</div>
                 
-                <a className="flex flex-wrap w-full overflow-hidden max-h-80 md:max-h-25 xl:max-h-20 bg-white text-gray-700 group" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
+                <a className="flex flex-wrap w-full overflow-hidden max-h-80 md:max-h-25 xl:max-h-20 text-gray-700 group" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
                   <img className="w-full md:w-3/12 overflow-hidden self-center md:min-h-25 xl:min-h-15" src={node.logo.original.url} style={{objectFit: "cover", objectPosition: "center"}} />
                   <div className="w-full md:w-9/12 py-1 px-4">
                     <h1 className="inline-block font-semibold xl:text-xl"><p className="text-highlight_2 text-2xl xl:text-4xl inline-block">NEXT</p> event: &nbsp;<p className="inline-block text-lg xl:text-2xl font-bold">{node.name.text ? node.name.text : "No next event"}</p></h1>

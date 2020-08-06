@@ -66,8 +66,8 @@ const About = () => (
           <p className="text-highlight_2 text-4xl py-8">Contribute</p>  
           
           <p className="text-gray-900">From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
-            the <a className="a-inline" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, 
-            <Link className="a-inline" to="/community/#joinus">google group</Link> or <Link className="a-inline" to="/community/#joinus">slack team</Link>.
+            the <a className="link-effect" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, 
+            <Link className="link-effect" to="/community/#joinus">google group</Link> or <Link className="link-effect" to="/community/#joinus">slack team</Link>.
           </p>
         </Fade>
       </div>

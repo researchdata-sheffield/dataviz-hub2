@@ -15,7 +15,7 @@ class Search_Home extends Component {
   render() {
 
     const ResultList = () => {
-      if (this.state.results.length > 0 && this.state.query.length > 2 ) {
+      if (this.state.results.length > 0 && this.state.query.length > 0 ) {
         
         return (
           <div className="z-30 text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
@@ -50,13 +50,13 @@ class Search_Home extends Component {
             
          </div>
         )
-      } else if (this.state.query.length > 2) {
+      } else if (this.state.query.length > 0) {
         return 'No results for ' + this.state.query
-      } else if (
-        this.state.query.length > 0
-      ) {
-        return 'Please insert at least 3 characters'
-      } else {
+      } 
+      // else if (this.state.query.length > 0) {
+      //   return 'Please insert at least 3 characters'
+      // } 
+      else {
         return ''
       }
     }
@@ -101,7 +101,7 @@ class Search_Home extends Component {
 
   search = event => {
     const query = event.target.value
-    if (this.state.query.length > 1) {
+    if (this.state.query.length > -1) {
       const results = this.getSearchResults(query)
       this.setState({ results: results, query: query })
     } else {

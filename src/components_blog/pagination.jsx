@@ -22,7 +22,7 @@ const Pagination = ({numPages, currentPage, typePage}) => {
 
   return (
     <div className="flex flex-wrap justify-between">
-      <div className="flex flex-wrap items-center mx-auto mt-10 mb-5 md:mt-24 md:mb-16">
+      <div className="flex flex-wrap items-center mx-auto mt-10 mb-5 md:mt-16 md:mb-16">
 
         <Link to={ `${ numPages === 1 ? `${typePage}/page/${currentPage}` : [ (currentPage === 1 || currentPage === 2)  ? `${typePage}` : `${typePage}/page/${currentPage -1}` ] }` } 
               className={`${numPages === 1 ? `hidden` : [currentPage === 1 ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow mr-4`}
