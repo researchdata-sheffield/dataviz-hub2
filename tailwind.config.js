@@ -20,10 +20,14 @@ module.exports = {
         'highlight_2': '#00aeef',
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',
-        'black-45': 'rgba(0, 0, 0, .45)',
-        'black-85': 'rgba(0, 0, 0, .85)',
         'black-10': 'rgba(0, 0, 0, .1)',
         'black-02': 'rgba(0, 0, 0, .02)',
+        'black-25': 'rgba(0, 0, 0, .25)',
+        'black-35': 'rgba(0, 0, 0, .35)',
+        'black-45': 'rgba(0, 0, 0, .45)',
+        'black-75': 'rgba(0, 0, 0, .75)',
+        'black-85': 'rgba(0, 0, 0, .85)',
+
       },
       borderColor: {
         'highlight_2': '#00aeef',

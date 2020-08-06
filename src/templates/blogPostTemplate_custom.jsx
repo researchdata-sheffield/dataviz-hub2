@@ -11,6 +11,7 @@ import PaginationPost from "../components_blog/paginationPost"
 import "katex/dist/katex.min.css"
 import GitalkComponent from "gitalk/dist/gitalk-component"
 
+
 const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
     const {prev, next} = pageContext  
 
@@ -39,7 +40,7 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
       </div>
       
       <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
-      
+
       <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
         <GitalkComponent options={{
           clientID: process.env.GATSBY_GH_APP_GITALK_ID,

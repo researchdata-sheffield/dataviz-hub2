@@ -298,7 +298,7 @@ export const Table = styled.table`
 
 A.propTypes = {
   children: PropTypes.any,
-  anchor: PropTypes.object,
+  anchor: PropTypes.any,
   href: PropTypes.string,
   a: PropTypes.any,
 }

@@ -95,7 +95,7 @@ const Header = () => {
   return (
     <header className="font-semibold z-50 relative">
       <nav id="navbar" className={`${isScroll ? `shadow-lg` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
-        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.8s"}}
+        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
           <A className={`${isScroll ? `` : [wlp === "/" ? `opacity-0` : ``]} `} href="https://www.sheffield.ac.uk/"><img className="mt-1" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
