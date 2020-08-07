@@ -30,7 +30,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
 
   useEffect( () => {
     var input = document.getElementById("homeSearch");
-    
+
     const interval = setInterval( () => {
       let dateNow = moment();
       let dateDiff = dateNow - datePrev;
@@ -40,16 +40,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         let index = Math.floor(Math.random() * words.length); 
         input.setAttribute("placeholder", words[index]);
       }
-
     }, 5000);
 
-    
     return () => {
       clearInterval(interval)
     };
-
   }, [words,]);
-
 
   return (
     <div className="bg-white">
@@ -74,7 +70,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <Slide left>
               <div className="hidden md:flex justify-center py-4 xl:py-8 z-10 w-full">
                 <div className="w-1/7 mr-24">
-                  <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
+                  <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
                       <li><Link className="text-gray-700 hover:underline" to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
                       <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
@@ -86,12 +82,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </div>
                 
                 <div className="w-1/7">
-                  <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
+                  <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Chart"}} )} }>Chart</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Colour"}} )} }>Colour</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Python"}} )} }>Python</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Statistics"}} )} }>Statistics</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }}>Chart</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }}>Colour</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Python"}}) }}>Python</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Statistics"}}) }}>Statistics</a></li>
                     </ul>
                 </div>
               </div>
@@ -148,12 +144,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             
             <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
-              <Link to="/blog"><ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>Read more</ButtonWithArrow></Link>
+              <Link to="/blog">
+                <ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>
+                  Read more
+                </ButtonWithArrow>
+              </Link>
             </div> 
-
-            {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
-              <p className="text-gray-600 mx-auto">What goes here?</p>
-            </div> */}
           
           </div> 
           {/* End of right component */}

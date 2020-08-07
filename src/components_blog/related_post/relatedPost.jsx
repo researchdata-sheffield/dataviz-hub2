@@ -81,11 +81,13 @@ const RelatedPost = (props) => {
             description = description.join(" ").concat(" ...")
           }
 
+          const classes = "group-hover:hidden text-gray-100 font-bold transition duration-500"
+
           return (
-            <Link className="w-10/12 md:w-1/3 lg:w-3/10 mx-3 lg:mx-5 my-6" to={node.fields.slug} key={node.id}>
-              <div style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-60 md:min-h-40 lg:min-h-60 xl:min-h-60 2xl:min-h-40 transform hover:scale-105 transition duration-500">
-                <div className="min-h-60 md:min-h-40 lg:min-h-60 xl:min-h-60 2xl:min-h-40 max-h-60 w-full p-6 transition duration-700 bg-black-25 group-hover:bg-black-75 relative" style={{borderRadius: "15px"}}>
-                  <div className="absolute pt-8 lg:pt-16 2xl:pt-24 px-3 lg:px-8 overflow-hidden top-0 left-0" style={{maxWidth: '97%', textShadow: '0px 1px 7px #000'}}>
+            <Link className="w-10/12 md:w-1/3 lg:w-3/10 mx-3 lg:mx-5 my-6 lg:px-2" to={node.fields.slug} key={node.id}>
+              <div style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", maxHeight: "600px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-60 md:min-h-40 lg:min-h-60 2xl:min-h-40 transform hover:scale-105 transition duration-500">
+                <div className="min-h-60 md:min-h-40 lg:min-h-60 2xl:min-h-40 w-full p-6 transition duration-700 bg-black-25 group-hover:bg-black-75 relative" style={{borderRadius: "15px", maxHeight: "600px"}}>
+                  <div className="absolute pt-8 lg:pt-16 2xl:pt-24 px-3 lg:px-8 overflow-hidden top-0 left-0" style={{maxWidth: '97%', textShadow: '0px 1px 7px #757575'}}>
                     <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
                       {title}
                     </h1>  
@@ -94,17 +96,17 @@ const RelatedPost = (props) => {
                         return ( (arr.length-1) === i ? author.name : author.name.concat(", "))
                       })}
                     </h1> */}
-                    <h1 className="mt-4 group-hover:hidden text-gray-100 font-bold transition duration-500">
+                    <h1 className={`${classes} mt-4`}>
                       CAT: &nbsp;
                       {node.frontmatter.category[0].toUpperCase()}
                     </h1>
-                    <h1 className="group-hover:hidden text-gray-100 font-bold transition duration-500">
+                    <h1 className={`${classes} `}>
                       TAG: &nbsp;{node.frontmatter.tag.map((tag, i, arr) => {
                         return ( i < 3 && arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")  )
                       })}
                       {node.frontmatter.tag.length > 3 && <p className="inline-block text-white"> +{node.frontmatter.tag.length - 3} more</p>}
                     </h1>
-                    <h1 className="group-hover:hidden text-white leading-7 mt-4 font-bold text-lg transition duration-500">
+                    <h1 className={`${classes} text-white leading-7 mt-4 text-lg`}>
                       {node.fields.readingTime.text}
                     </h1>
                     <p className="hidden group-hover:block my-4 text-xxs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">{node.fields.slug.slice(5,).toUpperCase()}</p>
