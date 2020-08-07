@@ -78,6 +78,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        description
         author {
           name
           avatar {
