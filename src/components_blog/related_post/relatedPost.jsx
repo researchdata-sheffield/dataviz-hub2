@@ -7,6 +7,7 @@ import no_image_3 from "../../images/blog/no_image_3.png"
 import no_image_4 from "../../images/blog/no_image_4.png"
 import no_image_5 from "../../images/blog/no_image_5.png"
 import { jaccardIndexCompareTwoStrings } from "./relatedPostUtils"
+import Fade from 'react-reveal/Fade'
 
 const RelatedPost = (props) => {
   const { currentPost } = props
@@ -56,6 +57,7 @@ const RelatedPost = (props) => {
   
   return (
     <>
+      <Fade fraction={.3} duration={1500} delay={300}>
       <div className="px-3 lg:px-12 pt-12 pb-1 text-2xl text-gray-900 font-semibold">You might also like</div>
       <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center md:justify-start lg:px-5">
         {relatedPosts.map(node => {
@@ -118,6 +120,7 @@ const RelatedPost = (props) => {
           )
         })}
       </div>
+      </Fade>
     </>
   )
 }

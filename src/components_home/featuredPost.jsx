@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaStar } from "react-icons/fa"
 import Fade from 'react-reveal/Fade'
-import {ArrowBox_featured, IMG, IMG_DIV, CatBtn, TagBtn} from "../components_style/styled"
+import {ArrowBox_featured, IMG, IMG_DIV, } from "../components_style/styled"
 import no_image_1 from "../images/blog/no_image_1.png"
 import no_image_2 from "../images/blog/no_image_2.png"
 import no_image_3 from "../images/blog/no_image_3.png"
@@ -49,25 +49,35 @@ const featuredPost = ({ featuredPost }) => {
                     <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake", textShadow: "#000000 0px 0px 20px"}}>Featured</p>
                   </div>
                   <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-3/5 max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
-                  <ArrowBox_featured className="pt-6 px-8">
+                  <ArrowBox_featured className="pt-6 px-8 text-gray-700">
                     <h1 className="font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-highlight_2 overflow-y-hidden">{title}</h1>
-                    <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-gray-500" >{description}</p>
-                    <p className="my-2 text-xs 2xl:text-base pt-2 group-hover:text-gray-500">
+                    <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-gray-100" >{description}</p>
+                    <p className="my-2 text-xs 2xl:text-base pt-2 group-hover:text-gray-100">
                       {node.frontmatter.author.map((author, idx) => (
                         (node.frontmatter.author.length == idx + 1) ? author.name : author.name + " · "      
                       ))}
                     </p>
-                    <p className="my-2 text-xs 2xl:text-base text-gray-500">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
+                    <p className="my-2 text-xs 2xl:text-base text-gray-500 group-hover:text-gray-300">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
                   </ArrowBox_featured>
                 </Link>
-                <div className="px-8 pt-6 pb-24 text-sm 2xl:text-sm">
+                <div className="px-3 lg:px-8 text-xs text-gray-500" style={{fontWeight: '400'}}>
                   {node.frontmatter.category.map((cat) => (
-                    <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
+                    <>
+                      <Link className="font-semibold hover:underline text-gray-500" key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
+                      <> · </> 
+                    </>
                   ))}
-                  {node.frontmatter.tag.map((tag, i) => {
-                    return (i < 3 && <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>)         
+                
+                  {node.frontmatter.tag.map((tagItem, i) => {
+                    return (
+                      i < 3 && 
+                      <>
+                        <Link key={tagItem} className="text-gray-500 hover:underline" to={`/blog/tag/${kebabCase(tagItem)}`}>{tagItem}</Link>
+                        {node.frontmatter.tag.length === i+1 ? '' : [i === 2 ? ' ' : ' · ']}
+                      </>
+                    )         
                   })}
-                  {node.frontmatter.tag.length > 3 && <TagBtn to={node.fields.slug}>+{node.frontmatter.tag.length - 3} more</TagBtn>}
+                  {node.frontmatter.tag.length > 3 && <Link className="text-gray-500 hover:underline" to={node.fields.slug}>+{node.frontmatter.tag.length - 3} more</Link>}
                 </div>
               </div>
             </Fade>

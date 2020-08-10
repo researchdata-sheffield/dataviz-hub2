@@ -32,19 +32,22 @@ const latestPost = ({ latestPost }) => {
           description = description.join(" ").concat(" ...");
         }
 
+        let postDate = node.frontmatter.date
+        postDate = postDate.substring(0, postDate.indexOf(" ", postDate.indexOf(" ") + 1))
+
         return (
           <div key={node.id} className="group w-full relative z-20 border-t-1 border-gray-800">
             <Fade  key={node.id} duration={1000} fraction={0.1}>
-              <div className="flex flex-wrap w-full bg-gray-900 hover:bg-transparent text-white  font-semibold 2xl:text-xl">
-                <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full hover:text-white px-6 py-4">
+              <div className="flex flex-wrap w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
+                <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-3 lg:px-10 py-4">
                   <div className="flex flex-wrap items-center">
-                    <MdFiberNew className="text-red-700 ipadp:text-gray-300 group-hover:text-red-700 text-3xl" />
+                    <MdFiberNew className="text-red-700 ipadp:text-white group-hover:text-red-700 text-3xl" />
                     {node.frontmatter.category.map((cat) => (
-                        <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-sm py-0 my-0 mx-2 border-none bg-white text-black invisible group-hover:visible">{cat}</CatBtn>
+                        <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-full py-0 my-0 mx-2 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible">{cat}</CatBtn>
                     ))}
                   </div>
-                  <div className="inline-block">{node.frontmatter.title}</div>
-                  <div className="inline-block">{node.frontmatter.date}</div>
+                  <div className="inline-block font-semibold">{node.frontmatter.title}</div>
+                  <div className="inline-block font-semibold">{postDate}</div>
                 </Link>
 
               </div>    

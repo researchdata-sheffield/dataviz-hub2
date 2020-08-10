@@ -222,3 +222,15 @@ ButtonWithArrow.propTypes = {
   type: PropTypes.any,
   props: PropTypes.any,
 }
+
+export const A_footer = (props) => {
+  return (
+    <a {...props} className={`${props.className} text-gray-500 hover:text-highlight_2`} target="_blank" rel="noopener noreferrer">{props.children}</a>
+  )  
+}
+
+A_footer.propTypes = {
+  children: PropTypes.any,
+  href: PropTypes.any,
+  className: PropTypes.any,
+}

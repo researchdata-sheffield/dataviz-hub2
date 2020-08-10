@@ -121,10 +121,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </h1>
                 <div className="mt-10 group-hover:visible md:invisible">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800">Data Repository</AnimateButton>
+                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800 text-gray-200 hover:text-highlight_2">Data Repository</AnimateButton>
                   </a>
                   <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
-                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800">Blog post</AnimateButton>
+                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800 text-gray-200 hover:text-highlight_2">Blog post</AnimateButton>
                   </Link>
                 </div>
               </div>
@@ -142,7 +142,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
+            <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
               <Link to="/blog">
                 <ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>

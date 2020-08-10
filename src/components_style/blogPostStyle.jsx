@@ -100,9 +100,9 @@ export const A = (props) => {
         :
         <A_a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</A_a>
       ]
-
   )  
 }
+
 
 export const H1 = styled.h1`
   display: block;

@@ -4,15 +4,14 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-
-import "./src/css/index.css"
-import "./src/css/style.css"
-import "./src/css/post.css"
-import "./src/css/animation.css"
-import "./src/css/gitalk.css"
-import "./src/css/accordion.css"
 import "tailwindcss/dist/base.css"
 import 'gitalk/dist/gitalk.css'
+import "./src/css/index.css"
+import "./src/css/style.scss"
+import "./src/css/post.scss"
+import "./src/css/animation.scss"
+import "./src/css/gitalk.scss"
+import "./src/css/accordion.scss"
 
 
 export const onClientEntry = () => {
@@ -30,7 +29,7 @@ export const onClientEntry = () => {
 
 export const onServiceWorkerUpdateReady = () => window.location.reload();
 
-require("./src/css/prism-custom.css")
+require("./src/css/prism-custom.scss")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
 export const onRouteUpdate = (window) => {
