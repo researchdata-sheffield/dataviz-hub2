@@ -315,43 +315,43 @@ module.exports = {
             globPatterns: ['**/*']
          }
       }
-   },
-   `gatsby-plugin-sass`,
-   {
-    resolve: `gatsby-plugin-advanced-sitemap`,
-    options: {
-        // 1 query for each data type
-      query: `
-      {
-        allMdx {
-          edges {
-            node {
-              id
-              frontmatter {
-                title
-              }
-              fields {
-                slug
+    },
+    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-advanced-sitemap`,
+      options: {
+          // 1 query for each data type
+        query: `
+        {
+          allMdx {
+            edges {
+              node {
+                id
+                frontmatter {
+                  title
+                }
+                fields {
+                  slug
+                }
               }
             }
           }
-        }
-      }`,
-      mapping: {
-          // Each data type can be mapped to a predefined sitemap
-          // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
-          // The default sitemap - if none is passed - will be pages
-          allMdx: {
-              sitemap: `posts`,
-          },
-      },
-      exclude: [
-        `/404`,
-        /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
-      ],
-      createLinkInHead: true, // optional: create a link in the `<head>` of your site
-      addUncaughtPages: true, 
-    }
+        }`,
+        mapping: {
+            // Each data type can be mapped to a predefined sitemap
+            // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
+            // The default sitemap - if none is passed - will be pages
+            allMdx: {
+                sitemap: `posts`,
+            },
+        },
+        exclude: [
+          `/404`,
+          /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
+        ],
+        createLinkInHead: true, // optional: create a link in the `<head>` of your site
+        addUncaughtPages: true, 
+      }
     }
 
   ],
