@@ -30,10 +30,10 @@ const About = () => (
       </Fade>
     </div>
 
-    <div id="more" className="container pt-12 pb-24 text-gray-900 mx-auto flex flex-wrap">
+    <div id="more" className="container pt-12 pb-24 mx-auto flex flex-wrap">
       <div className="flex flex-wrap mx-auto justify-center content-center border-solid border-gray-100 border-b-2"> 
         <Fade>
-          <a className="max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3" href="https://www.sheffield.ac.uk/library/index" target="_blank" rel="noopener noreferrer">
+          <a className="max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3 text-black" href="https://www.sheffield.ac.uk/library/index" target="_blank" rel="noopener noreferrer">
             <p className="font-medium text-4xl leading-tight" style={{fontFamily: "TUoS Stephenson"}}>The<br />University<br />Library.</p>
           </a>
           <a className="max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3" href="https://www.sheffield.ac.uk/it-services" target="_blank" rel="noopener noreferrer">
@@ -66,7 +66,7 @@ const About = () => (
           <p className="text-highlight_2 text-4xl py-8">Contribute</p>  
           
           <p className="text-gray-900">From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
-            the <a className="link-effect" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, 
+            the <a className="link-effect" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, &nbsp;
             <Link className="link-effect" to="/community/#joinus">google group</Link> or <Link className="link-effect" to="/community/#joinus">slack team</Link>.
           </p>
         </Fade>

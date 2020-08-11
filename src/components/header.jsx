@@ -94,7 +94,7 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative">
-      <nav id="navbar" className={`${isScroll ? `shadow-lg` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+      <nav id="navbar" className={`${isScroll ? `shadow-lg` : [wlp === "/" ? `lg:hidden` : ``]} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
