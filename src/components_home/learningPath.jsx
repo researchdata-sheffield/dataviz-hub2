@@ -69,10 +69,10 @@ const LearningPath = () => {
             </div>
             <div className={backCard}>
               <h1 className="font-bold">Dataviz Workflows</h1>
-              <p className="text-sm">Maximise your research impact through reproducible data visualisation 
+              <p className="text-sm">Increase your research impact through reproducible data visualisation 
                 workflows.
               </p>
-              <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>
+              <Link to="/blog/05/07/2020/LearningPath_Workflow"><ButtonWithArrow className={moreBtn}>Learn workflows</ButtonWithArrow></Link>
             </div>
           </div>
         </Zoom>

@@ -112,7 +112,7 @@ const RelatedPost = (props) => {
                       {node.fields.readingTime.text}
                     </h1>
                     <p className="hidden group-hover:block my-4 text-xxs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">{node.fields.slug.slice(5,).toUpperCase()}</p>
-                    <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500">{description}</h1>      
+                    <h1 className="hidden group-hover:block text-white leading-6 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500">{description}</h1>      
                   </div>
                 </div>
               </div>
