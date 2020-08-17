@@ -1,47 +1,42 @@
 import React, { useEffect } from "react"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import SEO from "../components/seo"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
+import SEO from "../components/shared/seo"
 import { graphql, Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import EventNotice from "../components_home/eventNotice"
-import FeaturedPost from "../components_home/featuredPost"
-import LatestPost from "../components_home/latestPost"
-import LearningPath from "../components_home/learningPath"
-import HomeCommunity from "../components_home/homeCommunity"
-import HomeShowcase from "../components_home/homeShowcase"
+import EventNotice from "../components/home/eventNotice"
+import FeaturedPost from "../components/home/featuredPost"
+import LatestPost from "../components/home/latestPost"
+import LearningPath from "../components/home/learningPath"
+import HomeCommunity from "../components/home/homeCommunity"
+import HomeShowcase from "../components/home/homeShowcase"
 import moment from "moment"
-import Search_Home from "../components/searchHome"
+import Search_Home from "../components/home/searchHome"
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/animation.gif"
-import { BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
+import { BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components/style/styled"
 import ReactTooltip from "react-tooltip"
 import bg from "../images/home/earth.jpg"
 
 
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
-  
   let datePrev = moment()
-  
   var words = ["Colour", "What are you looking for?", "blog post", "Dash", "dataset", "Shiny",
                "Chart", "visualisation", "Python", "DD/MM/YYYY"]
-
-  useEffect( () => {
+  // search bar text change
+  useEffect(() => {
     var input = document.getElementById("homeSearch");
-
     const interval = setInterval( () => {
       let dateNow = moment();
       let dateDiff = dateNow - datePrev;
-  
       if(dateDiff > 6000) {
         datePrev = moment()
         let index = Math.floor(Math.random() * words.length); 
         input.setAttribute("placeholder", words[index]);
       }
     }, 5000);
-
     return () => {
       clearInterval(interval)
     };

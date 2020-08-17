@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import { FaUniversity, FaPython, FaRProject } from "react-icons/fa"
 import { FcWorkflow } from "react-icons/fc"
-import { ButtonWithArrow } from "../components_style/styled"
+import { ButtonWithArrow } from "../style/styled"
 
 
 

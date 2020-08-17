@@ -2,11 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 //import university_logo from "../images/TUOS_LOGO_REVERSED.png"
- import university_logo from "../images/TUOSlogo.png"
+ import university_logo from "../../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack } from "react-icons/fa"
-//import tw, { styled as styled_twin } from 'twin.macro'
-import { A } from "../components_style/blogPostStyle"
+import { A } from "../style/blogPostStyle"
 
 const Header = () => {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -156,11 +155,9 @@ const Header = () => {
             <NavLink type="Link-icon" to="/search">
               <button className="mr-4 ml-2 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline"><FiSearch  /></button>
             </NavLink>
-
           </div>
         </div>
       </nav>
-
     </header>
   )
 

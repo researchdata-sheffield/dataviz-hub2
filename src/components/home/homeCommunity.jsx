@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import { MdKeyboardArrowRight, MdPeople } from "react-icons/md"
 import { RiCalendarEventLine, RiBookReadLine, RiMenuAddLine } from "react-icons/ri"
-import { ButtonWithArrow } from "../components_style/styled"
+import { ButtonWithArrow } from "../style/styled"
 import ReactTooltip from 'react-tooltip'
 
 

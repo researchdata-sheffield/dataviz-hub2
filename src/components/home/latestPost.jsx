@@ -2,14 +2,11 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
-import no_image_1 from "../images/blog/no_image_1.png"
-import no_image_2 from "../images/blog/no_image_2.png"
-import no_image_3 from "../images/blog/no_image_3.png"
-import no_image_4 from "../images/blog/no_image_4.png"
-import no_image_5 from "../images/blog/no_image_5.png"
 import {MdFiberNew } from "react-icons/md"
 import Fade from 'react-reveal/Fade'
-import {CatBtn, TagBtn } from "../components_style/styled"
+import {CatBtn, TagBtn } from "../style/styled"
+import { getImageSource, shortenText } from "../../utils/shared"
+
 
 const latestPost = ({ latestPost }) => {
 
@@ -17,20 +14,8 @@ const latestPost = ({ latestPost }) => {
     
     <div className="w-full flex flex-wrap" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
       {latestPost.edges.map(({ node }) => { 
-        let imagesrc 
-        if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
-          imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
-        } else {
-          let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
-          imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
-        } 
-        
-        let description = node.frontmatter.description.split(" ").splice(0, 40)
-        if(description.length < 40){
-          description = description.join(" ");
-        } else {
-          description = description.join(" ").concat(" ...");
-        }
+        let imagesrc = getImageSource(node);
+          let description = shortenText(node.frontmatter.description, 40)
 
         let postDate = node.frontmatter.date
         postDate = postDate.substring(0, postDate.indexOf(" ", postDate.indexOf(" ") + 1))

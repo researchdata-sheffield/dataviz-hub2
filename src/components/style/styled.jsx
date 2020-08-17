@@ -124,17 +124,17 @@ export const HomeBlogNav = styled_twin.div`
 
 export const BlackButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-gray-900 relative inline-block hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
+  ${tw`bg-gray-900 rounded-sm relative inline-block hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
 `
 
 export const GreyButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-gray-100 text-gray-700 hover:bg-highlight_2 text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
+  ${tw`bg-gray-100 rounded-sm text-gray-700 hover:bg-highlight_2 text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
 `
 
 export const BlackWhiteButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-gray-900 text-center hover:text-highlight_2 hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent `}
+  ${tw`bg-gray-900 rounded-sm text-center hover:text-highlight_2 hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent `}
 
 `
 

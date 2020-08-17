@@ -1,13 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql, Link } from "gatsby"
-import no_image_1 from "../../images/blog/no_image_1.png"
-import no_image_2 from "../../images/blog/no_image_2.png"
-import no_image_3 from "../../images/blog/no_image_3.png"
-import no_image_4 from "../../images/blog/no_image_4.png"
-import no_image_5 from "../../images/blog/no_image_5.png"
-import { jaccardIndexCompareTwoStrings } from "./relatedPostUtils"
+import { jaccardIndexCompareTwoStrings } from "../../utils/blog"
 import Fade from 'react-reveal/Fade'
+import { getImageSource, shortenText } from "../../utils/shared"
+
 
 const RelatedPost = (props) => {
   const { currentPost } = props
@@ -15,33 +12,7 @@ const RelatedPost = (props) => {
   const postList = useStaticQuery(graphql`
     query relatedPostList {
       allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
-        edges {
-          node {
-            id
-            frontmatter {
-              title
-              category
-              description
-              tag
-              thumbnail {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-              author {
-                name
-              }
-            }
-            fields {
-              slug
-              readingTime {
-                text
-              }
-            }
-          }
-        }
+        ...MdxEdge
       }
     }
   `)
@@ -52,6 +23,7 @@ const RelatedPost = (props) => {
                   return node.fields.slug !== currentPost.fields.slug
                 });
 
+  // create new service for getting related posts
   const service = new RelatedPostServices(currentPost, data);
   const relatedPosts = service.getRelatedPosts();
   
@@ -61,28 +33,9 @@ const RelatedPost = (props) => {
       <div className="px-3 lg:px-12 pt-12 pb-1 text-2xl text-gray-900 font-semibold">You might also like</div>
       <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center md:justify-start lg:px-5">
         {relatedPosts.map(node => {
-          let imagesrc
-          if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
-            imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
-          } else {
-            let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
-            imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
-          }
-
-          let title = node.frontmatter.title.split(" ").splice(0, 8)
-          if(title.length < 8){
-            title = title.join(" ")
-          } else {
-            title = title.join(" ").concat(" ...")
-          }
-
-          let description = node.frontmatter.description.split(" ").splice(0, 34)
-          if(description.length < 34){
-            description = description.join(" ")
-          } else {
-            description = description.join(" ").concat(" ...")
-          }
-
+          let imagesrc = getImageSource(node);
+          let title = shortenText(node.frontmatter.title, 8);
+          let description = shortenText(node.frontmatter.description, 34)
           const classes = "group-hover:hidden text-gray-100 font-bold transition duration-500"
 
           return (
@@ -93,11 +46,6 @@ const RelatedPost = (props) => {
                     <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
                       {title}
                     </h1>  
-                    {/* <h1 className="group-hover:hidden text-gray-100 leading-7 my-4 font-bold text-lg transition duration-500">
-                      {node.frontmatter.author.map((author, i, arr) => {
-                        return ( (arr.length-1) === i ? author.name : author.name.concat(", "))
-                      })}
-                    </h1> */}
                     <h1 className={`${classes} mt-4`}>
                       CAT: &nbsp;
                       {node.frontmatter.category[0].toUpperCase()}

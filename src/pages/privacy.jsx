@@ -1,8 +1,8 @@
 import React from "react"
-import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import { A } from "../components_style/blogPostStyle"
+import SEO from "../components/shared/seo"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
+import { A } from "../components/style/blogPostStyle"
 
 const PrivacyPage = () => (
   <> 

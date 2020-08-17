@@ -159,7 +159,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/layout.jsx`),
+        component: require.resolve(`./src/components/shared/layout.jsx`),
       },
     },
     {

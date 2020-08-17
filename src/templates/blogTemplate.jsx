@@ -1,17 +1,17 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import Pagination from "../components_blog/pagination"
-import BlogPostGrid from "../components_blog/blogPostGrid"
-import MenuCategory from "../components_blog/menuCategory"
-import MenuTag from "../components_blog/menuTag"
-import MenuTagSlide from "../components_blog/menuTagSlide"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
+import Pagination from "../components/blog/pagination"
+import BlogPostGrid from "../components/blog/blogPostGrid"
+import MenuCategory from "../components/blog/menuCategory"
+import MenuTag from "../components/blog/menuTag"
+import MenuTagSlide from "../components/blog/menuTagSlide"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
-import BackgroundSection from "../components_images/blog_background";
+import SEO from "../components/shared/seo"
+import BackgroundSection from "../components/images/blog_background";
 import Flip from 'react-reveal/Flip'
-import { GreyButton } from "../components_style/styled"
+import { GreyButton } from "../components/style/styled"
 
 const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 
@@ -36,20 +36,21 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 						</Link>
 					</div>
 				</Flip>
-
+				
 				<MenuCategory pageContext = {pageContext} />
 
 			</BackgroundSection>
 
+			{/* blog posts & tag menu */}
 			<div className="flex flex-wrap-reverse">
-				
 				<div className="w-full">
 					<BlogPostGrid allMdx = {allMdx} />
-					<Pagination numPages = {pageContext.numPages} currentPage = {pageContext.currentPage} typePage = {"/blog"} />
+					<Pagination numPages = {pageContext.numPages} currentPage = {pageContext.currentPage} pageType = {"/blog"} />
 				</div>
 
 				<MenuTag pageContext = {pageContext} />
 				<MenuTagSlide pageContext = {pageContext} />
+			
 			</div>
 			<Footer />
 		</>

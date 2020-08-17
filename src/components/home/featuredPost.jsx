@@ -4,41 +4,19 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaStar } from "react-icons/fa"
 import Fade from 'react-reveal/Fade'
-import {ArrowBox_featured, IMG, IMG_DIV, } from "../components_style/styled"
-import no_image_1 from "../images/blog/no_image_1.png"
-import no_image_2 from "../images/blog/no_image_2.png"
-import no_image_3 from "../images/blog/no_image_3.png"
-import no_image_4 from "../images/blog/no_image_4.png"
-import no_image_5 from "../images/blog/no_image_5.png"
+import {ArrowBox_featured, IMG, IMG_DIV, } from "../style/styled"
+import { getImageSource, shortenText } from "../../utils/shared"
+
 
 const featuredPost = ({ featuredPost }) => {
+  
   if(featuredPost && featuredPost.edges) {
-
     return (
-      
       <div className="w-full flex flex-wrap pb-6 bg-gray-900">
         {featuredPost.edges.map(({ node }) => {
-          let imagesrc 
-          if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
-            imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
-          } else {
-            let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
-            imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
-          } 
-
-          let description = node.frontmatter.description.split(" ").splice(0, 20)
-          if(description.length < 20){
-            description = description.join(" ");
-          } else {
-            description = description.join(" ").concat(" ...");
-          }
-
-          let title = node.frontmatter.title.split(" ").splice(0, 11)
-          if(title.length < 11){
-            title = title.join(" ")
-          } else {
-            title = title.join(" ").concat(" ...")
-          }
+          let imagesrc = getImageSource(node);
+          let title = shortenText(node.frontmatter.title, 11);
+          let description = shortenText(node.frontmatter.description, 20)
 
           return (
             <Fade key={node.id} duration={2000} fraction={0.3}>
@@ -60,7 +38,7 @@ const featuredPost = ({ featuredPost }) => {
                     <p className="my-2 text-xs 2xl:text-base text-gray-500 group-hover:text-gray-300">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
                   </ArrowBox_featured>
                 </Link>
-                <div className="px-3 lg:px-8 text-xs text-gray-500" style={{fontWeight: '400'}}>
+                <div className="px-8 lg:px-8 text-xs text-gray-500" style={{fontWeight: '400'}}>
                   {node.frontmatter.category.map((cat) => (
                     <>
                       <Link className="font-semibold hover:underline text-gray-500" key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>

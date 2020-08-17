@@ -4,7 +4,6 @@ import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
 
-
 // Search component
 class Search_Home extends Component {
   state = {
@@ -20,13 +19,6 @@ class Search_Home extends Component {
         return (
           <div className="z-30 text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
             {this.state.results.slice(0,5).map((page, i) => {
-              let description = page.description.split(" ").splice(0, 28)
-              if(description.length < 28){
-                description = description.join(" ")
-              } else {
-                description = description.join(" ").concat(" ...")
-              }
-              //let category = page.category
 
               return( 
                 <div className="text-gray-800 group border-b-1 border-gray-200 hover:bg-gray-200" key={i}>
