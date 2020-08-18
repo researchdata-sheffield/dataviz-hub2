@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
 import moment from "moment"
 import Fade from 'react-reveal/Fade';
+import { shortenText } from "../../utils/shared"
 
 
 const eventNotice = ({ eventBrite }) => {
@@ -18,12 +19,7 @@ const eventNotice = ({ eventBrite }) => {
       <div id="eventNotice" className="w-full text-gray-800 flex-col flex-wrap overflow-auto shadow-lg z-10 relative" style={{backgroundColor: '#f8f8f8'}}>
         {eventBrite.edges.map(({node}) => {
 
-            let description = node.description.text.split(" ").splice(0, 15)
-            if(description.length < 15){
-              description = description.join(" ");
-            } else {
-              description = description.join(" ").concat(" ...");
-            }
+          let description = shortenText(node.description, 15)
             
             return (
               <div key={node.id}>
@@ -52,7 +48,6 @@ const eventNotice = ({ eventBrite }) => {
                         </button>
                       </div>
                     </div>
-
                   </div>
                 </a> 
               </div>

@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
 import { FaUniversity, FaPython, FaRProject } from "react-icons/fa"
 import { FcWorkflow } from "react-icons/fc"
-import { ButtonWithArrow } from "../components_style/styled"
+import { ButtonWithArrow } from "../style/styled"
 
 
 
@@ -19,7 +19,7 @@ const LearningPath = () => {
     <div id="learning_path" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative pb-10" style={{backgroundColor: '#1d1d1d'}}>
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center">
-          <div className="text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
+          <div className="text-3xl lg:text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
           <p className="mt-3 text-gray-100 px-2">Discover how to get the most out of statistics, visualisations and tool sets.</p>
         </div>
       </Fade>
@@ -69,10 +69,10 @@ const LearningPath = () => {
             </div>
             <div className={backCard}>
               <h1 className="font-bold">Dataviz Workflows</h1>
-              <p className="text-sm">Maximise your research impact through reproducible data visualisation 
+              <p className="text-sm">Increase your research impact through reproducible data visualisation 
                 workflows.
               </p>
-              <ButtonWithArrow className={moreBtn}>Underway</ButtonWithArrow>
+              <Link to="/blog/05/07/2020/LearningPath_Workflow"><ButtonWithArrow className={moreBtn}>Learn workflows</ButtonWithArrow></Link>
             </div>
           </div>
         </Zoom>

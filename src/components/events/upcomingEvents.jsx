@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
-
+import { shortenText } from "../../utils/shared"
 
 const UpcomingEvents = ({allEventbriteEvents}) => {
   let size = allEventbriteEvents.edges.length
@@ -11,12 +11,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
       <> 
       {allEventbriteEvents.edges.map(({node}) => {
         //moment(node.start.local, "DD-MMMM-YYYY hh:mm") >= moment() && 
-        let description = node.description.text ? node.description.text.split(" ").splice(0, 20) : ""
-        if(description.length < 20){
-          description = description.join(" ");
-        } else {
-          description = description.join(" ").concat(" ...");
-        }
+        let description = shortenText(node.description, 20)
 
         return (
           <a className="flex flex-wrap w-full overflow-y-hidden shadow-lg hover:shadow-2xl bg-white my-3 lg:my-1 text-gray-700 group border-solid" 

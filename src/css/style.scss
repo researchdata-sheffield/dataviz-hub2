@@ -85,28 +85,27 @@
   z-index: 99;
   text-align: center;
   opacity: 0;
-}
-  
-.scrollTop-btn:hover {
-/*     background: rgba(0, 0, 0, 0.9); */
+
+  &:hover {
+    /*     background: rgba(0, 0, 0, 0.9); */
   background: #00aeef;
   z-index: 99;
-}
+  }
 
-.scrollTop-btn > .scrollTopArrow {
-  top: 7px;
-  left: 10px;
-  transition: all .4s ease;
-}
+  & > .scrollTopArrow {
+    top: 7px;
+    left: 10px;
+    transition: all .4s ease;
+  }
 
-.scrollTop-btn:hover > .scrollTopArrow {
-  top: 2px;
-  left: 10px;
-  z-index: 99;
-  color: white;
-  transition: all .4s ease;
+  &:hover > .scrollTopArrow {
+    top: 2px;
+    left: 10px;
+    z-index: 99;
+    color: white;
+    transition: all .4s ease;
+  }
 }
-
 
 /*********  
 Home Search bar & animation 
@@ -164,10 +163,12 @@ Home Search bar & animation
   background-position: right 85%;
   text-shadow: none;
   transition: .3s linear;
+
+  // &:hover {
+  //   background: none;
+  // }
 }
-.a-line-hover {
-  background: none;
-}
+
 .link-effect:hover, .link-effect:link:active, .link-effect:visited:active, .link-effect:visited:hover, 
 .link-effect-hover:hover, .link-effect-hover:link:active, .link-effect-hover:visited:active, .link-effect-hover:visited:hover
 {
@@ -183,11 +184,13 @@ Home Search bar & animation
   border-top: solid 4px #2c5282;
   border-right: solid 6px #2c5282;
   transition: .2s ease;
+
+  &:hover {
+    border-image-source: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+    border-image-slice: 1;
+  }
 }
-.pastEvent:hover {
-  border-image-source: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
-  border-image-slice: 1;
-}
+
 
 /* Text effect
 *
@@ -197,10 +200,10 @@ Home Search bar & animation
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   transition: .5s ease;
-}
 
-.text-effect:hover {
-  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  &:hover {
+    background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }

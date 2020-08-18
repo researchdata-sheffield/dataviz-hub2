@@ -1,61 +1,52 @@
 import React, { useEffect } from "react"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import SEO from "../components/seo"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
+import SEO from "../components/shared/seo"
 import { graphql, Link, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import EventNotice from "../components_home/eventNotice"
-import FeaturedPost from "../components_home/featuredPost"
-import LatestPost from "../components_home/latestPost"
-import LearningPath from "../components_home/learningPath"
-import HomeCommunity from "../components_home/homeCommunity"
-import HomeShowcase from "../components_home/homeShowcase"
+import EventNotice from "../components/home/eventNotice"
+import FeaturedPost from "../components/home/featuredPost"
+import LatestPost from "../components/home/latestPost"
+import LearningPath from "../components/home/learningPath"
+import HomeCommunity from "../components/home/homeCommunity"
+import HomeShowcase from "../components/home/homeShowcase"
 import moment from "moment"
-import Search_Home from "../components/searchHome"
+import Search_Home from "../components/home/searchHome"
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/animation.gif"
-import { BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components_style/styled"
+import { BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components/style/styled"
 import ReactTooltip from "react-tooltip"
 import bg from "../images/home/earth.jpg"
 
 
 
 const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
-  
   let datePrev = moment()
-  
   var words = ["Colour", "What are you looking for?", "blog post", "Dash", "dataset", "Shiny",
                "Chart", "visualisation", "Python", "DD/MM/YYYY"]
-
-  useEffect( () => {
+  // search bar text change
+  useEffect(() => {
     var input = document.getElementById("homeSearch");
-    
     const interval = setInterval( () => {
       let dateNow = moment();
       let dateDiff = dateNow - datePrev;
-  
       if(dateDiff > 6000) {
         datePrev = moment()
         let index = Math.floor(Math.random() * words.length); 
         input.setAttribute("placeholder", words[index]);
       }
-
     }, 5000);
-
-    
     return () => {
       clearInterval(interval)
     };
-
   }, [words,]);
-
 
   return (
     <div className="bg-white">
       <SEO 
-        title="Home" 
-        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research",]} 
+        title="Data Visualisation Hub" 
+        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "data analytics"]} 
       />
       <Header />
 
@@ -74,7 +65,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <Slide left>
               <div className="hidden md:flex justify-center py-4 xl:py-8 z-10 w-full">
                 <div className="w-1/7 mr-24">
-                  <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
+                  <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
                       <li><Link className="text-gray-700 hover:underline" to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
                       <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
@@ -86,12 +77,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </div>
                 
                 <div className="w-1/7">
-                  <div className="mb-1 text-gray-800 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
+                  <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Chart"}} )} }>Chart</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Colour"}} )} }>Colour</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Python"}} )} }>Python</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => {navigate("/search", {state: {searchWord: "Statistics"}} )} }>Statistics</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }}>Chart</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }}>Colour</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Python"}}) }}>Python</a></li>
+                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Statistics"}}) }}>Statistics</a></li>
                     </ul>
                 </div>
               </div>
@@ -125,10 +116,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </h1>
                 <div className="mt-10 group-hover:visible md:invisible">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800">Data Repository</AnimateButton>
+                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800 text-gray-200 hover:text-highlight_2">Data Repository</AnimateButton>
                   </a>
                   <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
-                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800">Blog post</AnimateButton>
+                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800 text-gray-200 hover:text-highlight_2">Blog post</AnimateButton>
                   </Link>
                 </div>
               </div>
@@ -146,14 +137,14 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
             
-            <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 shadow-lg justify-center items-center self-center" style={{transition: ".3s ease"}}>
+            <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
-              <Link to="/blog"><ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>Read more</ButtonWithArrow></Link>
+              <Link to="/blog">
+                <ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>
+                  Read more
+                </ButtonWithArrow>
+              </Link>
             </div> 
-
-            {/* <div className="flex flex-wrap min-h-100 text-center items-center w-full bg-white">
-              <p className="text-gray-600 mx-auto">What goes here?</p>
-            </div> */}
           
           </div> 
           {/* End of right component */}

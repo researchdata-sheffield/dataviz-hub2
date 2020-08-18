@@ -1,16 +1,15 @@
 import React from "react"
-import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
-//import BackgroundSection from "../components_images/search_background"
+import SEO from "../components/shared/seo"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
+//import BackgroundSection from "../components/images/search_background"
 import PropTypes from "prop-types"
-import Search from "../components/search"
+import Search from "../components/shared/search"
 
 
 const searchPage = ({location}) => {
 
   return (
-    
     <>
       <SEO 
         title="Search" 
@@ -18,9 +17,7 @@ const searchPage = ({location}) => {
       />
       <Header />
       <div className="flex flex-wrap">
-        
         <Search location={location} />
-  
       </div>
       <Footer />
     </>

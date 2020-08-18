@@ -3,15 +3,11 @@ import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
-//import kebabCase from "lodash.kebabcase"
-import no_image_1 from "../images/blog/no_image_1.png"
-import no_image_2 from "../images/blog/no_image_2.png"
-import no_image_3 from "../images/blog/no_image_3.png"
-import no_image_4 from "../images/blog/no_image_4.png"
-import no_image_5 from "../images/blog/no_image_5.png"
 import Zoom from 'react-reveal/Zoom'
 import Fade from 'react-reveal/Fade'
-import bg from "../images/search/bg.jpg"
+import bg from "../../images/search/bg.jpg"
+import { getImageSource, shortenText } from "../../utils/shared"
+
 
 // Search component
 class Search extends Component {
@@ -66,32 +62,14 @@ class Search extends Component {
             <div className="flex flex-wrap py-10 xl:pt-32 xl:pb-64 justify-center bg-gray-100">
               {this.state.results.map((item, i) => {
                 let imagesrc
-  
                 {data.allMdx.edges.map(({ node }) => {
                   if(item.id == node.id){
-                    if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
-                      imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
-                    } else {
-                      let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
-                      imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
-                    }
+                    imagesrc = getImageSource(node);
                   }
                 })}
 
-                let title = item.title.split(" ").splice(0, 8)
-                if(title.length < 8){
-                  title = title.join(" ")
-                } else {
-                  title = title.join(" ").concat(" ...")
-                }
-
-                let description = item.description.split(" ").splice(0, 30)
-                if(description.length < 30){
-                  description = description.join(" ")
-                } else {
-                  description = description.join(" ").concat(" ...")
-                }
-
+                let title = shortenText(item.title, 8);
+                let description = shortenText(item.description, 30)
                 const highlightClasses = "text-blue-400 bg-black"
 
                 return( 

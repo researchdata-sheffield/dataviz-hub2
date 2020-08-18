@@ -1,21 +1,22 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import SEO from "../components/shared/seo"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table, LPWrap, LPItem } from "../components_style/blogPostStyle"
-import PaginationPost from "../components_blog/paginationPost"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table, LPWrap, LPItem } from "../components/style/blogPostStyle"
+import PaginationPost from "../components/blog/paginationPost"
 import "katex/dist/katex.min.css"
 import GitalkComponent from "gitalk/dist/gitalk-component"
+
 
 const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
     const {prev, next} = pageContext  
 
-    //const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
-    //const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
+    const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
+    const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
     const shareLink = `https://${window.location.host}${mdx.fields.slug}`
     const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
 
@@ -38,8 +39,8 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
         </MDXProvider>
       </div>
       
-      <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} />
-      
+      <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
+
       <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
         <GitalkComponent options={{
           clientID: process.env.GATSBY_GH_APP_GITALK_ID,
@@ -77,6 +78,7 @@ export const query = graphql`
       body
       frontmatter {
         title
+        description
         author {
           name
           avatar {

@@ -1,22 +1,21 @@
 import React from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/seo"
-import Header from "../components/header"
-import Footer from "../components/footer"
+import SEO from "../components/shared/seo"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table } from "../components_style/blogPostStyle"
-import PaginationPost from "../components_blog/paginationPost"
-import {CatBtn, TagBtn} from "../components_style/styled"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table } from "../components/style/blogPostStyle"
+import PaginationPost from "../components/blog/paginationPost"
+import {CatBtn, TagBtn} from "../components/style/styled"
 import Scrollspy from 'react-scrollspy'
 import "katex/dist/katex.min.css"
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import Fade from "react-reveal/Fade"
 import Pulse from 'react-reveal/Pulse';
-//import Bounce from 'react-reveal/Bounce';
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
 import GitalkComponent from "gitalk/dist/gitalk-component";
@@ -194,7 +193,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           title: mdx.frontmatter.title,
           body: location.href + " | " + mdx.frontmatter.description,
           distractionFreeMode: false
-
         }} /> 
       </div>    
       </Fade> 

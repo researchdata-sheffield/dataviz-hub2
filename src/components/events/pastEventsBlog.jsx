@@ -1,6 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
+import { shortenText } from "../../utils/shared"
 
 const PastEventsBlog = ({pastEventBlog}) => {
   
@@ -9,13 +10,7 @@ const PastEventsBlog = ({pastEventBlog}) => {
       <h1 className="text-xl pt-2 pb-6 font-semibold">Event: articles</h1>
       
       {pastEventBlog.edges.map(({ node }) => {
-
-        let description = node.frontmatter.description ? node.frontmatter.description.split(" ").splice(0, 20) : ""
-        if(description.length < 20){
-          description = description.join(" ");
-        } else {
-          description = description.join(" ").concat(" ...");
-        }
+        let description = shortenText(node.frontmatter.description, 20)
 
         return (
           <div className="flex flex-wrap transition duration-500 overflow-hidden p-3 md:w-1/2 lg:w-1/3 rounded-md bg-white group hover:bg-gray-100" key={node.id}>
@@ -28,12 +23,8 @@ const PastEventsBlog = ({pastEventBlog}) => {
         )
 
       })} 
-      
     </div>
   )
-
-
-  
 }
 
 export default PastEventsBlog

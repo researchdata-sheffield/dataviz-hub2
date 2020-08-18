@@ -2,11 +2,10 @@ import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
 //import university_logo from "../images/TUOS_LOGO_REVERSED.png"
- import university_logo from "../images/TUOSlogo.png"
+ import university_logo from "../../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack } from "react-icons/fa"
-//import tw, { styled as styled_twin } from 'twin.macro'
-import { A } from "../components_style/blogPostStyle"
+import { A } from "../style/blogPostStyle"
 
 const Header = () => {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -94,8 +93,8 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative">
-      <nav id="navbar" className={`${isScroll ? `shadow-lg` : ``} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
-        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.8s"}}
+      <nav id="navbar" className={`${isScroll ? `shadow-lg` : [wlp === "/" ? `lg:hidden` : ``]} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
           <A className={`${isScroll ? `` : [wlp === "/" ? `opacity-0` : ``]} `} href="https://www.sheffield.ac.uk/"><img className="mt-1" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
@@ -156,11 +155,9 @@ const Header = () => {
             <NavLink type="Link-icon" to="/search">
               <button className="mr-4 ml-2 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline"><FiSearch  /></button>
             </NavLink>
-
           </div>
         </div>
       </nav>
-
     </header>
   )
 

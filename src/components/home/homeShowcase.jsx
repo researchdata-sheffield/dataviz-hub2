@@ -1,10 +1,10 @@
 import React from 'react'
-import BackgroundTwo from "../components_images/home/home_2"
-import user_distribution from "../images/home/user1.png"
+import BackgroundTwo from "../images/home/home_2"
+import user_distribution from "../../images/home/user1.png"
 import Zoom from 'react-reveal/Zoom'
 import Pulse from "react-reveal/Pulse"
 import Fade from 'react-reveal/Fade'
-import { ButtonWithArrow } from "../components_style/styled"
+import { ButtonWithArrow } from "../style/styled"
 
 const HomeShowcase = () => {
 

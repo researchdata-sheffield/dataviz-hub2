@@ -4,7 +4,6 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaTags} from "react-icons/fa"
 import {FiSearch} from "react-icons/fi"
-//import { slide as Menu } from 'react-burger-menu'
 import { IoMdClose } from "react-icons/io"
 
 const menuTagSlide = ({ pageContext }) => {

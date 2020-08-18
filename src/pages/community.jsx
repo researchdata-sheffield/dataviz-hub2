@@ -1,14 +1,14 @@
 import React from "react"
-import Header from "../components/header"
-import Footer from "../components/footer"
-import SEO from "../components/seo"
-import BackgroundSection from "../components_images/community_background"
+import Header from "../components/shared/header"
+import Footer from "../components/shared/footer"
+import SEO from "../components/shared/seo"
+import BackgroundSection from "../components/images/community_background"
 import { Link } from "gatsby"
 import com_1 from "../images/community/com_1.jpg"
 import com_2 from "../images/community/com_2.jpg"
 import google from "../images/community/google.png"
 import Fade from 'react-reveal/Fade'
-import { Link as Link_effect } from "../components_style/blogPostStyle"
+import { Link as Link_effect } from "../components/style/blogPostStyle"
 
 const Community = () => (
   <>

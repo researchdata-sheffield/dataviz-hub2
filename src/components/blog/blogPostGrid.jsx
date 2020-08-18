@@ -2,38 +2,21 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
-import no_image_1 from "../images/blog/no_image_1.png"
-import no_image_2 from "../images/blog/no_image_2.png"
-import no_image_3 from "../images/blog/no_image_3.png"
-import no_image_4 from "../images/blog/no_image_4.png"
-import no_image_5 from "../images/blog/no_image_5.png"
 import { FaStar } from "react-icons/fa"
 import Slide from 'react-reveal/Slide'
-import { ArrowBox, IMG, IMG_DIV, } from "../components_style/styled"
+import { ArrowBox, IMG, IMG_DIV, } from "../style/styled"
+import { getImageSource, shortenText } from "../../utils/shared"
 
 const blogPostGrid = ({allMdx}) => {
   
   return(
     <div className="flex flex-wrap w-full">
     {allMdx.edges.map(({ node }) => {
-      let imagesrc 
-      
-      if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
-        imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
-      } else {
-        let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
-        imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
-      }
-      
-      let description = node.frontmatter.description.split(" ").splice(0, 25)
-      if(description.length < 25){
-        description = description.join(" ");
-      } else {
-        description = description.join(" ").concat(" ...");
-      }
+      let imagesrc = getImageSource(node);
+      let description = shortenText(node.frontmatter.description, 25);
+      let title = node.frontmatter.title;
+      let tag = node.frontmatter.tag;
 
-      let title = node.frontmatter.title
-      let tag = node.frontmatter.tag
       return (
         <Slide bottom key={node.id} duration={400} fraction={0.3}>
           <div className="w-full md:w-1/3 xl:w-1/4 min-h-90 lg:min-h-110 2xl:max-h-90 overflow-hidden bg-white relative pb-10 2xl:pb-0">
@@ -51,14 +34,8 @@ const blogPostGrid = ({allMdx}) => {
                   <p className="my-3 text-base leading-tight group-hover:text-highlight_2 text-gray-800" >{description}</p>
                 </div>
                 <div className="relative z-10 text-xs" style={{color: '#848484', fontWeight: '400'}}>
-                  {/* <p className="mt-2">
-                    {node.frontmatter.author.map((author, idx) => (
-                      (node.frontmatter.author.length == idx + 1) ? author.name : author.name + ", "      
-                    ))}
-                  </p> */}
-                  <p className="mt-3 mb-1">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
+                  <p className="mt-4 mb-1">{node.frontmatter.date} · {node.fields.readingTime.text}</p>
                 </div>         
-                {/* <p className="mt-5 text-base  font-semibold">{node.fields.readingTime.text}</p> */}
               </ArrowBox>
             </Link>
             <div className="px-6 2xl:px-8 text-xs" style={{color: '#848484', fontWeight: '400'}}>
