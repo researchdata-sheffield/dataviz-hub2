@@ -5,7 +5,7 @@ import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql } from "gatsby"
+import { graphql, withPrefix } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table } from "../components/style/blogPostStyle"
@@ -19,13 +19,19 @@ import Pulse from 'react-reveal/Pulse';
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
 import GitalkComponent from "gitalk/dist/gitalk-component";
-
+import { useScript } from "../utils/shared"
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   const { title, date, author, category, tag, disableTOC } = mdx.frontmatter
   const {prev, next} = pageContext
   const tableOfContent = disableTOC === "true" ? null : mdx.tableOfContents
+  const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null;
+  
+  // include d3 scripts
+  {d3 && d3.map((d) => {
+    useScript(withPrefix(`d3/${d}`), "", false)
+  })}
 
   //Redering table of content
   const renderItem = (item) => (
@@ -75,11 +81,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             stroke_width: Math.random() * 5,
           });
           pattern.seed = title
-          
           element.style['background-image'] = 'url(' + pattern.png() + ')';
         `}</script>
-        
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" /> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type = 'text/javascript' /> 
       </Helmet>
       
       {/* Top background, title and author etc. */}
@@ -246,6 +250,7 @@ export const query = graphql`
           }
         }
         disableTOC
+        d3
       }
     }
   }

@@ -71,8 +71,8 @@ const Community = () => (
         <Fade>
           <div className="md:w-2/5 rounded overflow-hidden shadow-md mx-6 my-4 hover:shadow-xl group flex relative transition duration-1000">
             <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">
-              <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" />
-              <div className="px-6">
+              <img className="w-full py-24 px-12" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/Slack_Technologies_Logo.svg" alt="Slack" style={{height: '300px'}} />
+              <div className="px-6 pt-8">
                 <div className="font-semibold text-xl text-center text-gray-500 mb-2">shef-dataviz.slack</div>
                   <p className="text-gray-700 text-base p-4 text-center">Sign in use your Sheffield University email, Say hello in our <b>#welcome channel</b>.</p>
               </div>
@@ -80,7 +80,7 @@ const Community = () => (
 
             <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" 
               className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-12 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
-              style={{ position: "absolute", top: "73%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
+              style={{ position: "absolute", top: "77%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
             >
             Sign up
             </a>
@@ -90,7 +90,7 @@ const Community = () => (
         <Fade>
           <div className="md:w-2/5 rounded overflow-hidden shadow-md mx-6 my-4 hover:shadow-xl group flex relative transition duration-1000">
             <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" className="hover:opacity-25 transition duration-500">
-            <img className="w-full" src={google} alt="Google Group" />
+            <img className="w-full" src={google} alt="Google Group" style={{height: '300px'}} />
               <div className="px-6 pt-8">
                 <div className="font-semibold text-xl mb-2 text-center text-gray-500">Google group</div>
                 <p className="text-gray-700 text-base px-4 lg:px-10 py-4 text-center">Sign in use your Sheffield Google account, Join the TUoS google group.</p>
@@ -99,7 +99,7 @@ const Community = () => (
 
             <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" 
               className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-8 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
-              style={{ position: "absolute", top: "72%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
+              style={{ position: "absolute", top: "77%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
             >
             Join group  
             </a>

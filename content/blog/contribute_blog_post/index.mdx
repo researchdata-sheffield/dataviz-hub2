@@ -11,6 +11,7 @@ template:
 featured: "false"
 hide: "false"
 disableTOC: "false"
+d3: ["dataviz.js"]
 ---
 
 
@@ -81,7 +82,7 @@ Steps on below assumed you've setup everything mentioned above.
 
     + At the very beginning of your index file, you have the following properties to specify in the **header**:
 
-```md
+```mdx
 ---
 title: "This is a template for posts"
 author: ["A", "B"]                   
@@ -93,6 +94,7 @@ thumbnail: ./image.jpg            # an image to use for your post thumbnail
 template:                         # optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
 featured: "true"			      # optional, Set it to "true" if you want to show the post on home page
 disableTOC:                       # optional, set it to "true" if you wish to disable default table of contents
+d3: ["file1.js", "file2.js"] # optional, use to include your d3 documents
 ---
 ```
 
@@ -243,93 +245,23 @@ code
 
 <br />
 
-# TeX math
-There are two ways to write math formulas and math symbols. For inline mode, surround your equation with $ to generate a math equation.
-```
-$a^2 + b^2 = c^2$
-```
-generates $a^2 + b^2 = c^2$.  
+# D3.js
+This website included the latest release of the D3.js library. Here is how you would include your D3 document 
+in your post in two steps:  
+  1. Place your D3 files under `dataviz-hub2/static/d3`  
 
-For display mode, surround your equation with $$ and new-lines to generate a math equation.
-```
-$$
-\frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2}(\frac{x- \mu}{\sigma})^{2}}
-$$
-```
-generates
-$$
-\frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2}(\frac{x- \mu}{\sigma})^{2}}
-$$
+  2. Add the following within the property list in the top of the `index.mdx` file:
+    ```md
+    title: "This is an example document"
+    ...
+    d3: ["d3_filename.js", "more_file.js"]
+    ```  
 
-<br />
+    Items within squared brackets should be your file names, separate by comma if there is more than one files.
 
-# Link
-- **URL within the website**  
-  
-  The post you're writing might be a part of your blog series, and if you wish to include link of previous posts (or any other part of the website) within a post, you'll need **Link** tag.
-  To use **Link** tag:  
-  1. Make sure the file extension is .mdx  
-  2. Use `to` property instead of `href`, for internal pages you don't need to specify hostname (dataviz.shef.ac.uk):  
-    `<Link className="text-gray-700" to="/blog">To blog</Link>`  
-      
+<div id="d3"></div>
+<br/><br/>
 
-<br />
-
-- **Anchor within the post & URL outside the website**  
-  
-  Use `a` tag, add **anchor** keyword to the tag if the link is within the post.
-
-  ```html
-  Anchor:
-  <a href="#anchorLink" anchor>Link within the post</a>
-
-  External:
-  <a href="https://tailwindcss.com/docs/width">tailwindCSS</a>
-  or
-  [tailwindCSS](https://tailwindcss.com/docs/width)
-  ```  
-
-
-
-<br />
-
-# Image
-This is how you would embed add an local image (remember to add your images in the same directory of your md/mdx file):
-
-```md
-![my image description](./temp.jpg)
-```
-
-Alternatively: 
-
-```md
-<img alt="my image description" src="./temp.jpg" />
-```
-
-To add caption for image: 
-
-```jsx
-![my image description](./temp.jpg)        
-*This is my image caption*
-```
-Make sure you pressed SPACE key twice followed by ENTER key after the closing bracket, if successful captions should had become italic:
-
-![my image description](./temp.jpg)  
-*This is my image caption*  
-  
-
-Alternatively (so you can add style for images):
-```jsx
-<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
-<em>image_caption</em>
-```
-
-<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
-<em>image_caption</em>
-  
-For images available online use their url.
-
-<br />
 
 # Embed well known services
 You can embed many services (like CodePen, CodeSandbox, GIPHY, Instagram, Lichess, Slides, SoundCloud, Spotify, Streamable, Twitch, Twitter or YouTube) into blog posts by their URLs. 
@@ -396,9 +328,99 @@ https://codesandbox.io/s/ynn88nx9x?view=split
 
 <br /><br />
 
+
 # Files
 To make a file available to readers, place the file under the post directory and add something like this:
 
 ```
 <a href="./filename.pdf">Download</a>
 ```
+
+
+<br />
+
+# Image
+This is how you would embed add an local image (remember to add your images in the same directory of your md/mdx file):
+
+```md
+![my image description](./temp.jpg)
+```
+
+Alternatively: 
+
+```md
+<img alt="my image description" src="./temp.jpg" />
+```
+
+To add caption for image: 
+
+```jsx
+![my image description](./temp.jpg)        
+*This is my image caption*
+```
+Make sure you pressed SPACE key twice followed by ENTER key after the closing bracket, if successful captions should had become italic:
+
+![my image description](./temp.jpg)  
+*This is my image caption*  
+  
+
+Alternatively (so you can add style for images):
+```jsx
+<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
+<em>image_caption</em>
+```
+
+<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
+<em>image_caption</em>
+  
+For images available online use their url.
+
+<br />
+
+
+# Link
+- **URL within the website**  
+  
+  The post you're writing might be a part of your blog series, and if you wish to include link of previous posts (or any other part of the website) within a post, you'll need **Link** tag.
+  To use **Link** tag:  
+  1. Make sure the file extension is .mdx  
+  2. Use `to` property instead of `href`, for internal pages you don't need to specify hostname (dataviz.shef.ac.uk):  
+    `<Link className="text-gray-700" to="/blog">To blog</Link>`  
+      
+
+<br />
+
+- **Anchor within the post & URL outside the website**  
+  
+  Use `a` tag, add **anchor** keyword to the tag if the link is within the post.
+
+  ```html
+  Anchor:
+  <a href="#anchorLink" anchor>Link within the post</a>
+
+  External:
+  <a href="https://tailwindcss.com/docs/width">tailwindCSS</a>
+  or
+  [tailwindCSS](https://tailwindcss.com/docs/width)
+  ```  
+
+
+# TeX math
+There are two ways to write math formulas and math symbols. For inline mode, surround your equation with $ to generate a math equation.
+```
+$a^2 + b^2 = c^2$
+```
+generates $a^2 + b^2 = c^2$.  
+
+For display mode, surround your equation with $$ and new-lines to generate a math equation.
+```
+$$
+\frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2}(\frac{x- \mu}{\sigma})^{2}}
+$$
+```
+generates
+$$
+\frac{1}{\sigma \sqrt{2 \pi}} e^{-\frac{1}{2}(\frac{x- \mu}{\sigma})^{2}}
+$$
+
+<br />

@@ -30,13 +30,13 @@ const HomeShowcase = () => {
         
       </BackgroundTwo>
       
-      <div className="ipadp:min-h-40 flex flex-wrap pt-8 ipadp:pt-24 pb-64 items-center justify-center" style={{background: '#fcfcfc'}}>
-        <div className="md:w-6/12 md:pl-8 transform hover:scale-110 transition duration-500">
+      <div className="ipadp:min-h-40 flex flex-wrap pt-8 pb-56 ipadp:pt-24 ipadp:pb-78 items-center justify-center" style={{background: '#fcfcfc'}}>
+        <div className="lg:w-6/12 lg:pl-8 transform hover:scale-110 transition duration-500">
           <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
         </div>
         <Zoom cascade duration={1300}>
-        <div className="md:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center">
-          <h1 className="text-2xl ipadp:text-4xl text-gray-700 text-center py-5" style={{fontFamily: "TUoS Stephenson"}}>ORDA User Regions</h1>
+        <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center">
+          <h1 className="text-2xl ipadp:text-4xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUoS Stephenson"}}>ORDA User Regions</h1>
           <p className="text- gray-600">ORDA has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>

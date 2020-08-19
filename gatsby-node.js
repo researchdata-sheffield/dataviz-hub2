@@ -91,6 +91,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                   }
                 }
               }
+              d3
             }
           }
         }
@@ -233,6 +234,7 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
     type Frontmatter {
       author: [AuthorJson] @link(by: "name")
+      d3: [String]
     }
   `
   createTypes(typeDefs)

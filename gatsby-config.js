@@ -18,7 +18,8 @@ module.exports = {
         head: true,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,6 +32,7 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/content/blog`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
       },
     },
     {
@@ -40,6 +42,7 @@ module.exports = {
         path: `./src/author`,
       },
     },
+    `gatsby-plugin-react-helmet`,
     /******************************* MDX Plugins *******************************************/
     {
       resolve: `gatsby-plugin-mdx`,
@@ -82,7 +85,6 @@ module.exports = {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin: 2rem auto 1.075rem auto, max-width: 800px, height: 600px`,
-
             },
           },
           {
@@ -137,17 +139,9 @@ module.exports = {
       }
     },
     /************************** END MDX Plugins *********************************/
-    {
-      resolve: 'gatsby-plugin-load-script',
-      options: {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js',
-      },
-    },
     "gatsby-remark-embed-video",
     `gatsby-remark-responsive-iframe`,
     `gatsby-remark-reading-time`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     'gatsby-plugin-eslint',
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
@@ -338,8 +332,6 @@ module.exports = {
           }
         }`,
         mapping: {
-            // Each data type can be mapped to a predefined sitemap
-            // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
             // The default sitemap - if none is passed - will be pages
             allMdx: {
                 sitemap: `posts`,
