@@ -89,7 +89,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Slide>
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <BlackWhiteButton className="py-2 px-5 hover:text-black border-1 border-black" link>Get Started</BlackWhiteButton>
+                <BlackWhiteButton className="py-2 px-5 hover:text-black border-1 border-black xl:text-xl xl:py-3 xl:px-8" link>Get Started</BlackWhiteButton>
               </Fade>
             </Link>
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -116,10 +116,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </h1>
                 <div className="mt-10 group-hover:visible md:invisible">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800 text-gray-200 hover:text-highlight_2">Data Repository</AnimateButton>
+                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800 text-white">Data Repository</AnimateButton>
                   </a>
                   <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
-                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800 text-gray-200 hover:text-highlight_2">Blog post</AnimateButton>
+                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800 text-white">Blog post</AnimateButton>
                   </Link>
                 </div>
               </div>

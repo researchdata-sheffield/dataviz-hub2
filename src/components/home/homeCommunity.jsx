@@ -10,15 +10,15 @@ import ReactTooltip from 'react-tooltip'
 
 const HomeCommunity = () => {
   const cardClasses = "w-4/5 md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group"
-  const cardTextClasses = "text-sm border-t-1 border-gray-300 py-3 text-gray-600 group-hover:text-gray-900"
+  const cardTextClasses = "text-sm xl:text-base border-t-1 border-gray-300 py-3 text-gray-600 group-hover:text-gray-900"
 
   return (
     <div id="home_community" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative pb-20">
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap">
-          <div className="text-2xl lg:text-5xl font-bold text-gray-900 w-full text-center">
+          <div className="text-4xl 2xl:text-6xl font-bold text-gray-900 w-full text-center">
             <h1 style={{background: 'linear-gradient(to right, #30CFD0 0%, #330867 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY.</h1></div>
-          <Link to="/community" className="mt-1 text-med text-gray-500 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /></Link>
+          <Link to="/community" className="mt-1 text-med xl:text-lg text-gray-500 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /></Link>
           {/* <p className="border-t-6 border-highlight_2 w-1/12"></p> */}
         </div>
       </Fade>

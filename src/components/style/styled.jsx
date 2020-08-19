@@ -155,11 +155,11 @@ export const AnimateButton = styled_twin.button`
     position: absolute;
     bottom: 100%;
     right: 100%;
-    width: 5em;
-    height: 1em;
+    width: 3em;
+    height: .7em;
     border-radius: 50%;
     color: #fff;
-    background-color: #fff;
+    background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
     transform-origin: center;
     transform: translate3d(10%, 10%, 0) scale3d(0, 0, 0);
     transition: transform 0.55s ease-in-out;
@@ -167,14 +167,15 @@ export const AnimateButton = styled_twin.button`
 
   &:hover {
     cursor: pointer;
-    color:  #00aeef;
+    color:  #fff;
     transform: scale(1.039) perspective(1px) translateZ(0);
     // backface-visibility: hidden;
     -webkit-font-smoothing: subpixel-antialiased;
   }
 
   &:hover::before {
-    transform: translate3d(10%, 10%, 0) scale3d(15, 15, 15);
+    transform: translate3d(300%,300%,0) scale3d(5,5,13);
+    background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
   }
 
 `

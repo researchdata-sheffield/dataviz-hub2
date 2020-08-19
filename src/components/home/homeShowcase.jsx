@@ -30,7 +30,7 @@ const HomeShowcase = () => {
         
       </BackgroundTwo>
       
-      <div className="ipadp:min-h-40 flex flex-wrap pt-8 pb-56 ipadp:pt-24 ipadp:pb-78 items-center justify-center" style={{background: '#fcfcfc'}}>
+      <div className="ipadp:min-h-40 flex flex-wrap pt-8 pb-56 ipadp:pt-24 ipadp:pb-82 items-center justify-center" style={{background: '#fcfcfc'}}>
         <div className="lg:w-6/12 lg:pl-8 transform hover:scale-110 transition duration-500">
           <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
         </div>

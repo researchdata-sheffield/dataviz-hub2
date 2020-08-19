@@ -24,7 +24,7 @@ const LearningPath = () => {
         </div>
       </Fade>
       
-      <div className="flex flex-wrap text-gray-800 pt-10 pb-64 justify-center">
+      <div className="flex flex-wrap text-gray-800 pt-10 pb-48 xl:pb-86 justify-center">
         <Zoom bottom duration={700} delay={100}>
           <div className={`${cardClasses} bg-gray-800 text-white`}>
             <div className={frontCard}>
