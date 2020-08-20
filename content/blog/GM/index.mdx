@@ -1,0 +1,65 @@
+---
+author: ["Gemma Ives"]
+title: "GM Shiny"
+thumbnail: ./GM_Thumb.png
+description: "Description of the project and the purpose of the blog"
+date: "2020-08-18"
+category: ["Articles"]
+tag: ["Shiny"]
+blogTemplate: ""
+---
+
+## Introduction
+
+The genetic modification of crops could alleviate some of the demands placed on modern agriculture by a burgeoning world population, however, public acceptance of genetically modified organisms is low. A team of researchers from the University of Sheffield and Sheffield Hallam University (Mallinson *et al.*, 2018) use a nationally representative sample of British adults to examine the public attitude towards GM-crops they go beyond traditional risk communication to investigate the socio-economic and demographic antecedents of opinion. You can read the published paper here: <a href="https://doi.org/10.1007/s12571-018-0832-1"> Mallinson *et al.* (2018).</a> 
+
+Throughout the research, the team identified association between several socio-cultural beliefs and an individuals personal acceptance of GM-food. Given this knowledge, they found it likely that people with similar beliefs and socio-cultural characteristics would have similar views on GM-foods. To investigate this, they carried out k-means cluster analysis using the socio-cultural measures identified within the survey as segmentation variables. This yielded seven clusters, given the names: Science-philes, Scientific Greens, Unconcerned, Disaffected, Risk-Takers and Cautious Greens. 
+
+In their work, Mallinson *et al.* (2018) show the relationship between the mean score for each cluster accross two measures - personal accepatnce of GM and the benefits-to-risks rating. However, this can be taken further by adding interactivity and letting readers explore the full range of socio-cultural and GM-attitudinal measures, perhaps exploring which cluster they themselves may fit into. A <a href="https://gi-tuos.shinyapps.io/GM_App/"> shiny application </a> helped achieve this interactivity. Specifically a shiny dashboard. 
+
+<iframe height = "640" width="100%" frameborder="yes" src="https://gi-tuos.shinyapps.io/GM_App/"> </iframe>
+
+
+### Creating the Shiny Dashboard
+
+A shiny dashboard layout similar to a traditional shiny app but offers a little more manipulation and and much more attractive sidebar! The dashboard is divided into the three components on the ui.r side, and the <a href="https://rstudio.github.io/shinydashboard/get_started.html"> documentation </a> available is excellent, which helps you quickly get to grips with adding components. 
+
+```R
+dashboardPage(
+  dashboardHeader(),
+  dashboardSidebar(),
+  dashboardBody()
+)
+``` 
+For this dashboard there are three pages of content which can be selected via the sidebar. Each new page is specified under the dashboardSidebar() as a menuItem(). The *About* page, is a description of the project, the *Explore Attitudes* page contains a scatter plot with reactive components. The final page, the *tertile scores* contains a <a href="https://glin.github.io/reactable/"> reactable </a> of tertile scores for each social-cultural and GM-attitudinal measure for each cluster. The content for each named menuItem() is specified in the dashboardBody() using tabItems(). 
+
+```R
+dashboardPage(
+    dashboardHeader(),
+  
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("About", tabName = "About"),
+      menuItem("Explore Attitudes", tabName = "ExploreAttitudes"),
+      menuItem("Tertile Scores", tabName = "Tertiles")
+      )
+    ),
+                
+  dashboardBody(
+    tabItems(
+      tabItem(tabName = "About", ...)
+      tabItem(tabName = "ExploreAttitudes", ...)
+      tabItem(tabName = "Tertiles", ...)
+      )
+    )
+  )
+```
+
+In this example, the explore tab holds the most intrigue. The user selects the input from the selectInput() widget and, as in traditional shiny applications this input is taken to the server side of the application. In this instance creating a scatterplot of the mean clusters scores for the X and Y input variables are plotted. There are a few things to note about the scatter graph: 
+
+* As in Mallinson *et al.* (2018) this size of the point is indicative of the nuber of respondents in the cluster. As is typical with area, the size is meant as an impression, extracting deatiled information from the size of each point would be inefficient. 
+
+* Due to the number of combinations available, there were some instances where the points would overlap one another, or the axis. Instead of using jitter to adjust the location of the points, the opacity was reduced to 80% for each point to maximise clarity and preserve the position. 
+
+* Each combination of X and Y variables had different minimum and maximum values, which caused a great deal of variability in the position of the axes. Fixing the axis limits to the minimum and maximum values for the dataset preserved their location, however it tended to crowd the data points, making the graph less readable. Instead, for the interactive scatterplot, the data were normalised between 0 and 1 and the axis set to 0.5, thereby preserving only the pattern of the data. 
+
