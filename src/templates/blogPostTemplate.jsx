@@ -9,6 +9,7 @@ import { graphql, withPrefix } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table } from "../components/style/blogPostStyle"
+import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import PaginationPost from "../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../components/style/styled"
 import Scrollspy from 'react-scrollspy'
@@ -165,7 +166,14 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               
         {/* main mdx content  */}
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-60 2xl:pr-52`: `lg:px-44 2xl:px-72`} mx-auto container pt-6 pb-16 px-3 leading-7 text-lg text-black`} style={{fontFamily: "Helvetica"}}>
-          <MDXProvider components={{h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, img: IMG, table: Table, }}>
+          <MDXProvider 
+            components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
+                          hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, 
+                          img: IMG, table: Table, Accordion: Accordion, AccordionItem: AccordionItem, 
+                          AccordionItemHeading: AccordionItemHeading, AccordionItemButton: AccordionItemButton, 
+                          AccordionItemPanel: AccordionItemPanel, 
+                        }}
+            >
             <MDXRenderer>{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>
@@ -173,9 +181,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* sidebar toc: hidden in mobile */}
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-4 pb-2 text-gray-800" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>}
+        
           <div className="px-1 text-sm">
-          { tableOfContent && 
-            tableOfContent.items && 
+          { tableOfContent && tableOfContent.items && 
             <Scrollspy className="text-gray-700" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
               {tableOfContent.items.map(renderItem)}
             </Scrollspy>

@@ -13,7 +13,7 @@ const LearningPath = () => {
   const cardClasses = `${animationClasses} w-4/5 lg:w-1/5 flex flex-wrap group justify-center mx-5 p-6 text-center mt-10 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-lg`
   const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 opacity-100 group-hover:opacity-0`
   const backCard = `${animationClasses} fixed top-0 left-0 p-6 text-left group-hover:translate-y-0 translate-y-40 invisible group-hover:visible group-hover:opacity-100 opacity-0`
-  const moreBtn = "mt-3 py-1 px-3 bg-black hover:bg-highlight_2 text-sm"
+  const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-highlight_2 text-sm xl:text-base"
 
   return (
     <div id="learning_path" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative pb-10" style={{backgroundColor: '#1d1d1d'}}>
@@ -28,13 +28,13 @@ const LearningPath = () => {
         <Zoom bottom duration={700} delay={100}>
           <div className={`${cardClasses} bg-gray-800 text-white`}>
             <div className={frontCard}>
-              <FaUniversity className="w-full text-4xl" />
-              <div className="text-xl mt-5 font-bold">Dataviz Concept</div>
-              <div className="text-sm mt-1">New to data visualisation and programming.</div>
+              <FaUniversity className="w-full text-4xl xl:text-5xl" />
+              <div className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Concept</div>
+              <div className="text-sm mt-2 xl:text-lg">New to data visualisation and programming.</div>
             </div>
             <div className={backCard}>
-              <h1 className="font-bold">Concept</h1>
-              <p className="text-sm">Explore data visualisations through definitions, examples, videos, 
+              <h1 className="font-bold mb-1 text-xl xl:text-2xl">Concept</h1>
+              <p className="text-sm xl:text-lg">Explore data visualisations through definitions, examples, videos, 
                 and relevant resources.
               </p>
               <Link to="/blog/03/07/2020/LearningPath_Concept"><ButtonWithArrow className={moreBtn}>Learn concept</ButtonWithArrow></Link>
@@ -44,16 +44,16 @@ const LearningPath = () => {
         <Zoom bottom duration={700} delay={250}>
           <div className={`${cardClasses} bg-blue-700 text-white`}>
             <div className={frontCard}>
-              <div className="flex flex-wrap justify-around text-4xl w-full">
+              <div className="flex flex-wrap justify-around text-4xl xl:text-5xl w-full">
                 <div><FaPython /></div>
                 <div><FaRProject /></div>
               </div>
-              <h1 className="text-xl mt-5 font-bold">Dataviz Lab</h1>
-              <p className="text-sm mt-1">Knowledge of programming languages Python / R.</p>
+              <h1 className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Lab</h1>
+              <p className="text-sm mt-2 xl:text-lg">Knowledge of programming languages Python / R.</p>
             </div>
             <div className={backCard}>
-              <h1 className="font-bold">Dataviz Lab</h1>
-              <p className="text-sm">Tutorials and guides on create data visualisations using 
+              <h1 className="font-bold mb-1 text-xl xl:text-2xl">Dataviz Lab</h1>
+              <p className="text-sm xl:text-lg">Tutorials and guides on create data visualisations using 
               different tools and languages.
               </p>
               <Link to="/blog/04/07/2020/LearningPath_Lab"><ButtonWithArrow className={moreBtn}>Go to Lab</ButtonWithArrow></Link>
@@ -63,13 +63,13 @@ const LearningPath = () => {
         <Zoom bottom duration={700} delay={300}>
           <div className={`${cardClasses} bg-white`}>
             <div className={frontCard}>
-              <FcWorkflow className="w-full text-4xl" />
-              <h1 className="text-xl mt-5 font-bold">Dataviz Workflows</h1>
-              <p className="text-sm mt-1">Experienced in producing data visualisations.</p>
+              <FcWorkflow className="w-full text-4xl xl:text-5xl" />
+              <h1 className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Workflows</h1>
+              <p className="text-sm mt-2 xl:text-lg">Experienced in producing data visualisations.</p>
             </div>
             <div className={backCard}>
-              <h1 className="font-bold">Dataviz Workflows</h1>
-              <p className="text-sm">Increase your research impact through reproducible data visualisation 
+              <h1 className="font-bold mb-1 text-xl xl:text-2xl">Dataviz Workflows</h1>
+              <p className="text-sm xl:text-lg">Increase your research impact through reproducible data visualisation 
                 workflows.
               </p>
               <Link to="/blog/05/07/2020/LearningPath_Workflow"><ButtonWithArrow className={moreBtn}>Learn workflows</ButtonWithArrow></Link>

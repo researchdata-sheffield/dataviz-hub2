@@ -211,14 +211,102 @@ text-gray-500: text color set to be gray with transparency of 500 (50% probably)
 mb-24: bottom margin with size 24. 
 ```
 Output:
-<p className="text-3xl text-gray-500 mb-24">TAILwindCSS</p>
+<p className="text-3xl text-gray-500 mb-24">TAILwindCSS</p>  
+  
+Of course you can also add your own class, just need to make sure all classes you've created need to be 
+place in the file `dataviz-hub2/src/css/post.scss` (as the file extension shown, the website 
+supports scss styling). Specificity is important, to avoid your classes being 
+override by other styling plugins, add `body` before each class. Otherwise, use style attribute. 
 
-Of course you can also add your own class, just need to make sure all classes you've created need to be place in the file `dataviz-hub2/src/css/post.css`. Specificity is important, 
-to avoid your classes being override by other styling plugins, add `body` before each class. Alternatively, use style attribute. 
+<br /><br />
 
-<br />
-<br />
+# Accordion
+To use accordions in your post, you'll need to do something like this:
 
+```html
+<Accordion allowZeroExpanded="true">
+  <AccordionItem>
+    <AccordionItemHeading>
+      <AccordionItemButton>
+        Section 1
+      </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      Write Something
+    </AccordionItemPanel>
+  </AccordionItem>
+  
+  <AccordionItem>
+    <AccordionItemHeading>
+      <AccordionItemButton>
+          Section 2
+      </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      <p>You can also include other tags like paragraph and headings</p>
+    </AccordionItemPanel>
+  </AccordionItem>
+
+  <AccordionItem>
+    <AccordionItemHeading>
+        <AccordionItemButton>
+          Section 3
+        </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      <p>Write something about section 3</p>
+    </AccordionItemPanel>
+  </AccordionItem>
+</Accordion>  
+```  
+  
+The output will be:
+
+<Accordion allowZeroExpanded="true">
+  <AccordionItem>
+    <AccordionItemHeading>
+      <AccordionItemButton>
+        Section 1
+      </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      Write Something
+    </AccordionItemPanel>
+  </AccordionItem>
+  
+  <AccordionItem>
+    <AccordionItemHeading>
+      <AccordionItemButton>
+          Section 2
+      </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      <p>You can also include other tags like paragraph and headings</p>
+    </AccordionItemPanel>
+  </AccordionItem>
+
+  <AccordionItem>
+    <AccordionItemHeading>
+        <AccordionItemButton>
+          Section 3
+        </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      <p>Write something about section 3</p>
+    </AccordionItemPanel>
+  </AccordionItem>
+</Accordion>
+
+<br/> 
+
+You have to start with `<Accordion>` tag and wrap everything within it. 
+Use `<AccordionItem>` for each accordion you want to add, and use `<AccordItemHeading>` and 
+`<AccordionItemButton>` together to produce the button and the heading. Then use `<AccordionItemPanel>` for 
+your main contents. Each tag mentioned above has some properties you can specify, for example, only allow 
+one accordion expanded at a time or expand first first accordion by default. 
+Visit [react-accessible-accordion](https://www.npmjs.com/package/react-accessible-accordion) to see what options 
+are available.
+<br/><br/>
 
 # Code
 
