@@ -109,6 +109,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const categories = []
   const tags = []
 
+  const exclude = ["Learning Path", ]
 
   // Call `createPage` for each result/post
   // index: current index of element
@@ -116,10 +117,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     // For each post, add their tags/categories to arrays
     node.frontmatter.category.forEach((cat) => {
-      categories.push(cat)
+      if(!exclude.includes(cat)) categories.push(cat)
     })
     node.frontmatter.tag.forEach((tag) => {
-      tags.push(tag)
+      if(!exclude.includes(tag)) tags.push(tag)
     })
     
     

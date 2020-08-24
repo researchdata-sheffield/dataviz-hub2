@@ -37,10 +37,10 @@ const latestPost = ({ latestPost }) => {
 
               </div>    
             </Fade>
-            <div className="hidden lg:block fixed left-0 top-0 opacity-0 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
+            <div className="bg-white hidden lg:block fixed left-0 top-0 opacity-0 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
                 style={{width: "33.333333%"}}
               >
-              <img src={imagesrc} className="min-h-50 max-h-50 w-full" />
+              <div className="min-h-50 max-h-50 w-full transform" style={{backgroundImage: `url(${imagesrc})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}></div>
               <div className="flex flex-col bg-white min-h-50 py-6 px-8">
                 <p className="text-sm text-gray-500 font-normal 2xl:text-lg">
                   {node.frontmatter.author.map((author, idx) => (
