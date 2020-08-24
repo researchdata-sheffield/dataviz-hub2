@@ -12,6 +12,7 @@ import "./src/css/post.scss"
 import "./src/css/animation.scss"
 import "./src/css/gitalk.scss"
 import "./src/css/accordion.scss"
+import "./src/css/d3js.scss"
 
 
 export const onClientEntry = () => {

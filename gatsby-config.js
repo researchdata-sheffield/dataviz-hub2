@@ -10,6 +10,16 @@ module.exports = {
     author: 'Yu Liang Weng <y.weng@sheffield.ac.uk>',
     siteUrl: "https://dataviz.shef.ac.uk"
   },
+  proxy: [
+    {
+      prefix: "/d3noob",
+      url: "https://gist.github.com",
+    },
+    {
+      prefix: "/lkopacz",
+      url: "https://gist.githubusercontent.com",
+    },
+  ],
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
