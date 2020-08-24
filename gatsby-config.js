@@ -182,7 +182,7 @@ module.exports = {
         theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
-        cache_busting_mode: 'none'   // Work with offline plugin
+        //cache_busting_mode: 'none'   // Work with offline plugin
       },
     },
     {

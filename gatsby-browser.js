@@ -27,7 +27,15 @@ export const onClientEntry = () => {
 //   return false;
 // };
 
-export const onServiceWorkerUpdateReady = () => window.location.reload();
+export const onServiceWorkerUpdateReady = () => {
+  const answer = window.confirm(
+    `Dataviz.Shef has been updated. ` +
+      `Reload to display the latest version?`
+  )
+  if (answer === true) {
+    window.location.reload()
+  }
+};
 
 require("./src/css/prism-custom.scss")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
@@ -42,5 +50,4 @@ export const onRouteUpdate = (window) => {
     }, 700);
 
   }
-};
-
+}
