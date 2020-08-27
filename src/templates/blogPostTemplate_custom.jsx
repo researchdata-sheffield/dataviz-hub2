@@ -24,6 +24,7 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null;
   
   // include d3 scripts
+  useScript("https://unpkg.com/topojson@3", "", false)
   {d3 && d3.map((d) => {
     useScript(withPrefix(`d3/${d}`), "", false)
   })}

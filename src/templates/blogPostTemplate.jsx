@@ -30,10 +30,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null;
   
   // include d3 scripts
+  useScript("https://unpkg.com/topojson@3", "", false)
   {d3 && d3.map((d) => {
     useScript(withPrefix(`d3/${d}`), "", false)
-    useScript("https://unpkg.com/topojson@3", "", false)
-    //useScript("https://d3js.org/d3-queue.v3.min.js", "", false)
   })}
 
   //Redering table of content
