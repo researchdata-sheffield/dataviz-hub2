@@ -52,3 +52,18 @@ export const onRouteUpdate = (window) => {
 
   }
 }
+
+export const shouldUpdateScroll = ({
+  routerProps: { location },
+}) => {
+  //console.log(location)
+  //const currentPosition = getSavedScrollPosition(location)
+  // console.log(currentPosition)
+  // window.scrollTo(...(currentPosition || [0, 0]))
+  if(location.hash) {
+    setTimeout(() => {
+      document.querySelector(`${location.hash}`).scrollIntoView()
+    }, 100);
+  }
+  
+}

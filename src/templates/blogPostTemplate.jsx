@@ -118,7 +118,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>
       </Fade>
 
-      <Fade cascade bottom delay={300} duration={1000}>
       <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
         
         {/* desktop share buttons */}
@@ -208,7 +207,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           distractionFreeMode: false
         }} /> 
       </div>    
-      </Fade> 
 
       <Footer />
     </div>

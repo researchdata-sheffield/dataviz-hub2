@@ -37,8 +37,8 @@ Promise.all([
 
 function ready(world, names, population) {
 	var countries1 = topojson.feature(world, world.objects.countries).features;
-	countries = countries1.filter(function(d) {
-		return names.some(function(n) {
+	countries = countries1.filter(d => {
+		return names.some(n => {
 			if (d.id == n.id) return d.name = n.name;
 		})
 	});
