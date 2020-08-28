@@ -8,7 +8,7 @@ import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, withPrefix } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table } from "../components/style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table, LPItem, LPWrap } from "../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import PaginationPost from "../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../components/style/styled"
@@ -118,7 +118,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>
       </Fade>
 
-      <div className="flex flex-wrap relative lg:px-10 2xl:px-64 pt-10">
+      <div className="flex flex-wrap relative lg:px-10 2xl:px-48 pt-10">
         
         {/* desktop share buttons */}
         <div className="left-0 top-0 sticky hidden lg:block z-10">
@@ -171,7 +171,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
                           hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, 
                           img: IMG, table: Table, Accordion: Accordion, AccordionItem: AccordionItem, 
                           AccordionItemHeading: AccordionItemHeading, AccordionItemButton: AccordionItemButton, 
-                          AccordionItemPanel: AccordionItemPanel, 
+                          AccordionItemPanel: AccordionItemPanel, LPWrap: LPWrap, LPItem: LPItem
                         }}
             >
             <MDXRenderer>{mdx.body}</MDXRenderer>

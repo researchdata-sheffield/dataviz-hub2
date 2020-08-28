@@ -14,6 +14,8 @@ d3: ["dataviz.js", "d3js_for_dataviz.js"]
 ---
 
 
+<div id="example1"></div>
+
 # What is D3.js
 **D3** stands for **Data-Driven Document** and **[D3.js](https://d3js.org/)** is known as an open-source Javascript 
 library that is capable of producing *web-based interactive data visualisations* 
@@ -104,10 +106,12 @@ are two selection methods:
   class `myclass`.
   - **selectAll()** - similar to *select()* method but returns all elements that match 
   the criteria.  
-  
+
+<br/>
+
 But what could you do with **selected elements**? 
 
-### New elements
+## New elements
   - **Append()** - allows you to modify the element or add new elements within 
   the selected element. For example, `d3.select("div").append("g")` add a `<g>` tag 
   element to the first div element (beware it doesnt change or replace existing 
@@ -121,9 +125,126 @@ But what could you do with **selected elements**?
 
   - **text()** - set the content of the selected element
 
-### Manipulation
+<br/>
 
+## Manipulation
+  - **attr()** - Probably the most common methods used after the append method. This 
+  method is used to add or update the specified attribute of the selected elements.
+  - **style()** - Used to set the styles of the selected elements as how you would for 
+  inline CSS styles. For example, `attr("background-color", "#000")` set the 
+  background colour to black.
+  - **html()** - Used to set the html content of selected elements, that means you can 
+  actually write a html document within it! 
 
+  ```js
+  d3.select("svg")
+    .html("<h1>Hello WOrld!</h1><p>My name is Dataviz!<p>")
+  ```
+
+  <div id="html"></div>
+
+  - **insert()** - insert a new element at the end of selected elements.
+  - **remove()** - delete selected elements.
+  - **property()** - set attributes that cannot set by attr(), e.g your custom 
+  attributes.
+  - **classed()** - Set or modify the classlist of selected elements.
+
+For more information about D3 selections, 
+visit [D3-Selection](https://github.com/d3/d3-selection).  
+  
+<br/>
+
+## Data-binding / data-join
+Previously we have mentioned that we can draw shapes using basic shapes within 
+SVG elements and indeed these basic shapes will have some required attributes to 
+specify, for a rectangle you will need *height* and *width* and (*x*, *y*) coordinates. If 
+you have multiple rectangles to create then it would be a good idea to use some 
+function and map attribute data to the shape, otherwise you will end up with 
+multiple replicate lines. Rather than using a for loop, D3 have provided a useful 
+method:  
+
+```js
+var data = [5,10,15,20,25]
+
+svg.selectAll("rect")
+    .data(data)
+    .enter().append("rect")
+    .attr("height", function(d,i) { return d; })
+    .attr("width", "60")
+    .attr("x", function(d,i) { return 40*i }
+    .attr("y", function(d,i) { return 400-(d*10); })
+```
+
+To bind the data you need to use `data()` methods with your data. But what is 
+the `enter()` method and why do we append rectangles after we have already selected 
+rectangle elements? Consider the scenario that there are no rectangles for we 
+to select, so `svg.selectAll("rect")` will just return an empty selection, this 
+means data has not bind to any elements, and what `enter()` methods does is select 
+these unbound data, then `.append("rect")` will append a rectangle element to each 
+of these data elements. The same procedure applies to the case when the number 
+of rectangles is less than the number of data objects. In the case of more 
+rectangles than data objects, then instead of `.enter().append("rect")` 
+we use `.exit().remove()` to remove any unused rectangles.  
+  
+If you only want to bind data to a single element and does not require any 
+updates then you can also use the `datum()` method.
+
+<br/>
+
+## Dynamic properties
+In the data binding section we have code look like this:
+
+```js
+svg.selectAll("rect")
+    .data(data)
+    .enter().append("rect")
+    .attr("height", function(d,i) { return d; })
+```
+
+In the height attribute of each rectangle, instead of a value we assign a function 
+to it which returns `d`. The `d` and `i` here refers to the corresponding **data point**
+and **index** of the current rectangle. This means we can pass data dynamically to 
+each element and assign attributes at your will. You can call `d` and `i` whatever 
+you want but **the order is important**. Even if you use `i` only, `d` must be specified 
+because the index is always the **second parameter** in the function. 
+
+<br/>
+
+## Events
+As in vanilla javascript, D3.js also allows you to bind an event listener to any 
+DOM element using d3.selection.on() method which can capture event types you 
+would normally use. Here is a simple example that the text colour will change 
+once you are hovering it:  
+
+```js
+d3.select("#event")
+  .style("padding", "3rem 2rem")
+	.on("mouseover", function() {
+		d3.select(this)
+			.style("background-color", "black")
+      .style("color", "white");
+	})
+	.on("mouseout", function() {
+		d3.select(this)
+      .style("background-color", "yellow")
+      .style("color", "black")
+	});
+```
+
+<div id="event" className="text-2xl font-bold" style={{fontFamily: 'ink Free'}}>D3.js for data visualisation</div>
+
+<br/>
+
+Learn more about events on:
+
+<LPWrap>
+  <LPItem href="https://octoperf.com/blog/2018/04/17/d3-js-mouse-events-and-transitions-tutorial/#how-to-handle-mouse-event-using-d3-js">
+    How to handle mouse event using D3.js
+  </LPItem>
+  <LPItem href="https://github.com/d3/d3/blob/master/API.md#handling-events">
+    D3 API: Handing events
+  </LPItem>
+</LPWrap>
 
 <br/>
 

@@ -32,3 +32,19 @@ for (var p=0; p<6; p++) {
               .attr("cy",function(d,i){ return d.y*4; })
               .attr("r","2");
 }
+
+
+d3.select("#html").html("<h1>Hello WOrld!</h1><p>My name is Dataviz!<p>");
+
+d3.select("#event")
+  .style("padding", "3rem 2rem")
+	.on("mouseover", function() {
+		d3.select(this)
+			.style("background-color", "black")
+      .style("color", "white");
+	})
+	.on("mouseout", function() {
+		d3.select(this)
+      .style("background-color", "yellow")
+      .style("color", "black")
+	});
