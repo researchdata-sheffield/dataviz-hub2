@@ -13,20 +13,126 @@ disableTOC: "false"
 d3: ["dataviz.js", "d3js_for_dataviz.js"]
 ---
 
-<svg id="d3" className="lg:-ml-60 md:min-w-80 md:min-h-60 lg:min-h-60"></svg>
-<div className="tooltip"></div>
 
 # What is D3.js
-D3.js is known as an open-source Javascript library that capable of 
+**D3** stands for **Data-Driven Document** and **[D3.js](https://d3js.org/)** is known as an open-source Javascript 
+library that is capable of producing *web-based interactive data visualisations* 
+in web browsers using **SVG**, **HTML** and **CSS**. It is powerful and customisable yet has 
+a *steep learning curve*. If you are interested in online data visualisation or 
+you have used many data visulisation libraries and want to DIY your own 
+chart then give it a go!  
+  
+**[Mike Bostock](https://twitter.com/mbostock)** - the main author of **D3.js** also created an online platform called 
+**[ObservableHQ](https://observablehq.com/)** where you can host your javascript notebooks (similar to how 
+Jupyter Notebook works for Python) to explore and visualise your data. This 
+platform is especially useful when you first start learning D3.js, as no 
+installation is required to import D3 modules plus you can fork other people's 
+notebook and build on top of it!  
 
-
-<div id="example1"></div>
-
+<br/> 
 
 # What you need to know 
+Unlike programming languages such as **Python** and **R** that have some high-level 
+libraries that allow you to draw interactive and informative graphics, 
+D3.js gives you the freedom to build whatever you can imagine from 
+low-levels. Although there are plenty of resources available online for you to 
+learn D3.js, it is **recommended** you have some practical knowledge of following 
+things before you proceed:  
+  - **Javascript**
+  - **SVG** (Scalable Vector Graphics)
+  - **HTML5** (HyperText Markup Language)
+  - **CSS** (Cascade Style Sheet)
+    
+**D3.js** is built from Javascript and no doubt you will need to know Javascript 
+so that you will have no trouble dealing with data and functions. **SVG** is an 
+XML-based vector graphics format and should always be the first and largest 
+element of any D3 graphic you want to create. SVG acts as a container which 
+allows you to draw any shapes within it using a set of basic shape elements 
+such as rectangles, circles, ellipses, paths, straight lines, polylines, and 
+polygons. D3 makes use of this mechanism which adds graphics and text to SVG 
+and then binds data to those elements. An example of SVG:
 
+```html
+<svg width="500" height="300">
+   <rect x="0" y="0" width="300" height="200" fill="yellow"></rect>
+</svg>
+```
+
+<svg width="500" height="300">
+   <rect x="0" y="0" width="300" height="200" fill="yellow"></rect>
+</svg>  
+  
+If you have ever experience in creating web pages or similar then you should be 
+familiar with HTML and CSS. HTML is the standard markup language for creating 
+web pages as well as defining the structure of web pages, whereas HTML5 is the 
+latest standard of HTML. CSS is the style language used for styling HTML documents 
+and hence different websites have their presentation styles depending on how they 
+define it.  
+
+<br/>
+  
+# Installation
+To use D3.js you can either download the latest version 
+from [d3js.org](https://d3js.org/) then include it in the head tag or place the 
+following script within the head tag of your html file:
+
+```html
+<script src="https://d3js.org/d3.v5.min.js"></script>
+```  
+  
+<br/>
+
+# Core Concepts
+Rather than include everything (which are not possible) here, this article aims 
+to give an introduction to the foundation of **D3** and let you discover other methods 
+in the **[D3 API document](https://github.com/d3/d3/blob/master/API.md)** when needed. Note that this article is written based on D3 
+version 5.16 and there might be some changes to D3 in the future which invalid 
+some of the codes here.  
+
+## Selections
+One important aspect of D3 is the *DOM manipulation*. The 
+**DOM** (Document Object Model) is an independent interface which organises an 
+XML/HTML document into tree structure and each node within the tree represents 
+a part of the document. Selection methods in D3 look similar to CSS 
+selectors (actually it is based on CSS selectors) and allow you select elements 
+within the DOM of the current web page then perform any other actions on it. There 
+are two selection methods:  
+  - **select()** - select the DOM element matched the given criteria within the 
+  bracket. If there are more than one elements matched, only select the first 
+  element. For example, *select("div")* will return the first div element in the 
+  DOM tree, `select(".myclass")` return the first element that has the 
+  class `myclass`.
+  - **selectAll()** - similar to *select()* method but returns all elements that match 
+  the criteria.  
+  
+But what could you do with **selected elements**? 
+
+### New elements
+  - **Append()** - allows you to modify the element or add new elements within 
+  the selected element. For example, `d3.select("div").append("g")` add a `<g>` tag 
+  element to the first div element (beware it doesnt change or replace existing 
+  elements).
+  
+  ```html
+  <div>
+    <g></g>
+  </div>
+  ```
+
+  - **text()** - set the content of the selected element
+
+### Manipulation
+
+
+
+<br/>
 
 # A simple example
 
+
+<svg id="d3" className="lg:-ml-60 md:min-w-80 md:min-h-60 lg:min-h-60"></svg>
+<div className="tooltip"></div>
+
+<br/>
 
 # Interested?

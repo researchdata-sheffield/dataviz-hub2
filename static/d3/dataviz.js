@@ -29,13 +29,13 @@ Promise.all([
 	d3.csv(countryNames),
 	d3.csv(populationData)
 ]).then(data => {
-		ready(data[0], data[1], data[2])
+		createMap(data[0], data[1], data[2])
 }).catch(err => {
 		throw err;
 })
 
 
-function ready(world, names, population) {
+function createMap(world, names, population) {
 	var countries1 = topojson.feature(world, world.objects.countries).features;
 	countries = countries1.filter(d => {
 		return names.some(n => {

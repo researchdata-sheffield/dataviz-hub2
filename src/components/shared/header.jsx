@@ -57,7 +57,7 @@ const Header = () => {
                                   `text-gray-500 hover:text-white` : `text-gray-300 hover:text-white`]
                               ] 
                             : [wlp === "/" ? 
-                                'text-gray-900 hover:text-highlight_2' : `text-gray-500 hover:text-white`] ]}`  
+                                'text-gray-500 hover:text-highlight_2' : `text-gray-500 hover:text-white`] ]}`  
     
     switch(props.type){
       case 'a':
@@ -109,7 +109,7 @@ const Header = () => {
           </button>
         </div>
         
-        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-xs xl:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? '' : "rgba(255,255,255,1)" ] : ""}` }}>
+        <div className={`${isExpanded ? `block flex-col` : `hidden`} lg:block py-2 flex items-center w-full lg:w-auto text-xs xl:text-sm`} style={{backgroundColor: `${isExpanded ? [isScroll ? '' : "rgba(25,25,25,.9)" ] : ""}` }}>
           <div className="justify-end flex flex-wrap items-center">
             {[
 /*               {

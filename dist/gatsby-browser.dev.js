@@ -81,7 +81,7 @@ var shouldUpdateScroll = function shouldUpdateScroll(_ref) {
   if (location.hash) {
     setTimeout(function () {
       document.querySelector("".concat(location.hash)).scrollIntoView();
-    }, 100);
+    }, 10);
   }
 };
 
