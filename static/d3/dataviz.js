@@ -59,28 +59,28 @@ function createMap(world, names, population) {
 			.append("path")
 			.attr("stroke","#313131")
 			.attr("stroke-width",1)
-						.attr("fill", "#535353")
+			.attr("fill", "#535353")
 			.attr("d", path )
 			.on("mouseover",function(d,i){
-								d3.select(this).attr("fill","#00b2ec").attr("stroke-width",2);
-								return tooltip.style("hidden", false).html(d.name + "<br/>" + d.population);
-						})
-						.on("mousemove",function(d){
-								tooltip.classed("hiddenTt", false)
-												.style("top", (d3.event.pageY + -460) + "px")
-												.style("left", (d3.event.pageX + 10) + "px")
-												.html(d.name + "<br/>" + "<p style='font-size: 13px'>Population: " + d.population + "</p><p style='font-size: 13px; margin-top: -10px'>Yearly change: " + d.Yearly_Change + "</p>");
-						})
-						.on("mouseout",function(d,i){
-								d3.select(this).attr("fill","#535353").attr("stroke-width",1);
-								tooltip.classed("hiddenTt", true);
-						});
+				d3.select(this).attr("fill","#00b2ec").attr("stroke-width",2);
+				return tooltip.style("hidden", false).html(d.name + "<br/>" + d.population);
+			})
+			.on("mousemove",function(d){
+					tooltip.classed("hiddenTt", false)
+									.style("top", (d3.event.pageY + -460) + "px")
+									.style("left", (d3.event.pageX + 10) + "px")
+									.html(d.name + "<br/>" + "<p style='font-size: 13px'>Population: " + d.population + "</p><p style='font-size: 13px; margin-top: -10px'>Yearly change: " + d.Yearly_Change + "</p>");
+			})
+			.on("mouseout",function(d,i){
+				d3.select(this).attr("fill","#535353").attr("stroke-width",1);
+				tooltip.classed("hiddenTt", true);
+			});
 	
 	svg.call(d3.drag()
-			.on("drag", function() {
-				var xy = d3.mouse(this);
-				projection.rotate(xy).translate([xy[0], xy[1]])
-				svg.selectAll("path")
-					.attr("d",path);
-			}));
+		.on("drag", function() {
+			var xy = d3.mouse(this);
+			projection.rotate(xy).translate([xy[0], xy[1]])
+			svg.selectAll("path")
+				.attr("d",path);
+		}));
 }

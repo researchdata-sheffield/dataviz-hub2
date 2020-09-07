@@ -23,7 +23,7 @@ const latestPost = ({ latestPost }) => {
         return (
           <div key={node.id} className="group w-full relative z-20 border-t-1 border-gray-800">
             <Fade  key={node.id} duration={1000} fraction={0.1}>
-              <div className="flex flex-wrap w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
+              <div className="w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
                 <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-3 lg:px-10 py-4">
                   <div className="flex flex-wrap items-center">
                     <MdFiberNew className="text-red-700 ipadp:text-white group-hover:text-red-700 text-3xl" />
@@ -34,10 +34,10 @@ const latestPost = ({ latestPost }) => {
                   <div className="inline-block font-semibold">{node.frontmatter.title}</div>
                   <div className="inline-block font-semibold">{postDate}</div>
                 </Link>
-
               </div>    
             </Fade>
-            <div className="bg-white hidden lg:block fixed left-0 top-0 opacity-0 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
+            {/* On hover, show details on the left */}
+            <div className="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
                 style={{width: "33.333333%"}}
               >
               <div className="min-h-50 max-h-50 w-full transform" style={{backgroundImage: `url(${imagesrc})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}></div>

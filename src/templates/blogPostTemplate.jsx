@@ -23,17 +23,19 @@ import GitalkComponent from "gitalk/dist/gitalk-component";
 import { useScript } from "../utils/shared"
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
-
+  const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null
+  // include d3 scripts
+  {d3 && d3.map((d) => {
+    if(d.includes("https://")) {
+      useScript(d, "", false)
+    } else {
+      useScript(withPrefix(`d3/${d}`), "", false)
+    }
+  })}
+  
   const { title, date, author, category, tag, disableTOC } = mdx.frontmatter
   const {prev, next} = pageContext
   const tableOfContent = disableTOC === "true" ? null : mdx.tableOfContents
-  const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null;
-  
-  // include d3 scripts
-  useScript("https://unpkg.com/topojson@3", "", false)
-  {d3 && d3.map((d) => {
-    useScript(withPrefix(`d3/${d}`), "", false)
-  })}
 
   //Redering table of content
   const renderItem = (item) => (

@@ -1,7 +1,7 @@
 ---
 author: ["Yu Liang Weng"]
 title: "D3.js for data visualisation"
-thumbnail: 
+thumbnail: ./thumb.png
 description: "A simple introduction to D3.js (Data-Driven Documents) - a powerful Javascript Library for creating interactive data visualisation in web browers by manipulating Document Object Model (DOM)."
 date: "2020-08-26"
 category: ["Articles"]
@@ -10,9 +10,8 @@ template:
 featured: "false"
 hide: "false"
 disableTOC: "false"
-d3: ["dataviz.js", "d3js_for_dataviz.js"]
+d3: ["https://unpkg.com/topojson@3", "dataviz.js", "d3js_for_dataviz.js"]
 ---
-
 
 <div id="example1"></div>
 
@@ -249,7 +248,166 @@ Learn more about events on:
 <br/>
 
 # A simple example
+Let's use 2020 world population data to create an interactive world map that 
+displays each country's population and growth rate.  
 
+The first step is to create a `svg` element and a `div` element with *tooltip* class 
+in your html file:
+
+```html
+<svg id="worldMap" style="min-width: 80vw; min-height: 60vh"></svg>
+<div className="tooltip"></div>
+```
+We also need to add styles for the *tooltip* class and *hiddenTt* class (appears later):
+
+```css
+div.tooltip {
+  color: #222; 
+  background: #fff; 
+  border-radius: 3px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  opacity: 0.9; 
+  position: absolute;
+}
+.hiddenTt {
+  display: none;
+}
+```
+
+Then define the population dataset and geographic locations for 
+each country.
+
+```js
+countryCoor = "https://unpkg.com/world-atlas@1/world/110m.json"
+countryNames = "https://gist.githubusercontent.com/lkopacz/dfd9cc04a4d5a5f0fe87c89a79524479/raw/39100d4f6b7c784bd5d838a4e357873ef6877579/world-country-names.csv"
+populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv"
+```
+
+The next step is to create a projection that transforms **latitude** and **longitude** 
+coordinates intoto **x** and **y** coordinates which can be used to display on our 
+screen. Then we create a geographic path generator using the projection. 
+Notice that we have appended the `g` tag to the `svg` element, so that we can 
+append all paths to `g` later. This ensure all paths are grouped for better 
+code management and visibility.  
+
+```js
+var projection = d3.geoNaturalEarth1();
+var path = d3.geoPath()
+              .projection(projection);
+var svg = d3.select("#worldMap")
+              .append("g")
+              .attr("position", "center");
+var tooltip = d3.select("div.tooltip");
+```  
+
+To load datasets we are using D3 functions `d3.json` and `d3.csv`, and the use of 
+*Promise* is to ensure we do not perform any actions until data are loaded sucessfully. 
+The *createMap* function is the function we have created for create the actual map.
+
+```js {6}
+Promise.all([
+	d3.json(countryCoor),
+	d3.csv(countryNames),
+	d3.csv(populationData)
+]).then(data => {
+		createMap(data[0], data[1], data[2])
+}).catch(err => {
+		throw err;
+})
+```
+
+Let's go through the `createMap` function in more details. Before drawing the map we need 
+to make sure we have the right data structure. The first step is to get **GeoJSON** 
+features (geometry coordinates of each country's border) by using **TopoJSON** functions.  
+Read more about **TopoJSON** on:
+<LPWrap>
+  <LPItem href="https://github.com/topojson/topojson-client/blob/master/README.md#feature">
+    TopoJSON API
+  </LPItem>
+  <LPItem href="https://medium.com/@amy.degenaro/introduction-to-digital-cartography-geojson-and-d3-js-c27f066aa84">
+    Introduction to Digital Cartography
+  </LPItem>
+</LPWrap>
+
+However, the *countryCoor* dataset contain only country ids rather than the country 
+names. Therefore, we join the dataset with the *countryNames* dataset and return 
+the country name if there is a match on id. Similarly, we join with 
+the *populationData* dataset to get the population and yearly change rate for each 
+country.
+
+```js
+function createMap(world, names, population) {
+	var countriesData = topojson.feature(world, world.objects.countries).features;
+	countries = countriesData.filter(d => {
+		return names.some(n => {
+			if (d.id == n.id) return d.name = n.name;
+		})
+	});
+	countries = countries.filter(d => {
+		return population.some(function(p) {
+			name1 = d.name;
+			name2 = p.Region;
+			if(name1.includes(name2)) {
+				d.population = p.Population;
+				return d.Yearly_Change = p.Yearly_Change
+			}
+		})
+  })
+ ...
+}
+```
+
+Now we move on to create the map. If you have read the section above then you should
+have find the following code familiar:
+
+```js
+function createMap(world, names, population) {
+  ...
+  svg.selectAll("path")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("stroke","#313131")
+      .attr("stroke-width",1)
+      .attr("fill", "#535353")
+      .attr("d", path)
+      .on("mouseover",function(d,i){
+        d3.select(this).attr("fill","#00b2ec").attr("stroke-width",2);
+        return tooltip.style("hidden", false).html(d.name + "<br/>" + d.population);
+      })
+      .on("mousemove",function(d){
+        tooltip.classed("hiddenTt", false)
+                .style("top", (d3.event.pageY + -460) + "px")
+                .style("left", (d3.event.pageX + 10) + "px")
+                .html(d.name + "<br/>" + "<p style='font-size: 13px'>Population: " + d.population + "</p><p style='font-size: 13px; margin-top: -10px'>Yearly change: " + d.Yearly_Change + "</p>");
+      })
+      .on("mouseout",function(d,i){
+        d3.select(this).attr("fill","#535353").attr("stroke-width",1);
+        tooltip.classed("hiddenTt", true);
+      });
+  ...
+}
+```
+
+In here we are creating paths using data from above then add three events monitoring 
+user's mouse movement on the map.  
+
+Lastly, we can make the map more interactive by monitoring user's dragging action and 
+rotate/translate the map accordingly.
+
+```js
+function createMap(world, names, population) {
+  ...
+	svg.call(d3.drag()
+    .on("drag", function() {
+      var xy = d3.mouse(this);
+      projection.rotate(xy).translate([xy[0], xy[1]])
+      svg.selectAll("path")
+        .attr("d",path);
+    }));
+```
 
 <svg id="d3" className="lg:-ml-60 md:min-w-80 md:min-h-60 lg:min-h-60"></svg>
 <div className="tooltip"></div>
@@ -257,3 +415,26 @@ Learn more about events on:
 <br/>
 
 # Interested?
+D3.js is a really powerful tool for creating online data visualisation, if you want to 
+explore more about it, check out the following resources:
+
+<LPWrap>
+  <LPItem href="https://github.com/d3/d3/wiki/Tutorials">
+    D3 Wiki Tutorials
+  </LPItem>
+  <LPItem href="https://observablehq.com/@d3/learn-d3">
+    ObservableHQ - Learn D3
+  </LPItem>
+  <LPItem href="https://www.d3-graph-gallery.com/">
+    D3 graph gallery
+  </LPItem>
+  <LPItem href="https://github.com/d3/d3/blob/master/API.md">
+    D3 API Reference
+  </LPItem>
+  <LPItem video href="https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists">
+    D3.js essential training
+  </LPItem>
+  <LPItem video href="https://www.linkedin.com/learning/learning-data-visualization-with-d3-js/welcome?u=36248012">
+    Learning data visualisation with D3.js
+  </LPItem>
+</LPWrap>

@@ -40,10 +40,10 @@ const blogPostGrid = ({allMdx}) => {
             </Link>
             <div className="px-6 2xl:px-8 text-xs" style={{color: '#848484', fontWeight: '400'}}>
               {node.frontmatter.category.map((cat) => (
-                <>
-                  <Link className="font-semibold hover:underline" key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
+                <div key={cat}>
+                  <Link className="font-semibold hover:underline" to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
                   <> · </> 
-                </>
+                </div>
               ))}
               
               {tag.map((tagItem, i) => {

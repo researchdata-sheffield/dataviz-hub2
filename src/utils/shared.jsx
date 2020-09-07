@@ -41,12 +41,12 @@ export function useScript(src, integrity="", async=true) {
         setStatus("idle");
         return;
       }
-
       // Fetch existing script element by src
       // It may have been added by another intance of this hook
       let script = document.querySelector(`script[src="${src}"]`);
-
-      if (!script) {
+      if(script) script.remove()
+      
+      //if (!script) {
         script = document.createElement("script");
         script.src = src;
         script.async = async;
@@ -66,10 +66,10 @@ export function useScript(src, integrity="", async=true) {
 
         script.addEventListener("load", setAttributeFromEvent);
         script.addEventListener("error", setAttributeFromEvent);
-      } else {
-        // Grab existing script status from attribute and set to state.
-        setStatus(script.getAttribute("data-status"));
-      }
+      // } else {
+      //   // Grab existing script status from attribute and set to state.
+      //   setStatus(script.getAttribute("data-status"));
+      // }
 
       // Script event handler to update status in state
       // Note: Even if the script already exists we still need to add

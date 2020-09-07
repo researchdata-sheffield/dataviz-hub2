@@ -13,10 +13,10 @@ const HomeCommunity = () => {
   const cardTextClasses = "text-sm xl:text-base border-t-1 border-gray-300 py-3 text-gray-600 group-hover:text-gray-900"
 
   return (
-    <div id="home_community" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative pb-20">
+    <div id="home_community" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative">
       <Fade>
-        <div className="container mx-auto justify-center flex flex-wrap">
-          <div className="text-4xl 2xl:text-6xl font-bold text-gray-900 w-full text-center">
+        <div className="container mx-auto justify-center flex flex-wrap mt-24">
+          <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center">
             <h1 style={{background: 'linear-gradient(to right, #30CFD0 0%, #330867 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY.</h1></div>
           <Link to="/community" className="mt-1 text-med xl:text-lg text-gray-500 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /></Link>
           {/* <p className="border-t-6 border-highlight_2 w-1/12"></p> */}
