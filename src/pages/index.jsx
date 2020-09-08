@@ -15,7 +15,7 @@ import Search_Home from "../components/home/searchHome"
 import Slide from 'react-reveal/Slide'
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/animation.gif"
-import { BlackWhiteButton, ButtonWithArrow, AnimateButton } from "../components/style/styled"
+import { ButtonWithArrow, AnimateButton } from "../components/style/styled"
 import ReactTooltip from "react-tooltip"
 import bg from "../images/home/earth.jpg"
 
@@ -42,6 +42,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
     };
   }, [words,]);
 
+  const quickLink = "text-gray-700 hover:underline"
+
   return (
     <div className="bg-white">
       <SEO 
@@ -54,9 +56,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div>
         <div className="flex flex-wrap relative">
           {/* Left component */}
-          <div id="homeBar" className="min-h-100 md:min-h-60 shadow-lg z-10 xl:sticky xl:top-0 xl:left-0 flex flex-wrap w-full xl:w-4/12 text-gray-800 overflow-hidden xl:min-h-100 xl:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
+          <div id="homeBar" className="min-h-100 md:min-h-60 shadow-lg z-10 lg:sticky lg:top-0 lg:left-0 flex flex-wrap w-full lg:w-4/12 text-gray-800 overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center pt-28 ipadp:pt-10vh font-sans">
-              <p className="text-2xl ipadp:text-4xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
+              <p className="text-2xl lg:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
               <p className="text-base 2xl:text-lg mt-5 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 
@@ -67,11 +69,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><Link className="text-gray-700 hover:underline" to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#home_community' data-tip="#Community">Community</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
-                      <li><Link className="text-gray-700 hover:underline" to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
+                      <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
+                      <li><Link className={quickLink} to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
+                      <li><Link className={quickLink} to='/#home_community' data-tip="#Community">Community</Link></li>
+                      <li><Link className={quickLink} to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
+                      <li><Link className={quickLink} to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
                       <ReactTooltip />
                     </ul>
                 </div>
@@ -79,17 +81,17 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 <div className="w-1/7">
                   <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }}>Chart</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }}>Colour</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Python"}}) }}>Python</a></li>
-                      <li><a className="text-gray-700 hover:underline" onClick={ () => { navigate( "/search", {state: {searchWord: "Statistics"}}) }}>Statistics</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }}>Chart</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }}>Colour</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Python"}}) }}>Python</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistics"}}) }}>Statistics</a></li>
                     </ul>
                 </div>
               </div>
             </Slide>
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <BlackWhiteButton className="py-2 px-5 hover:text-black border-1 border-black xl:text-xl xl:py-3 xl:px-8" link>Get Started</BlackWhiteButton>
+                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 xl:text-lg xl:py-3 xl:px-8 bg-gray-200 text-gray-700 hover:text-gray-700 hover:bg-gray-300">Learn more</ButtonWithArrow>
               </Fade>
             </Link>
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -104,7 +106,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           
           {/* Right component */}
-          <div className="flex flex-wrap text-gray-100 xl:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease",}}>  {/*style={{borderTop: "50px solid #000000", }} */}
+          {/*style={{borderTop: "50px solid #000000", }} */}
+          <div className="flex flex-wrap text-gray-100 lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease",}}>
+            
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="pt-8 min-h-70 md:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease",}}>
     
@@ -115,10 +119,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 </h1>
                 <div className="mt-10 group-hover:visible xl:invisible">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
-                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-800 text-white">Data Repository</AnimateButton>
+                    <AnimateButton external className="rounded-full py-2 px-4 bg-gray-700 text-white">Data Repository</AnimateButton>
                   </a>
                   <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
-                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-800 text-white">Blog post</AnimateButton>
+                    <AnimateButton className="mt-0 rounded-full py-2 px-4 bg-gray-700 text-white">Blog post</AnimateButton>
                   </Link>
                 </div>
               </div>
@@ -139,7 +143,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
               <Link to="/blog">
-                <ButtonWithArrow type="BlackWhiteButton" className="py-2 px-4 hover:bg-black bg-white text-black hover:text-white border-1 border-black mt-0 text-sm" link>
+                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 bg-gray-200 hover:text-gray-700 hover:bg-gray-300 text-gray-700 mt-0 text-sm" link>
                   Read more
                 </ButtonWithArrow>
               </Link>

@@ -32,7 +32,7 @@ const HomeCommunity = () => {
               Discover a variety of events including talks and symposia, workshops, vis-coding clubs and data visualisation hackathons!
             </div>
             <Link to="/events">
-              <ButtonWithArrow className="rounded-full text-sm group-hover:bg-red-700" type="BlackButton">Upcoming events</ButtonWithArrow>
+              <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-red-700 mt-5 lg:mt-10" type="BlackButton">Upcoming events</ButtonWithArrow>
             </Link>
           </Zoom>
         </div>
@@ -44,7 +44,7 @@ const HomeCommunity = () => {
             <div className={cardTextClasses}>
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <ButtonWithArrow className="rounded-full text-sm group-hover:bg-highlight_2" type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
+            <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-highlight_2 mt-5 lg:mt-10" type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
            
           </Zoom>
         </div>
@@ -56,7 +56,7 @@ const HomeCommunity = () => {
             <div className={cardTextClasses}>
               Get in touch with us. It is natural that you have found something diffcult to understand or need more specific guidance and direction.
             </div>
-            <ButtonWithArrow className="rounded-full text-sm group-hover:bg-green-500" type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
+            <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-green-500 mt-5 lg:mt-10" type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
             <ReactTooltip id="ReactTooltip1" delayShow={500} delayHide={1000} effect="float">
               Why not join our slack channel and get live updates?
             </ReactTooltip>
@@ -73,7 +73,7 @@ const HomeCommunity = () => {
               </div>
             </div>
             <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow className="rounded-full text-sm group-hover:bg-yellow-600" type="BlackButton">Our repository</ButtonWithArrow>
+              <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-yellow-600 mt-5 lg:mt-10" type="BlackButton">Our repository</ButtonWithArrow>
             </a>
           </Zoom>
         </div>
