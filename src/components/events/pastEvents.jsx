@@ -22,13 +22,16 @@ const PastEvents = ({pastEvent}) => {
           </div>
         )
       })} 
-      <div className="flex justify-center w-full">
+      {
+        pastEvent.edges.length > 0 && 
+        <div className="flex justify-center w-full">
           <BlackWhiteButton onClick={()=>window.open("https://www.eventbrite.co.uk/o/scholarly-communications-team-the-university-of-sheffield-library-7528476001", "_blank", "noopener, noreferrer")} 
             className="w-full mt-0 hover:bg-blue-800 hover:text-white"
           >
             More events
           </BlackWhiteButton>
-      </div>
+        </div>
+      }
     </div>
   )
 

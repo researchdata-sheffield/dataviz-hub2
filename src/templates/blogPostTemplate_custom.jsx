@@ -13,13 +13,16 @@ import PaginationPost from "../components/blog/paginationPost"
 import "katex/dist/katex.min.css"
 import GitalkComponent from "gitalk/dist/gitalk-component"
 import { useScript } from "../utils/shared"
+import { useLocation } from "@reach/router"
+
 
 const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
-  const {prev, next} = pageContext  
-  console.log(mdx.frontmatter.d3)
+  const location = useLocation();
+
+  const {prev, next} = pageContext
   const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
   const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
-  const shareLink = `https://${window.location.host}${mdx.fields.slug}`
+  const shareLink = `https://${location.host}${mdx.fields.slug}`
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null;
   
@@ -55,20 +58,23 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
     
     <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
 
-    <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
-      <GitalkComponent options={{
-        clientID: process.env.GATSBY_GH_APP_GITALK_ID,
-        clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
-        repo: 'dataviz-hub2-comments',   
-        owner: 'researchdata-sheffield',
-        admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
-        id: mdx.fields.slug.substr(0,50),
-        title: mdx.frontmatter.title,
-        body: location.href + " | " + mdx.frontmatter.description,
-        distractionFreeMode: false
+    {
+      (typeof window !== `undefined`) &&
+      <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
+        <GitalkComponent options={{
+          clientID: process.env.GATSBY_GH_APP_GITALK_ID,
+          clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
+          repo: 'dataviz-hub2-comments',   
+          owner: 'researchdata-sheffield',
+          admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
+          id: mdx.fields.slug.substr(0,50),
+          title: mdx.frontmatter.title,
+          body: location.href + " | " + mdx.frontmatter.description,
+          distractionFreeMode: false
 
-      }} /> 
-    </div> 
+        }} /> 
+      </div> 
+    }
     
     <Footer />
     </>

@@ -20,9 +20,12 @@ import Pulse from 'react-reveal/Pulse';
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
 import GitalkComponent from "gitalk/dist/gitalk-component";
+import { useLocation } from "@reach/router"
 import { useScript } from "../utils/shared"
 
+
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
+  const location = useLocation();
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null
   // include d3 scripts
   {d3 && d3.map((d) => {
@@ -36,6 +39,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const { title, date, author, category, tag, disableTOC } = mdx.frontmatter
   const {prev, next} = pageContext
   const tableOfContent = disableTOC === "true" ? null : mdx.tableOfContents
+  
 
   //Redering table of content
   const renderItem = (item) => (
@@ -64,7 +68,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
   const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
-  const shareLink = `https://${window.location.host}${mdx.fields.slug}`
+  const shareLink = `https://${location.host}${mdx.fields.slug}`
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
 
     
@@ -195,21 +199,24 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>       
  
       <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
-
-      <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
-        <GitalkComponent options={{
-          clientID: process.env.GATSBY_GH_APP_GITALK_ID,
-          clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
-          repo: 'dataviz-hub2-comments',   
-          owner: 'researchdata-sheffield',
-          admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
-          id: mdx.fields.slug.substr(0,50),
-          title: mdx.frontmatter.title,
-          body: location.href + " | " + mdx.frontmatter.description,
-          distractionFreeMode: false
-        }} /> 
-      </div>    
-
+        
+      {
+        (typeof window !== `undefined`) &&
+        <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
+          <GitalkComponent options={{
+            clientID: process.env.GATSBY_GH_APP_GITALK_ID,
+            clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
+            repo: 'dataviz-hub2-comments',   
+            owner: 'researchdata-sheffield',
+            admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
+            id: mdx.fields.slug.substr(0,50),
+            title: mdx.frontmatter.title,
+            body: location.href + " | " + mdx.frontmatter.description,
+            distractionFreeMode: false
+          }} /> 
+        </div>    
+      }
+      
       <Footer />
     </div>
     

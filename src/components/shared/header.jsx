@@ -6,11 +6,14 @@ import React, { useState, useEffect } from "react"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack } from "react-icons/fa"
 import { A } from "../style/blogPostStyle"
+import { useLocation } from "@reach/router"
+
 
 const Header = () => {
   const [isExpanded, toggleExpansion] = useState(false);
   const [isScroll, toggleScrolled] = useState(false);
-  const wlp = window.location.pathname
+  const location = useLocation();
+  var wlp = location.pathname
 
   useEffect( () => {
     function handleScroll() {
@@ -167,6 +170,7 @@ Header.propTypes = {
   siteTitle: PropTypes.string,
   type: PropTypes.string,
   children: PropTypes.any,
+  location: PropTypes.any,
 }
 
 Header.defaultProps = {

@@ -10,7 +10,6 @@ import PastEvents from "../components/events/pastEvents"
 import PastEventsBlog from "../components/events/pastEventsBlog"
 import moment from "moment"
 
-
 const events = ({data: {eventBrite, pastEvent, pastEventBlog}}) => {
 
   const [currentDate, setDate] = useState(moment().format('ddd DD MMMM YYYY, hh:mm A'));
