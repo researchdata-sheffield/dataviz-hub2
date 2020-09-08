@@ -171,7 +171,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
               
         {/* main mdx content  */}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-68 2xl:pr-52`: `lg:px-60 2xl:px-82`} mx-auto container pt-6 pb-16 px-3 leading-7 text-xl`} style={{color: '#24292e'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-68 2xl:pr-52`: `lg:px-44 xl:px-56 2xl:px-82`} mx-auto container pt-6 pb-16 px-3 leading-7 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
                           hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, 
