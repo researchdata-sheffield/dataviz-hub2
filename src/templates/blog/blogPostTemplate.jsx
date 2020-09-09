@@ -43,34 +43,35 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   useEffect(() => {
     function handleTOC() {
-        const observer = new IntersectionObserver(entries => {
-          entries.forEach(entry => {
-            //console.log(entry)
-            //var url = entry.target.baseURI;
-            //var id = url.substring(url.indexOf("#")+1,)
-            var id = entry.target.getAttribute('id');
-            //console.log(id)
-            if (entry.intersectionRatio > 0) {
-              document.querySelector(`.TOC li a[href="#${id}"]`).parentElement.classList.add('active');
-  
-            } else {
-              document.querySelector(`.TOC li a[href="#${id}"]`).parentElement.classList.remove('active');
-            }
-          });
-        });
-      
-        // Track all headings that have an `id` applied, .mdxBody class is appened in MDXprovider
-        document.querySelectorAll('.mdxBody h1[id], .mdxBody h2[id], .mdxBody h3[id]').forEach((heading) => {
-          observer.observe(heading);
-        });
-    }
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          //console.log(entry)
+          //var url = entry.target.baseURI;
+          //var id = url.substring(url.indexOf("#")+1,)
+          var id = entry.target.getAttribute('id');
+          var element = document.querySelector(`.TOC li a[href="#${id}"]`)
+          if(element === null) return;
 
-    document.addEventListener('scroll', handleTOC);
+          if (entry.intersectionRatio > 0) {
+            element.parentElement.classList.add('active');
+
+          } else {
+            element.parentElement.classList.remove('active');
+          }
+        });
+      });
+    
+      // Track all headings that have an `id` applied, .mdxBody class is appened in MDXprovider
+      document.querySelectorAll('.mdxBody h1[id], .mdxBody h2[id], .mdxBody h3[id]').forEach((heading) => {
+        observer.observe(heading);
+      });
+    }
+    if(location.pathname.includes("blog/")) document.addEventListener('DOMContentLoaded', handleTOC());
 
     return () => {
-      document.removeEventListener('scroll', handleTOC);
+      document.removeEventListener('DOMContentLoaded', handleTOC());
     }
-  }, [])
+  }, [location])
 
 
   //Redering table of content
