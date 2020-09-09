@@ -1,16 +1,16 @@
 import React from "react"
 import kebabCase from "lodash.kebabcase"
 import { graphql } from "gatsby"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
-import Pagination from "../components/blog/pagination"
-import BlogPostGrid from "../components/blog/blogPostGrid"
-import MenuCategory from "../components/blog/menuCategory"
-import MenuTagSlide from "../components/blog/menuTagSlide"
-import MenuTag from "../components/blog/menuTag"
+import Header from "../../components/shared/header"
+import Footer from "../../components/shared/footer"
+import Pagination from "../../components/blog/pagination"
+import BlogPostGrid from "../../components/blog/blogPostGrid"
+import MenuCategory from "../../components/blog/menuCategory"
+import MenuTagSlide from "../../components/blog/menuTagSlide"
+import MenuTag from "../../components/blog/menuTag"
 import PropTypes from "prop-types"
-import SEO from "../components/shared/seo"
-import BackgroundSection from "../components/images/blog_background";
+import SEO from "../../components/shared/seo"
+import BackgroundSection from "../../components/images/blog_background";
 
 
 const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
@@ -35,7 +35,7 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 			<div className="flex flex-wrap-reverse">
 				<div className="w-full">
 					<BlogPostGrid allMdx = {allMdx} />
-					<Pagination numPages = {pageContext.numPages} currentPage = {pageContext.currentPage} pageType = {`/blog/category/${kebabCase(pageContext.tag)}`} />
+					<Pagination numPages = {pageContext.numPages} currentPage = {pageContext.currentPage} pageType = {`/blog/category/${kebabCase(pageContext.category)}`} />
 				</div>
 				<MenuTag pageContext = {pageContext} />
 				<MenuTagSlide pageContext = {pageContext} />

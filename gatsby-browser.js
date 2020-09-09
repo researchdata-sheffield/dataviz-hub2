@@ -1,5 +1,6 @@
 /**
  * Implement Gatsby's Browser APIs in this file.
+ * This file is ONLY run on the client side
  *
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */

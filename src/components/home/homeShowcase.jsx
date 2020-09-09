@@ -9,12 +9,12 @@ import { ButtonWithArrow } from "../style/styled"
 const HomeShowcase = () => {
 
   return (
-    <div className="relative overflow-hidden bg-black w-full">
-      <h1 className="absolute left-0 text-white text-2xl font-semibold transform -rotate-90 -ml-20 mt-60">ORDA.SHEF.AC.UK</h1>
+    <div className="relative overflow-hidden bg-gray-900 w-full">
+      <h1 className="absolute left-0 text-white text-3xl font-semibold transform rotate-90 -ml-24 mt-60">ORDA.SHEF.AC.UK</h1>
       <div id="home_showcase" />      
-      <BackgroundTwo className="ipadp:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-12 transition duration-500">
+      <BackgroundTwo className="ipadp:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-16 transition duration-500">
         <div className="flex flex-wrap justify-start">
-          <div className="lg:w-1/2 py-24 flex flex-wrap px-3 ipadp:pr-20 ipadp:pl-10">
+          <div className="lg:w-1/2 py-24 flex flex-wrap px-3 ipadp:pr-20 ipadp:ml-24">
             <Fade duration={1300} right>
             <div className="text-5xl 2xl:text-6xl font-semibold text-white" style={{textShadow: "#000000 0px 0px 0px", fontFamily: "TUoS Stephenson"}}>SHOWCASE</div>
             <div className="2xl:text-lg my-4 text-white font-semibold" style={{textShadow: "#8d8d8d 0px 0px 3px"}}>
@@ -30,18 +30,20 @@ const HomeShowcase = () => {
         
       </BackgroundTwo>
       
-      <div className="ipadp:min-h-40 flex flex-wrap pt-8 pb-56 ipadp:pt-24 ipadp:pb-82 items-center justify-center" style={{background: '#fcfcfc'}}>
+      <div className="lg:min-h-40 flex flex-wrap pt-8 pb-56 lg:pt-24 lg:pb-82 items-center justify-center" style={{background: '#fcfcfc'}}>
         <div className="lg:w-6/12 lg:pl-8 transform hover:scale-110 transition duration-500">
           <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
         </div>
         <Zoom cascade duration={1300}>
-        <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center">
-          <h1 className="text-2xl ipadp:text-4xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUoS Stephenson"}}>ORDA User Regions</h1>
-          <p className="text- gray-600">ORDA has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
+        <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center pb-16">
+          <h1 className="text-5xl lg:text-6xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUoS Stephenson"}}>ORDA User Regions</h1>
+          <p className="text-gray-800 2xl:text-lg">ORDA has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>
-          <a className="mt-8" href="https://orda.shef.ac.uk" target="_blank" rel="noopener noreferrer">
-            <ButtonWithArrow external className="group hover:bg-white hover:shadow-2xl hover:text-highlight_2 transition duration-500 ease-in-out">Go to ORDA</ButtonWithArrow>
+          <a className="mt-12" href="https://orda.shef.ac.uk" target="_blank" rel="noopener noreferrer">
+            <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 bg-gray-200 hover:text-gray-700 hover:bg-gray-300 text-gray-700 mt-0 text-lg">
+              Go to ORDA
+            </ButtonWithArrow>
           </a>
         </div>
         </Zoom>

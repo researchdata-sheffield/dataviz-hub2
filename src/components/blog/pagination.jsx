@@ -5,33 +5,40 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
 
 const Pagination = ({numPages, currentPage, pageType}) => {
 
+  const paginationButton = "flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow"
+
   /* pageType :
     1. `/blog`
     2. `/blog/category/${kebabCase(cat)}`
     3. `/blog/tag/${kebabCase(tag)}`
   */
-
   function handleChange(e) {
 		const page_no = e.target.value;
-		if(page_no != 1){
+		if(page_no != 1) {
 			navigate(`${pageType}/page/${page_no}`);
 		} else { 
 			navigate(`${pageType}`);
 		}
-	}
+  }
+  
+  function handlePage(type) {
+    if(numPages === 1) return `${pageType}/page/${currentPage}`
+    if(type === "Newer") {
+      return (currentPage === 1 || currentPage === 2) ? `${pageType}` : `${pageType}/page/${currentPage - 1}`
+    }
+    if(type === "Older") {
+      return currentPage === numPages  ? `${pageType}/page/${currentPage}` : `${pageType}/page/${currentPage + 1}`
+    } 
+  }
 
   return (
     <div className="flex flex-wrap justify-between mt-5 mb-10 lg:mb-24">
       {/* Pagination buttons */}
       <div className="flex flex-wrap items-center mx-auto">
-        <Link to={ `${ numPages === 1 ? `${pageType}/page/${currentPage}` : [ (currentPage === 1 || currentPage === 2)  ? `${pageType}` : `${pageType}/page/${currentPage -1}` ] }` } 
-          className={`${numPages === 1 ? `hidden` : [currentPage === 1 ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow mr-4`}
-        >
-          <FaArrowAltCircleLeft className="mr-3" /> Newer posts
+        <Link to={handlePage("Newer")} className={`${numPages === 1 ? `hidden` : [currentPage === 1 ? `hidden` : ``]} mr-4` + paginationButton} >
+          <FaArrowAltCircleLeft className="mr-3 inline-block" /> Newer posts
         </Link>
-        <Link to={ `${ numPages === 1 ? `${pageType}/page/${currentPage}` : [ currentPage === numPages  ? `${pageType}/page/${currentPage}` : `${pageType}/page/${currentPage +1}`] }`}
-          className={`${numPages === 1 ? `hidden` : [currentPage === numPages ? `hidden` : ``]} flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow`}
-        >
+        <Link to={handlePage("Older")} className={`${numPages === 1 ? `hidden` : [currentPage === numPages ? `hidden` : ``]} ` + paginationButton} >
           Older posts <FaArrowAltCircleRight className="ml-3" />
         </Link>
       </div>

@@ -1,18 +1,18 @@
-import React from "react"
+import React, { useEffect } from "react"
 import PropTypes from "prop-types"
-import SEO from "../components/shared/seo"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
+import SEO from "../../components/shared/seo"
+import Header from "../../components/shared/header"
+import Footer from "../../components/shared/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, withPrefix } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table, LPItem, LPWrap } from "../components/style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table, LPItem, LPWrap } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
-import PaginationPost from "../components/blog/paginationPost"
-import {CatBtn, TagBtn} from "../components/style/styled"
-import Scrollspy from 'react-scrollspy'
+import PaginationPost from "../../components/blog/paginationPost"
+import {CatBtn, TagBtn} from "../../components/style/styled"
+//import Scrollspy from 'react-scrollspy'
 import "katex/dist/katex.min.css"
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import Fade from "react-reveal/Fade"
@@ -21,7 +21,7 @@ import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
 import GitalkComponent from "gitalk/dist/gitalk-component";
 import { useLocation } from "@reach/router"
-import { useScript } from "../utils/shared"
+import { useScript } from "../../utils/hooks/useScript"
 
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
@@ -41,30 +41,62 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const tableOfContent = disableTOC === "true" ? null : mdx.tableOfContents
   
 
+  useEffect(() => {
+    function handleTOC() {
+        const observer = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            //console.log(entry)
+            //var url = entry.target.baseURI;
+            //var id = url.substring(url.indexOf("#")+1,)
+            var id = entry.target.getAttribute('id');
+            //console.log(id)
+            if (entry.intersectionRatio > 0) {
+              document.querySelector(`.TOC li a[href="#${id}"]`).parentElement.classList.add('active');
+  
+            } else {
+              document.querySelector(`.TOC li a[href="#${id}"]`).parentElement.classList.remove('active');
+            }
+          });
+        });
+      
+        // Track all headings that have an `id` applied, .mdxBody class is appened in MDXprovider
+        document.querySelectorAll('.mdxBody h1[id], .mdxBody h2[id], .mdxBody h3[id]').forEach((heading) => {
+          observer.observe(heading);
+        });
+    }
+
+    document.addEventListener('scroll', handleTOC);
+
+    return () => {
+      document.removeEventListener('scroll', handleTOC);
+    }
+  }, [])
+
+
   //Redering table of content
   const renderItem = (item) => (
-    <li key={item.title} className="pb-2">
+    <li key={item.title} className="pb-2 list-none">
       {/* Heading */}
-      <a href={item.url}><p>{item.title}</p></a>
+      <a href={item.url} className="inline-block"><p>{item.title}</p></a>
       {/* Sub-heading */}
-      { item.items ? (<ul className="pl-2">{item.items.map(renderSubItem)}</ul>) : <a></a> }
+      { item.items ? (<ul className="pl-2">{item.items.map(renderSubItem)}</ul>) : <></> }
     </li>
   ); 
 
   const renderSubItem = (item) => (
-    <li key={item.title} className="pt-2">
-      { item.url ? <a href={item.url}>&bull; {item.title}</a> : <p></p> }
-      { item.items ? ( <ul className="pl-2">{item.items.map(renderSubItem)}</ul>) : <a></a> }
+    <li key={item.title} className="pt-2 list-none">
+      { item.url ? <a href={item.url}> {item.title}</a> : <></> }
+      { item.items ? ( <ul className="pl-2">{item.items.map(renderSubItem)}</ul>) : <></> }
     </li>
   ); 
 
   //Return an list of toc items 
-  const tocHighlight = (toc) => {
-    const itemList = [];
-    const scrollItem = (item) => ( item.items ? item.items.map(scrollItem) : itemList.push(`${item.url.substring(1,)}`) );
-    toc.items.map(scrollItem)
-    return itemList
-  };
+  // const tocHighlight = (toc) => {
+  //   const itemList = [];
+  //   const scrollItem = (item) => ( item.items ? item.items.map(scrollItem) : itemList.push(`${item.url.substring(1,)}`) );
+  //   toc.items.map(scrollItem)
+  //   return itemList
+  // };
 
   const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
   const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
@@ -124,16 +156,16 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>
       </Fade>
 
+      {/* body */}
       <div className="flex flex-wrap relative lg:px-10 2xl:px-48 pt-10">
-        
         {/* desktop share buttons */}
         <div className="left-0 top-0 sticky hidden lg:block z-10">
           <Fade left cascade delay={1000} duration={1300}>   
             <div className="flex flex-col text-xs" style={{maxWidth: "40px", height: "0", overflow: "visible"}}>
-              <Twitter data-for="share_twitter" data-tip="" title="" className="greyScale-100 hover:greyScale-0 mt-28 transition duration-500" solid small message={shareMessage} link={shareLink} />
-              <Facebook data-tip="" data-for="share_facebook" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small link={shareLink} />
-              <Mail data-tip="" data-for="share_email" title="" className="hover:bg-red-600 transition duration-500" solid small subject={shareMessage} link={shareLink} />
-              <Linkedin data-tip="" data-for="share_linkedin" title="" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small message={shareMessage} link={shareLink} />
+              <Twitter data-for="share_twitter" data-tip="" className="greyScale-100 hover:greyScale-0 mt-28 transition duration-500" solid small message={shareMessage} link={shareLink} />
+              <Facebook data-tip="" data-for="share_facebook" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small link={shareLink} />
+              <Mail data-tip="" data-for="share_email" className="hover:bg-red-600 transition duration-500" solid small subject={shareMessage} link={shareLink} />
+              <Linkedin data-tip="" data-for="share_linkedin" className="greyScale-100 hover:greyScale-0 transition duration-500" solid small message={shareMessage} link={shareLink} />
               <hr className="my-3" />
               <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}}>
                 <div className="m-2 mt-1 bg-transparent text-black flex justify-center rounded-md text-xl transition duration-500"><RiEditBoxLine /></div>
@@ -148,8 +180,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           </Fade> 
         </div>   
 
-
-        {/* mobile: toc & share buttons */}
+        {/* mobile: table of content & share buttons */}
         <div className="w-full shadow-lg flex flex-wrap justify-center -mt-12 lg:mt-0" style={{backgroundColor: '#f3f3f3'}}>
           <div className="flex flex-col text-sm justify-center items-center w-1/4 py-2 lg:hidden ml-10" style={{maxWidth: '50px'}}>
             <Twitter solid small message={shareMessage} link={shareLink} />
@@ -162,16 +193,12 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           </div>    
           <div className={` ${ tableOfContent && tableOfContent.items ? `pt-8 pb-5`: ``} mx-auto overflow-auto text-black lg:hidden px-2`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">TABLE OF CONTENTS</p>}
-              { tableOfContent && tableOfContent.items && 
-                <Scrollspy className="text-gray-900" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
-                  {tableOfContent.items.map(renderItem)}
-                </Scrollspy>
-              }      
+              { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }      
           </div>       
         </div>   
               
         {/* main mdx content  */}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-68 2xl:pr-52`: `lg:px-44 xl:px-56 2xl:px-82`} mx-auto container pt-6 pb-16 px-3 leading-7 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-68 2xl:pr-52 mdxBody`: `lg:px-44 xl:px-56 2xl:px-82`} mx-auto container pt-6 pb-16 px-3 leading-7 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
                           hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, 
@@ -187,13 +214,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/* sidebar toc: hidden in mobile */}
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
           { tableOfContent && tableOfContent.items && <p className="font-bold mb-4 pb-2 text-gray-800" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>}
-        
-          <div className="px-1 text-sm">
-          { tableOfContent && tableOfContent.items && 
-            <Scrollspy className="text-gray-700" currentClassName="" scrolledPastClassName="" items={tocHighlight(tableOfContent)}>
-              {tableOfContent.items.map(renderItem)}
-            </Scrollspy>
-          }
+  
+          <div className="px-1 text-sm TOC">
+          { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }
           </div>      
         </div>  
       </div>       

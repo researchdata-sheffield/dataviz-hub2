@@ -38,6 +38,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `docs`,
+        path: `${__dirname}/content/docs`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: 'author',
         path: `./src/author`,
       },
@@ -50,7 +58,7 @@ module.exports = {
         // Apply gatsby-mdx to both .mdx and .md files
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve('./src/templates/blogPostTemplate.jsx'),
+          default: require.resolve('./src/templates/blog/blogPostTemplate.jsx'),
         },
         plugins: [
           `gatsby-remark-prismjs`
@@ -93,7 +101,7 @@ module.exports = {
               exclude: "Table of Contents",
               tight: false,
               fromHeading: 1,
-              toHeading: 6
+              toHeading: 3
             }
           },
           {

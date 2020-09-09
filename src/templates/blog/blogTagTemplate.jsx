@@ -1,15 +1,15 @@
 import React from "react"
 import { graphql } from "gatsby"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
-import Pagination from "../components/blog/pagination"
-import BlogPostGrid from "../components/blog/blogPostGrid"
-import MenuTagSlide from "../components/blog/menuTagSlide"
-import MenuCategory from "../components/blog/menuCategory"
-import MenuTag from "../components/blog/menuTag"
+import Header from "../../components/shared/header"
+import Footer from "../../components/shared/footer"
+import Pagination from "../../components/blog/pagination"
+import BlogPostGrid from "../../components/blog/blogPostGrid"
+import MenuTagSlide from "../../components/blog/menuTagSlide"
+import MenuCategory from "../../components/blog/menuCategory"
+import MenuTag from "../../components/blog/menuTag"
 import PropTypes from "prop-types"
-import SEO from "../components/shared/seo"
-import BackgroundSection from "../components/images/blog_background";
+import SEO from "../../components/shared/seo"
+import BackgroundSection from "../../components/images/blog_background";
 import kebabCase from "lodash.kebabcase"
 
 

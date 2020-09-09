@@ -207,3 +207,14 @@ Home Search bar & animation
     -webkit-text-fill-color: transparent;
   }
 }
+
+
+.TOC {
+  & li > a {
+    color: rgb(155, 155, 155);
+  }
+  & li.active > a {
+    color: rgb(66, 66, 66);
+    font-weight: 600;
+  }
+}

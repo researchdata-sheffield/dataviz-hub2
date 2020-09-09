@@ -23,7 +23,7 @@ const HomeCommunity = () => {
         </div>
       </Fade>
       
-      <div className="flex flex-wrap text-gray-700 pt-10 pb-20 justify-center">
+      <div className="flex flex-wrap text-gray-700 -mt-16 pb-20 justify-center">
         <div className={cardClasses}>
           <Zoom bottom duration={700} delay={300}>
             <RiCalendarEventLine className="text-3xl group-hover:text-red-700" />
