@@ -218,7 +218,7 @@ export const query = graphql`
       allMdx(
         filter: {frontmatter: { hide: {ne: "true"}}}, 
         sort: {order: DESC, fields: frontmatter___date}, 
-        limit: 6 ) {
+        limit: 8 ) {
       ...MdxEdge
     }
     

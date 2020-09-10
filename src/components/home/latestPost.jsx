@@ -9,14 +9,19 @@ import { getImageSource, shortenText } from "../../utils/shared"
 
 
 const latestPost = ({ latestPost }) => {
-
+  var count = 0
   return (
     
     <div className="w-full flex flex-wrap" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
-      {latestPost.edges.map(({ node }) => { 
-        let imagesrc = getImageSource(node);
-          let description = shortenText(node.frontmatter.description, 40)
+      {latestPost.edges.map(({ node }) => {
+        // exclude first two featured posts
+        if(node.frontmatter.featured === "true") {
+          count = count + 1
+          if(count <=2) return;
+        }
 
+        let imagesrc = getImageSource(node);
+        let description = shortenText(node.frontmatter.description, 40)
         let postDate = node.frontmatter.date
         postDate = postDate.substring(0, postDate.indexOf(" ", postDate.indexOf(" ") + 1))
 
@@ -36,6 +41,7 @@ const latestPost = ({ latestPost }) => {
                 </Link>
               </div>    
             </Fade>
+            
             {/* On hover, show details on the left */}
             <div className="bg-white hidden lg:block fixed left-0 top-0 opacity-0 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
                 style={{width: "33.333333%"}}
