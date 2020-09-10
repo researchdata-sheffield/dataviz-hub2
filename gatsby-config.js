@@ -35,14 +35,14 @@ module.exports = {
         ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `docs`,
-        path: `${__dirname}/content/docs`,
-        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-filesystem`,
+    //   options: {
+    //     name: `docs`,
+    //     path: `${__dirname}/content/docs`,
+    //     ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+    //   },
+    // },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
