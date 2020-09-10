@@ -22,9 +22,9 @@ const blogPostGrid = ({allMdx}) => {
           <div className="w-full md:w-1/3 xl:w-1/4 min-h-90 lg:min-h-110 2xl:max-h-90 overflow-hidden bg-white relative pb-10 2xl:pb-0">
             <Link className="group" to={node.fields.slug}>
               { node.frontmatter.featured === "true" && 
-                <div className="flex top-0 left-0 absolute ml-6 mt-6 text-yellow-300 ipadp:text-gray-300 group-hover:bg-black items-center" style={{zIndex: "3"}}>
+                <div className="flex top-0 left-0 absolute ml-6 mt-6 text-white bg-gray-900 lg:bg-transparent lg:text-gray-300 group-hover:bg-gray-800 items-center rounded-lg p-1" style={{zIndex: "3"}}>
                   <FaStar className="text-yellow-300 text-2xl" />
-                  <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake", textShadow: "#000000 0px 0px 20px"}}>Featured</p>
+                  <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake"}}>Featured</p>
                 </div>
               }
               <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 min-h-1/2 lg:min-h-3/5 lg:max-h-3/5 xl:min-h-1/2 xl:max-h-1/2"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
@@ -41,11 +41,10 @@ const blogPostGrid = ({allMdx}) => {
             <div className="px-6 2xl:px-8 text-xs" style={{color: '#848484', fontWeight: '400'}}>
               {node.frontmatter.category.map((cat) => (
                 <>
-                  <Link key={cat} className="font-semibold hover:underline" to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
+                  <Link key={cat} className="font-semibold hover:underline" to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link> 
                   <> · </> 
                 </>
               ))}
-              
               {tag.map((tagItem, i) => {
                 return (
                   i < 3 && 

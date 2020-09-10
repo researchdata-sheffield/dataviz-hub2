@@ -65,7 +65,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <Search_Home  />
             
             <Slide left>
-              <div className="hidden md:flex justify-center py-4 xl:py-8 z-10 w-full">
+              <div className="hidden md:flex justify-center pb-4 xl:pb-8 z-10 w-full">
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
@@ -91,7 +91,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Slide>
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 xl:text-lg xl:py-3 xl:px-8 bg-gray-200 text-gray-700 hover:text-gray-700 hover:bg-gray-300">Learn more</ButtonWithArrow>
+                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 xl:text-lg xl:py-3 xl:px-8 bg-gray-400 text-gray-700 hover:text-gray-700 hover:bg-gray-300">Learn more</ButtonWithArrow>
               </Fade>
             </Link>
             <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -216,7 +216,7 @@ export const query = graphql`
 
     latestPost: 
       allMdx(
-        filter: {frontmatter: {featured: {ne: "true"}, hide: {ne: "true"}}}, 
+        filter: {frontmatter: { hide: {ne: "true"}}}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 6 ) {
       ...MdxEdge

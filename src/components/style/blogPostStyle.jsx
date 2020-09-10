@@ -253,7 +253,14 @@ export const IMG = styled_twin.img`
   margin-left: auto;
   margin-right: auto;
 
-  ${tw`my-12`}
+  ${tw`mt-10 mb-6`}
+`
+
+export const EM = styled_twin.em`
+
+  img + br + & {
+    font-size: 1rem;
+  }
 `
 
 export const Table = styled.table`

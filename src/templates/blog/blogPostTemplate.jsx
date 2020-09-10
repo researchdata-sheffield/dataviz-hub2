@@ -1,27 +1,28 @@
 import React, { useEffect } from "react"
+import { graphql, withPrefix } from "gatsby"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import Header from "../../components/shared/header"
-import Footer from "../../components/shared/footer"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-import { graphql, withPrefix } from "gatsby"
-import kebabCase from "lodash.kebabcase"
 import Helmet from "react-helmet"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, Table, LPItem, LPWrap } from "../../components/style/blogPostStyle"
-import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
-import PaginationPost from "../../components/blog/paginationPost"
-import {CatBtn, TagBtn} from "../../components/style/styled"
-//import Scrollspy from 'react-scrollspy'
+import kebabCase from "lodash.kebabcase"
 import "katex/dist/katex.min.css"
-import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
-import Fade from "react-reveal/Fade"
-import Pulse from 'react-reveal/Pulse';
-import { RiEditBoxLine } from "react-icons/ri"
-import ReactTooltip from "react-tooltip";
-import GitalkComponent from "gitalk/dist/gitalk-component";
 import { useLocation } from "@reach/router"
 import { useScript } from "../../utils/hooks/useScript"
+
+import Header from "../../components/shared/header"
+import Footer from "../../components/shared/footer"
+import PaginationPost from "../../components/blog/paginationPost"
+import {CatBtn, TagBtn} from "../../components/style/styled"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, EM, Table, LPItem, LPWrap } from "../../components/style/blogPostStyle"
+import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
+import GitalkComponent from "gitalk/dist/gitalk-component";
+import Fade from "react-reveal/Fade"
+import Pulse from 'react-reveal/Pulse';
+import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
+import { RiEditBoxLine } from "react-icons/ri"
+import ReactTooltip from "react-tooltip";
+
 
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
@@ -140,8 +141,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             {author.map((authors) => (
               <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={authors.name} src={authors.avatar.childImageSharp.fluid.src}  />
             ))}
-            <div className="inline-block px-2 text-left font-bold" style={{textShadow: "#000 0px 0px 5px"}}>
-              <h1 className="text-sm xl:text-base pb-1">
+            <div className="inline-block px-2 text-left font-semibold" style={{textShadow: "black 0px 0px 15px"}}>
+              <h1 className="text-sm xl:text-base">
                 {author.map((authors, idx) => ( (author.length === idx + 1) ? authors.name : authors.name + " · " ))}
               </h1>
               <h1 className="text-xs xl:text-sm">{date} · {mdx.fields.readingTime.text}</h1>
@@ -197,12 +198,12 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }      
           </div>       
         </div>   
-              
-        {/* main mdx content  */}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-68 2xl:pr-52 mdxBody`: `lg:px-44 xl:px-56 2xl:px-82`} mx-auto container pt-6 pb-16 px-3 leading-7 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
+   
+        {/******** main mdx content  ***********/}
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-68 2xl:pr-52 mdxBody`: `lg:px-44 xl:px-56 2xl:px-82`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
-                          hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, 
+                          hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, 
                           img: IMG, table: Table, Accordion: Accordion, AccordionItem: AccordionItem, 
                           AccordionItemHeading: AccordionItemHeading, AccordionItemButton: AccordionItemButton, 
                           AccordionItemPanel: AccordionItemPanel, LPWrap: LPWrap, LPItem: LPItem
@@ -214,8 +215,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
         {/* sidebar toc: hidden in mobile */}
         <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
-          { tableOfContent && tableOfContent.items && <p className="font-bold mb-4 pb-2 text-gray-800" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>}
-  
+          <p className="font-bold mb-4 pb-2 text-gray-800" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>
           <div className="px-1 text-sm TOC">
           { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }
           </div>      

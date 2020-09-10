@@ -19,7 +19,7 @@ class Search extends Component {
 
   componentDidMount = () => {
     setTimeout(() => {
-      if(this.props.location.state.searchWord !== undefined) {
+      if(this.props.location.state && this.props.location.state.searchWord) {
         var queryHome = this.props.location.state.searchWord
         var input = document.getElementById("pageSearch")
         this.setState({query: queryHome})
@@ -96,7 +96,7 @@ class Search extends Component {
                             })}
                             {item.tag.length > 3 && <p className="inline-block text-white"> +{item.tag.length - 3} more</p>}
                           </h1>
-                          <p className="hidden group-hover:block my-4 text-xxs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName={highlightClasses} textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
+                          <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName={highlightClasses} textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
                           <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName={highlightClasses} textToHighlight={description} searchWords={this.state.query.split()} /></h1>      
                         </div>
                       </div>
@@ -132,7 +132,7 @@ class Search extends Component {
 
     return (
       <div className={`${this.props.classNames} relative text-gray-700 w-full text-center`}>
-        <div className="min-h-90 pt-40 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
+        <div className="min-h-60 pt-40 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
           <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-3 font-semibold">Search@dataviz.shef</p></Zoom>
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
