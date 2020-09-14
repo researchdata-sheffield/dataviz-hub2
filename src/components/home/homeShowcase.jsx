@@ -36,7 +36,7 @@ const HomeShowcase = () => {
         </div>
         <Zoom cascade duration={1300}>
         <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center pb-16">
-          <h1 className="text-5xl lg:text-6xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUoS Stephenson"}}>ORDA User Regions</h1>
+          <h1 className="text-4xl lg:text-5xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUoS Stephenson"}}>ORDA User Regions</h1>
           <p className="text-gray-800 2xl:text-lg">ORDA has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>

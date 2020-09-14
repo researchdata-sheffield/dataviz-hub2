@@ -210,11 +210,13 @@ Home Search bar & animation
 
 
 .TOC {
+
   & li > a {
-    color: rgb(187, 187, 187);
+    color: rgb(158, 158, 158);
+    transition: .5s ease;
   }
   & li.active > a {
-    color: rgb(49, 49, 49);
+    color: rgb(34, 34, 34);
     font-weight: 600;
   }
 }
