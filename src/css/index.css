@@ -73,7 +73,9 @@ a, div, p, h1, h2, h3, h4, h5, h6 {
 ::-moz-selection { background: #00aeef; color: white }
 ::selection { background: #00aeef; color: white }
 
-
+textarea::placeholder {
+  color: #404040;
+}
 
 /**
  * This injects all of Tailwind's utility classes, generated based on your

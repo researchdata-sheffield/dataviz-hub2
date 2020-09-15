@@ -40,8 +40,8 @@ const RelatedPost = (props) => {
 
           return (
             <Link className="w-10/12 md:w-1/3 lg:w-3/10 mx-3 lg:mx-5 my-6 lg:px-2" to={node.fields.slug} key={node.id}>
-              <div style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", maxHeight: "600px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-60 md:min-h-40 lg:min-h-60 2xl:min-h-40 transform hover:scale-105 transition duration-500">
-                <div className="min-h-60 md:min-h-40 lg:min-h-60 2xl:min-h-40 w-full p-6 transition duration-700 bg-black-25 group-hover:bg-black-75 relative" style={{borderRadius: "15px", maxHeight: "550px"}}>
+              <div style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", maxHeight: "500px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-60 md:min-h-40 lg:min-h-50 2xl:min-h-40 transform hover:scale-105 transition duration-500">
+                <div className="min-h-60 md:min-h-40 lg:min-h-50 2xl:min-h-40 w-full p-6 transition duration-700 bg-black-25 group-hover:bg-black-75 relative" style={{borderRadius: "15px", maxHeight: "500px"}}>
                   <div className="absolute pt-8 lg:pt-16 2xl:pt-24 px-3 lg:px-8 overflow-hidden top-0 left-0" style={{maxWidth: '97%', textShadow: '0px 1px 7px #757575'}}>
                     <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
                       {title}

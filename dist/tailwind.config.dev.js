@@ -1,18 +1,18 @@
+"use strict";
+
 // See https://tailwindcss.com/docs/configuration for details 
 module.exports = {
-  important: '#website',  //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
+  important: '#website',
+  //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
   purge: {
-    content: [
-      './src/**/*.jsx',
-      './content/blog/**/*.mdx'
-    ]
+    content: ['./src/**/*.jsx', './content/blog/**/*.mdx']
   },
   theme: {
     extend: {
       screens: {
         'ipadp': '1030px',
         'xl': '1281px',
-        '2xl': '1441px',
+        '2xl': '1441px'
       },
       backgroundColor: {
         'footer': '#414042',
@@ -26,15 +26,14 @@ module.exports = {
         'black-35': 'rgba(0, 0, 0, .35)',
         'black-45': 'rgba(0, 0, 0, .45)',
         'black-75': 'rgba(0, 0, 0, .75)',
-        'black-85': 'rgba(0, 0, 0, .85)',
-
+        'black-85': 'rgba(0, 0, 0, .85)'
       },
       borderColor: {
         'highlight_2': '#00aeef',
         'menu_red': '#ff5e5e',
         'menu_yellow': '#f3f218',
         'menu_green': '#99f318',
-        'black': '#000',
+        'black': '#000'
       },
       borderRadius: {
         'xl': '0.675rem',
@@ -51,12 +50,11 @@ module.exports = {
         '6': '6px',
         '7': '7px',
         '15': '15px',
-        '7vh': '7vh',
-
+        '7vh': '7vh'
       },
       boxShadow: {
         'c1': '0px 12px 15px 0px #C8C4C1',
-        'c2': '0px 12.3px 15.37px 0px #3A3631',
+        'c2': '0px 12.3px 15.37px 0px #3A3631'
       },
       fontSize: {
         'xxs': '.65rem',
@@ -67,7 +65,7 @@ module.exports = {
         '30px': '30px',
         '40px': '40px',
         '50px': '50px',
-        '60px': '60px',
+        '60px': '60px'
       },
       margin: {
         '-9': '-2.25rem',
@@ -106,7 +104,7 @@ module.exports = {
         '80vh': '80vh',
         '90vh': '90vh',
         '95vh': '95vh',
-        '100vh': '100vh',
+        '100vh': '100vh'
       },
       maxHeight: {
         '15': '15vh',
@@ -129,7 +127,7 @@ module.exports = {
         '1/2': '50%',
         '3/5': '60%',
         '3/4': '75%',
-        'full': '100%',
+        'full': '100%'
       },
       maxWidth: {
         '0': '0',
@@ -144,7 +142,7 @@ module.exports = {
         '55': '55vw',
         '60': '60vw',
         '70': '70vw',
-        '80': '80vw',
+        '80': '80vw'
       },
       minHeight: {
         '15': '15vh',
@@ -168,7 +166,7 @@ module.exports = {
         '1/2': '50%',
         '3/5': '60%',
         '3/4': '75%',
-        'full': '100%',
+        'full': '100%'
       },
       minWidth: {
         '0': '0',
@@ -186,7 +184,7 @@ module.exports = {
         '1/2': '50%',
         '3/4': '75%',
         '5/12': '41.6666666%',
-        'full': '100%',
+        'full': '100%'
       },
       padding: {
         '14': '3.5rem',
@@ -226,22 +224,21 @@ module.exports = {
         '80vh': '80vh',
         '90vh': '90vh',
         '95vh': '95vh',
-        '100vh': '100vh',
+        '100vh': '100vh'
       },
       scale: {
         '170': '1.7',
         '180': '1.8',
-        '200': '2',
+        '200': '2'
       },
       spacing: {
-        '110%': '110%',
-        
+        '110%': '110%'
       },
       textColor: {
         'highlight': '#337ab7',
         'highlight_2': '#00aeef',
         'highlight_2t': '#73d8ff',
-        'logo_blue': '#009fe3',
+        'logo_blue': '#009fe3'
       },
       transitionProperty: {
         'hover': 'hover, group-hover',
@@ -261,14 +258,12 @@ module.exports = {
         '6/10': '60%',
         '7/10': '70%',
         '8/10': '80%',
-        '9/10': '90%',
+        '9/10': '90%'
       },
       zIndex: {
         '-10': '-10'
       }
-
-    },
- 
+    }
   },
   variants: {
     textColor: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover', 'first', 'last', 'odd', 'even'],
@@ -276,11 +271,11 @@ module.exports = {
     borderColor: ['responsive', 'hover', 'group-hover', 'group-focus', 'first', 'last', 'odd', 'even'],
     borderWidth: ['responsive', 'hover', 'group-hover', 'group-focus', 'first', 'last', 'odd', 'even'],
     fontWeight: ['group-hover', 'first', 'last', 'odd', 'even'],
-    fontSize: ['responsive', 'hover', 'focus','group-hover', 'first', 'last', 'odd', 'even'],
+    fontSize: ['responsive', 'hover', 'focus', 'group-hover', 'first', 'last', 'odd', 'even'],
     display: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
     opacity: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
     zIndex: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
-    scale: ['responsive',  'focus', 'active', 'group-focus', 'hover', 'group-hover', 'first', 'last', 'odd', 'even'],
+    scale: ['responsive', 'focus', 'active', 'group-focus', 'hover', 'group-hover', 'first', 'last', 'odd', 'even'],
     transitionDuration: ['responsive', 'hover', 'focus', 'group-hover'],
     transitionProperty: ['responsive', 'hover', 'focus', 'group-hover'],
     transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover'],
@@ -290,5 +285,5 @@ module.exports = {
     translate: ['responsive', 'hover', 'focus', 'group-focus', 'active', 'group-hover', 'first', 'last', 'odd', 'even'],
     visibility: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover']
   },
-  plugins: [require("@tailwindcss/custom-forms")],
-}
+  plugins: [require("@tailwindcss/custom-forms")]
+};

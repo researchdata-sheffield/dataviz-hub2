@@ -135,7 +135,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <Mail className="hover:bg-red-600 transition duration-500" solid small subject={shareMessage} link={shareLink} />
               <Linkedin className="greyScale-100 hover:greyScale-0 transition duration-500" solid small message={shareMessage} link={shareLink} />
               <hr className="my-3" />
-              <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}}>
+              <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}} title="share on github">
                 <div className="m-2 mt-1 bg-transparent text-black flex justify-center rounded-md text-xl transition duration-500"><RiEditBoxLine /></div>
               </a>
 

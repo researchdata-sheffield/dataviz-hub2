@@ -137,7 +137,7 @@ class Search extends Component {
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
               <FiSearch className="inline-block text-center text-3xl -mt-1" />
-              <input id="pageSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Title, description, date..." />
+              <input id="pageSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Search title, description, date..." />
             </div>
           </Fade>
         </div>

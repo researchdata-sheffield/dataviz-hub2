@@ -58,11 +58,11 @@ const Footer = () => {
           </div>
             
           <div className="sm:w-1/3 pl-6">
-            <A_footer className="m-20" href="https://www.sheffield.ac.uk/"><img className="w-11/12" src={university_logo}></img></A_footer>
+            <A_footer className="m-20" href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo"><img className="w-11/12" src={university_logo}></img></A_footer>
             <div className="text-center justify-between w-11/12 text-gray-300">
-              <button className="mx-2"><A_footer href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"><FaGoogle /></A_footer></button>
-              <button className="mx-2"><A_footer href="https://join.slack.com/t/shef-dataviz/signup"><FaSlack /></A_footer></button>
-              <button className="mx-2"><A_footer href="mailto:rdm@sheffield.ac.uk"><MdEmail /></A_footer></button>
+              <button className="mx-2"><A_footer href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group"><FaGoogle /></A_footer></button>
+              <button className="mx-2"><A_footer href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack Channel"><FaSlack /></A_footer></button>
+              <button className="mx-2"><A_footer href="mailto:rdm@sheffield.ac.uk" title="contact us on email"><MdEmail /></A_footer></button>
             </div>
           </div>
         </div>

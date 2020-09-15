@@ -45,7 +45,7 @@ const Community = () => {
               <p className="text-highlight_2 text-5xl text-center py-3">Stay tuned!</p>
               <p className="py-6 text-gray-900">The most important part of the initiative is to build community around data visualisation, we hope to achieve this in a number of ways.</p>
               <p className="font-semibold pb-4">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
-              <img className="my-8 px-6" src={com_2} style={{borderRadius: "100%", minHeight: "55vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
+              <img className="my-8 px-6" src={com_2} style={{borderRadius: "100%", minHeight: "55vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} alt="Community image 1" />
               <p className="text-base"> We’ve started with a <Link_effect to="/community/#joinus">TUoS google group</Link_effect> which 
                 can be joined through a TUoS google account. 
                 We have also added <Link_effect to="/community/#joinus">slack channel</Link_effect> for more informal 
@@ -56,7 +56,7 @@ const Community = () => {
           </Fade>
           <Fade cascade duration={2000}>
             <div className="w-full lg:w-1/2 text-gray-900 text-lg px-5">
-              <img src={com_1} className="mt-8" style={{borderRadius: "3%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} />
+              <img src={com_1} className="mt-8" style={{borderRadius: "3%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} alt="Community image 2" />
               <p className="text-highlight_2 text-xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
               <h1>But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
                 <p className="pl-4"> <br />

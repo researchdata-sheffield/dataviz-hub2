@@ -65,7 +65,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <Search_Home  />
             
             <Slide left>
-              <div className="hidden md:flex justify-center pb-4 xl:pb-8 z-10 w-full">
+              <div className="hidden md:flex justify-center pb-6 xl:pb-8 z-10 w-full">
                 <div className="w-1/7 mr-24">
                   <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
@@ -81,10 +81,10 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                 <div className="w-1/7">
                   <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
                     <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
-                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }}>Chart</a></li>
-                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }}>Colour</a></li>
-                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Python"}}) }}>Python</a></li>
-                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistics"}}) }}>Statistics</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="javascript:void(0)">Chart</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="javascript:void(0)">Colour</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Python"}}) }} href="javascript:void(0)">Python</a></li>
+                      <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistics"}}) }} href="javascript:void(0)">Statistics</a></li>
                     </ul>
                 </div>
               </div>
@@ -117,7 +117,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
-                <div className="mt-10 group-hover:visible xl:invisible">
+                <div className="mt-10">
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
                     <AnimateButton external className="rounded-full py-2 px-4 bg-gray-700 text-white">Data Repository</AnimateButton>
                   </a>
@@ -143,7 +143,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
               <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
               <Link to="/blog">
-                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 bg-gray-200 hover:text-gray-700 hover:bg-gray-300 text-gray-700 mt-0 text-sm" link>
+                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 bg-gray-200 hover:text-gray-700 hover:bg-gray-300 text-gray-700 mt-0 text-sm" link title="read more on blog">
                   Read more
                 </ButtonWithArrow>
               </Link>
@@ -169,7 +169,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </p>
             </div>
             <Link to="/blog/22/03/2020/datavizhub_guide">
-              <ButtonWithArrow type="GreyButton" className="group">Read more</ButtonWithArrow>
+              <ButtonWithArrow type="GreyButton" className="group">Read more about data visualisation</ButtonWithArrow>
             </Link> 
           </div>
         </Fade>

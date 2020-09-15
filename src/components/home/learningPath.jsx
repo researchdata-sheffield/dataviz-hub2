@@ -11,8 +11,8 @@ import { ButtonWithArrow } from "../style/styled"
 const LearningPath = () => {
   const animationClasses = "transform transition duration-300 ease-in-out"
   const cardClasses = `${animationClasses} w-4/5 lg:w-1/5 flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-10 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-lg`
-  const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 opacity-100 group-hover:opacity-0`
-  const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 invisible group-hover:visible group-hover:opacity-100 opacity-0`
+  const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0`
+  const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-highlight_2 text-sm xl:text-base"
 
   return (
@@ -26,7 +26,7 @@ const LearningPath = () => {
       
       <div className="flex flex-wrap text-gray-800 pt-10 pb-32 justify-center">
         <Zoom bottom duration={700} delay={100}>
-          <div className={`${cardClasses} bg-gray-800 text-white`}>
+          <div className={`${cardClasses} bg-gray-800 text-white`} tabIndex="0">
             <div className={frontCard}>
               <FaUniversity className="w-full text-4xl xl:text-5xl" />
               <div className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Concept</div>
@@ -42,7 +42,7 @@ const LearningPath = () => {
           </div>
         </Zoom>
         <Zoom bottom duration={700} delay={250}>
-          <div className={`${cardClasses} bg-blue-700 text-white`}>
+          <div className={`${cardClasses} bg-blue-700 text-white`} tabIndex="0">
             <div className={frontCard}>
               <div className="flex flex-wrap justify-around text-4xl xl:text-5xl w-full">
                 <div><FaPython /></div>
@@ -61,7 +61,7 @@ const LearningPath = () => {
           </div>
         </Zoom>
         <Zoom bottom duration={700} delay={300}>
-          <div className={`${cardClasses} bg-white`}>
+          <div className={`${cardClasses} bg-white`} tabIndex="0">
             <div className={frontCard}>
               <FcWorkflow className="w-full text-4xl xl:text-5xl" />
               <h1 className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Workflows</h1>
