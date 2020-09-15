@@ -40,10 +40,10 @@ const About = () => {
               <p className="font-medium text-4xl leading-tight" style={{fontFamily: "TUoS Stephenson"}}>The<br />University<br />Library.</p>
             </a>
             <a className={logoStyle} href="https://www.sheffield.ac.uk/it-services" target="_blank" rel="noopener noreferrer">
-            <img src={ITS}/>
+            <img src={ITS} alt="IT Services site" />
             </a>
             <a className={logoStyle} href="https://rse.shef.ac.uk/" target="_blank" rel="noopener noreferrer">
-              <img src={RSE} />
+              <img src={RSE} alt="Research Software Engineering site" />
             </a>
           </Fade>
         </div>
@@ -63,7 +63,7 @@ const About = () => {
                 posters, grey literature and other non-traditional research outputs. As part of ORDA, we&apos;ve developed a data visualisation showcase site where researchers are able to host 
                 interactive data visualisations and also link them to reposited data in ORDA. 
               </p>
-              <a href="https://orda.shef.ac.uk/" target="_blank" rel="noopener noreferrer"><img src={ORDA} className="shadow-lg mx-auto" style={{maxWidth: "35vh"}} /></a>
+              <a href="https://orda.shef.ac.uk/" target="_blank" rel="noopener noreferrer"><img src={ORDA} className="shadow-lg mx-auto" style={{maxWidth: "35vh"}} alt="Online Research Data" /></a>
             </div>
             
             <p className="text-highlight_2 text-4xl py-8">Contribute</p>  

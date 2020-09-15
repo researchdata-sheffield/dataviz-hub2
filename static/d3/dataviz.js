@@ -67,8 +67,8 @@ function createMap(world, names, population) {
 			})
 			.on("mousemove",function(d){
 					tooltip.classed("hiddenTt", false)
-									.style("top", (d3.event.pageY + -460) + "px")
-									.style("left", (d3.event.pageX + 10) + "px")
+									.style("top", (d3.event.pageY + -490) + "px")
+									.style("left", (d3.event.pageX + -50) + "px")
 									.html(d.name + "<br/>" + "<p style='font-size: 13px'>Population: " + d.population + "</p><p style='font-size: 13px; margin-top: -10px'>Yearly change: " + d.Yearly_Change + "</p>");
 			})
 			.on("mouseout",function(d,i){

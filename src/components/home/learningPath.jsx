@@ -29,15 +29,15 @@ const LearningPath = () => {
           <div className={`${cardClasses} bg-gray-800 text-white`} tabIndex="0">
             <div className={frontCard}>
               <FaUniversity className="w-full text-4xl xl:text-5xl" />
-              <div className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Concept</div>
+              <div className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Introduction</div>
               <div className="text-sm mt-3 xl:text-lg">New to data visualisation and programming.</div>
             </div>
             <div className={backCard}>
-              <h1 className="font-bold mb-1 text-xl xl:text-2xl">Concept</h1>
+              <h1 className="font-bold mb-1 text-xl xl:text-2xl">Introduction</h1>
               <p className="text-sm xl:text-lg">Explore data visualisations through definitions, examples, videos, 
                 and relevant resources.
               </p>
-              <Link to="/blog/03/07/2020/LearningPath_Concept"><ButtonWithArrow className={moreBtn}>Learn concept</ButtonWithArrow></Link>
+              <Link to="/blog/03/07/2020/LearningPath_Concept"><ButtonWithArrow className={moreBtn}>Get started</ButtonWithArrow></Link>
             </div>
           </div>
         </Zoom>

@@ -186,3 +186,29 @@ Home Search bar & animation
   color: #222222;
   font-weight: 600;
 }
+
+/* 
+*  Accessibility statement
+*/
+.accAbt, h2.accAbt, h1.accAbt {
+  padding-left: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.3rem;
+  border-left: 1rem solid #11b1ff;
+  font-family: TUoS Stephensons;
+}
+
+h1.accAbt {
+  font-size: 2rem;
+  margin-top: 5rem;
+  border-left: 1.7rem solid #1961ae;
+}
+
+h2.accAbt {
+  font-size: 1.7rem;
+  font-family: TUoS Blake;
+}
+
+.accAbtSubItem {
+  padding-left: 2rem;
+}

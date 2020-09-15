@@ -21,6 +21,7 @@ const Footer = () => {
                 <li><Link className="text-gray-500 hover:text-highlight_2" to="/about">About</Link></li>
                 <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
                 <li><Link className="text-gray-500 hover:text-highlight_2" to="/privacy">Privacy Policy</Link></li>
+                <li><Link className="text-gray-500 hover:text-highlight_2" to="/accessibility">Accessibility</Link></li>
               </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
