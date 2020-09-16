@@ -37,7 +37,7 @@ const LearningPath = () => {
               <p className="text-sm xl:text-lg">Explore data visualisations through definitions, examples, videos, 
                 and relevant resources.
               </p>
-              <Link to="/blog/03/07/2020/LearningPath_Concept"><ButtonWithArrow className={moreBtn}>Get started</ButtonWithArrow></Link>
+              <Link to="/blog/03/07/2020/LearningPath_Introduction"><ButtonWithArrow className={moreBtn}>Get started</ButtonWithArrow></Link>
             </div>
           </div>
         </Zoom>
