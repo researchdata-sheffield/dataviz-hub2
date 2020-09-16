@@ -31,14 +31,17 @@ We are constantly looking for new ideas and suggestions for events, workshops or
 
  - <a href="#contributing">Contributing</a>
  - <a href="#code-of-conduct">Code of conduct</a>
-
-## Contribute blog post
-To contribute, please visit the [guide](https://dataviz.shef.ac.uk/blog/22/03/2020/contribute_blog_post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
-
+ - <a href="#note">Note</a>
 
 
 ## Contributing
-See [CONTRIBUTING.md](./CONTRIBUTING.md)
+See [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+
+## Code of Conduct
+We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+
+
+## Note
 
 ### Useful resources
 
@@ -73,5 +76,3 @@ A list of extensions installed:
   - Color Pick
   - CSS Peek
 
-## Code of Conduct
-We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
