@@ -12,7 +12,7 @@ const AccessibilityPage = () => (
     />
     <Header />
 
-    <div className="items-center justify-center bg-white py-24 min-h-70">
+    <div className="items-center justify-center bg-white pt-2 pb-24 min-h-70 border-t-7vh border-black">
       <div className="text-black px-4 pb-10 lg:px-24 container mx-auto">
         <h1 className="accAbt text-5xl">Accessibility Statement</h1>
         <p>This <b>accessibility statement</b> applies to <A href="https://dataviz.shef.ac.uk"><b>https://dataviz.shef.ac.uk</b></A>.</p>
