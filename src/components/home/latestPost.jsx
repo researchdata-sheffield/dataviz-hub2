@@ -29,7 +29,7 @@ const latestPost = ({ latestPost }) => {
           <div key={node.id} className="group w-full relative z-20 border-t-1 border-transparent first:border-gray-900" tabIndex="0">
             <Fade  key={node.id} duration={1000} fraction={0.1}>
               <div className="w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
-                <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-3 lg:px-10 py-4">
+                <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-10 py-4">
                   <div className="flex flex-wrap items-center">
                     <MdFiberNew className="text-red-700 ipadp:text-white group-hover:text-red-700 text-3xl" />
                     {node.frontmatter.category.map((cat) => (

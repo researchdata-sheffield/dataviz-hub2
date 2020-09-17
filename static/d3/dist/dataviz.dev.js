@@ -52,7 +52,7 @@ function createMap(world, names, population) {
     d3.select(this).attr("fill", "#00b2ec").attr("stroke-width", 2);
     return tooltip.style("hidden", false).html(d.name + "<br/>" + d.population);
   }).on("mousemove", function (d) {
-    tooltip.classed("hiddenTt", false).style("top", d3.event.pageY + -490 + "px").style("left", d3.event.pageX + -50 + "px").html(d.name + "<br/>" + "<p style='font-size: 13px'>Population: " + d.population + "</p><p style='font-size: 13px; margin-top: -10px'>Yearly change: " + d.Yearly_Change + "</p>");
+    tooltip.classed("hiddenTt", false).html(d.name + "<br/>" + "<p style='font-size: 13px'>Population: " + d.population + "</p><p style='font-size: 13px; margin-top: -10px'>Yearly change: " + d.Yearly_Change + "</p>").style("left", d3.event.pageX - 290 + "px").style("top", d3.event.pageY - 550 + "px");
   }).on("mouseout", function (d, i) {
     d3.select(this).attr("fill", "#535353").attr("stroke-width", 1);
     tooltip.classed("hiddenTt", true);

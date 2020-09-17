@@ -17,7 +17,7 @@ import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/animation.gif"
 import { ButtonWithArrow, AnimateButton } from "../components/style/styled"
 import ReactTooltip from "react-tooltip"
-import bg from "../images/home/earth.jpg"
+//import bg from "../images/home/earth.jpg"
 
 
 
@@ -48,7 +48,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
     <div className="bg-white">
       <SEO 
         title="Data Visualisation Hub" 
-        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "data analytics"]} 
+        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "data analytics", "UK"]} 
       />
       <Header />
 
@@ -157,12 +157,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       {/* End of top page */}     
 
       <div id="explore" />
-      <div className="ipadp:min-h-100 flex flex-wrap items-center text-left relative py-24" style={{backgroundImage: `url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
+      <div className="ipadp:min-h-100 flex flex-wrap items-center text-left relative py-24" style={{background: 'linear-gradient(135deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={200} duration={1500}>
           <div className="px-5 md:px-24 xl:px-36 2xl:px-52 mt-16 mb-32">
-            <div className="text-white">
-              <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{textShadow: "#000 0px 0px 4px", fontFamily: "TUoS Stephenson"}}>Data and visualisation</h1>
-              <p className="text-base 2xl:text-xl my-4 text-gray-100 font-semibold md:w-3/5" style={{textShadow: "#000000 0px 2px 5px"}}>
+            <div className="text-black">
+              <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{ fontFamily: "TUoS Stephenson"}}>Data and visualisation</h1>
+              <p className="text-base 2xl:text-xl my-4 font-semibold md:w-3/5" style={{}}>
                 Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 
                 information clearly and effectively by means of graphical representation. However, this does not mean that data visualisation must be boring for its functional purpose, 
                 or extremely complicated ... 

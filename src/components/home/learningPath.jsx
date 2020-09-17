@@ -16,20 +16,20 @@ const LearningPath = () => {
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-highlight_2 text-sm xl:text-base"
 
   return (
-    <div id="learning_path" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative" style={{backgroundColor: '#1d1d1d'}}>
+    <div id="learning_path" className="ipadp:min-h-110 flex flex-wrap justify-center items-center relative" style={{backgroundColor: '#000'}}>
       <Fade>
-        <div className="container mx-auto justify-center flex flex-wrap text-center mt-24">
+        <div className="container mx-auto justify-center flex flex-wrap text-center md:mt-24">
           <div className="text-3xl lg:text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
           <p className="mt-3 text-gray-100 px-2">Discover how to get the most out of statistics, visualisations and tool sets.</p>
         </div>
       </Fade>
       
-      <div className="flex flex-wrap text-gray-800 pt-10 pb-32 justify-center">
+      <div className="flex flex-wrap text-black pt-10 pb-32 justify-center">
         <Zoom bottom duration={700} delay={100}>
-          <div className={`${cardClasses} bg-gray-800 text-white`} tabIndex="0">
+          <div className={`${cardClasses} bg-pink-200`} tabIndex="0">
             <div className={frontCard}>
               <FaUniversity className="w-full text-4xl xl:text-5xl" />
-              <div className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Introduction</div>
+              <div className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Intro</div>
               <div className="text-sm mt-3 xl:text-lg">New to data visualisation and programming.</div>
             </div>
             <div className={backCard}>
@@ -42,11 +42,11 @@ const LearningPath = () => {
           </div>
         </Zoom>
         <Zoom bottom duration={700} delay={250}>
-          <div className={`${cardClasses} bg-blue-700 text-white`} tabIndex="0">
+          <div className={`${cardClasses} bg-blue-200`} tabIndex="0">
             <div className={frontCard}>
               <div className="flex flex-wrap justify-around text-4xl xl:text-5xl w-full">
-                <div><FaPython /></div>
-                <div><FaRProject /></div>
+                <div><FaPython className="text-white" /></div>
+                <div><FaRProject className="text-white" /></div>
               </div>
               <h1 className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Lab</h1>
               <p className="text-sm mt-3 xl:text-lg">Knowledge of programming languages Python / R.</p>

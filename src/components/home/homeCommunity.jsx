@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "gatsby"
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
@@ -11,69 +11,74 @@ import ReactTooltip from 'react-tooltip'
 const HomeCommunity = () => {
   const cardClasses = "w-4/5 md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group"
   const cardTextClasses = "text-sm xl:text-base border-t-1 border-gray-300 py-3 text-gray-600 group-hover:text-gray-900"
+  const buttonClasses = "rounded-full text-xs lg:text-sm mt-5 lg:mt-10"
+  const [bgColour, setColour] = useState('#fff');
+
 
   return (
-    <div id="home_community" className="ipadp:min-h-100 flex flex-wrap justify-center items-center relative">
+    <div id="home_community" className="ipadp:min-h-110 flex flex-wrap justify-center items-center relative" style={{transition: '.5s ease', background: `linear-gradient(180deg, ${bgColour} 0%, #fff 60%)`, backgroundColor: `${bgColour}`}}>
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap mt-24">
           <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center">
-            <h1 style={{background: 'linear-gradient(to right, #30CFD0 0%, #330867 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY.</h1></div>
-          <Link to="/community" className="mt-1 text-med xl:text-lg text-gray-500 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /></Link>
-          {/* <p className="border-t-6 border-highlight_2 w-1/12"></p> */}
+            {/* <h1 style={{background: 'linear-gradient(to right, #30CFD0 0%, #330867 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY.</h1> */}
+            <h1 style={{fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY. </h1>
+          </div>
+          <Link to="/community" className="mt-1 text-med xl:text-lg text-gray-600 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /> 😃</Link>
+          {/* <p className="border-t-6 border-highlight_2 w-1/12"></p>*/}
         </div>
       </Fade>
       
-      <div className="flex flex-wrap text-gray-700 -mt-16 pb-20 justify-center">
-        <div className={cardClasses}>
+      <div className="flex flex-wrap text-black md:-mt-16 pb-20 justify-center">
+        <div className={cardClasses} onMouseEnter={() => setColour('#fed7d7')} onMouseLeave={() => setColour('#fff')}>
           <Zoom bottom duration={700} delay={300}>
-            <RiCalendarEventLine className="text-3xl group-hover:text-red-700" />
+            <RiCalendarEventLine className="text-3xl" />
             <p className="font-bold py-3">Events</p>
             <div className={cardTextClasses}>
               Discover a variety of events including talks and symposia, workshops, vis-coding clubs and data visualisation hackathons!
             </div>
             <Link to="/events">
-              <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-red-700 mt-5 lg:mt-10" type="BlackButton">Upcoming events</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-red-500`} type="BlackButton">Upcoming events</ButtonWithArrow>
             </Link>
           </Zoom>
         </div>
 
-        <div className={cardClasses}>
+        <div className={cardClasses} onMouseEnter={() => setColour('#d3f3ff')} onMouseLeave={() => setColour('#fff')}>
           <Zoom bottom duration={700} delay={550}>
-            <RiBookReadLine className="text-3xl group-hover:text-highlight_2" />
+            <RiBookReadLine className="text-3xl" />
             <p className="font-bold py-3">Training</p>
             <div className={cardTextClasses}>
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-highlight_2 mt-5 lg:mt-10" type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-highlight_2`} type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
            
           </Zoom>
         </div>
       
-        <div className={cardClasses}>
+        <div className={cardClasses} onMouseEnter={() => setColour('#b2f5ea')} onMouseLeave={() => setColour('#fff')}>
           <Zoom bottom duration={700} delay={800}>
-            <MdPeople className="text-3xl group-hover:text-green-500" />
+            <MdPeople className="text-3xl" />
             <p className="font-bold py-3">Support</p>
             <div className={cardTextClasses}>
               Get in touch with us. It is natural that you have found something diffcult to understand or need more specific guidance and direction.
             </div>
-            <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-green-500 mt-5 lg:mt-10" type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
             <ReactTooltip id="ReactTooltip1" delayShow={500} delayHide={1000} effect="float">
               Why not join our slack channel and get live updates?
             </ReactTooltip>
           </Zoom>
         </div>
         
-        <div className={cardClasses}>
+        <div className={cardClasses} onMouseEnter={() => setColour('#fed7e2')} onMouseLeave={() => setColour('#fff')}>
           <Zoom bottom duration={700} delay={1050}>
             <div>
-              <RiMenuAddLine className="text-3xl group-hover:text-yellow-600" />
+              <RiMenuAddLine className="text-3xl" />
               <p className="font-bold py-3">Contribution</p>
               <div className={cardTextClasses}>
                 We love to see people actively sharing their thought and creativity. We have prepared a tutorial for you to upload your own blog posts.
               </div>
             </div>
             <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow className="rounded-full text-xs lg:text-sm group-hover:bg-yellow-600 mt-5 lg:mt-10" type="BlackButton">Our repository</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-pink-500`} type="BlackButton">Our repository</ButtonWithArrow>
             </a>
           </Zoom>
         </div>

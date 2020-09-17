@@ -125,7 +125,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </Fade>
 
       {/* body */}
-      <div className="flex flex-wrap relative lg:px-10 2xl:px-48 pt-10">
+      <div className="flex flex-wrap relative lg:px-10 2xl:px-40 pt-10">
         {/* desktop share buttons */}
         <div className="left-0 top-0 sticky hidden lg:block z-10">
           <Fade left cascade delay={1000} duration={1300}>   
@@ -162,7 +162,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
    
         {/******** main mdx content  ***********/}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-10/12 lg:pl-44 lg:pr-32 2xl:pl-68 2xl:pr-52 mdxBody`: `lg:px-48 xl:px-64 2xl:px-82`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs 2xl:max-w-sm mdxBody`: `md:max-w-70 lg:max-w-xs 2xl:max-w-sm`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
                           hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, 
@@ -171,12 +171,12 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
                           AccordionItemPanel: AccordionItemPanel, LPWrap: LPWrap, LPItem: LPItem
                         }}
             >
-            <MDXRenderer>{mdx.body}</MDXRenderer>
+            <MDXRenderer className="text-gray-100">{mdx.body}</MDXRenderer>
           </MDXProvider>
         </div>
 
         {/* sidebar toc: hidden in mobile */}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 mx-auto max-h-100 overflow-auto`}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 max-h-100 overflow-auto`}>
           <p className="font-bold mb-4 pb-2 text-gray-800 text-lg" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>
           <div className="px-1 text-base TOC">
           { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }

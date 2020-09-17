@@ -457,16 +457,19 @@ Make sure you pressed SPACE key twice followed by ENTER key after the closing br
   
 Alternatively (so you can add style for images):
 ```jsx
-<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
+<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" alt="image1" /><br />
 <em>image_caption</em>
 ```
 
-<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" /><br />
+<img style={{marginLeft: "-100px", border: "solid 4px #00aeef", height: "300px", width: "550px"}} src="./temp.jpg" alt="image3" /><br />
 <em>image_caption</em>  
 
 <br/> 
    
-For images available online, use their url.
+For images available online, use their url.  
+
+**If you use the second way to add images, please don't forget to add alt text for each image to help users for some reason cannot view 
+it (because of slow connection, an error in the src attribute, or if the user uses a screen reader).**
 
 <br />
 
