@@ -69,7 +69,7 @@ web pages as well as defining the structure of web pages, whereas HTML5 is the
 latest standard of HTML. CSS is the style language used for styling HTML documents 
 and hence different websites have their presentation styles depending on how they 
 define it.  
-<br/>  
+  
   
 
 # Installation
@@ -81,7 +81,7 @@ following script within the head tag of your html file:
 <script src="https://d3js.org/d3.v5.min.js"></script>
 ```  
   
-<br/>
+
 
 # Core Concepts
 Rather than include everything (which are not possible) here, this article aims 
@@ -106,7 +106,7 @@ are two selection methods:
   - **selectAll()** - similar to *select()* method but returns all elements that match 
   the criteria.  
 
-<br/>
+
 
 But what could you do with **selected elements**? 
 
@@ -124,7 +124,7 @@ But what could you do with **selected elements**?
 
   - **text()** - set the content of the selected element
 
-<br/>
+
 
 ## Manipulation
   - **attr()** - Probably the most common methods used after the append method. This 
@@ -151,7 +151,7 @@ But what could you do with **selected elements**?
 For more information about D3 selections, 
 visit [D3-Selection](https://github.com/d3/d3-selection).  
   
-<br/>
+
 
 ## Data-binding / data-join
 Previously we have mentioned that we can draw shapes using basic shapes within 
@@ -188,7 +188,7 @@ we use `.exit().remove()` to remove any unused rectangles.
 If you only want to bind data to a single element and does not require any 
 updates then you can also use the `datum()` method.
 
-<br/>
+
 
 ## Dynamic properties
 In the data binding section we have code look like this:
@@ -207,7 +207,7 @@ each element and assign attributes at your will. You can call `d` and `i` whatev
 you want but **the order is important**. Even if you use `i` only, `d` must be specified 
 because the index is always the **second parameter** in the function. 
 
-<br/>
+
 
 ## Events
 As in vanilla javascript, D3.js also allows you to bind an event listener to any 
@@ -232,7 +232,7 @@ d3.select("#event")
 
 <div id="event" className="text-2xl font-bold" style={{fontFamily: 'ink Free'}}>D3.js for data visualisation</div>
 
-<br/>
+
 
 Learn more about events on:
 
@@ -245,7 +245,7 @@ Learn more about events on:
   </LPItem>
 </LPWrap>
 
-<br/>
+
 
 # A simple example
 Let's use 2020 world population data to create an interactive world map that 
@@ -412,7 +412,6 @@ function createMap(world, names, population) {
 <svg id="d3" className="lg:-ml-60 md:min-w-80 md:min-h-60 lg:min-h-60"></svg>
 <div className="tooltip"></div>
 
-<br/>
 
 # Interested?
 D3.js is a really powerful tool for creating online data visualisation, if you want to 

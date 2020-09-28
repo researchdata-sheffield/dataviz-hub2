@@ -108,7 +108,7 @@ export const A = (props) => {
 export const H1 = styled.h1`
   display: block;
   font-size: 2em;
-  margin-top: 0.67em;
+  margin-top: 4rem;
   margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
@@ -119,7 +119,7 @@ export const H1 = styled.h1`
 export const H2 = styled.h2`
   display: block;
   font-size: 1.5em;
-  margin-top: 0.83em;
+  margin-top: 3.5rem;
   margin-bottom: 0.83em;
   margin-left: 0;
   margin-right: 0;
@@ -129,7 +129,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   display: block;
   font-size: 1.17em;
-  margin-top: 1em;
+  margin-top: 3rem;
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
@@ -139,7 +139,7 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
   display: block;
   font-size: 1em;
-  margin-top: 1.33em;
+  margin-top: 2rem;
   margin-bottom: 1.33em;
   margin-left: 0;
   margin-right: 0;
@@ -264,7 +264,7 @@ export const EM = styled_twin.em`
 `
 
 export const Table = styled.table`
-  ${tw`my-10 shadow-lg text-base`};
+  ${tw`my-10 shadow-md text-base`};
     display: block;
     overflow-x: auto;
 

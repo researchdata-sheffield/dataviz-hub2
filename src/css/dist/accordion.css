@@ -5,9 +5,10 @@
 **/
 .accordion {
   /* border: 1px solid rgba(231, 230, 230, 0.596); */
-  border-radius: 2px; 
+  border-radius: 2px;
 }
-.accordion:focus, .accordion__item:focus, .accordion__button:focus  {
+
+.accordion:focus, .accordion__item:focus, .accordion__button:focus {
   outline: none;
 }
 
@@ -26,7 +27,7 @@
   width: 100%;
   text-align: left;
   border: none;
-  transition: .5s ease;
+  transition: 0.5s ease;
   font-size: x-large;
   font-weight: 600;
 }
@@ -37,7 +38,7 @@
 
 .accordion__button:before {
   display: inline-block;
-  content: '';
+  content: "";
   height: 12px;
   width: 12px;
   margin-right: 40px;
@@ -45,18 +46,18 @@
   border-bottom: 4px solid currentColor;
   border-right: 4px solid currentColor;
   transform: rotate(45deg) translate(0px, -6px);
-  transition: .4s ease;
+  transition: 0.4s ease;
   color: #0066b3;
   position: absolute;
   right: 0;
 }
 
-.accordion__button[aria-expanded='true']::before,
-.accordion__button[aria-selected='true']::before {
+.accordion__button[aria-expanded=true]::before,
+.accordion__button[aria-selected=true]::before {
   transform: rotate(225deg) translate(-1px, 4px);
 }
 
-.accordion__item .accordion__button[aria-expanded='true'] {
+.accordion__item .accordion__button[aria-expanded=true] {
   background-color: #e5f4ff;
 }
 
@@ -73,13 +74,11 @@
 /* -------------------------------------------------- */
 /* ---------------- Animation part ------------------ */
 /* -------------------------------------------------- */
-
 @keyframes fadein {
   0% {
-      opacity: 0;
+    opacity: 0;
   }
-
   100% {
-      opacity: 1;
+    opacity: 1;
   }
 }

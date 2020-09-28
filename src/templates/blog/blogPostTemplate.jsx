@@ -162,7 +162,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
    
         {/******** main mdx content  ***********/}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs 2xl:max-w-sm mdxBody`: `md:max-w-70 lg:max-w-xs 2xl:max-w-sm`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs 2xl:max-w-40 mdxBody`: `md:max-w-70 lg:max-w-xs 2xl:max-w-40`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
                           hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, 
