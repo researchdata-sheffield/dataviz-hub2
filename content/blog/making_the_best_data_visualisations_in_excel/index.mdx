@@ -88,7 +88,7 @@ curing, freeze, decoat… Typically, the more time you spend in taking care of i
 you will also need to spend some time in preparation of the data. The table below listed some of common things you might want to take into account:  
 
 <div>
-<table className="dataframe">
+<table>
   <thead>
     <tr>
       <th>Item</th>
@@ -143,7 +143,9 @@ you will also need to spend some time in preparation of the data. The table belo
     <tr>
       <th>Protection</th>
       <td>If you're collarate with other people and do not wish them to change certain cells, you can 
-        add <a href="https://support.microsoft.com/en-us/office/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6">protection</a> to the spreadsheet by lock cells up.</td>
+        add <a href="https://support.microsoft.com/en-us/office/protect-a-worksheet-3179efdb-1285-4d49-a9c3-f4ca36276de6">protection</a> to the spreadsheet by lock cells up. 
+        If your data comes from an external database then prefer connection to DB to ensure integrity rather than copy data out of DB.
+      </td>
     </tr>
   </tbody>
 </table>
@@ -175,65 +177,116 @@ are some details you have to watch out:
       </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
-      Before present your visualisation to audiences, do you think it is simple 
+      Before presenting your visualisation to audiences, do you think it is simple and precise enough for your audience to understand what message you are 
+      trying to show within 10 seconds? It is not necessary that they need to fully understand all things in 10 seconds but should understand what you are 
+      presenting without obstructions. Focus on what you try to deliver and maintain a balance between functions and design of your visualisations, always 
+      remember that a fancy chart doesn't add any value if it is meaningless.
     </AccordionItemPanel>
   </AccordionItem>
   <AccordionItem>
     <AccordionItemHeading>
       <AccordionItemButton>
-        1. Style / Theme / Size
+        I. Style / Theme / Size
       </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
-      Stakeholders
+      One great thing about Excel is it allows you to customise charts without too much effort. Once you have clicked a chart, you can either format or 
+      design the chart using Chart Tools shown on the top menu section. Of course there is no restriction on what colour, font, or size etc.  you can choose 
+      but do think about problems such as whether your chosen colours work well together, are fonts easy to read, is there a good contrast between foreground 
+      and background colour, and the overall style consistency.  <br/>
+      Here is a comparison between a good and a bad example of using different styles and themes. <br/>
+      Good: <br/>
+      <img src="./Theme1.png" alt="Good practice" />
+      <br/>
+      Not so good: <br/>
+      <img src="./Theme2.png" alt="Bad practice" /><br/>
     </AccordionItemPanel>
   </AccordionItem>
   
   <AccordionItem>
     <AccordionItemHeading>
       <AccordionItemButton>
-        2. Text / Title / Axis
+        II. Text / Title / Axis
       </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
-      <b>Who</b>
+      Text plays an important role in visualisation as it helps audiences make sense of charts and able to explain small details. Here are some tips to help 
+      you in using texts: <br/>
+      <ul>
+        <li>Numerical axis should start from 0</li>
+        <li>Every chart should have a clear and relevant title (descriptive title)</li>
+        <li>Change the unit of axis if text becomes cluttered, e.g. add thousands separate or convert to thousands, millions</li>
+        <li>Avoid tilted axis labels, try a different chart or widen the chart if labels are too long</li>
+        <li>Use data labels over gridlines</li>
+        <li>Remove unnecessary axes would help you keep visualisation clean</li>
+        <li>Consistent intervals!</li>
+        <li>Avoid acronyms unless you have stated elsewhere</li>
+      </ul>
     </AccordionItemPanel>
   </AccordionItem>
 
   <AccordionItem>
     <AccordionItemHeading>
       <AccordionItemButton>
-        3. Label / Legend / Background
+        III. Label / Legend / Background
       </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
-      Do
+      This is another important aspect of the Excel charts, inappropriate use of legend and labels can be misleading.
+      <ul>
+        <li>Avoid distract background and gridlines in most of cases</li>
+        <li>Delete legend if less than two metrics</li>
+        <li>Prefer labels over legend for pie charts</li>
+        <li>Avoid tilted axis labels</li>
+        <li>Does the number of a pie chart add up to 100%?</li>
+        <li>If there are only few varaibles on the x-axis, data labels might be better than axes</li>
+      </ul>
     </AccordionItemPanel>
   </AccordionItem>
 
   <AccordionItem>
     <AccordionItemHeading>
       <AccordionItemButton>
-        4. Is it necessary?
+        IV. Is it necessary?
       </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
-      There
+      <blockquote><b>Tell a story, only highlight what you think is important</b></blockquote>
+      This section listed some things that you might want to consider before you put it in production: <br/>
+      <b>3D</b> - Excel offers a 3-dimensional version for most of the charts, however, it is rare that people don't find it confusing and difficult to interpret. <br/> 
+      <b>Dots</b> - When producing a line graph or a time series graph you often see graphs with dots at each time point, most of the time these dots don't add any extra value. <br/>
+      <b>Complex background</b> - Unsuitable background can be distracted and conflicting with your text and colours. <br/>
+      <b>Cropped axis</b> - cropped axis can cause confusion and misleading because not all information is visible to audiences. <br/>
+      <b>Colours</b> - When you have multiple lines in your graphs, is it worth to use different colour for each line or only colour the important one to make it stand out?<br/>
     </AccordionItemPanel>
   </AccordionItem>
 </Accordion>
 
-
+<br/><br/>
 
 ## Some examples
+This section presents some example charts made from Microsoft Excel 2016.
 
 ### Bar/column chart
 
+![Column chart for mobile spend vs desktop spend](./columnChart.png)
+
 ### Histograms
+
+Left axis is removed and replaced by labels.
+![Histogram 1 of height distribution of gym members](./Histogram1.png)
+
+If your aim is to find the number of gym members with height in the range 180 - 185cm, highlight it should make some difference.
+
+![Histogram 2 of height distribution of gym members](./Histogram2.png)
 
 ### Line chart
 
-### Scatter plots
+![Line Chart for trade volumes of Apple Inc.](./lineChart.png)
+
+### Scatter plot
+
+![Scatter Plot for USA states average income vs population](./scatterChart.png)
 
 ### Waterfall
 

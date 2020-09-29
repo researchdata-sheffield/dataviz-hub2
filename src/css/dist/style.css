@@ -102,13 +102,8 @@ Home Search bar & animation
   -webkit-animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
   animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
 }
-
 .typewriter p:nth-child(2) {
-  white-space: nowrap;
-  overflow: hidden;
   opacity: 0;
-  -webkit-animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
-  animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
   -webkit-animation-delay: 2s;
   animation-delay: 2s;
   -webkit-animation-fill-mode: forwards;

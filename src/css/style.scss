@@ -115,25 +115,22 @@ Home Search bar & animation
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 }
 
-.typewriter p {
-  white-space:nowrap;
-  overflow:hidden;
-  -webkit-animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
-  animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
+.typewriter {
+  p {
+    white-space:nowrap;
+    overflow:hidden;
+    -webkit-animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
+    animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
+    
+    &:nth-child(2) {
+      opacity: 0;    
+      -webkit-animation-delay: 2s; 
+      animation-delay: 2s;
+      -webkit-animation-fill-mode: forwards;
+      animation-fill-mode: forwards;
+    }
+  }
 }
-
-.typewriter p:nth-child(2) {
-  white-space:nowrap;
-  overflow:hidden;
-  opacity: 0;    
-  -webkit-animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
-  animation: typing 1.5s steps(30, end), blink .75s step-end infinite;
-  -webkit-animation-delay: 2s; 
-  animation-delay: 2s;
-  -webkit-animation-fill-mode: forwards;
-  animation-fill-mode: forwards;
-}
-
 
 /******** 
 *Home Scroll down button & animation  

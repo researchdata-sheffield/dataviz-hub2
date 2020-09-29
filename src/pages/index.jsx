@@ -100,7 +100,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               <a className="text-gray-500 hover:text-highlight_2">&nbsp; RSE &nbsp;</a> | 
               <a className="text-gray-500 hover:underline">&nbsp; Not sure where to start? &nbsp;</a> */}
             </div>
-            
+
           </div>
           {/* End of left component */}
           

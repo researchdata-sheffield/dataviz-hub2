@@ -2,29 +2,25 @@
 * 
 *
 */
-
 .gt-header-textarea {
   background-color: #fafafa !important;
   border: #f0f0f0 solid 1px !important;
-
-  &:hover, &:focus {
-    background-color: white !important;
-  }
+}
+.gt-header-textarea:hover, .gt-header-textarea:focus {
+  background-color: white !important;
 }
 
-.gt-container {
-  .git-meta {
-    border-bottom: none !important;
-  }
-  a {
-    color: #000 !important;
-    &:hover {
-      color: #00aeef !important;
-    }
-  }
-  .gt-svg svg {
-    fill: black !important;
-  }
+.gt-container .git-meta {
+  border-bottom: none !important;
+}
+.gt-container a {
+  color: #000 !important;
+}
+.gt-container a:hover {
+  color: #00aeef !important;
+}
+.gt-container .gt-svg svg {
+  fill: black !important;
 }
 
 .gt-btn {
@@ -51,19 +47,16 @@
 
 .gt-comment-content {
   background-color: #fcfcfc !important;
-  
-  &:hover {
-    background-color: #fff !important;
-    box-shadow: 0 0.325em 1.55em 0 #f4f4f4 !important;
-  }
+}
+.gt-comment-content:hover {
+  background-color: #fff !important;
+  box-shadow: 0 0.325em 1.55em 0 #f4f4f4 !important;
 }
 
 .gt-comment-avatar {
-  transition: .5s ease;
-
-  &:hover {
-    transform: rotate(180deg);
-    transition: .5s ease;
-  }
+  transition: 0.5s ease;
 }
-
+.gt-comment-avatar:hover {
+  transform: rotate(180deg);
+  transition: 0.5s ease;
+}
