@@ -65,6 +65,9 @@ module.exports = {
         ],
 
         gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-code-titles',
+          },
           `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-katex`,

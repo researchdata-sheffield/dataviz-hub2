@@ -105,7 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const posts = result.data.allMdx.edges
 
   const postsPerPage = 12
-  const numPages = Math.ceil(posts.length / postsPerPage)
+  var numPages = posts.length
   const categories = []
   const tags = []
 
@@ -113,14 +113,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Call `createPage` for each result/post
   // index: current index of element
-  posts.forEach( ( {node}, index, arr )  => {
+  posts.forEach(( {node}, index, arr ) => {
+    var excluded = false;
 
     // For each post, add their tags/categories to arrays
     node.frontmatter.category.forEach((cat) => {
       if(!exclude.includes(cat)) categories.push(cat)
+      else excluded = true
     })
     node.frontmatter.tag.forEach((tag) => {
       if(!exclude.includes(tag)) tags.push(tag)
+      else excluded = true
     })
     
     
@@ -145,8 +148,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         next: next,
       },
     })
+    if(excluded == true) numPages = numPages - 1
   })
-
+  numPages = Math.ceil(numPages / postsPerPage)
+  console.log("Number of total posts: " + numPages)
 
   const countCategories = categories.reduce((prev, curr) => {
     prev[curr] = (prev[curr] || 0) + 1

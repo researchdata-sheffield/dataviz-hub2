@@ -15,7 +15,7 @@ import Header from "../../components/shared/header"
 import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../../components/style/styled"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, EM, Table, LPItem, LPWrap } from "../../components/style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMGM } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import GitalkComponent from "gitalk/dist/gitalk-component";
 import Fade from "react-reveal/Fade"
@@ -28,27 +28,29 @@ import ReactTooltip from "react-tooltip";
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
-  const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null
-  // include d3 scripts
-  {d3 && d3.map((d) => {
-    if(d.includes("https://")) {
-      useScript(d, "", false)
-    } else {
-      useScript(withPrefix(`d3/${d}`), "", false)
-    }
-  })}
-  
   const { title, date, author, category, tag, disableTOC } = mdx.frontmatter
   const {prev, next} = pageContext
-  var tableOfContent
   
+  const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
+  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
+  const shareLink = `https://${location.host}${mdx.fields.slug}`
+  const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
+
+  // include d3 scripts
+  const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null
+  {d3 && d3.map((d) => {
+    if(d.includes("https://")) useScript(d, "", false);  // external script
+    else useScript(withPrefix(`d3/${d}`), "", false);   
+  })}
+
+  // enable/disable table of content
+  var tableOfContent
   if(disableTOC === "true") {
     tableOfContent = null
   } else {
     tableOfContent = mdx.tableOfContents
     trackTableOfContent(`.TOC li a`, `.mdxBody`)
   }
-
 
   //Redering table of content
   const renderItem = (item) => (
@@ -59,7 +61,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       { item.items ? (<ul className="pl-3">{item.items.map(renderSubItem)}</ul>) : <></> }
     </li>
   ); 
-
   const renderSubItem = (item) => (
     <li key={item.title} className="pt-1 list-none">
       { item.url ? <a href={item.url}> {item.title}</a> : <></> }
@@ -67,10 +68,14 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     </li>
   ); 
 
-  const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
-  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
-  const shareLink = `https://${location.host}${mdx.fields.slug}`
-  const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
+
+  if (typeof window !== `undefined`) {
+    //const list = document.querySelector('.gatsby-code-title')
+    // selector all code block titles
+    // add copy to clickboard button for every title
+    // add copy function to button 
+  }
+
 
   return (
     <div className="relative" key={mdx.id}>
@@ -166,7 +171,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
                           hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, 
-                          img: IMG, table: Table, Accordion: Accordion, AccordionItem: AccordionItem, 
+                          img: IMGM, table: Table, Accordion: Accordion, AccordionItem: AccordionItem, 
                           AccordionItemHeading: AccordionItemHeading, AccordionItemButton: AccordionItemButton, 
                           AccordionItemPanel: AccordionItemPanel, LPWrap: LPWrap, LPItem: LPItem
                         }}

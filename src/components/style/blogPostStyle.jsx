@@ -4,6 +4,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
 import { ButtonWithArrow } from "./styled"
+import ModalImage from "react-modal-image";
 
 export const LPWrap = (props) => {
   return (
@@ -256,6 +257,13 @@ export const IMG = styled_twin.img`
   ${tw`mt-10 mb-3`}
 `
 
+export const IMGM = (props) => {
+  const {src, className, ...props_noRef} = props
+  return (
+    <ModalImage small={src} large={src} {...props_noRef} hideZoom="true" showRotate="true" className={`${className} mt-10 mb-3`}>{props.children}</ModalImage>
+  )  
+}
+
 export const EM = styled_twin.em`
 
   img + & {
@@ -309,4 +317,11 @@ A.propTypes = {
   anchor: PropTypes.any,
   href: PropTypes.string,
   a: PropTypes.any,
+}
+
+IMGM.propTypes = {
+  props: PropTypes.any,
+  children: PropTypes.any,
+  src: PropTypes.any,
+  className: PropTypes.any,
 }

@@ -53,7 +53,7 @@ such as rectangles, circles, ellipses, paths, straight lines, polylines, and
 polygons. D3 makes use of this mechanism which adds graphics and text to SVG 
 and then binds data to those elements. An example of SVG:
 
-```html
+```html:title=svg-example
 <svg width="500" height="300">
    <rect x="0" y="0" width="300" height="200" fill="yellow"></rect>
 </svg>
@@ -279,7 +279,7 @@ div.tooltip {
 Then define the population dataset and geographic locations for 
 each country.
 
-```js
+```js:title=dataviz.js
 countryCoor = "https://unpkg.com/world-atlas@1/world/110m.json"
 countryNames = "https://gist.githubusercontent.com/lkopacz/dfd9cc04a4d5a5f0fe87c89a79524479/raw/39100d4f6b7c784bd5d838a4e357873ef6877579/world-country-names.csv"
 populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv"
@@ -292,7 +292,7 @@ Notice that we have appended the `g` tag to the `svg` element, so that we can
 append all paths to `g` later. This ensure all paths are grouped for better 
 code management and visibility.  
 
-```js
+```js:title=Create_Projection
 var projection = d3.geoNaturalEarth1();
 var path = d3.geoPath()
               .projection(projection);
@@ -306,7 +306,7 @@ To load datasets we are using D3 functions `d3.json` and `d3.csv`, and the use o
 *Promise* is to ensure we do not perform any actions until data are loaded sucessfully. 
 The *createMap* function is the function we have created for create the actual map.
 
-```js {6}
+```js:title=Promise {6}
 Promise.all([
 	d3.json(countryCoor),
 	d3.csv(countryNames),
@@ -337,7 +337,7 @@ the country name if there is a match on id. Similarly, we join with
 the *populationData* dataset to get the population and yearly change rate for each 
 country.
 
-```js
+```js:title=Create_map_function
 function createMap(world, names, population) {
 	var countriesData = topojson.feature(world, world.objects.countries).features;
 	countries = countriesData.filter(d => {
@@ -362,7 +362,7 @@ function createMap(world, names, population) {
 Now we move on to create the map. If you have read the section above then you should
 have find the following code familiar:
 
-```js
+```js:title=Create_map_function
 function createMap(world, names, population) {
   ...
   svg.selectAll("path")
@@ -397,7 +397,7 @@ user's mouse movement on the map.
 Lastly, we can make the map more interactive by monitoring user's dragging action and 
 rotate/translate the map accordingly.
 
-```js
+```js:title=Monitor-User-Action
 function createMap(world, names, population) {
   ...
 	svg.call(d3.drag()

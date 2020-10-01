@@ -25,3 +25,9 @@ export function getImageSource(node) {
   }
   return imagesrc
 }
+
+
+
+export function CopyCode() {
+
+}

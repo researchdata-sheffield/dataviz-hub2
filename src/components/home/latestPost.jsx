@@ -10,6 +10,7 @@ import { getImageSource, shortenText } from "../../utils/shared"
 
 const latestPost = ({ latestPost }) => {
   var count = 0
+
   return (
     
     <div className="w-full flex flex-wrap" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
@@ -23,21 +24,24 @@ const latestPost = ({ latestPost }) => {
         let imagesrc = getImageSource(node);
         let description = shortenText(node.frontmatter.description, 40)
         let postDate = node.frontmatter.date
-        postDate = postDate.substring(0, postDate.indexOf(" ", postDate.indexOf(" ") + 1))
+
+        postDate = postDate.substring(0, 6)
 
         return (
           <div key={node.id} className="group w-full relative z-20 border-t-1 border-transparent first:border-gray-900" tabIndex="0">
             <Fade  key={node.id} duration={1000} fraction={0.1}>
               <div className="w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
-                <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-10 py-4">
-                  <div className="flex flex-wrap items-center">
+                <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-16 py-4">
+                  <div className="flex flex-wrap items-center md:w-2/5 lg:w-3/10">
                     <MdFiberNew className="text-red-700 ipadp:text-white group-hover:text-red-700 text-3xl" />
                     {node.frontmatter.category.map((cat) => (
                         <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-full py-0 my-0 mx-2 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible">{cat}</CatBtn>
                     ))}
                   </div>
-                  <div className="inline-block font-semibold">{node.frontmatter.title}</div>
-                  <div className="inline-block font-semibold">{postDate}</div>
+                  <div className="md:w-3/5 lg:w-7/10 flex justify-between">
+                    <div className="inline-block font-semibold">{node.frontmatter.title}</div>
+                    <div className="inline-block font-semibold">{postDate}</div>
+                  </div>
                 </Link>
               </div>    
             </Fade>
