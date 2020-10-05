@@ -260,7 +260,7 @@ export const IMG = styled_twin.img`
 export const IMGM = (props) => {
   const {src, className, ...props_noRef} = props
   return (
-    <ModalImage small={src} large={src} {...props_noRef} hideZoom="true" showRotate="true" className={`${className} mt-10 mb-3`}>{props.children}</ModalImage>
+    <ModalImage small={src} large={src} {...props_noRef} hideZoom="true" showRotate="true" className={`${className} mt-10 mb-3 mx-auto`}>{props.children}</ModalImage>
   )  
 }
 

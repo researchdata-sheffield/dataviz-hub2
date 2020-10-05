@@ -5,7 +5,7 @@ import no_image_4 from "../images/blog/no_image_4.png"
 import no_image_5 from "../images/blog/no_image_5.png"
 
 export function shortenText(text, length) {
-  let newText = text.split(" ").splice(0, length)
+  let newText = text ? text.split(" ").splice(0, length) : ""
   if(newText.length < length){
     newText = newText.join(" ")
   } else {

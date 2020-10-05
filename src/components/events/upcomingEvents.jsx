@@ -11,7 +11,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
       <> 
       {allEventbriteEvents.edges.map(({node}) => {
         //moment(node.start.local, "DD-MMMM-YYYY hh:mm") >= moment() && 
-        let description = shortenText(node.description, 20)
+        let description = shortenText(node.description.text, 20)
 
         return (
           <a className="flex flex-wrap w-full overflow-y-hidden shadow-lg hover:shadow-2xl bg-white my-3 lg:my-1 text-gray-700 group border-solid" 

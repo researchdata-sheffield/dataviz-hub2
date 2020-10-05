@@ -7,8 +7,128 @@ date: "2020-10-01"
 category: ["Articles"]
 tag: ["Excel", "R"]
 thumbnail: ./thumb.png
+hide: "true"
 ---
 
 There are a lot of things to learn when you make a transition from Excel to R, especially if you haven't touched programming languages before, 
-everything can be overwhelming and frustrating. Hopefully this article will help you make a smooth transition by helping you install and set up 
-relevant software, explaining similarity and differences between Excel and R, and introducing some fundamental concepts of R.
+everything can be overwhelming and frustrating. Hopefully this article will help you make a smooth transition by helping you install and set 
+up relevant software, introduce some fundamental concepts of R, and give some examples R codes for most commonly used functions in Excel.  
+
+# Installation
+R is a popular programming language and software environment that is originally designed for statistical purposes. Unlike Microsoft Excel you 
+have to pay a few hundred pounds for a one-time purchase or enter a yearly subscription of Microsoft 365 unless you have an academic email address, 
+R is completely free and backed by a strong community. To install R, download and install the relevant version for your Operating System from either 
+of two links below:  
+	- https://cran.ma.imperial.ac.uk/
+	- https://www.stats.bris.ac.uk/R/
+
+Other than the base distribution of R, you will need to choose an IDE (integrated development environment) to work with R. I would suggest and recommend 
+you to install and use [RStudio](https://rstudio.com/products/rstudio/download/) as it is by far the most popular IDE for R and I am going to use it 
+for the content of this article.  
+
+Once you have installed RStudio, you will see the following user interface: 
+![RStudio user interface](./rstudio1.png)
+
+The area on the left that is highlighted in black is where you will write R codes, use terminals, and run any jobs. On the right hand side the panel 
+is divided into two sections. The top section highlighted in red acts as a storage house for your current project. It stores a list of variables and 
+datasets you have defined, shows a history of codes you have run before, and allows you to connect to external databases. The area highlighted in green 
+contains five tabs. The **Files** tab is a file system that lists all directories and files under the current project; **Plots** displays any graphical 
+images you have generated from the code on the left; WIthin the **Packages** tab you can manage R packages in your local environment and perform actions 
+such as install, update, and delete. I would recommend you to use the **Help** tab regularly while you are learning R and/or RStudio as it provides a 
+very useful manual and you can even browser packages reference without leaving RStudio. Finally, if you decided to explore more about generating web 
+contents using RStudio, then you can preview the result in the **Viewer** tab.  
+
+To get started, click the `File` button on the top left then click `New Project`. In the pop-up window choose `New Directory` then select `New Project` to 
+create a new project, on the last step enter a directory name, in this case I have used `ExcelToR`. Note that if you have used *git* you can also set the 
+directory to be a *Git repository* for tracking changes in your project/source code. 
+
+![Create a new project in RStudio](./rstudio2.png)  
+
+Next, create a new R script either by clicking on the `File`, `New File` and `R Script` in orders, or press `Ctrl + Shift + N` on the keyboard.
+ 
+![Create a new file in RStudio](./rstudio3.png)
+ 
+There is one more thing I want you to do before create visualisations - install packages **ggplot2** (a popular data visualisation tool),  **dplyr** (for 
+data manipulation), and **readr** (fast file reading capability). There are two ways to do this:  
+
+1. Go to the **Packages** tab on the right hand side then click on **install**. In the pop-up window as shown below, enter *ggplot2* and click install, make 
+sure **Install dependencies** is checked! Then repeat this for other packages. 
+
+2. Install the **[tidyverse](https://www.tidyverse.org/packages/)** package (it includes all packages mentioned above and more).
+
+There are tons of packages out there and I encourage you to explore more tools suitable for your work.
+
+![Install new packages in RStudio](./rstudio4.png)
+ 
+Now you’re good to go to write R codes!
+
+
+# Setup
+
+## Load packages
+In the first line of the script, let's write the following code to load the tidyverse package:
+```r
+# Load required libraries
+library(tidyverse)
+
+# OR the following if you installed packages seperately
+library(ggplot2)
+library(dplyr)
+library(readr)
+```
+
+## Load datasets
+There are a number of ways you can load datasets, either local files, datasets hosted online, or through connections to databases. Here is how you would 
+use the `read.csv` function from the *readr* package to read csv files:
+
+```r
+# Read a local file (in the same directory of the script)
+population_2020 <- read.csv('world_population2020.csv')
+
+# Read dataset by url
+pop_2020 <- read.csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
+```
+
+There are also built-in datasets you can use, for these data you use `data` function to load datasets:
+```r
+data(mtcars)
+```
+
+On above, `<-` (left angle bracket with a dash) is called **assignment operator** meaning we assign objects on the right hand side to the variable name on the 
+left hand side. Although you can choose whatever name you want it is usually recommended that variable names should not begin with numbers nor contain any 
+special characters. All variables and data you have declared will be store in the environment and should be listed in the environment tab on the right hand 
+side of RStudio panel. If the variable name already exsists, then the new assignment will override the exsiting object.  
+
+**Tip**: You can use the shortcut `Alt + -` in Windows or `Option + -` in MacOS for insert the assignment operator. For more shortcuts, use `Alt + Shift + K` in Windows 
+or `Option + Shift + K` in MacOS to open shortcut menu in RStudio.  
+
+**Get codes running**: There are several ways to run codes in RStudio,
+1. On selected lines use `Ctrl + Enter` and click the **Run** button on the toolbar (top right of the code panel).
+2. Use `Ctrl + Shift + Enter` to run the entire script.
+3. Use `Ctrl+ Shift + P` or the button next to the **Run** button for re-run previous code region.  
+
+**Add comments**: Sometimes you want to add annotation/comments to your code, to do this add a hashtag before your comments:
+```r
+# This is a comment
+# Next line is code
+mtcars
+```
+
+# Explore our data
+For this section and beyond I am going to use two datasets declared on above, [mtcars](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) (fuel 
+consumption and other 10 aspects of car design for 32 cars, 1973-74 models) 
+and [pop_2020](https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv) (2020 population data for 235 country/region around the world).  
+To view data, you can either click it in the **environment** tab to get a nice and structured dataframe similar to Excel (uneditable):
+
+![view data in RStudio enviroment](./data1.png)
+
+or simply insert the name of dataset `mtcars` in a new line and run. The result will be displayed in the console:
+
+![view data in RStudio Console](./data2.png)
+
+## Summaries
+
+
+# Plots
+
+# 10 most used functions in Excel
