@@ -27,6 +27,7 @@ module.exports = {
         'black-45': 'rgba(0, 0, 0, .45)',
         'black-75': 'rgba(0, 0, 0, .75)',
         'black-85': 'rgba(0, 0, 0, .85)',
+        'black-080808': '#080808',
 
       },
       borderColor: {

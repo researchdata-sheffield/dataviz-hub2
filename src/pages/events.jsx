@@ -26,7 +26,7 @@ const events = ({data: {eventBrite, pastEvent, pastEventBlog}}) => {
       <Header />
       <BackgroundSection className="flex flex-wrap flex-grow-0 items-center justify-center min-h-100">
         <div className="flex flex-wrap w-full justify-center my-16 lg:my-24">
-          <div className="w-full lg:w-7/12 p-6 text-black overflow-auto border-t-8 border-red-700 min-h-70 lg:rounded-l-3xl" style={{background: "rgba(255,255,255,.95)", }}>
+          <div className="w-full lg:w-7/12 p-6 text-black overflow-auto border-t-8 border-red-700 min-h-70 lg:rounded-l-xl" style={{background: "rgba(255,255,255,.95)", }}>
             <h1 className="inline-block text-2xl font-semibold">Upcoming Events</h1>
             <div className="text-gray-900 mb-8" >Today: {currentDate}</div>
             <UpcomingEvents allEventbriteEvents={eventBrite} />
@@ -51,7 +51,7 @@ events.propTypes = {
 export const query = graphql`
   query {
     eventBrite: 
-    allEventbriteEvents(limit: 4, sort: {fields: start___local, order: DESC}, filter: {id: {ne: "777"}, isFuture: {eq: true}}) {
+    allEventbriteEvents(limit: 4, sort: {fields: start___local, order: ASC}, filter: {id: {ne: "777"}, isFuture: {eq: true}}) {
       ...EventbriteEventsEdge
     }
 

@@ -24,7 +24,6 @@
 
 We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group](https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group), [slack team](https://shef-dataviz.slack.com) or [email](mailto:rdm@sheffield.ac.uk) with any suggestions. We encourage you to contribute to our online resources directly through **this repository** including blogposts and turtorials!
 
-
 <br />
 
 ## Table of Contents
@@ -35,11 +34,10 @@ We are constantly looking for new ideas and suggestions for events, workshops or
 
 
 ## Contributing
-See [CONTRIBUTING.md](./CONTRIBUTING.md) file.
+See the [CONTRIBUTING](./CONTRIBUTING.md) document.
 
 ## Code of Conduct
 We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
-
 
 ## Note
 

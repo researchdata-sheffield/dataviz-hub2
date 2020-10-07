@@ -169,11 +169,11 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         {/******** main mdx content  ***********/}
         <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40 mdxBody`: `md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
           <MDXProvider 
-            components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
-                          hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, 
-                          img: IMGM, table: Table, Accordion: Accordion, AccordionItem: AccordionItem, 
-                          AccordionItemHeading: AccordionItemHeading, AccordionItemButton: AccordionItemButton, 
-                          AccordionItemPanel: AccordionItemPanel, LPWrap: LPWrap, LPItem: LPItem
+            components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, 
+                          pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMGM, table: Table, 
+                          Accordion: Accordion, AccordionItem: AccordionItem, AccordionItemHeading: AccordionItemHeading, 
+                          AccordionItemButton: AccordionItemButton, AccordionItemPanel: AccordionItemPanel, 
+                          LPWrap: LPWrap, LPItem: LPItem
                         }}
             >
             <MDXRenderer className="text-gray-100">{mdx.body}</MDXRenderer>
@@ -189,8 +189,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>  
       </div>       
  
+
       <PaginationPost mdx={mdx} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
-        
+
+      {/* comment */}
       {
         (typeof window !== `undefined`) &&
         <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">

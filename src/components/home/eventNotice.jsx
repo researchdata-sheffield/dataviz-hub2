@@ -26,13 +26,16 @@ const eventNotice = ({ eventBrite }) => {
                 <div className="text-gray-700 text-sm w-full font-bold px-2 py-3">Today: {currentDate}</div>
                 
                 <a className="flex flex-wrap w-full overflow-hidden max-h-80 text-gray-700 group pb-2 px-2" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
-                  <img className="w-full md:w-3/12 overflow-hidden self-center md:min-h-25 xl:min-h-15" src={node.logo.original.url} alt={`Thumbnail: ${node.description}`} style={{objectFit: "cover", objectPosition: "center"}} />
+                  <img className="w-full md:w-3/12 overflow-hidden self-center" src={node.logo.original.url} alt={`Thumbnail: ${node.description}`} style={{objectFit: "cover", objectPosition: "center", minHeight: "180px"}} />
                   <div className="w-full md:w-9/12 pb-2 px-4">
-                    <h1 className="inline-block font-semibold xl:text-xl"><p className="text-highlight_2 text-2xl xl:text-4xl inline-block">NEXT</p> event: &nbsp;<p className="inline-block text-lg xl:text-2xl font-bold">{node.name.text ? node.name.text : "No next event"}</p></h1>
-                    <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-lg">{description}</p>
-                    <p className="flex pt-2 group-hover:text-highlight_2 text-sm xl:text-lg"><FaClock className="mr-1" />{node.start.local}</p>
+                    <h1 className="inline-block font-semibold xl:text-xl"><p className="text-highlight_2 text-2xl xl:text-3xl inline-block">
+                      NEXT</p> event: &nbsp;
+                      <p className="inline-block text-lg xl:text-xl font-bold">{node.name.text ? node.name.text : "No next event"}</p>
+                    </h1>
+                    <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base">{description}</p>
+                    <p className="flex pt-2 group-hover:text-highlight_2 text-sm xl:text-base"><FaClock className="mr-1" />{node.start.local}</p>
                     <div className="flex flex-wrap">
-                      <div className="w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 text-sm xl:text-lg">
+                      <div className="w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 text-sm xl:text-base">
                         <p className="flex group-hover:text-highlight_2">{node.online_event && (<FaMapMarkerAlt className="mr-1 mt-1" />)} {node.online_event && ("Online Event") }</p>
                         <p className="flex group-hover:text-highlight_2">
                           {node.venue && ( <FaMapMarkerAlt className="mr-1 mt-1" /> )} 

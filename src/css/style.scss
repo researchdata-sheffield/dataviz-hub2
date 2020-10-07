@@ -205,6 +205,9 @@ Home Search bar & animation
   }
 }
 
+/*
+* Table of content
+*/
 .TOC {
 
   & li > a {
@@ -214,6 +217,8 @@ Home Search bar & animation
   & li.active > a {
     color: rgb(34, 34, 34);
     font-weight: 600;
+    border-left: #00aeef 5px solid;
+    padding-left: 5px;
   }
 }
 

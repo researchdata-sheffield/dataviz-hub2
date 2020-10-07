@@ -265,9 +265,9 @@ export const IMGM = (props) => {
 }
 
 export const EM = styled_twin.em`
-
-  img + & {
-    font-size: 1rem;
+  div:has(> img) + & {
+    font-size: .9rem;
+    color: #464646;
   }
 `
 

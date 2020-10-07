@@ -31,7 +31,7 @@ const RelatedPost = (props) => {
     <div className="max-w-screen-xl mx-auto">
       <Fade fraction={.3} duration={1500} delay={300}>
       <div className="px-3 lg:px-12 pt-12 pb-1 text-2xl text-gray-700 font-semibold"><p className="pb-1 border-b-2 border-gray-400" style={{width: 'max-content'}}>Related posts</p></div>
-      <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center md:justify-start lg:px-5">
+      <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center lg:justify-start lg:px-5">
         {relatedPosts.map(node => {
           let imagesrc = getImageSource(node);
           let title = shortenText(node.frontmatter.title, 8);
@@ -39,7 +39,7 @@ const RelatedPost = (props) => {
           const classes = "group-hover:hidden text-gray-100 font-bold transition duration-500"
 
           return (
-            <Link className="w-10/12 md:w-1/3 lg:w-3/10 mx-3 lg:mx-5 my-6 lg:px-2" to={node.fields.slug} key={node.id}>
+            <Link className="w-10/12 md:w-1/3 lg:w-3/10 mx-3 xl:mx-5 my-6 lg:px-2" to={node.fields.slug} key={node.id}>
               {/* background */}
               <div style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", maxHeight: "500px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-60 md:min-h-40 lg:min-h-50 2xl:min-h-40 transform hover:scale-105 transition duration-500">
                 {/* content */}
