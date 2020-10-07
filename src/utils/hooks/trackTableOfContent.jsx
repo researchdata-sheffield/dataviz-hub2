@@ -24,12 +24,11 @@ export function trackTableOfContent(tocSelector, itemSelector) {
   function handleClassList(element, tagName, type="add") {
     if(tagName.substring(0,1) !== "H") return;
     var el = element.parentElement;
-    var rm = type === "remove"
+    var rm = (type === "remove")
     
-    if(tagName === "H1") {
-      rm ? el.classList.remove('active') : el.classList.add('active');
-    } else {
-      rm ? el.classList.remove('active') : el.classList.add('active');
+    rm ? el.classList.remove('active') : el.classList.add('active');
+    
+    if(tagName !== "H1") {
       handleClassList(el.parentElement, `H${tagName.substring(1,) - 1}`, rm ? "remove" : "add");
     }
   }

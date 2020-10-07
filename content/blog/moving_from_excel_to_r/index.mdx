@@ -13,7 +13,7 @@ hide: "true"
 There are a lot of things to learn when you make a transition from Excel to R, especially if you haven't touched programming languages before, 
 everything can be overwhelming and frustrating. Hopefully this article will help you make a smooth transition by helping you install and set 
 up relevant software, introduce some fundamental concepts of R, and give some examples R codes for most commonly used functions in Excel. If you want a 
-more strctured and detailed introduction to R, see following resources:
+more structured and detailed introduction to R, see following resources:
 
 <LPWrap>
 	<LPItem href="https://cran.r-project.org/doc/manuals/r-release/R-intro.pdf">An Introduction to R</LPItem>
@@ -69,7 +69,9 @@ There are tons of packages out there and I encourage you to explore more tools s
 
 ![Install new packages in RStudio](./rstudio4.png)
  
-Now you’re good to go to write R codes!
+Now you’re good to go to write R codes!  
+
+*PS: I have included a copy of my R script [here](./Script.R).*
 
 
 # Setup
@@ -80,7 +82,7 @@ In the first line of the script, let's write the following code to load the tidy
 # Load required libraries
 library(tidyverse)
 
-# OR the following if you installed packages seperately
+# OR the following if you installed packages separately
 library(ggplot2)
 library(dplyr)
 library(readr)
@@ -105,16 +107,16 @@ data(mtcars)
 
 On above, `<-` (left angle bracket with a dash) is called **assignment operator** meaning we assign objects on the right hand side to the variable name on the 
 left hand side. Although you can choose whatever name you want it is usually recommended that variable names should not begin with numbers nor contain any 
-special characters. All variables and data you have declared will be store in the environment and should be listed in the environment tab on the right hand 
-side of RStudio panel. If the variable name already exsists, then the new assignment will override the exsiting object.  
+special characters. All variables and data you have declared will be stored in the environment and should be listed in the environment tab on the right hand 
+side of RStudio panel. If the variable name already exists, then the new assignment will override the existing object.  
 
-**Tip**: You can use the shortcut `Alt + -` in Windows or `Option + -` in MacOS for insert the assignment operator. For more shortcuts, use `Alt + Shift + K` in Windows 
-or `Option + Shift + K` in MacOS to open shortcut menu in RStudio.  
+**Tip**: You can use the shortcut `Alt + -` in Windows or `Option + -` in MacOS to insert the assignment operator. For more shortcuts, use `Alt + Shift + K` in Windows 
+or `Option + Shift + K` in MacOS to open the shortcut menu in RStudio.  
 
 **Get codes running**: There are several ways to run codes in RStudio,
 1. On selected lines use `Ctrl + Enter` and click the **Run** button on the toolbar (top right of the code panel).
 2. Use `Ctrl + Shift + Enter` to run the entire script.
-3. Use `Ctrl+ Shift + P` or the button next to the **Run** button for re-run previous code region.  
+3. Use `Ctrl + Shift + P` or the button next to the **Run** button for rerun previous code region.  
 
 **Add comments**: Sometimes you want to add annotation/comments to your code, to do this add a hashtag before your comments:
 ```r
@@ -125,18 +127,18 @@ mtcars
 
 To comment multiple existing lines, select lines then use `Ctrl + Shift + C`.
 
-**Help**: If you are strugging with something, for example the meaning of `~`, type `help('~')` 
+**Help**: If you are struggling with something, for example the meaning of `~`, type `help('~')` 
 in the script and run and there will be relevant documentation appear in the *help* tab.
 
 # Explore our data
 For this section and beyond I am going to use two datasets declared on above, [mtcars](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) (fuel 
 consumption and other 10 aspects of car design for 32 cars, 1973-74 models) 
 and [pop_2020](https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv) (2020 population data for 235 country/region around the world).  
-To view data, you can either click it in the **environment** tab to get a nice and structured dataframe similar to Excel (uneditable):
+To view data, you can either click it in the **environment** tab to get a nice and structured data frame similar to Excel (uneditable):
 
-![view data in RStudio enviroment](./data1.png)
+![view data in RStudio environment](./data1.png)
 
-or simply insert the name of dataset `mtcars` in a new line and run. The result will be displayed in the console:
+or simply insert the name of the dataset `mtcars` in a new line and run. The result will be displayed in the console:
 
 ![view data in RStudio Console](./data2.png)
 
@@ -147,7 +149,7 @@ head(mtcars, 10)
 tail(mtcars, 5)
 ``` 
 
-In R (and just like any other programming langauges) you can define your own functions, the 
+In R (and just like any other programming languages) you can define your own functions, the 
 syntax is as follows:
 ```r
 functionName <- function(parameter1, parameter2=TRUE, ...) {
@@ -165,7 +167,7 @@ myCalculation <- function(number) {
 }
 ```
 
-Note that this is for demostration and you can merge the function body into one line.
+Note that this is for demonstration and you can merge the function body into one line.
 
 ## Summary statistics
 To get a summary statistics (minimum, maximum, median, quantile) of our data we can use the `summary` function:
@@ -194,7 +196,7 @@ max(mtcars$mpg)
 sum(mtcars$carb)
 ```
 
-As you can see we have a dollar sign `$` in between the name of dataset and the name of particular column. This dollar sign allows us to extract 
+As you can see we have a dollar sign `$` in between the name of the dataset and the name of the particular column. This dollar sign allows us to extract 
 elements from a particular column. Alternatively, if you know the index (in R, Indexes are starting from 1) of the column name you can also 
 do something like `sd(mtcars[1])`.
 
@@ -266,7 +268,7 @@ If you wish to rename multiple columns then you either need to repeat the step a
 *rename* function from *dplyr* would be a better solution.
 
 ### group_by
-The `group_by` function is particular useful when you need to aggregate data into some groups and then apply other manipulations.
+The `group_by` function is particularly useful when you need to aggregate data into some groups and then apply other manipulations.
 
 ```r
 mtcars %>% group_by(cyl) %>% summarise(Total=n(), avgMpg=mean(mpg), hpSD=sd(hp))
@@ -280,7 +282,7 @@ In this case I have grouped cars by the number of cylinders and summarise each g
 ![Groupby function](./groupby.png)
 
 ### select 
-If you want a subset of original data, `select()` method come in handy. To select columns, simply do:
+If you want a subset of original data, `select()` method comes in handy. To select columns, simply do:
 ```r
 mtcars %>% select(mpg, hp, cyl, qsec)
 ```
@@ -365,7 +367,7 @@ mtcars %>% arrange(desc(mpg)) %>% arrange(desc(hp))
 ```
 
 ### slice 
-This function is useful for select, remove and duplicate rows.
+This function is useful for selecting, removing and duplicating rows.
 ```r
 # get first or last rows
 mtcars %>% slice_head(n=3)
@@ -411,7 +413,7 @@ a "blank sheet" but *ggplot2* provides *geom_* functions which allows us to add 
 layers on top of this sheet. There are different *geom_* functions for different types of 
 graphs and charts, see more details in the **[ggplot2 reference](https://ggplot2.tidyverse.org/reference/index.html)**. 
 In this section we will be working on scatter plots but the steps are more or less identical in 
-creating other type of graphs.  
+creating other types of graphs.  
 
 ![A simple scatter plot](./geompoint.png)
 *A simple scatter plot*
@@ -448,7 +450,7 @@ ggplot(mtcars, aes(mpg, hp, label=rownames(mtcars))) +
 
 ![Scatter plot - repel labels](./sp_labels2.png)
 
-Now the labels looks much more clear. We could also add a regression line to the plot:
+Now the labels look much more clear. We could also add a regression line to the plot:
 ```r {3}
 ggplot(mtcars, aes(mpg, hp, label=rownames(mtcars))) + 
   geom_point(aes(color=factor(cyl)), size=4) +
@@ -492,7 +494,7 @@ labs(title = "Cars: Horsepower vs Miles per Gallon",
 )
 ```
 
-Once you are happy with the layout, you might starting thinking about the theme 
+Once you are happy with the layout, you might start thinking about the theme 
 and colours of your plot. **ggplot2** comes with some pre-designed [themes](https://ggplot2.tidyverse.org/reference/index.html#section-themes) 
 such as `theme_classic()` and `theme_minimal()`, of course you can also use `theme()` to twerk individual settings. In 
 addition, I am using `scale_color_brewer(palette="Paired")` to change colours for points. Here is my final scatter plot:
@@ -527,20 +529,21 @@ Hopefully this is a useful section and as mentioned before there are functions
 for other types of graphs, for more information visit *[ggplot2](https://ggplot2.tidyverse.org/reference/index.html)*.
 
 # Most used functions in Excel
-This section will give some examples R codes for common functions in Excel. Note that these 
+This section will give some example R codes for common functions in Excel. Note that these 
 codes are prepared in contrast with functions in Excel 2016, some functions might not work in 
 other versions of Excel. Throughout the section the following dataset will be used:
 ```r
 pop_2020 <- read.csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
 ```
 
-![A snapshot of the popluation data](./pop_2020.png)
+![A snapshot of the population data](./pop_2020.png)
+*A snapshot of the population data*
 
 
 ## Conditional formula
 Although it is not possible to format data cells in R entirely like Excel, we can still apply conditions to data:
 ```r
-# Get countries with popluation between 100k to 200k
+# Get countries with population between 100k to 200k
 pop_2020[(pop_2020$Population > 100000) & (pop_2020$Population < 200000),]
 # Get countries with Fertility rate equals 2 or 1.1
 pop_2020[(pop_2020$Fert.Rate == 2.0 | pop_2020$Fert.Rate == 1.1),]
@@ -572,4 +575,61 @@ for counting the total:
 sum(!is.na(pop_2020$Net_Migrants))
 ```
 
-## 
+## SUMIF / AVERAGEIF
+Get the total or average of particular column subject to some conditions:
+```r
+sum(pop_2020[pop_2020$Density < 10,]$Population)
+
+mean(pop_2020[pop_2020$Density < 10,]$Population)
+```
+
+## LEFT / RIGHT
+LEFT/RIGHT function allows you to extract a substring from a string, starting from the 
+left-most/right-most character. You can use the `substr()` function in R which takes 
+three arguments:
+`substr(textToExtract, placeToStart, placeToFinish)`.
+
+```r
+myString <- "ExcelToR"
+# first 5 characters
+substr(myString, 1, 5)
+
+# last 5 characters
+substr(myString, nchar(myString)-5+1, nchar(myString))
+```
+
+## MIN / MAX
+R has included `min()` and `max()` functions in the *base* package.
+
+```r
+max(pop_2020$Density)
+min(pop_2020$Density)
+```
+
+## CONCATENATE
+The *CONCATENATE* function is used to join strings/text from different cells. 
+
+```r
+# default for sep is " "
+paste("Moving", "From", "Excel", "To", "R", sep = "!")
+```
+
+## COUNTIF
+Count the number of rows based on some conditions:
+```r
+pop_2020 %>% drop_na(Net_Migrants) %>% count(Net_Migrants > 500000)
+```
+
+## INDEX 
+Retrieve data elements based on index is quite straightforward and very 
+similar to Excel:
+```r
+# row 1
+pop_2020[1,]
+
+# column 4
+pop_2020[,4]
+
+# row 2 to 3, column 3
+pop_2020[2:3,3]
+```
