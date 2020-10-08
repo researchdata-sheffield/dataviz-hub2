@@ -41,7 +41,7 @@ The area on the left that is highlighted in black is where you will write R code
 is divided into two sections. The top section highlighted in red acts as a storage house for your current project. It stores a list of variables and 
 datasets you have defined, shows a history of codes you have run before, and allows you to connect to external databases. The area highlighted in green 
 contains five tabs. The **Files** tab is a file system that lists all directories and files under the current project; **Plots** displays any graphical 
-images you have generated from the code on the left; WIthin the **Packages** tab you can manage R packages in your local environment and perform actions 
+images you have generated from the code on the left; Within the **Packages** tab you can manage R packages in your local environment and perform actions 
 such as install, update, and delete. I would recommend you to use the **Help** tab regularly while you are learning R and/or RStudio as it provides a 
 very useful manual and you can even browser packages reference without leaving RStudio. Finally, if you decided to explore more about generating web 
 contents using RStudio, then you can preview the result in the **Viewer** tab.  
@@ -200,7 +200,7 @@ elements from a particular column. Alternatively, if you know the index (in R, I
 do something like `sd(mtcars[1])`.
 
 ## Data manipulation 
-**[Tidyverse](https://www.tidyverse.org)** has a powerful package called *dplyr* designed for data manipulation and it works great with another package 
+**[Tidyverse](https://www.tidyverse.org)** has a powerful package *dplyr* designed for data manipulation and it works great with another package 
 called *magrittr* (also part of tidyverse) that offers a set of operators (including the well known pipe operator `%>%`). Pipes generally improve code 
 readability and help to reduce possible intermediate steps. For example, if we want the average miles per gallon for the first 10 cars, we could do 
 something like this without pipe operator:
@@ -524,6 +524,17 @@ ggplot(mtcars, aes(mpg, hp, label=rownames(mtcars))) +
 
 ![Final scatter plot](./sp_final.png)  
 
+To save a plot, click *Export* on the **Plots** panel then choose your preference.
+
+![Export plots](./saveImg.png)
+
+Alternatively, use the `ggsave()`` function like this:
+```r
+ggsave("myImage.png", dpi=300, width = 24, height = 16, units = "cm")
+```
+
+By default the function will save the last plot created using *ggplot2*.  
+
 Hopefully this is a useful section and as mentioned before there are functions 
 for other types of graphs, for more information visit *[ggplot2](https://ggplot2.tidyverse.org/reference/index.html)*.
 
@@ -632,3 +643,13 @@ pop_2020[,4]
 # row 2 to 3, column 3
 pop_2020[2:3,3]
 ```
+
+# Summary of resources
+- Download R from CRAN mirrors (UK): [Imperial](https://cran.ma.imperial.ac.uk/) or [Bristol](https://www.stats.bris.ac.uk/R/).
+- Download [RStudio](https://rstudio.com/products/rstudio/download/)
+- [Tidyverse](https://www.tidyverse.org/)
+- Tidyverse [cheat sheets](https://rstudio.com/resources/cheatsheets/) 
+- [ggplot2](https://ggplot2.tidyverse.org/) and its [reference](https://ggplot2.tidyverse.org/reference/index.html)
+- Dplyr [reference](https://dplyr.tidyverse.org/reference/index.html)
+- Datasets [mtcars](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) and [world population 2020](https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv)
+- A [copy](./Script.R) of R script for this articles
