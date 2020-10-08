@@ -1,5 +1,5 @@
 ## Contribute blog post
-To contribute, please visit the [guide](https://dataviz.shef.ac.uk/blog/22/03/2020/contribute_blog_post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
+To contribute, please visit the [guide](https://dataviz.shef.ac.uk/blog/22/03/2020/contribute-blog-post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
 
 
 ## Contribute to the website

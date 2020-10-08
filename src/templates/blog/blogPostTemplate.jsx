@@ -181,9 +181,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>
 
         {/* sidebar toc: hidden in mobile */}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-12 pb-10 max-h-100 overflow-auto`}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-10 pb-10 max-h-100 overflow-auto`}>
           <p className="font-bold mb-4 pb-2 text-gray-800 text-lg" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>
-          <div className="px-1 text-base TOC">
+          <div className="px-1 text-base TOC lg:pb-10">
           { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }
           </div>      
         </div>  

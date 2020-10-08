@@ -37,7 +37,7 @@ We are constantly looking for new ideas and suggestions for events, workshops or
 See the [CONTRIBUTING](./CONTRIBUTING.md) document.
 
 ## Code of Conduct
-We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text](./CODE_OF_CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text](./CODE-OF-CONDUCT.md) so that you can understand what actions will and will not be tolerated.
 
 ## Note
 

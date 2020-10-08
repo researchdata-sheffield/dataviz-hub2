@@ -1,18 +1,20 @@
 import React, { useState } from 'react'
 import { Link } from "gatsby"
 import Fade from 'react-reveal/Fade'
-import Zoom from 'react-reveal/Zoom'
+import Slide from 'react-reveal/Slide'
+
 import { MdKeyboardArrowRight, MdPeople } from "react-icons/md"
 import { RiCalendarEventLine, RiBookReadLine, RiMenuAddLine } from "react-icons/ri"
 import { ButtonWithArrow } from "../style/styled"
-import ReactTooltip from 'react-tooltip'
+//import ReactTooltip from 'react-tooltip'
 
 
 const HomeCommunity = () => {
-  const cardClasses = "w-4/5 md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group"
+  const cardClasses = "w-4/5 md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
   const cardTextClasses = "text-sm xl:text-base border-t-1 border-gray-300 py-3 text-gray-600 group-hover:text-gray-900"
   const buttonClasses = "rounded-full text-xs lg:text-sm mt-5 lg:mt-10"
   const [bgColour, setColour] = useState('#fff');
+  const [getHelp, setHelp] = useState(false);
 
 
   return (
@@ -30,7 +32,7 @@ const HomeCommunity = () => {
       
       <div className="flex flex-wrap text-black md:-mt-16 pb-20 justify-center">
         <div className={cardClasses} onMouseEnter={() => setColour('#fed7d7')} onMouseLeave={() => setColour('#fff')}>
-          <Zoom bottom duration={700} delay={300}>
+          <Slide bottom duration={200}>
             <RiCalendarEventLine className="text-3xl" />
             <p className="font-bold py-3">Events</p>
             <div className={cardTextClasses}>
@@ -39,37 +41,42 @@ const HomeCommunity = () => {
             <Link to="/events">
               <ButtonWithArrow className={`${buttonClasses} group-hover:bg-red-500`} type="BlackButton">Upcoming events</ButtonWithArrow>
             </Link>
-          </Zoom>
+          </Slide>
         </div>
 
         <div className={cardClasses} onMouseEnter={() => setColour('#d3f3ff')} onMouseLeave={() => setColour('#fff')}>
-          <Zoom bottom duration={700} delay={550}>
+          <Slide bottom duration={300}>
             <RiBookReadLine className="text-3xl" />
             <p className="font-bold py-3">Training</p>
             <div className={cardTextClasses}>
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-highlight_2`} type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
-           
-          </Zoom>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-highlight_2`} type="BlackButton" >Coming soon</ButtonWithArrow>
+          </Slide>
         </div>
       
         <div className={cardClasses} onMouseEnter={() => setColour('#b2f5ea')} onMouseLeave={() => setColour('#fff')}>
-          <Zoom bottom duration={700} delay={800}>
+          <Slide bottom duration={400}>
+          <div className={`${getHelp ? 'hidden' : ''}`}>
             <MdPeople className="text-3xl" />
             <p className="font-bold py-3">Support</p>
             <div className={cardTextClasses}>
               Get in touch with us. It is natural that you have found something diffcult to understand or need more specific guidance and direction.
             </div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" data-tip="" data-for="ReactTooltip1">Coming soon</ButtonWithArrow>
-            <ReactTooltip id="ReactTooltip1" delayShow={500} delayHide={1000} effect="float">
-              Why not join our slack channel and get live updates?
-            </ReactTooltip>
-          </Zoom>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I need support</ButtonWithArrow>
+          </div>
+          </Slide>
+          <Slide top duration={300}>
+          <div className={`${getHelp ? 'flex flex-wrap bg-teal-100 p-5' : 'hidden'}`}>
+            <div>Get support from the community</div>
+            <div>Support from a member of dataviz team</div>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
+          </div>
+          </Slide>
         </div>
         
         <div className={cardClasses} onMouseEnter={() => setColour('#fed7e2')} onMouseLeave={() => setColour('#fff')}>
-          <Zoom bottom duration={700} delay={1050}>
+          <Slide bottom duration={500}>
             <div>
               <RiMenuAddLine className="text-3xl" />
               <p className="font-bold py-3">Contribution</p>
@@ -80,7 +87,7 @@ const HomeCommunity = () => {
             <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md" target="_blank" rel="noopener noreferrer">
               <ButtonWithArrow className={`${buttonClasses} group-hover:bg-pink-500`} type="BlackButton">Our repository</ButtonWithArrow>
             </a>
-          </Zoom>
+          </Slide>
         </div>
       </div>
       {/* <div className="w-full absolute bottom-0">
