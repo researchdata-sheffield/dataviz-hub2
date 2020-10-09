@@ -14,7 +14,13 @@ const HomeCommunity = () => {
   const buttonClasses = "rounded-full text-xs lg:text-sm mt-5 lg:mt-10"
   const [bgColour, setColour] = useState('#fff');
   const [getHelp, setHelp] = useState(false);
-
+  const supportLinks = [
+    "mailto:rdm@sheffield.ac.uk",
+    "https://shef-dataviz.slack.com/archives/DRF6V81L0", 
+    "https://shef-dataviz.slack.com/archives/D01CANTQN2F", 
+    "https://shef-dataviz.slack.com/archives/D014SQAFRGT", 
+    "https://shef-dataviz.slack.com/archives/D01CARHVAJF"
+  ]
 
   return (
     <div id="home_community" className="ipadp:min-h-110 flex flex-wrap justify-center items-center relative" style={{transition: '.5s ease', background: `linear-gradient(180deg, ${bgColour} 0%, #fff 60%)`, backgroundColor: `${bgColour}`}}>
@@ -76,13 +82,15 @@ const HomeCommunity = () => {
             </div>
             <div className="p-2 mt-5 text-center">
               <GrContactInfo className="mx-auto text-4xl mb-2" />
-              <div className="text-left text-sm xl:text-base">If you would like to speak to members of Dataviz Team, please get in touch with us.</div>
-              <a href="https://shef-dataviz.slack.com/archives/DRF6V81L0" target="_blank" rel="noopener noreferrer">
-                <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Slack</BlackButton>
-              </a>
-              <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
-                <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Email</BlackButton>
-              </a>
+              <div className="text-left text-sm xl:text-base">If you would like to speak to members of Dataviz Team, please get in touch with us through email or direct messages (Slack).</div>
+              <div className="mt-2">
+                {supportLinks.map((link, i) => (
+                  <a href={link} target="_blank" rel="noopener noreferrer" key={link}>
+                    <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2 mr-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
+                  </a>
+                ))}
+                
+              </div>
             </div>
             <ButtonWithArrow className={`${buttonClasses} bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
           </div>
