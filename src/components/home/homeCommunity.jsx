@@ -5,9 +5,8 @@ import Slide from 'react-reveal/Slide'
 
 import { MdKeyboardArrowRight, MdPeople } from "react-icons/md"
 import { RiCalendarEventLine, RiBookReadLine, RiMenuAddLine } from "react-icons/ri"
-import { ButtonWithArrow } from "../style/styled"
-//import ReactTooltip from 'react-tooltip'
-
+import { ButtonWithArrow, BlackButton } from "../style/styled"
+import { GrGroup, GrContactInfo } from "react-icons/gr"
 
 const HomeCommunity = () => {
   const cardClasses = "w-4/5 md:w-1/3 ipadp:w-1/5 mx-5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
@@ -61,16 +60,31 @@ const HomeCommunity = () => {
             <MdPeople className="text-3xl" />
             <p className="font-bold py-3">Support</p>
             <div className={cardTextClasses}>
-              Get in touch with us. It is natural that you have found something diffcult to understand or need more specific guidance and direction.
+              Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.
             </div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I need support</ButtonWithArrow>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
           </div>
           </Slide>
           <Slide top duration={300}>
-          <div className={`${getHelp ? 'flex flex-wrap bg-teal-100 p-5' : 'hidden'}`}>
-            <div>Get support from the community</div>
-            <div>Support from a member of dataviz team</div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
+          <div className={`${getHelp ? 'flex flex-wrap bg-teal-100 p-4 z-10' : 'hidden'}`}>
+            <div className="p-2 text-center">
+              <GrGroup className="mx-auto text-4xl mb-2" />
+              <p className="text-left text-sm xl:text-base">We have a diverse community where everyone is passionate about data visualisation.</p>
+              <a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">
+                <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
+              </a>
+            </div>
+            <div className="p-2 mt-5 text-center">
+              <GrContactInfo className="mx-auto text-4xl mb-2" />
+              <div className="text-left text-sm xl:text-base">If you would like to speak to members of Dataviz Team, please get in touch with us.</div>
+              <a href="https://shef-dataviz.slack.com/archives/DRF6V81L0" target="_blank" rel="noopener noreferrer">
+                <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Slack</BlackButton>
+              </a>
+              <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
+                <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Email</BlackButton>
+              </a>
+            </div>
+            <ButtonWithArrow className={`${buttonClasses} bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
           </div>
           </Slide>
         </div>
@@ -79,7 +93,7 @@ const HomeCommunity = () => {
           <Slide bottom duration={500}>
             <div>
               <RiMenuAddLine className="text-3xl" />
-              <p className="font-bold py-3">Contribution</p>
+              <p className="font-bold py-3">Collaboration</p>
               <div className={cardTextClasses}>
                 We love to see people actively sharing their thought and creativity. We have prepared a tutorial for you to upload your own blog posts.
               </div>

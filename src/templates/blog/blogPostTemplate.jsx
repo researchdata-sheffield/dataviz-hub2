@@ -52,7 +52,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     trackTableOfContent(`.TOC li a`, `.mdxBody`)
   }
 
-  //Redering table of content
+  //Rendering table of content
   const renderItem = (item) => (
     <li key={item.title} className="pb-1 list-none">
       {/* Heading */}
@@ -72,10 +72,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   if (typeof window !== `undefined`) {
     //const list = document.querySelector('.gatsby-code-title')
     // selector all code block titles
-    // add copy to clickboard button for every title
+    // add copy to clipboard button for every title
     // add copy function to button 
   }
-
 
   return (
     <div className="relative" key={mdx.id}>
@@ -150,8 +149,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
 
         {/* mobile: table of content & share buttons */}
-        <div className="w-full shadow-lg flex flex-wrap justify-center -mt-12 lg:mt-0" style={{backgroundColor: '#f3f3f3'}}>
-          <div className="flex flex-col text-sm justify-center items-center w-1/4 py-2 lg:hidden ml-10" style={{maxWidth: '50px'}}>
+        <div className="w-full shadow-md flex flex-wrap justify-center -mt-12 lg:mt-0" style={{backgroundColor: '#f3f3f3'}}>
+          <div className={`${ Object.keys(tableOfContent).length === 0 ? 'flex-row' : 'flex-col w-1/4'} flex text-sm justify-center items-center py-2 lg:hidden ml-10`} style={{maxWidth: '50px'}}>
             <Twitter solid small message={shareMessage} link={shareLink} />
             <Facebook solid small link={shareLink} />
             <Mail solid small className="bg-red-600" subject={shareMessage} link={shareLink} />
@@ -160,14 +159,14 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <div className="m-2 py-1 px-2 bg-gray-800 hover:bg-highlight_2 text-white flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
             </a>
           </div>    
-          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-8 pb-5`: ``} mx-auto overflow-auto text-black lg:hidden px-2`}>
+          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-8 pb-5`: `hidden`} mx-auto overflow-auto text-black lg:hidden px-2`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">TABLE OF CONTENTS</p>}
               { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }      
           </div>       
         </div>   
    
         {/******** main mdx content  ***********/}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40 mdxBody`: `md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg 2xl:text-xl`} style={{color: '#24292e'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40 mdxBody`: `md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg`} style={{color: '#24292e'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, 
                           pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMGM, table: Table, 
