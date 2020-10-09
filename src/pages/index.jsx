@@ -139,16 +139,6 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             <EventNotice eventBrite={eventBrite} />             
             <FeaturedPost featuredPost={featuredPost} />
             <LatestPost latestPost={latestPost} />
-            
-            <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
-              <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
-              <Link to="/blog">
-                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 bg-gray-200 hover:text-gray-700 hover:bg-gray-300 text-gray-700 mt-0 text-sm" link title="read more on blog">
-                  Read more
-                </ButtonWithArrow>
-              </Link>
-            </div> 
-          
           </div> 
           {/* End of right component */}
 
@@ -173,11 +163,6 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Link> 
           </div>
         </Fade>
-        {/* <div className="w-full absolute bottom-0 -mb-1">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
-            <path fill="#1d1d1d" fillOpacity="1" d="M0,128L48,128C96,128,192,128,288,138.7C384,149,480,171,576,181.3C672,192,768,192,864,186.7C960,181,1056,171,1152,154.7C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-          </svg>
-        </div> */}
       </div>
 
       <LearningPath />

@@ -62,38 +62,36 @@ const HomeCommunity = () => {
       
         <div className={cardClasses} onMouseEnter={() => setColour('#b2f5ea')} onMouseLeave={() => setColour('#fff')}>
           <Slide bottom duration={400}>
-          <div className={`${getHelp ? 'hidden' : ''}`}>
-            <MdPeople className="text-3xl" />
-            <p className="font-bold py-3">Support</p>
-            <div className={cardTextClasses}>
-              Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.
+            <div className={`${getHelp ? 'hidden' : ''}`}>
+              <MdPeople className="text-3xl" />
+              <p className="font-bold py-3">Support</p>
+              <div className={cardTextClasses}>Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.</div>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
             </div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
-          </div>
           </Slide>
+          {/* Support contact info */}
           <Slide top duration={300}>
-          <div className={`${getHelp ? 'flex flex-wrap bg-teal-100 p-4 z-10' : 'hidden'}`}>
-            <div className="p-2 text-center">
-              <GrGroup className="mx-auto text-4xl mb-2" />
-              <p className="text-left text-sm xl:text-base">We have a diverse community where everyone is passionate about data visualisation.</p>
-              <a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">
-                <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
-              </a>
-            </div>
-            <div className="p-2 mt-5 text-center">
-              <GrContactInfo className="mx-auto text-4xl mb-2" />
-              <div className="text-left text-sm xl:text-base">If you would like to speak to members of Dataviz Team, please get in touch with us through email or direct messages (Slack).</div>
-              <div className="mt-2">
-                {supportLinks.map((link, i) => (
-                  <a href={link} target="_blank" rel="noopener noreferrer" key={link}>
-                    <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2 mr-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
-                  </a>
-                ))}
-                
+            <div className={`${getHelp ? 'flex flex-wrap bg-teal-100 p-4 z-10' : 'hidden'}`}>
+              <div className="p-2 text-center">
+                <GrGroup className="mx-auto text-4xl mb-2" />
+                <p className="text-left text-sm xl:text-base">We have a diverse community where everyone is passionate about data visualisation.</p>
+                <a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">
+                  <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
+                </a>
               </div>
+              <div className="p-2 mt-5 text-center">
+                <GrContactInfo className="mx-auto text-4xl mb-2" />
+                <div className="text-left text-sm xl:text-base">If you would like to speak to members of Dataviz Team, please get in touch with us through email or direct messages (Slack).</div>
+                <div className="mt-2">
+                  {supportLinks.map((link, i) => (
+                    <a href={link} target="_blank" rel="noopener noreferrer" key={link}>
+                      <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2 mr-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
+                    </a>
+                  ))}
+                </div>
+              </div>
+              <ButtonWithArrow className={`${buttonClasses} bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
             </div>
-            <ButtonWithArrow className={`${buttonClasses} bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
-          </div>
           </Slide>
         </div>
         
