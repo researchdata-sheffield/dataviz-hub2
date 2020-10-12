@@ -35,7 +35,7 @@ const HomeCommunity = () => {
         </div>
       </Fade>
       
-      <div className="flex flex-wrap text-black md:-mt-16 pb-20 justify-center">
+      <div className="flex flex-wrap text-black xl:-mt-16 pb-20 justify-center">
         <div className={cardClasses} onMouseEnter={() => setColour('#fed7d7')} onMouseLeave={() => setColour('#fff')}>
           <Slide bottom duration={200}>
             <RiCalendarEventLine className="text-3xl" />

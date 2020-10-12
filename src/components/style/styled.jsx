@@ -140,42 +140,42 @@ export const BlackWhiteButton = styled_twin.button`
 
 export const AnimateButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-gray-900 text-center font-semibold py-2 px-6 shadow`};
+  ${tw`bg-black text-white text-center font-semibold py-2 px-4 shadow`};
   border: none;
   z-index: 1;
   position: relative;
   text-align: center;
   overflow: hidden;
-  transition: color 0.85s ease-in-out;
+  transition: all .5s ease;
   display: inline-block;
+  background: #black;
+  box-shadow: rgba(255,121,180,1) 4px 4px .1px;
 
-  &::before {
+  &:after {
     content: '';
-    z-index: -1;
     position: absolute;
-    bottom: 100%;
-    right: 100%;
-    width: 3em;
-    height: .7em;
-    border-radius: 50%;
-    color: #fff;
-    background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
-    transform-origin: center;
-    transform: translate3d(10%, 10%, 0) scale3d(0, 0, 0);
-    transition: transform 0.55s ease-in-out;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
   }
-
+  &:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #fff;
+    transition: all .3s;
+    z-index: -1;
+  }
   &:hover {
-    cursor: pointer;
-    color:  #fff;
-    transform: scale(1.039) perspective(1px) translateZ(0);
-    // backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
-
-  &:hover::before {
-    transform: translate3d(300%,300%,0) scale3d(5,5,13);
-    background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+    color: #000;
+    &:before {
+        width: 100%;
+    }
   }
 
 `
@@ -206,6 +206,14 @@ export const ButtonWithArrow = (props) => {
         {props.children}
         <MdKeyboardArrowRight className={arrowStyle} />
         </BlackWhiteButton>
+      )
+    
+    case 'AnimateButton':
+      return (
+        <AnimateButton {...props}>
+        {props.children}
+        <MdKeyboardArrowRight className={arrowStyle} />
+        </AnimateButton>
       )
 
     default:

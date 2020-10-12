@@ -150,7 +150,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
         {/* mobile: table of content & share buttons */}
         <div className="w-full shadow-md flex flex-wrap justify-center -mt-12 lg:mt-0" style={{backgroundColor: '#f3f3f3'}}>
-          <div className={`${ Object.keys(tableOfContent).length === 0 ? 'flex-row' : 'flex-col w-1/4'} flex text-sm justify-center items-center py-2 lg:hidden ml-10`} style={{maxWidth: '50px'}}>
+          <div className={`${ tableOfContent && Object.keys(tableOfContent).length === 0 ? 'flex-row' : 'flex-col w-1/4'} flex text-sm justify-center items-center py-2 lg:hidden ml-10`} style={{maxWidth: '50px'}}>
             <Twitter solid small message={shareMessage} link={shareLink} />
             <Facebook solid small link={shareLink} />
             <Mail solid small className="bg-red-600" subject={shareMessage} link={shareLink} />
