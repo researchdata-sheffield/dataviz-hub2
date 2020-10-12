@@ -22,7 +22,7 @@ const HomeShowcase = () => {
               representations of data built by staff and students at the University of Sheffield.
             </div>
             <a className="mt-8" href="https://orda.shef.ac.uk/visualisations" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow external type="GreyButton" className="group">Discover ORDA</ButtonWithArrow>
+              <ButtonWithArrow external type="AnimateButton" className="group">Discover ORDA</ButtonWithArrow>
             </a>
             </Fade>
           </div>
@@ -41,7 +41,7 @@ const HomeShowcase = () => {
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>
           <a className="mt-12" href="https://orda.shef.ac.uk" target="_blank" rel="noopener noreferrer">
-            <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 bg-gray-200 hover:text-gray-700 hover:bg-gray-300 text-gray-700 mt-0 text-lg">
+            <ButtonWithArrow type="AnimateButton" className="group mt-0 text-lg" boxShadow="#00aeef">
               Go to ORDA
             </ButtonWithArrow>
           </a>

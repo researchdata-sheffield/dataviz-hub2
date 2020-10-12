@@ -5,6 +5,7 @@ import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
 import { ButtonWithArrow } from "./styled"
 import ModalImage from "react-modal-image";
+import { FaTwitter } from "react-icons/fa"
 
 export const LPWrap = (props) => {
   return (
@@ -311,6 +312,15 @@ export const Table = styled.table`
   }
 `
 
+export const TwitterBtn = (props) => {
+  return (
+    <a {...props}>
+      <div className="py-0 px-3 text-sm font-semibold flex items-center bg-highlight_2 rounded-md text-white hover:bg-highlight transition duration-500">
+        <FaTwitter className="inline-block text-lg mr-1" /> Follow
+      </div>
+    </a>
+  )  
+}
 
 A.propTypes = {
   children: PropTypes.any,

@@ -4,7 +4,7 @@ import { useStaticQuery, graphql, Link } from "gatsby"
 import { jaccardIndexCompareTwoStrings } from "../../utils/blog"
 import Fade from 'react-reveal/Fade'
 import { getImageSource, shortenText } from "../../utils/shared"
-
+import { AiOutlineBulb } from "react-icons/ai"
 
 const RelatedPost = (props) => {
   const { currentPost } = props
@@ -30,7 +30,10 @@ const RelatedPost = (props) => {
   return (
     <div className="max-w-screen-xl mx-auto">
       <Fade fraction={.3} duration={1500} delay={300}>
-      <div className="px-3 lg:px-12 pt-12 pb-1 text-2xl text-gray-700 font-semibold"><p className="pb-1 border-b-2 border-gray-400" style={{width: 'max-content'}}>Related posts</p></div>
+      <div className="px-3 lg:px-12 pt-12 pb-1 text-2xl text-gray-900 font-semibold flex items-center">
+        <AiOutlineBulb className="inline-block mr-3 text-3xl" />
+        <p className="pb-1 border-b-2 border-gray-300" style={{width: 'max-content'}}>Related posts</p>
+      </div>
       <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center lg:justify-start lg:px-5">
         {relatedPosts.map(node => {
           let imagesrc = getImageSource(node);

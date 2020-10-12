@@ -17,7 +17,7 @@ class Search_Home extends Component {
   
 
   render() {
-    const quickLink = "text-gray-700 hover:underline"
+    const quickLink = "text-gray-800 hover:underline"
 
     const ResultList = () => {
       if (this.state.results.length > 0 && this.state.query.length > 0 ) {
@@ -60,7 +60,7 @@ class Search_Home extends Component {
     }
 
     return (
-      <div className={`${this.props.classNames} mt-6 2xl:mt-10 relative text-gray-700 w-full text-center`} >
+      <div className={`${this.props.classNames} mt-6 2xl:mt-10 relative text-gray-900 w-full text-center`} >
         <div className="inline-block text-gray-700 bg-white p-3 rounded-lg" style={{boxShadow: "#6d6d6d 0px 5px 25px -16px"}}>
           <FiSearch className="inline-block text-center text-3xl -mt-1" />
           <input id="homeSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-700" style={{minWidth: "21vw"}} type="text" name="search" placeholder="What are you looking for?" />

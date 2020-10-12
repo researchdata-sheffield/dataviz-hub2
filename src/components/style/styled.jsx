@@ -148,8 +148,7 @@ export const AnimateButton = styled_twin.button`
   overflow: hidden;
   transition: all .5s ease;
   display: inline-block;
-  background: #black;
-  box-shadow: rgba(255,121,180,1) 4px 4px .1px;
+  box-shadow: ${({boxShadow}) => boxShadow ? boxShadow : `rgba(255,121,180,1)`} 4px 4px .1px;
 
   &:after {
     content: '';
@@ -167,7 +166,7 @@ export const AnimateButton = styled_twin.button`
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #fff;
+    background-color: ${({hoverBC}) => hoverBC ? hoverBC : `#fff`};
     transition: all .3s;
     z-index: -1;
   }
@@ -234,7 +233,7 @@ ButtonWithArrow.propTypes = {
 
 export const A_footer = (props) => {
   return (
-    <a {...props} className={`${props.className} text-gray-500 hover:text-highlight_2`} target="_blank" rel="noopener noreferrer">{props.children}</a>
+    <a {...props} className={`${props.className} text-gray-400 hover:text-highlight_2`} target="_blank" rel="noopener noreferrer">{props.children}</a>
   )  
 }
 A_footer.propTypes = {

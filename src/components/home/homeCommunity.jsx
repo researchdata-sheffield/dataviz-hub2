@@ -26,12 +26,8 @@ const HomeCommunity = () => {
     <div id="home_community" className="ipadp:min-h-110 flex flex-wrap justify-center items-center relative" style={{transition: '.5s ease', background: `linear-gradient(180deg, ${bgColour} 0%, #fff 60%)`, backgroundColor: `${bgColour}`}}>
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap mt-24">
-          <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center px-4">
-            {/* <h1 style={{background: 'linear-gradient(to right, #30CFD0 0%, #330867 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY.</h1> */}
-            <h1 style={{fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY. </h1>
-          </div>
+          <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center px-4"><h1 style={{fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY. </h1></div>
           <Link to="/community" className="mt-1 text-med xl:text-lg text-gray-600 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /> 😃</Link>
-          {/* <p className="border-t-6 border-highlight_2 w-1/12"></p>*/}
         </div>
       </Fade>
       

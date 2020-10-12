@@ -2,13 +2,14 @@ import React from "react"
 import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
 import SEO from "../components/shared/seo"
-import BackgroundSection from "../components/images/community_background"
 import { Link } from "gatsby"
 import com_1 from "../images/community/com_1.jpg"
 import com_2 from "../images/community/com_2.jpg"
 import google from "../images/community/google.png"
 import Fade from 'react-reveal/Fade'
 import { Link as Link_effect } from "../components/style/blogPostStyle"
+import bg from "../images/community/community.jpg"
+import { AnimateButton } from "../components/style/styled"
 
 const Community = () => {
 
@@ -19,7 +20,7 @@ const Community = () => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz community", "dataviz.shef"]} 
       />
       <Header />
-      <BackgroundSection className="items-center justify-center text-center">
+      <div className="flex flex-col min-h-100 items-center justify-center text-center w-full" style={{backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.65) 100%), url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={700} duration={2000}>
           <div className="text-white">
             <h1 className="text-5xl font-bold leading-tight">Community at Dataviz.Shef</h1>
@@ -28,14 +29,14 @@ const Community = () => {
 
           <div className="mt-16">
             <Link to='/community#discover'>
-              <div className="inline-block"><button className="mr-10 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Discover</button></div>
+              <AnimateButton className="mr-10 bg-white text-black hover:text-white" hoverBC="#000">Discover</AnimateButton>
             </Link>
             <Link to='/community#joinus'>
-              <div className="inline-block"><button className="bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-5 border border-transparent shadow">Join community</button></div>
+              <AnimateButton className=" bg-white text-black hover:text-white" hoverBC="#000" boxShadow="#00aeef">Join community</AnimateButton>
             </Link>
           </div>
         </Fade>
-      </BackgroundSection>
+      </div>
 
       <div id="discover" className="container mx-auto py-24 text-gray-800 flex flex-wrap">
         

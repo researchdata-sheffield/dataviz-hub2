@@ -15,7 +15,7 @@ import Header from "../../components/shared/header"
 import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../../components/style/styled"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMGM } from "../../components/style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMGM, TwitterBtn } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import GitalkComponent from "gitalk/dist/gitalk-component";
 import Fade from "react-reveal/Fade"
@@ -172,7 +172,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
                           pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMGM, table: Table, 
                           Accordion: Accordion, AccordionItem: AccordionItem, AccordionItemHeading: AccordionItemHeading, 
                           AccordionItemButton: AccordionItemButton, AccordionItemPanel: AccordionItemPanel, 
-                          LPWrap: LPWrap, LPItem: LPItem
+                          LPWrap: LPWrap, LPItem: LPItem, TwitterBtn: TwitterBtn
                         }}
             >
             <MDXRenderer className="text-gray-100">{mdx.body}</MDXRenderer>
