@@ -66,7 +66,7 @@ exports.onCreateNode = function (_ref) {
 
 
 exports.createPages = function _callee(_ref2) {
-  var graphql, actions, reporter, createPage, blogPostTemplate, blogPostTemplate_custom, blogTemplate, blogTagTemplate, blogCategoryTemplate, result, posts, postsPerPage, numPages, categories, tags, exclude, countCategories, allCategories, countTags, allTags;
+  var graphql, actions, reporter, createPage, blogPostTemplate, blogPostTemplateCustom, blogTemplate, blogTagTemplate, blogCategoryTemplate, result, posts, postsPerPage, numPages, categories, tags, exclude, countCategories, allCategories, countTags, allTags;
   return regeneratorRuntime.async(function _callee$(_context) {
     while (1) {
       switch (_context.prev = _context.next) {
@@ -75,7 +75,7 @@ exports.createPages = function _callee(_ref2) {
           // Destructure the createPage function from the actions object
           createPage = actions.createPage;
           blogPostTemplate = path.resolve("./src/templates/blog/blogPostTemplate.jsx");
-          blogPostTemplate_custom = path.resolve("./src/templates/blog/blogPostTemplate_custom.jsx");
+          blogPostTemplateCustom = path.resolve("./src/templates/blog/blogPostTemplateCustom.jsx");
           blogTemplate = path.resolve("./src/templates/blog/blogTemplate.jsx");
           blogTagTemplate = path.resolve("./src/templates/blog/blogTagTemplate.jsx");
           blogCategoryTemplate = path.resolve("./src/templates/blog/blogCategoryTemplate.jsx");
@@ -111,7 +111,7 @@ exports.createPages = function _callee(_ref2) {
             var prev = arr[index - 1];
             var next = arr[index + 1]; // Check what template the markdown file have choosen 
 
-            var template = node.frontmatter.template === "custom" ? blogPostTemplate_custom : blogPostTemplate;
+            var template = node.frontmatter.template === "custom" ? blogPostTemplateCustom : blogPostTemplate;
             createPage({
               // This is the slug you created before
               // (or `node.frontmatter.slug`)

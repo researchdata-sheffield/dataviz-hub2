@@ -16,7 +16,7 @@ import { useScript } from "../../utils/hooks/useScript"
 import { useLocation } from "@reach/router"
 
 
-const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
+const blogPostTemplateCustom = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
 
   const {prev, next} = pageContext
@@ -81,10 +81,10 @@ const blogPostTemplate_custom = ({ data: { mdx }, pageContext }) => {
   )
 }
 
-export default blogPostTemplate_custom
+export default blogPostTemplateCustom
 
 
-blogPostTemplate_custom.propTypes = {
+blogPostTemplateCustom.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any,
 }

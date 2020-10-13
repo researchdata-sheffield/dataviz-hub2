@@ -133,6 +133,7 @@ module.exports = {
                 sh: `bash`,
                 styl: `stylus`,
                 terminal: `bash`,
+                'r': `c`
                 },
               showLineNumbers: true,
               noInlineHighlight: false,

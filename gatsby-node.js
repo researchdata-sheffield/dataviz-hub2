@@ -54,7 +54,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
   const { createPage } = actions
   const blogPostTemplate = path.resolve(`./src/templates/blog/blogPostTemplate.jsx`)
-  const blogPostTemplate_custom = path.resolve(`./src/templates/blog/blogPostTemplate_custom.jsx`)
+  const blogPostTemplateCustom = path.resolve(`./src/templates/blog/blogPostTemplateCustom.jsx`)
   const blogTemplate = path.resolve(`./src/templates/blog/blogTemplate.jsx`)
   const blogTagTemplate = path.resolve(`./src/templates/blog/blogTagTemplate.jsx`)
   const blogCategoryTemplate = path.resolve(`./src/templates/blog/blogCategoryTemplate.jsx`)
@@ -131,7 +131,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const next = arr[index + 1]
 
     // Check what template the markdown file have choosen 
-    const template = node.frontmatter.template === "custom" ? blogPostTemplate_custom : blogPostTemplate
+    const template = node.frontmatter.template === "custom" ? blogPostTemplateCustom : blogPostTemplate
 
     createPage({
       // This is the slug you created before
