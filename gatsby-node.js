@@ -130,7 +130,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const prev = arr[index - 1]
     const next = arr[index + 1]
 
-    // Check what template the markdown file have choosen 
+    // Check what template the markdown file have chosen 
     const template = node.frontmatter.template === "custom" ? blogPostTemplateCustom : blogPostTemplate
 
     createPage({

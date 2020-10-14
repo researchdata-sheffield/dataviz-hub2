@@ -24,7 +24,7 @@ If you have any suggestions please leave a comment below.
 
 # Installation
 R is a popular programming language and software environment that is originally designed for statistical purposes. Unlike Microsoft Excel you 
-have to pay a few hundred pounds for a one-time purchase or enter a yearly subscription of Microsoft 365 unless you have an academic email address, 
+might have to pay a few hundred pounds for a one-time purchase or enter a yearly subscription of Microsoft 365 unless you have an academic email address, 
 R is completely free and backed by a strong community. To install R, download and install the relevant version for your Operating System from either 
 of two links below:  
 	- https://cran.ma.imperial.ac.uk/
@@ -113,7 +113,7 @@ side of RStudio panel. If the variable name already exists, then the new assignm
 or `Option + Shift + K` in MacOS to open the shortcut menu in RStudio.  
 
 **Get codes running**: There are several ways to run codes in RStudio,
-1. On selected lines use `Ctrl + Enter` and click the **Run** button on the toolbar (top right of the code panel).
+1. On selected lines use `Ctrl + Enter` or click the **Run** button on the toolbar (top right of the code panel).
 2. Use `Ctrl + Shift + Enter` to run the entire script.
 3. Use `Ctrl + Shift + P` or the button next to the **Run** button for rerun previous code region.  
 
@@ -126,13 +126,13 @@ mtcars
 
 To comment multiple existing lines, select lines then use `Ctrl + Shift + C`.
 
-**Help**: If you are struggling with something, for example the meaning of `~`, type `help('~')` 
-in the script and run and there will be relevant documentation appear in the *help* tab.
+**Help**: If you are struggling with something, for example the uses of `sd()` function, type `help('sd')` 
+or `??sd()` in the script and run and there will be relevant documentation appear in the *help* tab.
 
 # Explore our data
 For this section and beyond I am going to use two datasets declared on above, [mtcars](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) (fuel 
 consumption and other 10 aspects of car design for 32 cars, 1973-74 models) 
-and [pop_2020](https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv) (2020 population data for 235 country/region around the world).  
+and [pop_2020](https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv) (2020 population data for 235 countries/regions around the world).  
 To view data, you can either click it in the **environment** tab to get a nice and structured data frame similar to Excel (uneditable):
 
 ![view data in RStudio environment](./data1.png)
@@ -418,7 +418,7 @@ creating other types of graphs.
 *A simple scatter plot*
 
 So to create a scatter plot we are using the *geom_point()* function, and the function takes a number 
-of arguments that allows us to customise styles:
+of arguments that allows us to customise styles/aesthetics:
 ```r
 # Controlling the transparency, size and stroke of points
 ggplot(mtcars, aes(mpg, hp)) + geom_point(alpha=.8,size=3, stroke=.8)
