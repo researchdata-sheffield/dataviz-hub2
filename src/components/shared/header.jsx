@@ -60,7 +60,7 @@ const Header = () => {
                                   `text-gray-500 hover:text-white` : `text-gray-300 hover:text-white`]
                               ] 
                             : [wlp === "/" ? 
-                                'text-gray-500 hover:text-highlight_2' : `text-gray-500 hover:text-white`] ]}`  
+                                'text-gray-900 hover:text-highlight_2' : `text-gray-500 hover:text-white`] ]}`  
     
     switch(props.type){
       case 'a':
@@ -96,11 +96,11 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative">
-      <nav id="navbar" className={`${isScroll ? `shadow-lg` : [wlp === "/" ? `lg:hidden` : ``]} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+      <nav id="navbar" className={`${isScroll ? `shadow-lg` : [wlp === "/" ? `` : ``]} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
-          <A className={`${isScroll ? `` : [wlp === "/" ? `opacity-0` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo"><img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
+          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo"><img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
           <div className={`${isScroll ? '' : [wlp === "/" ? `hidden` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
