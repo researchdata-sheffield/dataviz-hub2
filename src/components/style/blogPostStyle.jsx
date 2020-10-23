@@ -109,7 +109,7 @@ export const A = (props) => {
 
 export const H1 = styled.h1`
   display: block;
-  font-size: 1.9em;
+  font-size: 2em;
   margin-top: 4rem;
   margin-bottom: 0.67em;
   margin-left: 0;

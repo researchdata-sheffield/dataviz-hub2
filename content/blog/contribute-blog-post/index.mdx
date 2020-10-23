@@ -14,6 +14,14 @@ disableTOC: "false"
 d3: ["https://unpkg.com/topojson@3", "dataviz.js"]
 ---
 
+```js{1,3-5}:title=this_title
+---
+title: "This is a template for posts"
+author: ["A", "B"]                   
+date: "2020-03-06"                # please use Y-M-D format required by mdx syntax, if the post belongs to "Events" category, then probably use the event date rather than the written date
+description: "Shown at blog page"
+category: "Articles"		
+```
 
 # Introduction
 (UPDATED on 01 Oct 2020) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
@@ -172,7 +180,7 @@ There are many ways to add styles to your md/mdx elements, in here we listed two
 
 1. Use the style attribute as usual with slightly different syntax:
 
-```html {7-10}
+```html{7-10}
 In HTML we normally style a div tag like this:
 <div style="font-size: 25px, display: flex">
   Write something
@@ -305,24 +313,27 @@ To add inline code, surround your code by single backtick.
 
 For a code block, use triple backticks.
 
-```md {6-7}
+```md{6-7}
 1```html
 code block
 1```
 
 1 is for illustration, remove it in practice.
+```
+
 You can also specify what programming language after first triple backticks.
 To highlight lines, specify line numbers within curly brackets after triple backticks.
 
-1```js {1-2, 4, 5, 6}
+```
+1```js{1-2,4,5,6}
 code
 1```
 ```  
 
 To add a title for your code block, insert `:title=your-title-name` just behind the language. Space is not allowed.
 
-```html:title=My-title.html
-1```html:title=My-title.html
+```html{2}:title=My-title.html
+1```html{2}:title=My-title.html
 Add a title for your code block!
 1```
 ```
