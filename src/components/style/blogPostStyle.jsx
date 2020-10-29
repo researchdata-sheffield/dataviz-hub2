@@ -251,12 +251,9 @@ export const BlockQuote = styled.blockquote`
   }
 `
 
-export const IMG = styled_twin.img`
-  margin-left: auto;
-  margin-right: auto;
-
-  ${tw`mt-10 mb-3`}
-`
+export const IMG = props => (
+  <img style={{ margin: '3rem auto 1rem auto' }} {...props} />
+)
 
 export const IMGM = (props) => {
   const {src, className, ...props_noRef} = props

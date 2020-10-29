@@ -15,7 +15,7 @@ import Header from "../../components/shared/header"
 import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../../components/style/styled"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMGM, TwitterBtn } from "../../components/style/blogPostStyle"
+import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMG, TwitterBtn } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import GitalkComponent from "gitalk/dist/gitalk-component";
 import Fade from "react-reveal/Fade"
@@ -169,7 +169,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40 mdxBody`: `md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg`} style={{color: '#24292e'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, 
-                          pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMGM, table: Table, 
+                          pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMG, table: Table, 
                           Accordion: Accordion, AccordionItem: AccordionItem, AccordionItemHeading: AccordionItemHeading, 
                           AccordionItemButton: AccordionItemButton, AccordionItemPanel: AccordionItemPanel, 
                           LPWrap: LPWrap, LPItem: LPItem, TwitterBtn: TwitterBtn
