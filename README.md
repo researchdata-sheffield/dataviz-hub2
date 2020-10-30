@@ -5,7 +5,7 @@
 <h1 style="color: #00aeef"> Dataviz.Shef </h1>
 <h5 style="font-weight: 500">Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</h5>
 </center>
-<!-- <div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+<div style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
   <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
     <img src="https://cdn.brandfolder.io/5H442O3W/at/pl546j-7le8zk-6gwiyo/Slack_Mark.svg" style="max-width: 100px" />
   </a>
@@ -15,7 +15,7 @@
   <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Antu-mail-folder-sent-16.svg" style="max-width: 100px; margin-left: -50px" />
   </a>
-</div> -->
+</div>
 <br />
 
 ![Fig1](./src/images/readme/Fig1.png)
