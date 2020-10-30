@@ -432,24 +432,24 @@ To make a file available to readers, place the file under the post directory and
 This is how you would embed add an local image (remember to add your images in the same directory of your md/mdx file):
 
 ```md
-![my image description](./temp.jpg)
+![my image description](./temp.jpg "Here is the title after url")
 ```
 
 Alternatively: 
 
 ```md
-<img alt="my image description" src="./temp.jpg" />
+<img alt="my image description" src="./temp.jpg" title="hello" />
 ```
 
 To add caption for image: 
 
 ```jsx
-![my image description](./temp.jpg)        
+![my image description](./temp.jpg "Here is the title after url")        
 *This is my image caption*
 ```
 Make sure you pressed SPACE key twice followed by ENTER key after the closing bracket, if successful captions should had become italic:
 
-![my image description](./temp.jpg)  
+![my image description](./temp.jpg "Here is the title after url")  
 *This is my image caption*  
   
   
