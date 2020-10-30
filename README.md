@@ -8,7 +8,7 @@
 
 <br />
 
-<center align="center">
+<div align="center">
   <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Slack_Technologies_Logo.svg/1280px-Slack_Technologies_Logo.svg.png" width="20%" />
   </a>
@@ -20,9 +20,11 @@
   <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
     <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Antu-mail-folder-sent-16.svg" width="5%" />
   </a>
-</center>
+</div>
 
-<br/>
+
+<br />
+
 
 ![Fig1](./src/images/readme/Fig1.png)
 
