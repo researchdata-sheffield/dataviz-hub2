@@ -11,6 +11,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const kebabCase = require(`lodash.kebabcase`)
 const path = require("path")
 
+
 /**
  *  Create file path for blog posts
  */
