@@ -23,7 +23,7 @@ import Pulse from 'react-reveal/Pulse';
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
-import trianglify from 'trianglify'
+//import trianglify from 'trianglify'
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
@@ -76,19 +76,19 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   }
 
   useEffect(() => {  
-    var element = document.getElementById("headElement");
-    var postTitle = document.getElementById("title").textContent;
-    var dimensions = element.getClientRects()[0];
-    var pattern = trianglify({
-      width: dimensions.width, 
-      height: dimensions.height,
-      cellSize: 60 + Math.ceil(Math.random() * 100),
-      variance: Math.random(),
-      strokeWidth: Math.random() * 5,
-      seed: postTitle
-    }).toCanvas();
-    var img = pattern.toDataURL("image/png")
-    element.style['background-image'] = 'url('+ img +')';
+    // var element = document.getElementById("headElement");
+    // var postTitle = document.getElementById("title").textContent;
+    // var dimensions = element.getClientRects()[0];
+    // var pattern = trianglify({
+    //   width: dimensions.width, 
+    //   height: dimensions.height,
+    //   cellSize: 60 + Math.ceil(Math.random() * 100),
+    //   variance: Math.random(),
+    //   strokeWidth: Math.random() * 5,
+    //   seed: postTitle
+    // }).toCanvas();
+    // var img = pattern.toDataURL("image/png")
+    // element.style['background-image'] = 'url('+ img +')';
   });
 
 
