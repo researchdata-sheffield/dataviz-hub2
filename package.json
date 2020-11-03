@@ -64,7 +64,8 @@
     "react-social-sharing": "^3.3.0",
     "react-spring": "^8.0.27",
     "react-tooltip": "^4.2.9",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "trianglify": "^4.1.1"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.35",

@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { graphql, withPrefix } from "gatsby"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
@@ -23,8 +23,7 @@ import Pulse from 'react-reveal/Pulse';
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
-
-
+import trianglify from 'trianglify'
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
@@ -76,25 +75,30 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     // add copy function to button 
   }
 
+  useEffect(() => {  
+    var element = document.getElementById("headElement");
+    var postTitle = document.getElementById("title").textContent;
+    var dimensions = element.getClientRects()[0];
+    var pattern = trianglify({
+      width: dimensions.width, 
+      height: dimensions.height,
+      cellSize: 60 + Math.ceil(Math.random() * 100),
+      variance: Math.random(),
+      strokeWidth: Math.random() * 5,
+      seed: postTitle
+    }).toCanvas();
+    var img = pattern.toDataURL("image/png")
+    element.style['background-image'] = 'url('+ img +')';
+  });
+
+
+
+
   return (
     <div className="relative" key={mdx.id}>
       <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
       <Header />
       <Helmet >
-        <script>{`
-          var element = document.getElementById("headElement");
-          var title = document.getElementById("title").textContent;
-          var dimensions = element.getClientRects()[0];
-          var pattern = Trianglify({
-            width: dimensions.width, 
-            height: dimensions.height,
-            cell_size: 60 + Math.ceil(Math.random() * 100),
-            variance: Math.random(),
-            stroke_width: Math.random() * 5,
-          });
-          pattern.seed = title
-          element.style['background-image'] = 'url(' + pattern.png() + ')';
-        `}</script>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type = 'text/javascript' /> 
       </Helmet>
       
