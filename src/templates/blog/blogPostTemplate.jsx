@@ -77,7 +77,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   useEffect(() => {  
     var element = document.getElementById("headElement");
-    var postTitle = document.getElementById("title").textContent;
     var dimensions = element.getClientRects()[0];
     var pattern = trianglify({
       width: dimensions.width, 
@@ -85,10 +84,12 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       cellSize: 60 + Math.ceil(Math.random() * 100),
       variance: Math.random(),
       strokeWidth: Math.random() * 5,
-      seed: postTitle
+      seed: Math.random().toString(5)
     }).toCanvas();
     var img = pattern.toDataURL("image/png")
     element.style['background-image'] = 'url('+ img +')';
+    console.log()
+
   });
 
 
