@@ -75,6 +75,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     // add copy function to button 
   }
 
+  // produce trianglify image
   useEffect(() => {  
     var element = document.getElementById("headElement");
     var dimensions = element.getClientRects()[0];
@@ -86,10 +87,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       strokeWidth: Math.random() * 5,
       seed: Math.random().toString(5)
     }).toCanvas();
+
     var img = pattern.toDataURL("image/png")
     element.style['background-image'] = 'url('+ img +')';
-    console.log()
-
   });
 
 

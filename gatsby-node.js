@@ -9,7 +9,7 @@ const { createFilePath } = require('gatsby-source-filesystem')
 const kebabCase = require(`lodash.kebabcase`)
 const path = require("path")
 
-
+// prevent error from canvas used by trianglify
 exports.onCreateWebpackConfig = ({
   stage,
   loaders,
@@ -29,12 +29,11 @@ exports.onCreateWebpackConfig = ({
   }
 };
 
+
+
 /**
  *  Create file path for blog posts
  */
-
-// Here we're adding extra stuff to the "node" (like the slug)
-// so we can query later for all blogs and get their slug
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
@@ -49,28 +48,27 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       })
       .split("/")
     
-    const slug = value.replace("/blog/", "").replace(/\/$/, "")
+    // remove words like blog, date
+    const slug = value.replace("/blog/", "").replace(/\/$/, "").replace(/\d{4}-\d{1,2}-\d{1,2}-/, "")
     const url = `/blog/${day}/${month}/${year}${slug}`
     
     createNodeField({
-      // Individual MDX node
       node,
-      // Name of the field you are adding
       name: `slug`,
-      // Generated value based on filepath with "blog" prefix
       value: url,
     })
   }
 }
 
+
+
 /**
  *  Create blog posts
  */
-
-
 exports.createPages = async ({ graphql, actions, reporter }) => {
   // Destructure the createPage function from the actions object
-  const { createPage } = actions
+  const { createPage, createRedirect } = actions
+
   const blogPostTemplate = path.resolve(`./src/templates/blog/blogPostTemplate.jsx`)
   const blogPostTemplateCustom = path.resolve(`./src/templates/blog/blogPostTemplateCustom.jsx`)
   const blogTemplate = path.resolve(`./src/templates/blog/blogTemplate.jsx`)
@@ -119,14 +117,15 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
   }
-  // Create blog post pages.
-  const posts = result.data.allMdx.edges
 
+
+  const posts = result.data.allMdx.edges
   const postsPerPage = 12
   var numPages = posts.length
   const categories = []
   const tags = []
 
+  // exclude certain tags/categories
   const exclude = ["Learning Path", ]
 
   // Call `createPage` for each result/post
@@ -144,7 +143,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       else excluded = true
     })
     
-    
+    // position of previous/next post
     const prev = arr[index - 1]
     const next = arr[index + 1]
 
@@ -152,7 +151,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const template = node.frontmatter.template === "custom" ? blogPostTemplateCustom : blogPostTemplate
 
     createPage({
-      // This is the slug you created before
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
       // This component will wrap our MDX content
@@ -167,10 +165,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
     if(excluded == true) numPages = numPages - 1
+    // Set up redirects for old blogpost url
+    createRedirect({ fromPath: node.fields.slug.split('-').join('_'), toPath: node.fields.slug})
   })
+
+  // Set up redirects for old blogpost url
+  createRedirect({ fromPath: '/blog/11/06/2020/simple_data_visualisations_have_become_key_to_communicating_about_the_COVID-19_pandemic', toPath: '/blog/11/06/2020/simple-data-visualisations-have-become-key-to-communicating-about-the-COVID-19-pandemic'})
+  
   numPages = Math.ceil(numPages / postsPerPage)
   console.log("Number of total posts: " + numPages)
 
+  // Count number of posts in each cat/tag
   const countCategories = categories.reduce((prev, curr) => {
     prev[curr] = (prev[curr] || 0) + 1
     return prev
@@ -182,6 +187,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return prev
   }, {})
   const allTags = Object.keys(countTags).sort()
+
+
 
   // Creating blog list with pagination
   Array.from({ length: numPages }).forEach((_, i) => {
@@ -250,8 +257,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
 }
 
+
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes } = actions
+  
+  // link author json file to frontmatter
   const typeDefs = `
     type Mdx implements Node {
       frontmatter: Frontmatter
