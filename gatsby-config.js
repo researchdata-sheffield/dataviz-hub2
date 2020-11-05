@@ -344,7 +344,6 @@ module.exports = {
           }
         }`,
         mapping: {
-            // The default sitemap - if none is passed - will be pages
             allMdx: {
                 sitemap: `posts`,
             },
@@ -356,7 +355,7 @@ module.exports = {
         createLinkInHead: true, // optional: create a link in the `<head>` of your site
         addUncaughtPages: true, 
       }
-    }
-
+    },
+    `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ],
 }
