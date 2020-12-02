@@ -152,7 +152,7 @@ self.__precacheManifest = [
   },
   {
     "url": "404.html",
-    "revision": "00125696a6ce47a41d42c31f6aac35e5"
+    "revision": "5dfd178c3dc3c87279a8c31993b92f76"
   },
   {
     "url": "404/index.html",
@@ -469,87 +469,87 @@ self.__precacheManifest = [
   },
   {
     "url": "blog/01/06/2020/visualising-high-risk-areas-for-covid-19-mortality/index.html",
-    "revision": "7e39cc96e42b29db6c2b27f620296146"
+    "revision": "f8b8994c0d648a94a7cee8c49b5650f4"
   },
   {
     "url": "blog/01/10/2020/moving-from-excel-to-r/index.html",
-    "revision": "6fc7af32f19455933f1b017cb4fdb7c0"
+    "revision": "921fb14b9d0c9eeeaefe512fdc378bab"
   },
   {
     "url": "blog/02/05/2020/dataviz-stats-1/index.html",
-    "revision": "06be68560e6473e57920aec5914a9f37"
+    "revision": "519f5267144f29f3f50c17c07b029db8"
   },
   {
     "url": "blog/03/07/2020/Deploy-Your-Dash-App/index.html",
-    "revision": "c290c2b8b7c0afe6860f2e471439582a"
+    "revision": "e81ad0cf6f434405aff5bdf0f4c4d48b"
   },
   {
     "url": "blog/03/07/2020/LearningPath-Introduction/index.html",
-    "revision": "7d51abdd3ddf1c1d70605781c02cb836"
+    "revision": "2ef58bd5331b681c876af37ec0d06e49"
   },
   {
     "url": "blog/04/06/2020/dash-tutorial/index.html",
-    "revision": "14bbadcd6da49b5bf9c5518633bdefdd"
+    "revision": "53b0104d9ad90f70616d399865ca2afa"
   },
   {
     "url": "blog/04/07/2020/LearningPath-Lab/index.html",
-    "revision": "e340b07e309a0e4463e485347b330135"
+    "revision": "22ebc478c7bee0a6668a8be910424acf"
   },
   {
     "url": "blog/05/07/2020/LearningPath-Workflow/index.html",
-    "revision": "2ab02aea1af54c32e79de8387d45c5ff"
+    "revision": "ac269c344f8f12c2842802eebbbfc5ba"
   },
   {
     "url": "blog/05/09/2020/challenges-in-visualising-data/index.html",
-    "revision": "701bc90cdb15ce7de816c602759fda1a"
+    "revision": "da480fc27b37d479ae1bea5ade9e217d"
   },
   {
     "url": "blog/06/04/2020/chart-choice/index.html",
-    "revision": "549828582903ad2f737d7cba8606ee75"
+    "revision": "9369f3a60468baa1e265b5a987311144"
   },
   {
     "url": "blog/06/05/2020/Colour-Schemes/index.html",
-    "revision": "426b73f81c712ab4f223627bdef5773c"
+    "revision": "6072278158dcdf7c1d9e66e93f822338"
   },
   {
     "url": "blog/07/05/2020/dataviz-stats-2/index.html",
-    "revision": "94a93ed6ea282502041a36ff7b8b0631"
+    "revision": "7b39b9ff5f8a204c2d122e325943b4ca"
   },
   {
     "url": "blog/09/09/2020/data-visualizations-social-role/index.html",
-    "revision": "710046bc7984f07f7660e1c726dea914"
+    "revision": "dc516b99ee3b7c14d8b410a618fbccaf"
   },
   {
     "url": "blog/11/06/2020/simple-data-visualisations-have-become-key-to-communicating-about-the-COVID-19-pandemic/index.html",
-    "revision": "af673e863c280602872159a8771d36af"
+    "revision": "7c4053f31490d615a20ce2c5b4599657"
   },
   {
     "url": "blog/12/06/2020/dash-tutorial-2/index.html",
-    "revision": "ed90c02d63515c31129d11bc73adc05e"
+    "revision": "4faada7bb3321a80e1103149c7dd2669"
   },
   {
     "url": "blog/13/07/2020/Shiny-Template/index.html",
-    "revision": "ca55b78345fedc4a4082465b2d332811"
+    "revision": "e6bbe0a603dea108317f7666669fcb4a"
   },
   {
     "url": "blog/16/06/2020/Jupyter-Widgets/index.html",
-    "revision": "3f2491ea645840269a7697169c32596c"
+    "revision": "5b13c6ac3460608a4fa821cc1aafc179"
   },
   {
     "url": "blog/16/07/2020/python-visualisation-templates/index.html",
-    "revision": "51379eef35cf3e194245a71c02ff7c9a"
+    "revision": "c6a8ffbc44c6ff5ff539d8d0e314e3ae"
   },
   {
     "url": "blog/18/08/2020/GM/index.html",
-    "revision": "945f76d1d101e7f6e535a63afdaff2fa"
+    "revision": "f770d38bc259f5e1e5eb84df249573e5"
   },
   {
     "url": "blog/20/05/2020/Non-Numeric/index.html",
-    "revision": "4537c6291e89640a852008f30af714d4"
+    "revision": "06b062ab5ee7aea875174b7feb38cb3e"
   },
   {
     "url": "blog/22/03/2020/contribute-blog-post/index.html",
-    "revision": "7bdea30c21ba3b4aa9f4f70ed1601953"
+    "revision": "64ce75ed534c7d03fcb2fd6b951b0ce9"
   },
   {
     "url": "blog/22/03/2020/datavizhub-guide/index.html",
@@ -557,43 +557,43 @@ self.__precacheManifest = [
   },
   {
     "url": "blog/24/06/2020/host-jupyter-notebook/index.html",
-    "revision": "5a20acc077625f63c5af71cf2f72fe4b"
+    "revision": "3f510efded365215474fc44d9ff86416"
   },
   {
     "url": "blog/26/08/2020/D3js-for-data-visualisation/index.html",
-    "revision": "81cf7541d63403c9cb8aa97b3e25581d"
+    "revision": "e0bb87968da6f4d8f4a19554174fb759"
   },
   {
     "url": "blog/28/02/2020/Urban-Observatories-hackathon/index.html",
-    "revision": "6fbaf498d1cd4da6a5354060d277edef"
+    "revision": "1e3a641bb7105681b4f05a177b0b306d"
   },
   {
     "url": "blog/30/09/2020/making-the-best-data-visualisations-in-excel/index.html",
-    "revision": "81a993165bffd319c9fd17a73798472c"
+    "revision": "8ebe5cb4c8ab372762cadce8be184ca8"
   },
   {
     "url": "blog/category/articles/index.html",
-    "revision": "de35de261210c7f60053631b327ad046"
+    "revision": "825f379bdc61e18ec69a50fcf763b4ce"
   },
   {
     "url": "blog/category/articles/page/2/index.html",
-    "revision": "394e4a25d70d9583cc0a7085ebfb2c9f"
+    "revision": "29a811b05a271271f10fb458f5c7c3fe"
   },
   {
     "url": "blog/category/events/index.html",
-    "revision": "824ffb01600819fb530b967480b97ed7"
+    "revision": "defb345cf56a0cf650fef14863e2df56"
   },
   {
     "url": "blog/category/tutorial/index.html",
-    "revision": "eba036a17e984782d178c9ced890b9f2"
+    "revision": "de1f25e409c98cf286f58fe58d627948"
   },
   {
     "url": "blog/index.html",
-    "revision": "19b166e8b722eb2ba6c8ad8bc065b7d5"
+    "revision": "58ece094407ea0b316489eb9ee7b8519"
   },
   {
     "url": "blog/page/2/index.html",
-    "revision": "d15cbebb9abff8c8592cde777ab8ae83"
+    "revision": "334ca875c48db1fbd929ce98de841ac2"
   },
   {
     "url": "blog/tag/best-practice/index.html",
@@ -601,147 +601,147 @@ self.__precacheManifest = [
   },
   {
     "url": "blog/tag/blog/index.html",
-    "revision": "3404b0a2aaccf73737076fa00d807f1e"
+    "revision": "daf772d27f793f35167074bb489b221a"
   },
   {
     "url": "blog/tag/covid-19-mortality/index.html",
-    "revision": "e0982d04e100beaa1603536e9b21adff"
+    "revision": "ed5ffc380f5a89eee95facad38b4a67a"
   },
   {
     "url": "blog/tag/covid-19-virus-sars-co-v-2/index.html",
-    "revision": "13675bf2d41e6d90b22d4285b06e378a"
+    "revision": "64cc9c4a178f8d2c3b61ab2adf7d23fc"
   },
   {
     "url": "blog/tag/d-3-js/index.html",
-    "revision": "1178fe0eb64da6a9bd4fea7da07ff32f"
+    "revision": "cea7810e492d00bab054538450ff3564"
   },
   {
     "url": "blog/tag/dash/index.html",
-    "revision": "e936eb3e06145688771f4ee2b71fb9b3"
+    "revision": "2fdb3f4bf954ce8945742880a79dff65"
   },
   {
     "url": "blog/tag/data-analytics/index.html",
-    "revision": "7c4828e980e6c74c9dec8001beddc771"
+    "revision": "a88ce6dc6ce5d49b8e5090ade755b5c6"
   },
   {
     "url": "blog/tag/data-engineering/index.html",
-    "revision": "3a26f44e1c0f5e434de2cacc7e470078"
+    "revision": "32b144e57657fb663ecc6d1de216e2c2"
   },
   {
     "url": "blog/tag/data-politics/index.html",
-    "revision": "cb9757755909ca6d4376f9162a252569"
+    "revision": "f7881220f4210db6e8c772775ee60487"
   },
   {
     "url": "blog/tag/dataviz/index.html",
-    "revision": "2c12d07e85c942737379f5187302604f"
+    "revision": "625b79f277636b503dc9f954a96876dd"
   },
   {
     "url": "blog/tag/deploy/index.html",
-    "revision": "b46c97bbaace8c385e4666c48c644d7a"
+    "revision": "d34cfd01de3344df5db08de1f38b2d9d"
   },
   {
     "url": "blog/tag/effectiveness/index.html",
-    "revision": "65938d2fc2297c8e4a4fac00038f706f"
+    "revision": "5550760294b21772d728d861d4956370"
   },
   {
     "url": "blog/tag/effects/index.html",
-    "revision": "3c2d5f1973bc1d606944b6bc3dc52c1f"
+    "revision": "52e9031ca1a1e4d142b6ad9932a7675a"
   },
   {
     "url": "blog/tag/emotions/index.html",
-    "revision": "13418228d0885345621272c4d1285c3e"
+    "revision": "07847f3add390fff64c5d66c34ba420b"
   },
   {
     "url": "blog/tag/engaging-with-dataviz/index.html",
-    "revision": "0e619259288dfa942d173a3a7c70e3dd"
+    "revision": "f94230f4c73c7bc98b7223fb7a23ec4e"
   },
   {
     "url": "blog/tag/epidemiology/index.html",
-    "revision": "59fd2b0359c7e518e20c0ab4e6aefe88"
+    "revision": "31ef7d8146854cddba247ddafa230bb1"
   },
   {
     "url": "blog/tag/excel/index.html",
-    "revision": "db1a98c3c11dcf765003847fe8e64441"
+    "revision": "13b1cdb49775e7dd5de40d4281626d22"
   },
   {
     "url": "blog/tag/heroku/index.html",
-    "revision": "0fb6a3b4815bc278e382a06c64896291"
+    "revision": "c3a943696a603844b77e16523d835475"
   },
   {
     "url": "blog/tag/host/index.html",
-    "revision": "3c3866b00edbd2d1590f287d089a3931"
+    "revision": "44ec437f00b1fe45b0e30ccb35770d8b"
   },
   {
     "url": "blog/tag/html/index.html",
-    "revision": "e3f8695b47b4e725a61c3cacf1bf16a6"
+    "revision": "960caaff87a0345d6d06ce9a207c62ef"
   },
   {
     "url": "blog/tag/interactive/index.html",
-    "revision": "4e3ec2bd90cdfcda71f43a6ffe8ccf88"
+    "revision": "f6d6f48e6e0876cfe3788545e2e8e942"
   },
   {
     "url": "blog/tag/javascript/index.html",
-    "revision": "623f9058b4850a96336a61fb4cfa81d8"
+    "revision": "f50dd6a282159f9c0f4f0fe3abfc9035"
   },
   {
     "url": "blog/tag/jupyter-notebook/index.html",
-    "revision": "c566941fec3dd4957c6460ef60e8a771"
+    "revision": "ea35068b0e8dc6fcf8e01b34d0f79796"
   },
   {
     "url": "blog/tag/jupyter-widgets/index.html",
-    "revision": "8b0eaa140a8f401433e871868dfb2200"
+    "revision": "c48fb476339c011ed3fc5498d07a7923"
   },
   {
     "url": "blog/tag/markdown/index.html",
-    "revision": "fcaf5cfd3389fc6fbfea1bf7c604510d"
+    "revision": "d5a513acb87e112055b89c7416adf287"
   },
   {
     "url": "blog/tag/pandas/index.html",
-    "revision": "ecec055533eacd1f6fb29d88f84152f9"
+    "revision": "b69f561b253e2913d41846e428e39323"
   },
   {
     "url": "blog/tag/pandemic/index.html",
-    "revision": "18a0a03efe4bcda2b900062735e23cee"
+    "revision": "4ed13e4b51f65c8bd24c060b19171430"
   },
   {
     "url": "blog/tag/plotly/index.html",
-    "revision": "289dfc324a6670244683e1e41467740a"
+    "revision": "ddd9626c7d15d0b1a22f43d083c349c3"
   },
   {
     "url": "blog/tag/python/index.html",
-    "revision": "f695b03a29ff0c692cd741c9f1ed748a"
+    "revision": "b1da8e844faa8e3cec9a538185fc25a3"
   },
   {
     "url": "blog/tag/r/index.html",
-    "revision": "a4d84193c07b674cbcadbde4b2cf94f4"
+    "revision": "487b44c8d82c2c5423bbd1fa32ddc382"
   },
   {
     "url": "blog/tag/research-innovation/index.html",
-    "revision": "83660705c8d1408c166bc4bf501bfeeb"
+    "revision": "a8c28fdc52ca648fa2886841fee092f0"
   },
   {
     "url": "blog/tag/shiny/index.html",
-    "revision": "eea8a6e088251509af4b152b92090a58"
+    "revision": "8296b52cbf0fea04e2e62ce163c5611c"
   },
   {
     "url": "blog/tag/social-factors/index.html",
-    "revision": "09deb21c9474a8fbc83b2abf07a6d766"
+    "revision": "5d0ea90bfb4c875bb468530763e7880f"
   },
   {
     "url": "blog/tag/statistics/index.html",
-    "revision": "0b0620e84d84e68bb752c7d9c446ac01"
+    "revision": "18984e9a6782e9ad9a89caf7873c2ea5"
   },
   {
     "url": "blog/tag/template/index.html",
-    "revision": "a0c07bd27cd546495ff6cc4bfab84bd4"
+    "revision": "9d64cd1d791d37c84e70c01653c05b7b"
   },
   {
     "url": "blog/tag/urban-observatory/index.html",
-    "revision": "35eca0a1f6af1c365ec12c343463f4e7"
+    "revision": "e5622bb2ee2b33087b65c33d88bb4c59"
   },
   {
     "url": "blog/tag/web/index.html",
-    "revision": "bd58d299865b29e256994509291b7d73"
+    "revision": "1978d2d8d178c16196d4bb30b03be51c"
   },
   {
     "url": "c944440f07a9819c3f73bbb95aa91b6a/sp_labels2.png",
@@ -955,7 +955,7 @@ self.__precacheManifest = [
   },
   {
     "url": "events/index.html",
-    "revision": "e7bcb157eae9e7baf51c472fb8c6c02d"
+    "revision": "6a6f87aac9a8bee88bedc1fcdb730a79"
   },
   {
     "url": "f132b4caf23a2eb84ad4c68e52fe1df6/Fig7.png",
@@ -1003,7 +1003,7 @@ self.__precacheManifest = [
   },
   {
     "url": "flexsearch_index.json",
-    "revision": "e020b498a5c080d138e9ba6a54b215e3"
+    "revision": "c4b3b78be485c4578779b7215d69241d"
   },
   {
     "url": "framework-f386f195940cf9f6d908.js"
@@ -1049,7 +1049,7 @@ self.__precacheManifest = [
   },
   {
     "url": "index.html",
-    "revision": "8260e45e71825e65dc176521996b6d3d"
+    "revision": "a7944a23ea39e97a8d2a1d1abfafaa5c"
   },
   {
     "url": "manifest.webmanifest",
