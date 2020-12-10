@@ -10,13 +10,13 @@ const PastEvents = ({pastEvent}) => {
       <h1 className="text-xl pt-2 pb-6 font-semibold">Past Events</h1>
       
       {pastEvent.edges.map(({ node }) => {
-        let description = shortenText(node.description.text, 15)
+        let summary = shortenText(node.summary, 15)
 
         return (
           <div className="flex flex-wrap p-3 w-full overflow-hidden bg-white group pastEvent" key={node.id}>
             <a href={node.url} target="_blank" rel="noopener noreferrer">
             <p style={{ fontFamily: "TUoS Blake",}} className="font-semibold text-md text-black leading-4">{node.name.text}</p>
-            <p className="text-gray-700 text-xs leading-4 mt-1">{description}</p>
+            <p className="text-gray-700 text-xs leading-4 mt-1">{summary}</p>
             <p className="mt-2 text-xs text-black">{node.start.local}</p>
             </a>
           </div>

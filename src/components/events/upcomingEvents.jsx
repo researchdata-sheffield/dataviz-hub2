@@ -11,7 +11,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
       <> 
       {allEventbriteEvents.edges.map(({node}) => {
         //moment(node.start.local, "DD-MMMM-YYYY hh:mm") >= moment() && 
-        let description = shortenText(node.description.text, 20)
+        let summary = shortenText(node.summary, 20)
 
         return (
           <a className="flex flex-wrap w-full overflow-y-hidden shadow-lg hover:shadow-2xl bg-white my-3 lg:my-1 text-gray-700 group border-solid" 
@@ -19,7 +19,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
           >
             <div className="w-full md:w-9/12 py-4 px-4">
               <p className="font-semibold text-lg text-black group-hover:text-highlight_2 leading-5">{node.name.text}</p>
-              <p className="text-gray-700 mt-1 leading-tight text-sm group-hover:text-black">{description}</p>
+              <p className="text-gray-700 mt-1 leading-tight text-sm group-hover:text-black">{summary}</p>
               <p className="flex pt-4 text-sm"><FaClock className="mr-1" />{node.start.local}</p>
               
               <div className="flex flex-wrap text-sm">
