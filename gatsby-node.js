@@ -56,7 +56,12 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       node,
       name: `slug`,
       value: url,
-    })
+    });
+    createNodeField({
+      node,
+      name: `slugOrigin`,
+      value: value,
+    });
   }
 }
 

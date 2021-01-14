@@ -9,7 +9,7 @@ const Footer = () => {
   const currentYear = new Date()
   
   return (
-    <div className="bg-black px-8 py-8 lg:px-12 lg:py-10 text-sm relative z-10">
+    <div className="bg-black px-8 py-8 lg:px-12 lg:py-16 text-sm relative z-10">
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
@@ -70,7 +70,7 @@ const Footer = () => {
         </div>
       </div>
       <p className="text-gray-500 leading-normal text-center text-sm pt-8">
-        Copyright © {currentYear.getFullYear()} The University of Sheffield.
+        © 2018 - {currentYear.getFullYear()} The University of Sheffield.
       </p>
     </div>
   )
