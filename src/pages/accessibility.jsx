@@ -52,8 +52,8 @@ const AccessibilityPage = () => (
             
             <h2 className="accAbt">Enforcement procedure</h2>
             <p>The Equality and Human Rights Commission (EHRC) is responsible for enforcing the Public Sector Bodies (Websites and Mobile Applications) (No. 2) Accessibility Regulations 
-              2018 (the &apos;accessibility regulations&apos;). If you&apos;re not happy with how we respond to your complaint, contact 
-              <A href="https://www.equalityadvisoryservice.com/">the Equality Advisory and Support Service (EASS)</A>.
+              2018 (the &apos;accessibility regulations&apos;). If you&apos;re not happy with how we respond to your complaint, 
+              contact <A href="https://www.equalityadvisoryservice.com/">the Equality Advisory and Support Service (EASS)</A>.
             </p>
         </div>
         

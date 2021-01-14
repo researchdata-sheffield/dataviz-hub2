@@ -29,12 +29,12 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
   const { title, date, author, category, tag, disableTOC } = mdx.frontmatter
   const {prev, next} = pageContext
-  
-  const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
-  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
+
+  const folderName = mdx.fields.slugOrigin
+  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog${folderName}index.mdx`
   const shareLink = `https://${location.host}${mdx.fields.slug}`
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
-
+  console.log(date)
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null
   {d3 && d3.map((d) => {
@@ -233,6 +233,7 @@ export const query = graphql`
       id
       fields {
         slug
+        slugOrigin
         readingTime {
           text
         }
