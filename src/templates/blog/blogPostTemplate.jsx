@@ -34,7 +34,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog${folderName}index.mdx`
   const shareLink = `https://${location.host}${mdx.fields.slug}`
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
-  console.log(date)
+
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null
   {d3 && d3.map((d) => {
