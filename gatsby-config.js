@@ -140,7 +140,7 @@ module.exports = {
             },
           },
           {
-            // Use this plugin instead of remark-image, since latter cannot style images individuallly
+            // Use this plugin instead of remark-image, since latter cannot style images individually
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               ignoreFileExtensions: [`bmp`, `tiff`],

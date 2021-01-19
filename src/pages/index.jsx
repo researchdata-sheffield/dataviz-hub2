@@ -45,7 +45,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
     <div className="bg-white">
       <SEO 
         title="Data Visualisation Hub" 
-        keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "data analytics", "UK"]} 
+        keywords={["The University of Sheffield", "Data Visualisation", "Data Visualisation Hub", "Research", "Data Analytics", "Data Visualisation UK", "Dataviz"]} 
       />
       <Header />
 
@@ -92,7 +92,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
                   <a href="https://figshare.shef.ac.uk/articles/CoVid_Plots_and_Analysis/12328226" target="_blank" rel="noopener noreferrer">
                     <AnimateButton external className="">Data Repository</AnimateButton>
                   </a>
-                  <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">
+                  <Link className="ml-8 inline-block" to="/blog/01/06/2020/visualising-high-risk-areas-for-covid-19-mortality">
                     <AnimateButton className="mt-0 ">Blog post</AnimateButton>
                   </Link>
                 </div>
