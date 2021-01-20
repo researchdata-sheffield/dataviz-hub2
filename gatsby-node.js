@@ -178,7 +178,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   createRedirect({ fromPath: '/blog/11/06/2020/simple_data_visualisations_have_become_key_to_communicating_about_the_COVID-19_pandemic', toPath: '/blog/11/06/2020/simple-data-visualisations-have-become-key-to-communicating-about-the-COVID-19-pandemic'})
   
   numPages = Math.ceil(numPages / postsPerPage)
-  console.log("Number of total posts: " + numPages)
+  //console.log("Number of total posts: " + numPages)
 
   // Count number of posts in each cat/tag
   const countCategories = categories.reduce((prev, curr) => {
