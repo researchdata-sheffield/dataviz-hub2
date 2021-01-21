@@ -88,14 +88,14 @@ library(readr)
 
 ## Load datasets
 There are a number of ways you can load datasets, either local files, datasets hosted online, or through connections to databases. Here is how you would 
-use the `read.csv` function from the *readr* package to read csv files:
+use the `read_csv()` function from the *readr* package to read csv files:
 
 ```r
 # Read a local file (in the same directory of the script)
-population_2020 <- read.csv('world_population2020.csv')
+population_2020 <- read_csv('world_population2020.csv')
 
 # Read dataset by url
-pop_2020 <- read.csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
+pop_2020 <- read_csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
 ```
 
 There are also built-in datasets you can use, for these data you use `data` function to load datasets:
@@ -542,7 +542,7 @@ This section will give some example R codes for common functions in Excel. Note 
 codes are prepared in contrast with functions in Excel 2016, some functions might not work in 
 other versions of Excel. Throughout the section the following dataset will be used:
 ```r
-pop_2020 <- read.csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
+pop_2020 <- read_csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
 ```
 
 ![A snapshot of the population data](./pop_2020.png)
