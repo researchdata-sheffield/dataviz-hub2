@@ -1,0 +1,55 @@
+---
+author: [Yu Liang Weng]
+title: Interactive Visualisations in R
+description: Part 3 | Exploring packages in R using data collected as part of the EU funded 'Collaborative research and development of green roof system technology' project.
+date: 2021-01-25
+category: [Articles]
+tag: [R, Plotly, Shiny]
+thumbnail: ./thumb.png 
+hide: "true"
+---
+
+# Introduction
+Welcome to the **third blog post** of the series *Exploring packages in R*. In this blog post we will explore some of the most popular packages in R for **Interactive Visualisations** and some of which you might have already noticed. Same as in the <Link to="/blog/20/01/2021/Static-Visualisations-In-R">previous blog post</Link>, I will be using the [Hadfield Green Roof 5-year dataset](https://doi.org/10.15131/shef.data.11876736.v1) and assume you already have some experience with R.
+
+You can find all the source code in [this Github repository](https://github.com/yld-weng/hadfield-green-roof). If you have any suggestions or want me to include any particular package feel free to [send me an email](mailto:y.weng@sheffield.ac.uk)!  
+
+
+
+In the first two sections we will explore two commonly used (by download statistics) packages *Plotly* and *Shiny*, and then followed by other interactive packages in later sections.
+
+![R packages download statistics](./stats.png)
+*Download statistics of some visualisation packages to date*  
+
+
+You might wonder what is *htmlwidget* - *"A framework for creating HTML widgets that render in various contexts including the R console, 'R Markdown' documents, and 'Shiny' web applications."* In fact, any interactive visualisations produced that can be saved as a standalone HTML file uses *htmlwidgets*, including packages like *plotly*, *leaflet*, and *ggiraph* that we are going to learn about.  
+
+
+# Plotly
+Plotly is an interactive graphical library that has been increasingly popular over the last few years and you can discover its place in many popular programming languages and platforms such as Python, R, Javascript, Angular, React.JS, and .NET.  
+ 
+The plotly package in R was created as an interface to the Javascript Library plotly.js so you can create many interactive web graphics out of it. Since the package also depends on the *ggplot2* package we have explored on above, we can actually interact with the charts and graphs we have made by using the *ggplotly()* function that converts a ggplot2 object into a plotly object!    
+ 
+To see examples of open-source graphics made with the R *plotly* package, use this [link](https://plotly.com/r/). For extensive documentation of the package download the [PDF from CRAN](https://cran.r-project.org/web/packages/plotly/plotly.pdf).  
+ 
+## ggplot2 to plotly  
+If you have made some wonderful charts using *ggplot2* then rather than starting from scratch in plotly we can instantly convert it to a plotly object and work with it directly.  
+ 
+Using the bar chart in the previous blog post as an example, we can first assign the graph to an variable then using the `ggplotly()` function for conversion:
+ 
+```r
+plot1 <- shefClimateNoNA %>% ... # skip rest of codes
+ 
+ggplotly(plot1, tooltip = c("x", "AirTC_Avg"))
+```
+
+
+# Shiny
+
+
+# Other packages
+In this section I'll briefly introduce some packages you can use as an alternative or in addition to *ggplot2*. Over the time there will be more great packages coming out so if you have any suggestions or want to include any particular package in this section feel free to [send me an email](mailto:y.weng@sheffield.ac.uk).
+
+
+
+# What's next

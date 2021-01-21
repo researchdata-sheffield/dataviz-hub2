@@ -175,23 +175,33 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
   // Set up redirects for old blogpost url
-  createRedirect({ fromPath: '/blog/11/06/2020/simple_data_visualisations_have_become_key_to_communicating_about_the_COVID-19_pandemic', toPath: '/blog/11/06/2020/simple-data-visualisations-have-become-key-to-communicating-about-the-COVID-19-pandemic'})
+  createRedirect(
+    { 
+    fromPath: '/blog/11/06/2020/simple_data_visualisations_have_become_key_to_communicating_about_the_COVID-19_pandemic', 
+    toPath: '/blog/11/06/2020/simple-data-visualisations-have-become-key-to-communicating-about-the-COVID-19-pandemic'
+    }
+  )
   
   numPages = Math.ceil(numPages / postsPerPage)
   //console.log("Number of total posts: " + numPages)
+
+  // Compare function
+  function compareItem(a, b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase(), 'en', { sensitivity: 'base'})
+  }
 
   // Count number of posts in each cat/tag
   const countCategories = categories.reduce((prev, curr) => {
     prev[curr] = (prev[curr] || 0) + 1
     return prev
   }, {})
-  const allCategories = Object.keys(countCategories).sort()
+  const allCategories = Object.keys(countCategories).sort(compareItem)
 
   const countTags = tags.reduce((prev, curr) => {
     prev[curr] = (prev[curr] || 0) + 1
     return prev
   }, {})
-  const allTags = Object.keys(countTags).sort()
+  const allTags = Object.keys(countTags).sort(compareItem)
 
 
 

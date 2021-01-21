@@ -9,13 +9,13 @@ import { useLocation } from "@reach/router"
 
 const menuTag = ({ pageContext }) => {
   const [filterTag, setfilterTag] = useState(pageContext.tags);
-  const [isOpen, toggleisOpen] = useState(false);
+  const [isOpen, toggleIsOpen] = useState(false);
   var { href } = useLocation();
   if(!href) href = "";
 
   function searchTag(e) {
     // on input, show tag menu
-    if(isOpen === false) toggleisOpen(!isOpen);
+    if(isOpen === false) toggleIsOpen(!isOpen);
 
     let searchWord = e.target.value.toLowerCase();
     let searchTagList = pageContext.tags.filter(function(tag) {
@@ -38,19 +38,21 @@ const menuTag = ({ pageContext }) => {
         {/* tag menu */}
         <div className={`${isOpen ? `` : `hidden`} pt-4`}>
           {filterTag.map((tag) => (
-              <Link key={tag} activeStyle={{ color: "white", backgroundColor: "#00aeef" }} partiallyActive={true} to={`/blog/tag/${kebabCase(tag)}`} 
-              className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 m-1 bg-gray-100 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold">{tag} ({pageContext.countTags[`${tag}`]})
+            <Link key={tag} activeStyle={{ color: "white", backgroundColor: "#00aeef" }} partiallyActive={true} to={`/blog/tag/${kebabCase(tag)}`} 
+              className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 m-1 bg-gray-100 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
+            >
+              {tag} ({pageContext.countTags[`${tag}`]})
             </Link>
           ))}
         </div>
       </div>
       {/* arrow button */}
-      <div onClick={() => toggleisOpen(!isOpen)} className='text-gray-900 flex justify-center text-2xl absolute top-0 right-0 mr-4 mt-4'>
+      <div onClick={() => toggleIsOpen(!isOpen)} className='text-gray-900 flex justify-center text-2xl absolute top-0 right-0 mr-4 mt-4'>
         <FaAngleDown className={` `} style={{transform: isOpen ? "rotate(180deg)" : "", transition: 'all .5s ease'}}  />
       </div>
     </div>
     
-  )
+  ) 
 
 }
 
