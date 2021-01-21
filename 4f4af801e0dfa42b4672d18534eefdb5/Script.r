@@ -7,8 +7,8 @@ data(mtcars)
 
 mtcars[1]
 # Load csv file
-population_2020 <- read.csv('world_population2020.csv')
-pop_2020 <- read.csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
+population_2020 <- read_csv('world_population2020.csv')
+pop_2020 <- read_csv('https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv')
 
 
 myCalculation <- function(number) {
