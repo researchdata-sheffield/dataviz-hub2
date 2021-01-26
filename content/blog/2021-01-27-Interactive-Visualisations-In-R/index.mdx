@@ -2,7 +2,7 @@
 author: [Yu Liang Weng]
 title: Interactive Visualisations in R
 description: Part 3 | Exploring packages in R using data collected as part of the EU funded 'Collaborative research and development of green roof system technology' project.
-date: 2021-01-25
+date: 2021-01-27
 category: [Articles]
 tag: [R, Plotly, Shiny]
 thumbnail: ./thumb.png 
@@ -21,7 +21,7 @@ In the first two sections we will explore *Plotly* and *Shiny* which are among t
 *Download statistics of visualisation packages up to 21 Jan 2021 (source: [R pkg download stats](https://ipub.com/dev-corner/apps/r-package-downloads/))*  
 
 
-You might wonder what *htmlwidgets* is - *"A framework for creating HTML widgets that render in various contexts including the R console, 'R Markdown' documents, and 'Shiny' web applications."* In fact, any interactive visualisations produced that can be saved as a standalone HTML file uses *htmlwidgets*, including packages like *plotly*, *leaflet*, and *ggiraph* that we are going to learn about.  
+You might wonder what *htmlwidgets* is - *"A framework for creating HTML widgets that render in various contexts including the R console, 'R Markdown' documents, and 'Shiny' web applications."* In fact, any interactive visualisations produced that can be saved as a standalone HTML file via the `htmlwidgets::saveWidget()` function, including packages like *plotly*, *leaflet*, and *ggiraph* that we are going to learn about.  
 
 
 # Plotly
@@ -151,7 +151,7 @@ Javascript visualisation libraries often have R wrappers we can make use for dyn
 
 
 ### Leaflet
-**Leaflet** is one of most popular Javascript framework for (mobile-friendly) interactive maps. You can find its place not only in websites such as *GitHub*, *Facebook* and *The New York Times*, but also well known geographic information systems like *OpenStreetMap* and *Mapbox*. If you are looking for a package specialised in interactive maps then *[Leaflet for R](https://rstudio.github.io/leaflet/)* would not disappoint you.  
+**Leaflet** is one of most popular Javascript framework for (mobile-friendly) **interactive maps**. You can find its place not only in websites such as *GitHub*, *Facebook* and *The New York Times*, but also well known geographic information systems like *OpenStreetMap* and *Mapbox*. If you are looking for a package specialised in interactive maps then *[Leaflet for R](https://rstudio.github.io/leaflet/)* would not disappoint you.  
 
 Packages also offers interactive maps:
 - [ggmap](https://github.com/dkahle/ggmap)
@@ -162,7 +162,8 @@ Packages also offers interactive maps:
 ### Highcharter
 **Highcharts** is a really popular Javascript library that provides a powerful API which you can use to produce high quality charts. **Highcharter** is a R wrapper for *Highcharts* which means we can benefit from its highly flexible and customisable modules in R.
 
-<iframe src="https://rawcdn.githack.com/yld-weng/hadfield-green-roof/main/part3/timeSeries.html" style="width: 100%; min-height: 450px"></iframe>  
+<iframe src="https://rawcdn.githack.com/yld-weng/hadfield-green-roof/main/part3/timeSeries.html" style="width: 100%; min-height: 450px"></iframe>
+*Click on legends to toggle lines*  
 
 You can also embed charts within Shiny or R markdown document which makes this package a great alternative to *plotly*.
 
@@ -173,22 +174,26 @@ D3 stands for **Data-Driven Document** and D3.js is known as an open-source Java
 
 ### Dygraphs
 A javascript charting library capable of **interpreting dense datasets** and specialised in **charting time-series data**. You can embed visualisations either in Shiny or within R markdown documents like many other packages, however there wouldn't be many packages offering the level of customisation it provides for time-series. Visit [dygraphs for R](https://rstudio.github.io/dygraphs/index.html) if you are interested.
+  
+
+### DT
+The **DT** package provides a R wrapper to the Javascript library **[DataTables](https://rstudio.github.io/DT/)** which enables us to display matrices or data frames as HTML table with functions such as filtering, sorting and pagination. This package would be a great addition alongside visualisations you want to present to your audiences.  
+
+<iframe src="https://rawcdn.githack.com/yld-weng/hadfield-green-roof/main/part3/datatable.html" style="width: 100%; min-height: 450px"></iframe>  
+*Sheffield Climate data 2012 - 2013*  
 
 
 ## Rbokeh
-[Bokeh](https://bokeh.org/) is a Python interactive visualization library written in Python and TypeScript for modern web browsers. [Rbokeh](https://github.com/bokeh/rbokeh/) is a native R plotting library backed by Bokeh which provides as many functionalities as *plotly* and *D3*.
+[Bokeh](https://bokeh.org/) is a **Python interactive visualization library** written in Python and TypeScript for modern web browsers. [Rbokeh](https://github.com/bokeh/rbokeh/) is a native R plotting library backed by Bokeh which provides as many functionalities as *plotly* and *D3*. However, in terms of 3D plots the *plotly* package would be more suitable as it offers a broader range and functionalities.
 
 
 
 ## ggiraph
-The **ggiraph** extends from *ggplot2* and *htmlwidgets* and allows you to create interactive ggplot objects. Authors have set up a [website](https://davidgohel.github.io/ggiraph/index.html) with comprehensive documentations and many examples for beginners to get started. Go ahead and install this package if you enjoy working with *ggplot2* and comfortable with grammar of graphics.
-
-## DT
-data.table
+The **ggiraph** extends from **ggplot2** and **htmlwidgets** and allows you to create interactive ggplot objects. Authors have set up a [website](https://davidgohel.github.io/ggiraph/index.html) with comprehensive documentations and many examples for beginners to get started. Go ahead and install this package if you enjoy working with *ggplot2* and comfortable with grammar of graphics.
 
 
 ## rgl
-RGL is a package specialised in 3D visualisations that supports real-time interactive plots. We have mentioned this package in the <Link to="/blog/20/01/2021/Static-Visualisations-In-R">previous part</Link> of the series.
+RGL is a package **specialised in 3D visualisations** that supports real-time interactive plots. We have mentioned this package in the <Link to="/blog/20/01/2021/Static-Visualisations-In-R">previous part</Link> of the series.
 
 ### googleVis
 If you have ever used Google Charts before, then you can reproduce similar graphs using this **goggleVis** package for accessing Google APIs.
