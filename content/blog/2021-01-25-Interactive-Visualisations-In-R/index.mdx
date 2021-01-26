@@ -114,7 +114,7 @@ myHeatmap %>%
 ## Dash
 Dash is a framework that was firstly built in Python for building interactive web applications, and Dash for R was first announced in July 2019. Dash is designed to suit any programming languages with 80% of it being Javascript and API design. If you have used Dash in Python then it is just a matter of changing the interface to call the API, this strong foundation makes *Dash* a good alternative to *Shiny* that will be introduced in the next section.  
 
-You can also visit our website's <Link to="/blog/tag/dash">Dash tag</Link> for more articles and tutorials. [Click here](https://dash-widgets.herokuapp.com) to see an app made using Dash.
+You can also visit our website's <Link to="/blog/tag/dash">Dash tag</Link> for more articles and tutorials. [Click here](https://dash-widgets.herokuapp.com) to see an app that was created using Dash.
 
 
 # Shiny
@@ -145,8 +145,10 @@ In this section I'll briefly introduce some packages you can use as an alternati
 
 Over the time there will be more great packages coming out so if you have any suggestions or want to include any particular package in this section feel free to [send me an email](mailto:y.weng@sheffield.ac.uk).
 
+
 ## Javascript libraries
 Javascript visualisation libraries often have R wrappers we can make use for dynamic data visualisations in R. Most of the time you can mix and match libraries to suit your needs as each package were designed from a different perspective.
+
 
 ### Leaflet
 **Leaflet** is one of most popular Javascript framework for (mobile-friendly) interactive maps. You can find its place not only in websites such as *GitHub*, *Facebook* and *The New York Times*, but also well known geographic information systems like *OpenStreetMap* and *Mapbox*. If you are looking for a package specialised in interactive maps then *[Leaflet for R](https://rstudio.github.io/leaflet/)* would not disappoint you.  
@@ -158,17 +160,24 @@ Packages also offers interactive maps:
 
 
 ### Highcharter
-**Highcharts** is a really popular Javascript library that provides a powerful API which you can use to produce high quality charts. **Highcharter** is a R wrapper for *Highcharts** which means we can benefit from its highly flexible and customisable modules in R.
+**Highcharts** is a really popular Javascript library that provides a powerful API which you can use to produce high quality charts. **Highcharter** is a R wrapper for *Highcharts* which means we can benefit from its highly flexible and customisable modules in R.
 
 <iframe src="https://rawcdn.githack.com/yld-weng/hadfield-green-roof/main/part3/timeSeries.html" style="width: 100%; min-height: 450px"></iframe>  
 
 You can also embed charts within Shiny or R markdown document which makes this package a great alternative to *plotly*.
 
 
-### Rbokeh
+### r2d3
+D3 stands for **Data-Driven Document** and D3.js is known as an open-source Javascript library that is capable of producing *web-based interactive data visualisations* in web browsers using SVG, HTML and CSS. It is powerful and customisable yet has a steep learning curve. If you are comfortable with D3 then you can use a range of toolsets provides by **[r2d3](https://github.com/rstudio/r2d3)**. For example, you can translate R objects into D3 data structures, render D3 scripts within RStudio and R markdown documents, and embed D3 visualisations directly inside Shiny.
+
 
 ### Dygraphs
 A javascript charting library capable of **interpreting dense datasets** and specialised in **charting time-series data**. You can embed visualisations either in Shiny or within R markdown documents like many other packages, however there wouldn't be many packages offering the level of customisation it provides for time-series. Visit [dygraphs for R](https://rstudio.github.io/dygraphs/index.html) if you are interested.
+
+
+## Rbokeh
+[Bokeh](https://bokeh.org/) is a Python interactive visualization library written in Python and TypeScript for modern web browsers. [Rbokeh](https://github.com/bokeh/rbokeh/) is a native R plotting library backed by Bokeh which provides as many functionalities as *plotly* and *D3*.
+
 
 
 ## ggiraph
@@ -176,6 +185,7 @@ The **ggiraph** extends from *ggplot2* and *htmlwidgets* and allows you to creat
 
 ## DT
 data.table
+
 
 ## rgl
 RGL is a package specialised in 3D visualisations that supports real-time interactive plots. We have mentioned this package in the <Link to="/blog/20/01/2021/Static-Visualisations-In-R">previous part</Link> of the series.
