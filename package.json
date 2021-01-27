@@ -4,6 +4,19 @@
   "description": "Promoting and building community around data visualisation at the University of Sheffield",
   "version": "1.0.1",
   "author": "Yu Liang Weng <y.weng@sheffield.ac.uk>",
+  "scripts": {
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "build": "gatsby build",
+    "develop-rc": "gatsby clean && gatsby develop",
+    "develop": "gatsby develop",
+    "start": "npm run develop",
+    "serve": "gatsby build && gatsby serve",
+    "serve-rc": "gatsby clean && gatsby build && gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"no test specified\" && exit 0",
+    "deploy": "gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git",
+    "deploy-rc": "gatsby clean && gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git"
+  },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
@@ -97,19 +110,6 @@
     "dataviz",
     "datavis"
   ],
-  "scripts": {
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "build": "gatsby build",
-    "develop-rc": "gatsby clean && gatsby develop",
-    "develop": "gatsby develop",
-    "start": "npm run develop",
-    "serve": "gatsby build && gatsby serve",
-    "serve-rc": "gatsby clean && gatsby build && gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"no test specified\" && exit 0",
-    "deploy": "gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git",
-    "deploy-rc": "gatsby clean && gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/researchdata-sheffield/dataviz-hub2"
