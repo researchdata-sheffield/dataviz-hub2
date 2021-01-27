@@ -4,9 +4,8 @@ title: Interactive Visualisations in R
 description: Part 3 | Exploring packages in R using data collected as part of the EU funded 'Collaborative research and development of green roof system technology' project.
 date: 2021-01-27
 category: [Articles]
-tag: [R, Plotly, Shiny]
+tag: [R, Plotly, Shiny, Interactive]
 thumbnail: ./thumb.png 
-hide: "true"
 ---
 
 # Introduction
@@ -25,11 +24,11 @@ You might wonder what *htmlwidgets* is - *"A framework for creating HTML widgets
 
 
 # Plotly
-Plotly was known for providing scientifc charing libraries that has been increasingly popular over the last few years and you can discover its place in many popular programming languages and platforms such as Python, R, Javascript, Angular, React.JS, and .NET.  
+Plotly was known for providing scientific charting libraries that has been increasingly popular over the last few years and you can discover its place in many popular programming languages and platforms such as Python, R, Javascript, Angular, React.JS, and .NET.  
  
 The *plotly* package in R was created as an interface to the Javascript Library plotly.js therefore you can create many interactive web-based graphics out of it. Since the package also depends on the *ggplot2* package we have explored in the previous blog post, we can actually interact with the charts and graphs we have made by using the *ggplotly()* function that converts a ggplot2 object into a plotly object!  
  
-To see examples of open-source graphics made with the R *plotly* package, use this [link](https://plotly.com/r/). These examples are appended with read-to-run code blocks that will help you get started very qucikly. In addition, if you are looking for a particular graph, most of the sections containing a 'More...' link that leads to a range of extra visualisations. For extensive documentation of the package take a look at the [PDF from CRAN](https://cran.r-project.org/web/packages/plotly/plotly.pdf).  
+To see examples of open-source graphics made with the R *plotly* package, use this [link](https://plotly.com/r/). These examples are appended with read-to-run code blocks that will help you get started very quickly. In addition, if you are looking for a particular graph, most of the sections contain a 'More...' link that leads to a range of extra visualisations. For extensive documentation of the package take a look at the [PDF from CRAN](https://cran.r-project.org/web/packages/plotly/plotly.pdf).  
 
 
  
@@ -56,7 +55,7 @@ Now let's use the heatmap as an example to visualise the daily average temperatu
 2. Add two columns *month* and *day* from *TIMESTAMP* and drop all other columns except air temperature
 3. Group data by day and compute the average temperature over 24 hours
 4. Transform the data frame so that we have monthly calendar with temperatures on seperate rows
-5. Drop the *month* column and onvert the data frame into matrix
+5. Drop the *month* column and convert the data frame into matrix
 
 ```r
 shefClimateHeatmap <- shefClimateNoNA %>%
@@ -122,7 +121,7 @@ Shiny is a flexible package designed to make it easy for users to build interact
 
 ![Shiny example](./shiny/shiny1.png)  
 
-If you already have some knowledge in R, then you can design your own app in a few hours by visiting [official video and written tutorials](https://shiny.rstudio.com/tutorial/). We also have some blog posts on Shiny for you to look at:  
+If you already have some knowledge in R, then you can design your own app in a few hours by visiting [official video and written tutorials](https://shiny.rstudio.com/tutorial/). We also have some blog posts on Shiny for you to read:  
 
 <LPWrap>
   <LPItem href="https://dataviz.shef.ac.uk/blog/18/08/2020/GM">Visualising GM data with a Shiny dashboard</LPItem>
@@ -133,7 +132,7 @@ If you already have some knowledge in R, then you can design your own app in a f
 ## Shiny or Dash
 **Learning curve:** Whilst both tools are created based on ReactJS (a Javascript Framework), Shiny is great for R beginners or non-technical users, whereas you might be unhappy with Dash if you have zero experience in HTML, CSS, and Javascript.
 
-**Hosting:** Both tools offer a free hosting solution and you'll get a unique url for each individual app. If you prefer Dash then it is recommended you [host apps on Heroku](https://dashr.plotly.com/deployment). For Shiny you can [deploy](https://shiny.rstudio.com/deploy/) up to 5 apps for free on Shinyapps.io via RStudio directly.
+**Hosting:** Both tools offer a free hosting solution and you'll get a unique url for each individual app. If you prefer Dash then it is recommended you [host apps on Heroku](https://dashr.plotly.com/deployment). For Shiny you can [deploy](https://shiny.rstudio.com/deploy/) up to five apps for free on Shinyapps.io via RStudio directly.
 
 **Community:** Both tools created an active community, and Dash's design philosophy makes it easy to transfer knowledge between Python and R.
 
@@ -147,13 +146,13 @@ Over the time there will be more great packages coming out so if you have any su
 
 
 ## Javascript libraries
-Javascript visualisation libraries often have R wrappers we can make use for dynamic data visualisations in R. Most of the time you can mix and match libraries to suit your needs as each package were designed from a different perspective.
+Javascript visualisation libraries often have R wrappers we can make use for dynamic data visualisations in R. Most of the time you can mix and match libraries to suit your needs as each package was designed from a different perspective.
 
 
 ### Leaflet
-**Leaflet** is one of most popular Javascript framework for (mobile-friendly) **interactive maps**. You can find its place not only in websites such as *GitHub*, *Facebook* and *The New York Times*, but also well known geographic information systems like *OpenStreetMap* and *Mapbox*. If you are looking for a package specialised in interactive maps then *[Leaflet for R](https://rstudio.github.io/leaflet/)* would not disappoint you.  
+**Leaflet** is one of most popular Javascript frameworks for (mobile-friendly) **interactive maps**. You can find its place not only in websites such as *GitHub*, *Facebook* and *The New York Times*, but also well known geographic information systems like *OpenStreetMap* and *Mapbox*. If you are looking for a package specialised in interactive maps then *[Leaflet for R](https://rstudio.github.io/leaflet/)* would not disappoint you.  
 
-Packages also offers interactive maps:
+Packages that also offers interactive maps:
 - [ggmap](https://github.com/dkahle/ggmap)
 - Plotly
 - [ggiraph](https://davidgohel.github.io/ggiraph/)
@@ -165,11 +164,11 @@ Packages also offers interactive maps:
 <iframe src="https://rawcdn.githack.com/yld-weng/hadfield-green-roof/main/part3/timeSeries.html" style="width: 100%; min-height: 450px"></iframe>
 *Click on legends to toggle lines*  
 
-You can also embed charts within Shiny or R markdown document which makes this package a great alternative to *plotly*.
+You can also embed charts within Shiny or R markdown documents which makes this package a great alternative to *plotly*.
 
 
 ### r2d3
-D3 stands for **Data-Driven Document** and D3.js is known as an open-source Javascript library that is capable of producing *web-based interactive data visualisations* in web browsers using SVG, HTML and CSS. It is powerful and customisable yet has a steep learning curve. If you are comfortable with D3 then you can use a range of toolsets provides by **[r2d3](https://github.com/rstudio/r2d3)**. For example, you can translate R objects into D3 data structures, render D3 scripts within RStudio and R markdown documents, and embed D3 visualisations directly inside Shiny.
+D3 stands for **Data-Driven Document** and D3.js is known as an open-source Javascript library that is capable of producing *web-based interactive data visualisations* in web browsers using SVG, HTML and CSS. It is powerful and customisable yet has a steep learning curve. If you are comfortable with D3 then you can use a range of tool sets provided by **[r2d3](https://github.com/rstudio/r2d3)**. For example, you can translate R objects into D3 data structures, render D3 scripts within RStudio and R markdown documents, and embed D3 visualisations directly inside Shiny.
 
 
 ### Dygraphs
@@ -177,7 +176,7 @@ A javascript charting library capable of **interpreting dense datasets** and spe
   
 
 ### DT
-The **DT** package provides a R wrapper to the Javascript library **[DataTables](https://rstudio.github.io/DT/)** which enables us to display matrices or data frames as HTML table with functions such as filtering, sorting and pagination. This package would be a great addition alongside visualisations you want to present to your audiences.  
+The **DT** package provides a R wrapper to the Javascript library **[DataTables](https://rstudio.github.io/DT/)** which enables us to display matrices or data frames as HTML tables with functions such as filtering, sorting and pagination. This package would be a great addition alongside visualisations you want to present to your audiences.  
 
 <iframe src="https://rawcdn.githack.com/yld-weng/hadfield-green-roof/main/part3/datatable.html" style="width: 100%; min-height: 450px"></iframe>  
 *Sheffield Climate data 2012 - 2013*  
@@ -189,7 +188,7 @@ The **DT** package provides a R wrapper to the Javascript library **[DataTables]
 
 
 ## ggiraph
-The **ggiraph** extends from **ggplot2** and **htmlwidgets** and allows you to create interactive ggplot objects. Authors have set up a [website](https://davidgohel.github.io/ggiraph/index.html) with comprehensive documentations and many examples for beginners to get started. Go ahead and install this package if you enjoy working with *ggplot2* and comfortable with grammar of graphics.
+The **ggiraph** extends from **ggplot2** and **htmlwidgets** and allows you to create interactive ggplot objects. Authors have set up a [website](https://davidgohel.github.io/ggiraph/index.html) with comprehensive documentations and many examples for beginners to get started. Go ahead and install this package if you enjoy working with *ggplot2* and comfortable with the grammar of graphics.
 
 
 ## rgl
@@ -198,6 +197,3 @@ RGL is a package **specialised in 3D visualisations** that supports real-time in
 ### googleVis
 If you have ever used Google Charts before, then you can reproduce similar graphs using this **goggleVis** package for accessing Google APIs.
 
-
-# What's next
-Coming soon...
