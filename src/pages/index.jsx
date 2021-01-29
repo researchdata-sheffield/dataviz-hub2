@@ -141,7 +141,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <HomeShowcase />
       
       <div id="collaboration" className="container mx-auto min-h-40 flex flex-wrap pb-20 justify-center">
-        <h1 className="text-3xl ipadp:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUoS Stephenson"}}>Collaboration and Partnership.</h1>
+        <h1 className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUoS Stephenson"}}>Collaboration and Partnership.</h1>
         <p className="text-gray-500">Further details to come.</p>
       </div>
 

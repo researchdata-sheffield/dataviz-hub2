@@ -29,10 +29,11 @@
   transition: .5s ease;
   font-size: x-large;
   font-weight: 600;
+  position: relative;
 }
 
 .accordion__button:hover, .accordion__button:focus {
-  background-color: #f0f0f09a;
+  background-color: #f0f0f03d;
 }
 
 .accordion__button:before {
@@ -46,7 +47,8 @@
   border-right: 4px solid currentColor;
   transform: rotate(45deg) translate(0px, -6px);
   transition: .4s ease;
-  color: #0066b3;
+  //color: #0066b3;
+  color: #251d5a;
   position: absolute;
   right: 0;
 }
@@ -54,10 +56,13 @@
 .accordion__button[aria-expanded='true']::before,
 .accordion__button[aria-selected='true']::before {
   transform: rotate(225deg) translate(-1px, 4px);
+  color: white;
 }
 
 .accordion__item .accordion__button[aria-expanded='true'] {
-  background-color: #e5f4ff;
+  //background-color: #e5f4ff;
+  background-color: #251d5a;
+  color: white;
 }
 
 [hidden] {
@@ -67,7 +72,7 @@
 .accordion__panel {
   padding: 20px;
   animation: fadein 0.35s ease-in;
-  background: #f8f8f87c;
+  background: #f8f8f84f;
 }
 
 /* -------------------------------------------------- */
