@@ -372,12 +372,88 @@ import { TiChevronLeft, TiChevronRight } from 'react-icons/ti'
       </Accordion>   
       </Fade>
     </div>
+    
+    {/* Matlab */}
     <div id="sec4" className="flex-wrap ipadp:min-h-50 mt-16">
       <Fade duration={1200}>
       <p className="text-highlight_2 font-bold text-5xl leading-8">Matlab</p>
-      In progress...
+      <p>
+      Matlab is different to the previous languages described here, in that it is an interactive programming environment, with the Matlab language at its core. 
+      Matlab was designed for <a href="https://uk.mathworks.com/help/matlab/getting-started-with-matlab.html">engineers and scientists,</a> so it focuses on making data manipulation, analysis and visualisation tools as intuative and natural as possible. 
+      </p>
+      <Accordion allowZeroExpanded="true">
+        <AccordionItem>
+          <AccordionItemHeading>
+            <AccordionItemButton>
+              Data Processing
+            </AccordionItemButton>
+          </AccordionItemHeading>
+          <AccordionItemPanel>
+          <p> 
+          Mathworks have produced a number of excellent training courses, webinars and tutorials which can help you build skills and confidence when processing your data with Matlab.
+          </p>
+          Essential skills: 
+          <LPWrap>
+            <LPItem className="md:mx-7" Lab href="https://uk.mathworks.com/learn/tutorials/matlab-onramp.html">Onramp</LPItem>
+            <LPItem className="md:mx-7" Lab href="https://uk.mathworks.com/videos/beyond-excel-enhancing-your-data-analysis-with-matlab-1503081232623.html">Moving beyond Excel</LPItem>
+            <LPItem classname="md:mx-7" Lab href="https://uk.mathworks.com/help/matlab/data-import-and-analysis.html">Data import and analysis tutorial tree</LPItem>       
+          </LPWrap>
+          <p>
+          Matlab also has a number of advanced functions and additional toolboxes that can help researchers utilise modern computing power. 
+          Including, but not limited to; Machine Learning, tall arrays for big data management, GPU comptuing and Image processing.  
+          </p>
+          <LPWrap>
+           <LPItem className="md:mx-7" Lab href="https://uk.mathworks.com/learn/tutorials/machine-learning-onramp.html">Machine learning tutorial</LPItem>
+            <LPItem className="md:mx-7" Lab href="https://uk.mathworks.com/help/matlab/import_export/tall-arrays.html">Tall Arrays</LPItem>
+            <LPItem classname="md:mx-7" Lab href="https://notesrcg.blogspot.com/2020/11/running-matlab-on-gpus.html">GPU Computing on ShARC</LPItem>  
+            <LPItem className="md:mx-7" Lab href="https://uk.mathworks.com/help/images/index.html">Image Processing tutorial tree</LPItem>     
+          </LPWrap>
+         </AccordionItemPanel>
+        </AccordionItem>
+      
+        <AccordionItem>
+         <AccordionItemHeading>
+           <AccordionItemButton>
+              Data Visualisation
+           </AccordionItemButton>
+         </AccordionItemHeading>
+         <AccordionItemPanel>
+          <p> 
+          Visualising data with Matlab is enjoyable; it also offers a considerable amount of flexibility. 
+          Visit the <a href="https://uk.mathworks.com/products/matlab/plot-gallery.html#customizingplots">Matlab plot gallery</a> to look at some of the many ways you can visualise data with Matlab. 
+          There is also a <a href="https://uk.mathworks.com/products/matlab/live-script-gallery.html">LiveScript Gallery</a> where its possible to access interesting and informative data visualisation workflows. 
+          </p>
+          You may find some of the following resources useful:
+          <LPWrap>
+          <LPItem classname="md:mx-7" Lab href="https://uk.mathworks.com/videos/visualizing-data-with-matlab-1567681462129.html"> Data Viz examples</LPItem>
+          <LPItem classname="md:mx-7" Lab href="https://uk.mathworks.com/videos/visualizing-data-with-matlab-1567681462129.html"> Structure of a Matlab Graphic</LPItem>
+          <LPItem classname="md:mx-7" Lab href="https://uk.mathworks.com/help/matlab/animation-1.html"> Animating visualisations</LPItem>
+          </LPWrap>
+         </AccordionItemPanel>
+        </AccordionItem>
+      
+        <AccordionItem>
+          <AccordionItemHeading>
+            <AccordionItemButton>
+              Share
+            </AccordionItemButton>
+          </AccordionItemHeading>
+         <AccordionItemPanel>
+          <p> 
+          Like Dash for Python and Shiny for R, Matlab also has an App Designer which can be hosted on the web, letting users explore your data using visualisations. 
+          You can find an introduction to the Matlab App Designer <a href="https://uk.mathworks.com/products/matlab/app-designer.html">here</a>, 
+          along with a helpful <a href="https://uk.mathworks.com/products/matlab/app-designer/component-gallery.html">catalogue</a> of components that can be easily built into your applications.
+          </p>
+          Getting started with App designer:
+          <LPWrap>
+            <LPItem className="md:mx-7" Lab href="https://uk.mathworks.com/videos/app-designer-overview-1510748719083.html>">App Designer</LPItem>     
+          </LPWrap>
+         </AccordionItemPanel>
+        </AccordionItem>
+      </Accordion> 
     </Fade>
     </div>
+    
     <hr/>
     <div className="border-t-1 border-gray-200 pt-10 mt-16">
       <h2 className="inline" style={{background: 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Congratulations!</h2> You 
