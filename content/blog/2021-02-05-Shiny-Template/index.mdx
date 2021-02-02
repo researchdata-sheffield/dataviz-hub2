@@ -93,7 +93,7 @@ When creating a Shiny app, we recommend you to consider the following steps (pre
       </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
-      The first thing to consider is the overall layout of the app. Depeneding on the complexity and the nature of your app (whether it is a simple app to display data as a table or Shiny-based website focus on particular group of audiences), it is always helpful to sketch the design before you start building the app. For example, if you expect many charts and contents then it is best to divide them into multiple pages.
+      The first thing to consider is the overall layout of the app. Depeneding on the complexity and the nature of your app (whether it is a simple app to display data as a table or Shiny-based website focus on particular group of audiences), it is always helpful to sketch the design before you start building the app. For example, if you expect many charts and contents then it is best to divide them into multiple pages. 
     </AccordionItemPanel>
   </AccordionItem>
   <AccordionItem>
@@ -113,13 +113,20 @@ When creating a Shiny app, we recommend you to consider the following steps (pre
       </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
-      Once all design work have completed we can start building the app as we have went through at the beginning of the tutorial but mostly likely with much more elements. We recommend you refer to the <a href="https://shiny.rstudio.com/reference/shiny/">latest reference</a> for the Shiny package, the development team of Shiny have wonderfully organised functions and corresponding description in a clean fasion so it is relatively easy to navigate through the reference.
+      Once all design work have completed we can start building the app as we have went through at the beginning of the tutorial but mostly likely with much more elements. We recommend you refer to the <a href="https://shiny.rstudio.com/reference/shiny/">latest reference</a> for the Shiny package, the development team of Shiny have wonderfully organised functions and corresponding description in a clean fasion so it is relatively easy to navigate through the reference. The app will likely to slow down as the size of dataset increases, you might want consider using <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson6/">reactive expression</a> in your app to improve performances.
+    </AccordionItemPanel>
+  </AccordionItem>
+    <AccordionItem>
+    <AccordionItemHeading>
+      <AccordionItemButton>
+        STYLES
+      </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      It is worth a while to consider the appearance of your app, e.g. the font size, text colours, background colours, and spaces between elements. Shiny has HTML5 equivalent functions that can be used to wrap elements and add inline styles, you can learn more from the <a href="https://shiny.rstudio.com/tutorial/written-tutorial/lesson2/">UI interface tutorial</a>. In addition, you might also find <a href="https://rstudio.github.io/shinythemes/">Shiny Themes</a> helpful for alter the overall appearance.
     </AccordionItemPanel>
   </AccordionItem>
 </Accordion>
-
-4. STYLES - 
-5. PUBLISH - 
 
 
 ### Fetch data from ORDA
@@ -127,3 +134,9 @@ When creating a Shiny app, we recommend you to consider the following steps (pre
 ### Highcharter and Data Table
 
 ![Highcharter and datatable](./img1.png)
+
+
+
+
+
+## Publish
