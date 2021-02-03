@@ -84,7 +84,7 @@ library("tidyverse")
 If you are new to Shiny then these [official tutorials](https://shiny.rstudio.com/tutorial/) will be really helpful to get you started. We also encourage you to get inspiration from the [Shiny Gallery](https://shiny.rstudio.com/gallery/) which consist of many wonderful Shiny apps created within the Shiny app developer community. All apps in the Shiny Gallery are open source and you are most welcomed to learn from others!  
   
 
-When creating a Shiny app, we recommend you to consider the following steps (preferably in order):  
+When creating a Shiny app, we recommend you to consider the following steps (preferably in the order shown below):  
 <Accordion allowZeroExpanded="true">
   <AccordionItem>
     <AccordionItemHeading>
@@ -129,14 +129,59 @@ When creating a Shiny app, we recommend you to consider the following steps (pre
 </Accordion>
 
 
-### Fetch data from ORDA
+### How to
+
+#### Fetch data from ORDA
+One of the most important aspects for reproducible research is to make sure data is preserved and accessible so that it can be pulled out anytime regardless of the tools people are using. Researchers are strongly encouraged to deposit their data in [ORDA](https://orda.shef.ac.uk)(university's data repository), unless there is a subject-specific repository or data centre which is commonly used in their field.  
+
+It is quick and easy to read data in R, here is an example of reading a csv file:  
+
+```r
+myData <- read.csv("https://figshare.shef.ac.uk/ndownloader/files/25647497")
+# OR using readr 
+library(readr)
+myData <- read_csv("https://figshare.shef.ac.uk/ndownloader/files/25647497")
+```  
+
+To get the url for a dataset in ORDA, follow the steps below:  
+1. Click on item containing the dataset and it will navigate you to [figshare.shef.ac.uk](https://figshare.shef.ac.uk)  
+2. Hover on the dataset you wish to use and right click the *download* text that shows up  
+![Hover on the dataset](./img2.png)  
+3. Click `Copy Link Location` (Firefox) / `Copy link address` (Chrome) / `Copy link` (Edge and Safari)  
+![Get download link from Figshare](./img3.png)  
+
+
+#### Use templates
+Each template will be executable as is if the data file has been placed in the correct directory. The `app.R` file contains a line `source('./climateData.R')` which read and parse the `climateData.R` script (which does some data processing) from the root directory (without `./` if it is in the same directory as the `app.R`), all codes within this script will be executed and any variables or functions defined within this script can also be used in the `app.R` file. 
+
+To use any particular template, either download the [whole repository](https://github.com/yld-weng/hadfield-green-roof) **OR** download both the corresponding folder use the link provided in each section and the [climateData.R](https://github.com/yld-weng/hadfield-green-roof/blob/main/climateData.R) file.  
+
+It is always advisable to create a seperate script for data processing and other housekeeping tasks then use the `source()` function to include data when neccessary. This will increase your code readability and easier to maintain.  
 
 ### Highcharter and Data Table
+This simple template uses the **DT** package to display data in a table and the **Highcharter** package for creating time series. Additionally there is a date widget that controls the date interval for visualisations on the right.  
 
 ![Highcharter and datatable](./img1.png)
 
+[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/hadfield-green-roof/tree/main/shiny/simpleHighcharter)
 
 
+### Plotly
+This template builds on top of the previous one and replaced *Highcharter* with *Plotly* and added histograms as well as an options widget for choosing variables to plot.
+
+![Simple plotly template](./img4.png)
+
+[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/hadfield-green-roof/tree/main/shiny/simplePlotly)  
+  
+  
+### Plotly with Navbar
+Scrolling through a long page is not a nice experience to users and this process is repeated whenever you want to change parameters using widgets that was on the top of the page, therefore, split contents and charts into different page/tab could be a good option. This template uses the **sandstone** shinytheme, you can always change or remove it at line 16.  
+
+![Plotly and navbar - home](./img5.png)
+![Plotly and navbar - histogram](./img6.png)
+![Plotly and navbar - time series](./img7.png)
+
+[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/hadfield-green-roof/tree/main/shiny/simplePlotlyNavbar)  
 
 
 ## Publish
