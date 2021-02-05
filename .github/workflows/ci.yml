@@ -20,8 +20,9 @@ jobs:
           restore-keys: ${{ runner.os }}-gatsby-ci-
       
       - name: Install dependencies
-        run: npm install
-        run: npm install -g gatsby-cli
+        run: |
+          npm install
+          npm install -g gatsby-cli
       
       - name: Build
         run: npm run build --log-pages
