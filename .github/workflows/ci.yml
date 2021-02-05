@@ -21,8 +21,9 @@ jobs:
       
       - name: Install dependencies
         run: npm install
+        run: npm install -g gatsby-cli
       
-      - name: Build the site
+      - name: Build
         run: npm run build --log-pages
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
@@ -30,7 +31,6 @@ jobs:
           EVENT_ORG_ID_1: ${{ secrets.EVENT_ORG_ID_1 }}
           EVENT_ORG_ID_2: ${{ secrets.EVENT_ORG_ID_2 }}
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
