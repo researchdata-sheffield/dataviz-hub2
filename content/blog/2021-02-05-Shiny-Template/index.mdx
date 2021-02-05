@@ -81,8 +81,15 @@ library("tidyverse")
 ```  
 
 ## Templates
-If you are new to Shiny then these [official tutorials](https://shiny.rstudio.com/tutorial/) will be really helpful to get you started. We also encourage you to get inspiration from the [Shiny Gallery](https://shiny.rstudio.com/gallery/) which consist of many wonderful Shiny apps created within the Shiny app developer community. All apps in the Shiny Gallery are open source and you are most welcomed to learn from others!  
-  
+If you are new to Shiny then these [official tutorials](https://shiny.rstudio.com/tutorial/) will be really helpful to get you started. We also encourage you to get inspiration from the [Shiny Gallery](https://shiny.rstudio.com/gallery/) which consist of many wonderful Shiny apps created within the Shiny app developer community. All apps in the Shiny Gallery are open source and you are most welcomed to learn from others! Some other useful resources:  
+
+<LPWrap>
+  <LPItem href="https://www.r-graph-gallery.com/">The R Graph Gallery</LPItem>
+  <LPItem href="https://rstudio.github.io/shinydashboard/index.html">Shiny dashboard</LPItem>
+  <LPItem href="https://ox-it.github.io/OxfordIDN_Shiny-App-Templates/">Oxford IDN Shiny Templates</LPItem>
+</LPWrap>  
+
+If you are looking for something more advanced, check out the [golem](https://github.com/ThinkR-open/golem) framework for building Shiny apps.  
 
 When creating a Shiny app, we recommend you to consider the following steps (preferably in the order shown below):  
 <Accordion allowZeroExpanded="true">
@@ -152,18 +159,20 @@ To get the url for a dataset in ORDA, follow the steps below:
 
 
 #### Use templates
-Each template will be executable as is if the data file has been placed in the correct directory. The `app.R` file contains a line `source('./climateData.R')` which read and parse the `climateData.R` script (which does some data processing) from the root directory (without `./` if it is in the same directory as the `app.R`), all codes within this script will be executed and any variables or functions defined within this script can also be used in the `app.R` file. 
+Each template will be executable as is if the data file has been placed in the correct directory. The `app.R` file contains a line `source('./climateData.R')` which read and parse the `climateData.R` script (which does some data processing) from the root directory (change the path accordingly if you placed the file in a different directory), all codes within this script will be executed and any variables or functions defined within this script can also be used in the `app.R` file. 
 
-To use any particular template, either download the [whole repository](https://github.com/yld-weng/hadfield-green-roof) **OR** download both the corresponding folder use the link provided in each section and the [climateData.R](https://github.com/yld-weng/hadfield-green-roof/blob/main/climateData.R) file.  
+To use any particular template, either download the [whole repository](https://github.com/yld-weng/R-Series) **OR** download both the corresponding folder use the link provided in each section and/or the [climateData.R](https://github.com/yld-weng/R-Series/blob/main/climateData.R) file if required. You can also download and mix multiple templates together.  
 
-It is always advisable to create a seperate script for data processing and other housekeeping tasks then use the `source()` function to include data when neccessary. This will increase your code readability and easier to maintain.  
+It is always advisable to create a seperate script for data processing and other housekeeping tasks then use the `source()` function to include data when necessary. This will increase your code readability and easier to maintain. To add your own data you can replace all contents within the data file with any steps that prepares data for visualisations.  
+
+
 
 ### Highcharter and Data Table
 This simple template uses the **DT** package to display data in a table and the **Highcharter** package for creating time series. Additionally there is a date widget that controls the date interval for visualisations on the right.  
 
 ![Highcharter and datatable](./img1.png)
 
-[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/hadfield-green-roof/tree/main/shiny/simpleHighcharter)
+[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/R-Series/tree/main/shiny/simpleHighcharter)
 
 
 ### Plotly
@@ -171,17 +180,46 @@ This template builds on top of the previous one and replaced *Highcharter* with 
 
 ![Simple plotly template](./img4.png)
 
-[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/hadfield-green-roof/tree/main/shiny/simplePlotly)  
+[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/R-Series/tree/main/shiny/simplePlotly)  
   
   
 ### Plotly with Navbar
-Scrolling through a long page is not a nice experience to users and this process is repeated whenever you want to change parameters using widgets that was on the top of the page, therefore, split contents and charts into different page/tab could be a good option. This template uses the **sandstone** shinytheme, you can always change or remove it at line 16.  
+Scrolling through a long page is not a nice experience for users and this process is repeated whenever you want to change parameters using widgets that are on the top of the page, therefore, splitting contents and charts into different pages/tabs could be a good option. This template uses the **sandstone** shinytheme, you can always change or remove it at line 16. 
 
 ![Plotly and navbar - home](./img5.png)
 ![Plotly and navbar - histogram](./img6.png)
 ![Plotly and navbar - time series](./img7.png)
 
-[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/hadfield-green-roof/tree/main/shiny/simplePlotlyNavbar)  
+[Data](https://figshare.shef.ac.uk/articles/dataset/Hadfield_Green_Roof_5-year_Dataset/11876736) | [Code](https://github.com/yld-weng/R-Series/tree/main/shiny/simplePlotlyNavbar)  
 
 
-## Publish
+### Scatter plot on Map
+This scattergeo plot was made using Plotly shows the itinerary of King Edward I within the selected date range. If you have geographical data that you want to plot, this template might be a good place to start.  
+
+![Plotly - Scattergeo](./img8.png)
+
+[Data](https://figshare.shef.ac.uk/articles/dataset/Mapping_The_Itinerary_of_King_Edward_I/8948699) | [Code](https://github.com/yld-weng/R-Series/tree/main/shiny/map)  
+
+
+### Map with sliders
+This template extends the previous scattergeo plot and added a slider that allows users to view the itinerary at specific date (including previous dates). Once the play button is clicked the slider will automatically increments day by day until it hits the end date, and the map will also be updated accordingly.  
+
+![Plotly - Scattergeo with slider](./img9.gif)
+
+[Data](https://figshare.shef.ac.uk/articles/dataset/Mapping_The_Itinerary_of_King_Edward_I/8948699) | [Code](https://github.com/yld-weng/R-Series/tree/main/shiny/mapWithSlider)  
+
+
+
+## Publish your apps
+We recommend registering for a personal ShinyApps.io account for hosting your Shiny apps. This allows you to host up to five public apps and allows for a certain number of *execution hours* per month.
+
+If you want to create more than five apps, need your app(s) to be password-protected or think you have or will exceed your execution hours quota then please get in touch via helpdesk@sheffield.ac.uk.  
+  
+
+### Data governance  
+You should not host Shiny apps on ShinyApps.io that rely on / include sensitive data.  If you want to interactively explore sensitive data then contact helpdesk@sheffield.ac.uk to discuss options for this.  
+
+### Apps as citable publications  
+We cannot guarantee that ShinyApps.io will exist and still be serving your app in ten years time. We therefore recommend that you create an item in ORDA containing the code for your app: this ensures that your app can be cited via a persistent DOI and that it can potentially be reinstated on a different hosting provider if ShinyApps.io disappears. If the code is stored in a GitHub repository, you can create an item by importing the repository directly via the GitHub icon when uploading. We recommend editing the description field in the ORDA entry to include the URL for where the app is currently hosted.  
+
+**Last updated on 05 Feb 2021**
