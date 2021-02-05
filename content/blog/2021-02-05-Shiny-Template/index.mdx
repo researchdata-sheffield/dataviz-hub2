@@ -163,7 +163,9 @@ Each template will be executable as is if the data file has been placed in the c
 
 To use any particular template, either download the [whole repository](https://github.com/yld-weng/R-Series) **OR** download both the corresponding folder use the link provided in each section and/or the [climateData.R](https://github.com/yld-weng/R-Series/blob/main/climateData.R) file if required. You can also download and mix multiple templates together.  
 
-It is always advisable to create a seperate script for data processing and other housekeeping tasks then use the `source()` function to include data when necessary. This will increase your code readability and easier to maintain. To add your own data you can replace all contents within the data file with any steps that prepares data for visualisations.  
+It is always advisable to create a seperate script for data processing and other housekeeping tasks then use the `source()` function to include data when necessary. This will increase your code readability and easier to maintain. To add your own data you can replace all contents within the data file with any steps for preparing data for visualisations.  
+
+When replacing a widget we recommend you verify the output of the widget in the `server` function like `output$widgetOutput = renderText({ input$yourWidgetId })` and then print the output in the main panel using `verbatimTextOutput("widgetOutput")`. These steps will help you pass the correct values to charting functions. Each visualisation package has different render and output functions, for example Plotly has `renderPlotly()` and `plotlyOutput()` whereas Highcharter uses `renderHighchart()` and `highchartOutput()`.
 
 
 
