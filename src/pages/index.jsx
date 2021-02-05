@@ -13,7 +13,7 @@ import HomeShowcase from "../components/home/homeShowcase"
 import moment from "moment"
 import Search_Home from "../components/home/searchHome"
 import Fade from 'react-reveal/Fade'
-import Covid from "../images/home/animation.gif"
+import Covid from "../images/home/COVIDDeathPropMSOA.png"
 import { ButtonWithArrow, AnimateButton } from "../components/style/styled"
 //import bg from "../images/home/earth.jpg"
 
@@ -79,12 +79,12 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           {/* Right component */}
           {/*style={{borderTop: "50px solid #000000", }} */}
-          <div className="flex flex-wrap text-gray-100 lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease",}}>
+          <div className="flex flex-wrap text-gray-100 lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease"}}>
             
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="pt-8 min-h-70 md:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease",}}>
+            <div className="pt-8 min-h-70 md:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease"}}>
               <div className="flex flex-col flex-wrap group min-h-70 md:min-h-100 justify-center text-center items-center" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "contain", backgroundPosition:"center", backgroundRepeat: 'no-repeat' }}>
-                <h1 className="md:-mt-24 px-2 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.2)"}}>
+                <h1 className="md:-mt-24 px-2 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
