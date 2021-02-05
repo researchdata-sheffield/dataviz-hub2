@@ -68,19 +68,11 @@ EventBrite API
 ### IDE/Code Editor
 Visual Studio Code was used for development.
 A list of extensions installed:
-  - Bracket Pair Colorizer
   - ES7 React/Redux/GraphQL/React-Native snippets
-  - ESLint
-  - HTML Snippets
   - MDX
   - Prettier - Code formatter
   - Tailwind CSS IntelliSense
-  - vscode-icons
-  - HTML CSS support
   - npm Intellisense
-  - Babel JavaScript
-  - Color Highlight
-  - Color Info
-  - Color Pick
-  - CSS Peek
+  - Material Icon Theme
+
 
