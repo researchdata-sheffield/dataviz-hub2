@@ -8,6 +8,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "build": "gatsby build",
     "build:incremental": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
+    "build:incremental-ws": "set GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true gatsby build --log-pages",
     "develop-rc": "gatsby clean && gatsby develop",
     "develop": "gatsby develop",
     "start": "npm run develop",

@@ -23,7 +23,7 @@ jobs:
         run: npm install
       
       - name: Build the site
-        run: npm run build:incremental
+        run: npm run build --log-pages
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
