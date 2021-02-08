@@ -1,6 +1,6 @@
-![CI](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development)
+![CI](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development) ![Deployment](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=master)
 
-![Deployment](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=master)
+
 
 <center>
 <h1 style="color: #00aeef"> Dataviz.Shef </h1>
