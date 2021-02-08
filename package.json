@@ -8,7 +8,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "build": "gatsby build",
     "build:incremental": "GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true && gatsby build --log-pages",
-    "build:incremental-ws": "set GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true&&gatsby build --log-pages",
+    "build:incremental-windows": "set GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES=true&&gatsby build --log-pages",
     "develop-noCache": "gatsby clean && gatsby develop",
     "develop": "gatsby develop",
     "start": "npm run develop",
@@ -16,8 +16,11 @@
     "serve-noCache": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"no test specified\" && exit 0",
-    "deploy": "gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git",
-    "deploy-noCache": "gatsby clean && gatsby build && gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git"
+    "gh-pages-script": "gh-pages -d public -r https://$GH_TOKEN@github.com/researchdata-sheffield/dataviz-hub2.git",
+    "deploy": "gatsby build && npm run gh-pages-script",
+    "deploy-noCache": "gatsby clean && npm run deploy",
+    "deploy:incremental": "npm run build:incremental && npm run gh-pages-script",
+    "deploy:incremental-windows": "npm run build:incremental-windows && npm run gh-pages-script"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",

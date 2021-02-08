@@ -1,6 +1,10 @@
 name: CI
 
-on: [push, pull_request]
+on:
+  push:
+    branches: [ '**' ]   # Match every branch
+  pull_request:
+    branches-ignore: [ master ] 
 
 
 jobs:
@@ -9,6 +13,7 @@ jobs:
     
     steps:
       - uses: actions/checkout@v2
+      # Retrieve cache
       - name: Gatsby Cache
         id: gatsby-ci-cache
         uses: actions/cache@v2
@@ -20,9 +25,10 @@ jobs:
           restore-keys: ${{ runner.os }}-gatsby-ci-
       
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       
-      - name: Build
+      # Enable incremental build
+      - name: Incremental Build
         run: npm run build --log-pages
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
