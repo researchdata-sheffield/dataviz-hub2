@@ -2,10 +2,16 @@ name: CI
 
 on:
   push:
-    branches: [ '**' ]   # Match every branch
+    branches-ignore: [ master ]
   pull_request:
-    branches-ignore: [ master ] 
-
+    branches: [ '**' ] 
+  workflow_dispatch:
+    inputs:
+      Name:   
+        required: true
+        default: 'Re-run the workflow'
+      Description:
+        default: ''  
 
 jobs:
   build:
@@ -29,7 +35,7 @@ jobs:
       
       # Enable incremental build
       - name: Incremental Build
-        run: npm run build --log-pages
+        run: npm run build:incremental
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
@@ -38,5 +44,4 @@ jobs:
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
-          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
 

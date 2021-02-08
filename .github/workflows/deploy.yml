@@ -5,6 +5,13 @@ on:
     branches: [ master ]
   schedule:
     - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      Name:   
+        required: true
+        default: 'Re-run the workflow'
+      Description:
+        default: ''  
 
 jobs:
   build:
@@ -33,7 +40,7 @@ jobs:
       
       # Enable incremental build
       - name: Incremental Build
-        run: npm run build --log-pages
+        run: npm run build:incremental
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
@@ -42,7 +49,6 @@ jobs:
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
-          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
 
 
   deploy:
@@ -67,7 +73,12 @@ jobs:
       
       - name: Install dependencies
         run: npm ci
-
+      
+      - name: Set user info
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+        
       - name: Deploy
         run: npm run deploy:incremental
         env:
@@ -78,7 +89,6 @@ jobs:
           GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
-          GATSBY_EXPERIMENTAL_PAGE_BUILD_ON_DATA_CHANGES: true
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
 
 
