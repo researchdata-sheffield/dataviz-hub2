@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.com/researchdata-sheffield/dataviz-hub2.svg?branch=master)](https://travis-ci.com/researchdata-sheffield/dataviz-hub2)
+![CI](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development) ![Deployment](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=master)
+
 
 
 <center>
