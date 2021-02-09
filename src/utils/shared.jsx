@@ -30,6 +30,6 @@ export function getImageSource(node) {
  * Generate cryptographically strong random value
  */
 export function randomNumber() {
-  var dec = crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
+  var dec = typeof window !== 'undefined' && window.crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
   return dec;
 }
