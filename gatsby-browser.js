@@ -64,7 +64,7 @@ export const shouldUpdateScroll = ({
   if(location.hash) {
     setTimeout(() => {
       document.querySelector(`${location.hash}`).scrollIntoView()
-    }, 10);
+    }, 500);
   }
   
 }

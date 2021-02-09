@@ -2,7 +2,7 @@ import React from "react"
 import SEO from "../components/shared/seo"
 import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
-import BackgroundSection from "../components/images/404_background"
+import BackgroundSection from "../components/images/notFoundBackground"
 import { Link } from "gatsby"
 
 const NotFoundPage = () => (

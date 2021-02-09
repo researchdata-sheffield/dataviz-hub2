@@ -10,7 +10,7 @@ import MenuTagSlide from "../../components/blog/menuTagSlide"
 import MenuTag from "../../components/blog/menuTag"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import BackgroundSection from "../../components/images/blog_background";
+import BackgroundSection from "../../components/images/blogBackground";
 
 
 const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {

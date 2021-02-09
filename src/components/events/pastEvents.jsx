@@ -13,12 +13,10 @@ const PastEvents = ({pastEvent}) => {
         let summary = shortenText(node.summary, 15)
 
         return (
-          <div className="flex flex-wrap p-3 w-full overflow-hidden bg-white group pastEvent" key={node.id}>
-            <a href={node.url} target="_blank" rel="noopener noreferrer">
-            <p style={{ fontFamily: "TUoS Blake",}} className="font-semibold text-md text-black leading-4">{node.name.text}</p>
+          <div className="cursor-pointer flex flex-wrap p-4 w-full overflow-hidden group pastEvent" key={node.id} onClick={()=>window.open(node.url, "_blank", "noopener, noreferrer")}>
+            <p className="font-semibold text-md text-black leading-4">{node.name.text}</p>
             <p className="text-gray-700 text-xs leading-4 mt-1">{summary}</p>
             <p className="mt-2 text-xs text-black">{node.start.local}</p>
-            </a>
           </div>
         )
       })} 
@@ -28,7 +26,7 @@ const PastEvents = ({pastEvent}) => {
           <BlackWhiteButton onClick={()=>window.open("https://www.eventbrite.co.uk/o/scholarly-communications-team-the-university-of-sheffield-library-7528476001", "_blank", "noopener, noreferrer")} 
             className="w-full mt-0 hover:bg-blue-800 hover:text-white"
           >
-            More events
+            More
           </BlackWhiteButton>
         </div>
       }

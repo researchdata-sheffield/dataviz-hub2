@@ -6,7 +6,7 @@ import no_image_5 from "../images/blog/no_image_5.png"
 
 export function shortenText(text, length) {
   let newText = text ? text.split(" ").splice(0, length) : ""
-  if(newText.length < length){
+  if (newText.length < length) {
     newText = newText.join(" ")
   } else {
     newText = newText.join(" ").concat(" ...")
@@ -17,17 +17,19 @@ export function shortenText(text, length) {
 // Assign thumbnail if not provided
 export function getImageSource(node) {
   let imagesrc
-  if(node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
+  if (node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
     imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
   } else {
     let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
-    imagesrc = image_set[Math.floor(Math.random() * image_set.length)]
+    imagesrc = image_set[Math.floor(randomNumber() * image_set.length)]
   }
   return imagesrc
 }
 
-
-
-export function CopyCode() {
-
+/**
+ * Generate cryptographically strong random value
+ */
+export function randomNumber() {
+  var dec = typeof window !== 'undefined' && window.crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
+  return dec;
 }

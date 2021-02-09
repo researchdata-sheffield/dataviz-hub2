@@ -16,28 +16,29 @@ export function useScript(src, integrity="", async=true) {
       // Fetch existing script element by src
       // It may have been added by another intance of this hook
       let script = document.querySelector(`script[src="${src}"]`);
-      if(script) script.remove()
-      
+      if(script) {
+        script.remove()
+      }
       //if (!script) {
-        script = document.createElement("script");
-        script.src = src;
-        script.async = async;
-        script.integrity = integrity;
-        script.crossOrigin = "anonymous";
-        script.setAttribute("data-status", "loading");
-        document.body.appendChild(script);
+      script = document.createElement("script");
+      script.src = src;
+      script.async = async;
+      script.integrity = integrity;
+      script.crossOrigin = "anonymous";
+      script.setAttribute("data-status", "loading");
+      document.body.appendChild(script);
 
-        // Store status in attribute on script
-        // This can be read by other instances of this hook
-        const setAttributeFromEvent = (event) => {
-          script.setAttribute(
-            "data-status",
-            event.type === "load" ? "ready" : "error"
-          );
-        };
+      // Store status in attribute on script
+      // This can be read by other instances of this hook
+      const setAttributeFromEvent = (event) => {
+        script.setAttribute(
+          "data-status",
+          event.type === "load" ? "ready" : "error"
+        );
+      };
 
-        script.addEventListener("load", setAttributeFromEvent);
-        script.addEventListener("error", setAttributeFromEvent);
+      script.addEventListener("load", setAttributeFromEvent);
+      script.addEventListener("error", setAttributeFromEvent);
       // } else {
       //   // Grab existing script status from attribute and set to state.
       //   setStatus(script.getAttribute("data-status"));

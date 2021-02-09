@@ -183,14 +183,6 @@ export const ButtonWithArrow = (props) => {
   const arrowStyle = "inline-block transform group-hover:translate-x-1 transition duration-100"
 
   switch(props.type){
-    case 'BlackButton':
-      return (
-        <BlackButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
-        </BlackButton>
-      )
-    
     case 'GreyButton':
       return (
         <GreyButton {...props}>

@@ -37,7 +37,7 @@ const About = () => {
         <div className="flex flex-wrap mx-auto justify-center content-center border-solid border-gray-100 border-b-2"> 
           <Fade>
             <a className={`${logoStyle} text-black`} href="https://www.sheffield.ac.uk/library/index" target="_blank" rel="noopener noreferrer">
-              <p className="font-medium text-4xl leading-tight" style={{fontFamily: "TUoS Stephenson"}}>The<br />University<br />Library.</p>
+              <p className="font-medium text-4xl leading-tight" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>The<br />University<br />Library.</p>
             </a>
             <a className={logoStyle} href="https://www.sheffield.ac.uk/it-services" target="_blank" rel="noopener noreferrer">
             <img src={ITS} alt="IT Services site" />
