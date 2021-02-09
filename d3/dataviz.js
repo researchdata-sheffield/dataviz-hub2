@@ -2,9 +2,9 @@
 /* eslint-disable no-undef */
 
 
-countryCoor = "https://unpkg.com/world-atlas@1/world/110m.json"
-countryNames = "https://gist.githubusercontent.com/lkopacz/dfd9cc04a4d5a5f0fe87c89a79524479/raw/39100d4f6b7c784bd5d838a4e357873ef6877579/world-country-names.csv"
-populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv"
+var countryCoor = "https://unpkg.com/world-atlas@1/world/110m.json"
+var countryNames = "https://gist.githubusercontent.com/lkopacz/dfd9cc04a4d5a5f0fe87c89a79524479/raw/39100d4f6b7c784bd5d838a4e357873ef6877579/world-country-names.csv"
+var populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv"
 
 var margin = {top: 10, right: 10, bottom: 10, left: 10};
 var width = 960 - margin.left - margin.right;
