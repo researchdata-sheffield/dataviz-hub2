@@ -28,7 +28,7 @@ export const LPItem = (props) => {
     >
       {props.children}
       <a href={props.href} rel="noopener noreferrer" target="_blank">
-        <ButtonWithArrow type="BlackButton" className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
+        <ButtonWithArrow  className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
           {props.video ? 'watch videos' : 'read more'}
         </ButtonWithArrow>
       </a>

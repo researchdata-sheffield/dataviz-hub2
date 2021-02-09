@@ -11,7 +11,7 @@ import { GrGroup, GrContactInfo } from "react-icons/gr"
 const HomeCommunity = () => {
   const cardClasses = "w-4/5 md:w-1/3 ipadp:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
   const cardTextClasses = "text-sm xl:text-base border-t-1 border-gray-300 py-3 text-gray-600 group-hover:text-gray-900"
-  const buttonClasses = "rounded-full text-xs lg:text-sm mt-5 lg:mt-10"
+  const buttonClasses = "rounded-md text-xs lg:text-sm mt-5 lg:mt-10"
   const [bgColour, setColour] = useState('#fff');
   const [getHelp, setHelp] = useState(false);
   const supportLinks = [
@@ -26,7 +26,7 @@ const HomeCommunity = () => {
     <div id="home_community" className="ipadp:min-h-110 flex flex-wrap justify-center items-center relative" style={{transition: '.5s ease', background: `linear-gradient(180deg, ${bgColour} 0%, #fff 60%)`, backgroundColor: `${bgColour}`}}>
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap mt-24">
-          <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center px-4"><h1 style={{fontFamily: "TUoS Stephenson"}}>YOUR COMMUNITY. </h1></div>
+          <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center px-4"><h1 style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>YOUR COMMUNITY. </h1></div>
           <Link to="/community" className="mt-1 text-med xl:text-lg text-gray-600 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /> 😃</Link>
         </div>
       </Fade>
@@ -40,7 +40,7 @@ const HomeCommunity = () => {
               Discover a variety of events including talks and symposia, workshops, vis-coding clubs and data visualisation hackathons!
             </div>
             <Link to="/events">
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-red-500`} type="BlackButton">Upcoming events</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-red-500`} >Upcoming events</ButtonWithArrow>
             </Link>
           </Slide>
         </div>
@@ -52,7 +52,7 @@ const HomeCommunity = () => {
             <div className={cardTextClasses}>
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-highlight_2`} type="BlackButton" >Coming soon</ButtonWithArrow>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-highlight_2`}  >Coming soon</ButtonWithArrow>
           </Slide>
         </div>
       
@@ -62,7 +62,7 @@ const HomeCommunity = () => {
               <MdPeople className="text-3xl" />
               <p className="font-bold py-3">Support</p>
               <div className={cardTextClasses}>Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.</div>
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
             </div>
           </Slide>
           {/* Support contact info */}
@@ -72,7 +72,7 @@ const HomeCommunity = () => {
                 <GrGroup className="mx-auto text-4xl mb-2" />
                 <p className="text-left text-sm xl:text-base">We have a diverse community where everyone is passionate about data visualisation.</p>
                 <a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">
-                  <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
+                  <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`}  href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
                 </a>
               </div>
               <div className="p-2 mt-5 text-center">
@@ -81,12 +81,12 @@ const HomeCommunity = () => {
                 <div className="mt-2">
                   {supportLinks.map((link, i) => (
                     <a href={link} target="_blank" rel="noopener noreferrer" key={link}>
-                      <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2 mr-2`} type="BlackButton" href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
+                      <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2 mr-2`}  href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
                     </a>
                   ))}
                 </div>
               </div>
-              <ButtonWithArrow className={`${buttonClasses} bg-teal-500 py-1 px-2`} type="BlackButton" href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} bg-teal-500 py-1 px-2`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
             </div>
           </Slide>
         </div>
@@ -101,7 +101,7 @@ const HomeCommunity = () => {
               </div>
             </div>
             <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-pink-500`} type="BlackButton">Our repository</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-pink-500`} >Our repository</ButtonWithArrow>
             </a>
           </Slide>
         </div>

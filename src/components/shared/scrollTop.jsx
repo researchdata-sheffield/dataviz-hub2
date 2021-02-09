@@ -5,16 +5,16 @@ import { IoIosArrowUp } from "react-icons/io"
 
 const scrollTop = () => {
   useEffect(() => {
-    function scrollTop () {
-      var scrollTOP = document.getElementById("scrollTop-btn");
-      scrollTOP.style.opacity = "0";
+    function scrollTopAction () {
+      var scrollBtn = document.getElementById("scrollTop-btn");
+      scrollBtn.style.opacity = "0";
       if((window.pageYOffset) > 300){
-        scrollTOP.style.opacity = "1"
+        scrollBtn.style.opacity = "1"
       }
     }
-    document.addEventListener('scroll', scrollTop, {passive: true});
+    document.addEventListener('scroll', scrollTopAction, {passive: true});
     return () => {
-      document.removeEventListener('scroll', scrollTop);
+      document.removeEventListener('scroll', scrollTopAction);
     };
   }, []);
 

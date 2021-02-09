@@ -10,7 +10,7 @@ import { ButtonWithArrow } from "../style/styled"
 
 const LearningPath = () => {
   const animationClasses = "transform transition duration-300 ease-in-out"
-  const cardClasses = `${animationClasses} w-4/5 lg:w-1/4 2xl:w-1/5 flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-10 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-lg`
+  const cardClasses = `${animationClasses} w-4/5 lg:w-1/4 2xl:w-1/5 flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-10 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-md`
   const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0`
   const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-highlight_2 text-sm xl:text-base"
@@ -19,7 +19,7 @@ const LearningPath = () => {
     <div id="learning_path" className="ipadp:min-h-110 flex flex-wrap justify-center items-center relative" style={{backgroundColor: '#000'}}>
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center md:mt-24">
-          <div className="text-3xl lg:text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUoS Stephenson"}}>Learning paths.</div>
+          <div className="text-3xl lg:text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning paths.</div>
           <p className="mt-3 text-gray-100 px-2">Discover how to get the most out of statistics, visualisations and tool sets.</p>
         </div>
       </Fade>

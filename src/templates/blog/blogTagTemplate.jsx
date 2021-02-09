@@ -9,7 +9,7 @@ import MenuCategory from "../../components/blog/menuCategory"
 import MenuTag from "../../components/blog/menuTag"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import BackgroundSection from "../../components/images/blog_background";
+import BackgroundSection from "../../components/images/blogBackground";
 import kebabCase from "lodash.kebabcase"
 
 

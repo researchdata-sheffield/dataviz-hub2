@@ -2,7 +2,7 @@ import React from "react"
 import SEO from "../components/shared/seo"
 import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
-//import BackgroundSection from "../components/images/search_background"
+//import BackgroundSection from "../components/images/searchBackground"
 import PropTypes from "prop-types"
 import Search from "../components/shared/search"
 

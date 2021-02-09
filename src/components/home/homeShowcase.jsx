@@ -1,7 +1,6 @@
 import React from 'react'
 import BackgroundTwo from "../images/home/home_2"
 import user_distribution from "../../images/home/user1.png"
-import Zoom from 'react-reveal/Zoom'
 import Pulse from "react-reveal/Pulse"
 import Fade from 'react-reveal/Fade'
 import { ButtonWithArrow } from "../style/styled"
@@ -16,7 +15,7 @@ const HomeShowcase = () => {
         <div className="flex flex-wrap justify-start">
           <div className="lg:w-1/2 py-24 flex flex-wrap px-3 ipadp:pr-20 ipadp:ml-24">
             <Fade duration={1300} right>
-            <div className="text-5xl 2xl:text-6xl font-semibold text-white" style={{textShadow: "#000000 0px 0px 0px", fontFamily: "TUoS Stephenson"}}>SHOWCASE</div>
+            <div className="text-5xl 2xl:text-6xl font-semibold text-white" style={{textShadow: "#000000 0px 0px 0px", fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>SHOWCASE</div>
             <div className="2xl:text-lg my-4 text-white font-semibold" style={{textShadow: "#8d8d8d 0px 0px 3px"}}>
               ORDA (Online Research Data) is the University of Sheffield&apos;s hub for sharing data, code, and other non-traditional research artefacts. ORDA includes a showcase of visual 
               representations of data built by staff and students at the University of Sheffield.
@@ -34,9 +33,9 @@ const HomeShowcase = () => {
         <div className="lg:w-6/12 lg:pl-8 transform hover:scale-110 transition duration-500">
           <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
         </div>
-        <Zoom cascade duration={1300}>
+        <Fade bottom duration={1300}>
         <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center pb-16">
-          <h1 className="text-4xl lg:text-5xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUoS Stephenson"}}>ORDA User Regions</h1>
+          <h1 className="text-4xl lg:text-5xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>ORDA User Regions</h1>
           <p className="text-gray-800 2xl:text-lg">ORDA has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>
@@ -46,7 +45,7 @@ const HomeShowcase = () => {
             </ButtonWithArrow>
           </a>
         </div>
-        </Zoom>
+        </Fade>
       </div>
 
       <div className="w-full absolute bottom-0 -mb-1">

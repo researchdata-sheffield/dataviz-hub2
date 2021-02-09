@@ -15,6 +15,7 @@ import Search_Home from "../components/home/searchHome"
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/COVIDDeathPropMSOA.png"
 import { ButtonWithArrow, AnimateButton } from "../components/style/styled"
+import { randomNumber } from "../utils/shared"
 //import bg from "../images/home/earth.jpg"
 
 
@@ -29,9 +30,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
     const interval = setInterval( () => {
       let dateNow = moment();
       let dateDiff = dateNow - datePrev;
-      if(dateDiff > 6000) {
+      if(dateDiff > 5000) {
         datePrev = moment()
-        let index = Math.floor(Math.random() * words.length); 
+        let index = Math.floor(randomNumber() * words.length); 
         input.setAttribute("placeholder", words[index]);
       }
     }, 5000);
@@ -122,7 +123,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
         <Fade cascade delay={200} duration={1500}>
           <div className="px-5 md:px-24 xl:px-36 2xl:px-52 mt-16 mb-32">
             <div className="text-black">
-              <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{ fontFamily: "TUoS Stephenson"}}>Data and visualisation</h1>
+              <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Data and visualisation</h1>
               <p className="text-base 2xl:text-xl my-4 font-semibold md:w-3/5" style={{}}>
                 Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 
                 information clearly and effectively by means of graphical representation. However, this does not mean that data visualisation must be boring for its functional purpose, 
@@ -141,7 +142,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <HomeShowcase />
       
       <div id="collaboration" className="container mx-auto min-h-40 flex flex-wrap pb-20 justify-center">
-        <h1 className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUoS Stephenson"}}>Collaboration and Partnership.</h1>
+        <h1 className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Collaboration and Partnership.</h1>
         <p className="text-gray-500">Further details to come.</p>
       </div>
 

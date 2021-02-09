@@ -75,29 +75,74 @@ class Search extends Component {
                 return( 
 
                   <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
-                    <div style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg min-h-50 2xl:min-h-40 mx-6 my-6 transform hover:scale-105 transition duration-500">
-                      <div className="min-h-60 2xl:min-h-40 max-h-60 w-full p-6 transition duration-700 bg-black-55 group-hover:bg-black-85" style={{borderRadius: "15px"}}>
+                    <div 
+                      style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", minHeight: '420px'}} 
+                      className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg mx-6 my-6 transform hover:scale-105 transition duration-500"
+                    >
+                      <div className="max-h-60 w-full p-6 transition duration-700 bg-black-55 group-hover:bg-black-85" style={{borderRadius: "15px", minHeight: '420px'}}>
                         <div className="absolute pt-8 lg:pt-16 2xl:pt-24 overflow-hidden" style={{maxWidth:"320px"}}>
+                          {/* title */}
                           <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
-                            <Highlighter highlightClassName={highlightClasses} textToHighlight={title} searchWords={this.state.query.split()} />
-                          </h1>  
+                            <Highlighter 
+                              highlightClassName={highlightClasses} 
+                              textToHighlight={title} 
+                              searchWords={this.state.query.split()} 
+                            />
+                          </h1> 
+                          {/* authors  */}
                           <h1 className="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}>
-                            {item.author.map((author, i, arr) => {
-                              return ( <Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={arr.length - 1 === i ? author : author.concat(", ")} searchWords={this.state.query.split()} key={author} /> )
+                            {item.author.map((author, index, arr) => {
+                              return ( 
+                                <Highlighter 
+                                  className="text-white" 
+                                  highlightClassName={highlightClasses} 
+                                  textToHighlight={arr.length - 1 === index ? author : author.concat(", ")} 
+                                  searchWords={this.state.query.split()} 
+                                  key={author} 
+                                /> 
+                              )
                             })}
                           </h1>
+                          {/* category */}
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
                             CAT: &nbsp;
-                            <Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={item.category[0].toUpperCase()} searchWords={this.state.query.split()} />
+                            <Highlighter 
+                              className="text-white" 
+                              highlightClassName={highlightClasses} 
+                              textToHighlight={item.category[0].toUpperCase()} 
+                              searchWords={this.state.query.split()} 
+                            />
                           </h1>
+                          {/* tag */}
                           <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
-                            TAG: &nbsp;{item.tag.map((tag, i, arr) => {
-                              return ( i < 3 && <Highlighter className="text-white" highlightClassName={highlightClasses} textToHighlight={arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} searchWords={this.state.query.split()} key={tag} /> )
+                            TAG: &nbsp;{item.tag.map((tag, index, arr) => {
+                              return ( 
+                                i < 3 && 
+                                <Highlighter 
+                                  className="text-white" 
+                                  highlightClassName={highlightClasses} 
+                                  textToHighlight={arr.length - 1 === index ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} 
+                                  searchWords={this.state.query.split()} 
+                                  key={tag}   
+                                />
+                              )
                             })}
                             {item.tag.length > 3 && <p className="inline-block text-white"> +{item.tag.length - 3} more</p>}
                           </h1>
-                          <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName={highlightClasses} textToHighlight={item.url.slice(5,).toUpperCase()} searchWords={this.state.query.split()} /></p>
-                          <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"><Highlighter highlightClassName={highlightClasses} textToHighlight={description} searchWords={this.state.query.split()} /></h1>      
+                          <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">
+                            <Highlighter 
+                              highlightClassName={highlightClasses} 
+                              textToHighlight={item.url.slice(5,).toUpperCase()} 
+                              searchWords={this.state.query.split()} 
+                            />
+                          </p>
+                          <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500">
+                            <Highlighter 
+                              highlightClassName={highlightClasses} 
+                              textToHighlight={description} 
+                              searchWords={this.state.query.split()}
+                            />
+                          </h1>      
                         </div>
                       </div>
                     </div>
@@ -132,12 +177,22 @@ class Search extends Component {
 
     return (
       <div className={`${this.props.classNames} relative text-gray-700 w-full text-center`}>
-        <div className="min-h-60 pt-40 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%",}}>
+        <div className="min-h-60 pt-40 pb-10" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%"}}>
           <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-3 font-semibold">Search@dataviz.shef</p></Zoom>
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
               <FiSearch className="inline-block text-center text-3xl -mt-1" />
-              <input id="pageSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600" style={{minWidth: "25vw"}} type="text" name="search" placeholder="Search title, description, date..." />
+              <input 
+                id="pageSearch" 
+                onChange={this.search} 
+                onInput={this.search} 
+                autoComplete="off" 
+                className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600" 
+                style={{minWidth: "25vw"}} 
+                type="text" 
+                name="search" 
+                placeholder="Search title, description, date..." 
+              />
             </div>
           </Fade>
         </div>

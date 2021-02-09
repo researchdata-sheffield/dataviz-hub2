@@ -9,7 +9,7 @@ import MenuTag from "../../components/blog/menuTag"
 import MenuTagSlide from "../../components/blog/menuTagSlide"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import BackgroundSection from "../../components/images/blog_background";
+import BackgroundSection from "../../components/images/blogBackground";
 import Flip from 'react-reveal/Flip'
 import { GreyButton } from "../../components/style/styled"
 

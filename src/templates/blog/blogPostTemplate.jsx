@@ -9,6 +9,7 @@ import kebabCase from "lodash.kebabcase"
 import "katex/dist/katex.min.css"
 import { useLocation } from "@reach/router"
 import { useScript } from "../../utils/hooks/useScript"
+import { randomNumber } from "../../utils/shared"
 import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
 
 import Header from "../../components/shared/header"
@@ -24,6 +25,7 @@ import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
 import trianglify from 'trianglify'
+
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
@@ -82,10 +84,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     var pattern = trianglify({
       width: dimensions.width, 
       height: dimensions.height,
-      cellSize: 60 + Math.ceil(Math.random() * 100),
-      variance: Math.random(),
-      strokeWidth: Math.random() * 5,
-      seed: Math.random().toString(5)
+      cellSize: 60 + Math.ceil(randomNumber() * 100),
+      variance: randomNumber(),
+      strokeWidth: randomNumber() * 5,
+      seed: randomNumber().toString(5)
     }).toCanvas();
 
     var img = pattern.toDataURL("image/png")
@@ -126,7 +128,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
           <div className="mt-4 text-xs 2xl:text-sm mx-auto flex flex-wrap px-2">
             {category.map((cat) => ( <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn> ))}
-            {tag.map((tag) => ( <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn> ))}
+            {tag.map((currentTag) => ( <TagBtn key={currentTag} to={`/blog/tag/${kebabCase(currentTag)}`}>{currentTag}</TagBtn> ))}
           </div>
         </div>
         </Pulse>
