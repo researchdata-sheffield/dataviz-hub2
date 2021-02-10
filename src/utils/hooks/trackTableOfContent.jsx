@@ -28,8 +28,6 @@ export function trackTableOfContent(tocSelector, itemSelector) {
     if(tagName !== "H1") {
       handleClassList(el.parentElement, `H${tagName.substring(1,) - 1}`, rm ? "remove" : "add");
     }
-
-    return null;
   }
 
   useEffect(() => {
@@ -46,7 +44,6 @@ export function trackTableOfContent(tocSelector, itemSelector) {
             handleClassList(element, entry.target.tagName, "remove")
           }
         });
-        return null;
       });
     
       // Track all items
@@ -54,10 +51,10 @@ export function trackTableOfContent(tocSelector, itemSelector) {
         observer.observe(item);
       });
     }
-    document.addEventListener('DOMContentLoaded', handleTOC());
+    document.addEventListener('DOMContentLoaded', handleTOC);
 
     return () => {
-      document.removeEventListener('DOMContentLoaded', handleTOC());
+      document.removeEventListener('DOMContentLoaded', handleTOC);
     }
   }, [])
 }

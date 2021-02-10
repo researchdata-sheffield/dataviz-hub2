@@ -10,8 +10,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        'ipadp': '1030px',
-        'xl': '1281px',
+        '2lg': '1200px',
+        'xl': '1280px',
         '2xl': '1441px',
       },
       backgroundColor: {
@@ -20,8 +20,8 @@ module.exports = {
         'highlight_2': '#00aeef',
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',
-        'black-10': 'rgba(0, 0, 0, .1)',
         'black-02': 'rgba(0, 0, 0, .02)',
+        'black-10': 'rgba(0, 0, 0, .1)',
         'black-25': 'rgba(0, 0, 0, .25)',
         'black-35': 'rgba(0, 0, 0, .35)',
         'black-45': 'rgba(0, 0, 0, .45)',

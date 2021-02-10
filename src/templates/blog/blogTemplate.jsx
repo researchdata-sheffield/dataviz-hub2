@@ -22,7 +22,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 			<Header />
-			<BackgroundSection className="items-center justify-center text-center relative z-10" Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`} >
+			<BackgroundSection className="items-center justify-center text-center relative z-10 bg-black" Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`}>
 				<Flip cascade top delay={700}>
 					<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>	
 					<h1 className="text-5xl">Blog</h1>

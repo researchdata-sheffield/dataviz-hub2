@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const BlogBackground = ({className, children, Height}) => (
+const BlogBackground = ({className, children, Height }) => (
   
   <StaticQuery
     query={graphql`
@@ -34,7 +34,7 @@ const BlogBackground = ({className, children, Height}) => (
       return (
         <BackgroundImage
         className={className}
-        fluid={imageData}
+        fluid={ imageData }
         style={{
           height: Height ? Height : `100vh`,
           width: `100%`,
@@ -51,7 +51,7 @@ const BlogBackground = ({className, children, Height}) => (
 BlogBackground.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
-  Height: PropTypes.string,
+  Height: PropTypes.string
 }
 
 export default BlogBackground

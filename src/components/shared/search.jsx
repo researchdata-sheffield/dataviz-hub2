@@ -76,10 +76,10 @@ class Search extends Component {
 
                   <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
                     <div 
-                      style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", minHeight: '420px'}} 
-                      className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg mx-6 my-6 transform hover:scale-105 transition duration-500"
+                      style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: '10px', minHeight: '420px'}} 
+                      className="shadow-lg hover:shadow-xl rounded-lg group text-left relative mx-6 my-6 transform hover:scale-105 transition duration-500"
                     >
-                      <div className="max-h-60 w-full p-6 transition duration-700 bg-black-55 group-hover:bg-black-85" style={{borderRadius: "15px", minHeight: '420px'}}>
+                      <div className="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-35 group-hover:bg-black-75" style={{minHeight: '420px'}}>
                         <div className="absolute pt-8 lg:pt-16 2xl:pt-24 overflow-hidden" style={{maxWidth:"320px"}}>
                           {/* title */}
                           <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
@@ -88,7 +88,7 @@ class Search extends Component {
                               textToHighlight={title} 
                               searchWords={this.state.query.split()} 
                             />
-                          </h1> 
+                          </h1>
                           {/* authors  */}
                           <h1 className="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500" style={{textShadow: "#000 0px 0px 30px"}}>
                             {item.author.map((author, index, arr) => {

@@ -8,13 +8,13 @@ import {CatBtn, TagBtn, ButtonWithArrow } from "../style/styled"
 import { getImageSource, shortenText } from "../../utils/shared"
 
 
-const latestPost = ({ latestPost }) => {
+const latestPost = ({ post }) => {
   var count = 0
 
   return (
     <>
       <div className="w-full flex flex-wrap" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
-        {latestPost.edges.map(({ node }) => {
+        {post.edges.map(({ node }) => {
           // exclude first two featured posts
           if(node.frontmatter.featured === "true") {
             count = count + 1
@@ -87,6 +87,6 @@ const latestPost = ({ latestPost }) => {
 export default latestPost
 
 latestPost.propTypes = {
-  latestPost: PropTypes.any,
+  post: PropTypes.any,
 
 }

@@ -54,13 +54,13 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div>
         <div className="flex flex-wrap relative">
           {/* Left component */}
-          <div id="homeBar" className="min-h-100 md:min-h-60 shadow-lg z-10 lg:sticky lg:top-0 lg:left-0 flex flex-wrap w-full lg:w-4/12 text-black overflow-hidden lg:min-h-100 lg:max-h-100 justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
-            <div className="px-8 text-center pt-16 font-sans">
+          <div id="homeBar" className="min-h-100 md:min-h-60 lg:min-h-100 lg:max-h-100 content-evenly shadow-lg z-10 2lg:sticky 2lg:top-0 2lg:left-0 2lg:w-4/12 flex flex-wrap w-full  text-black overflow-hidden justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
+            <div className="px-8 text-center font-sans">
               <p className="text-2xl lg:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
-              <p className="text-base 2xl:text-lg mt-5 px-6 xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
+              <p className="text-base 2xl:text-lg mt-3 px-2 md:px-6 lg:px-8 2xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 
-            <Search_Home  />
+            <Search_Home />
             
             <Link to='#explore'>
               <Fade bottom delay={700}>
@@ -80,11 +80,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           
           {/* Right component */}
           {/*style={{borderTop: "50px solid #000000", }} */}
-          <div className="flex flex-wrap text-gray-100 lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease"}}>
+          <div className="flex flex-wrap text-gray-100 2lg:w-8/12 bg-black" style={{marginLeft: "auto", transition: ".5s ease"}}>
             
             {/* An example of visualisation, update weekly/monthly? */}
-            <div className="pt-8 min-h-70 md:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease"}}>
-              <div className="flex flex-col flex-wrap group min-h-70 md:min-h-100 justify-center text-center items-center" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "contain", backgroundPosition:"center", backgroundRepeat: 'no-repeat' }}>
+            <div className="pt-8 min-h-60 lg:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease"}}>
+              <div className="flex flex-col flex-wrap group min-h-60 lg:min-h-100 justify-center text-center items-center" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "contain", backgroundPosition:"center", backgroundRepeat: 'no-repeat' }}>
                 <h1 className="md:-mt-24 px-2 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
@@ -109,8 +109,8 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </div>  
 
             <EventNotice eventBrite={eventBrite} />             
-            <FeaturedPost featuredPost={featuredPost} />
-            <LatestPost latestPost={latestPost} />
+            <FeaturedPost post={featuredPost} />
+            <LatestPost post={latestPost} />
           </div> 
           {/* End of right component */}
 

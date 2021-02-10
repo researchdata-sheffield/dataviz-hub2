@@ -37,16 +37,16 @@ Promise.all([
 
 function createMap(world, names, population) {
 	var countries1 = topojson.feature(world, world.objects.countries).features;
-	countries = countries1.filter(d => {
+	let countries = countries1.filter(d => {
 		return names.some(n => {
 			if (d.id == n.id) return d.name = n.name;
 		})
 	});
 	countries = countries.filter(d => {
 		return population.some(function(p) {
-			name1 = d.name;
-			name2 = p.Region;
-			if(name1.includes(name2)) {
+			let countryName = d.name;
+			let regionName = p.Region;
+			if(countryName.includes(regionName)) {
 				d.population = p.Population;
 				return d.Yearly_Change = p.Yearly_Change
 			}
@@ -72,7 +72,7 @@ function createMap(world, names, population) {
 								.style("top", (d3.event.pageY - 550) + "px");
 			})
 			.on("mouseout",function(d,i){
-				d3.select(this).attr("fill","#535353").attr("stroke-width",1);
+				d3.select(this).attr("fill","#535353").attr("stroke-width", 1);
 				tooltip.classed("hiddenTt", true);
 			});
 	
@@ -81,6 +81,6 @@ function createMap(world, names, population) {
 			var xy = d3.mouse(this);
 			projection.rotate(xy).translate([xy[0], xy[1]])
 			svg.selectAll("path")
-				.attr("d",path);
+				.attr("d", path);
 		}));
 }

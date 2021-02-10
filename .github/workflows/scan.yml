@@ -2,7 +2,7 @@ name: Scan
 
 on:
   push:
-    branches: [ '**' ]
+    branches-ignore: [ master ]
   pull_request:
     branches: [ '**' ] 
   workflow_dispatch:
