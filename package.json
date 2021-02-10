@@ -97,7 +97,7 @@
     "cssnano": "4.1.10",
     "eslint": "7.8.1",
     "eslint-loader": "4.0.2",
-    "eslint-plugin-import": "2.22.0",
+    "eslint-plugin-import": "2.22.1",
     "eslint-plugin-react": "7.20.6",
     "gatsby-plugin-emotion": "^4.3.10",
     "gatsby-plugin-eslint": "2.0.8",
