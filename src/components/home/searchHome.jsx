@@ -23,7 +23,7 @@ class Search_Home extends Component {
       if (this.state.results.length > 0 && this.state.query.length > 0 ) {
         
         return (
-          <div className="text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
+          <div className="text-left overflow-auto max-h-50 xl:max-h-55 mx-auto lg:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
             {this.state.results.slice(0,5).map((page, i) => {
 
               return( 

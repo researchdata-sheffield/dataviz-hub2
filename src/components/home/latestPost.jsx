@@ -33,7 +33,7 @@ const latestPost = ({ post }) => {
                 <div className="w-full bg-black-080808 hover:bg-transparent text-white 2xl:text-xl">
                   <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4">
                     <div className="flex flex-wrap items-center md:w-2/5 lg:w-2/12">
-                      <MdFiberNew className="text-red-700 ipadp:text-white group-hover:text-red-700 text-3xl" />
+                      <MdFiberNew className="text-red-700 lg:text-white group-hover:text-red-700 text-3xl" />
                       {node.frontmatter.category.map((cat) => (
                           <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-full py-0 my-0 mx-2 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible">{cat}</CatBtn>
                       ))}

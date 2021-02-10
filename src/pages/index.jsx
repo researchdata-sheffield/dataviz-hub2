@@ -85,7 +85,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             {/* An example of visualisation, update weekly/monthly? */}
             <div className="pt-8 min-h-60 lg:min-h-100 justify-center relative w-full bg-white" style={{transition: ".6s ease"}}>
               <div className="flex flex-col flex-wrap group min-h-60 lg:min-h-100 justify-center text-center items-center" style={{transition: ".8s ease", backgroundImage: `url(${Covid})`, backgroundSize: "contain", backgroundPosition:"center", backgroundRepeat: 'no-repeat' }}>
-                <h1 className="md:-mt-24 px-2 ipadp:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
+                <h1 className="md:-mt-24 px-2 lg:px-24 text-3xl 2xl:text-5xl font-bold py-2" style={{textShadow: "#000 0 0 10px", backgroundColor: "rgba(0,0,0, 0.6)"}}>
                   CoVid Plots and Analysis
                   <p className="text-lg font-normal">by Colin Angus at ScHARR, University of Sheffield</p>
                 </h1>
@@ -119,7 +119,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       {/* End of top page */}     
 
       <div id="explore" />
-      <div className="ipadp:min-h-100 flex flex-wrap items-center text-left relative py-24" style={{background: 'linear-gradient(135deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', backgroundPosition: 'center', backgroundSize: 'cover'}}>
+      <div className="lg:min-h-100 flex flex-wrap items-center text-left relative py-24" style={{background: 'linear-gradient(135deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={200} duration={1500}>
           <div className="px-5 md:px-24 xl:px-36 2xl:px-52 mt-16 mb-32">
             <div className="text-black">

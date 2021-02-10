@@ -24,9 +24,9 @@ const featuredPost = ({ post }) => {
                 <Link to={node.fields.slug}>
                   <div className="flex top-0 left-0 absolute m-3 lg:m-5 text-white lg:bg-transparent lg:text-gray-300 group-hover:bg-black items-center rounded-lg p-1" style={{zIndex: "3"}}>
                     <FaStar className="text-yellow-300 text-2xl" />
-                    <p className="inline-block ipadp:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake"}}>Featured</p>
+                    <p className="inline-block lg:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake"}}>Featured</p>
                   </div>
-                  <IMG_DIV className="ipadp:greyScale-100 group-hover:greyScale-0 group-focus:greyScale-0 min-h-3/5 max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
+                  <IMG_DIV className="lg:greyScale-100 group-hover:greyScale-0 group-focus:greyScale-0 min-h-3/5 max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
                   <ArrowBox_featured className="pt-6 px-8 text-gray-700">
                     <h1 className="mt-3 font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-highlight_2 overflow-y-hidden">{title}</h1>
                     <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-gray-100" >{description}</p>
