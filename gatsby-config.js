@@ -60,22 +60,14 @@ module.exports = {
         defaultLayouts: {
           default: require.resolve('./src/templates/blog/blogPostTemplate.jsx'),
         },
-        plugins: [
-          `gatsby-remark-prismjs`
+        remarkPlugins: [
+          require('remark-math'),
+          require('remark-html-katex')
         ],
 
         gatsbyRemarkPlugins: [
-          {
-            resolve: 'gatsby-remark-code-titles',
-          },
+          'gatsby-remark-code-titles',
           `gatsby-remark-embedder`,
-          {
-            resolve: `gatsby-remark-katex`,
-            options: {
-              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
-            }
-          },
           {
             resolve: `gatsby-remark-embed-video`,
             options: {
@@ -154,7 +146,15 @@ module.exports = {
     "gatsby-remark-embed-video",
     `gatsby-remark-responsive-iframe`,
     `gatsby-remark-reading-time`,
-    'gatsby-plugin-eslint',
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        stages: ['develop'],
+        extensions: ['js', 'jsx'],
+        exclude: ['node_modules', '.cache', 'public'],
+        // Any eslint-webpack-plugin options below
+      }
+    },
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
     //`gatsby-plugin-smoothscroll`,
@@ -197,17 +197,7 @@ module.exports = {
         //cache_busting_mode: 'none'   // Work with offline plugin
       },
     },
-    {
-      resolve: "gatsby-plugin-postcss",
-      options: {
-        postCssPlugins: [
-          require('tailwindcss')(`./tailwind.config.js`),
-          require(`autoprefixer`),
-          require(`cssnano`)
-        ]
-      }
-    },
-
+    "gatsby-plugin-postcss",
     {
       resolve: 'gatsby-background-image',
       options: {
@@ -314,14 +304,14 @@ module.exports = {
 
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    {
-      resolve: 'gatsby-plugin-offline',
-      options: {
-         workboxConfig: {
-            globPatterns: ['**/*']
-         }
-      }
-    },
+    // {
+    //   resolve: 'gatsby-plugin-offline',
+    //   options: {
+    //      workboxConfig: {
+    //         globPatterns: ['**/*']
+    //      }
+    //   }
+    // },
     `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-advanced-sitemap`,
