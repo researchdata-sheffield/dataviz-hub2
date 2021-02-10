@@ -5,6 +5,7 @@ on:
     branches-ignore: [ master ]
   pull_request:
     branches: [ '**' ] 
+    types: [ assigned, opened, synchronize, reopened, unlocked, review_requested, edited ]
   workflow_dispatch:
     inputs:
       Name:   

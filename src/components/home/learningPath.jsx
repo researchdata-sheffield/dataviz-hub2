@@ -16,7 +16,7 @@ const LearningPath = () => {
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-highlight_2 text-sm xl:text-base"
 
   return (
-    <div id="learning_path" className="ipadp:min-h-110 flex flex-wrap justify-center items-center relative" style={{backgroundColor: '#000'}}>
+    <div id="learning_path" className="lg:min-h-110 flex flex-wrap justify-center items-center relative" style={{backgroundColor: '#000'}}>
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center mt-24">
           <div className="text-4xl lg:text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning paths.</div>

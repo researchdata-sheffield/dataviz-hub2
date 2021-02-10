@@ -11,9 +11,9 @@ const HomeShowcase = () => {
     <div className="relative overflow-hidden bg-gray-900 w-full">
       <h1 className="absolute left-0 text-white text-3xl font-semibold transform rotate-90 -ml-24 mt-60">ORDA.SHEF.AC.UK</h1>
       <div id="home_showcase" />      
-      <BackgroundTwo className="ipadp:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-16 transition duration-500">
+      <BackgroundTwo className="lg:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-16 transition duration-500">
         <div className="flex flex-wrap justify-start">
-          <div className="lg:w-1/2 py-24 flex flex-wrap px-3 ipadp:pr-20 ipadp:ml-24">
+          <div className="lg:w-1/2 py-24 flex flex-wrap px-3 lg:pr-20 lg:ml-24">
             <Fade duration={1300} right>
             <div className="text-5xl 2xl:text-6xl font-semibold text-white" style={{textShadow: "#000000 0px 0px 0px", fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>SHOWCASE</div>
             <div className="2xl:text-lg my-4 text-white font-semibold" style={{textShadow: "#8d8d8d 0px 0px 3px"}}>
