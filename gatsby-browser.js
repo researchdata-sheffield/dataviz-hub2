@@ -14,6 +14,9 @@ import "./src/css/animation.scss"
 import "./src/css/gitalk.scss"
 import "./src/css/accordion.scss"
 import "./src/css/d3js.scss"
+require("./src/css/prism-custom.scss")
+require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+
 
 
 export const onClientEntry = () => {
@@ -35,12 +38,10 @@ export const onServiceWorkerUpdateReady = () => {
       `Reload to display the latest version?`
   )
   if (answer === true) {
-    window.location.reload()
+    window.location.reload(true);
   }
 };
 
-require("./src/css/prism-custom.scss")
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
 export const onRouteUpdate = (window) => {
   if (window.location.hash) {
