@@ -89,6 +89,9 @@ export const IMG_DIV = styled.div`
   overflow: hidden;
   background: black;
   display: grid;
+  min-height: 380px;
+  max-height: 450px
+
   &::before {
     transition: .5s ease;
   }
@@ -105,6 +108,21 @@ export const IMG_DIV = styled.div`
     content: "";
     z-index: 1;
   }
+
+  @media (max-width: 1280px) {
+    min-height: 350px;
+    max-height: 530px;
+  }
+
+  @media (min-width: 1300px) {
+    min-height: 480px;
+    max-height: 530px;
+  }
+
+  @media (min-width: 1440px) {
+    min-height: 500px;
+    max-height: 600px;
+  }
 `
 
 
@@ -119,7 +137,7 @@ export const TagBtn = styled_twin(gatsby_Link)`
 `
 
 export const HomeBlogNav = styled_twin.div`
-  ${tw`w-1/2 md:w-1/4 py-2 ipadp:py-3 hover:text-white border-b-2 border-black transition duration-700 ease-in-out`}
+  ${tw`w-1/2 md:w-1/4 py-2 lg:py-3 hover:text-white border-b-2 border-black transition duration-700 ease-in-out`}
 `
 
 export const BlackButton = styled_twin.button`

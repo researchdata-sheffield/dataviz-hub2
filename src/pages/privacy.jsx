@@ -4,7 +4,7 @@ import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
 import { A } from "../components/style/blogPostStyle"
 
-const PrivacyPage = () => (
+const Privacy = () => (
   <> 
     <SEO 
       title="Privacy" 
@@ -29,4 +29,4 @@ const PrivacyPage = () => (
   </>
 )
 
-export default PrivacyPage
+export default Privacy

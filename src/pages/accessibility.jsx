@@ -4,7 +4,7 @@ import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
 import { A } from "../components/style/blogPostStyle"
 
-const AccessibilityPage = () => (
+const Accessibility = () => (
   <> 
     <SEO 
       title="Accessibility Statement" 
@@ -91,4 +91,4 @@ const AccessibilityPage = () => (
   </>
 )
 
-export default AccessibilityPage
+export default Accessibility

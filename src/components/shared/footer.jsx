@@ -9,7 +9,7 @@ const Footer = () => {
   const currentYear = new Date()
   
   return (
-    <div className="bg-black px-8 py-8 lg:px-12 lg:py-16 text-sm relative z-10">
+    <div className="bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm relative z-10">
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
@@ -35,9 +35,9 @@ const Footer = () => {
 
           <div className="mb-2 mt-4 text-md font-bold text-white">The University of Sheffield</div>
             <ul className="list-reset leading-normal">
-            <li><A_footer href="http://sheffield.ac.uk/library/rdm">Research Data Management support</A_footer></li>
+            <li><A_footer href="https://sheffield.ac.uk/library/rdm">Research Data Management support</A_footer></li>
                 <li><A_footer href="https://www.sheffield.ac.uk/it-services">IT Services</A_footer></li>
-                <li><A_footer href="http://rse.shef.ac.uk/">Research Software Engineering</A_footer></li>
+                <li><A_footer href="https://rse.shef.ac.uk/">Research Software Engineering</A_footer></li>
             </ul>
 
         </div>
@@ -69,7 +69,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <p className="text-gray-500 leading-normal text-center text-sm pt-8">
+      <p className="text-gray-500 leading-normal text-center text-sm pt-16">
         © 2018 - {currentYear.getFullYear()} The University of Sheffield.
       </p>
     </div>

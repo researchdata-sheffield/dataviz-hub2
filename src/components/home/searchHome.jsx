@@ -23,11 +23,11 @@ class Search_Home extends Component {
       if (this.state.results.length > 0 && this.state.query.length > 0 ) {
         
         return (
-          <div className="z-30 text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
+          <div className="text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
             {this.state.results.slice(0,5).map((page, i) => {
 
               return( 
-                <div className="text-gray-800 group border-b-1 border-gray-200 hover:bg-gray-200" key={i}>
+                <div className="text-gray-800 group border-b-1 bg-white border-gray-200 hover:bg-gray-200" key={i}>
                   <a href={`${page.url}`} target="_blank" rel="noopener noreferrer">
                     <div className="flex self-center items-center justify-end">
                       <div className="w-full">
@@ -42,7 +42,12 @@ class Search_Home extends Component {
               )
             })}
             {this.state.results.length > 6 ? 
-              <div className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-highlight_2 border-t-1 cursor-pointer" onClick={ () => {navigate("/search", {state: {searchWord: this.state.query}} )} }>{this.state.results.length - 6} more results</div>
+              <div 
+                className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-highlight_2 border-t-1 cursor-pointer" 
+                onClick={ () => {navigate("/search", {state: {searchWord: this.state.query}} )} }
+              >
+                {this.state.results.length - 6} more results
+              </div>
               : <div className="text-center py-2 bg-gray-800 text-white font-semibold border-t-1">End of results</div>
             }
             
@@ -60,12 +65,12 @@ class Search_Home extends Component {
     }
 
     return (
-      <div className={`${this.props.classNames} mt-6 2xl:mt-10 relative text-gray-900 w-full text-center`} >
+      <div className={`${this.props.classNames} relative text-gray-900 w-full text-center`} >
         <div className="inline-block text-gray-700 bg-white p-3 rounded-lg" style={{boxShadow: "#6d6d6d 0px 5px 25px -16px"}}>
           <FiSearch className="inline-block text-center text-3xl -mt-1" />
           <input id="homeSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-700" style={{minWidth: "21vw"}} type="text" name="search" placeholder="What are you looking for?" />
         </div>
-        <div className="search__list">
+        <div className="absolute z-10 w-full" style={{ transform: 'translate(-50%, 0%)', left: '50%' }}>
           <ResultList />
         </div>
         <Slide left>

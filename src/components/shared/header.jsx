@@ -99,19 +99,21 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative">
-      <nav id="navbar" className={`${isScroll ? `shadow-lg` : [wlp === "/" ? `` : ``]} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+      <nav id="navbar" className={`${isScroll ? `shadow-lg` : ''} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
-          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo"><img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ `${isScroll ? university_logo : university_logo}` } /></A>
+          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
+            <img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ university_logo } />
+          </A>
           <div className={`${isScroll ? '' : [wlp === "/" ? `hidden` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
 
-        <div onClick={() => toggleExpansion(!isExpanded)} className="block lg:hidden">
+        <div onClick={() => toggleExpansion(!isExpanded)} className="block lg:hidden py-2">
           <button className="flex items-center px-3 py-2 border rounded text-gray-900 border-gray-900 hover:text-gray-900 hover:border-gray-900" title="Menu">
-            <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+            <svg className="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="https://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
           </button>
         </div>
         

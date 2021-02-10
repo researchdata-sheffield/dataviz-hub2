@@ -14,7 +14,7 @@ import PropTypes from 'prop-types'
  * - `useStaticQuery`: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-const BackgroundSection = ({className, children,}) => (
+const HomeBackground = ({className, children,}) => (
   <StaticQuery
     query={graphql`
       query {
@@ -48,10 +48,10 @@ const BackgroundSection = ({className, children,}) => (
   />
 )
 
-BackgroundSection.propTypes = {
+HomeBackground.propTypes = {
   className: PropTypes.string,
   children: PropTypes.node,
   styles: PropTypes.any,
 }
 
-export default BackgroundSection
+export default HomeBackground

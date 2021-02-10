@@ -4,10 +4,10 @@ import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
 //import BackgroundSection from "../components/images/searchBackground"
 import PropTypes from "prop-types"
-import Search from "../components/shared/search"
+import SearchComponent from "../components/shared/search"
 
 
-const searchPage = ({location}) => {
+const Search = ({location}) => {
 
   return (
     <>
@@ -17,16 +17,16 @@ const searchPage = ({location}) => {
       />
       <Header />
       <div className="flex flex-wrap">
-        <Search location={location} />
+        <SearchComponent location={location} />
       </div>
       <Footer />
     </>
   )
 }
 
-export default searchPage
+export default Search
 
-searchPage.propTypes = {
+Search.propTypes = {
     data: PropTypes.any,
     location: PropTypes.any
   }
