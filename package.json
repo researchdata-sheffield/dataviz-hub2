@@ -43,7 +43,7 @@
     "gatsby-plugin-postcss": "^2.3.11",
     "gatsby-plugin-react-helmet": "^3.3.10",
     "gatsby-plugin-sass": "^2.3.12",
-    "gatsby-plugin-sharp": "^2.6.32",
+    "gatsby-plugin-sharp": "^2.14.1",
     "gatsby-plugin-smoothscroll": "^1.2.0",
     "gatsby-plugin-styled-components": "^3.3.10",
     "gatsby-plugin-transitions": "^2.1.7",
