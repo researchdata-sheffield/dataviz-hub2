@@ -64,7 +64,6 @@ module.exports = {
           require('remark-math'),
           require('remark-html-katex')
         ],
-
         gatsbyRemarkPlugins: [
           'gatsby-remark-code-titles',
           `gatsby-remark-embedder`,

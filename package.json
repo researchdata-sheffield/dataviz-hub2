@@ -60,7 +60,6 @@
     "gatsby-transformer-sharp": "^2.12.0",
     "gitalk": "^1.7.0",
     "intersection-observer": "^0.12.0",
-    "katex": "^0.12.0",
     "lodash.kebabcase": "^4.1.1",
     "minimist": "^1.2.5",
     "moment": "^2.29.1",
@@ -82,8 +81,8 @@
     "react-social-sharing": "^3.3.0",
     "react-spring": "^8.0.27",
     "react-tooltip": "^4.2.13",
-    "remark-html-katex": "3.0.0",
-    "remark-math": "4.0.0",
+    "remark-html-katex": "^3.0.0",
+    "remark-math": "^3.0.1",
     "styled-components": "^5.2.1",
     "trianglify": "^4.1.1"
   },
