@@ -18,7 +18,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
             style={{transition: ".5s ease"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer"
           >
             <div className="w-full md:w-9/12 py-4 px-4">
-              <p className="font-semibold text-lg text-black group-hover:text-highlight_2 leading-5">{node.name.text}</p>
+              <p className="font-semibold text-lg text-black group-hover:text-brand-blue leading-5">{node.name.text}</p>
               <p className="text-gray-700 mt-1 leading-tight text-sm group-hover:text-black">{summary}</p>
               <p className="flex pt-4 text-sm"><FaClock className="mr-1" />{node.start.local}</p>
               

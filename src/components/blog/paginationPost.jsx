@@ -20,7 +20,7 @@ class PaginationPost extends React.Component {
     let prevTitle = prev ? shortenText(prev.node.frontmatter.title, 6) : ""
     let nextTitle = next ? shortenText(next.node.frontmatter.title, 6) : ""
 
-    let linkStyle = "flex items-center pl-6 hover:text-highlight_2 text-gray-900 min-w-20" 
+    let linkStyle = "flex items-center pl-6 hover:text-brand-blue text-gray-900 min-w-20" 
 
     return(
       <div className="relative z-20 mt-16" style={{backgroundColor: '#fafafa'}}>
@@ -33,7 +33,7 @@ class PaginationPost extends React.Component {
           <Mail className="hover:bg-red-600" solid small subject={share[0]} link={share[1]} />
           <Linkedin className="greyScale-100 hover:greyScale-0" solid small message={share[0]} link={share[1]} />
           <a href={github} target="_blank" rel="noopener noreferrer">
-              <div className="m-2 py-1 px-2 bg-black hover:bg-highlight_2 text-white flex justify-center rounded-md text-xl cursor-pointer"><RiEditBoxLine /></div>
+              <div className="m-2 py-1 px-2 bg-black hover:bg-brand-blue text-white flex justify-center rounded-md text-xl cursor-pointer"><RiEditBoxLine /></div>
             </a>
         </div> 
         {/* category and tags */}

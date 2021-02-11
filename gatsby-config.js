@@ -170,6 +170,7 @@ module.exports = {
     },
     {
       resolve: `gatsby-source-eventbrite-multi-accounts`,
+      //resolve: `../gatsby-source-eventbrite-multi-accounts`, // local test
       options: {
         organisations: [
           {
@@ -314,36 +315,34 @@ module.exports = {
     // },
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-advanced-sitemap`,
+      resolve: `gatsby-plugin-sitemap`,
       options: {
-          // 1 query for each data type
         query: `
         {
-          allMdx {
+          site {
+            siteMetadata {
+              siteUrl
+            }
+          }
+          allSitePage {
             edges {
               node {
-                id
-                frontmatter {
-                  title
-                }
-                fields {
-                  slug
-                }
+                path
               }
             }
           }
         }`,
-        mapping: {
-            allMdx: {
-                sitemap: `posts`,
-            },
-        },
+        serialize: ({ site, allSitePage }) =>
+        allSitePage.edges.map(node => {
+          return {
+            url: `${site.siteMetadata.siteUrl}${node.path}`,
+            changefreq: `daily`,
+            priority: 0.7,
+          }
+        }),
         exclude: [
-          `/404`,
-          /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
-        ],
-        createLinkInHead: true, // optional: create a link in the `<head>` of your site
-        addUncaughtPages: true, 
+          `/404`
+        ]
       }
     },
     `gatsby-plugin-meta-redirect` // make sure to put last in the array

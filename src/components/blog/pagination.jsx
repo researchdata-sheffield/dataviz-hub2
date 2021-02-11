@@ -5,7 +5,7 @@ import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from "react-icons/fa"
 
 const Pagination = ({numPages, currentPage, pageType}) => {
 
-  const paginationButton = "flex items-center bg-white hover:bg-highlight_2 hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow"
+  const paginationButton = "flex items-center bg-white hover:bg-brand-blue hover:text-white text-gray-800 font-semibold py-2 px-12 border border-gray-400 shadow"
 
   /* pageType :
     1. `/blog`

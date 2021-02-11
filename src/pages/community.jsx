@@ -43,7 +43,7 @@ const Community = () => {
         <div className="flex flex-wrap lg:mx-16">
           <Fade cascade duration={2000}>
             <div className="text-lg w-full lg:w-1/2 px-5">
-              <p className="text-highlight_2 text-5xl text-center py-3">Stay tuned!</p>
+              <p className="text-brand-blue text-5xl text-center py-3">Stay tuned!</p>
               <p className="py-6 text-gray-900">The most important part of the initiative is to build community around data visualisation, we hope to achieve this in a number of ways.</p>
               <p className="font-semibold pb-4">We’re working on developing a community communication framework, expanding and diversifying communication channels.</p>
               <img className="my-8 px-6" src={com_2} style={{borderRadius: "100%", minHeight: "55vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} alt="Community image 1" />
@@ -58,7 +58,7 @@ const Community = () => {
           <Fade cascade duration={2000}>
             <div className="w-full lg:w-1/2 text-gray-900 text-lg px-5">
               <img src={com_1} className="mt-8" style={{borderRadius: "3%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} alt="Community image 2" />
-              <p className="text-highlight_2 text-xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
+              <p className="text-brand-blue text-xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
               <h1>But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
                 <p className="pl-4"> <br />
                 ~ Data visualisation in R <br />
@@ -82,7 +82,7 @@ const Community = () => {
               </a>
 
               <a href="https://shef-dataviz.slack.com/join/signup" target="_blank" rel="noopener noreferrer" 
-                className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-12 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
+                className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-12 shadow-sm text-xl text-white bg-black hover:bg-brand-blue transition duration-500"
                 style={{ position: "absolute", top: "77%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
               >
               Sign up
@@ -101,7 +101,7 @@ const Community = () => {
               </a>
 
               <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" 
-                className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-8 shadow-sm text-xl text-white bg-black hover:bg-highlight_2 transition duration-500"
+                className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-8 shadow-sm text-xl text-white bg-black hover:bg-brand-blue transition duration-500"
                 style={{ position: "absolute", top: "77%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
               >
               Join group  

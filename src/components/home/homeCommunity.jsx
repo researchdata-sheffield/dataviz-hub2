@@ -52,27 +52,27 @@ const HomeCommunity = () => {
             <div className={cardTextClasses}>
               Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-highlight_2`}  >Coming soon</ButtonWithArrow>
+            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-brand-blue`}  >Coming soon</ButtonWithArrow>
           </Slide>
         </div>
       
-        <div className={cardClasses} onMouseEnter={() => setColour('#b2f5ea')} onMouseLeave={() => setColour('#fff')}>
+        <div className={cardClasses} onMouseEnter={() => setColour('#A7F3D0')} onMouseLeave={() => setColour('#fff')}>
           <Slide bottom duration={400}>
             <div className={`${getHelp ? 'hidden' : ''}`}>
               <MdPeople className="text-3xl" />
               <p className="font-bold py-3">Support</p>
               <div className={cardTextClasses}>Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.</div>
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-teal-500`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-green-500`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
             </div>
           </Slide>
           {/* Support contact info */}
           <Slide top duration={300}>
-            <div className={`${getHelp ? 'flex flex-wrap bg-teal-100 p-4 z-10' : 'hidden'}`}>
+            <div className={`${getHelp ? 'flex flex-wrap bg-green-100 p-4 z-10' : 'hidden'}`}>
               <div className="p-2 text-center">
                 <GrGroup className="mx-auto text-4xl mb-2" />
                 <p className="text-left text-sm xl:text-base">We have a diverse community where everyone is passionate about data visualisation.</p>
                 <a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">
-                  <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2`}  href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
+                  <BlackButton className={`${buttonClasses} hover:bg-green-500 py-1 px-2`}  href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
                 </a>
               </div>
               <div className="p-2 mt-5 text-center">
@@ -81,12 +81,12 @@ const HomeCommunity = () => {
                 <div className="mt-2">
                   {supportLinks.map((link, i) => (
                     <a href={link} target="_blank" rel="noopener noreferrer" key={link}>
-                      <BlackButton className={`${buttonClasses} hover:bg-teal-500 py-1 px-2 mr-2`}  href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
+                      <BlackButton className={`${buttonClasses} hover:bg-green-500 py-1 px-2 mr-2`}  href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
                     </a>
                   ))}
                 </div>
               </div>
-              <ButtonWithArrow className={`${buttonClasses} bg-teal-500 py-1 px-2`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} bg-green-500 py-1 px-2`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
             </div>
           </Slide>
         </div>
