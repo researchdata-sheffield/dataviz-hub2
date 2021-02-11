@@ -53,14 +53,14 @@ const Header = () => {
   
   const NavLink = (props) => {
     // Check path contains blog => check if it is tag/cat main page. Assign different colour
-    const navColorInBlog = `${isScroll ? `text-black hover:text-highlight_2` 
+    const navColorInBlog = `${isScroll ? `text-black hover:text-brand-blue` 
                             : [wlp.includes("/blog/") 
                                 ? [wlp.includes("/blog/category") || wlp.includes("/blog/tag/") 
                                     ? `text-gray-500 hover:text-white` 
                                     : `text-gray-300 hover:text-white`
                                   ]
                                 : [wlp === "/" 
-                                    ? 'text-gray-900 hover:text-highlight_2' 
+                                    ? 'text-gray-900 hover:text-brand-blue' 
                                     : `text-gray-500 hover:text-white`
                                   ] 
                               ]}`  

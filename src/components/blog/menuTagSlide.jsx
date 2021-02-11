@@ -31,8 +31,8 @@ const menuTagSlide = ({ pageContext }) => {
       style={{fontFamily: "TUoS Blake",  transform: isOpen ? "translateX(0%)" : "translateX(101%)"}}
     >
       <div onClick={() => toggleisOpen(!isOpen)} className='absolute left-0 min-h-100 -ml-10 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500' style={{transform: 'translateY(-5%)', fontFamily: 'TUoS Blake'}} >
-        <div className={`${isOpen ? `hidden` : `block`} px-3 py-4 hover:bg-highlight_2 bg-gray-900 transition duration-500 shadow-xl`} tabIndex="0" title="Open tag menu">T<br />A<br />G</div>
-        <div className={`${isOpen ? `block` : `hidden`} px-3 py-4 bg-highlight_2 hover:bg-gray-900 transition duration-500 shadow-xl font-bold`} tabIndex="0" title="Close tag menu"><IoMdClose /></div>
+        <div className={`${isOpen ? `hidden` : `block`} px-3 py-4 hover:bg-brand-blue bg-gray-900 transition duration-500 shadow-xl`} tabIndex="0" title="Open tag menu">T<br />A<br />G</div>
+        <div className={`${isOpen ? `block` : `hidden`} px-3 py-4 bg-brand-blue hover:bg-gray-900 transition duration-500 shadow-xl font-bold`} tabIndex="0" title="Close tag menu"><IoMdClose /></div>
       </div>
       
       {/* main tag menu */}
@@ -47,7 +47,7 @@ const menuTagSlide = ({ pageContext }) => {
 
         {filterTag.map((tag) => (
           <Link key={tag} activeStyle={{ color: "white", backgroundColor: "#00aeef" }} partiallyActive={true} to={`/blog/tag/${kebabCase(tag)}`} 
-            className="inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 m-1 bg-gray-100 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
+            className="inline-block hover:bg-brand-blue hover:text-white py-1 px-2 m-1 bg-gray-100 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
           >
             {tag} ({pageContext.countTags[`${tag}`]})
           </Link>

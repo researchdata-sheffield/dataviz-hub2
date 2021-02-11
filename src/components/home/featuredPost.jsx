@@ -28,7 +28,7 @@ const featuredPost = ({ post }) => {
                   </div>
                   <IMG_DIV className="lg:greyScale-100 group-hover:greyScale-0 group-focus:greyScale-0 min-h-3/5 max-h-3/5"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
                   <ArrowBox_featured className="pt-6 px-8 text-gray-700">
-                    <h1 className="mt-3 font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-highlight_2 overflow-y-hidden">{title}</h1>
+                    <h1 className="mt-3 font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-brand-blue overflow-y-hidden">{title}</h1>
                     <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-gray-100" >{description}</p>
                     <p className="my-2 text-xs 2xl:text-base pt-2 group-hover:text-gray-100">
                       {node.frontmatter.author.map((author, idx) => (

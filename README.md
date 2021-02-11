@@ -27,7 +27,7 @@
 <br />
 
 
-![Fig1](./src/images/readme/Fig1.png)
+![Fig1](./src/images/readme/readme.png)
 
 <br />
 

@@ -312,7 +312,7 @@ export const Table = styled.table`
 export const TwitterBtn = (props) => {
   return (
     <a {...props}>
-      <div className="py-0 px-3 text-sm font-semibold flex items-center bg-highlight_2 rounded-md text-white hover:bg-highlight transition duration-500">
+      <div className="py-0 px-3 text-sm font-semibold flex items-center bg-brand-blue rounded-md text-white hover:bg-highlight transition duration-500">
         <FaTwitter className="inline-block text-lg mr-1" /> Follow
       </div>
     </a>

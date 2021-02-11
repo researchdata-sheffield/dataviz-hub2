@@ -163,7 +163,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             <Mail solid small className="bg-red-600" subject={shareMessage} link={shareLink} />
             <Linkedin solid small message={shareMessage} link={shareLink} />
             <a href={githubLink} target="_blank" rel="noopener noreferrer">
-              <div className="m-2 py-1 px-2 bg-gray-800 hover:bg-highlight_2 text-white flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
+              <div className="m-2 py-1 px-2 bg-gray-800 hover:bg-brand-blue text-white flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
             </a>
           </div>    
           <div className={` ${ tableOfContent && tableOfContent.items ? `pt-8 pb-5`: `hidden`} mx-auto overflow-auto text-black lg:hidden px-2`}>

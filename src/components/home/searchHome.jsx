@@ -43,7 +43,7 @@ class Search_Home extends Component {
             })}
             {this.state.results.length > 6 ? 
               <div 
-                className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-highlight_2 border-t-1 cursor-pointer" 
+                className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-brand-blue border-t-1 cursor-pointer" 
                 onClick={ () => {navigate("/search", {state: {searchWord: this.state.query}} )} }
               >
                 {this.state.results.length - 6} more results

@@ -68,9 +68,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               </Fade>
             </Link>
             {/* <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
-               <a className="text-gray-500 hover:text-highlight_2">Library &nbsp;</a> | 
-              <a className="text-gray-500 hover:text-highlight_2">&nbsp; IT Services &nbsp;</a> |
-              <a className="text-gray-500 hover:text-highlight_2">&nbsp; RSE &nbsp;</a> | 
+               <a className="text-gray-500 hover:text-brand-blue">Library &nbsp;</a> | 
+              <a className="text-gray-500 hover:text-brand-blue">&nbsp; IT Services &nbsp;</a> |
+              <a className="text-gray-500 hover:text-brand-blue">&nbsp; RSE &nbsp;</a> | 
               <a className="text-gray-500 hover:underline">&nbsp; Not sure where to start? &nbsp;</a> 
             </div> */}
 

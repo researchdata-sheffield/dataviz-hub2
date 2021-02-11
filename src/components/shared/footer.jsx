@@ -14,15 +14,15 @@ const Footer = () => {
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
             <ul className="list-reset leading-normal">
-              <li><Link className="text-gray-400 hover:text-highlight_2" to="/blog">Blog</Link></li>
-              <li><Link className="text-gray-400 hover:text-highlight_2" to="/events">Events</Link></li>
-              <li><Link className="text-gray-400 hover:text-highlight_2" to="/community">Community</Link></li>
+              <li><Link className="text-gray-400 hover:text-brand-blue" to="/blog">Blog</Link></li>
+              <li><Link className="text-gray-400 hover:text-brand-blue" to="/events">Events</Link></li>
+              <li><Link className="text-gray-400 hover:text-brand-blue" to="/community">Community</Link></li>
               <li><A_footer href="https://orda.shef.ac.uk/visualisations/">Showcase</A_footer></li>
-              <li><Link className="text-gray-400 hover:text-highlight_2" to="/about">About</Link></li>
+              <li><Link className="text-gray-400 hover:text-brand-blue" to="/about">About</Link></li>
               <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
-              <li><Link className="text-gray-400 hover:text-highlight_2" to="/privacy">Privacy Policy</Link></li>
-              <li><Link className="text-gray-400 hover:text-highlight_2" to="/accessibility">Accessibility</Link></li>
-              <li><Link className="text-gray-400 hover:text-highlight_2" to="/sitemap.xml">Sitemap</Link></li>
+              <li><Link className="text-gray-400 hover:text-brand-blue" to="/privacy">Privacy Policy</Link></li>
+              <li><Link className="text-gray-400 hover:text-brand-blue" to="/accessibility">Accessibility</Link></li>
+              <li><Link className="text-gray-400 hover:text-brand-blue" to="/sitemap.xml">Sitemap</Link></li>
             </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
@@ -50,7 +50,7 @@ const Footer = () => {
         
         <div className="sm:w-5/12 sm:flex sm:mt-0 mt-8 h-auto justify-center flex-wrap">
           <div className="sm:w-2/3 text-white text-lg mb-2 pr-6">
-            <div className="font-semibold text-highlight_2">Data Visualisation Hub </div>
+            <div className="font-semibold text-brand-blue">Data Visualisation Hub </div>
             <div className="text-gray-100 text-lg mb-2 font-medium">The University of Sheffield.</div>
             <p className="text-gray-400 leading-normal text-sm">
               To help our researchers make the most of their data and take advantage of tools, we have been working 

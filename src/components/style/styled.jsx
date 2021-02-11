@@ -129,11 +129,11 @@ export const IMG_DIV = styled.div`
 
 
 export const CatBtn = styled_twin(gatsby_Link)`
-  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
+  ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
 `
 
 export const TagBtn = styled_twin(gatsby_Link)`
-  ${tw`inline-block hover:bg-highlight_2 hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
+  ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
 `
 
 export const HomeBlogNav = styled_twin.div`
@@ -142,17 +142,17 @@ export const HomeBlogNav = styled_twin.div`
 
 export const BlackButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-gray-900 rounded-sm relative inline-block hover:bg-highlight_2 text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
+  ${tw`bg-gray-900 rounded-sm relative inline-block hover:bg-brand-blue text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
 `
 
 export const GreyButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-gray-100 rounded-sm text-gray-700 hover:bg-highlight_2 text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
+  ${tw`bg-gray-100 rounded-sm text-gray-700 hover:bg-brand-blue text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
 `
 
 export const BlackWhiteButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-gray-900 rounded-sm text-center hover:text-highlight_2 hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent `}
+  ${tw`bg-gray-900 rounded-sm text-center hover:text-brand-blue hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent `}
 
 `
 
@@ -243,7 +243,7 @@ ButtonWithArrow.propTypes = {
 
 export const A_footer = (props) => {
   return (
-    <a {...props} className={`${props.className} text-gray-400 hover:text-highlight_2`} target="_blank" rel="noopener noreferrer">{props.children}</a>
+    <a {...props} className={`${props.className} text-gray-400 hover:text-brand-blue`} target="_blank" rel="noopener noreferrer">{props.children}</a>
   )  
 }
 A_footer.propTypes = {

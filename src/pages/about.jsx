@@ -28,7 +28,7 @@ const About = () => {
           </div>
 
           <Link to="/about#more">
-            <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
+            <button className="mt-16 bg-gray-300 hover:bg-brand-blue text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
           </Link>
         </Fade>
       </div>
@@ -50,7 +50,7 @@ const About = () => {
 
         <div className="flex flex-wrap text-gray-900 text-xl px-3 lg:px-32 xl:px-48 py-16">
           <Fade>
-            <p className=""><b className="text-highlight_2">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
+            <p className=""><b className="text-brand-blue">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
               This community website exists to provide research staff and students at the University of Sheffield with information and inspiration about the visual presentation of data.
             </p>
             
@@ -66,7 +66,7 @@ const About = () => {
               <a href="https://orda.shef.ac.uk/" target="_blank" rel="noopener noreferrer"><img src={ORDA} className="shadow-lg mx-auto" style={{maxWidth: "35vh"}} alt="Online Research Data" /></a>
             </div>
             
-            <p className="text-highlight_2 text-4xl py-8">Contribute</p>  
+            <p className="text-brand-blue text-4xl py-8">Contribute</p>  
             
             <p className="text-gray-900">From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
               the <a className="link-effect" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, &nbsp;
