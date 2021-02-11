@@ -335,7 +335,7 @@ module.exports = {
         serialize: ({ site, allSitePage }) =>
         allSitePage.edges.map(node => {
           return {
-            url: `${site.siteMetadata.siteUrl}${node.path}`,
+            url: `${site.siteMetadata.siteUrl}${node.node.path}`,
             changefreq: `daily`,
             priority: 0.7,
           }
