@@ -82,7 +82,7 @@
     "react-spring": "^8.0.27",
     "react-tooltip": "^4.2.14",
     "remark-html-katex": "^3.0.0",
-    "remark-math": "^3.0.1",
+    "remark-math": "^4.0.0",
     "styled-components": "^5.2.1",
     "trianglify": "^4.1.1"
   },
