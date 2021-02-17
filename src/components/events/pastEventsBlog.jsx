@@ -6,7 +6,7 @@ import { shortenText } from "../../utils/shared"
 const PastEventsBlog = ({pastEventBlog}) => {
   
   return (
-    <div className="w-full md:w-11/12 2xl:w-10/12 px-6 lg:mt-6 lg:mb-16 pb-8 lg:py-6 border-t-8 border-gray-800 min-h-50 rounded-xl" style={{background: "rgba(255,255,255,.9)", }}>
+    <div className="w-full md:w-11/12 2xl:w-10/12 px-6 lg:mt-6 lg:mb-16 pb-8 lg:py-6 border-t-8 border-gray-50 min-h-30 rounded-md bg-white">
       <h1 className="text-2xl pt-2 pb-6 font-semibold">Event articles</h1>
       
       {pastEventBlog.edges.map(({ node }) => {

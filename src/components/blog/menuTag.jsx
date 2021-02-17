@@ -39,7 +39,7 @@ const menuTag = ({ pageContext }) => {
         <div className={`${isOpen ? `` : `hidden`} pt-4`}>
           {filterTag.map((tag) => (
             <Link key={tag} activeStyle={{ color: "white", backgroundColor: "#00aeef" }} partiallyActive={true} to={`/blog/tag/${kebabCase(tag)}`} 
-              className="inline-block hover:bg-brand-blue hover:text-white py-1 px-2 m-1 bg-gray-100 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
+              className="inline-block hover:bg-brand-blue hover:text-white py-1 px-2 m-1 bg-gray-50 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
             >
               {tag} ({pageContext.countTags[`${tag}`]})
             </Link>

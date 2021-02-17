@@ -9,7 +9,7 @@ import MenuTag from "../../components/blog/menuTag"
 import MenuTagSlide from "../../components/blog/menuTagSlide"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import BackgroundSection from "../../components/images/blogBackground";
+// import BackgroundSection from "../../components/images/blogBackground";
 import Flip from 'react-reveal/Flip'
 import { GreyButton } from "../../components/style/styled"
 
@@ -22,7 +22,11 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 			<Header />
-			<BackgroundSection className="items-center justify-center text-center relative z-10 bg-black" Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`}>
+			{/* Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`} */}
+			<div 
+				className={`${pageContext.currentPage != 1 ? "min-h-50" : "min-h-100"} w-full flex flex-col items-center justify-center text-center relative z-10 bg-black`} 
+				style={{backgroundColor: 'rgb(37,29,90)', backgroundImage: 'linear-gradient(225deg, rgb(37,29,90) 0%, rgba(0,102,179,1) 35%, rgba(0,212,255,1) 100%)'}}
+			>
 				<Flip cascade top delay={700}>
 					<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>	
 					<h1 className="text-5xl">Blog</h1>
@@ -39,7 +43,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 				
 				<MenuCategory pageContext = {pageContext} />
 
-			</BackgroundSection>
+			</div>
 
 			{/* blog posts & tag menu */}
 			<div className="flex flex-wrap-reverse">

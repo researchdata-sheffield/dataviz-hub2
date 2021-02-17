@@ -186,14 +186,14 @@ grid.arrange(plot1, plot2, plot3, plot4, plot5, ncol=2)
 
  
 ## 2D-bin
-Move on to the FAO-56 Penman-Monteith method established to approximate the sum of water evaporation and transpiration from a surface area. I'm not an expert in Hydrology but thank to (Berretta, Poë and Stovin, 2014) and (Zotarelli, 2009) I was able to grasp some details in the formula and come up with the following (correct me if you discover a mistake!):  
+Move on to the FAO-56 Penman-Monteith method established to approximate the sum of water evaporation and transpiration from a surface area. I'm not an expert in Hydrology but thank to (Berretta, Poë and Stovin, 2014) and (Zotarelli, 2009) I was able to grasp some details in the formula and come up with the following (correct me if you discovered a mistake!):  
 
 $$
-\frac{0.408T(3.6Sr) + 0.066\frac{900}{24(T + 273)}(W(P - HP))}{T + 0.066(1 + 0.34W)}
+\frac{0.408T(3.6Sr) + 0.066X}{T + 0.066(1 + 0.34W)}
 $$
 
 Where <br/>  
-     
+ $X$ = $\frac{900}{24(T + 273)}(W(P - HP))$  
  $W$ = Wind speed (m/s)  
  $T$ = Average air temperature (C)  
  $Sr$ = Solar Radiation (MJ/m2/h)  
