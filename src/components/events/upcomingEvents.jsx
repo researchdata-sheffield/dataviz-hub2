@@ -14,7 +14,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
         let summary = shortenText(node.summary, 20)
 
         return (
-          <a className="flex flex-col-reverse md:flex-row flex-wrap w-full overflow-y-hidden shadow-lg hover:shadow-2xl bg-white my-3 lg:my-1 text-gray-700 group border-solid" 
+          <a className="flex flex-col-reverse md:flex-row flex-wrap w-full hover:shadow-lg overflow-y-hidden bg-white my-3 lg:my-1 text-gray-700 group border-2 border-gray-50" 
             style={{transition: ".5s ease"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer"
           >
             <div className="w-full md:w-9/12 py-4 px-4">

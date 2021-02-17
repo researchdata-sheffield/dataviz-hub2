@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import SEO from "../components/shared/seo"
 import Header from "../components/shared/header"
 import Footer from "../components/shared/footer"
-import BackgroundSection from "../components/images/eventBackground"
+// import BackgroundSection from "../components/images/eventBackground"
 import PropTypes from "prop-types"
 import UpcomingEvents from "../components/events/upcomingEvents"
 import PastEvents from "../components/events/pastEvents"
@@ -24,9 +24,9 @@ const events = ({data: {eventBrite, pastEvent, pastEventBlog}}) => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "dataviz events", "dataviz.shef"]} 
       />
       <Header />
-      <BackgroundSection className="flex flex-wrap flex-grow-0 items-center justify-center min-h-100">
+      <div className="flex flex-wrap flex-grow-0 items-center justify-center min-h-100" style={{backgroundColor: 'rgb(255,121,180)', backgroundImage: 'linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,163,251,1) 50%, rgba(41,197,255,1) 82%)'}}>
         <div className="flex flex-wrap w-full justify-center my-16 lg:my-24">
-          <div className="w-full lg:w-7/12 p-6 text-black overflow-auto border-t-8 border-red-700 min-h-70 lg:rounded-l-xl" style={{background: "rgba(255,255,255,.95)", }}>
+          <div className="w-full lg:w-7/12 p-6 text-black overflow-auto min-h-70 lg:rounded-l-md bg-white border-t-8 border-gray-200">
             <h1 className="inline-block text-2xl font-semibold">Upcoming Events</h1>
             <div className="text-gray-900 mb-8" >Today: {currentDate}</div>
             <UpcomingEvents allEventbriteEvents={eventBrite} />
@@ -34,7 +34,7 @@ const events = ({data: {eventBrite, pastEvent, pastEventBlog}}) => {
           <PastEvents pastEvent={pastEvent} />
         </div>
         <PastEventsBlog pastEventBlog={pastEventBlog} /> 
-      </BackgroundSection>
+      </div>
       <Footer />
     </>
   )

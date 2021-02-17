@@ -77,7 +77,7 @@ class Search extends Component {
                   <a href={`${item.url}`} target="_blank" rel="noopener noreferrer" key={i}>
                     <div 
                       style={{width: "363px", backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: '10px', minHeight: '420px'}} 
-                      className="shadow-lg hover:shadow-xl rounded-lg group text-left relative mx-6 my-6 transform hover:scale-105 transition duration-500"
+                      className="shadow-lg hover:shadow-xl rounded-lg group text-left relative md:mx-6 my-6 transform hover:scale-105 transition duration-500"
                     >
                       <div className="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-35 group-hover:bg-black-75" style={{minHeight: '420px'}}>
                         <div className="absolute pt-8 lg:pt-16 2xl:pt-24 overflow-hidden" style={{maxWidth:"320px"}}>

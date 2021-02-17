@@ -84,11 +84,11 @@ const Header = () => {
           className += "text-gray-500 hover:text-white";
           return className;
         }
-        className += "text-gray-300 hover:text-white";
+        className += "text-gray-200 hover:text-white";
         return className;
       }
 
-      className += "text-gray-300 hover:text-white";
+      className += "text-gray-200 hover:text-white";
       return className;
     }
     
