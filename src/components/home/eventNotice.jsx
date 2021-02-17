@@ -25,7 +25,7 @@ const eventNotice = ({ eventBrite }) => {
               <div key={node.id}>
                 <div className="text-gray-700 text-sm w-full font-bold px-2 py-3">Today: {currentDate}</div>
                 
-                <a className="flex flex-wrap w-full overflow-hidden max-h-80 text-gray-700 group pb-2 px-2" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
+                <a className="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
                   <img className="w-full md:w-3/12 overflow-hidden self-center" src={node.logo.original.url} alt={`Thumbnail: ${summary}`} style={{objectFit: "cover", objectPosition: "center", minHeight: "180px"}} />
                   <div className="w-full md:w-9/12 pb-2 px-4">
                     <h1 className="inline-block font-semibold xl:text-xl"><p className="text-brand-blue text-2xl xl:text-3xl inline-block">
