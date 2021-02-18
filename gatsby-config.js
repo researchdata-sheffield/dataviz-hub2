@@ -336,7 +336,7 @@ module.exports = {
           return {
             url: `${site.siteMetadata.siteUrl}${node.node.path}`,
             changefreq: `daily`,
-            priority: 0.7,
+            priority: 1,
           }
         }),
         exclude: [

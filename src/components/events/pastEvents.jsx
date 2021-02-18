@@ -6,7 +6,7 @@ import { shortenText } from "../../utils/shared"
 const PastEvents = ({pastEvent}) => {
   
   return (
-    <div className="w-full md:w-4/5 lg:w-4/12 2xl:w-3/12 lg:rounded-r-md md:mt-10 lg:mt-0 p-6 pb-8 text-gray-100 border-t-8 border-gray-800 min-h-50 bg-gray-900">
+    <div className="w-full md:w-4/5 lg:w-4/12 2xl:w-3/12 lg:rounded-r-sm md:mt-10 lg:mt-0 p-6 pb-8 text-gray-100 border-t-8 border-gray-800 min-h-50 bg-gray-900">
       <h1 className="text-xl pt-2 pb-6 font-semibold">Past Events</h1>
       
       {pastEvent.edges.map(({ node }) => {
@@ -22,11 +22,11 @@ const PastEvents = ({pastEvent}) => {
       })} 
       {
         pastEvent.edges.length > 0 && 
-        <div className="flex justify-center w-full">
+        <div className="flex justify-center w-full" title="More past events">
           <BlackWhiteButton onClick={()=>window.open("https://www.eventbrite.co.uk/o/scholarly-communications-team-the-university-of-sheffield-library-7528476001", "_blank", "noopener, noreferrer")} 
             className="w-full mt-0 hover:bg-blue-900 hover:text-white"
           >
-            More
+            . . .
           </BlackWhiteButton>
         </div>
       }

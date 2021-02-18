@@ -22,8 +22,7 @@ LPWrap.propTypes = {
 export const LPItem = (props) => {
   return (
     <a href={props.href} className={`${props.className ? props.className : 'md:mx-2'} w-3/4 md:w-1/4 lg:w-3/10 mb-8 flex flex-col p-4 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1`} 
-      style={{fontWeight: '600', 
-              background: `${props.Lab ? 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)' : [props.Workflow ? 'linear-gradient(225deg, rgba(47,255,43,1) 4%, rgba(0,160,255,1) 96%)' : 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)']}`}}
+      style={{fontWeight: '600', background: `${props.Lab ? 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)' : [props.Workflow ? 'linear-gradient(225deg, rgba(47,255,43,1) 4%, rgba(0,160,255,1) 96%)' : 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)']}`}}
       rel="noopener noreferrer" target="_blank"
     >
       {props.children}
@@ -63,7 +62,7 @@ export const Link = styled(gatsby_Link)`
 `
 
 // Underline effect 'a' tag
-export const A_a = styled.a`
+export const LinkWithEffect = styled.a`
   color: black;
   padding-bottom: 4px;
   background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);   ${'' /* (to right,#00aeef 0%,#00aeef 98%) */}
@@ -84,6 +83,7 @@ export const A_a = styled.a`
   }
 `
 
+
 /* Two version of underline effect 'a'
 * 1. anchor within page (use the anchor prop)
 * 2. external page (default)
@@ -91,19 +91,36 @@ export const A_a = styled.a`
   3. external page (use the a prop)
 */
 export const A = (props) => {
-  const {href, ...props_noRef} = props
-  return (
-    props.anchor === true ? 
-      <A_a {...props_noRef} rel="noopener noreferrer" href={href} key={props.href}>
-        {props.children}
-      </A_a>
-      :
-      [props.a ? 
-        <a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</a>
-        :
-        <A_a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</A_a>
-      ]
-  )  
+  const {href, ...props_noHref} = props
+
+  // anchor link
+  if(props.anchor === true) {
+    if(props.noEffect) {
+      return( 
+        <a {...props_noHref} rel="noopener noreferrer" key={href}>{props.children}</a>
+      )
+    } else {
+      return( 
+        <LinkWithEffect {...props} rel="noopener noreferrer" key={href}>{props.children}</LinkWithEffect>
+      )
+    }
+  }
+  // external
+  if(props.a) {
+    return(
+      <a {...props} target="_blank" rel="noopener noreferrer" key={href}>{props.children}</a>
+    )
+  }
+  // default
+  if(props.noEffect) {
+    return( 
+      <a {...props} target="_blank" rel="noopener noreferrer" key={href}>{props.children}</a>
+    )
+  } else {
+    return( 
+      <LinkWithEffect {...props} target="_blank" rel="noopener noreferrer" key={href}>{props.children}</LinkWithEffect>
+    )
+  }
 }
 
 
@@ -324,6 +341,8 @@ A.propTypes = {
   anchor: PropTypes.any,
   href: PropTypes.string,
   a: PropTypes.any,
+  rel: PropTypes.any,
+  noEffect: PropTypes.any
 }
 
 IMGM.propTypes = {

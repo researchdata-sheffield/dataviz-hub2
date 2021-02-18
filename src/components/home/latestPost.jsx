@@ -28,7 +28,7 @@ const latestPost = ({ post }) => {
           postDate = postDate.substring(0, 6)
 
           return (
-            <div key={node.id} className="group w-full relative z-20 border-t-1 border-transparent first:border-black" tabIndex="0">
+            <div key={node.id} className="group w-full relative z-10 border-t-1 border-transparent first:border-black" tabIndex="0">
               <Fade  key={node.id} duration={1000} fraction={0.1}>
                 <div className="w-full bg-black-080808 hover:bg-transparent text-white 2xl:text-xl">
                   <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4">
@@ -47,7 +47,7 @@ const latestPost = ({ post }) => {
               </Fade>
               
               {/* On hover, show details on the left */}
-              <div className="bg-white hidden lg:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
+              <div className="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
                   style={{width: "33.333333%"}}
                 >
                 <div className="min-h-50 max-h-50 w-full transform" style={{backgroundImage: `url(${imagesrc})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}></div>
