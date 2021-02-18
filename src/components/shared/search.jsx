@@ -57,7 +57,7 @@ class Search extends Component {
 
         return (
           <div>
-            <div className="bg-orange-700 text-gray-100 py-2">Found {this.state.results.length} results for you.</div>
+            <div className="bg-white text-gray-900 py-2">Found {this.state.results.length} results for you.</div>
 
             <div className="flex flex-wrap py-10 xl:pt-32 xl:pb-64 justify-center bg-gray-100">
               {this.state.results.map((item, i) => {
@@ -165,12 +165,12 @@ class Search extends Component {
       // } 
       else if (this.state.query.length > 0) {
         return (
-          <div className="bg-orange-700 text-gray-100 py-2">No results for {this.state.query}</div>
+          <div className="bg-white text-gray-900 py-2">No results for {this.state.query}</div>
         )
       }
       else {
         return (
-          <div className="bg-orange-700 text-gray-100 py-2">Awaiting for your input ...</div>
+          <div className="bg-white text-gray-900 py-2">Awaiting for your input ...</div>
         )
       }
     }

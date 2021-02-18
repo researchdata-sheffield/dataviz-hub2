@@ -14,7 +14,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
         let summary = shortenText(node.summary, 20)
 
         return (
-          <a className="flex flex-col-reverse md:flex-row flex-wrap w-full hover:shadow-lg overflow-y-hidden bg-white my-3 lg:my-1 text-gray-700 group border-2 border-gray-50" 
+          <a className="flex flex-col-reverse md:flex-row flex-wrap w-full hover:shadow-xl overflow-y-hidden bg-white my-3 lg:my-1 text-gray-700 group border-2 border-gray-50" 
             style={{transition: ".5s ease"}} href={node.url} key={node.id} target="_blank" rel="noopener noreferrer"
           >
             <div className="w-full md:w-9/12 py-4 px-4">
@@ -34,7 +34,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
               </div>
             </div>
             <div className="w-full md:w-3/12 overflow-hidden relative min-h-15 2xl:min-h-15" style={{backgroundImage: `url(${node.logo.original.url})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: '.5s ease'}}>
-              <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex py-1 px-3 font-bold text-md bg-black text-white hover:bg-blue-700 absolute" style={{bottom: '0%', right: '0%', }}>
+              <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex py-1 px-3 font-semibold text-md bg-black text-white hover:bg-blue-900 absolute" style={{bottom: '0%', right: '0%', }}>
                 Register
               </button>
             </div>

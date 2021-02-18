@@ -56,7 +56,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
           {/* Left component */}
           <div id="homeBar" className="min-h-100 md:min-h-60 lg:min-h-100 lg:max-h-100 content-evenly shadow-lg z-10 2lg:sticky 2lg:top-0 2lg:left-0 2lg:w-4/12 flex flex-wrap w-full  text-black overflow-hidden justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center font-sans">
-              <p className="text-2xl lg:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
+              <p className="text-2xl lg:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
               <p className="text-base 2xl:text-lg mt-3 px-2 md:px-6 lg:px-8 2xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
             </div>
 

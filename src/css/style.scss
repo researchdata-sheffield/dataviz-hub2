@@ -139,7 +139,7 @@ Home Search bar & animation
 .link-effect {
   color: #000000;
   padding-bottom: 4px;
-  background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+  background: linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%);
   background-size: 100% 2px;
   background-repeat: no-repeat;
   background-position: right 85%;
@@ -170,7 +170,7 @@ Home Search bar & animation
   background: white;
 
   &:hover {
-    border-image-source: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+    border-image-source: linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%);
     border-image-slice: 1;
     //background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
   }
@@ -187,7 +187,7 @@ Home Search bar & animation
   transition: .5s ease;
 
   &:hover {
-    background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+    background: linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
