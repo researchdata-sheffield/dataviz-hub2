@@ -10,6 +10,9 @@ module.exports = {
     author: 'Yu Liang Weng <y.weng@sheffield.ac.uk>',
     siteUrl: "https://dataviz.shef.ac.uk"
   },
+  flags: { 
+    PRESERVE_WEBPACK_CACHE: true 
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,

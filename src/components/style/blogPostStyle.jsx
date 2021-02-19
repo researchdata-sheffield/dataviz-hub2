@@ -91,13 +91,13 @@ export const LinkWithEffect = styled.a`
   3. external page (use the a prop)
 */
 export const A = (props) => {
-  const {href, ...props_noHref} = props
+  const {href} = props
 
   // anchor link
   if(props.anchor === true) {
     if(props.noEffect) {
       return( 
-        <a {...props_noHref} rel="noopener noreferrer" key={href}>{props.children}</a>
+        <a {...props} rel="noopener noreferrer" key={href}>{props.children}</a>
       )
     } else {
       return( 
