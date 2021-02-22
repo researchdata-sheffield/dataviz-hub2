@@ -21,7 +21,7 @@ const HomeShowcase = () => {
               representations of data built by staff and students at the University of Sheffield.
             </div>
             <a className="mt-8" href="https://orda.shef.ac.uk/visualisations" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow external type="AnimateButton" className="group">Discover ORDA</ButtonWithArrow>
+              <ButtonWithArrow external type="AnimateButton" className="group">Browse Visualisations</ButtonWithArrow>
             </a>
             </Fade>
           </div>
