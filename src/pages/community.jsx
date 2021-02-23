@@ -52,7 +52,6 @@ const Community = () => {
                 We have also added <Link_effect to="/community/#joinus">slack channel</Link_effect> for more informal 
                 communication and chat. Remember to say hello in our <i>#welcome channel</i>.
               </p>
-              
             </div>
           </Fade>
           <Fade cascade duration={2000}>
@@ -60,10 +59,12 @@ const Community = () => {
               <img src={com_1} className="mt-8" style={{borderRadius: "3%", minHeight: "45vh", maxHeight: "55vh", objectFit: "cover", objectPosition: "center",}} alt="Community image 2" />
               <p className="text-brand-blue text-xl py-12">Events: We’ll be hosting a variety of events including talks & symposia, workshops, vis-coding clubs and data visualisation hackathons!</p>
               <h1>But just to give an idea, here&apos;s a selection of workshops in the pipeline: <br />
-                <p className="pl-4"> <br />
-                ~ Data visualisation in R <br />
-                ~ R, htmlwidgets & Shiny  <br />
-                ~ Dataviz using vegalite  <br /> </p>
+                <p className="pl-4"> 
+                  <br />
+                  ~ Data visualisation in R <br />
+                  ~ R, htmlwidgets & Shiny  <br />
+                  ~ Dataviz using vegalite  <br /> 
+                </p>
               </h1>
             </div>
           </Fade>
@@ -101,7 +102,7 @@ const Community = () => {
               </a>
 
               <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer" 
-                className="hidden group-hover:block absolute justify-center content-center text-center py-1 px-8 shadow-sm text-xl text-white bg-black hover:bg-brand-blue transition duration-500"
+                className="hidden group-hover:block absolute text-center py-1 px-8 shadow-sm text-xl text-white bg-black hover:bg-brand-blue transition duration-500"
                 style={{ position: "absolute", top: "77%", left: "50%", transform: "translateX(-50%) translateY(-50%)"}}
               >
               Join group  
@@ -111,13 +112,13 @@ const Community = () => {
         </div>
 
         <div className="lg:px-12 2xl:px-24 pt-24 pb-16 text-black text-lg">
-            <p className="text-gray-900 text-5xl px-2 font-semibold">Contribute!</p>
-            <p className="p-3">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
-              Feel free to get in touch with us through the google group or slack team with any suggestions. 
-              We will also be putting together more formal contributing guidance should you wish to contribute to our online resources
-              directly through our <a className="font-semibold link-effect" href="https://github.com/researchdata-sheffield/dataviz-hub2" target="_blank" rel="noopener noreferrer">GitHub repository</a> including blogposts and turtorials.</p>
+          <p className="text-gray-900 text-5xl px-2 font-semibold">Contribute!</p>
+          <p className="p-3">We are constantly looking for new ideas and suggestions for events, workshops or tutorials. 
+            Feel free to get in touch with us through the google group or slack team with any suggestions. 
+            We will also be putting together more formal contributing guidance should you wish to contribute to our online resources
+            directly through our <a className="font-semibold link-effect" href="https://github.com/researchdata-sheffield/dataviz-hub2" target="_blank" rel="noopener noreferrer">GitHub repository</a> including blog posts and tutorials.
+          </p>
         </div>
-
 
       </div>
       <Footer />
