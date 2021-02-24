@@ -29,7 +29,7 @@ const blogPostGrid = ({allMdx}) => {
               }
               <IMG_DIV className="lg:greyScale-100 group-hover:greyScale-0"><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
               <ArrowBox className="px-6 pt-6 2xl:px-8 2xl:pt-8 leading-none">
-                <div className='overflow-hidden fade-box2'>
+                <div className='overflow-hidden fade-box'>
                   <h1 className="font-extrabold xl:text-2xl 2xl:text-3xl leading-tight text-black group-hover:text-brand-blue overflow-y-hidden font-sans">{title}</h1>
                   <p className="my-3 text-base leading-tight group-hover:text-brand-blue text-gray-800" >{description}</p>
                 </div>

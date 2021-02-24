@@ -1,6 +1,17 @@
+ /* Hide scrollbar for Chrome, Safari and Opera */
+ .hideScrollBar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hideScrollBar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+} 
+
 /* Large (lg) */
 @media (min-width: 1024px) { 
-  .fade-box2 {
+  .fade-box {
     max-height: 130px;
   }
 }
@@ -8,17 +19,17 @@
 
 /* Extra Large (xl) */
 @media (min-width: 1281px) {
-  .fade-box2 {
+  .fade-box {
     max-height: 175px;
   }
 }
 
 /* Extra 2 Large (2xl) */
 @media (min-width: 1400px) {
-  .fade-box2 {
+  .fade-box {
     max-height: 232px;
   }
-  .fade-box2:after {
+  .fade-box:after {
     height: calc((13.75vw - 30px) / 2) !important;
   }
 }
@@ -26,19 +37,7 @@
 /*****
 * Linear Faded box for blog grid
 */
-.fade-box:before {
-  content:'';
-  width:100%;
-  height:10%;    
-  position:absolute;
-  left:0;
-  bottom:0;
-  z-index: 10;
-  background:linear-gradient(transparent 10px, white);
-}
-
-
-.fade-box2:after {
+.fade-box:after {
   background-size: 100%;
   background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,rgba(255,255,255,0)),color-stop(100%,#fff));
   background-image: -moz-linear-gradient(rgba(255,255,255,0),#fff);

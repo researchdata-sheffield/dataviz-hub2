@@ -59,7 +59,7 @@ class Search extends Component {
           <div>
             <div className="bg-white text-gray-900 py-2">Found {this.state.results.length} results for you.</div>
 
-            <div className="flex flex-wrap py-10 xl:pt-32 xl:pb-64 justify-center bg-gray-100">
+            <div className="flex flex-wrap py-10 xl:pt-16 xl:pb-64 justify-center bg-gray-100">
               {this.state.results.map((item, i) => {
                 let imagesrc
                 {data.allMdx.edges.map(({ node }) => {
