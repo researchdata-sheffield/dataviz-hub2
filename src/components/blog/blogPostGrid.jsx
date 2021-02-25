@@ -13,7 +13,7 @@ const blogPostGrid = ({allMdx}) => {
     <div className="flex flex-wrap w-full">
     {allMdx.edges.map(({ node }) => {
       let imagesrc = getImageSource(node);
-      let description = shortenText(node.frontmatter.description, 25);
+      let description = shortenText(node.frontmatter.description, 30);
       let title = node.frontmatter.title;
       let tag = node.frontmatter.tag;
 

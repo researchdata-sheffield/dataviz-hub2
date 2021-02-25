@@ -5,7 +5,7 @@ import SEO from "../../components/shared/seo"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
 import Helmet from "react-helmet"
-import kebabCase from "lodash.kebabcase"
+//import kebabCase from "lodash.kebabcase"
 import "katex/dist/katex.min.css"
 import { useLocation } from "@reach/router"
 import { useScript } from "../../utils/hooks/useScript"
@@ -15,7 +15,7 @@ import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
 import Header from "../../components/shared/header"
 import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
-import {CatBtn, TagBtn} from "../../components/style/styled"
+//import {CatBtn, TagBtn} from "../../components/style/styled"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMG, TwitterBtn } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
 import GitalkComponent from "gitalk/dist/gitalk-component";
@@ -27,9 +27,9 @@ import ReactTooltip from "react-tooltip";
 import trianglify from 'trianglify'
 
 
-const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
+const docsTemplate = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
-  const { title, date, author, category, tag, disableTOC, type } = mdx.frontmatter
+  const { title, date, author, disableTOC } = mdx.frontmatter
   const {prev, next} = pageContext
 
   const folderName = mdx.fields.slugOrigin
@@ -126,10 +126,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             </div>
           </div> 
 
-          <div className="mt-4 text-xs 2xl:text-sm mx-auto flex flex-wrap px-2">
+          {/* <div className="mt-4 text-xs 2xl:text-sm mx-auto flex flex-wrap px-2">
             {category.map((cat) => ( <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn> ))}
             {tag.map((currentTag) => ( <TagBtn key={currentTag} to={`/blog/tag/${kebabCase(currentTag)}`}>{currentTag}</TagBtn> ))}
-          </div>
+          </div> */}
         </div>
         </Pulse>
       </div>
@@ -196,7 +196,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </div>       
  
 
-      <PaginationPost mdx={mdx} type={type || 'blog'} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
+      <PaginationPost mdx={mdx} type="docs" prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
 
       {/* comment */}
       {
@@ -222,15 +222,15 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   )
 }
 
-export default blogPostTemplate
+export default docsTemplate
 
-blogPostTemplate.propTypes = {
+docsTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any,
 }
 
-export const query = graphql`
-  query BlogPostQuery($id: String) {
+export const docsQuery = graphql`
+  query docsQuery($id: String) {
     mdx(id: { eq: $id }) {
       id
       fields {
@@ -256,8 +256,6 @@ export const query = graphql`
         }
         date(formatString: "D MMMM YYYY")
         description
-        tag
-        category
         thumbnail {
           childImageSharp {
             fluid {

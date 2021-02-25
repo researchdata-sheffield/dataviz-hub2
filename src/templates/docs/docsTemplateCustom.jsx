@@ -16,7 +16,7 @@ import { useScript } from "../../utils/hooks/useScript"
 import { useLocation } from "@reach/router"
 
 
-const blogPostTemplateCustom = ({ data: { mdx }, pageContext }) => {
+const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
 
   const {prev, next} = pageContext
@@ -56,7 +56,7 @@ const blogPostTemplateCustom = ({ data: { mdx }, pageContext }) => {
       </MDXProvider>
     </div>
     
-    <PaginationPost mdx={mdx} type={mdx.frontmatter.type || 'blog'} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
+    <PaginationPost mdx={mdx} type="docs" prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
 
     {
       (typeof window !== `undefined`) &&
@@ -81,18 +81,18 @@ const blogPostTemplateCustom = ({ data: { mdx }, pageContext }) => {
   )
 }
 
-export default blogPostTemplateCustom
+export default docsTemplateCustom
 
 
-blogPostTemplateCustom.propTypes = {
+docsTemplateCustom.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any,
 }
 
 
 
-export const query = graphql`
-  query BlogPostQuery_custom($id: String) {
+export const docsCustomQuery = graphql`
+  query docsQuery_custom($id: String) {
     mdx(id: { eq: $id }) {
       id
       body
@@ -111,8 +111,6 @@ export const query = graphql`
         }
         template
         date(formatString: "dddd Do MMMM YYYY")
-        category
-        tag
         d3
       }
       fields {

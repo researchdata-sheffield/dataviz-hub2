@@ -12,7 +12,8 @@
 /* Large (lg) */
 @media (min-width: 1024px) { 
   .fade-box {
-    max-height: 130px;
+    max-height: 170px;
+    padding-bottom: 30px;
   }
 }
 
@@ -20,36 +21,46 @@
 /* Extra Large (xl) */
 @media (min-width: 1281px) {
   .fade-box {
-    max-height: 175px;
+    max-height: 200px;
+    padding-bottom: 20px;
   }
 }
 
 /* Extra 2 Large (2xl) */
 @media (min-width: 1400px) {
   .fade-box {
-    max-height: 232px;
+    max-height: 230px;
+    padding-bottom: 10px;
   }
   .fade-box:after {
-    height: calc((13.75vw - 30px) / 2) !important;
+    height: calc((8.75vw - 30px) / 2) !important;
   }
 }
 
 /*****
 * Linear Faded box for blog grid
 */
-.fade-box:after {
-  background-size: 100%;
-  background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,rgba(255,255,255,0)),color-stop(100%,#fff));
-  background-image: -moz-linear-gradient(rgba(255,255,255,0),#fff);
-  background-image: -webkit-linear-gradient(rgba(255,255,255,0),#fff);
-  background-image: linear-gradient(rgba(255,255,255,0),#fff);
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  height: calc((18.75vw - 30px) / 2);
-}     
+.fade-box {
+  position: relative;
+  z-index: 20;
+
+
+  &:after {
+    background-size: 100%;
+    background-image: -webkit-gradient(linear,50% 0,50% 100%,color-stop(0,rgba(255,255,255,0)),color-stop(100%,#fff));
+    background-image: -moz-linear-gradient(rgba(255,255,255,0),#fff);
+    background-image: -webkit-linear-gradient(rgba(255,255,255,0),#fff);
+    background-image: linear-gradient(rgba(255,255,255,0),#fff);
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // calc((18.75vw - 30px) / 2)
+    height: calc((12.75vw - 30px) / 2);
+  }     
+}
+
 
 
 /*******

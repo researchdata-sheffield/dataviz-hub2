@@ -7,8 +7,9 @@ import { getImageSource, shortenText } from "../../utils/shared"
 import { AiOutlineBulb } from "react-icons/ai"
 
 const RelatedPost = (props) => {
-  const { currentPost } = props
-  
+  const { currentPost, type } = props
+  console.log(type);
+
   const postList = useStaticQuery(graphql`
     query relatedPostList {
       allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
@@ -24,7 +25,7 @@ const RelatedPost = (props) => {
                 });
 
   // create new service for getting related posts
-  const service = new RelatedPostServices(currentPost, data);
+  const service = new RelatedPostServices(currentPost, data, type);
   const relatedPosts = service.getRelatedPosts();
   
   return (
@@ -51,17 +52,21 @@ const RelatedPost = (props) => {
                   <div className="absolute pt-8 lg:pt-16 2xl:pt-16 px-3 lg:px-8 overflow-hidden top-0 left-0" style={{maxWidth: '97%', textShadow: '0px 1px 7px #757575'}}>
                     <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
                       {title}
-                    </h1>  
-                    <h1 className={`${classes} mt-4`}>
-                      CAT: &nbsp;
-                      {node.frontmatter.category[0].toUpperCase()}
                     </h1>
-                    <h1 className={`${classes} `}>
-                      TAG: &nbsp;{node.frontmatter.tag.map((tag, i, arr) => {
-                        return ( i < 3 && arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")  )
-                      })}
-                      {node.frontmatter.tag.length > 3 && <p className="inline-block text-white"> +{node.frontmatter.tag.length - 3} more</p>}
-                    </h1>
+                    { type == 'blog' && node.frontmatter.category && node.frontmatter.tag &&
+                      <div>
+                        <h1 className={`${classes} mt-4`}>
+                          CAT: &nbsp;
+                          {node.frontmatter.category[0].toUpperCase()}
+                        </h1>
+                        <h1 className={`${classes} `}>
+                          TAG: &nbsp;{node.frontmatter.tag.map((tag, i, arr) => {
+                            return ( i < 3 && arr.length - 1 === i ? tag.toUpperCase() : tag.toUpperCase().concat(", ")  )
+                          })}
+                          {node.frontmatter.tag.length > 3 && <p className="inline-block text-white"> +{node.frontmatter.tag.length - 3} more</p>}
+                        </h1>
+                      </div>
+                    } 
                     <h1 className={`${classes} text-white leading-7 mt-4 text-lg`}>
                       {node.fields.readingTime.text}
                     </h1>
@@ -84,18 +89,20 @@ export default RelatedPost;
 
 RelatedPost.propTypes = {
   currentPost: PropTypes.any,
+  type: PropTypes.any
 }
 
 
 
 class RelatedPostServices {
-  constructor (currentPost, posts) {
+  constructor (currentPost, posts, type) {
     this.posts = posts;
     this.maxPosts = 3;
     this.title = currentPost.frontmatter.title;
     this.description = currentPost.frontmatter.description;
-    this.category = currentPost.frontmatter.category;
-    this.tags = currentPost.frontmatter.tag;
+    this.category = type == 'blog' ? currentPost.frontmatter.category : null;
+    this.tags = type == 'blog' ? currentPost.frontmatter.tag : null;
+    this.mdxType = type;
   }
 
   setMaxPosts (number) {
@@ -133,13 +140,16 @@ class RelatedPostServices {
     * Loop each articles, based on simiarity give some score
     * return top 3 (or number of posts set)
     */
-    const { posts, category, tags, maxPosts, title, description } = this;
+    const { posts, category, tags, maxPosts, title, description, mdxType } = this;
     const catPoint = 2;
     const tagPoint = 1;
     const titlePoint = 3;
     const descriptionPoint = 3;
 
     function addCategoryPoints (currPost) {
+      if(!currPost.frontmatter.category) {
+        return;
+      }
       currPost.frontmatter.category.forEach((cat) => {
         if(category.includes(cat)) {
           currPost.point += catPoint;
@@ -148,6 +158,9 @@ class RelatedPostServices {
     }
 
     function addTagPoints (currPost) {
+      if(!currPost.frontmatter.tag) {
+        return;
+      }
       currPost.frontmatter.tag.forEach((tag) => {
         if(tags.includes(tag)) {
           currPost.point += tagPoint;
@@ -178,8 +191,11 @@ class RelatedPostServices {
       currPost.point = 0;
       
       // add points to current post
-      addCategoryPoints(currPost);
-      addTagPoints(currPost);
+      if(mdxType == 'blog') {
+        addCategoryPoints(currPost);
+        addTagPoints(currPost);
+      }
+
       addTitlePoints(currPost);
       addDescriptionPoints(currPost);
     }

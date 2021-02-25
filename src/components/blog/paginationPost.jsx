@@ -15,7 +15,9 @@ class PaginationPost extends React.Component {
   }
 
   render() {
-    const { mdx, share, github, prev, next } = this.props
+    const { mdx, share, github, prev, next, type } = this.props;
+
+    var mdxType = type || 'blog';
     let template = mdx.frontmatter.template
     let prevTitle = prev ? shortenText(prev.node.frontmatter.title, 6) : ""
     let nextTitle = next ? shortenText(next.node.frontmatter.title, 6) : ""
@@ -24,7 +26,7 @@ class PaginationPost extends React.Component {
 
     return(
       <div className="relative z-20 mt-16" style={{backgroundColor: '#fafafa'}}>
-        <RelatedPost currentPost={mdx} />  
+        <RelatedPost currentPost={mdx} type={mdxType} />  
         
         {/* social media share buttons */}
         <div className={`${template === "custom" ? '' : 'lg:hidden'} flex flex-wrap text-sm justify-center w-full pt-5`}>
@@ -37,14 +39,16 @@ class PaginationPost extends React.Component {
             </a>
         </div> 
         {/* category and tags */}
-        <div className="pt-5 flex flex-wrap text-gray-900 justify-center items-center content-center mx-auto text-sm">
-          {mdx.frontmatter.category.map((cat) => (
-            <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
-          ))}
-          {mdx.frontmatter.tag.map((tag) => (
-            <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
-          ))}
-        </div>  
+        { mdxType == 'blog' &&
+          <div className="pt-5 flex flex-wrap text-gray-900 justify-center items-center content-center mx-auto text-sm">
+            {mdx.frontmatter.category.map((cat) => (
+              <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>
+            ))}
+            {mdx.frontmatter.tag.map((tag) => (
+              <TagBtn key={tag} to={`/blog/tag/${kebabCase(tag)}`}>{tag}</TagBtn>
+            ))}
+          </div>  
+        }
 
         {/* previous & next post */}
         <div className="flex justify-center py-8 px-3 mx-auto font-semibold text-sm" >
@@ -72,5 +76,6 @@ PaginationPost.propTypes = {
   prev: PropTypes.any,
   next: PropTypes.any,
   share: PropTypes.array,
-  github: PropTypes.string
+  github: PropTypes.string,
+  type: PropTypes.any
 }
