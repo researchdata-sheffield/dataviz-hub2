@@ -87,6 +87,43 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const result = await graphql(`
     {
+      docsQuery: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }, 
+        filter: {frontmatter: {type: {eq: "docs"}}}
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              template
+              author {
+                name
+                avatar {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              title
+              date(formatString: "dddd Do MMMM YYYY")
+              thumbnail {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+              d3
+              type
+            }
+          }
+        }
+      }
       blogQuery: allMdx(
         sort: { fields: [frontmatter___date], order: DESC }, 
         filter: {frontmatter: {type: {eq: null}}}
@@ -121,42 +158,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 }
               }
               d3
-            }
-          }
-        }
-      }
-      docsQuery: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }, 
-        filter: {frontmatter: {type: {eq: "docs"}}}
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              template
-              author {
-                name
-                avatar {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
-              }
-              title
-              date(formatString: "dddd Do MMMM YYYY")
-              thumbnail {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-              d3
+              type
             }
           }
         }

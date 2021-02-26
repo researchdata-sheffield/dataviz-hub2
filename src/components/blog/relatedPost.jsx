@@ -8,7 +8,6 @@ import { AiOutlineBulb } from "react-icons/ai"
 
 const RelatedPost = (props) => {
   const { currentPost, type } = props
-  console.log(type);
 
   const postList = useStaticQuery(graphql`
     query relatedPostList {
@@ -33,7 +32,7 @@ const RelatedPost = (props) => {
       <Fade fraction={.3} duration={1500} delay={300}>
       <div className="px-3 lg:px-12 pt-12 pb-1 text-2xl text-gray-900 font-semibold flex items-center">
         <AiOutlineBulb className="inline-block mr-3 text-3xl" />
-        <p className="pb-1 border-b-2 border-gray-300" style={{width: 'max-content'}}>Related posts</p>
+        <p className="pb-1 border-b-2 border-gray-300" style={{width: 'max-content'}}>You Might Also Like</p>
       </div>
       <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center lg:justify-start lg:px-5">
         {relatedPosts.map(node => {
@@ -45,12 +44,18 @@ const RelatedPost = (props) => {
           return (
             <Link className="w-10/12 md:w-1/3 lg:w-3/10 mx-3 xl:mx-5 my-6 lg:px-2" to={node.fields.slug} key={node.id}>
               {/* background */}
-              <div style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", minHeight: '430px', maxHeight: "500px"}} className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg transform hover:scale-105 transition duration-500">
+              <div 
+                style={{backgroundImage: `url(${imagesrc})`, backgroundSize: "cover", backgroundPosition: "center", borderRadius: "15px", minHeight: '430px', maxHeight: "500px"}} 
+                className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg transform hover:scale-105 transition duration-500"
+              >
                 {/* content */}
-                <div className="w-full p-6 transition duration-700 bg-black-45 group-hover:bg-black-75 relative" style={{borderRadius: "15px", minHeight: '430px', maxHeight: "500px"}}>
+                <div className="w-full p-6 transition duration-700 bg-black-45 group-hover:bg-black-85 relative" style={{borderRadius: "15px", minHeight: '430px', maxHeight: "500px"}}>
                   {/* upper text & content on hover */}
-                  <div className="absolute pt-8 lg:pt-16 2xl:pt-16 px-3 lg:px-8 overflow-hidden top-0 left-0" style={{maxWidth: '97%', textShadow: '0px 1px 7px #757575'}}>
-                    <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
+                  <div className="absolute pt-8 lg:pt-16 2xl:pt-16 px-3 lg:px-8 overflow-hidden top-0 left-0 textShadow-relatedPost group-hover:textShadow-none" style={{maxWidth: '97%'}}>
+                    <h1 className="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md" style={{textShadow: 'none', padding: '.15rem .65rem'}}>
+                      { node.frontmatter.type || 'blog' }
+                    </h1>
+                    <h1 className="group-hover:-translate-y-8 text-white font-extrabold leading-7 text-2xl transform transition duration-100">
                       {title}
                     </h1>
                     { type == 'blog' && node.frontmatter.category && node.frontmatter.tag &&
@@ -71,7 +76,7 @@ const RelatedPost = (props) => {
                       {node.fields.readingTime.text}
                     </h1>
                     {/* content on hover */}
-                    <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">{node.fields.slug.slice(5,).toUpperCase()}</p>
+                    <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">{node.fields.slug.toUpperCase()}</p>
                     <h1 className="hidden group-hover:block text-white leading-6 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500">{description}</h1>      
                   </div>
                 </div>
@@ -145,9 +150,10 @@ class RelatedPostServices {
     const tagPoint = 1;
     const titlePoint = 3;
     const descriptionPoint = 3;
+    const typePoint = 5;
 
     function addCategoryPoints (currPost) {
-      if(!currPost.frontmatter.category) {
+      if(!currPost.frontmatter.category || !category) {
         return;
       }
       currPost.frontmatter.category.forEach((cat) => {
@@ -158,7 +164,7 @@ class RelatedPostServices {
     }
 
     function addTagPoints (currPost) {
-      if(!currPost.frontmatter.tag) {
+      if(!currPost.frontmatter.tag || !tags) {
         return;
       }
       currPost.frontmatter.tag.forEach((tag) => {
@@ -176,6 +182,12 @@ class RelatedPostServices {
     function addDescriptionPoints (currPost) {
       let score = jaccardIndexCompareTwoStrings(description, currPost.frontmatter.description);
       currPost.point += (descriptionPoint*score);
+    }
+
+    function addTypePoint (currPost) {
+      if (currPost.frontmatter.type == mdxType) {
+        currPost.point += typePoint;
+      }
     }
 
     function sortByPoint (a, b) {
@@ -198,6 +210,7 @@ class RelatedPostServices {
 
       addTitlePoints(currPost);
       addDescriptionPoints(currPost);
+      addTypePoint(currPost);
     }
 
     return posts.sort(sortByPoint).slice(0, maxPosts);

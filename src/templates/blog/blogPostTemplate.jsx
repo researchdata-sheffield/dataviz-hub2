@@ -267,6 +267,7 @@ export const query = graphql`
         }
         disableTOC
         d3
+        type
       }
     }
   }

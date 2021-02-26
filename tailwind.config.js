@@ -4,7 +4,7 @@ module.exports = {
   purge: {
     content: [
       './src/**/*.jsx',
-      './content/blog/**/*.mdx'
+      './content/**/**/*.mdx'
     ]
   },
   theme: {
@@ -24,6 +24,7 @@ module.exports = {
         'black-35': 'rgba(0, 0, 0, .35)',
         'black-45': 'rgba(0, 0, 0, .45)',
         'black-75': 'rgba(0, 0, 0, .75)',
+        'black-85': 'rgba(0, 0, 0, .85)',
         'black-080808': '#080808',
 
       },

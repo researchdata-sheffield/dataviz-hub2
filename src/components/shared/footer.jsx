@@ -6,7 +6,8 @@ import { MdEmail } from "react-icons/md"
 import { A_footer } from "../style/styled"
 
 const Footer = () => {
-  const currentYear = new Date()
+  const currentYear = new Date();
+  const linkClasses = "text-gray-400 hover:text-brand-blue"
   
   return (
     <div className="bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm relative z-10">
@@ -14,15 +15,15 @@ const Footer = () => {
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
             <ul className="list-reset leading-normal">
-              <li><Link className="text-gray-400 hover:text-brand-blue" to="/blog">Blog</Link></li>
-              <li><Link className="text-gray-400 hover:text-brand-blue" to="/events">Events</Link></li>
-              <li><Link className="text-gray-400 hover:text-brand-blue" to="/community">Community</Link></li>
+              <li><Link className={linkClasses} to="/blog">Blog</Link></li>
+              <li><Link className={linkClasses} to="/events">Events</Link></li>
+              <li><Link className={linkClasses} to="/community">Community</Link></li>
               <li><A_footer href="https://orda.shef.ac.uk/visualisations/">Showcase</A_footer></li>
-              <li><Link className="text-gray-400 hover:text-brand-blue" to="/about">About</Link></li>
+              <li><Link className={linkClasses} to="/about">About</Link></li>
               <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
-              <li><Link className="text-gray-400 hover:text-brand-blue" to="/privacy">Privacy Policy</Link></li>
-              <li><Link className="text-gray-400 hover:text-brand-blue" to="/accessibility">Accessibility</Link></li>
-              <li><Link className="text-gray-400 hover:text-brand-blue" to="/sitemap.xml">Sitemap</Link></li>
+              <li><Link className={linkClasses} to="/privacy">Privacy Policy</Link></li>
+              <li><Link className={linkClasses} to="/accessibility">Accessibility</Link></li>
+              <li><Link className={linkClasses} to="/sitemap.xml">Sitemap</Link></li>
             </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
@@ -45,6 +46,7 @@ const Footer = () => {
           <div className="text-white text-md mb-2 font-bold">Collaboration</div>
           <ul className="list-reset leading-normal">
             <li><A_footer href="https://github.com/researchdata-sheffield/dataviz-hub2">Github repository</A_footer></li>
+            <li><Link className={linkClasses} to="/docs/22/03/2020/contribute-blog-post">Contribute blog post</Link></li>
           </ul>
         </div>
         

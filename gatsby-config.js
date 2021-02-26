@@ -61,7 +61,8 @@ module.exports = {
         // Apply gatsby-mdx to both .mdx and .md files
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve('./src/templates/blog/blogPostTemplate.jsx'),
+          posts: require.resolve('./src/templates/blog/blogPostTemplate.jsx'),
+          docs: require.resolve('./src/templates/docs/docsTemplate.jsx')
         },
         remarkPlugins: [
           require('remark-math'),

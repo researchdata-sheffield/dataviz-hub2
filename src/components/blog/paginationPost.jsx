@@ -39,7 +39,7 @@ class PaginationPost extends React.Component {
             </a>
         </div> 
         {/* category and tags */}
-        { mdxType == 'blog' &&
+        { mdxType == 'blog' && mdx.frontmatter.category && mdx.frontmatter.tag &&
           <div className="pt-5 flex flex-wrap text-gray-900 justify-center items-center content-center mx-auto text-sm">
             {mdx.frontmatter.category.map((cat) => (
               <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn>

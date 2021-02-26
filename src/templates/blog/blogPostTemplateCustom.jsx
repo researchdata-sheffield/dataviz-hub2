@@ -114,6 +114,7 @@ export const query = graphql`
         category
         tag
         d3
+        type
       }
       fields {
         slug

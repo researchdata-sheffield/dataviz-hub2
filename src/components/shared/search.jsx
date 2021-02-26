@@ -132,7 +132,7 @@ class Search extends Component {
                           <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">
                             <Highlighter 
                               highlightClassName={highlightClasses} 
-                              textToHighlight={item.url.slice(5,).toUpperCase()} 
+                              textToHighlight={item.url.toUpperCase()} 
                               searchWords={this.state.query.split()} 
                             />
                           </p>

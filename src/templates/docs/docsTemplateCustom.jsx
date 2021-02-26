@@ -21,7 +21,7 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
 
   const {prev, next} = pageContext
   const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
-  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/${folderName}/index.mdx`
+  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${mdx.frontmatter.type}/${folderName}/index.mdx`
   const shareLink = `https://${location.host}${mdx.fields.slug}`
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null;
@@ -56,7 +56,7 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
       </MDXProvider>
     </div>
     
-    <PaginationPost mdx={mdx} type="docs" prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
+    <PaginationPost mdx={mdx} type={mdx.frontmatter.type} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
 
     {
       (typeof window !== `undefined`) &&
@@ -73,7 +73,7 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
           distractionFreeMode: false
 
         }} /> 
-      </div> 
+      </div>
     }
     
     <Footer />
@@ -112,6 +112,7 @@ export const docsCustomQuery = graphql`
         template
         date(formatString: "dddd Do MMMM YYYY")
         d3
+        type
       }
       fields {
         slug

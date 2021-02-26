@@ -29,11 +29,11 @@ import trianglify from 'trianglify'
 
 const docsTemplate = ({ data: { mdx }, pageContext }) => {
   const location = useLocation();
-  const { title, date, author, disableTOC } = mdx.frontmatter
+  const { title, date, author, disableTOC, type } = mdx.frontmatter
   const {prev, next} = pageContext
 
   const folderName = mdx.fields.slugOrigin
-  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog${folderName}index.mdx`
+  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}${folderName}index.mdx`
   const shareLink = `https://${location.host}${mdx.fields.slug}`
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
 
@@ -196,7 +196,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
       </div>       
  
 
-      <PaginationPost mdx={mdx} type="docs" prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
+      <PaginationPost mdx={mdx} type={type} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
 
       {/* comment */}
       {
@@ -265,6 +265,7 @@ export const docsQuery = graphql`
         }
         disableTOC
         d3
+        type
       }
     }
   }

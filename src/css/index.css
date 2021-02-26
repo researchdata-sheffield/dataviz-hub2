@@ -173,6 +173,13 @@ display: none;  /* Safari and Chrome */
       filter: brightness(100%);
     }
 
+    .textShadow-relatedPost {
+      text-shadow: 0px 1px 7px #757575
+    }
+    .textShadow-none {
+      text-shadow: none;
+    }
+
   }
 }
 
