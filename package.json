@@ -55,7 +55,7 @@
     "gatsby-remark-responsive-iframe": "^2.11.0",
     "gatsby-remark-table-of-contents": "1.0.0",
     "gatsby-source-eventbrite-multi-accounts": "^1.0.6",
-    "gatsby-source-filesystem": "^2.11.0",
+    "gatsby-source-filesystem": "^2.11.1",
     "gatsby-transformer-json": "^2.11.0",
     "gatsby-transformer-sharp": "^2.12.0",
     "gitalk": "^1.7.0",
