@@ -18,7 +18,7 @@ import PaginationPost from "../../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../../components/style/styled"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMG, TwitterBtn } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
-import GitalkComponent from "gitalk/dist/gitalk-component";
+import Comment from "../../components/blog/comment"
 import Fade from "react-reveal/Fade"
 import Pulse from 'react-reveal/Pulse';
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
@@ -136,7 +136,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       </Fade>
 
       {/* body */}
-      <div className="flex flex-wrap relative lg:px-10 2xl:px-40 pt-10">
+      <div className="flex flex-wrap relative pt-10 mx-auto" style={{maxWidth: '1200px'}}>
         {/* desktop share buttons */}
         <div className="left-0 top-0 sticky hidden lg:block z-10">
           <Fade left cascade delay={1000} duration={1300}>   
@@ -146,11 +146,11 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
               <Mail className="hover:bg-red-600 transition duration-500" solid small subject={shareMessage} link={shareLink} />
               <Linkedin className="greyScale-100 hover:greyScale-0 transition duration-500" solid small message={shareMessage} link={shareLink} />
               <hr className="my-3" />
-              <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}} title="share on github">
+              <a href={githubLink} target="_blank" rel="noopener noreferrer" data-tip="" data-for="share_editpost" offset={{top: 100, left: 100}}>
                 <div className="m-2 mt-1 bg-transparent text-black flex justify-center rounded-md text-xl transition duration-500"><RiEditBoxLine /></div>
               </a>
 
-              <ReactTooltip id="share_editpost">Edit this post on GitHub</ReactTooltip>
+              <ReactTooltip id="share_editpost">Edit this {type || 'post'} on GitHub</ReactTooltip>
             </div>
           </Fade> 
         </div>   
@@ -173,7 +173,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
    
         {/******** main mdx content  ***********/}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `mx-auto md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40 mdxBody`: `md:max-w-70 lg:max-w-xs xl:max-w-sm 2xl:max-w-40`} relative mx-auto container pt-6 pb-16 px-3 leading-8 text-lg`} style={{color: '#24292e'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `mdxBody`: ``} relative mx-auto container pt-6 pb-16 px-5 leading-8 text-lg`} style={{color: '#24292e', maxWidth: '700px'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, 
                           pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMG, table: Table, 
@@ -197,24 +197,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
  
 
       <PaginationPost mdx={mdx} type={type || 'blog'} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
-
-      {/* comment */}
-      {
-        (typeof window !== `undefined`) &&
-        <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
-          <GitalkComponent options={{
-            clientID: process.env.GATSBY_GH_APP_GITALK_ID,
-            clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
-            repo: 'dataviz-hub2-comments',   
-            owner: 'researchdata-sheffield',
-            admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
-            id: mdx.fields.slug.substr(0,50),
-            title: mdx.frontmatter.title,
-            body: location.href + " | " + mdx.frontmatter.description,
-            distractionFreeMode: false
-          }} /> 
-        </div>    
-      }
+      <Comment mdx={mdx} />
       
       <Footer />
     </div>
@@ -231,44 +214,6 @@ blogPostTemplate.propTypes = {
 
 export const query = graphql`
   query BlogPostQuery($id: String) {
-    mdx(id: { eq: $id }) {
-      id
-      fields {
-        slug
-        slugOrigin
-        readingTime {
-          text
-        }
-      }
-      body
-      tableOfContents
-      frontmatter {
-        title
-        author {
-          name
-          avatar {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
-        }
-        date(formatString: "D MMMM YYYY")
-        description
-        tag
-        category
-        thumbnail {
-          childImageSharp {
-            fluid {
-              src
-            }
-          }
-        }
-        disableTOC
-        d3
-        type
-      }
-    }
+    ...MdxNode
   }
 `

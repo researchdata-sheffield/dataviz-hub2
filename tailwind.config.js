@@ -25,7 +25,7 @@ module.exports = {
         'black-45': 'rgba(0, 0, 0, .45)',
         'black-75': 'rgba(0, 0, 0, .75)',
         'black-85': 'rgba(0, 0, 0, .85)',
-        'black-080808': '#080808',
+        'black-custom': '#0C0717',
 
       },
       borderColor: {
@@ -211,10 +211,10 @@ module.exports = {
  
   },
   variants: {
-    textColor: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover', 'first', 'last', 'odd', 'even'],
+    textColor: ['responsive', 'focus', 'group-focus', 'group-hover', 'hover', 'first', 'last', 'odd', 'even'],
     backgroundColor: ['responsive', 'hover', 'focus', 'active', 'group-focus', 'group-hover', 'first', 'last', 'odd', 'even'],
-    borderColor: ['responsive', 'hover', 'group-hover', 'group-focus', 'first', 'last', 'odd', 'even'],
-    borderWidth: ['responsive', 'hover', 'group-hover', 'group-focus', 'first', 'last', 'odd', 'even'],
+    borderColor: ['responsive', 'hover', 'group-hover', 'focus', 'group-focus', 'first', 'last', 'odd', 'even'],
+    borderWidth: ['responsive', 'hover', 'group-hover', 'focus', 'group-focus', 'first', 'last', 'odd', 'even'],
     fontWeight: ['group-hover', 'first', 'last', 'odd', 'even'],
     fontSize: ['responsive', 'hover', 'focus','group-hover', 'first', 'last', 'odd', 'even'],
     display: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],

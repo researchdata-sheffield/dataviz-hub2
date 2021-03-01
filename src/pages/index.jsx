@@ -64,7 +64,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 xl:text-lg xl:py-3 xl:px-8 bg-black text-white hover:text-black hover:bg-gray-100" style={{boxShadow: 'rgba(41,197,255,1) 5px 5px .1px'}}>Learn more</ButtonWithArrow>
+                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 xl:text-lg xl:py-3 xl:px-8 bg-black text-white hover:text-gray-800 hover:bg-gray-100" style={{boxShadow: 'rgba(41,197,255,1) 5px 5px .1px', fontWeight: '800'}}>What is data visualisation</ButtonWithArrow>
               </Fade>
             </Link>
             {/* <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -165,7 +165,7 @@ export const query = graphql`
   query {
     featuredPost: 
       allMdx(
-        filter: {frontmatter: {featured: {eq: "true"}}}, 
+        filter: {frontmatter: { featured: {eq: "true"}, type: {eq: null} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 2 ) {
       ...MdxEdge
@@ -173,7 +173,7 @@ export const query = graphql`
 
     latestPost: 
       allMdx(
-        filter: {frontmatter: { hide: {ne: "true"}}}, 
+        filter: {frontmatter: { hide: {ne: "true"}, type: {eq: null} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 8 ) {
       ...MdxEdge

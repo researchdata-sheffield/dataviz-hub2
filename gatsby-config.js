@@ -301,6 +301,19 @@ module.exports = {
             },
             store: true,
           },
+          {
+            name: 'type',
+            indexed: true,
+            resolver: 'frontmatter.type',
+            attributes: {
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
+            },
+            store: true,
+          }
         ],
       },
     },

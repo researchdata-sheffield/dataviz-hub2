@@ -16,10 +16,10 @@ const LearningPath = () => {
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
 
   return (
-    <div id="learning_path" className="lg:min-h-110 flex flex-wrap justify-center items-center relative" style={{backgroundColor: '#0C0717'}}>
+    <div id="learning_path" className="lg:min-h-110 flex flex-wrap justify-center items-center relative bg-black-custom">
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center mt-24">
-          <div className="text-4xl lg:text-6xl font-bold text-white w-full leading-tight" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning paths.</div>
+          <div className="text-4xl lg:text-6xl text-white w-full leading-tight font-extrabold" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning paths.</div>
           <p className="mt-3 text-gray-100 px-2">Discover how to get the most out of statistics, visualisations and tool sets.</p>
         </div>
       </Fade>

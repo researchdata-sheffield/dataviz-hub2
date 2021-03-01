@@ -8,7 +8,7 @@ import { ButtonWithArrow } from "../style/styled"
 const HomeShowcase = () => {
 
   return (
-    <div className="relative overflow-hidden bg-gray-900 w-full">
+    <div className="relative overflow-hidden bg-black-custom w-full">
       <h1 className="absolute left-0 text-white text-3xl font-semibold transform rotate-90 -ml-24 mt-60">ORDA.SHEF.AC.UK</h1>
       <div id="home_showcase" />      
       <BackgroundTwo className="lg:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-16 transition duration-500">
@@ -16,7 +16,7 @@ const HomeShowcase = () => {
           <div className="lg:w-1/2 py-24 flex flex-wrap px-3 lg:pr-20 lg:ml-24">
             <Fade duration={1300} right>
             <div className="text-5xl 2xl:text-6xl font-semibold text-white" style={{textShadow: "#000000 0px 0px 0px", fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>SHOWCASE</div>
-            <div className="2xl:text-lg my-4 text-white font-semibold" style={{textShadow: "#8d8d8d 0px 0px 3px"}}>
+            <div className="2xl:text-lg my-5 text-white font-semibold" style={{textShadow: "#8d8d8d 0px 0px 3px"}}>
               ORDA (Online Research Data) is the University of Sheffield&apos;s hub for sharing data, code, and other non-traditional research artefacts. ORDA includes a showcase of visual 
               representations of data built by staff and students at the University of Sheffield.
             </div>
@@ -35,7 +35,7 @@ const HomeShowcase = () => {
         </div>
         <Fade bottom duration={1300}>
         <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center pb-16">
-          <h1 className="text-4xl lg:text-5xl text-gray-700 text-center pt-10 pb-5 lg:py-5" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>ORDA User Regions</h1>
+          <h1 className="text-4xl lg:text-5xl text-gray-900 text-center mt-10 mb-6 lg:py-5" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>ORDA User Regions</h1>
           <p className="text-gray-800 2xl:text-lg">ORDA has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>

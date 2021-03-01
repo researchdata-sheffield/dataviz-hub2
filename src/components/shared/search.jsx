@@ -80,7 +80,10 @@ class Search extends Component {
                       className="shadow-lg hover:shadow-xl rounded-lg group text-left relative md:mx-6 my-6 transform hover:scale-105 transition duration-500"
                     >
                       <div className="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-35 group-hover:bg-black-75" style={{minHeight: '420px'}}>
-                        <div className="absolute pt-8 lg:pt-16 2xl:pt-24 overflow-hidden" style={{maxWidth:"320px"}}>
+                        <div className="absolute pt-8 lg:pt-12 2xl:pt-16 overflow-hidden" style={{maxWidth:"320px"}}>
+                          <h1 className="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md" style={{textShadow: 'none', padding: '.15rem .65rem'}}>
+                            { item.type || 'blog' }
+                          </h1>
                           {/* title */}
                           <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
                             <Highlighter 
@@ -104,31 +107,38 @@ class Search extends Component {
                             })}
                           </h1>
                           {/* category */}
-                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
-                            CAT: &nbsp;
-                            <Highlighter 
-                              className="text-white" 
-                              highlightClassName={highlightClasses} 
-                              textToHighlight={item.category[0].toUpperCase()} 
-                              searchWords={this.state.query.split()} 
-                            />
-                          </h1>
+                          {
+                            item.category &&
+                            <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
+                              CAT: &nbsp;
+                              <Highlighter 
+                                className="text-white" 
+                                highlightClassName={highlightClasses} 
+                                textToHighlight={item.category[0].toUpperCase()} 
+                                searchWords={this.state.query.split()} 
+                              />
+                            </h1>
+                          }
+
                           {/* tag */}
-                          <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
-                            TAG: &nbsp;{item.tag.map((tag, index, arr) => {
-                              return ( 
-                                i < 3 && 
-                                <Highlighter 
-                                  className="text-white" 
-                                  highlightClassName={highlightClasses} 
-                                  textToHighlight={arr.length - 1 === index ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} 
-                                  searchWords={this.state.query.split()} 
-                                  key={tag}   
-                                />
-                              )
-                            })}
-                            {item.tag.length > 3 && <p className="inline-block text-white"> +{item.tag.length - 3} more</p>}
-                          </h1>
+                          {
+                            item.tag &&
+                            <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
+                              TAG: &nbsp;{item.tag.map((tag, index, arr) => {
+                                return ( 
+                                  i < 3 && 
+                                  <Highlighter 
+                                    className="text-white" 
+                                    highlightClassName={highlightClasses} 
+                                    textToHighlight={arr.length - 1 === index ? tag.toUpperCase() : tag.toUpperCase().concat(", ")} 
+                                    searchWords={this.state.query.split()} 
+                                    key={tag}   
+                                  />
+                                )
+                              })}
+                              {item.tag.length > 3 && <p className="inline-block text-white"> +{item.tag.length - 3} more</p>}
+                            </h1>
+                          }
                           <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">
                             <Highlighter 
                               highlightClassName={highlightClasses} 
@@ -148,7 +158,7 @@ class Search extends Component {
                     </div>
                   </a>
                 )
-                })}
+              })}
           </div>
          </div>
         )

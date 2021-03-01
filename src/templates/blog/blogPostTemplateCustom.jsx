@@ -11,7 +11,7 @@ import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Lin
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
 import PaginationPost from "../../components/blog/paginationPost"
 import "katex/dist/katex.min.css"
-import GitalkComponent from "gitalk/dist/gitalk-component"
+import Comment from "../../components/blog/comment"
 import { useScript } from "../../utils/hooks/useScript"
 import { useLocation } from "@reach/router"
 
@@ -57,24 +57,7 @@ const blogPostTemplateCustom = ({ data: { mdx }, pageContext }) => {
     </div>
     
     <PaginationPost mdx={mdx} type={mdx.frontmatter.type || 'blog'} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
-
-    {
-      (typeof window !== `undefined`) &&
-      <div className="relative z-10 pt-5 pb-16 px-5 lg:px-48 2xl:px-64 bg-white">
-        <GitalkComponent options={{
-          clientID: process.env.GATSBY_GH_APP_GITALK_ID,
-          clientSecret: process.env.GATSBY_GH_APP_GITALK_SECRET,
-          repo: 'dataviz-hub2-comments',   
-          owner: 'researchdata-sheffield',
-          admin: ['ajtag', 'annakrystalli', 'GemmaRIT', 'rosiehigman', 'yld-weng'],
-          id: mdx.fields.slug.substr(0,50),
-          title: mdx.frontmatter.title,
-          body: location.href + " | " + mdx.frontmatter.description,
-          distractionFreeMode: false
-
-        }} /> 
-      </div> 
-    }
+    <Comment mdx={mdx} />
     
     <Footer />
     </>
@@ -93,33 +76,6 @@ blogPostTemplateCustom.propTypes = {
 
 export const query = graphql`
   query BlogPostQuery_custom($id: String) {
-    mdx(id: { eq: $id }) {
-      id
-      body
-      frontmatter {
-        title
-        description
-        author {
-          name
-          avatar {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
-          }
-        }
-        template
-        date(formatString: "dddd Do MMMM YYYY")
-        category
-        tag
-        d3
-        type
-      }
-      fields {
-        slug
-      }
-      
-    }
+    ...MdxNode
   }
 `

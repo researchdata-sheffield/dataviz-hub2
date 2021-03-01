@@ -60,7 +60,7 @@ const Header = () => {
   const NavLink = (props) => {
 
     function navColourClass(mobile = false) {
-      var className = "transition duration-300 ";
+      var className = "transition duration-300 ";  // don't remove space
       
       if(mobile == true) {
         if(isScroll) {
@@ -75,20 +75,20 @@ const Header = () => {
         className += "text-black hover:text-brand-blue";
         return className;
       }
-      if(wlp === "/") {
-        className += "text-gray-900 hover:text-brand-blue";
-        return className;
-      }
-      if(wlp.includes("/blog/")) {
-        if(wlp.includes("/blog/category") || wlp.includes("/blog/tag/")) {
-          className += "text-gray-500 hover:text-white";
-          return className;
-        }
-        className += "text-gray-200 hover:text-white";
-        return className;
-      }
+      // if(wlp === "/") {
+      //   className += "text-gray-900 hover:text-brand-blue";
+      //   return className;
+      // }
+      // if(wlp.includes("/blog/")) {
+      //   if(wlp.includes("/blog/category") || wlp.includes("/blog/tag/")) {
+      //     className += "text-gray-500 hover:text-white";
+      //     return className;
+      //   }
+      //   className += "text-gray-200 hover:text-white";
+      //   return className;
+      // }
 
-      className += "text-gray-200 hover:text-white";
+      className += "text-gray-100 group-hover:text-black hover:text-brand-blue";
       return className;
     }
     
@@ -136,15 +136,15 @@ const Header = () => {
 
 
   return (
-    <header className="font-semibold z-50 relative">
-      <nav id="navbar" className={`${isScroll ? `shadow-lg` : ''} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+    <header className="font-semibold z-50 relative group">
+      <nav id="navbar" className={`${isScroll ? `shadow-lg` : 'group-hover:bg-white'} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
-          <A className={`${isScroll ? `` : [wlp === "/" ? `hidden` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
+          <A className={`${isScroll ? `` : [wlp === "/" ? `invisible` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
             <img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ university_logo } />
           </A>
-          <div className={`${isScroll ? "" : [wlp === "/" ? `hidden` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
+          <div className={`${isScroll ? "" : [wlp === "/" ? `invisible` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
@@ -238,7 +238,7 @@ const Header = () => {
                 title: `About`
               },
               ].map(link => ( link.title != 'Showcase' ? 
-                <NavLink type="Link" activeStyle={{ color: `${isScroll ? "#00aeef" : "black lg:white" }`, fontWeight: "bold" }} partiallyActive={true} key={link.title} to={link.route}>
+                <NavLink type="Link" activeStyle={{ color: `#00aeef`, fontWeight: "bold" }} partiallyActive={true} key={link.title} to={link.route}>
                   {link.title}
                 </NavLink> 
                 : 
