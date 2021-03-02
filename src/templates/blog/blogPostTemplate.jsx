@@ -91,7 +91,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     }).toCanvas();
 
     var img = pattern.toDataURL("image/png")
-    element.style['background-image'] = 'linear-gradient(0deg, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.70) 100%), url('+ img +')';
+    element.style['background-image'] = 'linear-gradient(0deg, rgba(0,0,0,0.05) 70%, rgba(0,0,0,0.60) 100%), url('+ img +')';
   });
 
 

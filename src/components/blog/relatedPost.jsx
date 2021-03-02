@@ -150,7 +150,7 @@ class RelatedPostServices {
     const tagPoint = 1;
     const titlePoint = 3;
     const descriptionPoint = 3;
-    const typePoint = 5;
+    const typePoint = 4;
 
     function addCategoryPoints (currPost) {
       if(!currPost.frontmatter.category || !category) {

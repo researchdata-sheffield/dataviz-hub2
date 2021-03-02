@@ -87,7 +87,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
     // }).toCanvas();
 
     // var img = pattern.toDataURL("image/png")
-    // element.style['background-image'] = 'linear-gradient(0deg, rgba(0,0,0,0.05) 50%, rgba(0,0,0,0.70) 100%), url('+ img +')';
+    // element.style['background-image'] = 'linear-gradient(0deg, rgba(0,0,0,0.05) 70%, rgba(0,0,0,0.60) 100%), url('+ img +')';
   });
 
 
@@ -168,7 +168,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
    
         {/******** main mdx content  ***********/}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `mdxBody`: ``} relative mx-auto container pt-6 pb-16 px-5 leading-8 text-lg`} style={{color: '#24292e', maxWidth: '700px'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `mdxBody`: ``} relative mx-auto pt-0 pb-16 px-5 leading-8 text-lg`} style={{color: '#24292e', maxWidth: '700px'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, 
                           pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMG, table: Table, 

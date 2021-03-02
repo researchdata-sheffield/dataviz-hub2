@@ -124,7 +124,7 @@ const Header = () => {
   }
 
   function mobileMenuIconClass() {
-    var className = "px-3 py-2 flex items-center border rounded outline-none transition duration-300";
+    var className = "px-3 py-2 flex items-center border rounded outline-none transition duration-300 group-hover:border-gray-700 group-hover:text-gray-700";
 
     if(isExpanded || isScroll || wlp === "/") {
       className += " text-gray-700 border-gray-700";
