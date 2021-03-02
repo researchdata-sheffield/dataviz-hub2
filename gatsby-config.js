@@ -38,14 +38,14 @@ module.exports = {
         ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
       },
     },
-    // {
-    //   resolve: `gatsby-source-filesystem`,
-    //   options: {
-    //     name: `docs`,
-    //     path: `${__dirname}/content/docs`,
-    //     ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
-    //   },
-    // },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `docs`,
+        path: `${__dirname}/content/docs`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -61,7 +61,8 @@ module.exports = {
         // Apply gatsby-mdx to both .mdx and .md files
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve('./src/templates/blog/blogPostTemplate.jsx'),
+          posts: require.resolve('./src/templates/blog/blogPostTemplate.jsx'),
+          docs: require.resolve('./src/templates/docs/docsTemplate.jsx')
         },
         remarkPlugins: [
           require('remark-math'),
@@ -300,6 +301,19 @@ module.exports = {
             },
             store: true,
           },
+          {
+            name: 'type',
+            indexed: true,
+            resolver: 'frontmatter.type',
+            attributes: {
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
+            },
+            store: true,
+          }
         ],
       },
     },

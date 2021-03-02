@@ -30,7 +30,7 @@ const latestPost = ({ post }) => {
           return (
             <div key={node.id} className="group w-full relative z-10 border-t-1 border-transparent first:border-black" tabIndex="0">
               <Fade  key={node.id} duration={1000} fraction={0.1}>
-                <div className="w-full bg-black-080808 hover:bg-transparent text-white 2xl:text-xl">
+                <div className="w-full bg-black-custom hover:bg-transparent text-white 2xl:text-xl">
                   <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4">
                     <div className="flex flex-wrap items-center md:w-2/5 lg:w-2/12">
                       <MdFiberNew className="text-red-700 lg:text-white group-hover:text-red-700 text-3xl" />

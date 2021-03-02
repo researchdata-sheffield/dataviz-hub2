@@ -65,14 +65,14 @@ export const ArrowBox = styled.div`
 `
 
 export const ArrowBox_featured = styled(ArrowBox)`
-  background-color: #080808;
+  background-color: #0C0717;
 
   &:after {
-    border-bottom-color: #080808;
+    border-bottom-color: #0C0717;
   }
 
   .group:hover > & {
-    border-top: 0px solid #080808;
+    border-top: 0px solid #0C0717;
   }
 
 `

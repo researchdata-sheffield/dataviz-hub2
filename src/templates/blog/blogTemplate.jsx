@@ -29,12 +29,12 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 			>
 				<Flip cascade top delay={700}>
 					<div className="text-white" style={{textShadow: "#000000 0px 0px 20px"}}>	
-					<h1 className="text-5xl">Blog</h1>
-					<p className="text-md md:max-w-35 mt-3 px-5">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> 
+						<h1 className="text-5xl">Blog</h1>
+						<p className="text-md mt-5 px-5" style={{maxWidth: '500px'}}>&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> 
 					</div>
 				</Flip>
 				<Flip cascade top delay={700}>
-					<div className={`${pageContext.currentPage !== 1 ? `hidden` : ``} mt-12`}>
+					<div className={`${pageContext.currentPage !== 1 ? `hidden` : ``} mt-10`}>
 						<Link to="/blog#read">
 							<GreyButton className="text-sm hover:bg-gray-700">Start reading</GreyButton>
 						</Link>
@@ -71,7 +71,7 @@ blogTemplate.propTypes = {
 export const query = graphql`
 	query blogList($skip: Int!, $limit: Int!) {
 		allMdx(
-			filter: { frontmatter: { hide: { ne: "true" } } }
+			filter: { frontmatter: { hide: { ne: "true" }, type: { eq: null } } }
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip

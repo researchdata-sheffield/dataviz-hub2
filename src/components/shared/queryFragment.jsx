@@ -61,6 +61,7 @@ export const mdxEdge = graphql`
           category
           title
           featured
+          type
         }
         fields {
           slug
@@ -71,4 +72,49 @@ export const mdxEdge = graphql`
       }
     }
   }
+`
+
+export const mdxNode = graphql`
+  fragment MdxNode on Query {
+    mdx(id: { eq: $id }) {
+      id
+      fields {
+        slug
+        slugOrigin
+        readingTime {
+          text
+        }
+      }
+      body
+      tableOfContents
+      frontmatter {
+        title
+        author {
+          name
+          avatar {
+            childImageSharp {
+              fluid {
+                src
+              }
+            }
+          }
+        }
+        date(formatString: "D MMMM YYYY")
+        description
+        thumbnail {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
+        category 
+        tag
+        disableTOC
+        d3
+        type
+      }
+    }
+  }
+
 `

@@ -54,7 +54,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div>
         <div className="flex flex-wrap relative">
           {/* Left component */}
-          <div id="homeBar" className="min-h-100 md:min-h-60 lg:min-h-100 lg:max-h-100 content-evenly shadow-lg z-10 2lg:sticky 2lg:top-0 2lg:left-0 2lg:w-4/12 flex flex-wrap w-full  text-black overflow-hidden justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
+          <div id="homeBar" className="min-h-100 md:min-h-60 lg:min-h-100 lg:max-h-100 content-evenly md:content-around shadow-lg z-10 2lg:sticky 2lg:top-0 2lg:left-0 2lg:w-4/12 flex flex-wrap w-full  text-black overflow-hidden justify-center" style={{transition: ".4s ease", background: "rgba(255,255,255, 1)", zIndex: "1"}}>
             <div className="px-8 text-center font-sans">
               <p className="text-2xl lg:text-3xl 2xl:text-4xl font-extrabold" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Data Visualisation Hub</p>
               <p className="text-base 2xl:text-lg mt-3 px-2 md:px-6 lg:px-8 2xl:px-12">Building community around data visualisation at the University of Sheffield.</p>
@@ -64,7 +64,9 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 xl:text-lg xl:py-3 xl:px-8 bg-black text-white hover:text-black hover:bg-gray-100" style={{boxShadow: 'rgba(41,197,255,1) 5px 5px .1px'}}>Learn more</ButtonWithArrow>
+                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 text-sm 2xl:text-lg xl:py-3 xl:px-8 bg-black text-white hover:text-gray-800 hover:bg-gray-100" style={{boxShadow: 'rgba(41,197,255,1) 5px 5px .1px', fontWeight: '800'}}>
+                  What is data visualisation
+                </ButtonWithArrow>
               </Fade>
             </Link>
             {/* <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -127,10 +129,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
               <p className="text-base 2xl:text-xl my-4 font-semibold md:w-3/5" style={{}}>
                 Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 
                 information clearly and effectively by means of graphical representation. However, this does not mean that data visualisation must be boring for its functional purpose, 
-                or extremely complicated ... 
+                or extremely complicated to look gorgeous. In order to effectively communicate ideas and concepts, aesthetic and functions need to go hand in hand, and by visually 
+                communicating key aspects and features, we get deep insights into fairly sparse and complex datasets.
               </p>
             </div>
-            <Link to="/blog/22/03/2020/datavizhub-guide">
+            <Link to="/docs/22/03/2020/datavizhub-guide">
               <ButtonWithArrow type="AnimateButton" className="group">Read more about data visualisation</ButtonWithArrow>
             </Link> 
           </div>
@@ -165,7 +168,7 @@ export const query = graphql`
   query {
     featuredPost: 
       allMdx(
-        filter: {frontmatter: {featured: {eq: "true"}}}, 
+        filter: {frontmatter: { featured: {eq: "true"}, type: {eq: null} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 2 ) {
       ...MdxEdge
@@ -173,7 +176,7 @@ export const query = graphql`
 
     latestPost: 
       allMdx(
-        filter: {frontmatter: { hide: {ne: "true"}}}, 
+        filter: {frontmatter: { hide: {ne: "true"}, type: {eq: null} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 8 ) {
       ...MdxEdge

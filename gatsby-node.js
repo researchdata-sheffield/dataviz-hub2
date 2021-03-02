@@ -49,8 +49,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       .split("/")
     
     // remove words like blog, date
-    const slug = value.replace("/blog/", "").replace(/\/$/, "").replace(/\d{4}-\d{1,2}-\d{1,2}-/, "")
-    const url = `/blog/${day}/${month}/${year}${slug}`
+    const slug = value.replace("/blog/", "").replace(/\/$/, "").replace(/\d{4}-\d{1,2}-\d{1,2}-/, "");
+    const type = node.frontmatter.type || "blog";
+    const url = `/${type}/${day}/${month}/${year}${slug}`;
     
     createNodeField({
       node,
@@ -71,7 +72,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  *  Create blog posts
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  // Destructure the createPage function from the actions object
+  console.log("MESSAGE: Creating blog posts ...");
+  // De-structure the createPage function from the actions object
   const { createPage, createRedirect } = actions
 
   const blogPostTemplate = path.resolve(`./src/templates/blog/blogPostTemplate.jsx`)
@@ -80,9 +82,52 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const blogTagTemplate = path.resolve(`./src/templates/blog/blogTagTemplate.jsx`)
   const blogCategoryTemplate = path.resolve(`./src/templates/blog/blogCategoryTemplate.jsx`)
 
+  const docsTemplate = path.resolve(`./src/templates/docs/docsTemplate.jsx`);
+  const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
+
   const result = await graphql(`
-    query {
-      allMdx(sort: { fields: [frontmatter___date], order: DESC }) {
+    {
+      docsQuery: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }, 
+        filter: {frontmatter: {type: {eq: "docs"}}}
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              template
+              author {
+                name
+                avatar {
+                  childImageSharp {
+                    fluid {
+                      src
+                    }
+                  }
+                }
+              }
+              title
+              date(formatString: "dddd Do MMMM YYYY")
+              thumbnail {
+                childImageSharp {
+                  fluid {
+                    src
+                  }
+                }
+              }
+              d3
+              type
+            }
+          }
+        }
+      }
+      blogQuery: allMdx(
+        sort: { fields: [frontmatter___date], order: DESC }, 
+        filter: {frontmatter: {type: {eq: null}}}
+      ) {
         edges {
           node {
             id
@@ -113,6 +158,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 }
               }
               d3
+              type
             }
           }
         }
@@ -120,11 +166,46 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   `)
   if (result.errors) {
-    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query')
+    reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query.')
   }
 
 
-  const posts = result.data.allMdx.edges
+  /**
+   * DOCS
+   */
+
+  console.log("MESSAGE: Creating docs routes ...");
+  const docsMdx = result.data.docsQuery.edges;
+
+  docsMdx.forEach(( {node}, index, arr ) => {
+    // position of previous/next post
+    const prevDoc = arr[index - 1]
+    const nextDoc = arr[index + 1]
+
+    // Check what template the markdown file have chosen 
+    const docsTemplateFinal = node.frontmatter.template === "custom" ? docsTemplateCustom : docsTemplate
+
+    createPage({
+      // (or `node.frontmatter.slug`)
+      path: node.fields.slug,
+      // This component will wrap our MDX content
+      component: docsTemplateFinal,
+      // You can use the values in this context in
+      // our page layout component
+      context: { 
+        id: node.id,
+        slug: node.fields.slug,
+        prev: prevDoc,
+        next: nextDoc,
+      },
+    })
+  })
+
+  /**
+   * BLOGPOST
+   */
+
+  const posts = result.data.blogQuery.edges
   const postsPerPage = 12
   var numPages = posts.length
   const categories = []
@@ -169,7 +250,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         next: next,
       },
     })
-    if(excluded == true) numPages = numPages - 1
+    if(excluded == true) {
+      numPages = numPages - 1;
+    }
     // Set up redirects for old blogpost url
     createRedirect({ fromPath: node.fields.slug.split('-').join('_'), toPath: node.fields.slug})
   })
@@ -271,7 +354,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   })
 
 }
-
 
 
 exports.createSchemaCustomization = ({ actions }) => {

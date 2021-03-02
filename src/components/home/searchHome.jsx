@@ -14,10 +14,18 @@ class Search_Home extends Component {
     query: '',
     results: [],
   }
-  
+
+  // componentDidMount() {
+  //   // Set search result width = search box width
+  //   setTimeout(() => {
+  //     var box = document.querySelector('#searchBox');
+  //     var result = document.querySelector('#searchResult');
+  //     result.style['maxWidth'] = box.offsetWidth + 'px';
+  //   }, 2000);
+  // }
 
   render() {
-    const quickLink = "text-gray-800 hover:underline"
+    const quickLink = "text-gray-700 hover:underline";
 
     const ResultList = () => {
       if (this.state.results.length > 0 && this.state.query.length > 0 ) {
@@ -65,19 +73,19 @@ class Search_Home extends Component {
     }
 
     return (
-      <div className={`${this.props.classNames} relative text-gray-900 w-full text-center group`} >
-        <div className="inline-block text-gray-700 bg-white p-3 rounded-lg" style={{boxShadow: "#6d6d6d 0px 5px 25px -16px"}}>
+      <div className={`${this.props.classNames || ''} w-full relative text-gray-900 text-center`} >
+        <div id="searchBox" className="relative group inline-block text-gray-700 bg-white p-3 rounded-sm border-1 border-white hover:border-gray-400 transition duration-300" style={{boxShadow: "rgb(238, 238, 238) 0px 5px 15px"}}>
           <FiSearch className="inline-block text-center text-3xl -mt-1" />
           <input id="homeSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-700" style={{minWidth: "21vw"}} type="text" name="search" placeholder="What are you looking for?" />
-        </div>
-        <div className="absolute z-10 w-full hidden group-hover:block" style={{ transform: 'translate(-50%, 0%)', left: '50%' }}>
-          <ResultList />
+          <div id="searchResult" className="absolute z-10 w-full hidden group-hover:block mt-3" style={{ transform: 'translate(-50%, 0%)', left: '50%' }}>
+            <ResultList />
+          </div>
         </div>
         <Slide left>
-          <div className="hidden md:flex justify-center pt-6 xl:pt-8 z-10 w-full">
-            <div className="w-1/7 mr-24 text-left">
-              <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Dataviz.Shef</div>
-                <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base text-left">
+          <div className="hidden md:flex justify-center pt-5 2xl:pt-8 z-10 w-full">
+            <div className="w-2/7 mr-24 text-left">
+              <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Dataviz.Shef</div>
+                <ul className="list-reset leading-normal text-xs 2xl:text-sm text-left">
                   <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
                   <li><Link className={quickLink} to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
                   <li><Link className={quickLink} to='/#home_community' data-tip="#Community">Community</Link></li>
@@ -88,13 +96,13 @@ class Search_Home extends Component {
                 </ul>
             </div>
             
-            <div className="w-1/7 text-left">
-              <div className="mb-1 font-semibold text-xs xl:text-base 2xl:text-lg">Trending searches</div>
-                <ul className="list-reset leading-normal text-xs xl:text-sm 2xl:text-base">
+            <div className="w-2/7 text-left">
+              <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Try these searches</div>
+                <ul className="list-reset leading-normal text-xs 2xl:text-sm">
                   <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="javascript:void(0)">Chart</a></li>
                   <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="javascript:void(0)">Colour</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Python"}}) }} href="javascript:void(0)">Python</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistics"}}) }} href="javascript:void(0)">Statistics</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="javascript:void(0)">R</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Docs"}}) }} href="javascript:void(0)">Docs</a></li>
                 </ul>
             </div>
           </div>
