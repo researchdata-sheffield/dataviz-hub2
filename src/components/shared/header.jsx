@@ -137,8 +137,8 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative group">
-      <nav id="navbar" className={`${isScroll ? `shadow-lg` : 'group-hover:bg-white'} flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
-        style={{backgroundColor: `${isScroll ? "rgba(255,255,255,1)" : ''}`, transition: "top 0.3s"}}
+      <nav id="navbar" className={`${isScroll ? `shadow-lg bg-white` : 'group-hover:bg-white'} transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+        style={{transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
           <A className={`${isScroll ? `` : [wlp === "/" ? `invisible` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
