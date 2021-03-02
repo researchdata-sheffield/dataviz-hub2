@@ -74,7 +74,7 @@ class Search_Home extends Component {
 
     return (
       <div className={`${this.props.classNames || ''} w-full relative text-gray-900 text-center`} >
-        <div id="searchBox" className="relative group inline-block text-gray-700 bg-white p-3 rounded-sm border-1 border-white hover:border-gray-500 transition duration-300" style={{boxShadow: "rgb(238, 238, 238) 0px 5px 15px"}}>
+        <div id="searchBox" className="relative group inline-block text-gray-700 bg-white p-3 rounded-sm border-1 border-white hover:border-gray-400 transition duration-300" style={{boxShadow: "rgb(238, 238, 238) 0px 5px 15px"}}>
           <FiSearch className="inline-block text-center text-3xl -mt-1" />
           <input id="homeSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-700" style={{minWidth: "21vw"}} type="text" name="search" placeholder="What are you looking for?" />
           <div id="searchResult" className="absolute z-10 w-full hidden group-hover:block mt-3" style={{ transform: 'translate(-50%, 0%)', left: '50%' }}>
