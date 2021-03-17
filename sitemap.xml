@@ -6,6 +6,7 @@
 <url> <loc>https://dataviz.shef.ac.uk/docs/03/07/2020/LearningPath-Introduction</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/docs/22/03/2020/contribute-blog-post</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/docs/22/03/2020/datavizhub-guide</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
+<url> <loc>https://dataviz.shef.ac.uk/blog/16/03/2021/Good-Practice-Guide/Index</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/18/02/2021/Useful-Resources-for-R</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/05/02/2021/Shiny-Template</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/27/01/2021/Interactive-Visualisations-In-R</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
@@ -75,6 +76,7 @@
 <url> <loc>https://dataviz.shef.ac.uk/blog/tag/statistics</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/tag/template</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/tag/tidyverse</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
+<url> <loc>https://dataviz.shef.ac.uk/blog/tag/tutorial</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/tag/urban-observatory</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/tag/web</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
 <url> <loc>https://dataviz.shef.ac.uk/blog/category/articles</loc> <changefreq>daily</changefreq> <priority>1.0</priority> </url>
