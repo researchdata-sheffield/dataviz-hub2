@@ -127,18 +127,18 @@ export const A = (props) => {
 export const H1 = styled.h1`
   display: block;
   font-size: 2em;
-  margin-top: 4rem;
+  margin-top: 3rem;
   margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 2rem;
 `
 
 export const H2 = styled.h2`
   display: block;
   font-size: 1.45em;
-  margin-top: 3.5rem;
+  margin-top: 2.5rem;
   margin-bottom: 0.83em;
   margin-left: 0;
   margin-right: 0;
@@ -148,7 +148,7 @@ export const H2 = styled.h2`
 export const H3 = styled.h3`
   display: block;
   font-size: 1.3em;
-  margin-top: 3rem;
+  margin-top: 2rem;
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
@@ -158,7 +158,7 @@ export const H3 = styled.h3`
 export const H4 = styled.h4`
   display: block;
   font-size: 1em;
-  margin-top: 2rem;
+  margin-top: 1.75rem;
   margin-bottom: 1.33em;
   margin-left: 0;
   margin-right: 0;
@@ -168,7 +168,7 @@ export const H4 = styled.h4`
 export const H5 = styled.h5`
   display: block;
   font-size: .83em;
-  margin-top: 1.67em;
+  margin-top: 1.5em;
   margin-bottom: 1.67em;
   margin-left: 0;
   margin-right: 0;
@@ -178,7 +178,7 @@ export const H5 = styled.h5`
 export const H6 = styled.h6`
   display: block;
   font-size: .67em;
-  margin-top: 2.33em;
+  margin-top: 1.5em;
   margin-bottom: 2.33em;
   margin-left: 0;
   margin-right: 0;
@@ -193,7 +193,7 @@ export const P = styled.p`
   margin-right: 0;
   word-wrap: break-word; /* if you want to cut the compconste word */
   white-space: normal;
-  line-height: 1.6;
+  line-height: 2.25rem;
 `
 
 export const Ol = styled.ol`
@@ -204,6 +204,7 @@ export const Ol = styled.ol`
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+  line-height: 2.25rem;
 
   .li {
     list-style-type: square;
@@ -222,6 +223,7 @@ export const Ul = styled.ul`
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+  line-height: 2.25rem;
 
   .li {
     list-style-type: square;

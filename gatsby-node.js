@@ -32,14 +32,14 @@ exports.onCreateWebpackConfig = ({
 
 
 /**
- *  Create file path for blog posts
+ *  Create file path for blog posts/docs/  further new routes
  */
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
-    
+
     const [month, day, year] = new Date(node.frontmatter.date)
       .toLocaleDateString("en-EN", {
         year: "numeric",
@@ -50,14 +50,18 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     
     // remove words like blog, date
     const slug = value.replace("/blog/", "").replace(/\/$/, "").replace(/\d{4}-\d{1,2}-\d{1,2}-/, "");
+    // determine the type of the page
     const type = node.frontmatter.type || "blog";
+    // concat all information
     const url = `/${type}/${day}/${month}/${year}${slug}`;
     
+    // url to be used
     createNodeField({
       node,
       name: `slug`,
       value: url,
     });
+    // preserve origin file path
     createNodeField({
       node,
       name: `slugOrigin`,

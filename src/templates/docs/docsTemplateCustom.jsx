@@ -43,7 +43,7 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type='text/javascript' /> 
       </Helmet>
 
-      <div className="justify-center mx-auto text-lg 2xl:text-xl">
+      <div className="justify-center mx-auto text-lg lg:text-xl">
         <MDXProvider 
           components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
                         hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM,

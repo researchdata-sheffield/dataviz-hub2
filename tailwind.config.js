@@ -26,6 +26,11 @@ module.exports = {
         'black-75': 'rgba(0, 0, 0, .75)',
         'black-85': 'rgba(0, 0, 0, .85)',
         'black-custom': '#0C0717',
+        'shefBlue': '#0066b3',
+        'shefPurple': '#251d5a',
+        'shefYellow': '#fedf00',
+        'shefGreen': '#009640',
+        'sheflightBlue': '#ade1f8'
 
       },
       borderColor: {
@@ -34,6 +39,11 @@ module.exports = {
         'menu_yellow': '#f3f218',
         'menu_green': '#99f318',
         'black': '#000',
+        'shefBlue': '#0066b3',
+        'shefPurple': '#251d5a',
+        'shefYellow': '#fedf00',
+        'shefGreen': '#009640',
+        'sheflightBlue': '#ade1f8'
       },
       borderRadius: {
         'xl': '0.675rem',
@@ -180,8 +190,11 @@ module.exports = {
       textColor: {
         'highlight': '#337ab7',
         'brand-blue': '#00aeef',
-        'brand-bluet': '#73d8ff',
-        'logo_blue': '#009fe3',
+        'shefBlue': '#0066b3',
+        'shefPurple': '#251d5a',
+        'shefYellow': '#fedf00',
+        'shefGreen': '#009640',
+        'sheflightBlue': '#ade1f8'
       },
       transitionProperty: {
         'hover': 'hover, group-hover',

@@ -45,7 +45,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
   return (
     <div className="bg-white">
       <SEO 
-        title="Data Visualisation Hub" 
+        title="Home" 
         keywords={["The University of Sheffield", "Data Visualisation", "Data Visualisation Hub", "Research", "Data Analytics", "Data Visualisation UK", "Dataviz"]} 
       />
       <Header />
