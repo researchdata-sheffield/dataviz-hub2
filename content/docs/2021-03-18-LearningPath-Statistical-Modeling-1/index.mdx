@@ -3,19 +3,68 @@ type: docs
 author: ["Dataviz Team"]
 title: "Probability Distributions"
 thumbnail: 
-description: Statistical Modeling Part 1 - In this section we will be exploring probability distributions by variable types.
+description: Statistical Modeling Part 1 - In this chapter we will be exploring probability distributions by variable types.
 date: "2021-03-18"
 ---  
   
 
 
 ## Introduction
-A **[random variable](https://www.stat.yale.edu/Courses/1997-98/101/ranvar.htm)** is a numerical representation (can be either a set of values or a function mapped to a continous range) of an experiment's outcomes. A **[probability distribution](https://www.itl.nist.gov/div898/handbook/eda/section3/eda361.htm)** is a mathematical function that gives the probabilities for different possible outcomes of the experiment. Consider an experiment of drawing a ball three times with replacement from a urn which consist of seven reds balls and three blue balls. If a random variable **X** represents the total number of times we drawn a blue ball, then the set of values that **X** can be are:  {$0, 1, 2, 3$}. Then the probability distribution for the random variable **X** gives the probabilities for these outcomes to happen. For example, the chance of getting blue balls from the urn in all three drawn will be $(\frac{3}{10})^{3} = \frac{27}{1000} = 2.7\%$. If the random variable is discrete then it has a corresponding discrete probability distribution, this is also true for continuous random variable.  
+A **[random variable](https://www.stat.yale.edu/Courses/1997-98/101/ranvar.htm)** is a numerical representation (can be either a set of values or a function mapped to a continuous range) of an experiment's outcomes. A **[probability distribution](https://www.itl.nist.gov/div898/handbook/eda/section3/eda361.htm)** is a mathematical function that gives the probabilities for different possible outcomes of the experiment. Consider an experiment of drawing a ball three times with replacement from a urn which consist of seven reds balls and three blue balls. If a random variable **X** represents the total number of times we drawn a blue ball, then the set of values that **X** can be are:  {$0, 1, 2, 3$}. Then the probability distribution for the random variable **X** gives the probabilities for these outcomes to happen. For example, the chance of getting blue balls from the urn in all three drawn will be $(\frac{3}{10})^{3} = \frac{27}{1000} = 2.7\%$. If **Y** is a discrete random variable then it has a corresponding discrete probability distribution; If **Y** is a continuous random variable then its corresponding probability distribution will also be continuous.  
 
-In practice, datasets can be described as samples of the population or outcomes of random variables (features that we have collected). Each dataset usually have two or more variables and each variable could have different probability distributions. It is often our interests to identify dataset's distribution   In this section we will be exploring probability distributions for common variable types such as binary, ordinal, nominal, and continuous. 
+In practice, datasets can be described as samples of the population or outcomes of random variables (features that we have collected). Each dataset usually have two or more variables and each variable could have different probability distributions. It is often our interests to identify dataset's distribution so that we can make assumptions on dataset's nature and/or relationships between variables, and develop further work based on these assumptions.  
+  
+In this chapter we will be exploring probability distributions for common variable types such as binary, ordinal, nominal, and continuous. For each probability distribution (where possible) we will also give an example and tips on when to use.  
+  
 
-## Pre
+## Prerequisites
+This chapter (Part 1) does not have strict requirements on what you should know, but it would be nice if you are familar with the following concepts:  
 
+<div className="bg-white shadow-sm p-3 md:p-5 rounded-md text-base text-black">
+  <div>
+    <span className="py-1 px-2 bg-shefYellow text-black hover:bg-yellow-400 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Required</span> 
+    <p>None</p>
+  </div>
+  <div className="mt-6">
+    <span className="py-1 px-2 text-white bg-shefGreen hover:bg-green-700 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Recommended</span>
+    <p>Mean, Median, Mode, Range, Standard Deviation, Z-Score, Probability</p>
+  </div>
+  <div className="mt-6">
+    <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Optional</span>
+    <p className="mb-0">Continuous/Discrete variable</p>
+  </div>
+</div>  
+
+
+
+## Discrete
+
+### Binary
+
+### Nominal  
+
+### Ordinal  
+
+### Counted data  
+
+
+## Continuous
+
+### Gaussian Normal
+
+### Uniform  
+
+### Chi-squared  
+
+### F-distribution 
+
+### Exponential
+
+### Cauchy
+
+### Gamma
+
+### Beta
 
 
 
