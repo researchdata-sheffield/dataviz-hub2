@@ -28,17 +28,17 @@ This chapter (Part 1) does not have strict requirements on what you should know,
   </div>
   <div className="mt-6">
     <span className="py-1 px-2 text-white bg-shefGreen hover:bg-green-700 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Recommended</span>
-    <p className="mt-2">Mean, Median, Mode, Range, Standard Deviation, Z-Score, Probability</p>
+    <p className="mt-2">Mean, Median, Mode, Range, Standard Deviation, Z-Score, Probability, Continuous/Discrete/Categorical variable</p>
   </div>
   <div className="mt-6">
     <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Optional</span>
-    <p className="mb-0 mt-2">Continuous/Discrete/Categorical variable</p>
+    <p className="mb-0 mt-2">Probability Mass Function, Probability Density Function</p>
   </div>
 </div>  
 
 
 ## Discrete
-As mentioned in the introduction, a discrete random variable $X$ has a finite number of outcomes and the discrete probability distribution of $X$ is a set of all probabilities that describe the likelihood of occurence of each outcomes. In this section we will learn common discrete probability distributions and what variable type they can match to. You might found the following definitions useful:  
+As mentioned in the introduction, a discrete random variable $X$ has a finite number of outcomes and the discrete probability distribution of $X$ is a set of all probabilities that describe the likelihood of occurrence of each outcomes. In this section we will learn common discrete probability distributions and what variable type they can match to. You might found the following definitions useful:  
 
 <div className="bg-shefPurple shadow-md p-5 md:p-8 rounded-3xl text-base text-white">
   <p className="mt-0">
@@ -68,10 +68,10 @@ A bernoulli distribution is a single Bernoulli trial (a random experiment with e
 </div>
 
 ### Binomial
-A binomial distribution is a set of $n$ [independent and identically distributed](https://www.statisticshowto.com/iid-statistics/) Bernoulli trials with exactly two outcomes on every single trials, and the probability of success remains the same across all trials. You might find this distribution useful if you were interested in the number of times that a particular outcomes have occured in a given number of trials. If you would like to see a proof of Bernoullis to a Binomial, [click here](https://math.la.asu.edu/~jtaylor/teaching/Fall2010/STP421/lectures/lecture11.pdf).  
+A binomial distribution is a set of $n$ [independent and identically distributed](https://www.statisticshowto.com/iid-statistics/) Bernoulli trials with exactly two outcomes on every single trials, and the probability of success remains the same across all trials. You might find this distribution useful if you were interested in the number of times that a particular outcome has occured in a given number of trials. If you would like to see a proof of Bernoullis to a Binomial, [click here](https://math.la.asu.edu/~jtaylor/teaching/Fall2010/STP421/lectures/lecture11.pdf).  
   
 **Multinomial**  
-The multinomial distribution is a gerneralisation of the binomial distribution. Everything remains the same (including the number of trials and assumptions) except the multinomial experiment now have more than two possible outcomes. Consider an random experiement of drawing 5 balls with replacement from an urn containing 10 red balls, 5 blue balls, 3 yellow balls, and 1 green ball. We can use the multinomial distribution to work the probability of selecting exactly 3 red balls, 1 yellow ball, and 1 green ball.
+The multinomial distribution is a generalisation of the binomial distribution. Everything remains the same (including the number of trials and assumptions) except the multinomial experiment now has more than two possible outcomes. Consider a random experiment of drawing 5 balls with replacement from an urn containing 10 red balls, 5 blue balls, 3 yellow balls, and 1 green ball. We can use the multinomial distribution to work the probability of selecting exactly 3 red balls, 1 yellow ball, and 1 green ball.
 
 ![Sampling distribution](binomial.png)  
 *Sampling distribution of binomial distribution with four different possible outcomes and 0.2 as the probability of success*
@@ -88,10 +88,13 @@ The multinomial distribution is a gerneralisation of the binomial distribution. 
 
 
 ### Discrete Uniform
-Given that the outcomes of a random variable $U$ is a set of $k$ numerical values and the probability of occurence of each outcome is the same (i.e. $\frac{1}{k}$), then the probability distribution of the random variable $U$ is called the **discrete uniform distribution**. A fairly common example will be rolling a dice, where each side have equal probabilities.
+Given that the outcomes of a random variable $U$ is a set of $k$ numerical values and the probability of occurrence of each outcome is the same (i.e. $\frac{1}{k}$), then the probability distribution of the random variable $U$ is called the **discrete uniform distribution**. A fairly common example will be rolling a dice, where each side has equal probabilities.
 
-![Uniform](uniform.png)
+![Uniform](uniform.png)  
 
+The graph shown on above was generated from the discrete uniform distribution, however, as you might have observed the counts for each possible dice number are not equal when in theory the probability is the same for every number. But if the sample size is large enough (approaches infinity), then the counts will almost surely converge to $\frac{1}{6}$ by the [Law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers). At the same time, the sample mean and the sample variance will follows an approximate normal distribution by the **Central Limit Theorem** (we will discuss more on this in Part 5).  
+  
+  
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
@@ -101,10 +104,20 @@ Given that the outcomes of a random variable $U$ is a set of $k$ numerical value
 </div>
 
 ### Poisson
+The poisson distribution is use to model the counts of random events in a given time interval, providing that we have already know the average counts (the lambda $\lambda$ parameter in the probbaility mass function) of random events occured over that time interval. One example might be: we know the average number of students visiting the university website per hour on the exam results release day was 876, what is the probability of exactly 900 students visiting the website in a given hour? The answer is $0.96\%$. And we can also calculate the following probabilities:
+- Less than 900 students: $78.7\%$
+- More than 900 students: $20.3\%$
+
+![](poisson.png)
+
 
 ### Geometric
+Suppose we have a sequence of independent trials with the probability of success $p$ in each trial, then the probability distribution of a random variable $G$, where its outcomes are the possible number of trials required before first success appear, is called the geometric distribution.
+
 
 ### Negative Binomial
+
+
 
 
 ## Continuous

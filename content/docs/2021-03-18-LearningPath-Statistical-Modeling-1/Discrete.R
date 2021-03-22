@@ -39,3 +39,27 @@ ggplot(data, aes(x = Outcome)) +
     subtitle = "10,000 samples"
   )
 
+
+# Poisson 
+dataPois1 <- tibble(dist = rpois(sampleSize, 1), lambda = 1)
+dataPois3 <- tibble(dist = rpois(sampleSize, 3), lambda = 3)
+dataPois10 <- tibble(dist = rpois(sampleSize, 10), lambda = 10)
+dataPois50 <- tibble(dist = rpois(sampleSize, 50), lambda = 50)
+
+
+data <- bind_rows(dataPois1, dataPois3, dataPois10, dataPois50)
+
+ggplot(data, aes(x = dist)) + 
+  geom_histogram(binwidth = .5) + 
+  facet_wrap(~lambda) +
+  labs(
+    title = "Sampling distributions of the poisson distribution",
+    subtitle = "10,000 samples, lambdas are specified at the top of each graph"
+  ) 
+
+
+
+
+
+
+
