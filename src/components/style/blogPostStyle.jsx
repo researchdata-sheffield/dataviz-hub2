@@ -193,7 +193,7 @@ export const P = styled.p`
   margin-right: 0;
   word-wrap: break-word; /* if you want to cut the compconste word */
   white-space: normal;
-  line-height: 2.25rem;
+  line-height: 2.0rem;
 `
 
 export const Ol = styled.ol`

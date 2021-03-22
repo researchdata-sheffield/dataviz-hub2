@@ -6,7 +6,8 @@ thumbnail:
 description: Statistical Modeling Part 1 - In this chapter we will be exploring probability distributions by variable types.
 date: "2021-03-18"
 ---  
-  
+
+import { HiOutlineLightBulb } from "react-icons/hi"
 
 
 ## Introduction
@@ -20,32 +21,90 @@ In this chapter we will be exploring probability distributions for common variab
 ## Prerequisites
 This chapter (Part 1) does not have strict requirements on what you should know, but it would be nice if you are familar with the following concepts:  
 
-<div className="bg-white shadow-sm p-3 md:p-5 rounded-md text-base text-black">
+<div className="bg-white shadow-md p-3 md:p-5 rounded-3xl text-base text-black border-1 border-gray-50">
   <div>
     <span className="py-1 px-2 bg-shefYellow text-black hover:bg-yellow-400 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Required</span> 
-    <p>None</p>
+    <p className="mt-2">None</p>
   </div>
   <div className="mt-6">
     <span className="py-1 px-2 text-white bg-shefGreen hover:bg-green-700 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Recommended</span>
-    <p>Mean, Median, Mode, Range, Standard Deviation, Z-Score, Probability</p>
+    <p className="mt-2">Mean, Median, Mode, Range, Standard Deviation, Z-Score, Probability</p>
   </div>
   <div className="mt-6">
     <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Optional</span>
-    <p className="mb-0">Continuous/Discrete variable</p>
+    <p className="mb-0 mt-2">Continuous/Discrete/Categorical variable</p>
   </div>
 </div>  
 
 
-
 ## Discrete
+As mentioned in the introduction, a discrete random variable $X$ has a finite number of outcomes and the discrete probability distribution of $X$ is a set of all probabilities that describe the likelihood of occurence of each outcomes. In this section we will learn common discrete probability distributions and what variable type they can match to. You might found the following definitions useful:  
 
-### Binary
+<div className="bg-shefPurple shadow-md p-5 md:p-8 rounded-3xl text-base text-white">
+  <p className="mt-0">
+    <b>Binary variables</b> are variables which has only two possible values, typical examples are Boolean - True or False, Yes or No, 0 or 1, type 1 or type 2, and many more. In addition, one might create a binary variable from an existing variable to find some useful insight. For example, dividing students into two groups based on whether they have taken a specifc course.  
+  </p>
+  <p>
+    A <b>nominal variable</b> is a variable that has two or more unordered categories or groups. Examples of categorical variables are gender, age, hair colour, answers to True or False questions, faculties within the university, blood type, etc. 
+  </p>
+  <p>
+    <b>Ordinal variables</b> are similar to nominal variables but now the order matters. For example, a survey might ask surveyees to rate something at a scale from 0 to 9.
+  </p>
+  <p className="mb-0">
+    <b>Discrete variables</b> are numerical and countable, whereas the previous three variables were categorical (qualitative). Examples of discrete variables are daily average temperatures over a period of time, number of papers that a researcher has published, and the distance that a cyclist have cycled.
+  </p>
+</div>  
 
-### Nominal  
 
-### Ordinal  
+### Bernoulli
+A bernoulli distribution is a single Bernoulli trial (a random experiment with exactly two possible outcomes) in which the probability of success (True, 1, Yes) is $p$ and the probability of failure (False, 0, No) is $1-p$. Therefore, this distribution is a great match for an experiment in which the outcomes are binary variables (Yes or No, True or False). 
 
-### Counted data  
+<div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
+  <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
+  <ul className="my-0">
+    <li>Binary or bimodal variable</li>
+    <li>Ordinal variable</li>
+  </ul>
+</div>
+
+### Binomial
+A binomial distribution is a set of $n$ [independent and identically distributed](https://www.statisticshowto.com/iid-statistics/) Bernoulli trials with exactly two outcomes on every single trials, and the probability of success remains the same across all trials. You might find this distribution useful if you were interested in the number of times that a particular outcomes have occured in a given number of trials. If you would like to see a proof of Bernoullis to a Binomial, [click here](https://math.la.asu.edu/~jtaylor/teaching/Fall2010/STP421/lectures/lecture11.pdf).  
+  
+**Multinomial**  
+The multinomial distribution is a gerneralisation of the binomial distribution. Everything remains the same (including the number of trials and assumptions) except the multinomial experiment now have more than two possible outcomes. Consider an random experiement of drawing 5 balls with replacement from an urn containing 10 red balls, 5 blue balls, 3 yellow balls, and 1 green ball. We can use the multinomial distribution to work the probability of selecting exactly 3 red balls, 1 yellow ball, and 1 green ball.
+
+![Sampling distribution](binomial.png)  
+*Sampling distribution of binomial distribution with four different possible outcomes and 0.2 as the probability of success*
+
+
+<div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
+  <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
+  <p>Providing that trials are independent, the number of trials is fixed, and the probability of success remains the same:</p>
+  <ul className="my-0">
+    <li>Categorical variable</li>
+    <li>There is a need to compute the probability of a specific outcome (multinomial for multiple outcomes) will occur over a fixed number of trials</li>
+  </ul>
+</div>
+
+
+### Discrete Uniform
+Given that the outcomes of a random variable $U$ is a set of $k$ numerical values and the probability of occurence of each outcome is the same (i.e. $\frac{1}{k}$), then the probability distribution of the random variable $U$ is called the **discrete uniform distribution**. A fairly common example will be rolling a dice, where each side have equal probabilities.
+
+![Uniform](uniform.png)
+
+<div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
+  <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
+  <ul className="my-0">
+    <li>Outcomes has equal probability of occurence</li>
+    <li>Variable is countable and discrete</li>
+  </ul>
+</div>
+
+### Poisson
+
+### Geometric
+
+### Negative Binomial
 
 
 ## Continuous
