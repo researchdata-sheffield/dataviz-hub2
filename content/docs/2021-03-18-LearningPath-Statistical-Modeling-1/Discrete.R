@@ -59,7 +59,40 @@ ggplot(data, aes(x = dist)) +
 
 
 
+# Negative binomial
+dataNb2 <- tibble(dist = rnbinom(sampleSize, 2, .3), success = 2)
+dataNb3 <- tibble(dist = rnbinom(sampleSize, 3, .3), success = 3)
+dataNb4 <- tibble(dist = rnbinom(sampleSize, 4, .3), success = 4)
+dataNb5 <- tibble(dist = rnbinom(sampleSize, 5, .3), success = 5)
+dataNb6 <- tibble(dist = rnbinom(sampleSize, 6, .3), success = 6)
+dataNb7 <- tibble(dist = rnbinom(sampleSize, 7, .3), success = 7)
+
+data <- bind_rows(dataNb2, dataNb3, dataNb4, dataNb5, dataNb6, dataNb7)
+
+ggplot(data, aes(x = dist)) + 
+  geom_histogram(binwidth = .5) + 
+  facet_wrap(~success, ncol = 2) +
+  labs(
+    title = "Sampling distributions of the negative binomial distribution",
+    subtitle = "10,000 samples, target number of successful trials are specified at the top of each graph",
+    x = "Number of trials occured before the kth success"
+  ) 
 
 
 
+# Geometric
+dataGeom2 <- tibble(dist = rgeom(sampleSize, .2), prob = 0.2)
+dataGeom3 <- tibble(dist = rgeom(sampleSize, .3), prob = 0.3)
+dataGeom4 <- tibble(dist = rgeom(sampleSize, .4), prob = 0.4)
+dataGeom5 <- tibble(dist = rgeom(sampleSize, .5), prob = 0.5)
+
+data <- bind_rows(dataGeom2, dataGeom3, dataGeom4, dataGeom5)
+
+ggplot(data, aes(x = dist)) + 
+  geom_histogram(binwidth = .5) + 
+  facet_wrap(~prob) +
+  labs(
+    title = "Sampling distributions of the geometric distribution",
+    subtitle = "10,000 samples, probability of successes are specified at the top of each graph"
+  ) 
 

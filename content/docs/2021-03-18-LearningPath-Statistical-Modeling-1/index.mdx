@@ -38,7 +38,7 @@ This chapter (Part 1) does not have strict requirements on what you should know,
 
 
 ## Discrete
-As mentioned in the introduction, a discrete random variable $X$ has a finite number of outcomes and the discrete probability distribution of $X$ is a set of all probabilities that describe the likelihood of occurrence of each outcomes. In this section we will learn common discrete probability distributions and what variable type they can match to. You might found the following definitions useful:  
+As mentioned in the introduction, a discrete random variable $X$ has a finite number of outcomes and the discrete probability distribution of $X$ is a space that describe the likelihood of occurrence of each outcomes. In this section we will learn common discrete probability distributions and what variable type they can match to. You might found the following definitions useful:  
 
 <div className="bg-shefPurple shadow-md p-5 md:p-8 rounded-3xl text-base text-white">
   <p className="mt-0">
@@ -54,6 +54,10 @@ As mentioned in the introduction, a discrete random variable $X$ has a finite nu
     <b>Discrete variables</b> are numerical and countable, whereas the previous three variables were categorical (qualitative). Examples of discrete variables are daily average temperatures over a period of time, number of papers that a researcher has published, and the distance that a cyclist have cycled.
   </p>
 </div>  
+
+<br/>
+
+For each distribution we have created a graph containing subplots and you will see how the distribution response to the change of parameters.  We also recommend you visit the [distribution viewer](https://www.essycode.com/distribution-viewer/) website and as it would help you to explore different distributions dynamically.
 
 
 ### Bernoulli
@@ -104,19 +108,51 @@ The graph shown on above was generated from the discrete uniform distribution, h
 </div>
 
 ### Poisson
-The poisson distribution is use to model the counts of random events in a given time interval, providing that we have already know the average counts (the lambda $\lambda$ parameter in the probbaility mass function) of random events occured over that time interval. One example might be: we know the average number of students visiting the university website per hour on the exam results release day was 876, what is the probability of exactly 900 students visiting the website in a given hour? The answer is $0.96\%$. And we can also calculate the following probabilities:
+The poisson distribution is use to model the counts of random events in a given time interval, providing that we have already know the average counts (the lambda $\lambda$ parameter in the probability mass function) of random events occured over that time interval. One example might be: we know the average number of students visiting the university website per hour on the exam results release day was 876, what is the probability of exactly 900 students visiting the website in a given hour? The answer is $0.96\%$. And we can also calculate the following probabilities:
 - Less than 900 students: $78.7\%$
 - More than 900 students: $20.3\%$
 
-![](poisson.png)
+![Poisson distribution](poisson.png)
 
-
-### Geometric
-Suppose we have a sequence of independent trials with the probability of success $p$ in each trial, then the probability distribution of a random variable $G$, where its outcomes are the possible number of trials required before first success appear, is called the geometric distribution.
+<div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
+  <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
+  <ul className="my-0">
+    <li>Model count data</li>
+    <li>Prediction of rare events in a given time interval (providing that the mean is given)</li>
+    <li>The mean and variance are equal</li>
+  </ul>
+</div>  
 
 
 ### Negative Binomial
+The negative binomial distribution is another discrete probability distribution for modeling count data and is used when the data appears to be overdispersion - the variance of data is significantly greater than the variance of the chosen distribution. If you have observed the variance in the poisson is greater than expected, then consider using this distribution. 
 
+another application of the negative binomial distribution is for modeling the distribution of outcomes of a random variable $B$, where the outcomes are the number of bernoulli trials $r+k-1$ (regardless failure or successful) until the $k$th successful trials. The number of trials is not fixed and the probability of success remains the same.   
+
+![Negative Binomial](negativeB.png)
+
+<div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
+  <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
+  <ul className="my-0">
+    <li>Model count data</li>
+    <li>Variance is greater than expected, poisson does not work well in this case</li>
+    <li>Interested in the number of trials required before the <b>k</b>th happens</li>
+  </ul>
+</div>
+
+
+### Geometric
+Suppose we have a sequence of independent trials (Bernoulli) with the probability of success $p$ in each trial, then the probability distribution of a random variable $G$, where its outcomes are the possible number of (failure) trials required until the first successful trial (in this case the number of total trials is not fixed), is called the geometric distribution. 
+
+![Geometric sampling distribution](geometric.png)
+
+<div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
+  <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
+  <ul className="my-0">
+    <li>Model the number of trials until the first success</li>
+    <li>An experiment consists a series of bernoulli trials</li>
+  </ul>
+</div>
 
 
 
