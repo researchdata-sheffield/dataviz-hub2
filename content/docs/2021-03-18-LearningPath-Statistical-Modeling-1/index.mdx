@@ -7,19 +7,21 @@ description: Statistical Modeling Part 1 - In this chapter we will be exploring 
 date: "2021-03-18"
 ---  
 
-import { HiOutlineLightBulb } from "react-icons/hi"
+import { HiOutlineLightBulb } from "react-icons/hi"  
+
 
 
 ## Introduction
-A **[random variable](https://www.stat.yale.edu/Courses/1997-98/101/ranvar.htm)** is a numerical representation (can be either a set of values or a function mapped to a continuous range) of an experiment's outcomes. A **[probability distribution](https://www.itl.nist.gov/div898/handbook/eda/section3/eda361.htm)** is a mathematical function that gives the probabilities for different possible outcomes of the experiment. Consider an experiment of drawing a ball three times with replacement from a urn which consist of seven reds balls and three blue balls. If a random variable **X** represents the total number of times we drawn a blue ball, then the set of values that **X** can be are:  {$0, 1, 2, 3$}. Then the probability distribution for the random variable **X** gives the probabilities for these outcomes to happen. For example, the chance of getting blue balls from the urn in all three drawn will be $(\frac{3}{10})^{3} = \frac{27}{1000} = 2.7\%$. If **Y** is a discrete random variable then it has a corresponding discrete probability distribution; If **Y** is a continuous random variable then its corresponding probability distribution will also be continuous.  
+A **[random variable](https://www.stat.yale.edu/Courses/1997-98/101/ranvar.htm)** is a numerical representation (can be either a set of values or a function mapped to a continuous range) of an experiment's outcomes. A **[probability distribution](https://www.itl.nist.gov/div898/handbook/eda/section3/eda361.htm)** is a mathematical function that gives the probabilities for different possible outcomes of the experiment. Consider an experiment of drawing a ball three times with replacement from an urn which consists of seven red balls and three blue balls. If a random variable **X** represents the total number of times we draw a blue ball, then the set of values that **X** can be are:  {$0, 1, 2, 3$}. Then the probability distribution for the random variable **X** gives the probabilities for these outcomes to happen. For example, the chance of getting blue balls from the urn in all three draws will be $(\frac{3}{10})^{3} = \frac{27}{1000} = 2.7\%$. If **Y** is a discrete random variable then it has a corresponding discrete probability distribution; If **Y** is a continuous random variable then its corresponding probability distribution will also be continuous.  
 
-In practice, datasets can be described as samples of the population or outcomes of random variables (features that we have collected). Each dataset usually have two or more variables and each variable could have different probability distributions. It is often our interests to identify dataset's distribution so that we can make assumptions on dataset's nature and/or relationships between variables, and develop further work based on these assumptions.  
-  
+In practice, datasets can be described as samples of the population or outcomes of random variables (features that we have collected). Each dataset usually has two or more variables and each variable could have different probability distributions. It is often our interest to identify a dataset's distribution so that we can make assumptions on the dataset's nature and/or relationships between variables, and develop further work based on these assumptions.  
+
 In this chapter we will be exploring probability distributions for common variable types such as binary, ordinal, nominal, and continuous. For each probability distribution (where possible) we will also give an example and tips on when to use. For a longer list of probability distributions, please see the [pdf](https://www.stat.tamu.edu/~twehrly/611/distab.pdf).  
-  
+
 
 ## Prerequisites
-This chapter (Part 1) does not have strict requirements on what you should know, but it would be nice if you are familar with the following concepts:  
+This chapter (Part 1) does not have strict requirements on what you should know, but it would be nice if you are familiar with the following concepts:  
+
 
 <div className="bg-white shadow-md p-3 md:p-5 rounded-3xl text-base text-black border-1 border-gray-50">
   <div>
@@ -34,15 +36,16 @@ This chapter (Part 1) does not have strict requirements on what you should know,
     <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Optional</span>
     <p className="mb-0 mt-2">Probability Mass Function, Probability Density Function</p>
   </div>
-</div>  
+</div>
 
 
 ## Discrete
-As mentioned in the introduction, a discrete random variable $X$ has a finite number of outcomes and the discrete probability distribution of $X$ is a space that describe the likelihood of occurrence of each outcomes. In this section we will learn common discrete probability distributions and what variable type they can match to. You might found the following definitions useful:  
+As mentioned in the introduction, a discrete random variable $X$ has a finite number of outcomes and the discrete probability distribution of $X$ is a space that describes the likelihood of occurrence of each outcome. In this section we will learn common discrete probability distributions and what variable type they can match to. You might found the following definitions useful:  
+
 
 <div className="bg-shefPurple shadow-md p-5 md:p-8 rounded-3xl text-base text-white">
   <p className="mt-0">
-    <b>Binary variables</b> are variables which has only two possible values, typical examples are Boolean - True or False, Yes or No, 0 or 1, type 1 or type 2, and many more. In addition, one might create a binary variable from an existing variable to find some useful insight. For example, dividing students into two groups based on whether they have taken a specifc course.  
+    <b>Binary variables</b> are variables which have only two possible values, typical examples are Boolean - True or False, Yes or No, 0 or 1, type 1 or type 2, and many more. In addition, one might create a binary variable from an existing variable to find some useful insight. For example, dividing students into two groups based on whether they have taken a specific course.  
   </p>
   <p>
     A <b>nominal variable</b> is a variable that has two or more unordered categories or groups. Examples of categorical variables are gender, age, hair colour, answers to True or False questions, faculties within the university, blood type, etc. 
@@ -51,14 +54,14 @@ As mentioned in the introduction, a discrete random variable $X$ has a finite nu
     <b>Ordinal variables</b> are similar to nominal variables but now the order matters. For example, a survey might ask surveyees to rate something at a scale from 0 to 9.
   </p>
   <p className="mb-0">
-    <b>Discrete variables</b> are numerical and countable, whereas the previous three variables were categorical (qualitative). Examples of discrete variables are daily average temperatures over a period of time, number of papers that a researcher has published, and the distance that a cyclist have cycled.
+    <b>Discrete variables</b> are numerical and countable, whereas the previous three variables were categorical (qualitative). Examples of discrete variables are daily average temperatures over a period of time, number of papers that a researcher has published, and the distance that a cyclist has cycled.
   </p>
 </div>  
-
+ 
 <br/>
 
-For each distribution we have created a graph containing subplots and you will see how the distribution response to the change of parameters. If you would like a copy of codes that generates these graphs, [download it here](discrete/Discrete.R). Note that these graphs are histograms and if you would like to convert them into probability mass functions, replace `geom_histogram()` by `geom_density()`.
-
+For each distribution we have created a graph containing subplots, and you will see how the distribution responds to the change of parameters. If you would like a copy of codes that generates these graphs, [download it here](discrete/Discrete.R). Note that these graphs are histograms and if you would like to convert them into probability mass functions, replace `geom_histogram()` by `geom_density()`.
+ 
 We also recommend you visit the [distribution viewer](https://www.essycode.com/distribution-viewer/) website and as it would help you to explore different distributions dynamically. 
 
 
@@ -72,9 +75,9 @@ P(k) =
 p & if k = 1
 \end{cases}
 $$
-
+ 
 In addition, $E[K]$ (mean) = $p$ and $Var[K]$ (variance) = $p(1-p)$.  
-
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
@@ -82,9 +85,9 @@ In addition, $E[K]$ (mean) = $p$ and $Var[K]$ (variance) = $p(1-p)$.
     <li>Ordinal variable</li>
   </ul>
 </div>
-
+ 
 ### Binomial
-A binomial distribution is a set of $n$ [independent and identically distributed](https://www.statisticshowto.com/iid-statistics/) Bernoulli trials with exactly two outcomes on every single trials, and the probability of success remains the same across all trials. You might find this distribution useful if you were interested in the number of times that a particular outcome has occured in a given number of trials. If you would like to see a proof of Bernoullis to a Binomial, [click here](https://math.la.asu.edu/~jtaylor/teaching/Fall2010/STP421/lectures/lecture11.pdf). the probability mass function for the binomial distribution is given by  
+A binomial distribution is a set of $n$ [independent and identically distributed](https://www.statisticshowto.com/iid-statistics/) Bernoulli trials with exactly two outcomes on every single trials, and the probability of success remains the same across all trials. You might find this distribution useful if you were interested in the number of times that a particular outcome has occurred in a given number of trials. If you would like to see a proof of Bernoullis to a Binomial, [click here](https://math.la.asu.edu/~jtaylor/teaching/Fall2010/STP421/lectures/lecture11.pdf). the probability mass function for the binomial distribution is given by  
 
 $$
 P(k) = \frac{n!}{k!(n-k)!} (1-p)^{n-k} p^{k}
@@ -96,8 +99,7 @@ where $0 < p < 1$, $n > 0$, and $k = 0,1,2,...,n$. In addition, $E[K]$ (mean) = 
 The multinomial distribution is a generalisation of the binomial distribution. Everything remains the same (including the number of trials and assumptions) except the multinomial experiment now has more than two possible outcomes. Consider a random experiment of drawing 5 balls with replacement from an urn containing 10 red balls, 5 blue balls, 3 yellow balls, and 1 green ball. We can use the multinomial distribution to work the probability of selecting exactly 3 red balls, 1 yellow ball, and 1 green ball.
 
 ![Sampling distribution](discrete/binomial.png)  
-*Sampling distribution of binomial distribution with four different possible outcomes and 0.2 as the probability of success*
-
+*Sampling distribution of binomial distribution with four different possible outcomes and 0.2 as the probability of success*  
 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
@@ -107,16 +109,16 @@ The multinomial distribution is a generalisation of the binomial distribution. E
     <li>There is a need to compute the probability of a specific outcome (multinomial for multiple outcomes) will occur over a fixed number of trials</li>
   </ul>
 </div>
-
-
+ 
+ 
 ### Discrete Uniform
 Given that the outcomes of a random variable $U$ is a set of $k$ numerical values and the probability of occurrence of each outcome is the same (i.e. $\frac{1}{k}$), then the probability distribution of the random variable $U$ is called the **discrete uniform distribution**. A fairly common example will be rolling a dice, where each side has equal probabilities.
-
+ 
 ![Uniform](discrete/uniform.png)  
+ 
+The graph shown on above was generated from the discrete uniform distribution, however, as you might have observed the counts for each possible dice number are not equal when in theory the probability is the same for every number. But if the sample size is large enough (approaches infinity), then the counts will almost surely converge to $\frac{1}{6}$ by the [Law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers). At the same time, the sample mean and the sample variance will follow an approximate normal distribution by the **Central Limit Theorem** (we will discuss more on this in Part 5).  
 
-The graph shown on above was generated from the discrete uniform distribution, however, as you might have observed the counts for each possible dice number are not equal when in theory the probability is the same for every number. But if the sample size is large enough (approaches infinity), then the counts will almost surely converge to $\frac{1}{6}$ by the [Law of large numbers](https://en.wikipedia.org/wiki/Law_of_large_numbers). At the same time, the sample mean and the sample variance will follows an approximate normal distribution by the **Central Limit Theorem** (we will discuss more on this in Part 5).  
-  
-  
+
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
@@ -126,17 +128,17 @@ The graph shown on above was generated from the discrete uniform distribution, h
 </div>
 
 ### Poisson
-The probability mass function of the poisson distribution is given by  
+The probability mass function of the Poisson distribution is given by  
 
 $$
 P(k) = \frac{e^{-\lambda}\lambda^{k}}{k!}
 $$
 where $x,\lambda > 0$. In addition, $E[K]$ (mean) = $\lambda$ and $Var[K]$ (variance) = $\lambda$.  
-
-The poisson distribution is use to model the counts of random events in a given time interval, providing that we have already know the average counts (the lambda $\lambda$ parameter in the probability mass function) of random events occured over that time interval. One example might be: we know the average number of students visiting the university website per hour on the exam results release day was 876, what is the probability of exactly 900 students visiting the website in a given hour? The answer is $0.96\%$. And we can also calculate the following probabilities:
+ 
+The Poisson distribution is used to model the counts of random events in a given time interval, providing that we already know the average counts (the lambda $\lambda$ parameter in the probability mass function) of random events occurred over that time interval. One example might be: we know the average number of students visiting the university website per hour on the exam results release day was 876, what is the probability of exactly 900 students visiting the website in a given hour? The answer is $0.96\%$. And we can also calculate the following probabilities:
 - Less than 900 students: $78.7\%$
 - More than 900 students: $20.3\%$
-
+ 
 ![Poisson distribution](discrete/poisson.png)
 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
@@ -146,43 +148,43 @@ The poisson distribution is use to model the counts of random events in a given 
     <li>Prediction of rare events in a given time interval (providing that the mean is given)</li>
     <li>The mean and variance are equal</li>
   </ul>
-</div>  
-
+</div>
+  
 
 ### Negative Binomial
-The negative binomial distribution is another discrete probability distribution for modeling count data and is used when the data appears to be overdispersion - the variance of data is significantly greater than the variance of the chosen distribution. If you have observed the variance in the poisson is greater than expected, then consider using this distribution. The probability mass function is given by  
+The negative binomial distribution is another discrete probability distribution for modeling count data and is used when the data appears to be overdispersion - the variance of data is significantly greater than the variance of the chosen distribution. If you have observed the variance in the Poisson is greater than expected, then consider using this distribution. The probability mass function is given by  
 
 $$
 P(k) = \frac{(k+r-1)!}{(r-1)!k!} (1-p)^{k}p^{r} 
 $$
 
-where $0 < p < 1$ and $k = r,r+1,...$. In here, $k$ is the number of failure and $r$ is the number of successes.
-
-another application of the negative binomial distribution is for modeling the distribution of outcomes of a random variable $B$, where the outcomes are the number of bernoulli trials $r+k-1$ (regardless failure or successful) until the $r$th successful trials. The number of trials is not fixed and the probability of success remains the same.   
-
+where $0 < p < 1$ and $k = r,r+1,...$. In here, $k$ is the number of failures and $r$ is the number of successes.
+ 
+Another application of the negative binomial distribution is for modeling the distribution of outcomes of a random variable $B$, where the outcomes are the number of bernoulli trials $r+k-1$ (regardless failure or successful) until the $r$th successful trials. The number of trials is not fixed and the probability of success remains the same.   
+ 
 ![Negative Binomial](discrete/negativeB.png)
-
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
     <li>Model count data</li>
-    <li>Variance is greater than expected, poisson does not work well in this case</li>
+    <li>Variance is greater than expected, Poisson does not work well in this case</li>
     <li>Interested in the number of trials required before the <b>k</b>th happens</li>
   </ul>
 </div>
-
+  
 
 ### Geometric
 The geometric distribution is a special case of the negative binomial distribution. Suppose we have a sequence of independent trials (Bernoulli) with the probability of success $p$ in each trial, then the probability distribution of a random variable $G$, where its outcomes are the possible number of (failure) trials required until the first successful trial (in this case the number of total trials is not fixed), is called the geometric distribution. The probability mass function is given by  
-
+ 
 $$
 P(x) = (1-p)^{x-1}p
 $$
-
+ 
 where $0 < p < 1$ and $x = 1,2,...,n$.  
 
 ![Geometric sampling distribution](discrete/geometric.png)
-
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
@@ -191,19 +193,17 @@ where $0 < p < 1$ and $x = 1,2,...,n$.
 </div>
 
 
-
 ## Continuous
-Before we move on to distributions, let's recap the definition of a continuous random variable. A continuous random variable is a a numerical representation of an experiment's outcomes, where these numerical representation can take a range of values (uncoutably infinite). For example, random variables could take values in these intervals: $[0, 1]$, $(-1, 1)$, $(-\infty, 0)$, and $[a, b]$. Some real life examples of continuous random variables are time, mass, volume, length, etc. Since the number of possible values that a continuous random variable can take is uncoutable, the probability for any specific value is zero (area under the probability density curve), meaning we cannot calculate the probability at any specific point but we can still work out the probability for a certain range.  
+Before we move on to distributions, let's recap the definition of a continuous random variable. A continuous random variable is a numerical representation of an experiment's outcomes, where these numerical representations can take a range of values (uncountably infinite). For example, random variables could take values in these intervals: $[0, 1]$, $(-1, 1)$, $(-\infty, 0)$, and $[a, b]$. Some real-life examples of continuous random variables are time, mass, volume, length, etc. Since the number of possible values that a continuous random variable can take is uncountable, the probability for any specific value is zero (area under the probability density curve), meaning we cannot calculate the probability at any specific point but we can still work out the probability for a certain range.  
   
-A [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) of a random variable $X$ is a function that describe the relative likelihood of occurrence of the random variable $X$'s possible values.  
-
+A [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) of a random variable $X$ is a function that describes the relative likelihood of occurrence of the random variable $X$'s possible values.  
+ 
 ![Probability Density Function](https://images.deepai.org/glossary-terms/51a7646ef6334199983a16c67f57babf/PDF.png)  
 *The probability of $x$ is the area under the curve from $a$ to $b$. ([source](https://deepai.org/machine-learning-glossary-and-terms/probability-density-function))*  
-
-Same as in the discrete section, for each distribution we have created a graph containing subplots and you will see how the distribution response to the change of parameters. If you would like a copy of codes that generates these graphs, [download it here](continuous/Continuous.R).
-
-We also recommend you visit the [distribution viewer](https://www.essycode.com/distribution-viewer/) website and as it would help you to explore different distributions dynamically. 
-
+ 
+Same as in the discrete section, for each distribution we have created a graph containing subplots and you will see how the distribution responds to the change of parameters. If you would like a copy of codes that generates these graphs, [download it here](continuous/Continuous.R).
+ 
+We also recommend you visit the [distribution viewer](https://www.essycode.com/distribution-viewer/) website and as it would help you to explore different distributions dynamically.
 
 
 ### Gaussian Normal
@@ -212,7 +212,7 @@ The normal distribution (also known as the Gaussian distribution) is probably th
 $$
 f(x) = \frac{1}{\sigma\sqrt{2\pi} e^{-\frac{1}{2}(\frac{x-\mu}{\sigma})^{2}}}
 $$  
-
+ 
 where $\mu$ is the mean and $\sigma$ is the standard deviation.  
   
 ![Normal distributions](continuous/normal.png)  
@@ -225,10 +225,10 @@ where $\mu$ is the mean and $\sigma$ is the standard deviation.
     <li>Most of data (approx. 99.7%) are within three standard deviation from the mean, 95% of data should be within two standard deviation from the mean, and 68% of data are within one standard deviation from the mean</li>
   </ul>
 </div>
-
+ 
 ### Uniform  
 The continuous uniform distribution is similar to the discrete uniform distribution other than the calculation is slightly different. In a discrete uniform distribution every outcome has the same probability and we take $\frac{1}{k}$ as the probability where $k$ is the number of total outcomes. Whereas in a continuous uniform distribution, the random variable can take infinite number of values in the range $[a,b]$ so we can calculate the probability for $x$ according to the following equation: 
-
+ 
 $$
 f(x) = 
 \begin{cases} 
@@ -236,61 +236,59 @@ f(x) =
 0 & \text{otherwise} 
 \end{cases}
 $$
-
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
     <li>When you know that every events are equally likely to happen</li>
   </ul>
 </div>
-
-
+  
 ### Chi-square
-The chi-square distribution is primarily used in hypothesis testing and test the difference between distributions for actual observations and expected outcomes (theoretical distribution). For example, we can use the chi-square to find out type of cars people preferred across age groups. Another application will be to test whether two random variables are independent. A formal definition of the chi-square distribution are as follows: 
-
+The chi-square distribution is primarily used in hypothesis testing and tests the difference between distributions for actual observations and expected outcomes (theoretical distribution). For example, we can use the chi-square to find out the type of cars people preferred across age groups. Another application will be to test whether two random variables are independent. A formal definition of the chi-square distribution is as follows: 
+ 
 Let $Z_{1}$, $Z_{2}$,...,$Z_{k}$ be independent standard normal random variables and $k$ be a positive integer, then the random variable   
-
+ 
 $$
 \chi^{2}(k) = \sum_{i=1}^{k} Z_{i}^{2}
 $$  
-
+ 
 follows the chi-square distribution with $k$ degrees of freedom.  
-
-At the end, we get a distribution of sum of squared of $k$ i.i.d random variables ($k$ samples from the standard normal distribution).  
-
+ 
+At the end, we get a distribution of sums of squares of $k$ i.i.d random variables ($k$ samples from the standard normal distribution).
 
 ![Chi-square distributions](continuous/chi.png)
-
-
+ 
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
     <li>Test the difference between actual observations and theoretical distribution</li>
     <li>Test for independence between random variables</li>
   </ul>
-</div>  
+</div>
 
 
 ### F-distribution 
-The F-distribution can be see as a distribution of ratio of two chi-square distributions, which is the ratio of two sum of squares of deviations of samples from their means therefore variance between samples and variance within samples are needed. A common definition are as follows:  
-
+The F-distribution can be seen as a distribution of the ratio of two chi-square distributions, which is the ratio of two sums of squares of deviations of samples from their means therefore variance between samples and variance within samples are needed. A common definition is as follows:  
+ 
 If $X ~ \chi_{d_{1}}^{2}$ and $Y ~ \chi_{d_{2}}^{2}$ are independent, then the random variable $Z = \frac{X/d_{1}}{Y/d_{2}}$ have a F-distribution with parameters $d_{1}$ and $d_{2}$, or $\frac{X/d_{1}}{Y/d_{2}} ~ F(d_{1}, d_{2})$.  
-
-A F-distribution has two parameters $d_{1}$ and $d_{2}$, where $d_{1}$ is the degrees of freedom of first chi-square distribution and $d_{2}$ is the degrees of freedom for the second one. If the degrees of freedom is small then it means data are more spread out, and vice versa. 
+ 
+A F-distribution has two parameters $d_{1}$ and $d_{2}$, where $d_{1}$ is the degrees of freedom of first chi-square distribution and $d_{2}$ is the degrees of freedom for the second one. If the degrees of freedom is small then it means data are more spread out, and vice versa.  
 
 ![F-distribution](continuous/F.png)
-
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
     <li>Test whether two independent samples (from normal) were drawn with the same variance</li>
   </ul>
-</div>  
+</div>
 
 
 ### Exponential
 If a continuous random variable $X$ follows an exponential distribution where the parameter $\lambda$ (the rate of distribution) is greater than zero, then the probability density function is given by 
-
+ 
 $$
 f(x) = 
 \begin{cases} 
@@ -298,39 +296,42 @@ f(x) =
 0 & \text{otherwise} 
 \end{cases}
 $$
-
+ 
 And the mean and variance of the exponential distribution is given by  
 $$
 E[X] = \frac{1}{\lambda}, Var[X] = \frac{1}{\lambda^{2}} 
 $$
+ 
+$\lambda e^{-\lambda x}$ is referred to as the exponential decay and is commonly used for measuring radioactive decay, medication within the human body, and population of endangered species. The probability density function of the exponential distribution gives the probability of decay at time $t$.  
+ 
+The exponential distribution is related to the Poisson distribution as both distributions are a function of $\lambda$. And provided the time unit is clearly defined in Poisson distribution, the $\lambda$ will be identical in both distributions. For example, as mentioned previously the Poisson distribution can be used to model the number of students visiting the university website in a given time interval. In contrast, we can use the exponential distribution to model the difference between the visit time of current students and the visited time $t$ of the previous student.  
 
-$\lambda e^{-\lambda x}$ is referred as the exponential decay and are commonly used for measuring radioactive decay, medication within human body, and population of endangered species. The probability density function of the exponential distriubtion gives the probability of decay at time $t$.  
+**Q.** Suppose on average there are 876 students visiting the website per hour (assuming these visits are [Poisson process](https://www.stat.yale.edu/~pollard/Courses/241.fall97/Poisson.Proc.pdf)), what is the probability that we need to wait for 1 minute for the next student?  
 
-The exponential distribution is related to the poisson distribution as both distributions are a function of $\lambda$. And provided the time unit is clearly defined in poisson distribution, the $\lambda$ will be identical in both distributions. For example, as mentioned previously the poisson distribution can be use to model the number of students visiting the university website in a given time interval. In contrast, we can use the exponential distribution to model the difference between the visit time of current student and the visited time $t$ of the previous student.  
-  
-**Q.** Suppose on average there are 876 students visiting the website per hour (assuming these visits are [poisson process](https://www.stat.yale.edu/~pollard/Courses/241.fall97/Poisson.Proc.pdf)), what is the probability that we need to wait for 1 minute for the next student?  
-
-From the figure we deduce that the mean number of students visiting the website per minute is 14.6, then we can use the formula $E[X] = \frac{1}{\lambda}$ to calculate the $\lambda$ as $\frac{1}{14.6}$. Finally all we have to do is to find the probability of waiting time being more than 1 minute according to this probability density function:  
-
+From the figure we deduce that the mean number of students visiting the website per minute is 14.6, then we can use the formula $E[X] = \frac{1}{\lambda}$ to calculate the $\lambda$ as $\frac{1}{14.6}$. Finally, all we have to do is to find the probability of waiting time being more than 1 minute according to this probability density function:  
+ 
 $$
 f(x) = \frac{1}{14.6} e^{\frac{1}{14.6} x}
 $$
-
+ 
 Note that the exponential distribution is 'memoryless' meaning as long as next event is not observed, then the distribution of time difference from $t$ to $x$ (the time we observed the next event) is the same the time difference from any point in the range $[t+1, x-1]$, to $x$. Thus, time has no effect on further observations.  
 
-
+![Exponential distribution](continuous/exp.png)
+ 
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
-    <li>Model the elapse time between consecutive events</li>
+    <li>Model the elapsed time between consecutive events</li>
     <li>Model the waiting time before an event occur</li>
   </ul>
-</div>  
-
+</div>
+  
 
 ### Cauchy
-The cauchy distribution, also known as the impossible distribution does not have mean or variance, but median and mode still exists. It has a similar bell shape to the normal distribution, but with a much heavier tails. It is also a special case of [student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) which wouldn't be discuss in this chapter. The distribution has two parameters $m$ and $\gamma$ where each controls the mode and [full width at half maximum](https://en.wikipedia.org/wiki/Full_width_at_half_maximum) of the distribution. 
-
+The cauchy distribution, also known as the impossible distribution does not have mean or variance, but median and mode still exist. It has a similar bell shape to the normal distribution, but with much heavier tails. It is also a special case of [student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) which wouldn't be discussed in this chapter. The distribution has two parameters $m$ and $\gamma$ where each controls the mode and [full width at half maximum](https://en.wikipedia.org/wiki/Full_width_at_half_maximum) of the distribution. 
+ 
+![Cauchy distribution](continuous/cauchy.png)
 
 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
@@ -342,37 +343,40 @@ The cauchy distribution, also known as the impossible distribution does not have
   </ul>
 </div>  
 
-### Gamma
-The gamma distriubtion is related to many distributions including the poisson, chi-square, exponential, and normal distributions. The probability density function of the gamma distribution is given by 
 
+### Gamma
+The gamma distribution is related to many distributions including the Poisson, chi-square, exponential, and normal distributions. The probability density function of the gamma distribution is given by 
+ 
 $$
 f(x) = \frac{(\frac{x}{\beta})^{\alpha -1} e^{-\frac{x}{\beta}}}{\Gamma(x) \beta}
 $$  
-
-where $\alpha, \beta > 0$, and $\Gamma(x)$ is the gamma function. In addition, $E[X] = \alpha\beta$ and $Var[X] = \sqrt{\alpha\beta^{2}}$. In here, $\alpha$ is called the shape parameter and $\beta$ is called the rate parameter (we have also seen the $\lambda$). Recall the example in the exponential distribution that model the waiting time for the visit of next student for the university website (assuming visits are poisson processes which means they are random), a useful application of gamma distribution in this situation is it can model the waiting time for the $n$th student's visit. 
-
-
+ 
+where $\alpha, \beta > 0$, and $\Gamma(x)$ is the gamma function. In addition, $E[X] = \alpha\beta$ and $Var[X] = \sqrt{\alpha\beta^{2}}$. Here, $\alpha$ is called the shape parameter and $\beta$ is called the rate parameter (we have also seen the $\lambda$). Recall the example in the exponential distribution that model the waiting time for the visit of next student for the university website (assuming visits are poisson processes which means they are random), a useful application of gamma distribution in this situation is it can model the waiting time for the $n$th student's visit. 
+ 
+![Gamma distribution](continuous/gamma.png)
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
     <li>Model real‐valued positive measurements</li>
     <li>Model the waiting time before the <i>n</i>th event occur</li>
   </ul>
-</div>  
+</div>
 
 
 ### Beta
-The beta distribution representing a distribution of probabilities of a probability in which the probability is uknown or can be use to represent variability over a fixed range. For example, we can use the beta distribution to model how likely a visitor will click a related post at a single visit, whereas the binomial distribution which can also use to model this problem by compute the percentage of visitor that clicked a related post among all visitors. The former modeling the probability of a random variable (the probability of click a related post) and the latter modeling the number of successes out of multiple trials and the probability is fixed from trial to trial.  
-
+The beta distribution represents a distribution of probabilities of a probability in which the probability is unknown or can be used to represent variability over a fixed range. For example, we can use the beta distribution to model how likely a visitor will click a related post at a single visit, whereas the binomial distribution which can also model this problem by computes the percentage of visitors that clicked a related post among all visitors. The former modeling the probability of a random variable (the probability of clicking a related post) and the latter modeling the number of successes out of multiple trials and the probability is fixed from trial to trial.  
+ 
 The probability density function of the beta distribution is given by  
 
 $$
 f(x) = \frac{x^{\alpha -1}(1-x)^{\beta -1}}{\frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}}
 $$
-
+ 
 where $x, \alpha, \beta > 0$. In addition, $E[X] = \frac{\alpha}{\alpha + \beta}$, $Var[X] = \frac{\alpha\beta}{(\alpha+\beta)^{2}(1+\alpha+\beta)}$.  
-
-
+ 
+![Beta distribution](continuous/beta.png)
+ 
 <div className="bg-shefYellow shadow-md p-3 md:p-5 rounded-3xl text-base text-black">
   <h2 className="mt-0 flex items-center"><HiOutlineLightBulb className="inline-block text-4xl mr-2" /> When to use?</h2>
   <ul className="my-0">
@@ -380,8 +384,7 @@ where $x, \alpha, \beta > 0$. In addition, $E[X] = \frac{\alpha}{\alpha + \beta}
     <li>Model any uncertain variable with a limited range, e.g. [0,1]</li>
   </ul>
 </div>  
-
-
+ 
 
 ## Resources
 [Understanding and Choosing the Right Probability Distributions](https://onlinelibrary.wiley.com/doi/pdf/10.1002/9781119197096.app03)  
@@ -389,4 +392,16 @@ where $x, \alpha, \beta > 0$. In addition, $E[X] = \frac{\alpha}{\alpha + \beta}
 [Statistics Foundations 2](https://www.linkedin.com/learning/statistics-foundations-2)  
 [Statistics Foundations 3](https://www.linkedin.com/learning/statistics-foundations-3)  
 [Probability and Random Variables - MIT OpenCourseWare](https://ocw.mit.edu/courses/mathematics/18-440-probability-and-random-variables-spring-2014/)
+
+
+
+
+  
+
+
+
+
+
+
+
 

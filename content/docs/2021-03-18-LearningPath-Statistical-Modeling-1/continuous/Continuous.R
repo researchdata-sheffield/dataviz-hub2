@@ -58,5 +58,72 @@ ggplot(data, aes(x = Outcome, fill = distribution)) +
   xlim(0, 15)
 
 
+# Exponential
+dataExp1 <- tibble(Outcome = rexp(sampleSize, rate = 1), distribution = "Exp(1)")
+dataExp2 <- tibble(Outcome = rexp(sampleSize, rate = .1), distribution = "Exp(0.1)")
+dataExp3 <- tibble(Outcome = rexp(sampleSize, rate = .2), distribution = "Exp(0.2)")
+dataExp4 <- tibble(Outcome = rexp(sampleSize, rate = .5), distribution = "Exp(0.5)")
+dataExp5 <- tibble(Outcome = rexp(sampleSize, rate = .8), distribution = "Exp(0.8)")
+
+data <- bind_rows(dataExp1, dataExp2, dataExp3, dataExp4, dataExp5)
+
+ggplot(data, aes(x = Outcome, fill = distribution)) + 
+  geom_density(aes(group = distribution), alpha = 0.25) +
+  labs(
+    title = "Sampling from Exponential distributions",
+    subtitle = "10,000 samples"
+  )
+
+# Cauchy
+dataCauchy1 <- tibble(Outcome = rcauchy(sampleSize, location = 0, scale = 1), distribution = "Cauchy(0,1)")
+dataCauchy2 <- tibble(Outcome = rcauchy(sampleSize, location = 0, scale = 2), distribution = "Cauchy(0,2)")
+dataCauchy3 <- tibble(Outcome = rcauchy(sampleSize, location = 0, scale = 0.5), distribution = "Cauchy(0,0.5)")
+dataCauchy4 <- tibble(Outcome = rcauchy(sampleSize, location = -1, scale = 5), distribution = "Cauchy(-1,5)")
+dataCauchy5 <- tibble(Outcome = rcauchy(sampleSize, location = -5, scale = 1), distribution = "Cauchy(-5,1)")
+
+data <- bind_rows(dataCauchy1, dataCauchy2, dataCauchy3, dataCauchy4, dataCauchy5)
+
+ggplot(data, aes(x = Outcome, fill = distribution)) + 
+  geom_density(aes(group = distribution), alpha = 0.25) +
+  labs(
+    title = "Sampling from Cauchy distributions",
+    subtitle = "10,000 samples"
+  ) +
+  xlim(-10,10)
+
+
+# Gamma
+dataGamma1 <-tibble(Outcome = rgamma(sampleSize, shape = 1, rate = 1), distribution = "Gamma(1,1)")
+dataGamma2 <- tibble(Outcome = rgamma(sampleSize, shape = 2, rate = 1), distribution = "Gamma(2,1)")
+dataGamma3 <- tibble(Outcome = rgamma(sampleSize, shape = 3, rate = 1), distribution = "Gamma(3,1)")
+dataGamma4 <- tibble(Outcome = rgamma(sampleSize, shape = 1, rate = 5), distribution = "Gamma(1,5)")
+dataGamma5 <- tibble(Outcome = rgamma(sampleSize, shape = 3, rate = 5), distribution = "Gamma(3,5)")
+
+data <- bind_rows(dataGamma1, dataGamma2, dataGamma3, dataGamma4, dataGamma5)
+
+ggplot(data, aes(x = Outcome, fill = distribution)) + 
+  geom_density(aes(group = distribution), alpha = 0.25) +
+  labs(
+    title = "Sampling from Gamma distributions",
+    subtitle = "10,000 samples. 1st parameter = shape, 2nd parameter = rate"
+  ) +
+  xlim(0, 10)
+
+
+# Beta
+dataBeta1 <-tibble(Outcome = rbeta(sampleSize, shape1 = .5, shape2 = .5), distribution = "Beta(0.5,0.5)")
+dataBeta2 <- tibble(Outcome = rbeta(sampleSize, shape1 = 2, shape2 = 1), distribution = "Beta(2,1)")
+dataBeta3 <- tibble(Outcome = rbeta(sampleSize, shape1 = 3, shape2 = 1), distribution = "Beta(3,1)")
+dataBeta4 <- tibble(Outcome = rbeta(sampleSize, shape1 = 1, shape2 = 5), distribution = "Beta(1,5)")
+dataBeta5 <- tibble(Outcome = rbeta(sampleSize, shape1 = 3, shape2 = 5), distribution = "Beta(3,5)")
+
+data <- bind_rows(dataBeta1, dataBeta2, dataBeta3, dataBeta4, dataBeta5)
+
+ggplot(data, aes(x = Outcome, fill = distribution)) + 
+  geom_density(aes(group = distribution), alpha = 0.25) +
+  labs(
+    title = "Sampling from Beta distributions",
+    subtitle = "10,000 samples. 1st parameter = shape 1, 2nd parameter = shape 2"
+  )
 
 
