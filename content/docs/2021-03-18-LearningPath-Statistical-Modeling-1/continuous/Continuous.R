@@ -107,7 +107,7 @@ ggplot(data, aes(x = Outcome, fill = distribution)) +
     title = "Sampling from Gamma distributions",
     subtitle = "10,000 samples. 1st parameter = shape, 2nd parameter = rate"
   ) +
-  xlim(0, 10)
+  xlim(0, 8)
 
 
 # Beta
