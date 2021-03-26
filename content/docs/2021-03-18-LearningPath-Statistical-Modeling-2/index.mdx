@@ -1,0 +1,107 @@
+---
+type: docs
+author: ["Dataviz Team"]
+title: "Sampling"
+thumbnail: 
+description: Statistical Modeling Part 2 - What is sampling? Sampling from a distribution? How to describe a sample?
+date: "2021-03-18"
+---  
+
+
+## Introduction
+Sampling refers to the process of extracting individuals or samples from the population, that is, the process of experimenting or observing the target population. In practice, it is infeasible to get hold of the entire population due to many reasons such as time and cost. There are two types of sampling: random sampling and non-random (systematic) sampling. The former refers to a sampling method that draws samples from the population in accordance with the principle of randomisation where it does not carry any subjectivity. Methods of random sampling includes simple random sampling, systematic sampling, cluster sampling and stratified sampling. The latter is a method of extracting samples based on the researcher's opinions, experience, or relevant knowledge, therefore is subjective.  
+ 
+There are some key points to consider before sampling because we would like the characteristic of samples to be as close to the population as possible. We should always try our best to avoid sampling bias, reduce sampling error, and lower the confidence level. We would not go into details on sampling methods as there are already many great resources out there on sampling and here is a list that we think would be helpful to you: 
+- [(Video) Sampling - Statistics Foundations: 2](https://www.linkedin.com/learning/statistics-foundations-2/sample-considerations?u=36248012) 
+- [6 Sampling Techniques](https://humansofdata.atlan.com/2017/07/6-sampling-techniques-choose-representative-subset/)
+- [Sampling - JHSPH OpenCourseWare](https://ocw.jhsph.edu/courses/statmethodsforsamplesurveys/lectureNotes.cfm)
+- [Sampling Lecture Notes - Northern Illinois University](https://www.math.niu.edu/~richard/Math101/sp07/stats3_ho.pdf)
+ 
+ 
+In this chapter we will be looking at sampling from probability distributions and ways to describe a sample.
+ 
+
+## Prerequisites
+
+<div className="bg-white shadow-md p-3 md:p-5 rounded-3xl text-base text-black border-1 border-gray-50">
+  <div>
+    <span className="py-1 px-2 bg-shefYellow text-black hover:bg-yellow-400 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Required</span> 
+    <p className="mt-2"><Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-1">Probability Distributions</Link></p>
+  </div>
+  <div className="mt-6">
+    <span className="py-1 px-2 text-white bg-shefGreen hover:bg-green-700 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Recommended</span>
+    <p className="mt-2">Mean, Median, Mode, Range, Standard Deviation, Z-Score</p>
+  </div>
+  <div className="mt-6">
+    <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Optional</span>
+    <p className="mb-0 mt-2">None</p>
+  </div>
+</div>
+
+
+## Sampling from distributions
+If we have samples from a population then we can use these samples to estimate the distribution and parameters. Why do we need sampling from distributions if the distribution is already known or partially known? There are several applications:  
+- approximate integrals or value/parameter of interest
+- estimate expectations 
+- simulation or demonstration  
+
+As in many examples we have seen in Part 1, we usually plug-in the parameters in the distribution then find the corresponding value to calculate the probability for a specific event. However, this will not work if the distribution is complex (e.g. high-dimensional) and we cannot compute the integral from the probability density function directly. In R (a popular programming language for statistical analysis), sampling for common distributions like the uniform distribution, binomial distribution, etc., can be done by built-in pseudo-random number generators (PRNGs) with the inverse transform sampling technique. But this technique is unlikely to work for complex or unknown distributions. In this section we are going to see three basic sampling techniques. Although there are more sampling techniques such as Gibbs sampling and Metropolis-Hastings Algorithm that addressed some issues of three basic sampling techniques, it is beyond the scope of this chapter. If you are interested in the details, see lecture notes from [stats.ox.ac.uk](https://www.stats.ox.ac.uk/~teh/teaching/simulation/slides.pdf) and [warwick.ac.uk/fac/statistics](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/johansen/teaching/mcm-2007.pdf).
+
+
+### Inverse transform sampling
+The [inverse transform sampling](https://cs.brown.edu/courses/cs1951k/lectures/2020/inverse_transform_sampling.pdf) only works if the inverse cumulative function of the probability distribution exists. Given a specific value $x$, the cumulative density function of a random variable $X$ tells us the probability of $X$ (in the range $[0,1]$) when it is smaller than or equal to $x$, and the inverse cumulative function will return the value of $x$ given a specific probability.  
+ 
+The idea of inverse transform sampling is that we draw samples (at random using the pseudo-random number generators) from the uniform distribution $U[0,1]$ which simulates the range of probability $[0,1]$. Then we can plug-in this "probability" into the inverse cumulative function and calculate the value of $x$ which effectively generates a random sample from the distribution of the random variable $X$.  
+ 
+The inverse transform sampling is a special case of transformation method and there is an another well-known transform method called the **Box-Muller transform** which provides the same transform but with reduced costs and faster computation. Learn more about the Box-Muller transform [here](https://www.statisticshowto.com/inverse-sampling/).  
+ 
+ 
+### Rejection Sampling  
+Rejection sampling is useful when your chosen programming language doesn't provide a built-in function to generate samples from the probability density function $f(x)$ (also called the target density). The idea of this sampling is to select a distribution $g(x)$ (the candidate density) as close as to $f(x)$, with the condition that the support of $g(x)$ must be greater or equal to the support of $f(x)$, i.e. the range of $g(x)$ on x-axis should be greater than $f(x)$. In another word, $g(x)$ has heavier tails. Then we can draw a sample from $g(x)$ and choose to accept or reject it based on the probability of acceptance.  
+ 
+Here is the steps for rejection sampling: 
+ 
+1. Draw a sample $U$ from the uniform distribution $U[0,1]$ act as the probability threshold
+2. Draw a sample $X$ from $g$
+3. Assert the following:  
+
+$$
+U \leq \frac{f(X)}{cg(X)}
+$$
+
+Where $c = \underset{x \in \chi_{f}}{sup} \frac{f(x)}{g(x)} < \infty$, the ratio for greatest difference between $f(x)$ and $g(x)$.  
+
+if the above condition is true then accept $X$ as a sample. Otherwise reject the sample and repeat the process.  
+
+![Rejection sampling](https://www.data-blogger.com/wp-content/uploads/2016/01/rs1-300x225.png)  
+*Rejection sampling - samples will be generated within the blue curve but any sample fall outside the red line will be rejected. [source](https://www.data-blogger.com/2016/01/24/the-mathematics-behind-rejection-sampling/)*
+
+The drawback of this sampling method appears when the dimension of the random variable is significantly increased, and will lead to a very high rejection rate.  
+
+### Importance Sampling
+The importance sampling can be used as an alternative to rejection sampling and address the issue of high-dimensional and high acceptance rate at certain regions. The idea is, as the name suggests, to create a weight function that assigns weights to each region in terms of "importance". The importance sampling increases the number of "rare events", thus increases the precision of the estimates. Note that we cannot generate samples using the importance sampling but it helps us to estimate parameters for the target distribution. To generate samples, consider using the Metropolis-Hastings algorithm.
+ 
+ 
+## Online sampling tool
+[This website](https://www.essycode.com/distribution-viewer/) has created a really useful tool that allows users to see probability mass/density functions and cumulative distribution functions for a range of probability distributions. You can also enter different parameters and functions will be altered accordingly.  
+ 
+We also recommend you to use the **Sample** button at the top right corner of that website and try to generate samples in 10, 100, 1000, 10,000, and 100,000 to see the difference in the generated graphs. You will find that as the sample size increases, the sampling distribution generated at the bottom will approximate the theoretical distribution at the top. Samples are always discrete distributions but can approximate continuous distributions if the sample size is large enough.
+
+## Describe a sample
+Once we have samples from a distribution or a population, we should consider using some measures such as dispersion and central tendency to describe the characteristic of the samples. Samples from different distributions would likely be treated differently.
+ 
+### Binary variable
+For samples from a binary variable, we can use the percentage (%) to get the ratio of two categories. For example, suppose the Dataviz.Shef has 1,290 visitors this month and we have a variable that tells us whether the visitor uses a mobile device to visit our website. We take five samples with a sample size of ten each and on average 3 people use mobile devices to visit the website. Then we can use 30% to describe this statistic instead of plain numbers.
+ 
+### Multinomial
+For samples with multiple categories, consider using mode in addition to percentages. The mode will tell us what value/category has the highest proportion in the distribution. Note that the distribution can have more than one mode.
+ 
+### Ordinal
+Similar to multinomial and binary variables, we should consider use percentages for ordinal data. However, median will be used instead of mode since categories are ordered in ordinal data and we are interested in the central tendency.
+ 
+
+### Discrete
+The choices for discrete data will be wider and more common. Some measures we can use are minimum, maximum, mean, median, and standard deviation. In addition, one might also consider interquartile range (IQR) and variance.
+
+### Continuous
+In addition to measures mentioned for discrete data, kurtosis and skewness are often used to describe the shape of the distribution. Kurtosis describes the tail of the distribution whereas skewness measures the asymmetry.
