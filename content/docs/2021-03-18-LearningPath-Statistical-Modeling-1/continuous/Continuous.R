@@ -126,4 +126,5 @@ ggplot(data, aes(x = Outcome, fill = distribution)) +
     subtitle = "10,000 samples. 1st parameter = shape 1, 2nd parameter = shape 2"
   )
 
+?rnorm
 
