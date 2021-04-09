@@ -1,5 +1,6 @@
 library(tidyverse)
 
+
 ##########################
 ######### T-test #########
 ##########################
@@ -59,25 +60,15 @@ var.test(
 
 
 
-
+#########################
+######### ANOVA #########
+#########################
 mtcars
 
-lm1 <- lm(mpg ~ hp + cyl + disp, mtcars)
-lm2 <- lm(mpg ~ hp + disp, mtcars)
+lm1 <- lm(mpg ~ hp , mtcars)
+lm2 <- lm(mpg ~ hp + gear, mtcars)
 
-lm2
-
-plot(lm2)
-
+summary(lm1)
 summary(lm2)
 
-
-plot(lm(speed ~ dist, cars))
-
-
-# Check normality
-shapiro.test(cars$speed)
-
-# One-tailed t-test
-t.test(cars$speed, mu = 20)
-
+anova(lm1, lm2)

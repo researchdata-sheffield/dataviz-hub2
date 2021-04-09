@@ -11,7 +11,7 @@ import { HiOutlineLightBulb } from "react-icons/hi"
 
 
 ## Introduction
-Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of sampling and decide whether the hypothesis (assumptions made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, F-test and so on. These tests are called parametric tests because they relie on several assumptions for data related to underlying distribution and sampling variances.  
+Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of sampling and decide whether the hypothesis (assumptions made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, F-test and so on. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances.  
 
 
 Parametric tests has the following applications:  
@@ -20,21 +20,21 @@ Parametric tests has the following applications:
 - compare two statistical models (estimate differences)
 - determine relationship between variables  
 
-The basis idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. That is, in order to test whether a hypothesis $H_{0}$ is correct, first assume that the hypothesis is correct, and then make a decision to accept or reject the hypothesis $H_{0}$ according to the sample. If the observed value of the sample is classifield as a rare event, the hypothesis $H_{0}$ should be rejected, otherwise the hypothesis should be accepted. In all cases, there will be also a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$.  
+The basis idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. That is, in order to test whether a hypothesis $H_{0}$ is correct, first assume that the hypothesis is correct, and then make a decision to accept or reject the hypothesis $H_{0}$ according to the sample. If the observed value of the sample is classified as a rare event, the hypothesis $H_{0}$ should be rejected, otherwise the hypothesis should be accepted. In all cases, there will aslo be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$.  
 
 Performing a test usually consists the following steps:
 1. Set the test hypothesis (or null hypothesis) and denote it as $H_{0}$, so the alternative hypothesis will be $H_{1}$.
-2. Set the test level (or the significance level) $\alpha$, usually taken as 0.05 or 0.01. The value represent the probability that the null hypothesis being incorrectly rejected, given that the null hypothesis is true.
+2. Set the test level (or the significance level) $\alpha$, usually taken as 0.05 or 0.01. The value represents the probability of the null hypothesis being incorrectly rejected, given that the null hypothesis is true.
 3. Choose a suitable statistical test.
 4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$. 
 
 
 ### Sidenote
-The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there is are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution (prior distribution) and posterior distribution (posterior distribution) are introduced to find out the probability of each parameter value in the parameter space.  
+The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution (prior distribution) and posterior distribution (posterior distribution) are introduced to find out the probability of each parameter value in the parameter space.  
 
 ---
 
-When you use test functions in R you will often see *confidence interval* included in your results with certain percentage. A confidence interval estimates a range of possible values which is very likely to include population mean. If you look closely at the formula of the confidence interval then you will see it calculates variations around the sample mean. A common misunderstanding of confidence interval is to interpret it as the probability of the population mean will fall within the interval. However, the actual meaning of the percentage is the probability of the interval produced will contain the population mean. For example, if we have a 99% confidence interval then we are confident that we will see the population mean fall within the interval in 99 out of 100 times of construction of confidence intervals. Whereas the misunderstanding put confidence on a particular confidence interval.  
+When you use test functions in R you will often see *confidence interval* included in your results with a certain percentage. A confidence interval estimates a range of possible values which is very likely to include population mean. If you look closely at the formula of the confidence interval then you will see it calculates variations around the sample mean. A common misunderstanding of confidence interval is to interpret it as the probability of the population mean will fall within the interval. However, the actual meaning of the percentage is the probability that the interval produced will contain the population mean. For example, if we have a 99% confidence interval then we are confident that we will see the population mean fall within the interval in 99 out of 100 times of construction of confidence intervals. Whereas the misunderstanding put confidence on a particular confidence interval.  
   
 
 ## Prerequisites
@@ -57,11 +57,22 @@ When you use test functions in R you will often see *confidence interval* includ
 <br/>  
 
 
+## Z-test
+A Z-test is a hypothesis test based on normal distribution that investigate the significance difference between two group mean with the following assumptions:  
+- large sample size (over 30)
+- samples are independent
+- populations follows normal distribution
+- variances are known
+
+There is no built-in function in R for calculating z-test, however, you can work it out using means and variances for each sample group and refer to the standard normal table.  
+
 ## T-test
 The T-test is a hypothesis test that investigate the significance difference between two groups with the following assumptions:  
-- data are independent and follows normal distribution
+- samples are independent 
+- populations follows normal distribution
 - data are ordinal or continuous  
 - homogeneity of variance (meaning variances are equal among independent samples), although the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this  
+- sample size is not large
 
 The test calculates the t-value according to [Student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) and if the t-value close to zero then it suggests there isn't a significant difference between two groups. There are three types of T-test:  
 1. **One-sample t-test** - use for comparing a single group against a specific value.
@@ -108,23 +119,85 @@ var.test(
 
 
 ## Linear models
+A very practical application of hypothesis testing is on linear models. Linear regression is a statistical analysis technique that uses the least square regression function to model the relationship between a continuous response variable and one or more independent predictor (or explanatory) variables. This function is a linear combination of one or more model parameters called regression coefficients. Functions that have only one predictor variable are called simple regression, and functions with more than one predictor variable are called multiple regression. In linear regression, the data is modeled using a linear predictive function, and unknown model parameters are also estimated through the data. These models are called linear models.  
+
+A simple regression looks something like the following:  
+
+$$
+Y_{i} = \alpha + \beta_{1}X_{1i} + \beta_{2}X_{2i} + \epsilon_{i}
+$$
+
+where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors.  
+
+In this section, we are going to see some use cases of t-test and f-test in linear models.
+
+### T-test
+If we were creating a linear model from a dataset and print a summary of the details, we will be getting outputs like this:
+
+```r
+# use the built-in dataset mtcars
+lm2 <- lm(mpg ~ hp + disp, mtcars)
+
+summary(lm2)
+```
+
+![A linear model summary](3lm.png)
+
+Notice that for each variable there are corresponding t-statistic and p-value ($Pr(>|t|)$). But what are we testing? In a linear model we are testing the null hypothesis that the coefficient $\beta{j}$ of variable $X{ji}$, is equal to zero. In the picture on above, our estimate of `disp` has a p-value that significantly smaller than 0.05 (the default significance level) which means we have sufficient evidence to reject the null hypothesis that the coefficient equals to zero, meaning we can keep the `disp` variable for th model. On the other hand, the variable `hp` has a p-value of 0.73679 which suggests we do not have strong evidence to reject the null hypothesis. Then a naive final model would be  
+
+$$
+mpg = 30.73 - 0.03disp
+$$
+
+  
+The $R^{2}$ score shows how well the regression fitted to data, the closer to 1 the better. The f-statistic in the output tells us whether the current model is better than the intercept-only model (i.e. setting all variable's coefficient to zero). In this case, the p-value suggest we can reject the null hypothesis that all coefficients are equal to zero.  
 
 
+### ANOVA
+Analysis of variances or ANOVA extends from t-test and is used to test the significance of the difference between the means of two or more samples (that may come from different groups). Due to the influence of various factors, there is variability in data obtained from sampling. The causes of variation can be divided into two basic sources:
+- **Between-group variation** - Differences caused by experimental conditions like different treatments. It is expressed by the total sum of the sum of squared deviations between the mean value of the variable in each group and the grand mean.
+- **Within-group variation** - Differences caused by measurement errors or differences between individuals. These errors are random errors. They are expressed by the sum of the sum of squared deviations between the mean in each group and the value of the variable within the group.  
 
-T-Test
-ANOVA (f distribution)
-Regression
+The total variances will be variances from between-group plus variances from within-group. [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.  
+
+Assumptions:
+- samples are independent and normally distributed 
+- homogeneity of variances for populations
+
+There are several types of ANOVA but one-way ANOVA and two-way ANOVA are the most common ones which assess differences between a continuous variable and one predictor variable, and differences between a continuous variable and two predictor variables, respectively. Now, let's look at how we can use ANOVA with f-tests to compare two linear models.  
+
+Suppose I have the following two models, where the second linear model has a additional variable we would like to include:  
+
+```r
+lm1 <- lm(mpg ~ hp , mtcars)
+lm2 <- lm(mpg ~ hp + gear, mtcars)
+
+summary(lm1)
+summary(lm2)
+```
+
+![Summaries of two linear models](4lms.png)
+
+From the summaries on above we can see the variable `gear` with a positive coefficient is a good addition to the model (somewhat suggests cars with more gears have better fuel economy). Now we can use the anova function to see which model provides the best fit of the data. 
+
+```r
+anova(lm1, lm2)
+```
+
+![Anova](5anova.png)
+
+From the result we can see that the sum of squares has reduced over 30%, and the p-value suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` have significantly improved the model and we can happily accept the new variable into our model.
 
 
-
-
-
-
-
-Frequentist inference is the process of determining properties of an underlying distribution via the observation of data. 
+## Next step
+In this chapter we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In the next chapter we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.  
 
 
 ## Recommended reading
 [Seeing Theory - Frequentist Inference](https://seeing-theory.brown.edu/frequentist-inference/index.html#section1)  
-[MIT Lecture note - Frequentist Statistics](https://www-math.mit.edu/~dav/05.dir/class17-slides-all.pdf)  
+[Hypothesis Testing](https://ocw.jhsph.edu/courses/methodsinbiostatisticsii/PDFs/lecture15.pdf)  
+[Another hypothesis Testing material](https://www.ucl.ac.uk/~uctp41a/b203/lecture4.pdf)  
+[T-test](https://www.stats.ox.ac.uk/~massa/Lecture%2010.pdf)  
+[Linear Models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)  
+[ANOVA](https://bookdown.org/ndphillips/YaRrr/anova.html)  
 
