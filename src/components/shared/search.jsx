@@ -180,7 +180,7 @@ class Search extends Component {
       }
       else {
         return (
-          <div className="bg-white text-gray-900 py-2">Awaiting for your input ...</div>
+          <div className="bg-white text-gray-900 py-2">Type something in the search box ...</div>
         )
       }
     }

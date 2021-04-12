@@ -64,7 +64,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 text-sm 2xl:text-lg xl:py-3 xl:px-8 bg-black text-white hover:text-gray-800 hover:bg-gray-100" style={{boxShadow: 'rgba(41,197,255,1) 5px 5px .1px', fontWeight: '800'}}>
+                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 text-sm 2xl:text-lg xl:py-3 xl:px-8 shadow-none bg-white text-gray-900 border-1 border-gray-500 hover:text-white hover:bg-gray-900">
                   What is data visualisation
                 </ButtonWithArrow>
               </Fade>
@@ -124,7 +124,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       <div className="lg:min-h-100 flex flex-wrap items-center text-left relative py-24" style={{background: 'linear-gradient(135deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={200} duration={1500}>
           <div className="px-5 md:px-24 xl:px-36 2xl:px-52 mt-16 mb-32">
-            <div className="text-black">
+            <div className="text-white">
               <h1 className="text-5xl 2xl:text-6xl font-semibold" style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Data and visualisation</h1>
               <p className="text-base 2xl:text-xl my-4 font-semibold md:w-3/5" style={{}}>
                 Data visualisation is currently an extremely active and critical aspect in research, teaching, and development. The main purpose of data visualisation is to communicate 

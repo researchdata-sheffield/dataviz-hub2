@@ -1,0 +1,52 @@
+---
+type: docs
+author: ["Dataviz Team"]
+title: "Central Limit Theorem"
+thumbnail: 
+description: Statistical Modeling Part 5 - Central Limit Theorem and its applications
+date: "2021-04-12"
+---  
+
+import { HiOutlineLightBulb } from "react-icons/hi"  
+
+
+In the <Link to="/docs/07/04/2021/LearningPath-Statistical-Modeling-4">previous chapter</Link> we have seen T-test, F-test, and how we can use them to assess linear models. However, all these would not be possible without the **Central Limit Theorem** (CLT). To obtain the confidence interval of the sample or perform hypothesis testing, we need to know the sampling distribution beforehand. If the distribution of the sample is unknown then we do not know which type of statistic to use, and the confidence interval estimation and hypothesis testing are simply impossible to start.  
+
+The CLT tells us that for any numbers of independent, identically distributed random variable with finite mean and variance (regardless what distribution it has!), its sum tends to be normally distributed as the number of experiments or sample size increases. The nature of the normal distribution implies the mean of a large number of random variables also approximate the normal distribution. This result usually require the sample size to be greater than or equal to 30.  
+
+A more formal definition of the CLT is as follows:  
+
+**Definition**. Given that 
+
+$$
+S_{n} = \sum_{i=1}^{n} X_{i}
+$$
+
+where $X_{1}, X_{2}, ..., X_{n}$ are independent and identically distributed random variables with mean $\mu$ and variance $\sigma^{2}$, and random variable $S_{n}$ is the sum of these $n$ i.i.d random variables. Then, as $n$ tends to infinity, 
+
+$$
+S_{n} \sim N(n\mu, \sqrt{n}\sigma^{2})
+$$
+
+, or $S_{n}$ is normally distributed with mean $n\mu$ and variance $\sqrt{n}\sigma$. The CLT also extends to the normalised mean of these random variables - if we replace $S_{n}$ by the average of $n$ i.i.d random variables $\bar X$, then $\bar X \sim N(\mu, \frac{\sigma^{2}}{\sqrt{n}})$.
+
+With the CLT, even if we do not know about the distribution of the population, we can now assume it is normally distributed as the sampling distribution of the mean will be approximate normal. Thus, we can use statistic from normal distributions to calculate confidence intervals and perform hypothesis testing. And the requirement for sample size here is acceptable to most of experiments, no less than 30 will do!  
+
+
+
+
+
+## Recommended reading
+[History of the Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem#History)
+[Galton Board / Bean machine](https://en.wikipedia.org/wiki/Bean_machine)
+[Proofs](https://www.cs.toronto.edu/~yuvalf/CLT.pdf)
+
+
+
+
+
+
+
+Try http://onlinestatbook.com/stat_sim/sampling_dist/ which shows how given any calculable parameter of the distribution, if large enough sample is taken it will tend to be distributed normally.
+- thus normality is not the problem
+- problem is homogeneity of variance - plot of mean vs S

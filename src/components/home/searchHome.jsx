@@ -82,8 +82,8 @@ class Search_Home extends Component {
           </div>
         </div>
         <Slide left>
-          <div className="hidden md:flex justify-center pt-5 2xl:pt-8 z-10 w-full">
-            <div className="w-2/7 mr-24 text-left">
+          <div className="hidden md:flex justify-evenly pt-5 2xl:pt-8 z-10 w-full">
+            <div className="w-2/7 text-left">
               <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Dataviz.Shef</div>
                 <ul className="list-reset leading-normal text-xs 2xl:text-sm text-left">
                   <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
@@ -97,12 +97,13 @@ class Search_Home extends Component {
             </div>
             
             <div className="w-2/7 text-left">
-              <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Try these searches</div>
+              <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Featured</div>
                 <ul className="list-reset leading-normal text-xs 2xl:text-sm">
                   <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="javascript:void(0)">Chart</a></li>
                   <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="javascript:void(0)">Colour</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="javascript:void(0)">R</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistical Modeling"}}) }} href="javascript:void(0)">Statistical Modeling</a></li>
                   <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Docs"}}) }} href="javascript:void(0)">Docs</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="javascript:void(0)">R</a></li>
                 </ul>
             </div>
           </div>

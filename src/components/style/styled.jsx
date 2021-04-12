@@ -65,14 +65,14 @@ export const ArrowBox = styled.div`
 `
 
 export const ArrowBox_featured = styled(ArrowBox)`
-  background-color: #0C0717;
+  background-color: #111827;
 
   &:after {
-    border-bottom-color: #0C0717;
+    border-bottom-color: #111827;
   }
 
   .group:hover > & {
-    border-top: 0px solid #0C0717;
+    border-top: 0px solid #111827;
   }
 
 `
@@ -158,7 +158,7 @@ export const BlackWhiteButton = styled_twin.button`
 
 export const AnimateButton = styled_twin.button`
   ${ ({ external }) => !external && tw`mt-8` };
-  ${tw`bg-black text-white text-center font-semibold py-2 px-4 shadow`};
+  ${tw`bg-white text-black text-center font-semibold py-2 px-4 shadow`};
   border: none;
   z-index: 1;
   position: relative;
@@ -184,12 +184,12 @@ export const AnimateButton = styled_twin.button`
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: ${({hoverBC}) => hoverBC ? hoverBC : `#fff`};
+    background-color: ${({hoverBC}) => hoverBC ? hoverBC : `#111827`};
     transition: all .3s;
     z-index: -1;
   }
   &:hover {
-    color: #000;
+    color: #fff;
     &:before {
         width: 100%;
     }

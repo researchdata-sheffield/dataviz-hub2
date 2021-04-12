@@ -16,7 +16,7 @@ const LearningPath = () => {
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
 
   return (
-    <div id="learning_path" className="lg:min-h-110 flex flex-wrap justify-center items-center relative bg-black-custom">
+    <div id="learning_path" className="lg:min-h-110 flex flex-wrap justify-center items-center relative bg-gray-900">
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center mt-24">
           <div className="text-4xl lg:text-6xl text-white w-full leading-tight font-extrabold" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning paths.</div>
@@ -26,7 +26,7 @@ const LearningPath = () => {
       
       <div className="flex flex-wrap text-black pt-10 pb-32 justify-center">
         <Zoom bottom duration={700} delay={100}>
-          <div className={`${cardClasses} bg-pink-200`} tabIndex="0">
+          <div className={`${cardClasses}`} style={{backgroundColor: '#fed7e2'}} tabIndex="0">
             <div className={frontCard}>
               <FaUniversity className="w-full text-4xl xl:text-5xl" />
               <div className="text-xl mt-5 font-bold xl:text-2xl">Dataviz Intro</div>
@@ -42,7 +42,7 @@ const LearningPath = () => {
           </div>
         </Zoom>
         <Zoom bottom duration={700} delay={250}>
-          <div className={`${cardClasses} bg-blue-200`} tabIndex="0">
+          <div className={`${cardClasses}`} style={{backgroundColor: '#bee3f8'}} tabIndex="0">
             <div className={frontCard}>
               <div className="flex flex-wrap justify-around text-4xl xl:text-5xl w-full">
                 <div><FaPython className="text-white" /></div>

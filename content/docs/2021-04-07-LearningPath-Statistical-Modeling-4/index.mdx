@@ -11,7 +11,7 @@ import { HiOutlineLightBulb } from "react-icons/hi"
 
 
 ## Introduction
-Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of sampling and decide whether the hypothesis (assumptions made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, F-test and so on. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances.  
+Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of sampling and decide whether the hypothesis (assumptions made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances.  
 
 
 Parametric tests has the following applications:  
@@ -26,7 +26,9 @@ Performing a test usually consists the following steps:
 1. Set the test hypothesis (or null hypothesis) and denote it as $H_{0}$, so the alternative hypothesis will be $H_{1}$.
 2. Set the test level (or the significance level) $\alpha$, usually taken as 0.05 or 0.01. The value represents the probability of the null hypothesis being incorrectly rejected, given that the null hypothesis is true.
 3. Choose a suitable statistical test.
-4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$. 
+4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$.  
+
+In this chapter we will be looking at common hypothesis test method and their application in linear models. You can download the R script file [here](./script.R) for this chapter.  
 
 
 ### Sidenote
@@ -198,6 +200,6 @@ In this chapter we have scratched the surface of statistical testing and seen tw
 [Hypothesis Testing](https://ocw.jhsph.edu/courses/methodsinbiostatisticsii/PDFs/lecture15.pdf)  
 [Another hypothesis Testing material](https://www.ucl.ac.uk/~uctp41a/b203/lecture4.pdf)  
 [T-test](https://www.stats.ox.ac.uk/~massa/Lecture%2010.pdf)  
-[Linear Models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)  
+[Maths behind linear models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)  
 [ANOVA](https://bookdown.org/ndphillips/YaRrr/anova.html)  
 
