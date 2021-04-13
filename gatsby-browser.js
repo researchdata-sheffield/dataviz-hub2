@@ -38,7 +38,7 @@ export const onServiceWorkerUpdateReady = () => {
       `Reload to display the latest version?`
   )
   if (answer === true) {
-    window.location.reload(true);
+    window.location.reload();
   }
 };
 

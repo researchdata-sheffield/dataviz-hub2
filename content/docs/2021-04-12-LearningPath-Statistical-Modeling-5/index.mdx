@@ -5,6 +5,7 @@ title: "Central Limit Theorem"
 thumbnail: 
 description: Statistical Modeling Part 5 - Central Limit Theorem and its applications
 date: "2021-04-12"
+disableTOC: "true"
 ---  
 
 import { HiOutlineLightBulb } from "react-icons/hi"  
@@ -22,7 +23,7 @@ $$
 S_{n} = \sum_{i=1}^{n} X_{i}
 $$
 
-where $X_{1}, X_{2}, ..., X_{n}$ are independent and identically distributed random variables with mean $\mu$ and variance $\sigma^{2}$, and random variable $S_{n}$ is the sum of these $n$ i.i.d random variables. Then, as $n$ tends to infinity, 
+where $X_{1}, X_{2}, ..., X_{n}$ are independent and identically distributed random variables with mean $\mu$ and variance $\sigma^{2}$, and random variable $S_{n}$ is the sum of these $n$ i.i.d random variables. Then, as $n$ tend towards infinity, 
 
 $$
 S_{n} \sim N(n\mu, \sqrt{n}\sigma^{2})
@@ -30,23 +31,26 @@ $$
 
 , or $S_{n}$ is normally distributed with mean $n\mu$ and variance $\sqrt{n}\sigma$. The CLT also extends to the normalised mean of these random variables - if we replace $S_{n}$ by the average of $n$ i.i.d random variables $\bar X$, then $\bar X \sim N(\mu, \frac{\sigma^{2}}{\sqrt{n}})$.
 
-With the CLT, even if we do not know about the distribution of the population, we can now assume it is normally distributed as the sampling distribution of the mean will be approximate normal. Thus, we can use statistic from normal distributions to calculate confidence intervals and perform hypothesis testing. And the requirement for sample size here is acceptable to most of experiments, no less than 30 will do!  
+With the CLT, even if we do not know about the distribution of the population, we can now assume it is normally distributed as the sampling distribution of the mean will be approximate normal. Thus, we can use statistics from normal distributions to calculate confidence intervals and perform hypothesis testing. And the requirement for sample size here is acceptable to most of experiments, no less than 30 will do!  
+
+To give you a better idea visually, try [this website](http://onlinestatbook.com/stat_sim/sampling_dist/) that provides a simulation which lets you explore various aspects of sampling distributions. You will soon find out that for any statistics of the distribution (mean, variance, range etc.), it will be distributed normally given large enough sample is taken. 
+
+Performing hypothesis testing requires assumptions to be true and we are trouble free with normality thanks to the Central Limit Theorem. But this is not always the case for the an other important assumption - homogeneity of variance. As mentioned in the previous chapter, the homogeneity of variance assumption assumes within-group variances are equal across independent groups. For example, if we were creating a model for exploring the effect of drinking alcohol on weight and we have sampled two groups of people (drinking alcohol or not) from a same population, then we would want the variance of weight for each group to be very close together, because data with high variability would not be suitable for construction of a linear model.  
 
 
 
 
 
 ## Recommended reading
-[History of the Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem#History)
-[Galton Board / Bean machine](https://en.wikipedia.org/wiki/Bean_machine)
-[Proofs](https://www.cs.toronto.edu/~yuvalf/CLT.pdf)
+[History of the Central Limit Theorem](https://en.wikipedia.org/wiki/Central_limit_theorem#History)  
+[Galton Board / Bean machine](https://en.wikipedia.org/wiki/Bean_machine)  
+[Proofs](https://www.cs.toronto.edu/~yuvalf/CLT.pdf)  
+[Homogeneity of Variance Test in R](https://www.geeksforgeeks.org/homogeneity-of-variance-test-in-r-programming/)
+
+
+  
 
 
 
-
-
-
-
-Try http://onlinestatbook.com/stat_sim/sampling_dist/ which shows how given any calculable parameter of the distribution, if large enough sample is taken it will tend to be distributed normally.
 - thus normality is not the problem
 - problem is homogeneity of variance - plot of mean vs S

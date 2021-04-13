@@ -100,7 +100,7 @@ t.test(
 [Click here](https://www.sthda.com/english/wiki/t-test-formula) to see t-test formula.
 
 ## F-test
-F-test is a test that the statistical value (or f value) obeys the [F-distribution](https://en.wikipedia.org/wiki/F-distribution) (this is the sampling distribution for ratio of variances) under the null hypothesis $H_{0}$. It is usually used to analyse a statistical model that uses more than one parameter to determine whether all or part of the parameters in the model are suitable for estimating the population. In short, the F-test compares nested models fit to the same dataset by comparing variances of models. The assumptions for data will be similar to the one in T-test:
+F-test is a test that the statistical value (or f value) obeys the [F-distribution](https://en.wikipedia.org/wiki/F-distribution) (this is the sampling distribution for ratio of variances - $\frac{between-group variance}{within-group variance}$) under the null hypothesis $H_{0}$. It is usually used to analyse a statistical model that uses more than one parameter to determine whether all or part of the parameters in the model are suitable for estimating the population. In short, the F-test compares nested models fit to the same dataset by comparing variances of models. The assumptions for data will be similar to the one in T-test:
 - data are normally distributed
 - data are independent from each other  
 - sum of squares follows $\chi^{2}$ distributions
@@ -118,6 +118,11 @@ var.test(
 ```
 
 ![F-test](2f-test.png)
+
+There are other tests we can also use to test for homogeneity of variance:  
+- Bartlett (least robust)
+- Brown-Forsythe - use median instead of the mean, good for non-normality data
+- Levene - good for symmetric, moderate-tailed distributions  
 
 
 ## Linear models
@@ -163,8 +168,9 @@ Analysis of variances or ANOVA extends from t-test and is used to test the signi
 The total variances will be variances from between-group plus variances from within-group. [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.  
 
 Assumptions:
-- samples are independent and normally distributed 
-- homogeneity of variances for populations
+- samples are independent
+- homogeneity of variances between samples
+- experimental errors are normally distributed
 
 There are several types of ANOVA but one-way ANOVA and two-way ANOVA are the most common ones which assess differences between a continuous variable and one predictor variable, and differences between a continuous variable and two predictor variables, respectively. Now, let's look at how we can use ANOVA with f-tests to compare two linear models.  
 
@@ -188,7 +194,7 @@ anova(lm1, lm2)
 
 ![Anova](5anova.png)
 
-From the result we can see that the sum of squares has reduced over 30%, and the p-value suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` have significantly improved the model and we can happily accept the new variable into our model.
+From the result we can see that the sum of squares has reduced over 30%, and the p-value suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` have significantly improved the model and we can happily accept the new variable into our model. 
 
 
 ## Next step
