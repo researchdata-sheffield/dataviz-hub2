@@ -201,6 +201,7 @@ module.exports = {
         //cache_busting_mode: 'none'   // Work with offline plugin
       },
     },
+    `gatsby-plugin-offline`, // should be listed after the manifest plugin
     "gatsby-plugin-postcss",
     {
       resolve: 'gatsby-background-image',
