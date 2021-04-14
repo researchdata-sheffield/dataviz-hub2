@@ -14,9 +14,9 @@ import { HiOutlineLightBulb } from "react-icons/hi"
 ## Introduction
 A **[random variable](https://www.stat.yale.edu/Courses/1997-98/101/ranvar.htm)** is a numerical representation (can be either a set of values or a function mapped to a continuous range) of an experiment's outcomes. A **[probability distribution](https://www.itl.nist.gov/div898/handbook/eda/section3/eda361.htm)** is a mathematical function that gives the probabilities for different possible outcomes of the experiment. Consider an experiment of drawing a ball three times with replacement from an urn which consists of seven red balls and three blue balls. If a random variable **X** represents the total number of times we draw a blue ball, then the set of values that **X** can be are:  {$0, 1, 2, 3$}. Then the probability distribution for the random variable **X** gives the probabilities for these outcomes to happen. For example, the chance of getting blue balls from the urn in all three draws will be $(\frac{3}{10})^{3} = \frac{27}{1000} = 2.7\%$. If **Y** is a discrete random variable then it has a corresponding discrete probability distribution; If **Y** is a continuous random variable then its corresponding probability distribution will also be continuous.  
 
-In practice, datasets can be described as samples of the population or outcomes of random variables (features that we have collected). Each dataset usually has two or more variables and each variable could have different probability distributions. It is often our interest to identify a dataset's distribution so that we can make assumptions on the dataset's nature and/or relationships between variables, and develop further work based on these assumptions.  
+In practice, datasets can be described as samples of the population or outcomes of random variables (features that we have collected). Each dataset usually has two or more variables and each variable could have different probability distributions. It is often our interest to identify a dataset's distribution so that we can make assumptions on the dataset's nature and/or relationships between variables, and develop statistical models based on these assumptions.  
 
-In this chapter we will be exploring probability distributions for common variable types such as binary, ordinal, nominal, and continuous. For each probability distribution (where possible) we will also give an example and tips on when to use. For a longer list of probability distributions, please see the [pdf](https://www.stat.tamu.edu/~twehrly/611/distab.pdf).  
+We will be exploring probability distributions for common variable types such as binary, ordinal, nominal, and continuous. For each probability distribution (where possible) we will also give an example and tips on when to use. For a longer list of probability distributions, please see the [pdf](https://www.stat.tamu.edu/~twehrly/611/distab.pdf).  
 
 
 ## Prerequisites
@@ -390,7 +390,7 @@ where $x, \alpha, \beta > 0$. In addition, $E[X] = \frac{\alpha}{\alpha + \beta}
 
 
 ## Next step
-We hope you will find this chapter useful and informative. As you have seen that for each distribution we have created a graph from 10,000 generated random samples as representatives of the specific distribution with specified parameters. However, at the moment we have no knowledge of how these samples are generated and what is the process behind it. In Part 2: Sampling, we will be getting a general understanding of sampling, different ways of drawing samples, and how we can describe a sample from a distribution.
+We hope you will find this material useful and informative. As you have seen that for each distribution we have created a graph from 10,000 generated random samples as representatives of the specific distribution with specified parameters. However, at the moment we have no knowledge of how these samples are generated and what is the process behind it. In Part 2: Sampling, we will be getting a general understanding of sampling, different ways of drawing samples, and how we can describe a sample from a distribution.
 
 
 ## Recommended reading

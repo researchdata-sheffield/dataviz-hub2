@@ -11,7 +11,7 @@ import { HiOutlineLightBulb } from "react-icons/hi"
 
 
 ## Introduction
-Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of sampling and decide whether the hypothesis (assumptions made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances.  
+Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of sampling and decide whether the hypothesis (assumptions made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters are fully specified.  
 
 
 Parametric tests has the following applications:  
@@ -28,7 +28,7 @@ Performing a test usually consists the following steps:
 3. Choose a suitable statistical test.
 4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$.  
 
-In this chapter we will be looking at common hypothesis test method and their application in linear models. You can download the R script file [here](./script.R) for this chapter.  
+In part 4 we will be looking at common hypothesis test method and their application in linear models. You can download the R script file [here](./script.R).  
 
 
 ### Sidenote
@@ -48,7 +48,7 @@ When you use test functions in R you will often see *confidence interval* includ
   </div>
   <div className="mt-6">
     <span className="py-1 px-2 text-white bg-shefGreen hover:bg-green-700 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Recommended</span>
-    <p className="mt-2">Previous chapters in this learning path, F distribution, Student's t distribution</p>
+    <p className="mt-2">Part 3 of learning path, F distribution, Student's t distribution</p>
   </div>
   <div className="mt-6">
     <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Optional</span>
@@ -73,11 +73,11 @@ The T-test is a hypothesis test that investigate the significance difference bet
 - samples are independent 
 - populations follows normal distribution
 - data are ordinal or continuous  
-- homogeneity of variance (meaning variances are equal among independent samples), although the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this  
+- homogeneity of variance (meaning variances are equal among independent samples), depedending on what t-test you use. Though the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this. Whereas the Levene's test and Student's t-test requires this assumption to be true
 - sample size is not large
 
 The test calculates the t-value according to [Student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) and if the t-value close to zero then it suggests there isn't a significant difference between two groups. There are three types of T-test:  
-1. **One-sample t-test** - use for comparing a single group against a specific value.
+1. **One-sample t-test** - use for comparing a single group against a target value.
 2. **Two-sample t-test** - use for comparing groups sampled from two different population  
 3. **Paired t-test** - comparing groups sampled from the same population  
 
@@ -98,6 +98,7 @@ t.test(
 ![Two-tailed t-test (unpaired)](1t-test.png)
 
 [Click here](https://www.sthda.com/english/wiki/t-test-formula) to see t-test formula.
+
 
 ## F-test
 F-test is a test that the statistical value (or f value) obeys the [F-distribution](https://en.wikipedia.org/wiki/F-distribution) (this is the sampling distribution for ratio of variances - $\frac{between-group variance}{within-group variance}$) under the null hypothesis $H_{0}$. It is usually used to analyse a statistical model that uses more than one parameter to determine whether all or part of the parameters in the model are suitable for estimating the population. In short, the F-test compares nested models fit to the same dataset by comparing variances of models. The assumptions for data will be similar to the one in T-test:
@@ -120,13 +121,15 @@ var.test(
 ![F-test](2f-test.png)
 
 There are other tests we can also use to test for homogeneity of variance:  
-- Bartlett (least robust)
 - Brown-Forsythe - use median instead of the mean, good for non-normality data
-- Levene - good for symmetric, moderate-tailed distributions  
+- Bartlett (least robust, use to test equal variances among samples)
+- Levene - good for symmetric, moderate-tailed distributions. An alternative for Bartlett
+- Chi-Square - use for comparing the variance of a population against a target value  
+
 
 
 ## Linear models
-A very practical application of hypothesis testing is on linear models. Linear regression is a statistical analysis technique that uses the least square regression function to model the relationship between a continuous response variable and one or more independent predictor (or explanatory) variables. This function is a linear combination of one or more model parameters called regression coefficients. Functions that have only one predictor variable are called simple regression, and functions with more than one predictor variable are called multiple regression. In linear regression, the data is modeled using a linear predictive function, and unknown model parameters are also estimated through the data. These models are called linear models.  
+A practical application of hypothesis testing is in linear models. Linear regression is a statistical analysis technique that uses the least square regression function to model the relationship between a continuous response variable and one or more independent predictor (or explanatory) variables. This function is a linear combination of one or more model parameters called regression coefficients. Functions that have only one predictor variable are called simple regression, and functions with more than one predictor variable are called multiple regression. In linear regression, the data is modeled using a linear predictive function, and unknown model parameters are also estimated through the data. These models are called linear models.  
 
 A simple regression looks something like the following:  
 
@@ -136,7 +139,7 @@ $$
 
 where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors.  
 
-In this section, we are going to see some use cases of t-test and f-test in linear models.
+In addition to prediction using linear models, we are also concerned with the quality of estimtes of parameters and the distribution of erros and residuals. In this section, we are going to see some use cases of t-test and f-test in linear models.
 
 ### T-test
 If we were creating a linear model from a dataset and print a summary of the details, we will be getting outputs like this:
@@ -198,7 +201,7 @@ From the result we can see that the sum of squares has reduced over 30%, and the
 
 
 ## Next step
-In this chapter we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In the next chapter we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.  
+In this part of the learning path we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In part 5 we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.  
 
 
 ## Recommended reading
