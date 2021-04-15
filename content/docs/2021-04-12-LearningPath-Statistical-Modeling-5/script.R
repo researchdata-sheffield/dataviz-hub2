@@ -46,10 +46,6 @@ iris2 <- iris[iris$Species == "versicolor",]
 iris3 <- iris[iris$Species == "virginica",]
 
 par(mfrow=c(2,2))
-plot(iris1$Sepal.Length, iris1$Sepal.Width)
-plot(iris2$Sepal.Length, iris2$Sepal.Width)
-plot(iris3$Sepal.Length, iris3$Sepal.Width)
-
 plot(lm(mpg ~ disp, mtcars))
 
 
@@ -59,3 +55,4 @@ ggplot(iris, aes(x=Species, y=Sepal.Length, fill=Species)) +
   theme(legend.position="none")
 
 bartlett.test(Sepal.Length ~ Species, data = iris)
+interaction

@@ -12,10 +12,10 @@ ggplot(data, aes(x = Outcome)) + geom_histogram()
 
 
 # Binomial
-dataBinom2 <- tibble(Outcome = rbinom(sampleSize, 1, 0.2), OutcomeNo=2)
-dataBinom4 <- tibble(Outcome = rbinom(sampleSize, 3, 0.2), OutcomeNo=4)
-dataBinom10 <- tibble(Outcome = rbinom(sampleSize, 9, 0.2), OutcomeNo=10)
-dataBinom50 <- tibble(Outcome = rbinom(sampleSize, 49, 0.2), OutcomeNo=50)
+dataBinom2 <- tibble(Outcome = rbinom(sampleSize, 2, 0.2), OutcomeNo=2)
+dataBinom4 <- tibble(Outcome = rbinom(sampleSize, 4, 0.2), OutcomeNo=4)
+dataBinom10 <- tibble(Outcome = rbinom(sampleSize, 10, 0.2), OutcomeNo=10)
+dataBinom50 <- tibble(Outcome = rbinom(sampleSize, 50, 0.2), OutcomeNo=50)
 
 data <- bind_rows(dataBinom2, dataBinom4, dataBinom10, dataBinom50)
 
