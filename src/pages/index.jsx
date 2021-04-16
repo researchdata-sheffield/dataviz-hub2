@@ -121,7 +121,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
       {/* End of top page */}     
 
       <div id="explore" />
-      <div className="lg:min-h-100 flex flex-wrap items-center text-left relative py-24" style={{background: 'linear-gradient(135deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', backgroundPosition: 'center', backgroundSize: 'cover'}}>
+      <div className="lg:min-h-100 flex flex-wrap items-center text-left relative pt-24 pb-24" style={{background: 'linear-gradient(135deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={200} duration={1500}>
           <div className="px-5 md:px-24 xl:px-36 2xl:px-52 mt-16 mb-32">
             <div className="text-white">
@@ -138,6 +138,11 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </Link> 
           </div>
         </Fade>
+        <div className="absolute bottom-0 left-0 w-full -mb-3 lg:-mb-24">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#111827" fillOpacity="1" d="M0,192L48,176C96,160,192,128,288,138.7C384,149,480,203,576,213.3C672,224,768,192,864,154.7C960,117,1056,75,1152,69.3C1248,64,1344,96,1392,112L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+          </svg>
+        </div>
       </div>
 
       <LearningPath />

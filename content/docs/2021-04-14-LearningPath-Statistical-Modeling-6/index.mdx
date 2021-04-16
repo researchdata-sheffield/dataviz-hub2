@@ -8,10 +8,15 @@ date: "2021-04-14"
 ---  
 
 
-The difference between statistical models and other mathematical models is that statistical models are non-deterministic. Therefore, in the statistical model some variables do not have specific values either because they are random or due to there are deterministic elements that are unknown to us. In both cases, we model variables using probability distributions.
-
-A simple regression looks something like the following:  
+The difference between statistical models and other mathematical models is that statistical models are non-deterministic. Therefore, in the statistical model some variables do not have specific values either because they are random or due to there are deterministic elements that are unknown to us. In both cases, we modeling these variables using probability distributions that we think that could have generated the population and formulating statistical models around it. In general, a statistical model usually considered as a family of probability distributions where the parameters are unkown and we are interested using data to estimate these parameters. To give you a more clearer image, let's consider a simple regression model looks something like the following:  
 
 $$
-Y_{i} = \alpha + \beta_{1}X_{i} + \epsilon_{i}
+y_{i} = \alpha + \beta_{1}x_{i} + \epsilon_{i}
 $$
+
+If we assume $\epsilon_{i} \sim N(0, \sigma^{2})$ or in another word $\epsilon_{i}$ is normally distributed with mean $0$ and variance $\sigma^{2}$, then the random variable $Y$ (a set of explanatory variables) is distributed according to a Gaussian distribution with mean $\alpha + \beta_{1}X$ and variance $\sigma^{2}$. Then we would need to estimate these parameters using the [Ordinary Least Squares](https://en.wikipedia.org/wiki/Ordinary_least_squares) technique. Of course, if you are using the `lm()` function in R then estimation of parameters is done automatically. Note that the estimation is not always unique, therefore these combinations of parameters allow distribution in different shapes which are all in a same family. 
+
+![Beta distribution](beta.png)  
+*A family of beta distribution with two shape parameters*  
+
+
