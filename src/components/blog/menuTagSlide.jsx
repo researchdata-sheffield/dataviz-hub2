@@ -7,15 +7,14 @@ import {FiSearch} from "react-icons/fi"
 import { IoMdClose } from "react-icons/io"
 import { useLocation } from "@reach/router"
 
-const menuTagSlide = ({ pageContext }) => {
+const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
   const [filterTag, setfilterTag] = useState(pageContext.tags);
-  const [isOpen, toggleisOpen] = useState(false);
   var { href } = useLocation();
   if(!href) href = "";
 
   function handleChange(e) {
     // on input, show tag menu
-    if(isOpen === false) toggleisOpen(!isOpen);
+    if(tagMenu === false) handleTagMenu();
 
     let searchWord = e.target.value.toLowerCase();
     let searchTagList = pageContext.tags.filter(function(tag) {
@@ -28,13 +27,13 @@ const menuTagSlide = ({ pageContext }) => {
   return (
   
 		<div className="xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 hideScrollBar text-gray-100 shadow-lg text-sm fixed top-0 right-0 min-h-100 hidden xl:flex flex-row border-l-2 border-white transition duration-500 z-50 bg-white" 
-      style={ isOpen ? {transform: "translateX(0%)", height: "100vh", overflowY: "scroll"} : {transform: "translateX(102%)"} }
+      style={ tagMenu ? {transform: "translateX(0%)", height: "100vh", overflowY: "scroll"} : {transform: "translateX(102%)"} }
     > 
-      <div onClick={() => toggleisOpen(!isOpen)} className={`${isOpen ? `hidden` : `block`} absolute left-0 min-h-100 -ml-10 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500`} style={{transform: 'translateY(-5%)'}} >
+      <div onClick={() => handleTagMenu()} className={`${tagMenu ? `hidden` : `block`} absolute left-0 min-h-100 -ml-10 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500`} style={{transform: 'translateY(-5%)'}} >
         <div className="px-3 py-4 hover:bg-brand-blue bg-gray-900 transition duration-500 shadow-xl" tabIndex="0" title="Open tag menu">T<br />A<br />G</div>
       </div>
-      <div onClick={() => toggleisOpen(!isOpen)} className={`${isOpen ? `block` : `hidden`} absolute right-0 top-0 m-2 cursor-pointer`}>
-        <div className="px-3 py-3 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold" tabIndex="0" title="Close tag menu"><IoMdClose /></div>
+      <div onClick={() => handleTagMenu()} className={`${tagMenu ? `block` : `hidden`} absolute right-0 top-0 m-2 cursor-pointer`}>
+        <div className="px-3 py-3 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold" tabIndex="0" title="Close the menu"><IoMdClose /></div>
       </div>
 
 
@@ -55,7 +54,7 @@ const menuTagSlide = ({ pageContext }) => {
             {tag} ({pageContext.countTags[`${tag}`]})
           </Link>
         ))} 
-        <div onClick={() => toggleisOpen(!isOpen)} className={`${isOpen ? `block` : `hidden`} cursor-pointer my-5 px-3 py-2 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold text-center`} tabIndex="0" title="Close tag menu">Close</div>
+        <div onClick={() => handleTagMenu()} className={`${tagMenu ? `block` : `hidden`} cursor-pointer my-5 px-3 py-2 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold text-center`} tabIndex="0">ClOSE</div>
       </div>
     </div>
     

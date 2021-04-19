@@ -18,6 +18,7 @@ module.exports = {
         'footer': '#414042',
         'highlight': '#1cbfff',
         'brand-blue': '#00aeef',
+        'brand-pink': '#ff79b4',
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',
         'black-10': 'rgba(0, 0, 0, .1)',
@@ -35,6 +36,7 @@ module.exports = {
       },
       borderColor: {
         'brand-blue': '#00aeef',
+        'brand-pink': '#ff79b4',
         'menu_red': '#ff5e5e',
         'menu_yellow': '#f3f218',
         'menu_green': '#99f318',
@@ -194,7 +196,8 @@ module.exports = {
         'shefPurple': '#251d5a',
         'shefYellow': '#fedf00',
         'shefGreen': '#009640',
-        'sheflightBlue': '#ade1f8'
+        'sheflightBlue': '#ade1f8',
+        'brand-pink': '#ff79b4',
       },
       transitionProperty: {
         'hover': 'hover, group-hover',
