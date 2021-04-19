@@ -10,7 +10,7 @@ import { getImageSource, shortenText } from "../../utils/shared"
 const blogPostGrid = ({allMdx}) => {
   
   return(
-    <div className="flex flex-wrap w-full">
+    <div id="read" className="flex flex-wrap w-full">
     {allMdx.edges.map(({ node }) => {
       let imagesrc = getImageSource(node);
       let description = shortenText(node.frontmatter.description, 30);

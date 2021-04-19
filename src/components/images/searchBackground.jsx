@@ -18,7 +18,7 @@ const SearchBackground = ({className, children}) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "search/light-bulb.jpg" }) {
+        desktop: file(relativePath: { eq: "search/galaxy-world.png" }) {
           childImageSharp {
             fluid(quality: 100, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64

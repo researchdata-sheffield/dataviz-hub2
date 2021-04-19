@@ -18,6 +18,7 @@ module.exports = {
         'footer': '#414042',
         'highlight': '#1cbfff',
         'brand-blue': '#00aeef',
+        'brand-pink': '#ff79b4',
         'light_grey': '#f1f1f1',
         'light_black': 'rgba(0,0,0, .6)',
         'black-10': 'rgba(0, 0, 0, .1)',
@@ -30,6 +31,7 @@ module.exports = {
       },
       borderColor: {
         'brand-blue': '#00aeef',
+        'brand-pink': '#ff79b4',
         'menu_red': '#ff5e5e',
         'menu_yellow': '#f3f218',
         'menu_green': '#99f318',
@@ -180,6 +182,7 @@ module.exports = {
       textColor: {
         'highlight': '#337ab7',
         'brand-blue': '#00aeef',
+        'brand-pink': '#ff79b4',
         'brand-bluet': '#73d8ff',
         'logo_blue': '#009fe3',
       },
