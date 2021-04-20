@@ -50,7 +50,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'author',
-        path: `./src/author`,
+        path: `${__dirname}/src/author/`,
       },
     },
     `gatsby-plugin-react-helmet`,

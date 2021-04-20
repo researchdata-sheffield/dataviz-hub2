@@ -1,9 +1,9 @@
 ---
 type: docs
-author: ["Dataviz Team"]
+author: ["Dataviz Team", "Jean Russell"]
 title: "Models and Distributions"
 thumbnail: 
-description: Statistical Modeling Part 5 - Models and Distributions
+description: Statistical Modeling Part 6 - Models and Distributions
 date: "2021-04-14"
 ---  
 
@@ -18,5 +18,36 @@ If we assume $\epsilon_{i} \sim N(0, \sigma^{2})$ or in another word $\epsilon_{
 
 ![Beta distribution](beta.png)  
 *A family of beta distribution with two shape parameters*  
+
+
+The major limitation of statistical models is that the parameters are usually specified in such a way that there are linear relationships only involved. By linear they means $y=f(g(x_{1}, x_{2}, ..., x_{n}))$ where $g(x_{1}, x_{2}, ..., x_{n})$ is a linear combination of $x_{1}, x_{2}, ..., x_{n}$; where $x_{1}, x_{2}, ..., x_{n}$ are the elements are associated with the parameters in the distribution. Nonlinear modelling does exist. It is neither well developed nor properly understood.
+
+So in statistical modelling we are estimating/modelling the parameters of the distribution. For a poisson distribution we are actually modelling the mean, for the bernoulli distribution the probability of a true value, for a Guassian distribution both the mean and standard deviation (although the standard deviation generally modelled as a constant). In previous materials we generally assume the homogenity of variance but this might not be case for some data. In this case the model (also modeling variance) will become nonlinear unless the mean is then held constant.  
+
+
+As we have mentioned before, all statistical models are idealised. There isn't a probability distribution that will make a perfect approximation to our data. In fact, the relationship between change in mean and change in variance for any model is far more important in large datasets than the actual distribution of individual data points. Nevertheless, different distributions have different relationships between mean and variance, and sometimes this relationship can be seen in a mean versus variance graph.  
+
+![Mean vs Variance](meanVariance.png)
+
+
+
+normal - independent
+poisson - equal
+chi-square - variance = 2 mean
+binomial - mean > variance / vairance = q*mean
+
+
+
+
+Samples, variable residuals. See difference between the predicted value and the actual value
+Plots
+
+
+If not satisfies the homogenity of variance, then use other distributions
+
+If still no good go non-parametric
+
+
+
 
 

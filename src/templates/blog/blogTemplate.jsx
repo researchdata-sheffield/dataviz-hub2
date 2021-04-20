@@ -37,14 +37,17 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					id="blogBackground"
 					className="absolute top-0 left-0 w-full h-full"
 					style={{
-						background: `linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url(${Bg})`
+						background: `linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url(${Bg})`,
+						backgroundPosition: 'center',
+						backgroundSize: 'cover',
+						backgroundAttachment: 'fixed'
 					}}
 				>
 				</div>
 
 				<Flip cascade top delay={700}>
 					<div className="text-black" style={{textShadow: "#fff 0px 0px 5px"}}>	
-						<h1 className="text-5xl font-extrabold">Blog</h1>
+						<h1 className="text-6xl font-extrabold">Blog</h1>
 						<p className="text-md font-semibold mt-5 px-5" style={{maxWidth: '500px'}}>&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> 
 					</div>
 				</Flip>
