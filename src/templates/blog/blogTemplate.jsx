@@ -37,7 +37,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					id="blogBackground"
 					className="absolute top-0 left-0 w-full h-full"
 					style={{
-						background: `linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url(${Bg})`,
+						background: `linear-gradient(0deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)), url(${Bg})`,
 						backgroundPosition: 'center',
 						backgroundSize: 'cover',
 						backgroundAttachment: 'fixed'
