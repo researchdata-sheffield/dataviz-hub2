@@ -23,6 +23,7 @@ module.exports = {
     },
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,8 +50,8 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'author',
-        path: `${__dirname}/src/author/`,
+        name: 'data',
+        path: `${__dirname}/src/data/`,
       },
     },
     `gatsby-plugin-react-helmet`,
@@ -161,7 +162,6 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
     //`gatsby-plugin-smoothscroll`,
-    `gatsby-transformer-json`,
     `gatsby-plugin-emotion`,
     //`gatsby-plugin-twitter`,
     `gatsby-plugin-instagram-embed`,

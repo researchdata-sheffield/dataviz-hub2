@@ -1,9 +1,9 @@
 ﻿---
 type: docs
 author: ["Yu Liang Weng"]
-title: "Contribute blog posts - v1.4"
+title: "Contribute blog posts"
 thumbnail: ./temp.jpg
-description: "(UPDATED on 01 Mar 2021) This article will guide you to setup a development environment, relevant steps for produce a blog post, and introduce 
+description: "(UPDATED on 21 Apr 2021) This article will guide you to setup a development environment, relevant steps for produce a blog post, and introduce 
               you to useful syntax for styling the blog post and adding resources such as images, videos, and codes."
 date: "2020-03-22"
 template:
@@ -15,7 +15,7 @@ d3: ["https://unpkg.com/topojson@3", "dataviz.js"]
 
 
 # Introduction
-(UPDATED on 01 Mar 2021) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
+(UPDATED on 21 Apr 2021) This is a template for blog posts. This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework and the way of styling is slightly different from HTML/CSS. 
 You can write posts use <a href="https://www.markdownguide.org/basic-syntax/">markdown</a> or/and HTML/CSS. A copy of this blog file is available <a href="./index.mdx">here</a>.  
 This article will guide you to setup a development environment, relevant steps for produce a blog post, and introduce 
 you to useful syntax for styling the blog post and adding resources such as images, videos, and codes. 
@@ -100,7 +100,7 @@ d3: ["file1.js", "file2.js"] # optional, use to include your d3 documents
 
   + Then add content to the file, read <a href="#table-of-content" anchor>next section</a> and beyond to know more about how to style your post.
 
-  + (**Compulsory** for your first post): On first time you're required to add your name and avatar to the file **author.json** located at `dataviz-hub2/src/author`, otherwise author info will not be shown on the post (and the website produce errors).
+  + (**Compulsory** for your first post): On first time you're required to add your name and avatar to the file **author.json** located at `dataviz-hub2/src/data`, otherwise author info will not be shown on the post (and the website produce errors).
   Format: 
 
 ```json
@@ -108,7 +108,7 @@ d3: ["file1.js", "file2.js"] # optional, use to include your d3 documents
 },                              // Make sure you've added comma after the previous right curly bracket
 {                               // Start with left curly bracket     
   "name": "New Author",         // The exact same name you've put in mdx file, use same name for all mdx file consistently
-  "avatar": "./default.jpg",    // If you want to add your own avatar, place it under the same folder and replace default.jpg with your image name and extension   
+  "avatar": "../images/author/default.jpg",    // If you want to add your own avatar, place it under the /src/images/author folder and replace default.jpg with your image name and extension   
 }                               // No comma
 ```
 

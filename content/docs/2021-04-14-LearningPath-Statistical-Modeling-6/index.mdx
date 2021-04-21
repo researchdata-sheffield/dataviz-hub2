@@ -29,6 +29,13 @@ As we have mentioned before, all statistical models are idealised. There isn't a
 
 ![Mean vs Variance](meanVariance.png)
 
+Graphs shown in above figure shows the sample mean versus sample variance graphs for Gaussian, Binomial, Poisson and Gamma distribution with a thousands random generated samples. The line of best fit for each subgraph is also an indication of the relationship:
+- Normal - points scattered randomly and the horizontal line suggesting there isn't a obvious relation between the mean and variance
+- Binomial - in a binomial distribution the sample mean is always greater than the variance because variance $=$ $q$ $\times$ mean where $q$ is the probability of failure (which is less than 1). In our graph most of the mean is greater than variance
+- Poisson - theoretically the mean should equal to variance, and this is also the case for our line of best fit. There are certainly some outliers but the confidence interval (shaded area) remains narrow indicating high confidence level
+- Gamma - we generally have variance $=$ $\theta$ $\times$ mean where $\theta$ is the scale parameter (or the inverse of rate parameter $\beta$). In this case our $\theta$ is $\frac{5}{3}$ (or 1.66666667), and we can see the line follows this equation
+
+
 
 
 normal - independent
