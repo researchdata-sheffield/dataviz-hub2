@@ -20,7 +20,7 @@ Parametric tests has the following applications:
 - compare two statistical models (estimate differences)
 - determine relationship between variables  
 
-The basis idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. That is, in order to test whether a hypothesis $H_{0}$ is correct, first assume that the hypothesis is correct, and then make a decision to accept or reject the hypothesis $H_{0}$ according to the sample. If the observed value of the sample is classified as a rare event, the hypothesis $H_{0}$ should be rejected, otherwise the hypothesis should be accepted. In all cases, there will aslo be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$.  
+The basis idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. That is, in order to test whether a hypothesis $H_{0}$ is correct, first assume that the hypothesis is correct, and then make a decision to accept or reject the hypothesis $H_{0}$ according to the sample. If the observed value of the sample is classified as a rare event, the hypothesis $H_{0}$ should be rejected, otherwise the hypothesis should be accepted. In all cases, there will also be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$.  
 
 Performing a test usually consists the following steps:
 1. Set the test hypothesis (or null hypothesis) and denote it as $H_{0}$, so the alternative hypothesis will be $H_{1}$.
@@ -65,16 +65,16 @@ A Z-test is a hypothesis test based on normal distribution that investigate the 
 - samples are independent
 - populations follows normal distribution
 - variances are known
-
+ 
 There is no built-in function in R for calculating z-test, however, you can work it out using means and variances for each sample group and refer to the standard normal table.  
-
+ 
 ## T-test
 The T-test is a hypothesis test that investigate the significance difference between two groups with the following assumptions:  
 - samples are independent 
 - populations follows normal distribution
 - data are ordinal or continuous  
-- homogeneity of variance (meaning variances are equal among independent samples), depedending on what t-test you use. Though the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this. Whereas the Levene's test and Student's t-test requires this assumption to be true
-- sample size is not large
+- homogeneity of variance (meaning variances are equal among independent samples), depending on what t-test you use. Though the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this. Whereas the Levene's test and Student's t-test requires this assumption to be true
+- sample size is not large  
 
 The test calculates the t-value according to [Student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) and if the t-value close to zero then it suggests there isn't a significant difference between two groups. There are three types of T-test:  
 1. **One-sample t-test** - use for comparing a single group against a target value.
@@ -138,21 +138,21 @@ Y_{i} = \alpha + \beta_{1}X_{1i} + \beta_{2}X_{2i} + \epsilon_{i}
 $$
 
 where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors.  
-
-In addition to prediction using linear models, we are also concerned with the quality of estimtes of parameters and the distribution of erros and residuals. In this section, we are going to see some use cases of t-test and f-test in linear models.
-
+ 
+In addition to prediction using linear models, we are also concerned with the quality of estimates of parameters and the distribution of errors and residuals. In this section, we are going to see some use cases of t-test and f-test in linear models.
+ 
 ### T-test
 If we were creating a linear model from a dataset and print a summary of the details, we will be getting outputs like this:
-
+ 
 ```r
 # use the built-in dataset mtcars
 lm2 <- lm(mpg ~ hp + disp, mtcars)
-
+ 
 summary(lm2)
 ```
-
+ 
 ![A linear model summary](3lm.png)
-
+ 
 Notice that for each variable there are corresponding t-statistic and p-value ($Pr(>|t|)$). But what are we testing? In a linear model we are testing the null hypothesis that the coefficient $\beta{j}$ of variable $X{ji}$, is equal to zero. In the picture on above, our estimate of `disp` has a p-value that significantly smaller than 0.05 (the default significance level) which means we have sufficient evidence to reject the null hypothesis that the coefficient equals to zero, meaning we can keep the `disp` variable for th model. On the other hand, the variable `hp` has a p-value of 0.73679 which suggests we do not have strong evidence to reject the null hypothesis. Then a naive final model would be  
 
 $$
@@ -160,24 +160,25 @@ mpg = 30.73 - 0.03disp
 $$
 
   
-The $R^{2}$ score shows how well the regression fitted to data, the closer to 1 the better. The f-statistic in the output tells us whether the current model is better than the intercept-only model (i.e. setting all variable's coefficient to zero). In this case, the p-value suggest we can reject the null hypothesis that all coefficients are equal to zero.  
-
-
+The $R^{2}$ score shows how well the regression fitted to data, the closer to 1 the better. The f-statistic in the output tells us whether the current model is better than the intercept-only model (i.e. setting all variable's coefficients to zero). In this case, the p-value suggests we can reject the null hypothesis that all coefficients are equal to zero.  
+ 
+ 
 ### ANOVA
 Analysis of variances or ANOVA extends from t-test and is used to test the significance of the difference between the means of two or more samples (that may come from different groups). Due to the influence of various factors, there is variability in data obtained from sampling. The causes of variation can be divided into two basic sources:
 - **Between-group variation** - Differences caused by experimental conditions like different treatments. It is expressed by the total sum of the sum of squared deviations between the mean value of the variable in each group and the grand mean.
 - **Within-group variation** - Differences caused by measurement errors or differences between individuals. These errors are random errors. They are expressed by the sum of the sum of squared deviations between the mean in each group and the value of the variable within the group.  
-
+ 
 The total variances will be variances from between-group plus variances from within-group. [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.  
-
+ 
 Assumptions:
 - samples are independent
 - homogeneity of variances between samples
 - experimental errors are normally distributed
-
+ 
 There are several types of ANOVA but one-way ANOVA and two-way ANOVA are the most common ones which assess differences between a continuous variable and one predictor variable, and differences between a continuous variable and two predictor variables, respectively. Now, let's look at how we can use ANOVA with f-tests to compare two linear models.  
-
+ 
 Suppose I have the following two models, where the second linear model has a additional variable we would like to include:  
+  
 
 ```r
 lm1 <- lm(mpg ~ hp , mtcars)

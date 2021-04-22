@@ -1,0 +1,63 @@
+---
+type: docs
+author: ["Dataviz Team"]
+title: "Sampling - Computational Statistics"
+thumbnail: 
+description: Statistical Modeling Part 2 Optional - Sampling techniques in computational statistics
+date: "2021-03-18"
+---  
+
+
+
+## Sampling from distributions
+If we have samples from a population then we can use these samples to estimate the distribution and parameters. Why do we need sampling from distributions if the distribution is already known or partially known? There are several applications:  
+- approximate integrals or value/parameter of interest
+- estimate expectations 
+- simulation or demonstration  
+
+As in many examples we have seen in Part 1, we usually plug-in the parameters in the distribution then find the corresponding value to calculate the probability for a specific event. However, this will not work if the distribution is complex (e.g. high-dimensional) and we cannot compute the integral from the probability density function directly. In R (a popular programming language for statistical analysis), sampling for common distributions like the uniform distribution, binomial distribution, etc., can be done by built-in pseudo-random number generators (PRNGs) with the inverse transform sampling technique. But this technique is unlikely to work for complex or unknown distributions. In this section we are going to see three basic sampling techniques. Although there are more sampling techniques such as Gibbs sampling and Metropolis-Hastings Algorithm that addressed some issues of three basic sampling techniques, it is beyond the scope of this material. If you are interested in the details, see lecture notes from [stats.ox.ac.uk](https://www.stats.ox.ac.uk/~teh/teaching/simulation/slides.pdf) and [warwick.ac.uk/fac/statistics](https://warwick.ac.uk/fac/sci/statistics/staff/academic-research/johansen/teaching/mcm-2007.pdf).
+
+
+### Inverse transform sampling
+The [inverse transform sampling](https://cs.brown.edu/courses/cs1951k/lectures/2020/inverse_transform_sampling.pdf) only works if the inverse cumulative function of the probability distribution exists. Given a specific value $x$, the cumulative density function of a random variable $X$ tells us the probability of $X$ (in the range $[0,1]$) when it is smaller than or equal to $x$, and the inverse cumulative function will return the value of $x$ given a specific probability.  
+ 
+The idea of inverse transform sampling is that we draw samples (at random using the pseudo-random number generators) from the uniform distribution $U[0,1]$ which simulates the range of probability $[0,1]$. Then we can plug-in this "probability" into the inverse cumulative function and calculate the value of $x$ which effectively generates a random sample from the distribution of the random variable $X$.  
+ 
+The inverse transform sampling is a special case of transformation method and there is an another well-known transform method called the **Box-Muller transform** which provides the same transform but with reduced costs and faster computation. Learn more about the Box-Muller transform [here](https://www.statisticshowto.com/inverse-sampling/).  
+ 
+ 
+### Rejection Sampling  
+Rejection sampling is useful when your chosen programming language doesn't provide a built-in function to generate samples from the probability density function $f(x)$ (also called the target density). The idea of this sampling is to select a distribution $g(x)$ (the candidate density) as close as to $f(x)$, with the condition that the support of $g(x)$ must be greater or equal to the support of $f(x)$, i.e. the range of $g(x)$ on x-axis should be greater than $f(x)$. In another word, $g(x)$ has heavier tails. Then we can draw a sample from $g(x)$ and choose to accept or reject it based on the probability of acceptance.  
+ 
+Here is the steps for rejection sampling: 
+ 
+1. Draw a sample $U$ from the uniform distribution $U[0,1]$ act as the probability threshold
+2. Draw a sample $X$ from $g$
+3. Assert the following:  
+
+$$
+U \leq \frac{f(X)}{cg(X)}
+$$
+
+Where $c = \underset{x \in \chi_{f}}{sup} \frac{f(x)}{g(x)} < \infty$, the ratio for greatest difference between $f(x)$ and $g(x)$.  
+
+if the above condition is true then accept $X$ as a sample. Otherwise reject the sample and repeat the process.  
+
+![Rejection sampling](https://www.data-blogger.com/wp-content/uploads/2016/01/rs1-300x225.png)  
+*Rejection sampling - samples will be generated within the blue curve but any sample fall outside the red line will be rejected. [source](https://www.data-blogger.com/2016/01/24/the-mathematics-behind-rejection-sampling/)*
+
+The drawback of this sampling method appears when the dimension of the random variable is significantly increased, and will lead to a very high rejection rate.  
+
+### Importance Sampling
+The importance sampling can be used as an alternative to rejection sampling and address the issue of high-dimensional and high acceptance rate at certain regions. The idea is, as the name suggests, to create a weight function that assigns weights to each region in terms of "importance". The importance sampling increases the number of "rare events", thus increases the precision of the estimates. Note that we cannot generate samples using the importance sampling but it helps us to estimate parameters for the target distribution. To generate samples, consider using the Metropolis-Hastings algorithm.
+ 
+ 
+## Online sampling tool
+[The essycode website](https://www.essycode.com/distribution-viewer/) have created a really useful tool that allows users to see probability mass/density functions and cumulative distribution functions for a range of probability distributions. You can also enter different parameters and functions will be altered accordingly.  
+ 
+We also recommend you to use the **Sample** button at the top right corner of that website and try to generate samples in 10, 100, 1000, 10,000, and 100,000 to see the difference in the generated graphs. You will find that as the sample size increases, the sampling distribution generated at the bottom will approximate the theoretical distribution at the top. Samples are always discrete distributions but can approximate continuous distributions if the sample size is large enough.  
+
+
+## Recommended reading
+[Sampling methods - Wikipedia](https://en.wikipedia.org/wiki/Sampling_(statistics)#Sampling_methods)  
+[Sampling and sampling methods - Biometrics & Biostatistics International Journal](https://medcraveonline.com/BBIJ/sampling-and-sampling-methods.html)  

@@ -32,7 +32,7 @@ $$
 
 , or $S_{n}$ is normally distributed with mean $n\mu$ and variance $\sqrt{n}\sigma$. The CLT also extends to the normalised mean of these random variables - if we replace $S_{n}$ by the average of $n$ i.i.d random variables $\bar X$, then $\bar X \sim N(\mu, \frac{\sigma^{2}}{\sqrt{n}})$.
 
-With the CLT, even if we do not know about the distribution of the population, we can now use the average of sample means and sample standard deviations from samples to get a approximate value of population mean and standard deviation. Thus, we can use statistics from normal distributions to calculate confidence intervals and perform hypothesis testing. And the requirement for sample size here is acceptable to most of the experiments, no less than 30 will do!  
+With the CLT, even if we do not know about the distribution of the population, we can now use the average of sample means and sample standard deviations from samples to get an approximate value of population mean and standard deviation. Thus, we can use statistics from normal distributions to calculate confidence intervals and perform hypothesis testing. And the requirement for sample size here is acceptable to most of the experiments, no less than 30 will do!  
  
 To give you a better idea visually, try [this website](http://onlinestatbook.com/stat_sim/sampling_dist/) that provides a simulation which lets you explore various aspects of sampling distributions. You will soon find out that for any statistics of the distribution (mean, variance, range etc.), it will be distributed normally given a large enough sample is taken.  
 
@@ -50,13 +50,13 @@ plot(lm(mpg ~ disp, mtcars))
 
 ![Test for homogeneity of variances](testForVar.png)
 
-See the following points for a simple explaination of each graph:
+See the following points for a simple explanation of each graph:
 - Residual vs Fitted: indicates how well data fitted into the model. These points should scattered equally in each side of a horizontal line 
 - Normal Q-Q: distribution of errors, straight line if normally distributed
 - Scale-Location: if equal variances holds, then points (residuals) should be equally scattered around a horizontal near-straight line
 - Residuals vs Leverage: Indicates influence of each point on the model, the closer to red dash lines the greater influence that point has on the model  
-
-In part 6 we will be exploring the relationships between mean and variance for some distributions, solutions for data not satisfies the homogeneity of variance, and more on residuals.
+ 
+In part 6 we will be exploring the relationships between mean and variance for some distributions, solutions for data that do not satisfy the homogeneity of variance, and more on residuals.
 
 
 ## Recommended reading
