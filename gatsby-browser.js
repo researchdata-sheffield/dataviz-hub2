@@ -6,7 +6,9 @@
  */
 
 import "tailwindcss/dist/base.css"
-import 'gitalk/dist/gitalk.css'
+import "gitalk/dist/gitalk.css"
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import "./src/css/index.css"
 import "./src/css/style.scss"
 import "./src/css/post.scss"

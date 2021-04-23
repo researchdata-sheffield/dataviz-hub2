@@ -50,7 +50,7 @@ const HomeCommunity = () => {
             <RiBookReadLine className="text-3xl" />
             <p className="font-bold py-3">Training</p>
             <div className={cardTextClasses}>
-              Discover different training courses organised by the dedicated dataviz team to help you make the most of your data.
+              Explore different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
             <ButtonWithArrow className={`${buttonClasses} group-hover:bg-brand-blue`}  >Coming soon</ButtonWithArrow>
           </Slide>
