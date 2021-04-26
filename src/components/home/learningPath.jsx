@@ -2,11 +2,10 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Fade from 'react-reveal/Fade'
 import Zoom from 'react-reveal/Zoom'
-//import { FaUniversity, FaPython, FaRProject } from "react-icons/fa"
-//import { FcWorkflow } from "react-icons/fc"
 import { ButtonWithArrow } from "../style/styled"
 import { getImageSource, shortenText } from "../../utils/shared"
 import Slider from "react-slick";
+import Bg from "../../images/home/learningPath.jpg"
 
 const LearningPath = () => {
   const animationClasses = "transform transition duration-300 ease-in-out"
@@ -30,6 +29,7 @@ const LearningPath = () => {
             frontmatter {
               description
               learningPath
+              learningPathIsNew
               learningPathBtn
               learningPathDescription
               learningPathTitle
@@ -54,20 +54,24 @@ const LearningPath = () => {
     slidesToShow: 3,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     pauseOnHover: true
   }
 
   return (
-    <div id="learning_path" className="lg:min-h-100 flex flex-wrap justify-center items-center relative bg-gray-900">
+    <div 
+      id="learning_path" 
+      className="flex flex-wrap justify-center items-center relative" 
+      style={{minHeight: '850px', backgroundImage: `linear-gradient(180deg, rgba(17,24,39,.97) 0%, rgba(40,40,40,.94) 100%), url(${Bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+    >
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center mt-8">
-          <div className="text-4xl lg:text-6xl text-white w-full leading-tight font-extrabold" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning paths.</div>
-          <p className="mt-3 text-gray-100 px-2">Discover how to get the most out of statistics, visualisations and tool sets.</p>
+          <div className="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning paths.</div>
+          <p className="mt-3 text-gray-100 px-5">Discover how to get the most out of statistics, visualisations and tool sets.</p>
         </div>
       </Fade>
 
-      <div className="max-w-7xl mx-auto my-16 lg:mt-0 lg:mb-24">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mt-12 lg:mb-48">
         <Slider {...carouselSettings}>
           {data.allMdx && data.allMdx.edges.map(({ node }) => {
 
@@ -83,6 +87,7 @@ const LearningPath = () => {
                   //onClick={() => {window.open(`${node.fields.slug}`, '_blank', 'noopener,noreferrer')}} 
                   tabIndex="0"
                 >
+                  {node.frontmatter.learningPathIsNew && <span className="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-md">New</span>}
                   <div className={frontCard}>
                     <div className="text-xl mt-5 font-bold xl:text-2xl">{node.frontmatter.learningPathTitle}</div>
                     <div className="text-gray-300 text-base mt-3 xl:text-lg">{learningPathDescription}</div>

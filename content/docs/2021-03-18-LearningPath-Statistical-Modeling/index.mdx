@@ -7,6 +7,7 @@ description: A statistical model is a mathematical model used to describe the re
 date: "2021-03-18"
 template: "custom"
 learningPath: "true"
+learningPathIsNew: "true"
 learningPathBtn: "Explore the path"
 learningPathTitle: "Statistical Modeling"
 learningPathDescription: "Interested in data analysis and inferences."
@@ -36,16 +37,31 @@ learningPathDescription: "Interested in data analysis and inferences."
       In this learning path we will be introducing you to probability distributions for common variable types, sampling and how to describe a sample from a certain distribution, basic of statistical model, common statistical testing techniques, and many more.
     </p>
     <div className="flex flex-wrap w-full space-x-3">
-      <a noEffect className="inline-block py-2 px-3 bg-shefBlue hover:bg-blue-900 text-white cursor-pointer rounded-sm font-semibold transition duration-300">Begin with Part 1</a>
-      <a noEffect className="inline-block py-2 px-3 bg-shefYellow hover:bg-yellow-400 text-black cursor-pointer rounded-sm font-semibold transition duration-300">Browse chapters &#11167;</a>
+      <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-1" className="inline-block py-2 px-3 bg-shefBlue hover:bg-blue-900 text-white cursor-pointer rounded-sm font-semibold transition duration-300">Begin with Part 1</Link>
+      <a noEffect anchor href="#chapter" className="inline-block py-2 px-3 bg-shefYellow hover:bg-yellow-400 text-black cursor-pointer rounded-sm font-semibold transition duration-300">Browse chapters &#11167;</a>
     </div>
   </div>
 </div>
 
-<div className="mx-auto max-w-3xl px-3 md:px-0 flex flex-wrap mt-16">
-  <div className="w-full md:w-1/3 xl:w-1/4 rounded-md p-3 md:p-5 shadow-md">
+<div id="chapter" className="mx-auto max-w-3xl px-3 md:px-0 flex flex-wrap text-base mt-16 space-y-3">
+  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/18/03/2021/LearningPath-Statistical-Modeling-1">
     Part 1: Probability Distributions
-  </div>
+  </Link>
+  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2">
+    Part 2: Sampling
+  </Link>
+  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="">
+    Part 3: Statistical Models
+  </Link>
+  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/07/04/2021/LearningPath-Statistical-Modeling-4">
+    Part 4: Statistical Testing
+  </Link>
+  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">
+    Part 5: Central Limit Theorem
+  </Link>
+  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/14/04/2021/LearningPath-Statistical-Modeling-6">
+    Part 6: Models and Distributions
+  </Link>
 </div>
 
 
