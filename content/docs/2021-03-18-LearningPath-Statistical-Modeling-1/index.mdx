@@ -178,7 +178,7 @@ Another possible application of the negative binomial distribution is when the d
   
 
 ## Continuous
-Before we move on to distributions, let's recap the definition of a continuous random variable. A continuous random variable is a numerical representation of an experiment's outcomes, where these numerical representations can take a range of values (uncountably infinite). For example, random variables could take values in these intervals: $[0, 1]$, $(-1, 1)$, $(-\infty, 0)$, and $[a, b]$. Some real-life examples of continuous random variables are time, mass, volume, length, etc. Since the number of possible values that a continuous random variable can take is uncountable, the probability for any specific value is zero (area under the probability density curve), meaning we cannot calculate the probability at any specific point but we can still work out the probability for a certain range.  
+Before we move on to continuous distributions, let's recap the definition of a continuous random variable. A continuous random variable is a numerical representation of an experiment's outcomes, where these numerical representations can take a range of values (uncountably infinite). For example, random variables could take values in these intervals: $[0, 1]$, $(-1, 1)$, $(-\infty, 0)$, and $[a, b]$. Some real-life examples of continuous random variables are time, mass, volume, length, etc. Since the number of possible values that a continuous random variable can take is uncountable, the probability for any specific value is zero (i.e. area under the probability density curve is zero), meaning we cannot calculate the probability at any specific point but we can still work out the probability for a certain range.  
   
 A [probability density function](https://en.wikipedia.org/wiki/Probability_density_function) of a random variable $X$ is a function that describes the relative likelihood of occurrence of the random variable $X$'s possible values.
 
@@ -232,7 +232,7 @@ The chi-square distribution is primarily used in hypothesis testing and tests th
 </div>
 
 ### F-distribution 
-The F-distribution can be seen as a distribution of the ratio of two chi-square distributions, which is the ratio of two sums of squares of deviations of samples from their means therefore variance between samples and variance within samples are needed. A F-distribution has two parameters $d_{1}$ and $d_{2}$, where $d_{1}$ is the degrees of freedom of first chi-square distribution and $d_{2}$ is the degrees of freedom for the second one. If the degrees of freedom is small then it means data are more spread out, and vice versa.  
+The F-distribution can be seen as a distribution of the ratio of two chi-square distributions, which is the ratio of two sums of squares of deviations of samples from their means. So variance between samples and variance within samples are needed. A F-distribution has two parameters $d_{1}$ and $d_{2}$, where $d_{1}$ is the degrees of freedom of first chi-square distribution and $d_{2}$ is the degrees of freedom for the second one. If the degrees of freedom is small then it means data are more spread out, and vice versa.  
 
 ![F-distribution](continuous/F.png)
  
@@ -245,7 +245,7 @@ The F-distribution can be seen as a distribution of the ratio of two chi-square 
 
 
 ### Exponential
-The probability density function of the exponential distribution gives the probability of decay at time $t$. This is due to a component $\lambda e^{-\lambda x}$ which is referred to as the exponential decay and is commonly used for measuring radioactive decay, medication within the human body, and population of endangered species. The distribution is usually used to find out the time required until a specific event happens
+The probability density function of the exponential distribution gives the probability of decay at time $t$. This decay is due to the component $\lambda e^{-\lambda x}$ in the probability function which is referred to as the exponential decay and is commonly used for measuring radioactive decay, medication within the human body, and population of endangered species. The distribution is usually used to find out the time required until a specific event happens.
 
 The exponential distribution is related to the Poisson distribution as both distributions are a function of $\lambda$. And provided the time unit is clearly defined in Poisson distribution, the $\lambda$ will be identical in both distributions. For example, as mentioned previously the Poisson distribution can be used to model the number of students visiting the university website in a given time interval. In contrast, we can use the exponential distribution to model the difference between the visit time of current students and the visited time $t$ of the previous student.  
 
@@ -321,7 +321,7 @@ The beta distribution represents a distribution of probabilities of a probabilit
 
 
 ## Next step
-Well done! You have made it! We hope you will find this material useful and informative. As you have seen that for each distribution we have created a graph from 10,000 generated random samples as representatives of the specific distribution with specified parameters. However, at the moment we have no knowledge of how these samples are generated and what is the process behind it. It is also worth noting that the relationship between the change in mean and change in variance for any model is far more important in large datasets than the actual distribution of individual data points. In Part 2: Sampling, we will be getting a general understanding of sampling, different ways of drawing samples, and how we can describe a sample from a distribution.
+Well done! You have made it! We hope you will find this material useful and informative. As you have seen that for each distribution we have created a graph from 10,000 generated random samples as representatives of the specific distribution with specified parameters. However, at the moment we have no knowledge of how these samples are generated and what is the process behind it. It is also worth noting that the relationship between the change in mean and change in variance for any model is far more important in large datasets than the actual distribution of individual data points. In <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2">Part 2: Sampling</Link>, we will be getting a general understanding of sampling, different ways of drawing samples, and how we can describe a sample.
 
 
 ## Recommended reading

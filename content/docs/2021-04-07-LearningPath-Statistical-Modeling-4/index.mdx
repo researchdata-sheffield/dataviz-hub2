@@ -11,7 +11,7 @@ import { HiOutlineLightBulb } from "react-icons/hi"
 
 
 ## Introduction
-Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of sampling and decide whether the hypothesis (assumptions made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters are fully specified.  
+Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of samples and decide whether the hypothesis (assumptions that was made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters are fully specified.  
 
 
 Parametric tests has the following applications:  
@@ -32,7 +32,7 @@ In part 4 we will be looking at common hypothesis test method and their applicat
 
 
 ### Sidenote
-The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution (prior distribution) and posterior distribution (posterior distribution) are introduced to find out the probability of each parameter value in the parameter space.  
+The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution and posterior distribution are introduced to find out the probability of each parameter value in the parameter space.  
 
 ---
 
@@ -95,13 +95,13 @@ t.test(
 )
 ```
 
-![Two-tailed t-test (unpaired)](1t-test.png)
+![Two-tailed t-test (unpaired)](1t-test.png) 
 
 [Click here](https://www.sthda.com/english/wiki/t-test-formula) to see t-test formula.
 
 
 ## F-test
-F-test is a test that the statistical value (or f value) obeys the [F-distribution](https://en.wikipedia.org/wiki/F-distribution) (this is the sampling distribution for ratio of variances - $\frac{between-group variance}{within-group variance}$) under the null hypothesis $H_{0}$. It is usually used to analyse a statistical model that uses more than one parameter to determine whether all or part of the parameters in the model are suitable for estimating the population. In short, the F-test compares nested models fit to the same dataset by comparing variances of models. The assumptions for data will be similar to the one in T-test:
+F-test is a test that the statistical value (or f value) obeys the [F-distribution](https://en.wikipedia.org/wiki/F-distribution) (this is the sampling distribution for ratio of variances - $\frac{\textrm{between-group variance}}{\textrm{within-group variance}}$) under the null hypothesis $H_{0}$. It is usually used to analyse a statistical model that uses more than one parameter to determine whether all or part of the parameters in the model are suitable for estimating the population. In short, the F-test compares nested models fit to the same dataset by comparing variances of models. The assumptions for data will be similar to the one in T-test:
 - data are normally distributed
 - data are independent from each other  
 - sum of squares follows $\chi^{2}$ distributions
@@ -202,7 +202,7 @@ From the result we can see that the sum of squares has reduced over 30%, and the
 
 
 ## Next step
-In this part of the learning path we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In part 5 we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.  
+In this part of the learning path we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In <Link to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">part 5</Link> we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.  
 
 
 ## Recommended reading

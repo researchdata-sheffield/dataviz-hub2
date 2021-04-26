@@ -9,7 +9,7 @@ import Bg from "../../images/home/learningPath.jpg"
 
 const LearningPath = () => {
   const animationClasses = "transform transition duration-300 ease-in-out"
-  const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-md cursor-pointer`
+  const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-md`
   const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0`
   const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
@@ -62,7 +62,7 @@ const LearningPath = () => {
     <div 
       id="learning_path" 
       className="flex flex-wrap justify-center items-center relative" 
-      style={{minHeight: '850px', backgroundImage: `linear-gradient(180deg, rgba(17,24,39,.97) 0%, rgba(40,40,40,.94) 100%), url(${Bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+      style={{minHeight: '850px', backgroundImage: `linear-gradient(180deg, rgba(17,24,39,.98) 0%, rgba(16,16,30,.96) 100%), url(${Bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
     >
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center mt-8">
@@ -115,38 +115,4 @@ const LearningPath = () => {
 
 }
 
-export default LearningPath
-
-// LearningPath.propTypes = {
-//   data: PropTypes.any,
-//   allMdx: PropTypes.any,
-// }
-
-// export const query = graphql`
-//   query LearningPathQuery {
-//     allMdx(filter: {frontmatter: {learningPath: {eq: "true"}}}) {
-//       edges {
-//         node {
-//           id
-//           fields {
-//             slug
-//           }
-//           frontmatter {
-//             description
-//             learningPath
-//             learningPathBtn
-//             learningPathDescription
-//             learningPathTitle
-//             thumbnail {
-//               childrenImageSharp {
-//                 fluid {
-//                   src
-//                 }
-//               }
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// `
+export default LearningPath;

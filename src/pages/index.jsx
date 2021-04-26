@@ -16,7 +16,6 @@ import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/COVIDDeathPropMSOA.png"
 import { ButtonWithArrow, AnimateButton } from "../components/style/styled"
 import { randomNumber } from "../utils/shared"
-//import bg from "../images/home/earth.jpg"
 
 
 

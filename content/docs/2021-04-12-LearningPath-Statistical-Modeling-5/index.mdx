@@ -15,7 +15,9 @@ In <Link to="/docs/07/04/2021/LearningPath-Statistical-Modeling-4">part 4</Link>
  
 The CLT tells us that for any number of independent, identically distributed random variables with finite mean and variance (regardless what distribution it has!), its sum tends to be normally distributed as the number of experiments or sample size increases. The nature of the normal distribution implies the mean of a large number of random variables also approximate the normal distribution. This result usually requires the sample size to be greater than or equal to 30.  
   
-  
+
+---  
+
 A more formal definition of the CLT is as follows:  
 
 **Definition**. Given that 
@@ -30,7 +32,9 @@ $$
 S_{n} \sim N(n\mu, \sqrt{n}\sigma^{2})
 $$
 
-, or $S_{n}$ is normally distributed with mean $n\mu$ and variance $\sqrt{n}\sigma$. The CLT also extends to the normalised mean of these random variables - if we replace $S_{n}$ by the average of $n$ i.i.d random variables $\bar X$, then $\bar X \sim N(\mu, \frac{\sigma^{2}}{\sqrt{n}})$.
+, or $S_{n}$ is normally distributed with mean $n\mu$ and variance $\sqrt{n}\sigma$. The CLT also extends to the normalised mean of these random variables - if we replace $S_{n}$ by the average of $n$ i.i.d random variables $\bar X$, then $\bar X \sim N(\mu, \frac{\sigma^{2}}{\sqrt{n}})$.  
+
+---
 
 With the CLT, even if we do not know about the distribution of the population, we can now use the average of sample means and sample standard deviations from samples to get an approximate value of population mean and standard deviation. Thus, we can use statistics from normal distributions to calculate confidence intervals and perform hypothesis testing. And the requirement for sample size here is acceptable to most of the experiments, no less than 30 will do!  
  
@@ -38,7 +42,7 @@ To give you a better idea visually, try [this website](http://onlinestatbook.com
 
 ![Normal distributions](normal.png)
 
-Performing hypothesis testing requires several assumptions to be true and we are trouble free with normality thanks to the Central Limit Theorem. But this is not always the case for another important assumption - homogeneity of variance. As mentioned in part 4, the homogeneity of variance assumption assumes within-group variances are equal across independent groups. For example, if we were creating a model for exploring the effect of drinking alcohol on weight and we have sampled two groups of people (drinking alcohol or not) from a same population, then we would want the variance of weight for each group to be very close together, because data with high variability would not be suitable neither for construction of a regression model nor make inferences. Additionally, violation of homogeneity of variance can lead to a higher false positive rate (rejection of a null hypothesis when it is true).  
+Performing hypothesis testing requires several assumptions to be true and we can apply statistical methods regardless of the distribution of population thanks to the Central Limit Theorem. But this is not always the case for another important assumption - homogeneity of variance. As mentioned in part 4, the homogeneity of variance assumption assumes within-group variances are equal across independent groups. For example, if we were creating a model for exploring the effect of drinking alcohol on weight and we have sampled two groups of people (drinking alcohol or not) from a same population, then we would want the variance of weight for each group to be very close together, because data with high variability would not be suitable neither for construction of a regression model nor make inferences. Additionally, violation of homogeneity of variance can lead to a higher false positive rate (rejection of a null hypothesis when it is true).  
 
 The image below shows an example of four diagnostic plots for testing assumptions in a model including the normality and homogeneity of variance.
 
@@ -56,7 +60,7 @@ See the following points for a simple explanation of each graph:
 - Scale-Location: if equal variances holds, then points (residuals) should be equally scattered around a horizontal near-straight line
 - Residuals vs Leverage: Indicates influence of each point on the model, the closer to red dash lines the greater influence that point has on the model  
  
-In part 6 we will be exploring the relationships between mean and variance for some distributions, solutions for data that do not satisfy the homogeneity of variance, and more on residuals.
+In <Link to="/docs/14/04/2021/LearningPath-Statistical-Modeling-6">part 6</Link> we will be exploring the relationships between mean and variance for some distributions, solutions for data that do not satisfy the homogeneity of variance, and more on residuals.
 
 
 ## Recommended reading
