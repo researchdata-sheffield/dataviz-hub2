@@ -42,7 +42,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
 
   // enable/disable table of content
   var tableOfContent
-  if(disableTOC === "true") {
+  if(disableTOC === true) {
     tableOfContent = null
   } else {
     tableOfContent = mdx.tableOfContents

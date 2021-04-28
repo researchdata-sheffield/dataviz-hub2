@@ -8,12 +8,12 @@ import {ArrowBox_featured, IMG, IMG_DIV, } from "../style/styled"
 import { getImageSource, shortenText } from "../../utils/shared"
 
 
-const featuredPost = ({ post }) => {
+const featuredItem = ({ item }) => {
   
-  if(post && post.edges) {
+  if(item && item.edges) {
     return (
       <div className="w-full flex flex-wrap pb-6 bg-gray-900">
-        {post.edges.map(({ node }) => {
+        {item.edges.map(({ node }) => {
           let imagesrc = getImageSource(node);
           let title = shortenText(node.frontmatter.title, 11);
           let description = node.frontmatter.description;
@@ -39,14 +39,14 @@ const featuredPost = ({ post }) => {
                   </ArrowBox_featured>
                 </Link>
                 <div className="px-8 lg:px-8 text-xs text-gray-500" style={{fontWeight: '400'}}>
-                  {node.frontmatter.category.map((cat) => (
+                  {node.frontmatter.category && node.frontmatter.category.map((cat) => (
                     <>
                       <Link className="font-semibold hover:underline text-gray-500" key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</Link>
                       <> · </> 
                     </>
                   ))}
                 
-                  {node.frontmatter.tag.map((tagItem, i) => {
+                  {node.frontmatter.tag && node.frontmatter.tag.map((tagItem, i) => {
                     return (
                       i < 3 && 
                       <>
@@ -55,7 +55,7 @@ const featuredPost = ({ post }) => {
                       </>
                     )         
                   })}
-                  {node.frontmatter.tag.length > 3 && <Link className="text-gray-500 hover:underline" to={node.fields.slug}>+{node.frontmatter.tag.length - 3} more</Link>}
+                  {node.frontmatter.tag && node.frontmatter.tag.length > 3 && <Link className="text-gray-500 hover:underline" to={node.fields.slug}>+{node.frontmatter.tag.length - 3} more</Link>}
                 </div>
               </div>
             </Fade>
@@ -66,9 +66,9 @@ const featuredPost = ({ post }) => {
   }
 }
 
-export default featuredPost
+export default featuredItem
 
-featuredPost.propTypes = {
-  featuredPost: PropTypes.any,
+featuredItem.propTypes = {
+  featuredItem: PropTypes.any,
 }
 

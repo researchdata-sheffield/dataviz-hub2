@@ -5,7 +5,7 @@ import SEO from "../components/shared/seo"
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 import EventNotice from "../components/home/eventNotice"
-import FeaturedPost from "../components/home/featuredPost"
+import FeaturedItem from "../components/home/featuredItem"
 import LatestPost from "../components/home/latestPost"
 import LearningPath from "../components/home/learningPath"
 import HomeCommunity from "../components/home/homeCommunity"
@@ -20,7 +20,7 @@ import { randomNumber } from "../utils/shared"
 
 
 
-const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
+const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
   let datePrev = moment()
   var words = ["Colour", "What are you looking for?", "blog post", "Dash", "dataset", "Shiny",
                "Chart", "visualisation", "Python", "DD/MM/YYYY"]
@@ -115,7 +115,7 @@ const IndexPage = ({data: {featuredPost, latestPost, eventBrite}}) => {
             </div>  
 
             <EventNotice eventBrite={eventBrite} />             
-            <FeaturedPost post={featuredPost} />
+            <FeaturedItem item={featuredItem} />
             <LatestPost post={latestPost} />
           </div> 
           {/* End of right component */}
@@ -181,9 +181,9 @@ IndexPage.propTypes = {
 
 export const query = graphql`
   query {
-    featuredPost: 
+    featuredItem: 
       allMdx(
-        filter: {frontmatter: { featured: {eq: "true"}, type: {eq: null} }}, 
+        filter: {frontmatter: { featured: {eq: true}, isPublished: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 2 ) {
       ...MdxEdge
@@ -191,7 +191,7 @@ export const query = graphql`
 
     latestPost: 
       allMdx(
-        filter: {frontmatter: { hide: {ne: "true"}, type: {eq: null} }}, 
+        filter: {frontmatter: { type: {eq: null}, isPublished: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 8 ) {
       ...MdxEdge

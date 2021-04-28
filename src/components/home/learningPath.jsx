@@ -17,7 +17,7 @@ const LearningPath = () => {
   const data = useStaticQuery(graphql`
     query LearningPathQuery {
       allMdx(
-        filter: {frontmatter: {learningPath: {eq: "true"}}},
+        filter: {frontmatter: {learningPath: {eq: true}}},
         sort: {order: ASC, fields: frontmatter___date}
       ) {
         edges {
@@ -27,9 +27,9 @@ const LearningPath = () => {
               slug
             }
             frontmatter {
+              isPublished
               description
               learningPath
-              learningPathIsNew
               learningPathBtn
               learningPathDescription
               learningPathTitle
@@ -73,11 +73,12 @@ const LearningPath = () => {
 
       <div className="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56">
         <Slider {...carouselSettings}>
-          {data.allMdx && data.allMdx.edges.map(({ node }) => {
+          {data.allMdx && data.allMdx.edges.map(({ node }, index, arr) => {
 
             let imagesrc = getImageSource(node);
             let description = shortenText(node.frontmatter.description, 15);
             let learningPathDescription = shortenText(node.frontmatter.learningPathDescription, 10);
+            let isPublished = node.frontmatter.isPublished !== false;
 
             return (
               <Zoom bottom duration={700} delay={100} key={node.id}>
@@ -87,8 +88,10 @@ const LearningPath = () => {
                   //onClick={() => {window.open(`${node.fields.slug}`, '_blank', 'noopener,noreferrer')}} 
                   tabIndex="0"
                 >
-                  {node.frontmatter.learningPathIsNew && 
-                    <span className="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg">New</span>
+                  {arr.length - 1 === index && 
+                    <span className="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg">
+                      {isPublished ? 'New' : 'Coming soon'}
+                    </span>
                   }
                   <div className={frontCard}>
                     <div className="text-xl mt-5 font-bold xl:text-2xl">{node.frontmatter.learningPathTitle}</div>
@@ -97,7 +100,9 @@ const LearningPath = () => {
                   <div className={backCard}>
                     <h1 className="font-bold mb-1 text-xl xl:text-2xl">{node.frontmatter.learningPathTitle}</h1>
                     <p className="text-base xl:text-lg">{description}</p>
-                    <Link to={node.fields.slug}><ButtonWithArrow className={moreBtn}>{node.frontmatter.learningPathBtn}</ButtonWithArrow></Link>
+                    <Link to={isPublished ? node.fields.slug : '#learning_path'} className={`${isPublished ? '' : 'cursor-not-allowed'}`}>
+                      <ButtonWithArrow className={moreBtn}>{isPublished ? node.frontmatter.learningPathBtn : 'Coming soon'}</ButtonWithArrow>
+                    </Link>
                   </div>
                 </div>
               </Zoom>

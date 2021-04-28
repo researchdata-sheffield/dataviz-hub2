@@ -91,7 +91,7 @@ blogTemplate.propTypes = {
 export const query = graphql`
 	query blogList($skip: Int!, $limit: Int!) {
 		allMdx(
-			filter: { frontmatter: { hide: { ne: "true" }, type: { eq: null } } }
+			filter: { frontmatter: { type: { eq: null }, isPublished: {ne: false} } }
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip

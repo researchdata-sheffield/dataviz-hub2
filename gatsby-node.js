@@ -89,11 +89,12 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docsTemplate = path.resolve(`./src/templates/docs/docsTemplate.jsx`);
   const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
 
+  // one query for each type of file: blog, docs, (insert any new types here)
   const result = await graphql(`
     {
       docsQuery: allMdx(
         sort: { fields: [frontmatter___date], order: DESC }, 
-        filter: {frontmatter: {type: {eq: "docs"}}}
+        filter: { frontmatter: {type: {eq: "docs"}, isPublished: {ne: false}} }
       ) {
         edges {
           node {
@@ -130,7 +131,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       }
       blogQuery: allMdx(
         sort: { fields: [frontmatter___date], order: DESC }, 
-        filter: {frontmatter: {type: {eq: null}}}
+        filter: {frontmatter: {type: {eq: null}, isPublished: {ne: false}}}
       ) {
         edges {
           node {

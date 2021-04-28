@@ -61,7 +61,7 @@ blogTagTemplate.propTypes = {
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
-			filter: { frontmatter: { tag: { in: [$tag] }, hide: { ne: "true" } } }
+			filter: { frontmatter: { tag: { in: [$tag] }, isPublished: {ne: false} } }
 		) {
 			...MdxEdge
 		}

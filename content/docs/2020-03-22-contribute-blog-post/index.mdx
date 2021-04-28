@@ -7,9 +7,9 @@ description: "(UPDATED on 21 Apr 2021) This article will guide you to setup a de
               you to useful syntax for styling the blog post and adding resources such as images, videos, and codes."
 date: "2020-03-22"
 template:
-featured: "false"
-hide: "false"
-disableTOC: "false"
+featured: false
+isPublished: true
+disableTOC: false
 d3: ["https://unpkg.com/topojson@3", "dataviz.js"]
 ---
 
@@ -89,8 +89,8 @@ category: "Articles"			  # one category only, use pre-set categories: "Articles"
 tag: ["SomeTag", "AnotherOne"]    # make sure tags & cate are capitalised
 thumbnail: ./image.jpg            # an image to use for your post's thumbnail
 template:                         # optional, if set to "custom", you would need to design your own post page except from header and footer of the website.
-featured: "true"			      # optional, Set it to "true" if you want to show the post on home page
-disableTOC:                       # optional, set it to "true" if you wish to disable the default Table of Contents
+featured: true			      # optional, Set it to true if you want to show the post on home page
+disableTOC: false                      # optional, set it to true if you wish to disable the default Table of Contents
 d3: ["file1.js", "file2.js"] # optional, use to include your d3 documents
 ---
 ```
@@ -162,7 +162,7 @@ Write something
 then this website will automatically create a table of content list for you on the right hand side of the post.  
 If you want disable it, simply insert the following line in the header section:
 ```md
-disableTOC: "true"
+disableTOC: true
 ```
 
 # Styling
