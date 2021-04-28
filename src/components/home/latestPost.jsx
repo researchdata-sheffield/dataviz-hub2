@@ -71,8 +71,8 @@ const latestPost = ({ post }) => {
         })}
       </div>
 
-      <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
-        <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
+      <div className="flex flex-wrap w-full bg-gray-900 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
+        <div className="text-white mr-10">Discover more articles and tutorials at our blog.</div>
         <Link to="/blog">
           <ButtonWithArrow type="AnimateButton" className="group py-2 px-4 mt-0 text-sm bg-white text-black hover:text-white" hoverBC="#000" link title="read more on blog">
             Read more

@@ -16,7 +16,7 @@ const eventNotice = ({ eventBrite }) => {
   return (
     <div className="bg-black w-full">
       <Fade duration={1000}>
-      <div id="eventNotice" className="p-2 w-full text-gray-800 flex-col flex-wrap overflow-auto shadow-lg z-10 relative bg-gray-50">
+      <div id="eventNotice" className="p-2 w-full text-gray-800 flex-col flex-wrap overflow-auto shadow-md border-t-1 border-gray-100 relative bg-white">
         {eventBrite.edges.map(({node}) => {
 
           let summary = node.summary ? shortenText(node.summary, 30) : ""

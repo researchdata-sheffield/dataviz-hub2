@@ -62,7 +62,7 @@ const LearningPath = () => {
     <div 
       id="learning_path" 
       className="flex flex-wrap justify-center items-center relative" 
-      style={{minHeight: '850px', backgroundImage: `linear-gradient(180deg, rgba(17,24,39,.98) 0%, rgba(16,16,30,.96) 100%), url(${Bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
+      style={{minHeight: '850px', backgroundImage: `linear-gradient(180deg, rgba(17,24,39,.98) 0%, rgba(16,16,30,.94) 100%), url(${Bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
     >
       <Fade>
         <div className="container mx-auto justify-center flex flex-wrap text-center mt-8">
@@ -71,7 +71,7 @@ const LearningPath = () => {
         </div>
       </Fade>
 
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mt-12 lg:mb-48">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56">
         <Slider {...carouselSettings}>
           {data.allMdx && data.allMdx.edges.map(({ node }) => {
 
@@ -87,7 +87,9 @@ const LearningPath = () => {
                   //onClick={() => {window.open(`${node.fields.slug}`, '_blank', 'noopener,noreferrer')}} 
                   tabIndex="0"
                 >
-                  {node.frontmatter.learningPathIsNew && <span className="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-md">New</span>}
+                  {node.frontmatter.learningPathIsNew && 
+                    <span className="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg">New</span>
+                  }
                   <div className={frontCard}>
                     <div className="text-xl mt-5 font-bold xl:text-2xl">{node.frontmatter.learningPathTitle}</div>
                     <div className="text-gray-300 text-base mt-3 xl:text-lg">{learningPathDescription}</div>

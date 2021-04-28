@@ -23,15 +23,19 @@ const HomeCommunity = () => {
   ]
 
   return (
-    <div id="home_community" className="lg:min-h-110 flex flex-wrap justify-center items-center relative" style={{transition: '.5s ease', background: `linear-gradient(180deg, ${bgColour} 0%, #fff 60%)`, backgroundColor: `${bgColour}`}}>
+    <div 
+      id="home_community" 
+      className="flex flex-wrap justify-center items-center relative" 
+      style={{transition: '.5s ease', background: `linear-gradient(180deg, ${bgColour} 0%, #fff 60%)`, backgroundColor: `${bgColour}`, minHeight: '700px'}}
+    >
       <Fade>
-        <div className="container mx-auto justify-center flex flex-wrap mt-24">
+        <div className="container mx-auto justify-center flex flex-wrap pt-36">
           <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center px-4"><h1 style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>YOUR COMMUNITY. </h1></div>
           <Link to="/community" className="mt-1 text-med xl:text-lg text-gray-600 hover:underline">Learn more <MdKeyboardArrowRight className="inline-block" /> 😃</Link>
         </div>
       </Fade>
       
-      <div className="flex flex-wrap text-black 2xl:-mt-16 pb-20 justify-center">
+      <div className="flex flex-wrap text-black pt-24 pb-36 justify-center">
         <div className={cardClasses} onMouseEnter={() => setColour('#fed7d7')} onMouseLeave={() => setColour('#fff')}>
           <Slide bottom duration={200}>
             <RiCalendarEventLine className="text-3xl" />
