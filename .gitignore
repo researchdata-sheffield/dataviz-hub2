@@ -73,5 +73,10 @@ public
 yarn-error.log
 .pnp/
 .pnp.js
+
 # Yarn Integrity file
 .yarn-Integrity
+
+# R project
+*.Rproj
+*.Rproj.*

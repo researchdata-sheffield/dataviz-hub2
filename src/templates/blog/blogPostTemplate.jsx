@@ -46,7 +46,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   // enable/disable table of content
   var tableOfContent
-  if(disableTOC === "true") {
+  if(disableTOC === true) {
     tableOfContent = null
   } else {
     tableOfContent = mdx.tableOfContents
@@ -173,7 +173,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         </div>   
    
         {/******** main mdx content  ***********/}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `mdxBody`: ``} relative mx-auto container pt-6 pb-16 px-5 leading-8 text-lg`} style={{color: '#24292e', maxWidth: '700px'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? `mdxBody`: ``} relative mx-auto container pt-0 pb-16 px-5 text-lg xl:text-xl`} style={{color: '#24292e', maxWidth: '700px'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, 
                           pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMG, table: Table, 

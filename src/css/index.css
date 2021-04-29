@@ -74,7 +74,7 @@ a, div, p, h1, h2, h3, h4, h5, h6 {
 ::selection { background: #00aeef; color: white }
 
 textarea::placeholder {
-  color: #404040;
+  color: #6e6e6e;
 }
 
 /**

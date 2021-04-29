@@ -27,6 +27,11 @@ module.exports = {
         'black-75': 'rgba(0, 0, 0, .75)',
         'black-85': 'rgba(0, 0, 0, .85)',
         'black-custom': '#0C0717',
+        'shefBlue': '#0066b3',
+        'shefPurple': '#251d5a',
+        'shefYellow': '#fedf00',
+        'shefGreen': '#009640',
+        'sheflightBlue': '#ade1f8'
 
       },
       borderColor: {
@@ -36,6 +41,11 @@ module.exports = {
         'menu_yellow': '#f3f218',
         'menu_green': '#99f318',
         'black': '#000',
+        'shefBlue': '#0066b3',
+        'shefPurple': '#251d5a',
+        'shefYellow': '#fedf00',
+        'shefGreen': '#009640',
+        'sheflightBlue': '#ade1f8'
       },
       borderRadius: {
         'xl': '0.675rem',
@@ -182,9 +192,12 @@ module.exports = {
       textColor: {
         'highlight': '#337ab7',
         'brand-blue': '#00aeef',
+        'shefBlue': '#0066b3',
+        'shefPurple': '#251d5a',
+        'shefYellow': '#fedf00',
+        'shefGreen': '#009640',
+        'sheflightBlue': '#ade1f8',
         'brand-pink': '#ff79b4',
-        'brand-bluet': '#73d8ff',
-        'logo_blue': '#009fe3',
       },
       transitionProperty: {
         'hover': 'hover, group-hover',
@@ -216,12 +229,12 @@ module.exports = {
   variants: {
     textColor: ['responsive', 'focus', 'group-focus', 'group-hover', 'hover', 'first', 'last', 'odd', 'even'],
     backgroundColor: ['responsive', 'focus', 'active', 'group-focus', 'group-hover', 'hover', 'first', 'last', 'odd', 'even'],
-    borderColor: ['responsive', 'hover', 'group-hover', 'focus', 'group-focus', 'first', 'last', 'odd', 'even'],
-    borderWidth: ['responsive', 'hover', 'group-hover', 'focus', 'group-focus', 'first', 'last', 'odd', 'even'],
+    borderColor: ['responsive', 'group-hover', 'hover', 'focus', 'group-focus', 'first', 'last', 'odd', 'even'],
+    borderWidth: ['responsive', 'group-hover', 'hover', 'focus', 'group-focus', 'first', 'last', 'odd', 'even'],
     fontWeight: ['group-hover', 'first', 'last', 'odd', 'even'],
     fontSize: ['responsive', 'hover', 'focus','group-hover', 'first', 'last', 'odd', 'even'],
-    display: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
-    opacity: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
+    display: ['responsive', 'group-hover', 'hover', 'focus', 'group-focus'],
+    opacity: ['responsive', 'group-hover', 'focus', 'group-focus', 'hover'],
     zIndex: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
     scale: ['responsive',  'focus', 'active', 'group-focus', 'hover', 'group-hover', 'first', 'last', 'odd', 'even'],
     transitionDuration: ['responsive', 'focus', 'group-hover', 'hover'],
@@ -231,6 +244,6 @@ module.exports = {
     maxHeight: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover', 'first', 'last', 'odd', 'even'],
     greyScale: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],
     translate: ['responsive', 'hover', 'focus', 'group-focus', 'active', 'group-hover', 'first', 'last', 'odd', 'even'],
-    visibility: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover']
+    visibility: ['responsive', 'group-hover', 'hover', 'focus', 'group-focus']
   }
 }

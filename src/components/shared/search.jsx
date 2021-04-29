@@ -5,7 +5,7 @@ import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
 import Zoom from 'react-reveal/Zoom'
 import Fade from 'react-reveal/Fade'
-import bg from "../../images/search/galaxy-world.png"
+import bg from "../../images/search/search.png"
 import { getImageSource, shortenText } from "../../utils/shared"
 
 
@@ -180,15 +180,15 @@ class Search extends Component {
       }
       else {
         return (
-          <div className="bg-white text-gray-900 py-2">Type something in the search box ...</div>
+          <div className="bg-gray-50 text-gray-700 py-2">Type something in the search box ...</div>
         )
       }
     }
 
     return (
       <div className={`${this.props.classNames} relative text-gray-700 w-full text-center`}>
-        <div className="min-h-60 pt-40 pb-10 bg-gray-900" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover", width: "100%"}}>
-          <Zoom top duration={1000} cascade><p className="text-2xl xl:text-3xl text-white mb-3 font-semibold">Search@dataviz.shef</p></Zoom>
+        <div className="pt-40 pb-10 bg-white" style={{backgroundImage: `url(${bg})`, backgroundSize: "contain", backgroundPosition: 'center', backgroundRepeat: 'no-repeat', width: "100%", minHeight: '600px'}}>
+          <Zoom top duration={1000} cascade><p className="text-lg text-gray-800 mb-5 font-extrabold">What are you looking for?</p></Zoom>
           <Fade bottom duration={1500}>
             <div className="inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg">
               <FiSearch className="inline-block text-center text-3xl -mt-1" />

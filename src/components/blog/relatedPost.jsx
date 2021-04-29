@@ -11,7 +11,10 @@ const RelatedPost = (props) => {
 
   const postList = useStaticQuery(graphql`
     query relatedPostList {
-      allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
+      allMdx(
+        sort: {fields: [frontmatter___date], order: DESC},
+        filter: { frontmatter: { isPublished: {ne: false}}}
+      ) {
         ...MdxEdge
       }
     }

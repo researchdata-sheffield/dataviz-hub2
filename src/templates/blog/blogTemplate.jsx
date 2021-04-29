@@ -9,7 +9,8 @@ import SEO from "../../components/shared/seo"
 // import BackgroundSection from "../../components/images/blogBackground";
 import Flip from 'react-reveal/Flip'
 import { GreyButton } from "../../components/style/styled"
-import Bg from "../../images/blog/colorful-world.png"
+import Bg from "../../images/blog/colorful-world.jpg"
+import { backgroundMovement } from "../../utils/hooks/backgroundMovement"
 
 const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 	const [tagMenu, toggleTagMenu] = useState(false);
@@ -17,6 +18,8 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 	function handleTagMenu() {
 		toggleTagMenu(!tagMenu);
 	}
+
+	backgroundMovement("blogBackground");
 
 	return (
 		<>
@@ -27,7 +30,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 			<Header />
 			{/* Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`} */}
 			<div 
-				className={`${pageContext.currentPage != 1 ? "min-h-60" : "min-h-100"} w-full flex flex-col items-center justify-center text-center relative z-10`} 
+				className={`${pageContext.currentPage != 1 ? "min-h-60" : "min-h-100"} w-full overflow-hidden flex flex-col items-center justify-center text-center relative z-10`} 
 				style={{
 					//backgroundImage: 'linear-gradient(225deg, rgb(37,29,90) 0%, rgba(0,102,179,1) 35%, rgba(0,212,255,1) 100%)'
 					//backgroundImage: `url(${Bg})`
@@ -35,16 +38,19 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 			>
 				<div 
 					id="blogBackground"
-					className="absolute top-0 left-0 w-full h-full"
+					className="absolute top-0 left-0 w-full h-full transform scale-110"
 					style={{
-						background: `linear-gradient(0deg, rgba(255, 255, 255, 0.45), rgba(255, 255, 255, 0.45)), url(${Bg})`
+						background: `linear-gradient(0deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)), url(${Bg})`,
+						backgroundPosition: 'center',
+						backgroundSize: 'cover',
+						backgroundAttachment: 'fixed'
 					}}
 				>
 				</div>
 
 				<Flip cascade top delay={700}>
 					<div className="text-black" style={{textShadow: "#fff 0px 0px 5px"}}>	
-						<h1 className="text-5xl font-extrabold">Blog</h1>
+						<h1 className="text-6xl font-extrabold">Blog</h1>
 						<p className="text-md font-semibold mt-5 px-5" style={{maxWidth: '500px'}}>&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> 
 					</div>
 				</Flip>
@@ -88,7 +94,7 @@ blogTemplate.propTypes = {
 export const query = graphql`
 	query blogList($skip: Int!, $limit: Int!) {
 		allMdx(
-			filter: { frontmatter: { hide: { ne: "true" }, type: { eq: null } } }
+			filter: { frontmatter: { type: { eq: null }, isPublished: {ne: false} } }
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip

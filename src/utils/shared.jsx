@@ -1,4 +1,4 @@
-import no_image_1 from "../images/blog/no_image_1.png"
+import no_image_1 from "../images/blog/no_image_1.jpg"
 import no_image_2 from "../images/blog/no_image_2.png"
 import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"
@@ -18,7 +18,7 @@ export function shortenText(text, length) {
 export function getImageSource(node) {
   let imagesrc
   if (node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
-    imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src 
+    imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src
   } else {
     let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
     imagesrc = image_set[Math.floor(randomNumber() * image_set.length)]

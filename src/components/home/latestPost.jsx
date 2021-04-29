@@ -16,7 +16,7 @@ const latestPost = ({ post }) => {
       <div className="w-full flex flex-wrap" style={{background: 'linear-gradient(0deg, rgb(255, 121, 180) 10%, rgb(41, 197, 255) 100%)'}}>
         {post.edges.map(({ node }) => {
           // exclude first two featured posts
-          if(node.frontmatter.featured === "true") {
+          if(node.frontmatter.featured === true) {
             count = count + 1
             if(count <=2) return;
           }
@@ -28,9 +28,9 @@ const latestPost = ({ post }) => {
           postDate = postDate.substring(0, 6)
 
           return (
-            <div key={node.id} className="group w-full relative z-10 border-t-1 border-transparent first:border-black" tabIndex="0">
+            <div key={node.id} className="group w-full relative z-10 border-t-1 border-transparent first:border-gray-900" tabIndex="0">
               <Fade  key={node.id} duration={1000} fraction={0.1}>
-                <div className="w-full bg-black-custom hover:bg-transparent text-white 2xl:text-xl">
+                <div className="w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
                   <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4">
                     <div className="flex flex-wrap items-center md:w-2/5 lg:w-2/12">
                       <MdFiberNew className="text-red-700 lg:text-white group-hover:text-red-700 text-3xl" />
@@ -71,8 +71,8 @@ const latestPost = ({ post }) => {
         })}
       </div>
 
-      <div className="flex flex-wrap w-full bg-gray-100 py-10 px-3 justify-center items-center self-center" style={{transition: ".3s ease"}}>
-        <div className="text-black mr-10">Discover more articles and tutorials at our blog.</div>
+      <div className="flex flex-wrap w-full bg-gray-900 py-10 px-3 justify-center items-center self-center z-10" style={{transition: ".3s ease"}}>
+        <div className="text-white mr-10">Discover more articles and tutorials at our blog.</div>
         <Link to="/blog">
           <ButtonWithArrow type="AnimateButton" className="group py-2 px-4 mt-0 text-sm bg-white text-black hover:text-white" hoverBC="#000" link title="read more on blog">
             Read more

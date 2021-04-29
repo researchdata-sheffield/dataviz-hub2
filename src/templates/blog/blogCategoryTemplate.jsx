@@ -61,7 +61,7 @@ export const query = graphql`
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
-			filter: { frontmatter: { category: { in: [$category] }, hide: { ne: "true" } } }
+			filter: { frontmatter: { category: { in: [$category] }, isPublished: {ne: false} } }
 		) {
 			...MdxEdge
 		}
