@@ -6,7 +6,7 @@ import Footer from "../components/shared/footer"
 import SEO from "../components/shared/seo"
 import RSE from "../images/about/rse.png"
 import ITS from "../images/about/its.png"
-import ORDA from "../images/about/orda_logo.png"
+import ORDA from "../images/about/orda_logo.jpg"
 import Fade from 'react-reveal/Fade'
 import bg from "../images/about/about.jpg"
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import BackgroundTwo from "../images/home/homeBackground"
-import user_distribution from "../../images/home/user1.png"
+import user_distribution from "../../images/home/userMap.jpg"
 import Pulse from "react-reveal/Pulse"
 import Fade from 'react-reveal/Fade'
 import { ButtonWithArrow } from "../style/styled"

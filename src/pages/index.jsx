@@ -17,7 +17,7 @@ import Covid from "../images/home/COVIDDeathPropMSOA.png"
 import Bg from "../images/home/lineBackground.png"
 import { ButtonWithArrow, AnimateButton } from "../components/style/styled"
 import { randomNumber } from "../utils/shared"
-
+import { backgroundMovement } from "../utils/hooks/backgroundMovement"
 
 
 const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
@@ -41,6 +41,7 @@ const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
     };
   }, [words,]);
 
+  backgroundMovement('dynamicBg');
 
   return (
     <div className="bg-white">
@@ -126,11 +127,12 @@ const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
 
       <div id="explore" />
       <div 
-        className="flex flex-wrap items-center text-left relative pt-24 pb-24" 
+        className="flex flex-wrap items-center text-left relative pt-24 pb-24 overflow-hidden" 
         style={{minHeight: '55vw'}}
       >
         <div 
-          className="absolute top-0 w-full left-0 h-full"
+          id="dynamicBg"
+          className="absolute top-0 w-full left-0 h-full transform scale-110"
           style={{backgroundImage: `linear-gradient(145deg, rgba(250, 139, 255, 0.97) 20%, rgba(43, 210, 255, 0.92) 48%, rgba(43, 255, 136, 0.2) 90%), url(${Bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}
         ></div>
         <Fade cascade delay={200} duration={1500}>

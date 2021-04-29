@@ -1,4 +1,4 @@
-import no_image_1 from "../images/blog/no_image_1.png"
+import no_image_1 from "../images/blog/no_image_1.jpg"
 import no_image_2 from "../images/blog/no_image_2.png"
 import no_image_3 from "../images/blog/no_image_3.png"
 import no_image_4 from "../images/blog/no_image_4.png"

@@ -19,7 +19,7 @@ const BlogBackground = ({className, children, Height }) => (
   <StaticQuery
     query={graphql`
       query {
-        desktop: file(relativePath: { eq: "blog/colorful-world.png" }) {
+        desktop: file(relativePath: { eq: "blog/colorful-world.jpg" }) {
           childImageSharp {
             fluid(quality: 80, maxWidth: 1920) {
               ...GatsbyImageSharpFluid_noBase64

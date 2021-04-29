@@ -9,7 +9,8 @@ import SEO from "../../components/shared/seo"
 // import BackgroundSection from "../../components/images/blogBackground";
 import Flip from 'react-reveal/Flip'
 import { GreyButton } from "../../components/style/styled"
-import Bg from "../../images/blog/colorful-world.png"
+import Bg from "../../images/blog/colorful-world.jpg"
+import { backgroundMovement } from "../../utils/hooks/backgroundMovement"
 
 const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 	const [tagMenu, toggleTagMenu] = useState(false);
@@ -17,6 +18,8 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 	function handleTagMenu() {
 		toggleTagMenu(!tagMenu);
 	}
+
+	backgroundMovement("blogBackground");
 
 	return (
 		<>
@@ -35,7 +38,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 			>
 				<div 
 					id="blogBackground"
-					className="absolute top-0 left-0 w-full h-full"
+					className="absolute top-0 left-0 w-full h-full transform scale-110"
 					style={{
 						background: `linear-gradient(0deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)), url(${Bg})`,
 						backgroundPosition: 'center',
