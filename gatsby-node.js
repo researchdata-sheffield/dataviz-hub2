@@ -90,85 +90,76 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
 
   // one query for each type of file: blog, docs, (insert any new types here)
-  const result = await graphql(`
-    {
-      docsQuery: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }, 
-        filter: { frontmatter: {type: {eq: "docs"}, isPublished: {ne: false}} }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              template
-              author {
-                name
-                avatar {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
-              }
-              title
-              date(formatString: "dddd Do MMMM YYYY")
-              thumbnail {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-              d3
-              type
-            }
+  const result = await graphql(`{
+    docsQuery: allMdx(
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {type: {eq: "docs"}, isPublished: {ne: false}}}
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
           }
-        }
-      }
-      blogQuery: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }, 
-        filter: {frontmatter: {type: {eq: null}, isPublished: {ne: false}}}
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              template
-              author {
-                name
-                avatar {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
-              }
-              title
-              date(formatString: "dddd Do MMMM YYYY")
-              category
-              tag
-              thumbnail {
+          frontmatter {
+            template
+            author {
+              name
+              avatar {
                 childImageSharp {
-                  fluid {
-                    src
-                  }
+                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
                 }
               }
-              d3
-              type
             }
+            title
+            date(formatString: "dddd Do MMMM YYYY")
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              }
+            }
+            d3
+            type
           }
         }
       }
     }
+    blogQuery: allMdx(
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {type: {eq: null}, isPublished: {ne: false}}}
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            template
+            author {
+              name
+              avatar {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+                }
+              }
+            }
+            title
+            date(formatString: "dddd Do MMMM YYYY")
+            category
+            tag
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              }
+            }
+            d3
+            type
+          }
+        }
+      }
+    }
+  }
   `)
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query.')

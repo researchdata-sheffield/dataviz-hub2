@@ -6,7 +6,7 @@ import React, { useState, useEffect } from "react"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack, FaTimes, FaBars } from "react-icons/fa"
 import { A } from "../style/blogPostStyle"
-import { useLocation } from "@reach/router"
+import { useLocation } from "@gatsbyjs/reach-router"
 
 
 

@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaTags,  FaAngleDown } from "react-icons/fa"
 import {FiSearch} from "react-icons/fi"
-import { useLocation } from "@reach/router"
+import { useLocation } from "@gatsbyjs/reach-router"
 
 
 const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {

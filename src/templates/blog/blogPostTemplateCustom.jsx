@@ -13,7 +13,7 @@ import PaginationPost from "../../components/blog/paginationPost"
 import "katex/dist/katex.min.css"
 import Comment from "../../components/blog/comment"
 import { useScript } from "../../utils/hooks/useScript"
-import { useLocation } from "@reach/router"
+import { useLocation } from "@gatsbyjs/reach-router"
 
 
 const blogPostTemplateCustom = ({ data: { mdx }, pageContext }) => {

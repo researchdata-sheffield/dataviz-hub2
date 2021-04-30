@@ -1,8 +1,5 @@
-import no_image_1 from "../images/blog/no_image_1.jpg"
-import no_image_2 from "../images/blog/no_image_2.png"
-import no_image_3 from "../images/blog/no_image_3.png"
-import no_image_4 from "../images/blog/no_image_4.png"
-import no_image_5 from "../images/blog/no_image_5.png"
+import { graphql, useStaticQuery } from "gatsby"
+import { getSrc } from "gatsby-plugin-image"
 
 export function shortenText(text, length) {
   let newText = text ? text.split(" ").splice(0, length) : ""
@@ -15,13 +12,39 @@ export function shortenText(text, length) {
 }
 
 // Assign thumbnail if not provided
-export function getImageSource(node) {
-  let imagesrc
+export function getImageSource(node, source = false) {
+  var imagesrc;
   if (node.frontmatter && node.frontmatter.thumbnail && node.frontmatter.thumbnail.childImageSharp) {
-    imagesrc = node.frontmatter.thumbnail.childImageSharp.fluid.src
+    imagesrc = node.frontmatter.thumbnail.childImageSharp.gatsbyImageData;
   } else {
-    let image_set = [no_image_1, no_image_2, no_image_3, no_image_4, no_image_5]
-    imagesrc = image_set[Math.floor(randomNumber() * image_set.length)]
+    const imageData = useStaticQuery(graphql`
+      query getImageFiles {
+        image1: file(relativePath: { eq: "blog/no_image_1.jpg" }) {
+          ...ImageSharp
+        }
+        image2: file(relativePath: { eq: "blog/no_image_2.png" }) {
+          ...ImageSharp
+        }
+        image3: file(relativePath: { eq: "blog/no_image_3.png" }) {
+          ...ImageSharp
+        }
+        image4: file(relativePath: { eq: "blog/no_image_4.png" }) {
+          ...ImageSharp
+        }
+        image5: file(relativePath: { eq: "blog/no_image_5.png" }) {
+          ...ImageSharp
+        }
+      }
+    `)
+
+    var imageArray = Object.values(imageData)
+    // choose a random image from the result
+    let imageToUse = imageArray[Math.floor(randomNumber() * imageArray.length)]
+    imagesrc = imageToUse.childImageSharp.gatsbyImageData;
+  }
+
+  if(source === true) {
+    return getSrc(imagesrc);
   }
   return imagesrc
 }
@@ -30,6 +53,6 @@ export function getImageSource(node) {
  * Generate cryptographically strong random value
  */
 export function randomNumber() {
-  var dec = typeof window !== 'undefined' && window.crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
-  return dec;
+  var number = typeof window !== 'undefined' && window.crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
+  return number;
 }

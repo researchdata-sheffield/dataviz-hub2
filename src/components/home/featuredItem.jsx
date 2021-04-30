@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaStar } from "react-icons/fa"
 import Fade from 'react-reveal/Fade'
-import {ArrowBox_featured, IMG, IMG_DIV, } from "../style/styled"
+import {ArrowBox_featured, IMG, IMG_DIV } from "../style/styled"
 import { getImageSource, shortenText } from "../../utils/shared"
 
 
@@ -26,7 +26,7 @@ const featuredItem = ({ item }) => {
                     <FaStar className="text-yellow-300 text-2xl" />
                     <p className="inline-block lg:opacity-0 group-hover:opacity-100 text-base font-semibold px-2" style={{fontFamily: "TUoS Blake"}}>Featured</p>
                   </div>
-                  <IMG_DIV className="lg:greyScale-100 group-hover:greyScale-0 group-focus:greyScale-0 min-h-3/5 max-h-3/5" style={{minHeight: '420px'}}><IMG style={{backgroundImage: `url(${imagesrc})`}} /></IMG_DIV>
+                  <IMG_DIV className="lg:greyScale-100 group-hover:greyScale-0 group-focus:greyScale-0 min-h-3/5 max-h-3/5" style={{minHeight: '420px'}}><IMG image={imagesrc} /></IMG_DIV>
                   <ArrowBox_featured className="pt-6 px-8 text-gray-600">
                     <h1 className="mt-3 font-bold text-2xl 2xl:text-3xl leading-tight text-gray-200 group-hover:text-brand-blue overflow-y-hidden">{title}</h1>
                     <p className="my-2 text-sm 2xl:text-lg leading-tight group-hover:text-gray-100" >{description}</p>

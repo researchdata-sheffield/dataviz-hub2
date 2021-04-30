@@ -39,7 +39,7 @@ const RelatedPost = (props) => {
       </div>
       <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center lg:justify-start lg:px-5">
         {relatedPosts.map(node => {
-          let imagesrc = getImageSource(node);
+          let imagesrc = getImageSource(node, true);
           let title = shortenText(node.frontmatter.title, 8);
           let description = shortenText(node.frontmatter.description, 34)
           const classes = "group-hover:hidden text-gray-100 font-bold transition duration-500"

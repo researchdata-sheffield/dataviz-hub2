@@ -1,30 +1,38 @@
+// BASE
 import React, { useEffect } from "react"
 import { graphql, withPrefix } from "gatsby"
 import PropTypes from "prop-types"
-import SEO from "../../components/shared/seo"
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import Helmet from "react-helmet"
-import kebabCase from "lodash.kebabcase"
-import "katex/dist/katex.min.css"
-import { useLocation } from "@reach/router"
-import { useScript } from "../../utils/hooks/useScript"
-import { randomNumber } from "../../utils/shared"
-import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
+import { useLocation } from "@gatsbyjs/reach-router"
+import { GatsbyImage } from "gatsby-plugin-image"
 
+import SEO from "../../components/shared/seo"
 import Header from "../../components/shared/header"
 import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../../components/style/styled"
+import Comment from "../../components/blog/comment"
+
+// MDX component
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import "katex/dist/katex.min.css"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMG, TwitterBtn } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
-import Comment from "../../components/blog/comment"
+
+// Utils
+import kebabCase from "lodash.kebabcase"
+import { useScript } from "../../utils/hooks/useScript"
+import { randomNumber } from "../../utils/shared"
+import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
+
 import Fade from "react-reveal/Fade"
 import Pulse from 'react-reveal/Pulse';
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import { RiEditBoxLine } from "react-icons/ri"
 import ReactTooltip from "react-tooltip";
 import trianglify from 'trianglify'
+
 
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
@@ -116,7 +124,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
           
           <div className="flex justify-center mt-12 items-center">
             {author.map((authors) => (
-              <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={authors.name} src={authors.avatar.childImageSharp.fluid.src}  />
+              <GatsbyImage className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={authors.name} image={authors.avatar.childImageSharp.gatsbyImageData}  />
             ))}
             <div className="inline-block px-2 text-left font-semibold" style={{textShadow: "black 0px 0px 15px"}}>
               <h1 className="text-sm xl:text-base">
@@ -201,8 +209,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       
       <Footer />
     </div>
-    
-  )
+  );
 }
 
 export default blogPostTemplate

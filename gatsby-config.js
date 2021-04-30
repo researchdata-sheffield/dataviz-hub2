@@ -11,7 +11,7 @@ module.exports = {
     siteUrl: "https://dataviz.shef.ac.uk"
   },
   flags: { 
-    PRESERVE_WEBPACK_CACHE: true 
+    FAST_DEV: true 
   },
   plugins: [
     {
@@ -21,6 +21,7 @@ module.exports = {
         head: true,
       },
     },
+    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
@@ -203,13 +204,6 @@ module.exports = {
     },
     `gatsby-plugin-offline`, // should be listed after the manifest plugin
     "gatsby-plugin-postcss",
-    {
-      resolve: 'gatsby-background-image',
-      options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:',
-      },
-    },
     /***************** FLEXSEARCH ********************/
     {
       resolve: 'gatsby-plugin-flexsearch',

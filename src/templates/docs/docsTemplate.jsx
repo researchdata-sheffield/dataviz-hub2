@@ -1,21 +1,28 @@
-import React, { useEffect } from "react"
+// BASE
+import React from "react"
 import { graphql, withPrefix } from "gatsby"
 import PropTypes from "prop-types"
-import SEO from "../../components/shared/seo"
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import Helmet from "react-helmet"
-import "katex/dist/katex.min.css"
-import { useLocation } from "@reach/router"
-import { useScript } from "../../utils/hooks/useScript"
-import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
+import { useLocation } from "@gatsbyjs/reach-router"
+import { GatsbyImage } from "gatsby-plugin-image"
 
+import SEO from "../../components/shared/seo"
 import Header from "../../components/shared/header"
 import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
+import Comment from "../../components/blog/comment"
+
+// MDX component
+import { MDXProvider } from "@mdx-js/react"
+import { MDXRenderer } from "gatsby-plugin-mdx"
+import "katex/dist/katex.min.css"
 import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, EM, Table, LPItem, LPWrap, IMG, TwitterBtn } from "../../components/style/blogPostStyle"
 import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion';
-import Comment from "../../components/blog/comment"
+
+// Utils
+import { useScript } from "../../utils/hooks/useScript"
+import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
+
 import Fade from "react-reveal/Fade"
 import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
 import { RiEditBoxLine } from "react-icons/ri"
@@ -66,33 +73,6 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
   ); 
 
 
-  if (typeof window !== `undefined`) {
-    //const list = document.querySelector('.gatsby-code-title')
-    // selector all code block titles
-    // add copy to clipboard button for every title
-    // add copy function to button 
-  }
-
-  // produce trianglify image
-  useEffect(() => {  
-    // var element = document.getElementById("headElement");
-    // var dimensions = element.getClientRects()[0];
-    // var pattern = trianglify({
-    //   width: dimensions.width, 
-    //   height: dimensions.height,
-    //   cellSize: 60 + Math.ceil(randomNumber() * 100),
-    //   variance: randomNumber(),
-    //   strokeWidth: randomNumber() * 5,
-    //   seed: randomNumber().toString(5)
-    // }).toCanvas();
-
-    // var img = pattern.toDataURL("image/png")
-    // element.style['background-image'] = 'linear-gradient(0deg, rgba(0,0,0,0.05) 70%, rgba(0,0,0,0.60) 100%), url('+ img +')';
-  });
-
-
-
-
   return (
     <div className="relative" key={mdx.id}>
       <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
@@ -111,7 +91,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
           
           <div className="flex justify-center mt-12 items-center">
             {author.map((authors) => (
-              <img className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px border-1 border-gray-100" key={authors.name} src={authors.avatar.childImageSharp.fluid.src}  />
+              <GatsbyImage className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px border-1 border-gray-100" key={authors.name} image={authors.avatar.childImageSharp.gatsbyImageData}  />
             ))}
             <div className="inline-block px-2 text-left font-semibold text-gray-800">
               <h1 className="text-sm xl:text-base">
@@ -196,8 +176,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
       
       <Footer />
     </div>
-    
-  )
+  );
 }
 
 export default docsTemplate

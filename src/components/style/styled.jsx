@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled from "styled-components"
 import tw, { styled as styled_twin } from 'twin.macro'
 import { Link as gatsby_Link } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { MdKeyboardArrowRight } from "react-icons/md"
 
 export const PostBox = styled.div`
@@ -77,7 +78,7 @@ export const ArrowBox_featured = styled(ArrowBox)`
 
 `
 
-export const IMG = styled.div`
+export const IMG = styled(GatsbyImage)`
   transition: .5s ease;
   background-size: cover;
   background-position: center;

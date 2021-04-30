@@ -5,7 +5,7 @@ import kebabCase from "lodash.kebabcase"
 import { FaTags} from "react-icons/fa"
 import {FiSearch} from "react-icons/fi"
 import { IoMdClose } from "react-icons/io"
-import { useLocation } from "@reach/router"
+import { useLocation } from "@gatsbyjs/reach-router"
 
 const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
   const [filterTag, setfilterTag] = useState(pageContext.tags);

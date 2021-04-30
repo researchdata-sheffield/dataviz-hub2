@@ -1,9 +1,9 @@
 import React from 'react'
-import BackgroundTwo from "../images/home/homeBackground"
-import user_distribution from "../../images/home/userMap.jpg"
+import user_distribution from "../../images/home/userMap.png"
 import Pulse from "react-reveal/Pulse"
 import Fade from 'react-reveal/Fade'
 import { ButtonWithArrow } from "../style/styled"
+import Bg from "../../images/home/dataviz.jpg"
 
 const HomeShowcase = () => {
 
@@ -11,7 +11,10 @@ const HomeShowcase = () => {
     <div className="relative overflow-hidden bg-black-custom w-full">
       <h1 className="absolute left-0 text-white text-3xl font-semibold transform rotate-90 -ml-24 mt-60">ORDA.SHEF.AC.UK</h1>
       <div id="home_showcase" />      
-      <BackgroundTwo className="lg:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-16 transition duration-500">
+      <div 
+        className="lg:min-h-40 flex flex-wrap items-center justify-end py-5 transform hover:translate-x-16 transition duration-500"
+        style={{backgroundImage: `url(${Bg})`}}
+      >
         <div className="flex flex-wrap justify-start">
           <div className="lg:w-1/2 py-24 flex flex-wrap px-3 lg:pr-20 lg:ml-24">
             <Fade duration={1300} right>
@@ -27,7 +30,7 @@ const HomeShowcase = () => {
           </div>
         </div>
         
-      </BackgroundTwo>
+      </div>
       
       <div className="lg:min-h-40 flex flex-wrap pt-8 pb-56 lg:pt-24 lg:pb-82 items-center justify-center" style={{background: '#fcfcfc'}}>
         <div className="lg:w-6/12 lg:pl-8 my-10 lg:my-0 transform hover:scale-110 transition duration-500">
@@ -35,7 +38,7 @@ const HomeShowcase = () => {
         </div>
         <Fade bottom duration={1300}>
         <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center pb-16">
-          <h1 className="text-4xl lg:text-5xl text-gray-900 text-center mt-10 mb-6 lg:py-5" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Online Research Data</h1>
+          <h1 className="text-4xl 2xl:text-5xl text-gray-900 text-center mt-10 mb-6 lg:py-5" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Online Research Data</h1>
           <p className="text-gray-800 2xl:text-lg">ORDA (Online Research Data) at the University of Sheffield has welcomed visitors from over 148 countries and regions worldwide, providing a research data repository for storing and publishing 
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>

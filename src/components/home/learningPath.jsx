@@ -14,38 +14,34 @@ const LearningPath = () => {
   const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
 
-  const data = useStaticQuery(graphql`
-    query LearningPathQuery {
-      allMdx(
-        filter: {frontmatter: {learningPath: {eq: true}}},
-        sort: {order: ASC, fields: frontmatter___date}
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              isPublished
-              description
-              learningPath
-              learningPathBtn
-              learningPathDescription
-              learningPathTitle
-              thumbnail {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
+  const data = useStaticQuery(graphql`query LearningPathQuery {
+    allMdx(
+      filter: {frontmatter: {learningPath: {eq: true}}}
+      sort: {order: ASC, fields: frontmatter___date}
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            isPublished
+            description
+            learningPath
+            learningPathBtn
+            learningPathDescription
+            learningPathTitle
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
               }
             }
           }
         }
       }
     }
-  `)
+  }`)
 
   const carouselSettings = {
     dots: false,
@@ -75,7 +71,7 @@ const LearningPath = () => {
         <Slider {...carouselSettings}>
           {data.allMdx && data.allMdx.edges.map(({ node }, index, arr) => {
 
-            let imagesrc = getImageSource(node);
+            let imagesrc = getImageSource(node, true);
             let description = shortenText(node.frontmatter.description, 15);
             let learningPathDescription = shortenText(node.frontmatter.learningPathDescription, 10);
             let isPublished = node.frontmatter.isPublished !== false;

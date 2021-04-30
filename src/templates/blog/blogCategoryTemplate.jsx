@@ -7,8 +7,7 @@ import MenuCategory from "../../components/blog/menuCategory"
 import BlogLayout from "../../components/blog/blogLayout"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import BackgroundSection from "../../components/images/blogBackground";
-
+import Bg from "../../images/blog/colorful-world.jpg"
 
 const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 	const [tagMenu, toggleTagMenu] = useState(false);
@@ -24,8 +23,11 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 			<Header />
-			<BackgroundSection className="flex items-center justify-center text-center shadow-2xl bg-gray-900 relative z-10" Height="50vh">
-				<div className="text-white" style={{textShadow: "#000000 0px 0px 5px"}}>
+			<div 
+				className="flex flex-wrap content-center justify-center text-center shadow-2xl bg-gray-900 relative z-10 w-full"
+				style={{background: `linear-gradient(0deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)), url(${Bg})`, minHeight: '400px'}}
+			>
+				<div className="text-gray-900 w-full">
 					<h1 className="text-4xl">{pageContext.category}</h1>
 					{/* <p className="text-sm md:max-w-35">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> */}
 				</div>
@@ -34,7 +36,7 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 					handleTagMenu={handleTagMenu} 
 					tagMenu={tagMenu} 
 				/>
-			</BackgroundSection>
+			</div>
 
 			<BlogLayout 
 				allMdx={allMdx} 
