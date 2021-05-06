@@ -1,6 +1,14 @@
 import { graphql, useStaticQuery } from "gatsby"
 import { getSrc } from "gatsby-plugin-image"
 
+
+
+/**
+ * 
+ * @param {String} text 
+ * @param {Integer} length 
+ * @returns 
+ */
 export function shortenText(text, length) {
   let newText = text ? text.split(" ").splice(0, length) : ""
   if (newText.length < length) {
@@ -10,6 +18,7 @@ export function shortenText(text, length) {
   }
   return newText
 }
+
 
 // Assign thumbnail if not provided
 export function getImageSource(node, source = false) {

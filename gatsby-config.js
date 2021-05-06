@@ -2,6 +2,8 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
+//const siteUrl = process.env.URL || `https://dataviz.shef.ac.uk`
+
 module.exports = {
   //pathPrefix: "/dataviz-hub2",
   siteMetadata: {
@@ -11,7 +13,8 @@ module.exports = {
     siteUrl: "https://dataviz.shef.ac.uk"
   },
   flags: { 
-    FAST_DEV: true 
+    FAST_DEV: true,
+    PRESERVE_WEBPACK_CACHE: true
   },
   plugins: [
     {
@@ -56,6 +59,12 @@ module.exports = {
       },
     },
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/shared/layout.jsx`),
+      },
+    },
     /******************************* MDX Plugins *******************************************/
     {
       resolve: `gatsby-plugin-mdx`,
@@ -150,7 +159,6 @@ module.exports = {
     /************************** END MDX Plugins *********************************/
     "gatsby-remark-embed-video",
     `gatsby-remark-responsive-iframe`,
-    `gatsby-remark-reading-time`,
     {
       resolve: 'gatsby-plugin-eslint',
       options: {
@@ -162,19 +170,11 @@ module.exports = {
     },
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
-    //`gatsby-plugin-smoothscroll`,
     `gatsby-plugin-emotion`,
-    //`gatsby-plugin-twitter`,
     `gatsby-plugin-instagram-embed`,
     {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/components/shared/layout.jsx`),
-      },
-    },
-    {
       resolve: `gatsby-source-eventbrite-multi-accounts`,
-      //resolve: `../gatsby-source-eventbrite-multi-accounts`, // local test
+      //resolve: `../gatsby-source-eventbrite-multi-accounts`, // local plugin test
       options: {
         organisations: [
           {
@@ -313,49 +313,89 @@ module.exports = {
       },
     },
     /***************** END FLEXSEARCH ********************/
-
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // {
-    //   resolve: 'gatsby-plugin-offline',
-    //   options: {
-    //      workboxConfig: {
-    //         globPatterns: ['**/*']
-    //      }
-    //   }
-    // },
-    `gatsby-plugin-sass`,
+    /*********** RSS Feed ***************/
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: `gatsby-plugin-feed`,
       options: {
         query: `
-        {
-          site {
-            siteMetadata {
-              siteUrl
-            }
-          }
-          allSitePage {
-            edges {
-              node {
-                path
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
               }
             }
           }
-        }`,
-        serialize: ({ site, allSitePage }) =>
-        allSitePage.edges.map(node => {
-          return {
-            url: `${site.siteMetadata.siteUrl}${node.node.path}`,
-            changefreq: `daily`,
-            priority: 1,
-          }
-        }),
-        exclude: [
-          `/404`
-        ]
-      }
+        `,
+        feeds: [
+          {
+            query: `
+            {
+              allMdx(
+                sort: { order: DESC, fields: [frontmatter___date] },
+                filter: { frontmatter: {isPublished: {ne: false}}}
+              ) {
+                edges {
+                  node {
+                    excerpt(pruneLength: 500)
+                    fields { 
+                      slug 
+                    }
+                    frontmatter {
+                      type
+                      title
+                      date
+                      featured
+                      author {
+                        name
+                      }
+                      tag
+                      category
+                    }
+                  }
+                }
+              }
+            }`,  
+            // For more options go to https://www.npmjs.com/package/rss
+            serialize: ({ query: { site, allMdx } }) => {
+              function getAuthorName(node) {
+                let authorArr = node.frontmatter.author;
+                let authorNames = authorArr.reduce((author1, author2) => author1.name + ", " + author2.name);
+              
+                if(authorArr.length === 1) {
+                  return authorNames.name;
+                }
+                return authorNames;
+              }
+
+              return allMdx.edges.map(({node}) => {
+                let category = node.frontmatter.category || [];
+                let tag = node.frontmatter.tag || [];
+
+                return Object.assign({}, node.frontmatter, {
+                  description: node.description,
+                  date: node.frontmatter.date,
+                  author: getAuthorName(node),
+                  categories: [node.frontmatter.type || 'blog', ...category, ...tag],
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.excerpt }]
+                });
+              });
+            },
+            output: "/rss.xml",
+            title: "Dataviz.Shef RSS Feed",
+            image_url: "https://github.com/researchdata-sheffield/dataviz-hub2/blob/development/src/images/author/dataviz.png",
+            ttl: 1440, // number of minutes feed can be cached before refreshing from source
+          },
+        ],
+      },
     },
+    /*********** END RSS Feed ************* */
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ],
 }

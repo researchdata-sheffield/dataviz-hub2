@@ -23,7 +23,7 @@ const Footer = () => {
               <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
               <li><Link className={linkClasses} to="/privacy">Privacy Policy</Link></li>
               <li><Link className={linkClasses} to="/accessibility">Accessibility</Link></li>
-              <li><Link className={linkClasses} to="/sitemap.xml">Sitemap</Link></li>
+              <li><Link className={linkClasses} to="/sitemap/sitemap-index.xml">Sitemap</Link></li>
             </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">

@@ -5,9 +5,11 @@
  */
 
 
-const { createFilePath } = require('gatsby-source-filesystem')
-const kebabCase = require(`lodash.kebabcase`)
-const path = require("path")
+const { createFilePath } = require('gatsby-source-filesystem');
+const kebabCase = require(`lodash.kebabcase`);
+const path = require("path");
+const readingTime = require("reading-time");
+
 
 // prevent error from canvas used by trianglify
 exports.onCreateWebpackConfig = ({
@@ -35,11 +37,12 @@ exports.onCreateWebpackConfig = ({
  *  Create file path for blog posts/docs/  further new routes
  */
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
 
+    // Get file date
     const [month, day, year] = new Date(node.frontmatter.date)
       .toLocaleDateString("en-EN", {
         year: "numeric",
@@ -50,9 +53,9 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     
     // remove words like blog, date
     const slug = value.replace("/blog/", "").replace(/\/$/, "").replace(/\d{4}-\d{1,2}-\d{1,2}-/, "");
+    
     // determine the type of the page
     const type = node.frontmatter.type || "blog";
-    // concat all information
     const url = `/${type}/${day}/${month}/${year}${slug}`;
     
     // url to be used
@@ -67,16 +70,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slugOrigin`,
       value: value,
     });
+    // Create reading time
+    createNodeField({
+      node,
+      name: `readingTime`,
+      value: readingTime(node.rawBody)
+    });
   }
 }
 
 
 
 /**
- *  Create blog posts
+ *  Create pages from MDX files
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  console.log("MESSAGE: Creating blog posts ...");
+  console.log("MESSAGE: Creating pages from MDX files ...");
   // De-structure the createPage function from the actions object
   const { createPage, createRedirect } = actions
 
@@ -169,7 +178,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   /**
    * DOCS
    */
-
   console.log("MESSAGE: Creating docs routes ...");
   const docsMdx = result.data.docsQuery.edges;
 
@@ -197,10 +205,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+
   /**
    * BLOGPOST
    */
-
   const posts = result.data.blogQuery.edges
   const postsPerPage = 12
   var numPages = posts.length
