@@ -6,9 +6,8 @@ import MenuCategory from "../../components/blog/menuCategory"
 import PropTypes from "prop-types"
 import BlogLayout from "../../components/blog/blogLayout"
 import SEO from "../../components/shared/seo"
-import BackgroundSection from "../../components/images/blogBackground";
 import kebabCase from "lodash.kebabcase"
-
+import Bg from "../../images/blog/colorful-world.jpg"
 
 const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 	const [tagMenu, toggleTagMenu] = useState(false);
@@ -24,8 +23,11 @@ const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
 			<Header />
-			<BackgroundSection className="flex items-center justify-center bg-gray-900 text-center shadow-2xl relative z-10" Height="50vh">
-				<div className="text-white" style={{textShadow: "#000000 0px 0px 5px"}}>
+			<div 
+				className="flex flex-wrap content-center justify-center bg-gray-900 text-center shadow-2xl relative z-10 w-full"
+				style={{background: `linear-gradient(0deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)), url(${Bg})`, minHeight: '400px'}}
+			>
+				<div className="text-gray-900 w-full">
 					<h1 className="text-4xl">Tag: {pageContext.tag}</h1>
 					{/* <p className="text-sm md:max-w-35">&ldquo;The greatest value of a picture is when it forces us to notice what we never expected to see.&rdquo; - John W. Tukey</p> */}
 				</div>
@@ -34,7 +36,7 @@ const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 					handleTagMenu={handleTagMenu} 
 					tagMenu={tagMenu} 
 				/>
-			</BackgroundSection>
+			</div>
 
 			<BlogLayout 
 				allMdx={allMdx} 

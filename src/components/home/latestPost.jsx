@@ -6,7 +6,7 @@ import {MdFiberNew } from "react-icons/md"
 import Fade from 'react-reveal/Fade'
 import {CatBtn, TagBtn, ButtonWithArrow } from "../style/styled"
 import { getImageSource, shortenText } from "../../utils/shared"
-
+import { GatsbyImage } from "gatsby-plugin-image"
 
 const latestPost = ({ post }) => {
   var count = 0
@@ -47,10 +47,13 @@ const latestPost = ({ post }) => {
               </Fade>
               
               {/* On hover, show details on the left */}
-              <div className="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
-                  style={{width: "33.333333%"}}
-                >
-                <div className="min-h-50 max-h-50 w-full transform" style={{backgroundImage: `url(${imagesrc})`, backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat'}}></div>
+              <div 
+                className="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl" 
+                style={{width: "33.333333%"}}
+              >
+                <div className="min-h-50 max-h-50 w-full overflow-hidden">
+                  <GatsbyImage image={imagesrc} alt={"Image for " + node.frontmatter.title} />
+                </div>
                 <div className="flex flex-col bg-white min-h-50 py-6 px-8">
                   <p className="text-sm text-gray-500 font-normal 2xl:text-lg">
                     {node.frontmatter.author.map((author, idx) => (

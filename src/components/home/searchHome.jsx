@@ -99,11 +99,11 @@ class Search_Home extends Component {
             <div className="w-2/7 text-left">
               <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Featured</div>
                 <ul className="list-reset leading-normal text-xs 2xl:text-sm">
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="javascript:void(0)">Chart</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="javascript:void(0)">Colour</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistical Modeling"}}) }} href="javascript:void(0)">Statistical Modeling</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Docs"}}) }} href="javascript:void(0)">Docs</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="javascript:void(0)">R</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="#">Chart</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="#">Colour</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistical Modeling"}}) }} href="#">Statistical Modeling</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Docs"}}) }} href="#">Docs</a></li>
+                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="#">R</a></li>
                 </ul>
             </div>
           </div>

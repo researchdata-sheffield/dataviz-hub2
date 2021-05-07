@@ -66,7 +66,7 @@ const HomeCommunity = () => {
               <MdPeople className="text-3xl" />
               <p className="font-bold py-3">Support</p>
               <div className={cardTextClasses}>Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.</div>
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-green-500`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-green-500`}  href="#" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
             </div>
           </Slide>
           {/* Support contact info */}
@@ -76,7 +76,7 @@ const HomeCommunity = () => {
                 <GrGroup className="mx-auto text-4xl mb-2" />
                 <p className="text-left text-sm xl:text-base">We have a diverse community where everyone is passionate about data visualisation.</p>
                 <a href="https://join.slack.com/t/shef-dataviz/signup" target="_blank" rel="noopener noreferrer">
-                  <BlackButton className={`${buttonClasses} hover:bg-green-500 py-1 px-2`}  href="javascript:void(0)" style={{marginTop: '18px'}}>Ask community</BlackButton>
+                  <BlackButton className={`${buttonClasses} hover:bg-green-500 py-1 px-2`}  href="#" style={{marginTop: '18px'}}>Ask community</BlackButton>
                 </a>
               </div>
               <div className="p-2 mt-5 text-center">
@@ -85,12 +85,12 @@ const HomeCommunity = () => {
                 <div className="mt-2">
                   {supportLinks.map((link, i) => (
                     <a href={link} target="_blank" rel="noopener noreferrer" key={link}>
-                      <BlackButton className={`${buttonClasses} hover:bg-green-500 py-1 px-2 mr-2`}  href="javascript:void(0)" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
+                      <BlackButton className={`${buttonClasses} hover:bg-green-500 py-1 px-2 mr-2`}  href="#" style={{marginTop: '10px'}}>{i === 0 ? "Email" : `DM ${i}`}</BlackButton>
                     </a>
                   ))}
                 </div>
               </div>
-              <ButtonWithArrow className={`${buttonClasses} bg-green-500 py-1 px-2`}  href="javascript:void(0)" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
+              <ButtonWithArrow className={`${buttonClasses} bg-green-500 py-1 px-2`}  href="#" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
             </div>
           </Slide>
         </div>

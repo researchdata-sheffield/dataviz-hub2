@@ -1,14 +1,14 @@
 import { Link } from "gatsby"
 import React from "react"
 import university_logo from "../../images/TUOSlogo.png"
-import { FaGoogle, FaSlack } from "react-icons/fa"
+import { FaGoogle, FaSlack, FaRss } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 import { A_footer } from "../style/styled"
 
 const Footer = () => {
   const currentYear = new Date();
   const linkClasses = "text-gray-400 hover:text-brand-blue"
-  
+
   return (
     <div className="bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm relative z-10">
       <div className="sm:flex mb-4">
@@ -23,7 +23,7 @@ const Footer = () => {
               <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
               <li><Link className={linkClasses} to="/privacy">Privacy Policy</Link></li>
               <li><Link className={linkClasses} to="/accessibility">Accessibility</Link></li>
-              <li><Link className={linkClasses} to="/sitemap.xml">Sitemap</Link></li>
+              <li><Link className={linkClasses} to="/sitemap/sitemap-index.xml">Sitemap</Link></li>
             </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
@@ -66,6 +66,7 @@ const Footer = () => {
             <div className="text-center justify-between w-11/12 text-gray-300">
               <button className="mx-2"><A_footer href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group"><FaGoogle /></A_footer></button>
               <button className="mx-2"><A_footer href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack Channel"><FaSlack /></A_footer></button>
+              <button className="mx-2"><A_footer title="RSS Feed" target="_self" href="/rss.xml"><FaRss /></A_footer></button>
               <button className="mx-2"><A_footer href="mailto:rdm@sheffield.ac.uk" title="contact us on email"><MdEmail /></A_footer></button>
             </div>
           </div>

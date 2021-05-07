@@ -17,7 +17,7 @@ const LearningPath = () => {
   const data = useStaticQuery(graphql`
     query LearningPathQuery {
       allMdx(
-        filter: {frontmatter: {learningPath: {eq: true}}},
+        filter: {frontmatter: {learningPath: {eq: true}}}
         sort: {order: ASC, fields: frontmatter___date}
       ) {
         edges {
@@ -35,17 +35,14 @@ const LearningPath = () => {
               learningPathTitle
               thumbnail {
                 childImageSharp {
-                  fluid {
-                    src
-                  }
+                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
                 }
               }
             }
           }
         }
       }
-    }
-  `)
+    }`)
 
   const carouselSettings = {
     dots: false,
@@ -75,7 +72,7 @@ const LearningPath = () => {
         <Slider {...carouselSettings}>
           {data.allMdx && data.allMdx.edges.map(({ node }, index, arr) => {
 
-            let imagesrc = getImageSource(node);
+            let imagesrc = getImageSource(node, true);
             let description = shortenText(node.frontmatter.description, 15);
             let learningPathDescription = shortenText(node.frontmatter.learningPathDescription, 10);
             let isPublished = node.frontmatter.isPublished !== false;

@@ -5,9 +5,11 @@
  */
 
 
-const { createFilePath } = require('gatsby-source-filesystem')
-const kebabCase = require(`lodash.kebabcase`)
-const path = require("path")
+const { createFilePath } = require('gatsby-source-filesystem');
+const kebabCase = require(`lodash.kebabcase`);
+const path = require("path");
+const readingTime = require("reading-time");
+
 
 // prevent error from canvas used by trianglify
 exports.onCreateWebpackConfig = ({
@@ -35,11 +37,12 @@ exports.onCreateWebpackConfig = ({
  *  Create file path for blog posts/docs/  further new routes
  */
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
+  const { createNodeField } = actions;
 
   if (node.internal.type === 'Mdx') {
     const value = createFilePath({ node, getNode })
 
+    // Get file date
     const [month, day, year] = new Date(node.frontmatter.date)
       .toLocaleDateString("en-EN", {
         year: "numeric",
@@ -50,6 +53,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     
     // remove words like blog, date
     const slug = value.replace("/blog/", "").replace(/\/$/, "").replace(/\d{4}-\d{1,2}-\d{1,2}-/, "");
+    
     // determine the type of the page
     const type = node.frontmatter.type || "blog";
     // concat all information
@@ -67,16 +71,22 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slugOrigin`,
       value: value,
     });
+    // Create reading time
+    createNodeField({
+      node,
+      name: `readingTime`,
+      value: readingTime(node.rawBody)
+    });
   }
 }
 
 
 
 /**
- *  Create blog posts
+ *  Create pages from MDX files
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  console.log("MESSAGE: Creating blog posts ...");
+  console.log("MESSAGE: Creating pages from MDX files ...");
   // De-structure the createPage function from the actions object
   const { createPage, createRedirect } = actions
 
@@ -90,85 +100,76 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
 
   // one query for each type of file: blog, docs, (insert any new types here)
-  const result = await graphql(`
-    {
-      docsQuery: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }, 
-        filter: { frontmatter: {type: {eq: "docs"}, isPublished: {ne: false}} }
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              template
-              author {
-                name
-                avatar {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
-              }
-              title
-              date(formatString: "dddd Do MMMM YYYY")
-              thumbnail {
-                childImageSharp {
-                  fluid {
-                    src
-                  }
-                }
-              }
-              d3
-              type
-            }
+  const result = await graphql(`{
+    docsQuery: allMdx(
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {type: {eq: "docs"}, isPublished: {ne: false}}}
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
           }
-        }
-      }
-      blogQuery: allMdx(
-        sort: { fields: [frontmatter___date], order: DESC }, 
-        filter: {frontmatter: {type: {eq: null}, isPublished: {ne: false}}}
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              template
-              author {
-                name
-                avatar {
-                  childImageSharp {
-                    fluid {
-                      src
-                    }
-                  }
-                }
-              }
-              title
-              date(formatString: "dddd Do MMMM YYYY")
-              category
-              tag
-              thumbnail {
+          frontmatter {
+            template
+            author {
+              name
+              avatar {
                 childImageSharp {
-                  fluid {
-                    src
-                  }
+                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
                 }
               }
-              d3
-              type
             }
+            title
+            date(formatString: "dddd Do MMMM YYYY")
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              }
+            }
+            d3
+            type
           }
         }
       }
     }
+    blogQuery: allMdx(
+      sort: {fields: [frontmatter___date], order: DESC}
+      filter: {frontmatter: {type: {eq: null}, isPublished: {ne: false}}}
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            template
+            author {
+              name
+              avatar {
+                childImageSharp {
+                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+                }
+              }
+            }
+            title
+            date(formatString: "dddd Do MMMM YYYY")
+            category
+            tag
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+              }
+            }
+            d3
+            type
+          }
+        }
+      }
+    }
+  }
   `)
   if (result.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query.')
@@ -178,7 +179,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   /**
    * DOCS
    */
-
   console.log("MESSAGE: Creating docs routes ...");
   const docsMdx = result.data.docsQuery.edges;
 
@@ -206,10 +206,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
+
   /**
    * BLOGPOST
    */
-
   const posts = result.data.blogQuery.edges
   const postsPerPage = 12
   var numPages = posts.length
