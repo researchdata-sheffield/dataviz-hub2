@@ -32,7 +32,7 @@ const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
           <h1 className="inline-block text-2xl font-semibold mr-4 text-gray-900"><FaTags style={{display: "inline-block"}} /> {href.includes("/blog/tag/") ? <Link to="/blog/#read">ALL</Link> : "Tags"}</h1>
           <div className="inline-block focus:outline-none text-gray-600 bg-white shadow px-2 rounded-lg ml-2">
             <FiSearch className="inline-block text-center text-xl -mt-2" />
-            <input id="tagSearch" onChange={searchTag}  className="search__input py-1 pl-2 text-base focus:outline-none pr-3 text-gray-600" style={{maxWidth: "40vw"}} type="text" name="search" placeholder="Search for tags" />
+            <input id="tagSearch" onChange={searchTag}  className="py-1 pl-2 text-base focus:outline-none pr-3 text-gray-600" style={{maxWidth: "40vw"}} type="text" name="search" placeholder="Search for tags" />
           </div>
         </div>
         {/* tag menu */}

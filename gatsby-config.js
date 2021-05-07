@@ -339,7 +339,7 @@ module.exports = {
               ) {
                 edges {
                   node {
-                    excerpt(pruneLength: 500)
+                    excerpt(pruneLength: 600)
                     fields { 
                       slug 
                     }

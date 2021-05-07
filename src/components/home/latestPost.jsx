@@ -52,7 +52,7 @@ const latestPost = ({ post }) => {
                 style={{width: "33.333333%"}}
               >
                 <div className="min-h-50 max-h-50 w-full overflow-hidden">
-                  <GatsbyImage image={imagesrc} />
+                  <GatsbyImage image={imagesrc} alt={"Image for " + node.frontmatter.title} />
                 </div>
                 <div className="flex flex-col bg-white min-h-50 py-6 px-8">
                   <p className="text-sm text-gray-500 font-normal 2xl:text-lg">

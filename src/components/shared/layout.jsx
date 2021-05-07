@@ -37,7 +37,7 @@ const Layout = (props) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.any.isRequired,
   location: PropTypes.any,
   props: PropTypes.any
 }
