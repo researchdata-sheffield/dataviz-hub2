@@ -27,38 +27,35 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-8d586712da378caef700.js"
+    "url": "webpack-runtime-aa5cec2a92a8df0dd7e0.js"
   },
   {
-    "url": "styles.763acfb1513cf74792e2.css"
+    "url": "styles.9d935079dc7a226524ae.css"
   },
   {
-    "url": "styles-29163f9dced6fe4a408a.js"
+    "url": "framework-86934577596df23b36c6.js"
   },
   {
-    "url": "framework-b04d0e01fa86dde92462.js"
+    "url": "de71a805-f074773571b2b50447c4.js"
   },
   {
-    "url": "d64684d8-e39c58fcc4e544a34145.js"
+    "url": "95b64a6e-dbdf417c0406d9698982.js"
   },
   {
-    "url": "95b64a6e-5f9d39b271b25ec7904a.js"
+    "url": "d64684d8-4034b9c4c2b91b0366e4.js"
   },
   {
-    "url": "de71a805-9cea9ea03d58dd7a74f1.js"
-  },
-  {
-    "url": "app-440b5d0ddbb4d008608e.js"
+    "url": "app-870599f5bc9b2d5eabf8.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "415ede721fb0ef173d6176723590adba"
+    "revision": "0d6cfc2a84237505c14bcb47e30352dc"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-ec06f4a60caa8a7f0743.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-425c4deee13b8f02352e.js"
   },
   {
-    "url": "polyfill-0bcc3730a42ea4c5200c.js"
+    "url": "polyfill-84ad0a8c869bae5ed612.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -154,7 +151,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-440b5d0ddbb4d008608e.js`))) {
+  if (!resources || !(await caches.match(`/app-870599f5bc9b2d5eabf8.js`))) {
     return await fetch(event.request)
   }
 
