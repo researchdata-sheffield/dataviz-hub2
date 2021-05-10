@@ -8,45 +8,57 @@ import { useState, useEffect } from 'react';
 */
 export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFactor = 0.05) {
   // Keep track of script status ("idle", "loading", "ready", "error")
-  const [xLocation, setXLocation] = useState(0);
-  const [yLocation, setYLocation] = useState(0);
+  const [location, setLocation] = useState({ x: 0, y: 0 });
+
+
+
+  function getTranslateValues(element) {
+    const style = getComputedStyle(element);
+    const matrix = style.transform || style.MozTransform;
+
+    if ( typeof matrix == undefined || !matrix || matrix == 'none') {
+      return {
+        x: 0,
+        y: 0
+      }
+    }
+
+    const matArr = matrix.replace(/[^0-9\-.,]/g, '').split(',');
+    // 3D: index 12 and 13
+    // 2D: index 4 and 5
+    return {
+      x: parseInt(matArr[12]) || parseInt(matArr[4]),
+      y: parseInt(matArr[13]) || parseInt(matArr[5])
+    }
+  } 
+
 
   useEffect(
     () => {
       const onMouseMove = (event) => {
         // calculate mouse movement
-        //console.log(xLocation + ", " + yLocation)
-        //console.log(event.clientX - xLocation)
-        let xMove = event.clientX - xLocation;
-        let yMove = event.clientY - yLocation;
+        let xMove = event.clientX - location.x;
+        let yMove = event.clientY - location.y;
 
         // update mouse location
-        setXLocation(event.clientX);
-        setYLocation(event.clientY);
+        setLocation({ x: event.clientX, y:event.clientY });
         
         // move background according to difference
-        background.style.top = (-yFactor * yMove + parseInt(getComputedStyle(background).getPropertyValue('top'))) + "px";
-        background.style.left = (-xFactor * xMove + parseInt(getComputedStyle(background).getPropertyValue('left'))) + "px";
-      };
-
+        let translateValues = getTranslateValues(background);
+        background.style.transform = `translate(${-xFactor * xMove + translateValues.x}px, ${-yFactor * yMove + translateValues.y}px) scale(1.1)`;
+      }; 
 
       var background = document.querySelector(`#${elementId}`);
-      background.style.transition = "none";
-
       if (!background) {
         return;
       }
+      background.style.transition = "none";
       var hoverElement = background;
+
       if (parent === true) {
         hoverElement = background.parentElement;
       }
       
-      // hoverElement.addEventListener("mouseenter", () => {
-      //   if (window) {
-      //     setXLocation(window.screen.width/2);
-      //     setYLocation(window.screen.height/2);
-      //   }
-      // });
       hoverElement.addEventListener("mousemove", onMouseMove);
       hoverElement.addEventListener("mouseleave", () => {
         background.style.transition = ".5s ease";
@@ -65,8 +77,7 @@ export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFa
         }
       };
     },
-    [xLocation] // Only re-run effect if script src changes
+    [location]
   );
-
-  return;
+  return location;
 }
