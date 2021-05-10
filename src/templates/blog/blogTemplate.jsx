@@ -16,6 +16,11 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 
 	function handleTagMenu() {
 		toggleTagMenu(!tagMenu);
+		
+		if(screen.width <= 1280 && tagMenu === false) {
+			var element = document.querySelector('#tagMenu');
+			element.scrollIntoView(); 
+		}
 	}
 
 	backgroundMovement("blogBackground");
@@ -30,10 +35,6 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 			{/* Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`} */}
 			<div 
 				className={`${pageContext.currentPage != 1 ? "min-h-60" : "min-h-100"} w-full overflow-hidden flex flex-col items-center justify-center text-center relative z-10`} 
-				style={{
-					//backgroundImage: 'linear-gradient(225deg, rgb(37,29,90) 0%, rgba(0,102,179,1) 35%, rgba(0,212,255,1) 100%)'
-					//backgroundImage: `url(${Bg})`
-				}}
 			>
 				<div 
 					id="blogBackground"

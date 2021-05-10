@@ -26,7 +26,7 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
 
   return (
   
-		<div className="xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 hideScrollBar text-gray-100 shadow-lg text-sm fixed top-0 right-0 min-h-100 hidden xl:flex flex-row border-l-2 border-white transition duration-500 z-50 bg-white" 
+		<div id="slideTagMenu" className="xl:w-1/4 2xl:w-1/5 px-5 py-1 xl:py-3 hideScrollBar text-gray-100 shadow-lg text-sm fixed top-0 right-0 min-h-100 hidden xl:flex flex-row border-l-2 border-white transition duration-500 z-50 bg-white" 
       style={ tagMenu ? {transform: "translateX(0%)", height: "100vh", overflowY: "scroll"} : {transform: "translateX(102%)"} }
     > 
       <div onClick={() => handleTagMenu()} className={`${tagMenu ? `hidden` : `block`} absolute left-0 min-h-100 -ml-10 font-bold cursor-pointer flex flex-row items-center transition duration-500 delay-500`} style={{transform: 'translateY(-5%)'}} >

@@ -14,6 +14,11 @@ const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 
 	function handleTagMenu() {
 		toggleTagMenu(!tagMenu);
+
+		if(screen.width <= 1280 && tagMenu === false) {
+			var element = document.querySelector('#tagMenu');
+			element.scrollIntoView(); 
+		}
 	}
 
 	return (

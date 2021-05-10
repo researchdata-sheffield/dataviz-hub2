@@ -1,12 +1,16 @@
 import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Fade from 'react-reveal/Fade'
-import Zoom from 'react-reveal/Zoom'
+
 import { ButtonWithArrow } from "../style/styled"
 import { getImageSource, shortenText } from "../../utils/shared"
 import Slider from "react-slick";
 import Bg from "../../images/home/learningPath.jpg"
 
+/**
+ * Display all learning paths where the index.mdx specified learningPath: true
+ * Latest learning path will get a 'New' icon. If isPublished: false, then 'New' will be replaced by 'Coming soon'
+ */
 const LearningPath = () => {
   const animationClasses = "transform transition duration-300 ease-in-out"
   const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-md`
@@ -44,6 +48,7 @@ const LearningPath = () => {
       }
     }`)
 
+  // https://react-slick.neostack.com/docs/example/simple-slider
   const carouselSettings = {
     dots: false,
     infinite: true,
@@ -52,7 +57,27 @@ const LearningPath = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 2000,
-    pauseOnHover: true
+    pauseOnHover: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          vertical: true,
+          verticalSwiping: true,
+          slidesToShow: 2,
+          slidesToScroll: 1,
+          dots: true
+        }
+      }
+    ]
   }
 
   return (
@@ -68,7 +93,7 @@ const LearningPath = () => {
         </div>
       </Fade>
 
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56">
+      <div className="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden">
         <Slider {...carouselSettings}>
           {data.allMdx && data.allMdx.edges.map(({ node }, index, arr) => {
 
@@ -78,7 +103,7 @@ const LearningPath = () => {
             let isPublished = node.frontmatter.isPublished !== false;
 
             return (
-              <Zoom bottom duration={700} delay={100} key={node.id}>
+              <div key={node.id}>
                 <div 
                   className={`${cardClasses}`} 
                   style={{backgroundImage: `linear-gradient(155deg, rgba(0,0,0,.65) 50%, rgba(2,0,36,.4) 100%), url(${imagesrc})`, minHeight: '250px', backgroundPosition: 'center'}} 
@@ -102,7 +127,7 @@ const LearningPath = () => {
                     </Link>
                   </div>
                 </div>
-              </Zoom>
+              </div>
             )
           })}
         </Slider>
