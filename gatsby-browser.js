@@ -44,16 +44,6 @@ export const onServiceWorkerUpdateReady = () => {
   }
 };
 
-export const onServiceWorkerUpdateFound = () => {
-  const answer = window.confirm(
-    `Dataviz.Shef has been updated. ` +
-      `Reload to display the latest version?`
-  )
-  if (answer === true) {
-    window.location.reload();
-  }
-}
-
 
 export const onRouteUpdate = (window) => {
   if (window.location.hash) {

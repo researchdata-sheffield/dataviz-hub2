@@ -55,7 +55,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					</div>
 				</Flip>
 				<Flip cascade top delay={700} >
-					<div className={`${pageContext.currentPage !== 1 ? `hidden` : ``}`}>
+					<div className={`${pageContext.currentPage !== 1 ? 'hidden' : ''}`}>
 						<MenuCategory 
 							pageContext = {pageContext} 				
 							handleTagMenu={handleTagMenu} 

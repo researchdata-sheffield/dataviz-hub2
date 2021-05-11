@@ -59,9 +59,11 @@ export function getImageSource(node, source = false) {
 }
 
 /**
- * Generate cryptographically strong random value
+ * Generate cryptographically strong random value between 0 and 1
  */
 export function randomNumber() {
-  var number = typeof window !== 'undefined' && window.crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
-  return number;
+  if (typeof window !== 'undefined') {
+    return window.crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
+  }
+  return 0;
 }

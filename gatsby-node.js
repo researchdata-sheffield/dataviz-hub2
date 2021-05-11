@@ -254,7 +254,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         next: next,
       },
     })
-    if(excluded == true) {
+    if(excluded) {
       numPages = numPages - 1;
     }
     // Set up redirects for old blogpost url

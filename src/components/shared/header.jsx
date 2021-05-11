@@ -63,7 +63,7 @@ const Header = () => {
     function navColourClass(mobile = false) {
       var className = "transition duration-300 ";  // don't remove space
       
-      if(mobile === true) {
+      if(mobile) {
         if(isScroll) {
           className += "text-black hover:text-brand-blue";
           return className;
@@ -158,14 +158,14 @@ const Header = () => {
       </div>
       <nav 
         id="navbar" 
-        className={`${isScroll ? `shadow-lg bg-white` : 'group-hover:bg-white'} transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+        className={`${isScroll ? 'shadow-lg bg-white' : 'group-hover:bg-white'} transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
-          <A className={`${isScroll ? `` : [currentPagePath === "/" ? `invisible` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
+          <A className={`${isScroll ? '' : [currentPagePath === '/' ? 'invisible' : '']} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
             <img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ university_logo } />
           </A>
-          <div className={`${isScroll ? "" : [currentPagePath === "/" ? `invisible` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
+          <div className={`${isScroll ? '' : [currentPagePath === '/' ? 'invisible' : '']} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
