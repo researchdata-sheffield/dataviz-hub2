@@ -25,7 +25,7 @@ const events = ({data: {eventBrite, pastEvent, pastEventBlog}}) => {
       <Header />
       <div className="flex flex-wrap flex-grow-0 items-center justify-center min-h-100" style={{backgroundColor: 'rgb(255,121,180)', backgroundImage: 'linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,163,251,1) 50%, rgba(41,197,255,1) 82%)'}}>
         <div className="flex flex-wrap w-full justify-center my-16 lg:my-24">
-          <div className="w-full lg:w-7/12 p-6 text-black overflow-auto min-h-70 lg:rounded-l-sm" style={{background: '#fbfbfb', borderTop: 'solid 8px rgb(230 230 230)'}}>
+          <div className="w-full lg:w-7/12 p-6 text-black overflow-auto min-h-70 lg:rounded-l-sm shadow-xl" style={{background: '#fbfbfb', borderTop: 'solid 8px rgb(230 230 230)'}}>
             <h1 className="inline-block text-2xl font-semibold">Upcoming Events</h1>
             <div className="text-gray-900 mb-8" >Today: {currentDate}</div>
             <UpcomingEvents allEventbriteEvents={eventBrite} />

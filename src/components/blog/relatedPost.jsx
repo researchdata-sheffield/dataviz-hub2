@@ -65,7 +65,9 @@ const RelatedPost = (props) => {
                       <div>
                         <h1 className={`${classes} mt-4`}>
                           CAT: &nbsp;
-                          {node.frontmatter.category[0].toUpperCase()}
+                          {node.frontmatter.category.map((cat) => (
+                            <span key={cat}>{cat.toUpperCase()} &nbsp;</span>     
+                          ))}
                         </h1>
                         <h1 className={`${classes} `}>
                           TAG: &nbsp;{node.frontmatter.tag.map((tag, i, arr) => {
@@ -108,8 +110,8 @@ class RelatedPostServices {
     this.maxPosts = 3;
     this.title = currentPost.frontmatter.title;
     this.description = currentPost.frontmatter.description;
-    this.category = type == 'blog' ? currentPost.frontmatter.category : null;
-    this.tags = type == 'blog' ? currentPost.frontmatter.tag : null;
+    this.category = (type == 'blog') ? currentPost.frontmatter.category : null;
+    this.tags = (type == 'blog') ? currentPost.frontmatter.tag : null;
     this.mdxType = type;
   }
 
