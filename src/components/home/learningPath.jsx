@@ -49,6 +49,7 @@ const LearningPath = () => {
 
   // https://react-slick.neostack.com/docs/example/simple-slider
   const carouselSettings = {
+    className: 'center',
     dots: false,
     infinite: true,
     speed: 500,
@@ -57,6 +58,10 @@ const LearningPath = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    swipeToSlide: true,
+    centerMode: true,
+    focusOnSelect: true,
+    centerPadding: "60px",
     responsive: [
       {
         breakpoint: 1024,
