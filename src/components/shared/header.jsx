@@ -18,7 +18,7 @@ const Header = () => {
 
 
   const onScrollNav = () => {
-    if (typeof window === undefined) {
+    if (typeof window === "undefined") {
       return;
     }
 
@@ -183,6 +183,7 @@ const Header = () => {
 
         {/* Mobile devices */}
         <div 
+          id="mobileHeader"
           className={`${isExpanded ? "visible" : "invisible opacity-0 translate-x-full transform"} rounded-md xl:hidden shadow-lg px-6 py-10 md:py-16 fixed top-0 left-0 min-h-full min-w-full`} 
           style={{zIndex: "990", transition: ".3s linear", backgroundColor: "#fbfbfb"}}
         >
@@ -245,7 +246,7 @@ const Header = () => {
 
 
         {/* Desktop Nav items // backgroundColor: `${isExpanded ? [isScroll ? '' : "rgba(25,25,25,.9)" ] : ""}`  */}
-        <div className={`hidden py-2 xl:flex items-center w-auto text-xs xl:text-sm`}>
+        <div id="desktopHeader" className={`hidden py-2 xl:flex items-center w-auto text-xs xl:text-sm`}>
           <div className="justify-end flex flex-wrap items-center">
             {[
               {
