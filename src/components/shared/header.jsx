@@ -1,8 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
-//import university_logo from "../images/TUOS_LOGO_REVERSED.png"
- import university_logo from "../../images/TUOSlogo.png"
+import university_logo from "../../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack, FaTimes, FaBars, FaRss } from "react-icons/fa"
 import { A } from "../style/blogPostStyle"
@@ -17,21 +16,12 @@ const Header = () => {
   const location = useLocation();
   var currentPagePath = location.pathname;
 
-  useEffect( () => {
-    function handleScroll() {
-      const scrolledValue = window.scrollY > 10;
-      if(isScroll !== scrolledValue){
-        toggleScrolled(!isScroll);
-      }
+
+  const onScrollNav = () => {
+    if (typeof window === undefined) {
+      return;
     }
-    document.addEventListener('scroll', handleScroll, {passive: true});
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, [isScroll]);
-  
-  // OnScroll header, hide on scroll down, show on scroll up
-  if (typeof window !== 'undefined') {
+
     let prevScrollPos = window.pageYOffset;
   
     window.onscroll = function () {
@@ -45,8 +35,8 @@ const Header = () => {
         document.getElementById("navbar").style.top = "0";
       } else {
         document.getElementById("navbar").style.top = "-300px";
-         document.getElementById("navbar").style.paddingTop = "1px";
-         document.getElementById("navbar").style.paddingBottom = "1px";
+        document.getElementById("navbar").style.paddingTop = "1px";
+        document.getElementById("navbar").style.paddingBottom = "1px";
       }
       prevScrollPos = currentScrollPos;
     }
@@ -123,18 +113,6 @@ const Header = () => {
     return className;
   }
 
-  useEffect(() => {
-    document.querySelector("#copyBtn").addEventListener("click", copyRssLink);
-    document.querySelector("#rssMobile").addEventListener("click", copyRssLink);
-    document.querySelector("#rssDesktop").addEventListener("click", copyRssLink);
-
-    return () => {
-      document.querySelector("#copyBtn").removeEventListener("click", () => {});
-      document.querySelector("#rssMobile").removeEventListener("click", () => {});
-      document.querySelector("#rssDesktop").removeEventListener("click", () => {});
-    }
-  })
-
   function copyRssLink() {
     toggleOpen(true);
     var copyText = document.querySelector('#rssLink');
@@ -143,6 +121,32 @@ const Header = () => {
     document.execCommand('copy');
   }
 
+  useEffect( () => {
+    function handleScroll() {
+      const scrolledValue = window.scrollY > 10;
+      if(isScroll !== scrolledValue){
+        toggleScrolled(!isScroll);
+      }
+    }
+    document.addEventListener('scroll', handleScroll, {passive: true});
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [isScroll]);
+
+  useEffect(() => {
+    document.querySelector("#copyBtn").addEventListener("click", copyRssLink);
+    document.querySelector("#rssMobile").addEventListener("click", copyRssLink);
+    document.querySelector("#rssDesktop").addEventListener("click", copyRssLink);
+
+    return () => {
+      document.querySelector("#copyBtn").removeEventListener("click", copyRssLink);
+      document.querySelector("#rssMobile").removeEventListener("click", copyRssLink);
+      document.querySelector("#rssDesktop").removeEventListener("click", copyRssLink);
+    }
+  })
+
+  onScrollNav();
 
   return (
     <header className="font-semibold z-50 relative group">
