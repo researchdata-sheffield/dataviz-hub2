@@ -1,7 +1,5 @@
 import React, {useState} from "react"
 import { graphql, Link } from "gatsby"
-import Header from "../../components/shared/header"
-import Footer from "../../components/shared/footer"
 import BlogLayout from "../../components/blog/blogLayout"
 import MenuCategory from "../../components/blog/menuCategory"
 import PropTypes from "prop-types"
@@ -31,7 +29,6 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					title="Blog" 
 					keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
-			<Header />
 			{/* Height={`${pageContext.currentPage != 1 ? `50vh` : ``}`} */}
 			<div 
 				className={`${pageContext.currentPage != 1 ? "min-h-60" : "min-h-100"} w-full overflow-hidden flex flex-col items-center justify-center text-center relative z-10`} 
@@ -55,7 +52,7 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 					</div>
 				</Flip>
 				<Flip cascade top delay={700} >
-					<div className={`${pageContext.currentPage !== 1 ? `hidden` : ``}`}>
+					<div className={`${pageContext.currentPage !== 1 ? 'hidden' : ''}`}>
 						<MenuCategory 
 							pageContext = {pageContext} 				
 							handleTagMenu={handleTagMenu} 
@@ -79,7 +76,6 @@ const blogTemplate = ({ data: {allMdx}, pageContext }) => {
 				handleTagMenu={handleTagMenu} 
 				tagMenu={tagMenu}
 			/>
-			<Footer />
 		</>
 	)
 }

@@ -7,8 +7,6 @@ import { useLocation } from "@gatsbyjs/reach-router"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import SEO from "../../components/shared/seo"
-import Header from "../../components/shared/header"
-import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
 import Comment from "../../components/blog/comment"
 
@@ -76,7 +74,6 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
   return (
     <div className="relative" key={mdx.id}>
       <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
-      <Header />
       <Helmet >
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type = 'text/javascript' /> 
       </Helmet>
@@ -101,11 +98,6 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
             </div>
           </div> 
           <div className="pb-2 border-b-1 border-gray-200 hidden md:block mx-auto mt-16" style={{maxWidth: '1000px', minWidth: '400px'}}></div>
-
-          {/* <div className="mt-4 text-xs 2xl:text-sm mx-auto flex flex-wrap px-2">
-            {category.map((cat) => ( <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`}>{cat}</CatBtn> ))}
-            {tag.map((currentTag) => ( <TagBtn key={currentTag} to={`/blog/tag/${kebabCase(currentTag)}`}>{currentTag}</TagBtn> ))}
-          </div> */}
         </div>
       </div>
       </Fade>
@@ -141,14 +133,14 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
               <div className="m-2 py-1 px-2 bg-gray-800 hover:bg-brand-blue text-white flex justify-center rounded-md text-xl"><RiEditBoxLine /></div>
             </a>
           </div>    
-          <div className={` ${ tableOfContent && tableOfContent.items ? `pt-8 pb-5`: `hidden`} mx-auto overflow-auto text-black lg:hidden px-2`}>
+          <div className={` ${ tableOfContent && tableOfContent.items ? 'pt-8 pb-5' : 'hidden'} mx-auto overflow-auto text-black lg:hidden px-2`}>
               {tableOfContent && tableOfContent.items && <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">TABLE OF CONTENTS</p>}
               { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }      
           </div>       
         </div>   
    
         {/******** main mdx content  ***********/}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `mdxBody`: ``} relative mx-auto pt-0 pb-16 px-5 text-lg lg:text-xl`} style={{color: '#24292e', maxWidth: '700px'}}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? 'mdxBody' : ''} relative mx-auto pt-0 pb-16 px-5 text-lg lg:text-xl`} style={{color: '#24292e', maxWidth: '700px'}}>
           <MDXProvider 
             components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, hr: Hr, del: Del, 
                           pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM, img: IMG, table: Table, 
@@ -162,7 +154,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
         </div>
 
         {/* sidebar toc: hidden in mobile */}
-        <div className={` ${ tableOfContent && tableOfContent.items ? `lg:w-2/12 lg:block`: ``} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-10 pb-10 max-h-100 overflow-auto`}>
+        <div className={` ${ tableOfContent && tableOfContent.items ? 'lg:w-2/12 lg:block' : ''} hidden noScrollBar lg:sticky lg:top-0 lg:right-0 pt-10 pb-10 max-h-100 overflow-auto`}>
           <p className="font-bold mb-4 pb-2 text-gray-800 text-lg" style={{borderBottom: '1px solid #eaeaea'}}>TABLE OF CONTENTS</p>
           <div className="px-1 text-base TOC lg:pb-10">
           { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }
@@ -170,11 +162,8 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
         </div>  
       </div>       
  
-
       <PaginationPost mdx={mdx} type={type} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
       <Comment mdx={mdx} />
-      
-      <Footer />
     </div>
   );
 }

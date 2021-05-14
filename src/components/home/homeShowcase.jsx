@@ -34,7 +34,7 @@ const HomeShowcase = () => {
       
       <div className="lg:min-h-40 flex flex-wrap pt-8 pb-56 lg:pt-24 lg:pb-82 items-center justify-center" style={{background: '#fcfcfc'}}>
         <div className="lg:w-6/12 lg:pl-8 my-10 lg:my-0 transform hover:scale-110 transition duration-500">
-          <Pulse delay={2200}><img src={user_distribution} className="max-h-50" /></Pulse>
+          <Pulse delay={2200}><img src={user_distribution} alt="ORDA user distribution map" className="max-h-50" /></Pulse>
         </div>
         <Fade bottom duration={1300}>
         <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center pb-16">

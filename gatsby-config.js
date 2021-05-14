@@ -2,8 +2,6 @@ require("dotenv").config({
   path: `.env.${process.env.NODE_ENV}`,
 })
 
-//const siteUrl = process.env.URL || `https://dataviz.shef.ac.uk`
-
 module.exports = {
   //pathPrefix: "/dataviz-hub2",
   siteMetadata: {
@@ -199,7 +197,7 @@ module.exports = {
         theme_color: `#ffffff`,
         display: `minimal-ui`,
         icon: `src/images/icon.png`, // This path is relative to the root of the site.
-        //cache_busting_mode: 'none'   // Work with offline plugin
+        cache_busting_mode: 'none'   // Work with offline plugin
       },
     },
     `gatsby-plugin-offline`, // should be listed after the manifest plugin
@@ -358,7 +356,7 @@ module.exports = {
                 }
               }
             }`,  
-            // For more options go to https://www.npmjs.com/package/rss
+            // For more options/fields in RSS go to https://www.npmjs.com/package/rss
             serialize: ({ query: { site, allMdx } }) => {
               function getAuthorName(node) {
                 let authorArr = node.frontmatter.author;

@@ -1,7 +1,5 @@
 import React from "react"
 import { Link } from "gatsby"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
 import SEO from "../components/shared/seo"
 import RSE from "../images/about/rse.png"
 import ITS from "../images/about/its.png"
@@ -18,7 +16,6 @@ const About = () => {
         title="About" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz"]} 
       />
-      <Header />
       <div className="flex flex-col min-h-100 items-center justify-center text-center w-full" style={{backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.65) 100%), url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={700} duration={2000}>
           <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
@@ -75,7 +72,6 @@ const About = () => {
         </div>
       
       </div>
-      <Footer />
     </>
   )
 }

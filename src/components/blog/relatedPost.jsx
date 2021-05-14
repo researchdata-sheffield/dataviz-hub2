@@ -65,7 +65,9 @@ const RelatedPost = (props) => {
                       <div>
                         <h1 className={`${classes} mt-4`}>
                           CAT: &nbsp;
-                          {node.frontmatter.category[0].toUpperCase()}
+                          {node.frontmatter.category.map((cat) => (
+                            <span key={cat}>{cat.toUpperCase()} &nbsp;</span>     
+                          ))}
                         </h1>
                         <h1 className={`${classes} `}>
                           TAG: &nbsp;{node.frontmatter.tag.map((tag, i, arr) => {
@@ -108,8 +110,8 @@ class RelatedPostServices {
     this.maxPosts = 3;
     this.title = currentPost.frontmatter.title;
     this.description = currentPost.frontmatter.description;
-    this.category = type == 'blog' ? currentPost.frontmatter.category : null;
-    this.tags = type == 'blog' ? currentPost.frontmatter.tag : null;
+    this.category = (type == 'blog') ? currentPost.frontmatter.category : null;
+    this.tags = (type == 'blog') ? currentPost.frontmatter.tag : null;
     this.mdxType = type;
   }
 
@@ -149,11 +151,11 @@ class RelatedPostServices {
     * return top 3 (or number of posts set)
     */
     const { posts, category, tags, maxPosts, title, description, mdxType } = this;
-    const catPoint = 2;
-    const tagPoint = 1;
-    const titlePoint = 3;
-    const descriptionPoint = 3;
-    const typePoint = 4;
+    const CAT_POINT = 2;
+    const TAG_POINT = 1;
+    const TITLE_POINT = 3;
+    const DESCRIPTION_POINT = 3;
+    const TYPE_POINT = 4;
 
     function addCategoryPoints (currPost) {
       if(!currPost.frontmatter.category || !category) {
@@ -161,7 +163,7 @@ class RelatedPostServices {
       }
       currPost.frontmatter.category.forEach((cat) => {
         if(category.includes(cat)) {
-          currPost.point += catPoint;
+          currPost.point += CAT_POINT;
         }
       })
     }
@@ -172,24 +174,24 @@ class RelatedPostServices {
       }
       currPost.frontmatter.tag.forEach((tag) => {
         if(tags.includes(tag)) {
-          currPost.point += tagPoint;
+          currPost.point += TAG_POINT;
         }
       })
     }
 
     function addTitlePoints (currPost) {
       let score = jaccardIndexCompareTwoStrings(title, currPost.frontmatter.title);
-      currPost.point += (titlePoint*score);
+      currPost.point += (TITLE_POINT*score);
     }
 
     function addDescriptionPoints (currPost) {
       let score = jaccardIndexCompareTwoStrings(description, currPost.frontmatter.description);
-      currPost.point += (descriptionPoint*score);
+      currPost.point += (DESCRIPTION_POINT*score);
     }
 
     function addTypePoint (currPost) {
       if (currPost.frontmatter.type == mdxType) {
-        currPost.point += typePoint;
+        currPost.point += TYPE_POINT;
       }
     }
 

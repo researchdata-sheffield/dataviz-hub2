@@ -8,11 +8,11 @@ const menuCategory = ({ pageContext, handleTagMenu, tagMenu }) => {
   const buttonStyle = "bg-white text-gray-900 border-1 border-gray-100 py-2 px-3 mr-2 mt-2 rounded-sm text-sm transition duration-300 ease-in-out"
   const topTags = Object.entries(pageContext.countTags)
                   .sort((a,b) => b[1] - a[1])
-                  .slice(0,10);
+                  .slice(0,15);
   
   return (
     <Flip cascade top delay={1000}>
-      <div className="flex flex-wrap px-5 w-full mt-10" style={{maxWidth: '600px'}}>
+      <div className="flex flex-wrap px-5 w-full mt-10" style={{maxWidth: '650px'}}>
         {pageContext.categories.map((cat) => (
           <Link
             key={cat} 

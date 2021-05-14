@@ -1,7 +1,5 @@
 import React from "react"
 import SEO from "../components/shared/seo"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
 import { A } from "../components/style/blogPostStyle"
 
 const Privacy = () => (
@@ -10,7 +8,6 @@ const Privacy = () => (
       title="Privacy" 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "Privacy"]} 
     />
-    <Header />
 
     <div className="items-center justify-center bg-white py-24 min-h-70">
       <div className="text-black px-4 py-10 lg:px-24 container mx-auto shadow-sm">
@@ -24,8 +21,6 @@ const Privacy = () => (
 
       </div>
     </div>
-
-    <Footer />
   </>
 )
 

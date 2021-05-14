@@ -13,44 +13,46 @@ import Bg from "../../images/home/learningPath.jpg"
  */
 const LearningPath = () => {
   const animationClasses = "transform transition duration-300 ease-in-out"
-  const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-1 shadow-xs hover:shadow-2xl rounded-md`
+  const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md`
   const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0`
   const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`
   const moreBtn = "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
 
-  const data = useStaticQuery(graphql`
-    query LearningPathQuery {
-      allMdx(
-        filter: {frontmatter: {learningPath: {eq: true}}}
-        sort: {order: ASC, fields: frontmatter___date}
-      ) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
-              isPublished
-              description
-              learningPath
-              learningPathBtn
-              learningPathDescription
-              learningPathTitle
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-                }
+  const data = useStaticQuery(graphql`query LearningPathQuery {
+    allMdx(
+      filter: {frontmatter: {learningPath: {eq: true}}}
+      sort: {order: ASC, fields: frontmatter___date}
+    ) {
+      edges {
+        node {
+          id
+          fields {
+            slug
+          }
+          frontmatter {
+            isPublished
+            description
+            learningPath
+            learningPathBtn
+            learningPathDescription
+            learningPathTitle
+            thumbnail {
+              childImageSharp {
+                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
               }
             }
           }
         }
       }
-    }`)
+    }
+  }`)
 
   // https://react-slick.neostack.com/docs/example/simple-slider
   const carouselSettings = {
+    className: 'center',
+    accessibility: true,
     dots: false,
+    arrow: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
@@ -58,6 +60,10 @@ const LearningPath = () => {
     autoplay: true,
     autoplaySpeed: 2000,
     pauseOnHover: true,
+    swipeToSlide: true,
+    centerMode: true,
+    focusOnSelect: true,
+    centerPadding: "60px",
     responsive: [
       {
         breakpoint: 1024,
@@ -103,7 +109,7 @@ const LearningPath = () => {
             let isPublished = node.frontmatter.isPublished !== false;
 
             return (
-              <div key={node.id}>
+              <div key={node.id} className="py-4">
                 <div 
                   className={`${cardClasses}`} 
                   style={{backgroundImage: `linear-gradient(155deg, rgba(0,0,0,.65) 50%, rgba(2,0,36,.4) 100%), url(${imagesrc})`, minHeight: '250px', backgroundPosition: 'center'}} 

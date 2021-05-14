@@ -1,8 +1,7 @@
 import { Link } from "gatsby"
 import PropTypes from "prop-types"
 import React, { useState, useEffect } from "react"
-//import university_logo from "../images/TUOS_LOGO_REVERSED.png"
- import university_logo from "../../images/TUOSlogo.png"
+import university_logo from "../../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack, FaTimes, FaBars, FaRss } from "react-icons/fa"
 import { A } from "../style/blogPostStyle"
@@ -17,21 +16,12 @@ const Header = () => {
   const location = useLocation();
   var currentPagePath = location.pathname;
 
-  useEffect( () => {
-    function handleScroll() {
-      const scrolledValue = window.scrollY > 10;
-      if(isScroll !== scrolledValue){
-        toggleScrolled(!isScroll);
-      }
+
+  const onScrollNav = () => {
+    if (typeof window === "undefined") {
+      return;
     }
-    document.addEventListener('scroll', handleScroll, {passive: true});
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, [isScroll]);
-  
-  // OnScroll header, hide on scroll down, show on scroll up
-  if (typeof window !== 'undefined') {
+
     let prevScrollPos = window.pageYOffset;
   
     window.onscroll = function () {
@@ -45,8 +35,8 @@ const Header = () => {
         document.getElementById("navbar").style.top = "0";
       } else {
         document.getElementById("navbar").style.top = "-300px";
-         document.getElementById("navbar").style.paddingTop = "1px";
-         document.getElementById("navbar").style.paddingBottom = "1px";
+        document.getElementById("navbar").style.paddingTop = "1px";
+        document.getElementById("navbar").style.paddingBottom = "1px";
       }
       prevScrollPos = currentScrollPos;
     }
@@ -63,7 +53,7 @@ const Header = () => {
     function navColourClass(mobile = false) {
       var className = "transition duration-300 ";  // don't remove space
       
-      if(mobile === true) {
+      if(mobile == "true") {
         if(isScroll) {
           className += "text-black hover:text-brand-blue";
           return className;
@@ -123,18 +113,6 @@ const Header = () => {
     return className;
   }
 
-  useEffect(() => {
-    document.querySelector("#copyBtn").addEventListener("click", copyRssLink);
-    document.querySelector("#rssMobile").addEventListener("click", copyRssLink);
-    document.querySelector("#rssDesktop").addEventListener("click", copyRssLink);
-
-    return () => {
-      document.querySelector("#copyBtn").removeEventListener("click", () => {});
-      document.querySelector("#rssMobile").removeEventListener("click", () => {});
-      document.querySelector("#rssDesktop").removeEventListener("click", () => {});
-    }
-  })
-
   function copyRssLink() {
     toggleOpen(true);
     var copyText = document.querySelector('#rssLink');
@@ -143,6 +121,32 @@ const Header = () => {
     document.execCommand('copy');
   }
 
+  useEffect( () => {
+    function handleScroll() {
+      const scrolledValue = window.scrollY > 10;
+      if(isScroll !== scrolledValue){
+        toggleScrolled(!isScroll);
+      }
+    }
+    document.addEventListener('scroll', handleScroll, {passive: true});
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [isScroll]);
+
+  useEffect(() => {
+    document.querySelector("#copyBtn").addEventListener("click", copyRssLink);
+    document.querySelector("#rssMobile").addEventListener("click", copyRssLink);
+    document.querySelector("#rssDesktop").addEventListener("click", copyRssLink);
+
+    return () => {
+      document.querySelector("#copyBtn").removeEventListener("click", copyRssLink);
+      document.querySelector("#rssMobile").removeEventListener("click", copyRssLink);
+      document.querySelector("#rssDesktop").removeEventListener("click", copyRssLink);
+    }
+  })
+
+  onScrollNav();
 
   return (
     <header className="font-semibold z-50 relative group">
@@ -158,14 +162,14 @@ const Header = () => {
       </div>
       <nav 
         id="navbar" 
-        className={`${isScroll ? `shadow-lg bg-white` : 'group-hover:bg-white'} transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
+        className={`${isScroll ? 'shadow-lg bg-white' : 'group-hover:bg-white'} transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{transition: "top 0.3s"}}
       > 
         <div className="flex items-center flex-shrink-0 mr-5">
-          <A className={`${isScroll ? `` : [currentPagePath === "/" ? `invisible` : ``]} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
+          <A className={`${isScroll ? '' : [currentPagePath === '/' ? 'invisible' : '']} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
             <img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ university_logo } />
           </A>
-          <div className={`${isScroll ? "" : [currentPagePath === "/" ? `invisible` : ``]} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
+          <div className={`${isScroll ? '' : [currentPagePath === '/' ? 'invisible' : '']} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
@@ -179,6 +183,7 @@ const Header = () => {
 
         {/* Mobile devices */}
         <div 
+          id="mobileHeader"
           className={`${isExpanded ? "visible" : "invisible opacity-0 translate-x-full transform"} rounded-md xl:hidden shadow-lg px-6 py-10 md:py-16 fixed top-0 left-0 min-h-full min-w-full`} 
           style={{zIndex: "990", transition: ".3s linear", backgroundColor: "#fbfbfb"}}
         >
@@ -210,29 +215,29 @@ const Header = () => {
                 title: `About`
               },
               ].map(link => ( link.title != 'Showcase' ? 
-                <NavLink type="Link" mobile={true} className="block w-full text-2xl" activeStyle={{ color: `${isScroll ? "#00aeef" : "black" }`, fontWeight: "bold" }} key={link.title} to={link.route}>
+                <NavLink type="Link" mobile="true" className="block w-full text-2xl" activeStyle={{ color: `${isScroll ? "#00aeef" : "black" }`, fontWeight: "bold" }} key={link.title} to={link.route}>
                   {link.title}
                 </NavLink> 
                 : 
-                <NavLink type="a" mobile={true} className="block w-full text-2xl" href={link.route} key={link.title}>
+                <NavLink type="a" mobile="true" className="block w-full text-2xl" href={link.route} key={link.title}>
                   {link.title}
                 </NavLink>  
               )) 
             }
             <div className="flex flex-wrap w-full justify-center space-x-4 mt-8 pt-6 border-t-2 border-gray-200">
-              <NavLink type="a-icon" mobile={true} className="block mt-3" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group">
+              <NavLink type="a-icon" mobile="true" className="block mt-3" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group">
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline"><FaGoogle /></div>
               </NavLink>
-              <NavLink type="a-icon" mobile={true} className="block mt-3" href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack channel">
+              <NavLink type="a-icon" mobile="true" className="block mt-3" href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack channel">
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline"><FaSlack /></div>
               </NavLink>
-              <NavLink id="rssMobile" type="Link-icon" mobile={true} className="block mt-3" target="_self" title="RSS Feed" to="#" onClick={()=>{return false}}>
+              <NavLink id="rssMobile" type="Link-icon" mobile="true" className="block mt-3" target="_self" title="RSS Feed" to="#" onClick={()=>{return false}}>
                 <div className="relative px-4 text-2xl transition duration-500 ease-in-out no-underline">
                   <FaRss />
                   <span className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md text-xs -mt-4 -mr-2" style={{padding: '2px 5px'}}>new</span>
                 </div>
               </NavLink>
-              <NavLink type="Link-icon" mobile={true} className="block mt-3" to="/search" title="search dataviz hub">
+              <NavLink type="Link-icon" mobile="true" className="block mt-3" to="/search" title="search dataviz hub">
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline"><FiSearch /></div>
               </NavLink>
             </div>
@@ -241,7 +246,7 @@ const Header = () => {
 
 
         {/* Desktop Nav items // backgroundColor: `${isExpanded ? [isScroll ? '' : "rgba(25,25,25,.9)" ] : ""}`  */}
-        <div className={`hidden py-2 xl:flex items-center w-auto text-xs xl:text-sm`}>
+        <div id="desktopHeader" className={`hidden py-2 xl:flex items-center w-auto text-xs xl:text-sm`}>
           <div className="justify-end flex flex-wrap items-center">
             {[
               {

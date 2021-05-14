@@ -1,7 +1,5 @@
 import React from "react"
 import SEO from "../components/shared/seo"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
 import { A } from "../components/style/blogPostStyle"
 
 const Accessibility = () => (
@@ -10,8 +8,6 @@ const Accessibility = () => (
       title="Accessibility Statement" 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "Accessibility Statement"]} 
     />
-    <Header />
-
     <div className="items-center justify-center bg-white pt-16 pb-24 min-h-70">
       <div className="text-black px-4 pb-10 lg:px-24 container mx-auto">
         <h1 className="accAbt text-5xl">Accessibility Statement</h1>
@@ -86,8 +82,6 @@ const Accessibility = () => (
         <p>We tested the whole public area of the website along with the external widgets such as Text to Speech Screen Reader, NVDA, WAVE (web accessibility evaluation tool), Firefox Accessibility, and Firefox Voice etc.</p>
       </div>
     </div>
-
-    <Footer />
   </>
 )
 

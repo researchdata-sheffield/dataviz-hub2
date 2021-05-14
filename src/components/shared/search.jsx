@@ -106,22 +106,29 @@ class Search extends Component {
                           {/* category */}
                           {
                             item.category &&
-                            <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
+                            <h1 className="group-hover:hidden text-gray-200 font-bold transition duration-500">
                               CAT: &nbsp;
-                              <Highlighter 
-                                className="text-white" 
-                                highlightClassName={highlightClasses} 
-                                textToHighlight={item.category[0].toUpperCase()} 
-                                searchWords={this.state.query.split()} 
-                              />
+                              {item.category.map((cat) => (
+                                <>
+                                  <Highlighter 
+                                    key={cat}
+                                    className="text-white" 
+                                    highlightClassName={highlightClasses} 
+                                    textToHighlight={cat.toUpperCase()} 
+                                    searchWords={this.state.query.split()} 
+                                  />
+                                  <span>&nbsp;</span>
+                                </>
+                              ))}
                             </h1>
                           }
 
                           {/* tag */}
                           {
                             item.tag &&
-                            <h1 className="group-hover:hidden text-gray-400 font-bold transition duration-500">
-                              TAG: &nbsp;{item.tag.map((tag, index, arr) => {
+                            <h1 className="group-hover:hidden text-gray-200 font-bold transition duration-500">
+                              TAG: &nbsp;
+                              {item.tag.map((tag, index, arr) => {
                                 return ( 
                                   i < 3 && 
                                   <Highlighter 

@@ -1,7 +1,5 @@
 import React from "react"
 import SEO from "../components/shared/seo"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
 import Bg from "../images/404/moon.jpg"
 import { Link } from "gatsby"
 
@@ -11,7 +9,6 @@ const NotFoundPage = () => (
       title="404 Not found" 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "404 - Not found"]} 
     />
-    <Header />
     <div className="flex items-center justify-center text-center" style={{backgroundImage: `url(${Bg})`, minHeight: '650px'}}>
       <div className="text-white px-4" style={{fontFamily: "TUoS Blake"}}>
         <h1 className="text-5xl font-bold leading-tight">Page Not Found</h1>
@@ -21,7 +18,6 @@ const NotFoundPage = () => (
         </Link>
       </div>
     </div>
-    <Footer />
   </>
 )
 

@@ -1,7 +1,5 @@
 import React, {useState} from "react"
 import { graphql } from "gatsby"
-import Header from "../../components/shared/header"
-import Footer from "../../components/shared/footer"
 import MenuCategory from "../../components/blog/menuCategory"
 import PropTypes from "prop-types"
 import BlogLayout from "../../components/blog/blogLayout"
@@ -27,7 +25,6 @@ const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 				title= {`Blog - ${pageContext.tag}`}
 				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
 			/>
-			<Header />
 			<div 
 				className="flex flex-wrap content-center justify-center bg-gray-900 text-center shadow-2xl relative z-10 w-full"
 				style={{background: `linear-gradient(0deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)), url(${Bg})`, minHeight: '400px'}}
@@ -50,7 +47,6 @@ const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 				handleTagMenu={handleTagMenu} 
 				tagMenu={tagMenu}
 			/>
-			<Footer />
 		</>
 	)
 }

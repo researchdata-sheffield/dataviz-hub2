@@ -199,6 +199,11 @@ module.exports = {
         'sheflightBlue': '#ade1f8',
         'brand-pink': '#ff79b4',
       },
+      transitionDuration: {
+        '0': '0ms',
+        '1500': '1500ms',
+        '2000': '2000ms'
+      },
       transitionProperty: {
         'hover': 'hover, group-hover',
         'opacity': 'opacity',

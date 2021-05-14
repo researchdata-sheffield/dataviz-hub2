@@ -17,7 +17,7 @@ class PaginationPost extends React.Component {
     const { mdx, share, github, prev, next, type } = this.props;
 
     var mdxType = type || 'blog';
-    //let template = mdx.frontmatter.template
+
     let prevTitle = prev ? shortenText(prev.node.frontmatter.title, 6) : ""
     let nextTitle = next ? shortenText(next.node.frontmatter.title, 6) : ""
 
