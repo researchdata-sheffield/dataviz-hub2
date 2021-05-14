@@ -1,15 +1,29 @@
 import React from "react"
 import PropTypes from "prop-types"
-//import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
 import ScrollTopBtn from "./scrollTop"
-import Header from "../shared/header"
-import Footer from "../shared/footer"
+import Header from "./header"
+import Footer from "./footer"
+import logo from "../../images/TUOSlogo.png"
 
 const Layout = (props) => {
 
   return (
     <div id="website" className="flex flex-col font-sans min-h-screen text-gray-900 high-specificity">
       <ScrollTopBtn />
+      <div 
+        id="__loader" 
+        className="transition duration-1500 bg-gray-900 w-full h-full fixed text-center flex flex-wrap content-center justify-center items-center"
+        style={{zIndex: '999'}}
+      >
+        <div className="w-full">
+          <img className="mx-auto" style={{width: '400px'}} src={logo} alt="The University of Sheffield Logo" />
+        </div>
+        <span className="my-12 border-t-3 border-brand-blue" style={{width: '120px', height:'1px'}}></span>
+        <div className="w-full text-center">
+          <h1 className="text-white text-6xl font-extrabold">Dataviz.Shef</h1>
+          <h3 className="text-gray-400 mt-5">Preparing ...</h3>
+        </div>
+      </div>
       <Header />
       <main>
         {props.children}

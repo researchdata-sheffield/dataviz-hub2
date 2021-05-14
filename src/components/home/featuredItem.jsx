@@ -53,10 +53,10 @@ const featuredItem = ({ item }) => {
                   {node.frontmatter.tag && node.frontmatter.tag.map((tagItem, i) => {
                     return (
                       i < 3 && 
-                      <>
-                        <Link key={tagItem} className="text-gray-500 hover:underline" to={`/blog/tag/${kebabCase(tagItem)}`}>{tagItem}</Link>
+                      <span key={tagItem}>
+                        <Link className="text-gray-500 hover:underline" to={`/blog/tag/${kebabCase(tagItem)}`}>{tagItem}</Link>
                         {node.frontmatter.tag.length === i+1 ? '' : [i === 2 ? ' ' : ' · ']}
-                      </>
+                      </span>
                     )         
                   })}
 

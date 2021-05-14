@@ -53,7 +53,7 @@ const Header = () => {
     function navColourClass(mobile = false) {
       var className = "transition duration-300 ";  // don't remove space
       
-      if(mobile) {
+      if(mobile == "true") {
         if(isScroll) {
           className += "text-black hover:text-brand-blue";
           return className;
@@ -215,29 +215,29 @@ const Header = () => {
                 title: `About`
               },
               ].map(link => ( link.title != 'Showcase' ? 
-                <NavLink type="Link" mobile={true} className="block w-full text-2xl" activeStyle={{ color: `${isScroll ? "#00aeef" : "black" }`, fontWeight: "bold" }} key={link.title} to={link.route}>
+                <NavLink type="Link" mobile="true" className="block w-full text-2xl" activeStyle={{ color: `${isScroll ? "#00aeef" : "black" }`, fontWeight: "bold" }} key={link.title} to={link.route}>
                   {link.title}
                 </NavLink> 
                 : 
-                <NavLink type="a" mobile={true} className="block w-full text-2xl" href={link.route} key={link.title}>
+                <NavLink type="a" mobile="true" className="block w-full text-2xl" href={link.route} key={link.title}>
                   {link.title}
                 </NavLink>  
               )) 
             }
             <div className="flex flex-wrap w-full justify-center space-x-4 mt-8 pt-6 border-t-2 border-gray-200">
-              <NavLink type="a-icon" mobile={true} className="block mt-3" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group">
+              <NavLink type="a-icon" mobile="true" className="block mt-3" href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group">
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline"><FaGoogle /></div>
               </NavLink>
-              <NavLink type="a-icon" mobile={true} className="block mt-3" href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack channel">
+              <NavLink type="a-icon" mobile="true" className="block mt-3" href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack channel">
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline"><FaSlack /></div>
               </NavLink>
-              <NavLink id="rssMobile" type="Link-icon" mobile={true} className="block mt-3" target="_self" title="RSS Feed" to="#" onClick={()=>{return false}}>
+              <NavLink id="rssMobile" type="Link-icon" mobile="true" className="block mt-3" target="_self" title="RSS Feed" to="#" onClick={()=>{return false}}>
                 <div className="relative px-4 text-2xl transition duration-500 ease-in-out no-underline">
                   <FaRss />
                   <span className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md text-xs -mt-4 -mr-2" style={{padding: '2px 5px'}}>new</span>
                 </div>
               </NavLink>
-              <NavLink type="Link-icon" mobile={true} className="block mt-3" to="/search" title="search dataviz hub">
+              <NavLink type="Link-icon" mobile="true" className="block mt-3" to="/search" title="search dataviz hub">
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline"><FiSearch /></div>
               </NavLink>
             </div>

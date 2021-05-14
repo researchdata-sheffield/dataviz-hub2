@@ -20,13 +20,18 @@ require("./src/css/prism-custom.scss")
 require("prismjs/plugins/line-numbers/prism-line-numbers.css")
 
 
-
+// the Gatsby browser runtime first starts
 export const onClientEntry = () => {
-  // IntersectionObserver polyfill for gatsby-background-image (Safari, IE)
-  if (!(`IntersectionObserver` in window)) {
-    import(`intersection-observer`)
-    console.log(`# IntersectionObserver is polyfilled!`)
-  }
+}
+
+// when the initial (but not subsequent) render of Gatsby App is done on the client
+export const onInitialClientRender = () => {
+  let element = document.querySelector('#__loader');
+  element.style.transform = "translateY(-1000px)";
+  element.style.opacity = 0;
+  setTimeout(() => {  
+    element.style.visibility = "hidden";
+  }, 1500);
 }
 
 // Disable default scroll-to-top
@@ -60,10 +65,6 @@ export const onRouteUpdate = (window) => {
 export const shouldUpdateScroll = ({
   routerProps: { location },
 }) => {
-  //console.log(location)
-  //const currentPosition = getSavedScrollPosition(location)
-  // console.log(currentPosition)
-  // window.scrollTo(...(currentPosition || [0, 0]))
   if(location.hash) {
     setTimeout(() => {
       document.querySelector(`${location.hash}`).scrollIntoView()
