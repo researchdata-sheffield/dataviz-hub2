@@ -10,7 +10,7 @@ const Footer = () => {
   const linkClasses = "text-gray-400 hover:text-brand-blue"
 
   return (
-    <div className="bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm relative z-10">
+    <footer className="bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm relative z-10">
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
@@ -62,12 +62,14 @@ const Footer = () => {
           </div>
             
           <div className="sm:w-1/3 pl-6">
-            <A_footer className="m-20" href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo"><img className="w-11/12" src={university_logo}></img></A_footer>
-            <div className="text-center justify-between w-11/12 text-gray-300">
-              <button className="mx-2"><A_footer href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group"><FaGoogle /></A_footer></button>
-              <button className="mx-2"><A_footer href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack Channel"><FaSlack /></A_footer></button>
-              <button className="mx-2"><A_footer title="RSS Feed" target="_self" href="/rss.xml"><FaRss /></A_footer></button>
-              <button className="mx-2"><A_footer href="mailto:rdm@sheffield.ac.uk" title="contact us on email"><MdEmail /></A_footer></button>
+            <A_footer className="m-20" href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
+              <img className="w-11/12" src={university_logo} alt="The University of Sheffield Logo"></img>
+            </A_footer>
+            <div className="flex flex-wrap text-center justify-around w-11/12 text-gray-300">
+              <A_footer href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" title="Join Google group"><FaGoogle /></A_footer>
+              <A_footer href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack Channel"><FaSlack /></A_footer>
+              <A_footer title="RSS Feed" target="_self" href="/rss.xml"><FaRss /></A_footer>
+              <A_footer href="mailto:rdm@sheffield.ac.uk" title="contact us on email"><MdEmail /></A_footer>
             </div>
           </div>
         </div>
@@ -75,7 +77,7 @@ const Footer = () => {
       <p className="text-gray-500 leading-normal text-center text-sm pt-16">
         © 2018 - {currentYear.getFullYear()} The University of Sheffield.
       </p>
-    </div>
+    </footer>
   )
 }
 

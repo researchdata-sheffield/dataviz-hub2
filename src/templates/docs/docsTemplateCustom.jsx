@@ -1,8 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import Header from "../../components/shared/header"
-import Footer from "../../components/shared/footer"
 import Helmet from "react-helmet"
 import { MDXProvider } from "@mdx-js/react"
 import { MDXRenderer } from "gatsby-plugin-mdx"
@@ -38,7 +36,6 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
       title={mdx.frontmatter.title} 
       keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} 
       />
-      <Header />
       <Helmet>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type='text/javascript' /> 
       </Helmet>
@@ -58,8 +55,6 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
       
       <PaginationPost mdx={mdx} type={mdx.frontmatter.type} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
       <Comment mdx={mdx} />
-      
-      <Footer />
     </>
   )
 }

@@ -210,7 +210,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    * BLOGPOST
    */
   const posts = result.data.blogQuery.edges
-  const postsPerPage = 12
+  const POSTS_PER_PAGE = 12
   var numPages = posts.length
   const categories = []
   const tags = []
@@ -269,7 +269,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   )
   
-  numPages = Math.ceil(numPages / postsPerPage)
+  numPages = Math.ceil(numPages / POSTS_PER_PAGE)
   //console.log("Number of total posts: " + numPages)
 
   // Compare function
@@ -298,8 +298,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: i === 0 ? `/blog` : `/blog/page/${i + 1}`,
       component: blogTemplate,
       context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
+        limit: POSTS_PER_PAGE,
+        skip: i * POSTS_PER_PAGE,
         currentPage: i + 1,
         numPages,
         categories: allCategories,
@@ -314,7 +314,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const link = `/blog/tag/${kebabCase(tag)}`
 
     Array.from({
-      length: Math.ceil(countTags[tag] / postsPerPage),
+      length: Math.ceil(countTags[tag] / POSTS_PER_PAGE),
     }).forEach((_, i) => {
       createPage({
         path: i === 0 ? link : `${link}/page/${i + 1}`,
@@ -323,10 +323,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           categories: allCategories,
           tag: tag,
           tags: allTags,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
+          limit: POSTS_PER_PAGE,
+          skip: i * POSTS_PER_PAGE,
           currentPage: i + 1,
-          numPages: Math.ceil(countTags[tag] / postsPerPage),
+          numPages: Math.ceil(countTags[tag] / POSTS_PER_PAGE),
           countTags
         },
       })
@@ -338,7 +338,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const link = `/blog/category/${kebabCase(cat)}`
 
     Array.from({
-      length: Math.ceil(countCategories[cat] / postsPerPage),
+      length: Math.ceil(countCategories[cat] / POSTS_PER_PAGE),
     }).forEach((_, i) => {
       createPage({
         path: i === 0 ? link : `${link}/page/${i + 1}`,
@@ -347,10 +347,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           categories: allCategories,
           category: cat,
           tags: allTags,
-          limit: postsPerPage,
-          skip: i * postsPerPage,
+          limit: POSTS_PER_PAGE,
+          skip: i * POSTS_PER_PAGE,
           currentPage: i + 1,
-          numPages: Math.ceil(countCategories[cat] / postsPerPage),
+          numPages: Math.ceil(countCategories[cat] / POSTS_PER_PAGE),
           countTags
         },
       })

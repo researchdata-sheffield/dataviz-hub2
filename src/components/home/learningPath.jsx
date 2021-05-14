@@ -50,7 +50,9 @@ const LearningPath = () => {
   // https://react-slick.neostack.com/docs/example/simple-slider
   const carouselSettings = {
     className: 'center',
+    accessibility: true,
     dots: false,
+    arrow: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,

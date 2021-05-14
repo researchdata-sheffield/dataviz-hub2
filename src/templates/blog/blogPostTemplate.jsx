@@ -7,8 +7,6 @@ import { useLocation } from "@gatsbyjs/reach-router"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import SEO from "../../components/shared/seo"
-import Header from "../../components/shared/header"
-import Footer from "../../components/shared/footer"
 import PaginationPost from "../../components/blog/paginationPost"
 import {CatBtn, TagBtn} from "../../components/style/styled"
 import Comment from "../../components/blog/comment"
@@ -108,7 +106,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   return (
     <div className="relative" key={mdx.id}>
       <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
-      <Header />
       <Helmet >
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type = 'text/javascript' /> 
       </Helmet>
@@ -206,8 +203,6 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
       <PaginationPost mdx={mdx} type={type || 'blog'} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
       <Comment mdx={mdx} />
-      
-      <Footer />
     </div>
   );
 }

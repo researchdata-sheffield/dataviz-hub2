@@ -151,11 +151,11 @@ class RelatedPostServices {
     * return top 3 (or number of posts set)
     */
     const { posts, category, tags, maxPosts, title, description, mdxType } = this;
-    const catPoint = 2;
-    const tagPoint = 1;
-    const titlePoint = 3;
-    const descriptionPoint = 3;
-    const typePoint = 4;
+    const CAT_POINT = 2;
+    const TAG_POINT = 1;
+    const TITLE_POINT = 3;
+    const DESCRIPTION_POINT = 3;
+    const TYPE_POINT = 4;
 
     function addCategoryPoints (currPost) {
       if(!currPost.frontmatter.category || !category) {
@@ -163,7 +163,7 @@ class RelatedPostServices {
       }
       currPost.frontmatter.category.forEach((cat) => {
         if(category.includes(cat)) {
-          currPost.point += catPoint;
+          currPost.point += CAT_POINT;
         }
       })
     }
@@ -174,24 +174,24 @@ class RelatedPostServices {
       }
       currPost.frontmatter.tag.forEach((tag) => {
         if(tags.includes(tag)) {
-          currPost.point += tagPoint;
+          currPost.point += TAG_POINT;
         }
       })
     }
 
     function addTitlePoints (currPost) {
       let score = jaccardIndexCompareTwoStrings(title, currPost.frontmatter.title);
-      currPost.point += (titlePoint*score);
+      currPost.point += (TITLE_POINT*score);
     }
 
     function addDescriptionPoints (currPost) {
       let score = jaccardIndexCompareTwoStrings(description, currPost.frontmatter.description);
-      currPost.point += (descriptionPoint*score);
+      currPost.point += (DESCRIPTION_POINT*score);
     }
 
     function addTypePoint (currPost) {
       if (currPost.frontmatter.type == mdxType) {
-        currPost.point += typePoint;
+        currPost.point += TYPE_POINT;
       }
     }
 

@@ -1,37 +1,20 @@
 import React from "react"
 import PropTypes from "prop-types"
-import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
+//import { TransitionProvider, TransitionViews } from "gatsby-plugin-transitions"
 import ScrollTopBtn from "./scrollTop"
-
+import Header from "../shared/header"
+import Footer from "../shared/footer"
 
 const Layout = (props) => {
 
   return (
     <div id="website" className="flex flex-col font-sans min-h-screen text-gray-900 high-specificity">
       <ScrollTopBtn />
-      <TransitionProvider
-        location={props.location}
-        enter={{
-          opacity: 0,
-          config: {
-            duration: 200
-          }
-        }}
-        usual={{
-          opacity: 1,
-
-        }}
-        leave={{
-          opacity: 0,
-          config: {
-            duration: 200
-          }
-        }}
-      >
-        <TransitionViews>
-          {props.children}
-        </TransitionViews>
-      </TransitionProvider>
+      <Header />
+      <main>
+        {props.children}
+      </main>
+      <Footer />
     </div>
   )
 }

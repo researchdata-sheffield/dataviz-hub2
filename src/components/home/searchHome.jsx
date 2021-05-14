@@ -3,7 +3,6 @@ import { navigate, Link } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
-import Slide from 'react-reveal/Slide'
 import ReactTooltip from "react-tooltip"
 
 
@@ -81,33 +80,33 @@ class Search_Home extends Component {
             <ResultList />
           </div>
         </div>
-        <Slide left>
-          <div className="hidden md:flex justify-evenly pt-5 2xl:pt-8 z-10 w-full">
-            <div className="w-2/7 text-left">
-              <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Dataviz.Shef</div>
-                <ul className="list-reset leading-normal text-xs 2xl:text-sm text-left">
-                  <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
-                  <li><Link className={quickLink} to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
-                  <li><Link className={quickLink} to='/#home_community' data-tip="#Community">Community</Link></li>
-                  <li><Link className={quickLink} to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
-                  <li><Link className={quickLink} to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
-                  <li><Link className={quickLink} to='/blog'>Blog</Link></li>
-                  <ReactTooltip />
-                </ul>
-            </div>
-            
-            <div className="w-2/7 text-left">
-              <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Featured</div>
-                <ul className="list-reset leading-normal text-xs 2xl:text-sm">
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="#">Chart</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="#">Colour</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistical Modeling"}}) }} href="#">Statistical Modeling</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Docs"}}) }} href="#">Docs</a></li>
-                  <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="#">R</a></li>
-                </ul>
-            </div>
+
+        <div className="hidden md:flex justify-evenly pt-5 2xl:pt-8 z-10 w-full">
+          <div className="w-2/7 text-left">
+            <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Dataviz.Shef</div>
+              <ul className="list-reset leading-normal text-xs 2xl:text-sm text-left">
+                <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
+                <li><Link className={quickLink} to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
+                <li><Link className={quickLink} to='/#home_community' data-tip="#Community">Community</Link></li>
+                <li><Link className={quickLink} to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
+                <li><Link className={quickLink} to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
+                <li><Link className={quickLink} to='/blog'>Blog</Link></li>
+                <ReactTooltip />
+              </ul>
           </div>
-        </Slide>
+          
+          <div className="w-2/7 text-left">
+            <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Featured</div>
+              <ul className="list-reset leading-normal text-xs 2xl:text-sm">
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="#">Chart</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="#">Colour</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistical Modeling"}}) }} href="#">Statistical Modeling</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Docs"}}) }} href="#">Docs</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="#">R</a></li>
+              </ul>
+          </div>
+        </div>
+
       </div>
     )
   }

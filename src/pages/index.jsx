@@ -1,6 +1,4 @@
 import React, { useEffect } from "react"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
 import SEO from "../components/shared/seo"
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
@@ -49,7 +47,6 @@ const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
         title="Home" 
         keywords={["The University of Sheffield", "Data Visualisation", "Data Visualisation Hub", "Research", "Data Analytics", "Data Visualisation UK", "Dataviz"]} 
       />
-      <Header />
 
       {/* Top part of the page */}
       <div>
@@ -164,9 +161,7 @@ const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
       <div id="collaboration" className="container mx-auto min-h-40 flex flex-wrap pb-20 justify-center">
         <h1 className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Collaboration and Partnership.</h1>
         <p className="text-gray-500">Further details to come.</p>
-      </div>
-
-      <Footer />        
+      </div>     
     </div>
   )
 }
