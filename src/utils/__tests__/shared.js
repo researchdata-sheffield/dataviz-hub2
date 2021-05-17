@@ -1,13 +1,13 @@
-import { shortenText, getImageSource, randomNumber } from "../shared"
+import { shortenText, getImageSource, randomNumber, calculateUserLocalTime } from "../shared"
 
 describe("ShortenText", () => {
   const text = "Build a community around interactive data visualisation at TUoS."
 
-  test("Shorten text with dots at the end", () => {
+  it("shorten text with dots at the end", () => {
     expect(shortenText(text, 5)).toEqual("Build a community around interactive ...")
   })
 
-  test("Shorten text with full sentence", () => {
+  it("shorten text with full sentence", () => {
     expect(shortenText(text, 11)).toEqual(text)
   })
 });
@@ -61,11 +61,11 @@ describe("getImageSource", () => {
     "height": 772
   }
 
-  test("return image data", () => {
+  it("return image data object", () => {
     expect(getImageSource(node)).toMatchObject(match);
   })
 
-  test("return image source", () => {
+  it("return image source", () => {
     expect(getImageSource(node, true)).toEqual("/static/fdb1e2f76e/e96af/Map_Output.png");
   })
 });
@@ -80,7 +80,7 @@ global.crypto = {
 };
 
 describe("Random number generator - defined window", () => {
-  test("Check return value is non-zero", () => {
+  it("returns a non-zero value", () => {
     expect(randomNumber()).not.toBe(0)
   })
 
@@ -91,7 +91,66 @@ describe("Random number generator - undefined window", () => {
     delete global.window;
   });
 
-  test("Check return value is zero", () => {
+  it("returns zero", () => {
     expect(randomNumber()).toBe(0);
   })
+})
+
+
+describe("Calculate user's local time", () => {
+  beforeEach(() => {
+    const moment = require('moment-timezone');
+  })
+
+  it("returns the same date and time", () => {
+    jest.doMock('moment', () => {
+      moment.tz.setDefault('Europe/London');
+      return moment;
+    });
+    expect(calculateUserLocalTime("2021-05-17 01:00 PM"))
+      .toEqual({
+        time: "Mon 17 May 2021, 01:00 PM",
+        timezone: "Europe/London"
+      })
+  });
+
+  it("returns the date and time in China", () => {
+    jest.doMock('moment', () => {
+      moment.tz.setDefault('Asia/Shanghai');
+      return moment;
+    });
+
+    let objArr = [
+      {
+        time: "Mon 17 May 2021, 08:00 PM",
+        timezone: "Asia/Shanghai"
+      },
+      {
+        time: "Mon 17 May 2021, 09:00 PM",
+        timezone: "Asia/Shanghai"
+      },
+    ]
+
+    expect(calculateUserLocalTime("2021-05-17 01:00 PM", "Asia/Shanghai")).toMatchOneObject(objArr);
+  });
+
+  expect.extend({
+    toMatchOneObject(received, objectsArray) {
+      let pass = JSON.stringify(objectsArray).includes(JSON.stringify(received));
+      
+      if (pass) {
+        return {
+          message: () =>
+            `expected the object to be in the object array`,
+          pass: true,
+        };
+      } else {
+        return {
+          message: () =>
+            `the object is NOT in the object array`,
+          pass: false,
+        };
+      }
+    }
+  });
 })

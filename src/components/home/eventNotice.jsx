@@ -1,16 +1,22 @@
 import React, {useEffect, useState} from 'react'
 import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
-import moment from "moment"
+import moment from "moment-timezone"
 import Fade from 'react-reveal/Fade';
-import { shortenText } from "../../utils/shared"
+import { shortenText, calculateUserLocalTime } from "../../utils/shared"
 
 
 const eventNotice = ({ eventBrite }) => {
-
+  const UPDATE_TIME_MS = 60000;
   const [currentDate, setDate] = useState(moment().format('ddd DD MMMM YYYY, hh:mm A'));
+  let userTimezone = calculateUserLocalTime(currentDate).timezone;
+
   useEffect(() => {
-    setDate(moment().format('ddd DD MMMM YYYY, hh:mm A'))
+    const interval = setInterval(() => {
+      setDate(moment().format('ddd DD MMMM YYYY, hh:mm A'))
+    }, UPDATE_TIME_MS );
+  
+    return () => clearInterval(interval);
   }, [])
   
   return (
@@ -20,10 +26,11 @@ const eventNotice = ({ eventBrite }) => {
         {eventBrite.edges.map(({node}) => {
 
           let summary = node.summary ? shortenText(node.summary, 30) : ""
+          let userLocalTime = calculateUserLocalTime(node.start.local)
             
           return (
             <div key={node.id}>
-              <div className="text-gray-700 text-sm w-full font-bold p-3">Today: {currentDate}</div>
+              <div className="text-gray-700 text-sm w-full font-bold p-3">{currentDate} ({userTimezone})</div>
               
               <a className="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2" style={{fontFamily: "TUoS Blake"}} href={node.url} target="_blank" rel="noopener noreferrer">
                 <img className="w-full md:w-3/12 overflow-hidden self-center" src={node.logo.original.url} alt={`Thumbnail: ${summary}`} style={{objectFit: "cover", objectPosition: "center", minHeight: "180px"}} />
@@ -33,7 +40,7 @@ const eventNotice = ({ eventBrite }) => {
                     <p className="inline-block text-lg xl:text-xl font-bold">{node.name.text ? node.name.text : "No next event"}</p>
                   </h1>
                   <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base">{summary}</p>
-                  <p className="flex pt-2 text-sm xl:text-base"><FaClock className="mr-1" />{node.start.local}</p>
+                  <p className="flex pt-2 text-sm xl:text-base"><FaClock className="mr-1" />{userLocalTime.time} ({userLocalTime.timezone})</p>
                   <div className="flex flex-wrap">
                     <div className="w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 text-sm xl:text-base">
                       <p className="flex">{node.online_event && (<FaMapMarkerAlt className="mr-1 mt-1" />)} {node.online_event && ("Online Event") }</p>
