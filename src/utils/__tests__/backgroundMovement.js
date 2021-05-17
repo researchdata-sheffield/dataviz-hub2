@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from "react"
 import renderer from "react-test-renderer"
-import Header from "../header"
+import Header from "../../components/shared/header"
 import { createMemorySource, createHistory, LocationProvider } from "@gatsbyjs/reach-router"
  
 let source = createMemorySource("/starting/url")
@@ -18,3 +18,9 @@ let history = createHistory(source)
 //       .toJSON();
 //     expect(tree).toMatchSnapshot();
 //   });
+
+describe("Background movement", () => {
+  it("renders correctly", () => {
+    
+  })
+})

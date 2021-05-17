@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
-import { shortenText } from "../../utils/shared"
+import { shortenText, calculateUserLocalTime } from "../../utils/shared"
+
 
 const UpcomingEvents = ({allEventbriteEvents}) => {
   let size = allEventbriteEvents.edges.length
@@ -11,7 +12,8 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
       <> 
       {allEventbriteEvents.edges.map(({node}) => {
         //moment(node.start.local, "DD-MMMM-YYYY hh:mm") >= moment() && 
-        let summary = shortenText(node.summary, 20)
+        let summary = shortenText(node.summary, 20);
+        let userLocalTime = calculateUserLocalTime(node.start.local);
 
         return (
           <a className="flex flex-col-reverse md:flex-row flex-wrap w-full hover:shadow-xl overflow-y-hidden bg-white my-3 lg:my-1 text-gray-700 group border-2 border-gray-50" 
@@ -20,7 +22,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
             <div className="w-full md:w-9/12 py-4 px-4">
               <p className="font-semibold text-lg text-black group-hover:text-brand-blue leading-5">{node.name.text}</p>
               <p className="text-gray-700 mt-1 leading-tight text-sm group-hover:text-black">{summary}</p>
-              <p className="flex pt-4 text-sm"><FaClock className="mr-1" />{node.start.local}</p>
+              <p className="flex pt-4 text-sm"><FaClock className="mr-1" />{userLocalTime.time}</p>
               
               <div className="flex flex-wrap text-sm">
                   <p className="flex">{node.online_event && (<FaMapMarkerAlt className="mr-1 mt-1" />)} {node.online_event && ("Online Event") }</p>

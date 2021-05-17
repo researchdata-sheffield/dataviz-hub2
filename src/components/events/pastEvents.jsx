@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from "prop-types"
 import { BlackWhiteButton } from "../style/styled"
-import { shortenText } from "../../utils/shared"
+import { shortenText, calculateUserLocalTime } from "../../utils/shared"
 
 const PastEvents = ({pastEvent}) => {
   
@@ -11,12 +11,13 @@ const PastEvents = ({pastEvent}) => {
       
       {pastEvent.edges.map(({ node }) => {
         let summary = shortenText(node.summary, 15)
+        let userLocalTime = calculateUserLocalTime(node.start.local);
 
         return (
           <div className="cursor-pointer flex flex-wrap p-4 w-full overflow-hidden group pastEvent" key={node.id} onClick={()=>window.open(node.url, "_blank", "noopener, noreferrer")}>
             <p className="font-semibold text-md text-black leading-4">{node.name.text}</p>
             <p className="text-gray-700 text-xs leading-4 mt-1">{summary}</p>
-            <p className="mt-2 text-xs text-black">{node.start.local}</p>
+            <p className="mt-2 text-xs text-black">{userLocalTime.time}</p>
           </div>
         )
       })} 
