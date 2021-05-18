@@ -85,6 +85,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  *  Create pages from MDX files
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  console.log("----------------------------------------------------");
   console.log(`Environment: ${process.env.GATSBY_ENV}`);
   console.log("MESSAGE: Creating pages from MDX files ...");
   // De-structure the createPage function from the actions object
@@ -220,6 +221,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   /**
    * BLOGPOST
    */
+  console.log("MESSAGE: Creating blog post routes ...");
+  console.log("----------------------------------------------------");
   const posts = result.data.blogQuery.edges
   
   // in production, don't create unpublished pages

@@ -13,7 +13,6 @@ const events = ({data: {eventBrite, pastEvent, pastEventBlog}}) => {
   const [currentDate, setDate] = useState(moment().format('ddd DD MMMM YYYY, hh:mm A'));
   let userTimezone = calculateUserLocalTime(currentDate).timezone;
 
-  console.log(process.env.NODE_ENV)
   useEffect(() => {
     const interval = setInterval(() => {
       setDate(moment().format('ddd DD MMMM YYYY, hh:mm A'))

@@ -5,8 +5,7 @@ import university_logo from "../../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack, FaTimes, FaBars, FaRss } from "react-icons/fa"
 import { A } from "../style/blogPostStyle"
-import { useLocation } from "@gatsbyjs/reach-router"
-
+import { useLocation,  } from "@gatsbyjs/reach-router"
 
 
 const Header = () => {
@@ -16,8 +15,46 @@ const Header = () => {
   const location = useLocation();
   var currentPagePath = location.pathname;
 
+  // close mobile menu on route change
+  if (typeof window !== "undefined" && window.screen.width <= 1200) {
+    useEffect(() => {
+      toggleExpansion(false);
+    }, [location]);
+  }
 
-  const onScrollNav = () => {
+  // monitor page scroll
+  useEffect(() => {
+    function handleScroll() {
+      const scrolledValue = window.scrollY > 10;
+      if(isScroll !== scrolledValue){
+        toggleScrolled(!isScroll);
+      }
+    }
+    document.addEventListener('scroll', handleScroll, {passive: true});
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [isScroll]);
+
+  // RSS button
+  useEffect(() => {
+    document.querySelector("#copyBtn").addEventListener("click", copyRssLink);
+    document.querySelector("#rssMobile").addEventListener("click", copyRssLink);
+    document.querySelector("#rssDesktop").addEventListener("click", copyRssLink);
+
+    return () => {
+      document.querySelector("#copyBtn").removeEventListener("click", copyRssLink);
+      document.querySelector("#rssMobile").removeEventListener("click", copyRssLink);
+      document.querySelector("#rssDesktop").removeEventListener("click", copyRssLink);
+    }
+  });
+
+  onScrollNav();
+
+  /**
+   * Sticky nav. Hide on scroll down, visible on scroll up
+   */
+  function onScrollNav() {
     if (typeof window === "undefined") {
       return;
     }
@@ -121,32 +158,6 @@ const Header = () => {
     document.execCommand('copy');
   }
 
-  useEffect( () => {
-    function handleScroll() {
-      const scrolledValue = window.scrollY > 10;
-      if(isScroll !== scrolledValue){
-        toggleScrolled(!isScroll);
-      }
-    }
-    document.addEventListener('scroll', handleScroll, {passive: true});
-    return () => {
-      document.removeEventListener('scroll', handleScroll);
-    };
-  }, [isScroll]);
-
-  useEffect(() => {
-    document.querySelector("#copyBtn").addEventListener("click", copyRssLink);
-    document.querySelector("#rssMobile").addEventListener("click", copyRssLink);
-    document.querySelector("#rssDesktop").addEventListener("click", copyRssLink);
-
-    return () => {
-      document.querySelector("#copyBtn").removeEventListener("click", copyRssLink);
-      document.querySelector("#rssMobile").removeEventListener("click", copyRssLink);
-      document.querySelector("#rssDesktop").removeEventListener("click", copyRssLink);
-    }
-  })
-
-  onScrollNav();
 
   return (
     <header className="font-semibold z-50 relative group">
@@ -169,7 +180,7 @@ const Header = () => {
           <A className={`${isScroll ? '' : [currentPagePath === '/' ? 'invisible' : '']} `} href="https://www.sheffield.ac.uk/" title="The University of Sheffield Logo">
             <img className="mt-1" alt="The University of Sheffield Logo" style={{maxWidth: "13.6vh"}} src={ university_logo } />
           </A>
-          <div className={`${isScroll ? '' : [currentPagePath === '/' ? 'invisible' : '']} ml-4 text-lg font-bold transition duration-1000 ease-in-out`}>
+          <div className={`${isScroll ? '' : [currentPagePath === '/' ? 'invisible' : '']} ml-4 text-lg font-extrabold transition duration-1000 ease-in-out`}>
             <Link className="textanimate" to="/">Dataviz.Shef</Link>
           </div>
         </div>
