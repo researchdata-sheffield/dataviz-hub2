@@ -21,7 +21,7 @@ const Layout = (props) => {
         <span className="my-12 border-t-3 border-brand-blue" style={{width: '120px', height:'1px'}}></span>
         <div className="w-full text-center">
           <h1 className="text-white text-6xl font-extrabold">Dataviz.Shef</h1>
-          <h3 className="text-gray-400 mt-5">Preparing ...</h3>
+          <h3 className="text-gray-400 mt-5">Loading, please wait ...</h3>
         </div>
       </div>
       <Header />

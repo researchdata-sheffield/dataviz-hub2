@@ -48,7 +48,7 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
     )
   } else {
     return (
-      <div className="mt-16 text-blue-800">No upcoming events at the moment, please come back later.</div>
+      <span className="mt-10 text-gray-900">No upcoming events at the moment, please come back later.</span>
     )
   }
 }
