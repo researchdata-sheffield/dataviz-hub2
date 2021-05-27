@@ -12,7 +12,7 @@ import { HiOutlineLightBulb } from "react-icons/hi"
 
 
 ## Introduction
-Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference) that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference, the basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of samples and decide whether the hypothesis (assumptions that was made) should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters are fully specified.  
+Statistical (hypothesis) testing is a methodology that used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference. The basic principle of which is to make some assumptions about the characteristics of the population first, then make inference through studies of samples and decide whether the hypothesis/assumption should be rejected or accepted. Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters are fully specified.  
 
 
 Parametric tests has the following applications:  
@@ -21,23 +21,17 @@ Parametric tests has the following applications:
 - compare two statistical models (estimate differences)
 - determine relationship between variables  
 
-The basis idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. That is, in order to test whether a hypothesis $H_{0}$ is correct, first assume that the hypothesis is correct, and then make a decision to accept or reject the hypothesis $H_{0}$ according to the sample. If the observed value of the sample is classified as a rare event, the hypothesis $H_{0}$ should be rejected, otherwise the hypothesis should be accepted. In all cases, there will also be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$.  
+The basis idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. In order to test whether a hypothesis $H_{0}$ is correct, first assume that the hypothesis is correct, and then make a decision to accept or reject the hypothesis $H_{0}$ according to the sample. The hypothesis $H_{0}$ should be rejected if the observed sample is classified as a rare event, otherwise the hypothesis should be accepted. In all cases, there will also be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$.  
 
 Performing a test usually consists the following steps:
 1. Set the test hypothesis (or null hypothesis) and denote it as $H_{0}$, so the alternative hypothesis will be $H_{1}$.
-2. Set the test level (or the significance level) $\alpha$, usually taken as 0.05 or 0.01. The value represents the probability of the null hypothesis being incorrectly rejected, given that the null hypothesis is true.
+2. Set the test level (or the significance level) $\alpha$, usually taken as 0.05 or 0.01. The value represents the probability of the null hypothesis being incorrectly rejected, given that the null hypothesis is true (or simply, the probability of the observed sample being a rare event).
 3. Choose a suitable statistical test.
 4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$.  
 
 In part 4 we will be looking at common hypothesis test method and their application in linear models. You can download the R script file [here](./script.R).  
 
 
-### Sidenote
-The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution and posterior distribution are introduced to find out the probability of each parameter value in the parameter space.  
-
----
-
-When you use test functions in R you will often see *confidence interval* included in your results with a certain percentage. A confidence interval estimates a range of possible values which is very likely to include population mean. If you look closely at the formula of the confidence interval then you will see it calculates variations around the sample mean. A common misunderstanding of confidence interval is to interpret it as the probability of the population mean will fall within the interval. However, the actual meaning of the percentage is the probability that the interval produced will contain the population mean. For example, if we have a 99% confidence interval then we are confident that we will see the population mean fall within the interval in 99 out of 100 times of construction of confidence intervals. Whereas the misunderstanding put confidence on a particular confidence interval.  
   
 
 ## Prerequisites
@@ -214,3 +208,11 @@ In this part of the learning path we have scratched the surface of statistical t
 [Maths behind linear models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)  
 [ANOVA](https://bookdown.org/ndphillips/YaRrr/anova.html)  
 
+
+
+## Sidenote
+Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference). The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution and posterior distribution are introduced to find out the probability of each parameter value in the parameter space.  
+
+---
+
+When you use test functions in R you will often see *confidence interval* included in your results with a certain percentage. A confidence interval estimates a range of possible values which is very likely to include population mean. If you look closely at the formula of the confidence interval then you will see it calculates variations around the sample mean. A common misunderstanding of confidence interval is to interpret it as the probability of the population mean will fall within the interval. However, the actual meaning of the percentage is the probability that the interval produced will contain the population mean. For example, if we have a 99% confidence interval then we are confident that we will see the population mean fall within the interval in 99 out of 100 times of construction of confidence intervals. Whereas the misunderstanding put confidence on a particular confidence interval.  

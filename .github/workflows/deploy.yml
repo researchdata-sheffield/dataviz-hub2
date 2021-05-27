@@ -52,5 +52,6 @@ jobs:
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
 
 
