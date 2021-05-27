@@ -185,14 +185,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    */
   console.log("MESSAGE: Creating docs routes ...");
   let docsMdx = result.data.docsQuery.edges;
-
+  console.log(docsMdx.length);
   // in production, don't create unpublished pages
-  if (process.env.GATSBY_ENV === "production") {
-    docsMdx.filter((docs) => {
-      return docs.node.frontmatter.isPublished != false
+  if (process.env.GATSBY_ENV == "production") {
+    docsMdx = docsMdx.filter((docs) => {
+      return docs.node.frontmatter.isPublished !== false
     });
   }
-
+  console.log(docsMdx.length);
   docsMdx.forEach(( {node}, index, arr ) => {
 
     // position of previous/next post
