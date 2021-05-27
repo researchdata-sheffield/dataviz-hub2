@@ -86,6 +86,8 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  *  Create pages from MDX files
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
+  console.log("----------------------------------------------------");
+  console.log(`Environment: ${process.env.GATSBY_ENV}`);
   console.log("MESSAGE: Creating pages from MDX files ...");
   // De-structure the createPage function from the actions object
   const { createPage, createRedirect } = actions
@@ -103,7 +105,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const result = await graphql(`{
     docsQuery: allMdx(
       sort: {fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {type: {eq: "docs"}, isPublished: {ne: false}}}
+      filter: {frontmatter: {type: {eq: "docs"}}}
     ) {
       edges {
         node {
@@ -130,13 +132,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             d3
             type
+            isPublished
           }
         }
       }
     }
     blogQuery: allMdx(
       sort: {fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {type: {eq: null}, isPublished: {ne: false}}}
+      filter: {frontmatter: {type: {eq: null}}}
     ) {
       edges {
         node {
@@ -165,6 +168,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             d3
             type
+            isPublished
           }
         }
       }
@@ -180,9 +184,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    * DOCS
    */
   console.log("MESSAGE: Creating docs routes ...");
-  const docsMdx = result.data.docsQuery.edges;
+  let docsMdx = result.data.docsQuery.edges;
+
+  // in production, don't create unpublished pages
+  if (process.env.GATSBY_ENV === "production") {
+    docsMdx.filter((docs) => {
+      return docs.node.frontmatter.isPublished != false
+    });
+  }
 
   docsMdx.forEach(( {node}, index, arr ) => {
+
     // position of previous/next post
     const prevDoc = arr[index - 1]
     const nextDoc = arr[index + 1]
@@ -210,7 +222,17 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   /**
    * BLOGPOST
    */
+  console.log("MESSAGE: Creating blog post routes ...");
+  console.log("----------------------------------------------------");
   const posts = result.data.blogQuery.edges
+  
+  // in production, don't create unpublished pages
+  if (process.env.GATSBY_ENV === "production") {
+    posts.filter((post) => {
+      return post.node.frontmatter.isPublished != false
+    });
+  }
+
   const POSTS_PER_PAGE = 12
   var numPages = posts.length
   const categories = []

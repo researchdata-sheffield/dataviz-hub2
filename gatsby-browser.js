@@ -9,6 +9,7 @@ import "tailwindcss/dist/base.css"
 import "gitalk/dist/gitalk.css"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 import "./src/css/index.css"
 import "./src/css/style.scss"
 import "./src/css/post.scss"
@@ -16,16 +17,24 @@ import "./src/css/animation.scss"
 import "./src/css/gitalk.scss"
 import "./src/css/accordion.scss"
 import "./src/css/d3js.scss"
-require("./src/css/prism-custom.scss")
-require("prismjs/plugins/line-numbers/prism-line-numbers.css")
+import "./src/css/prism-custom.scss"
 
 
-// the Gatsby browser runtime first starts
+
+/* 
+ * the Gatsby browser runtime first starts
+ */
 export const onClientEntry = () => {
+  // setTimeout(() => {
+  //   window.location.reload();
+  // }, 3000)
 }
 
-// when the initial (but not subsequent) render of Gatsby App is done on the client
+/**
+ * when the initial (but not subsequent) render of Gatsby App is done on the client
+ */ 
 export const onInitialClientRender = () => {
+  // Remove loading animation
   let element = document.querySelector('#__loader');
   element.style.transform = "translateY(-1000px)";
   element.style.opacity = 0;
