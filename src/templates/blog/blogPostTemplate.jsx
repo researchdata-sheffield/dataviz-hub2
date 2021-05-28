@@ -162,7 +162,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
         {/* mobile: table of content & share buttons */}
         <div className="w-full shadow-md flex flex-wrap justify-center -mt-12 lg:mt-0" style={{backgroundColor: '#f3f3f3'}}>
-          <div className={`${ tableOfContent && Object.keys(tableOfContent).length === 0 ? 'flex-row' : 'flex-col w-1/4'} flex text-sm justify-center items-center py-2 lg:hidden ml-10`} style={{maxWidth: '50px'}}>
+          <div className={`${ !tableOfContent || Object.keys(tableOfContent).length === 0 ? 'flex-row' : 'flex-col w-1/4'} flex text-sm justify-center items-center py-2 lg:hidden ml-10`} style={{maxWidth: '50px'}}>
             <Twitter solid small message={shareMessage} link={shareLink} />
             <Facebook solid small link={shareLink} />
             <Mail solid small className="bg-red-600" subject={shareMessage} link={shareLink} />
@@ -172,8 +172,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             </a>
           </div>    
           <div className={` ${ tableOfContent && tableOfContent.items ? 'pt-8 pb-5' : 'hidden'} mx-auto overflow-auto text-black lg:hidden px-2`}>
-              {tableOfContent && tableOfContent.items && <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">TABLE OF CONTENTS</p>}
-              { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }      
+            {tableOfContent && tableOfContent.items && <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">TABLE OF CONTENTS</p>}
+            { tableOfContent && tableOfContent.items && tableOfContent.items.map(renderItem) }      
           </div>       
         </div>   
    

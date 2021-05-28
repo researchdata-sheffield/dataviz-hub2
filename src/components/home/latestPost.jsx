@@ -32,13 +32,13 @@ const latestPost = ({ post }) => {
               <Fade  key={node.id} duration={1000} fraction={0.1}>
                 <div className="w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
                   <Link to={node.fields.slug} className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4">
-                    <div className="flex flex-wrap items-center md:w-2/5 lg:w-2/12">
-                      <MdFiberNew className="text-red-700 lg:text-white group-hover:text-red-700 text-3xl" />
+                    <div className="flex flex-wrap items-center md:w-2/5 lg:w-3/12">
+                      <MdFiberNew className="text-red-700 lg:text-white group-hover:text-red-700 text-3xl mr-1" />
                       {node.frontmatter.category.map((cat) => (
-                          <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-full py-0 my-0 mx-2 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible">{cat}</CatBtn>
+                        <CatBtn key={cat} to={`/blog/category/${kebabCase(cat)}`} className="rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible">{cat}</CatBtn>
                       ))}
                     </div>
-                    <div className="md:w-3/5 lg:w-10/12 flex justify-between">
+                    <div className="md:w-3/5 lg:w-9/12 flex justify-between">
                       <div className="inline-block font-semibold">{node.frontmatter.title}</div>
                       <div className="inline-block font-semibold">{postDate}</div>
                     </div>
