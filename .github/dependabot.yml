@@ -9,7 +9,8 @@ updates:
     directory: "/"
     versioning-strategy: auto
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "sunday"
     labels:
       - "npm dependencies"
       
