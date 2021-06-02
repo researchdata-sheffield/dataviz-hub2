@@ -52,6 +52,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `visualisation`,
+        path: `${__dirname}/content/visualisation`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: 'data',
         path: `${__dirname}/src/data/`,
       },
