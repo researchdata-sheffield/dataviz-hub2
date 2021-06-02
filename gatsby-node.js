@@ -186,6 +186,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   console.log("MESSAGE: Creating docs routes ...");
   let docsMdx = result.data.docsQuery.edges;
 
+  
   // in production, don't create unpublished pages
   if (process.env.GATSBY_ENV == "production") {
     docsMdx = docsMdx.filter((docs) => {
