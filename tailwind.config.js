@@ -67,6 +67,9 @@ module.exports = {
         'c1': '0px 12px 15px 0px #C8C4C1',
         'c2': '0px 12.3px 15.37px 0px #3A3631',
       },
+      fontFamily: {
+        'stephenson': ["TUOS Stephenson", "Georgia", "Times", "serif"]
+      },
       fontSize: {
         'xxs': '.65rem',
         'med': '.94rem'
