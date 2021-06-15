@@ -185,14 +185,14 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    */
   console.log("MESSAGE: Creating docs routes ...");
   let docsMdx = result.data.docsQuery.edges;
-  console.log(docsMdx.length);
+
   // in production, don't create unpublished pages
   if (process.env.GATSBY_ENV == "production") {
     docsMdx = docsMdx.filter((docs) => {
       return docs.node.frontmatter.isPublished !== false
     });
   }
-  console.log(docsMdx.length);
+
   docsMdx.forEach(( {node}, index, arr ) => {
 
     // position of previous/next post
@@ -281,7 +281,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       numPages = numPages - 1;
     }
     // Set up redirects for old blogpost url
-    createRedirect({ fromPath: node.fields.slug.split('-').join('_'), toPath: node.fields.slug})
+    // createRedirect({ fromPath: node.fields.slug.split('-').join('_'), toPath: node.fields.slug})
   })
 
   // Set up redirects for old blogpost url
