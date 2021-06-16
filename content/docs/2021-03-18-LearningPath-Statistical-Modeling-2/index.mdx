@@ -10,11 +10,13 @@ isPublished: false
 
 
 ## Introduction
-Sampling refers to the process of extracting individuals or samples from the population. In practice, it is infeasible to get hold of the entire population due to many reasons such as time and cost. There are two types of sampling: random sampling and non-random sampling (you can also refer them as probability sampling and non-probability sampling). The former refers to sampling methods that draws samples from the population in accordance with the principle of randomisation where it does not carry any subjectivity. The latter are methods of extracting samples based on the researcher's opinions, experience, or relevant knowledge, therefore is subjective. Typical methods are convenience sampling, Voluntary sampling, snowball sampling, and judgemental sampling.  
+Sampling is the process of selecting a number of individuals to study from the entire population. In practice, it is often impractical if not infeasible to get hold of many entire populations due to many reasons such as the scale, time, and cost. A typical situation when it is impossible is when the population is theoretically infinite such as all the 5 year old cats in the world throughout time. However, even a finite population can take too long or be too expensive such as every household in Sheffield on a specific date. One of the most recent examples is the national census 2021 which is very complicated and time consuming. The answer is therefore to sample.
+
+There are two types of sampling: random sampling and non-random sampling (you can also refer them as probability sampling and non-probability sampling). The former refers to sampling methods that draws samples from the population in accordance with the principle of randomisation where it does not carry any subjectivity. The latter are methods of extracting samples based on the researcher's opinions, experience, or relevant knowledge, therefore is subjective. Typical methods are convenience sampling, Voluntary sampling, snowball sampling, and selective sampling.  
  
 There are some key points to consider before building a model because we would like the characteristic of samples to be as close to the population as possible. We should always try our best to avoid sampling bias, reduce sampling error, and yield a true representative sample of the population. 
 
-In this material we will be looking at random sampling methods only and ways to describe a sample. If you are also interested in how to sampling from a distribution using computational methods, visit the optional chapter <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2-optional">Sampling - Computational Statistics</Link>.  
+In this material we will be looking at two sampling methods and ways to describe a sample. If you are also interested in how to sampling from a distribution using computational methods, visit the optional chapter <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2-optional">Sampling - Computational Statistics</Link>.  
 
 
 ## Prerequisites
@@ -35,46 +37,62 @@ In this material we will be looking at random sampling methods only and ways to 
 </div>
 
 
-## Random Sampling
-Random sampling (or probability sampling) refers to nonsubjective sampling methods that apply some mechanism to ensure randomness. 
+## Two basic sampling methods
+In this section we will introduce you to two sampling methods - simple random sampling and selective sampling. If you would like to know other sampling methods, You might be interested in <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2-more-random-sampling">random sampling</Link> and <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2-non-random-sampling">non-random sampling</Link>.
  
 ### Simple random
-The simple random sampling ensures individuals in the population have equal probability of getting chosen. To ensure randomness, people usually assign individuals a unique number beforehand and use computers to generate random numbers, then choose individuals according to the generated number.  
+The simple random sampling (and every other random sampling methods) ensures individuals in the population have equal probability of getting chosen. To ensure randomness, we usually assign individuals a unique number beforehand and use computers to generate random numbers, then choose individuals according to the generated number. However, very few sampling processes meet this criteria (equal probability). One reason is that in order to achieve you will need to have a listing for every single member of the population. There is therefore usually some systematic element to the sampling in a study.  
  
-**Disadvantages**: every individual is chosen at random but there is no way to ensure we have a representative sample for all subgroups.
+**Disadvantages**: every individual is chosen at random but sometimes there is no way to ensure we have a representative sample for all subgroups.
  
  
-### Systematic
-The systematic sampling method starts with a random starting point and selects individuals from the population with a periodic interval. For example, we start from the 2nd individual and choose every 10th individual (12th, 22nd, 32nd, ...) that are encountered until the end of the population or up to the target sample size. The interval is usually calculated as the number of populations divided by the sample size. The main advantage of the systematic sampling method over the simple random sampling method is the cost.
+### Selective 
+The opposite to random sampling is selective sampling. Selective (or purposive, judgemental) sampling refers to when the researcher is familiar with his/her research field and has a good understanding of the overall survey, then a highly representative sample may be obtained by selecting objects/individuals entirely based on experiences. This sampling method is mostly used when the population is small and the internal differences are large, and when the overall boundary cannot be determined or because resources are limited. For example, a company wishes to investigate the tourism market in England, relevant departments select tourist spots such as London, Oxford, Cambridge, and York.  
  
-**Disadvantages**: Some populations may contain hidden patterns and we may be negligent and select them as samples.
- 
-### Stratified
-
-![Stratified sampling](./stratified.png)  
-
-The stratified sampling method aims to create a sample which is representable for every subgroup. The main idea is to divide the population into homogeneous subgroups and choose an equal number of samples from each subgroup using the simple random sampling methods. The stratified sampling method is suitable for survey subjects with a large population and large internal differences. Compared with simple random sampling and systematic sampling, when the sample size is the same, its sampling error is smaller; when the sampling error requirements are the same, it requires a smaller sample size.  
-
-**Disadvantages**: you must have a good understanding of the overall situation of the population, otherwise it is impossible to make a good classification of subgroups. This is often difficult to achieve before actual investigations of the population.
- 
-### Cluster
-
-![Cluster sampling](./cluster.png)  
-*Clusters 1, 4, 5 are chosen*  
-
-Cluster sampling refers to a sampling method that selects all samples from a certain number of clusters. For example, when inspecting the quality of a certain electrical part, instead of inspecting the electrical parts one by one, a number of boxes (each box contains several electrical parts) are randomly selected to conduct a comprehensive inspection of each box. Note that clusters share some characteristics. The selection of the clusters can be done by either simple random sampling or systematic sampling.
- 
-The application of the cluster sampling method is different from the stratified sampling method.
-The stratified sampling method is suitable when a certain population contains several subgroups (or categories, levels) and subgroups have substantial differences from each other but exhibit small differences within the group. Conversely, go for cluster sampling when the difference between subgroups is not significant, and there is large variation within subgroups.
- 
-**Disadvantages**: due to the large differences between different groups, the sampling error caused by this is often greater than simple random sampling. Additionally, the sample is not widely distributed, and the representativeness of the sample to the population is relatively poor.  
+**Disadvantages**: Sample is greatly affected by the tendency of the researcher. If the subjective judgment is biased, it is easy to cause sampling bias. In addition, samples are not suitable to infer the overall population.  
 
 
-## Online sampling tool
-[The essycode website](https://www.essycode.com/distribution-viewer/) have created a really useful tool that allows users to see probability mass/density functions and cumulative distribution functions for a range of probability distributions. You can also enter different parameters and functions will be altered accordingly.  
- 
-We also recommend you to use the **Sample** button at the top right corner of that website and try to generate samples in 10, 100, 1000, 10,000, and 100,000 to see the difference in the generated graphs. You will find that as the sample size increases, the sampling distribution generated at the bottom will approximate the theoretical distribution at the top. Samples are always discrete distributions but can approximate continuous distributions if the sample size is large enough.  
+Here are two thought scenarioes we want you to take: 
 
+<Accordion allowZeroExpanded="true">
+  <AccordionItem>
+    <AccordionItemHeading>
+      <AccordionItemButton>
+        Scenario 1 - Compare men and women in various courses at the University
+      </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      <b>Q:</b> You want to compare men and women in various courses at the University but you also want to know average heights in each subject. So you decided to recruit equal numbers of men and women from each course. What problem does this have when providing the estimates?
+      <br/><br/>Hint: how many women are there normally on a physics degree?
+      <br/><br/>It is particularly useful to think about who is excluded from a sampling technique. For instance, weekday park users might be very different from weekend park users.
+    </AccordionItemPanel>
+  </AccordionItem>
+  
+  <AccordionItem>
+    <AccordionItemHeading>
+      <AccordionItemButton>
+        Scenario 2 - Use Weibo to recruit overseas students to answer a survey
+      </AccordionItemButton>
+    </AccordionItemHeading>
+    <AccordionItemPanel>
+      <b>Q:</b> A Chinese student uses Weibo (a social media platform similar to Twitter) to recruit overseas students at Sheffield to answer a survey about International Students at Sheffield experience at the University. What problems would this make for sampling? 
+      <br/><br/>Hint: How many students from Nigeria or Poland would be on Weibo?
+    </AccordionItemPanel>
+  </AccordionItem>
+</Accordion>
+
+
+
+### Online sampling tools
+Tool No.1. [This tool](https://onlinestatbook.com/stat_sim/sampling_dist/) provided by **OnlineStatBook.com** allows you to simulate sampling distributions. In the example shown below, the first graph is a customisable population distribution and in this case we have used mouse to created a very different distribution (pathological distribution). You can press the *Animated* button and it will draw a sample of size 5 by default. You can alter this using the third set of boxes down and select from 2, 5, 10, 16, 20 and 25. 
+
+![Simulate sampling distributions](./example.png)
+
+In the example shown above we drawn 10,000 samples of size 2 and size 25. You can see visually that when sample size is 2 the distribution cannot be identified or it is hard to say what distribution it has. When the sample size is 25 the sample mean distribution is slightly skewed, but you can tell it is following a Gaussian distribution. If the sample size is 100 then the mean will be following a Gaussian distribution and we'll see why (and the importance of Gaussian distribution) in <Link to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">Chapter 5 - The Central Limit Theorem</Link>. In this chapter you only need to know that sample means are approximately normally distributed if there is random sampling such that **all units in the population are equally likely to be chosen**. Why is this important? Imagine one of the few units at the right hand side of the graph have high probability of being selected, then this would make the sample mean be a lot higher than the population mean, which would make significant impact in most sampling techniques.   
+
+Tool No.2. [The essycode website](https://www.essycode.com/distribution-viewer/) have a really useful tool that allows users to see probability mass/density functions and cumulative distribution functions for a range of probability distributions. You can also enter different parameters and distributions will be changed accordingly.  
+ 
+We also recommend you to use the **Sample** button at the top right corner of that website and try to generate samples in 10, 100, 1000, 10,000, and 100,000 to see the difference in the generated graphs. You will find that as the sample size increases, the sampling distribution generated at the bottom will approximate the theoretical distribution at the top. Samples are always discrete distributions but can approximate continuous distributions if the sample size is large enough. 
 
 
 
