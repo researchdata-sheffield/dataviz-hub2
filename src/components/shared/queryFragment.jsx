@@ -44,6 +44,7 @@ export const mdxEdge = graphql`fragment MdxEdge on MdxConnection {
             gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
           }
         }
+        d3
         date(formatString: "DD MMMM YYYY")
         author {
           name
