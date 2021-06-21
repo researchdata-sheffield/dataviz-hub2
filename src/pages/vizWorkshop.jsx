@@ -142,7 +142,7 @@ const VizWorkshop = () => {
           style={{backgroundImage: `linear-gradient(45deg, rgba(100,100,100,.7) 5%, rgba(30,30,60,.85) 96%), url(${Bg})`, maxWidth: '650px', maxHeight: '650px', height: '60vh', width: '60vh', borderRadius: '20px', backgroundSize: 'cover'}}
           className="p-5 relative"
         >
-          <h1 className="text-5xl font-extrabold" style={{color: 'transparent', background: 'linear-gradient(315deg, rgba(47,255,43,1) 4%, rgba(0,160,255,1) 96%)', backgroundClip: 'text'}}>University of Sheffield researchers to help bring Green Industrial Revolution</h1>
+          <h1 className="text-5xl font-extrabold" style={{color: 'transparent', background: 'linear-gradient(315deg, rgba(47,255,43,1) 4%, rgba(0,160,255,1) 96%)', backgroundClip: 'text', WebkitBackgroundClip: 'text'}}>University of Sheffield researchers to help bring Green Industrial Revolution</h1>
           <div className="mt-20 w-full flex space-x-8">
             <div className="text-right">
               <h1 className="text-6xl font-bold text-white">£20m</h1>

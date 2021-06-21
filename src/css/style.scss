@@ -172,7 +172,7 @@ Home Search bar & animation
 /* Past event effect 
 *
 */
-.pastEvent {
+.themeColourBorder {
   border: 2px solid #251d5a;
   //border-right: solid 6px #251d5a;
   border-width: 2px 3px 2px 3px;
@@ -183,6 +183,18 @@ Home Search bar & animation
     border-image-source: linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%);
     border-image-slice: 1;
     //background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);
+  }
+}
+
+
+.visualisationColourBorder {
+  border: .5px solid transparent;
+  border-radius: .675rem;
+  padding: 1px;
+  background: transparent border-box;
+
+  &:hover {
+    background: linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%) border-box;
   }
 }
 
