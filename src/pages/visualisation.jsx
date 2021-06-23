@@ -4,24 +4,42 @@ import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 //import { shortenText } from "../utils/shared"
 import { getImageSource } from "../utils/shared"
-//import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { VisItem } from "../components/style/styled"
+import Fade from 'react-reveal/Fade';
+
 
 const Visualisation = ({data: {allMdx} }) => {
-  console.log(allMdx)
+
   return(
     <>
       <SEO 
         title="Visualisation" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz"]} 
       />
-      <div className="min-h-100 flex flex-wrap justify-center py-32 bg-gray-900 px-5">
+      <div className="bg-gray-900 w-full py-36 text-center">
+        <h1 
+          className="w-full py-3 text-5xl font-extrabold" 
+          style={{
+            background: '-webkit-linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 40%, rgba(41,197,255,1) 65%)', 
+            WebkitBackgroundClip: 'text', 
+            WebkitTextFillColor: 'transparent',
+            MozBackgroundClip: 'text',
+            MozTextFillColor: 'transparent'
+          }}
+        >
+          Information @ The University of Sheffield
+        </h1> 
+        <h3 className="text-gray-500">Inspired by Beautiful News</h3>
+      </div>
+      <div className="min-h-100 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">
         <div 
-          className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
-          style={{gridAutoFlow: 'dense'}}
+          className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-0.5"
+          style={{gridAutoFlow: 'dense', gridTemplateRows: 'min-content'}}
         >
           {allMdx.edges.map(({ node }) => {
             //let description = shortenText(node.frontmatter.description, 20)
-            let imagesrc = getImageSource(node,true);
+            let imagesrc = getImageSource(node);
             let rowSpan = node.frontmatter.rowSpan ?? 1;
             let columnSpan = node.frontmatter.columnSpan ?? 1;
 
@@ -30,25 +48,28 @@ const Visualisation = ({data: {allMdx} }) => {
                 to={node.fields.slug} 
                 key={node.id} 
                 style={{gridRow: `span ${rowSpan}`, gridColumn: `span ${columnSpan}`}}
-                className="relative block rounded-xl visualisationColourBorder"
+                className="shadow-xl relative block rounded-xl visualisationColourBorder"
               >
-                <div className="h-full w-full relative md:pb-full">
-                  <div 
-                    className="rounded-xl md:absolute md:top-0 md:left-0"  
-                    style={{height: '100%', width: '100%', backgroundImage: 'linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%)', backgroundRepeat: 'no-repeat'}}
-                  >
-                    <img 
-                      style={{height: '100%', width: '100%', transition: '.2s ease-out'}} 
-                      className="rounded-xl" 
-                      src={imagesrc} 
-                      alt={"Visualisation: " + node.frontmatter.title} 
-                    />
-                  </div>
-                </div>
+                <Fade delay={1000}>
+                  <VisItem row={rowSpan} col={columnSpan}>
+                    <div 
+                      className="rounded-xl md:absolute md:top-0 md:left-0"  
+                      style={{height: '100%', width: '100%', backgroundImage: 'linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%)', backgroundRepeat: 'no-repeat'}}
+                    >
+                      <GatsbyImage 
+                        style={{height: '100%', width: '100%', objectFit: 'cover', objectPosition: 'center', transition: '.2s ease-out'}} 
+                        className="rounded-xl" 
+                        image={imagesrc} 
+                        alt={"Visualisation: " + node.frontmatter.title} 
+                      />
+                    </div>
+                  </VisItem>
+                </Fade>
               </Link>
             )
 
           })} 
+          
         </div>
       </div>
     </>

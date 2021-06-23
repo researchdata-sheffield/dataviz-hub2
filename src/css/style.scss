@@ -186,19 +186,6 @@ Home Search bar & animation
   }
 }
 
-
-.visualisationColourBorder {
-  border: .5px solid transparent;
-  border-radius: .675rem;
-  padding: 1px;
-  background: transparent border-box;
-
-  &:hover {
-    background: linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 50%, rgba(41,197,255,1) 82%) border-box;
-  }
-}
-
-
 /* Text effect
 *
 */
