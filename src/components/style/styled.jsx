@@ -6,6 +6,40 @@ import { Link as gatsby_Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { MdKeyboardArrowRight } from "react-icons/md"
 
+export const VisItem = styled.div`
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative;
+
+  ${props => {
+    if (props.row == 1 && props.col > 1) {
+      return `
+        padding-bottom: calc(100% / ${props.col});
+      `
+    }
+    if (props.col == 1 && props.row > 1) {
+      return `
+        padding-bottom: calc(${props.row} * 100%);
+      `
+    }
+    if (props.col != 1 && props.row != 1) {
+      return `
+        padding-bottom: calc(${props.row} / ${props.col} * 100%);
+      `
+    }
+
+    return `
+      padding-bottom: 100%;
+    `
+  }}
+
+  @media screen and (max-width: 768px) {
+    padding-bottom: inherit;
+  }
+`
+
+
 export const PostBox = styled.div`
   display: block;
   
@@ -205,32 +239,32 @@ export const ButtonWithArrow = (props) => {
     case 'GreyButton':
       return (
         <GreyButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </GreyButton>
       )
 
     case 'BlackWhiteButton':
       return (
         <BlackWhiteButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </BlackWhiteButton>
       )
     
     case 'AnimateButton':
       return (
         <AnimateButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </AnimateButton>
       )
 
     default:
       return (
         <BlackButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </BlackButton>
       )
   }
