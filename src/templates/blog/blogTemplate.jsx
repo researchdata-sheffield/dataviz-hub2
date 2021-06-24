@@ -1,4 +1,4 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import BlogLayout from "../../components/blog/blogLayout"
 import MenuCategory from "../../components/blog/menuCategory"
