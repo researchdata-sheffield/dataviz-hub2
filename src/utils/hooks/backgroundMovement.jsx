@@ -7,9 +7,9 @@ import { useState, useEffect } from 'react';
 * Make sure to add the style overflow: hidden to parent/element, and add the style transform: scale(1.1) to the element
 */
 export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFactor = 0.05) {
-  // Keep track of script status ("idle", "loading", "ready", "error")
   const [location, setLocation] = useState({ x: 0, y: 0 });
-
+  //const xLocation = useRef(0);
+  //const yLocation = useRef(0);
 
 
   function getTranslateValues(element) {
@@ -42,6 +42,8 @@ export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFa
 
         // update mouse location
         setLocation({ x: event.clientX, y:event.clientY });
+        // xLocation.current = event.clientX;
+        // yLocation.current = event.clientY;
         
         // move background according to difference
         let translateValues = getTranslateValues(background);
@@ -73,7 +75,6 @@ export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFa
           hoverElement.removeEventListener("mouseleave", () => {
             background.style.transition = "none";
           });
-          // hoverElement.removeEventListener("mouseenter", () => {});
         }
       };
     },
