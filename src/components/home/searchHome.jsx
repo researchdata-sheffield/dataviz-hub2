@@ -112,7 +112,6 @@ class Search_Home extends Component {
   }
 
   getSearchResults(query) {
-    // adicionar variável para língua
     var index = window.__FLEXSEARCH__.en.index
     var store = window.__FLEXSEARCH__.en.store
     if (!query || !index) {
@@ -128,9 +127,13 @@ class Search_Home extends Component {
       results = Array.from(new Set(results))
 
       // return the corresponding nodes in the store
-      var nodes = store
+      let nodes = store
         .filter(node => (results.includes(node.id) ? node : null))
         .map(node => node.node)
+
+      if (process.env.NODE_ENV === "production") {
+        return nodes.filter(item => item.isPublished !== false);
+      }
 
       return nodes
     }

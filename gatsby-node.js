@@ -102,7 +102,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
 
   // one query for each type of file: blog, docs, (insert any new types here)
-  const result = await graphql(`{
+  const queryResult = await graphql(`{
     docsQuery: allMdx(
       sort: {fields: [frontmatter___date], order: DESC}
       filter: {frontmatter: {type: {eq: "docs"}}}
@@ -175,8 +175,23 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     }
   }
   `)
-  if (result.errors) {
+  if (queryResult.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query.')
+  }
+
+  let result = queryResult;
+
+  /* in production, don't create unpublished pages
+  * Query result (result.data) contain one object for each subquery
+  * Example (blog): blogpost = result.data.blogQuery.edges. This is an array of blog post objects.
+  * To get the frontmatter of a blog post, use blogpost[index].node.frontmatter
+  */
+  if (process.env.NODE_ENV == "production") {
+    for (const [key] of Object.entries(result.data)) {
+      result.data[key].edges = result.data[key].edges.filter((obj) => {
+        return obj.node.frontmatter.isPublished !== false;
+      })
+    }
   }
 
 
@@ -186,16 +201,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   console.log("MESSAGE: Creating docs routes ...");
   let docsMdx = result.data.docsQuery.edges;
 
-  
-  // in production, don't create unpublished pages
-  if (process.env.GATSBY_ENV == "production") {
-    docsMdx = docsMdx.filter((docs) => {
-      return docs.node.frontmatter.isPublished !== false
-    });
-  }
-
   docsMdx.forEach(( {node}, index, arr ) => {
-
     // position of previous/next post
     const prevDoc = arr[index - 1]
     const nextDoc = arr[index + 1]
@@ -226,13 +232,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   console.log("MESSAGE: Creating blog post routes ...");
   console.log("----------------------------------------------------");
   const posts = result.data.blogQuery.edges
-  
-  // in production, don't create unpublished pages
-  if (process.env.GATSBY_ENV === "production") {
-    posts.filter((post) => {
-      return post.node.frontmatter.isPublished != false
-    });
-  }
 
   const POSTS_PER_PAGE = 12
   var numPages = posts.length

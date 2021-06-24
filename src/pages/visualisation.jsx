@@ -4,10 +4,9 @@ import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 //import { shortenText } from "../utils/shared"
 import { getImageSource } from "../utils/shared"
-//import { GatsbyImage } from "gatsby-plugin-image"
 import { VisItem } from "../components/style/styled"
 import Fade from 'react-reveal/Fade';
-
+import UniversityIcon from "../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
 
 const Visualisation = ({data: {allMdx} }) => {
   const allMDX = [];
@@ -16,6 +15,7 @@ const Visualisation = ({data: {allMdx} }) => {
 
   for(let i = 0; i < allMdx.edges.length; ++i){
     allMDX.push(allMdx.edges[i]);
+    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
     allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
     allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
     allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
@@ -51,7 +51,11 @@ const Visualisation = ({data: {allMdx} }) => {
     const hasNext = allMDX.length > currentMDXs.length;
     setHasNextPage(hasNext);
 
-    document.querySelector('#visualisation-invite').style.visibility = hasNext ? 'hidden' : 'visible';
+    if (!hasNext) {
+      const addMoreVisBox = document.querySelector('#visualisation-invite');
+      addMoreVisBox.style.visibility = 'visible';
+      addMoreVisBox.parentElement.appendChild(addMoreVisBox);
+    }
   },[currentMDXs])
 
 
@@ -94,7 +98,7 @@ const Visualisation = ({data: {allMdx} }) => {
       </div>
       <div className="min-h-100 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">
         <div 
-          className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-0.5"
+          className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
           style={{gridAutoFlow: 'dense', gridTemplateRows: 'min-content'}}
         >
           {currentMDXs.length > 0 && currentMDXs.map(({ node }) => {
@@ -107,13 +111,20 @@ const Visualisation = ({data: {allMdx} }) => {
                 to={node.fields.slug} 
                 key={node.id} 
                 style={{gridRow: `span ${rowSpan}`, gridColumn: `span ${columnSpan}`}}
-                className="shadow-xl relative block rounded-xl visualisationColourBorder"
+                className="shadow-xl rounded-xl visualisationColourBorder"
               >
+                {/* university logo on loading */}
+                <img 
+                  src={UniversityIcon} 
+                  style={{maxWidth: '100px', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}} 
+                  className="absolute"
+                  />
+                {/* visualisation */}
                 <Fade delay={1000}>
                   <VisItem row={rowSpan} col={columnSpan}>
                     <div 
                       className="rounded-xl md:absolute md:top-0 md:left-0"  
-                      style={{height: '100%', width: '100%', backgroundImage: 'linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%)', backgroundRepeat: 'no-repeat'}}
+                      style={{height: '100%', width: '100%', backgroundImage: `linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%)`, backgroundRepeat: 'no-repeat'}}
                     >
                       <img 
                         style={{height: '100%', width: '100%', objectFit: 'cover', objectPosition: 'center', transition: '.2s ease-out'}} 

@@ -6,10 +6,10 @@ $screen-2xl: 1441px;
 
 
 .visualisationColourBorder {
-  border: .5px solid transparent;
+  position: relative;
+  display: block;
   border-radius: .675rem;
-  padding: 1px;
-  background: transparent border-box;
+  background: linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%) border-box;
 
   &:hover {
     background: linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%) border-box;
