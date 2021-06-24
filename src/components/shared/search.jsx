@@ -24,7 +24,7 @@ class Search extends Component {
         var input = document.getElementById("pageSearch")
         this.setState({query: queryHome})
         input.setAttribute("value", queryHome)
-        this.searchFromHome(queryHome)
+        this.searchFunction(queryHome)
       }
     }, 100);
   }
@@ -34,23 +34,26 @@ class Search extends Component {
       // query length changed from 2 to 0
       if (this.state.results.length > 0 && this.state.query.length > 0) {
         const data = useStaticQuery(graphql`query postList {
-  allMdx(sort: {fields: [frontmatter___date], order: DESC}) {
-    edges {
-      node {
-        id
-        frontmatter {
-          date(formatString: "ddd, DD MMM YYYY")
-          thumbnail {
-            childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+          allMdx(
+            sort: {fields: [frontmatter___date], order: DESC},
+            filter: { frontmatter: {isPublished: {ne: false}}}
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  date(formatString: "ddd, DD MMM YYYY")
+                  thumbnail {
+                    childImageSharp {
+                      gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+                    }
+                  }
+                }
+              }
             }
           }
         }
-      }
-    }
-  }
-}
-`)
+        `)
 
         return (
           <div>
@@ -247,17 +250,11 @@ class Search extends Component {
   }
 
   search = (event) => {
-    const query = event.target.value
-    if (this.state.query.length > -1) {
-      const results = this.getSearchResults(query)
-      this.setState({ results: results, query: query })
-    } else {
-      this.setState({ results: [], query: query })
-    }
+    const query = event.target.value;
+    this.searchFunction(query);
   }
 
-  searchFromHome = (homeQuery) => {
-    const query = homeQuery
+  searchFunction = (query) => {
     if (this.state.query.length > -1) {
       const results = this.getSearchResults(query)
       this.setState({ results: results, query: query })

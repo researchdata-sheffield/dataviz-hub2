@@ -314,6 +314,19 @@ module.exports = {
               depth: 1 
             },
             store: true,
+          },
+          {
+            name: 'isPublished',
+            indexed: true,
+            resolver: 'frontmatter.isPublished',
+            attributes: {
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
+            },
+            store: true,
           }
         ],
       },
