@@ -5,7 +5,7 @@ import MenuCategory from "../../components/blog/menuCategory"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
 import Flip from 'react-reveal/Flip'
-import { GreyButton } from "../../components/style/styled"
+import { GreyButton } from "../../components/style/styleComponent"
 import Bg from "../../images/blog/colorful-world.jpg"
 import { backgroundMovement } from "../../utils/hooks/backgroundMovement"
 

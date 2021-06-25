@@ -1,23 +1,42 @@
 import { graphql, useStaticQuery } from "gatsby"
 import { getSrc } from "gatsby-plugin-image"
 import moment from "moment-timezone/builds/moment-timezone-with-data"
+import { useLocation } from "@gatsbyjs/reach-router"
+
 
 /**
- * Return shorten text with specified number of words
- * @param {String} text 
- * @param {Integer} numOfWords number of words to be retained 
- * @returns {String} new shorten text
+ * Calculate user local time based on their timezone
+ * @param {String} sheffieldTime date/time to be parsed
+ * @returns {Object} return timezone and time for the user
  */
-export function shortenText(text, numOfWords) {
-  let newText = text ? text.split(" ").splice(0, numOfWords) : ""
-  
-  if (newText.length < numOfWords) {
-    return newText.join(" ")
-  }
-  
-  return newText.join(" ").concat(" ...")
-}
+ export function calculateUserLocalTime(sheffieldTime, timezone = "") {
+  moment.suppressDeprecationWarnings = true;
 
+  // convert string to date 
+  if (typeof sheffieldTime == "string") {
+    sheffieldTime = moment.tz(sheffieldTime, "Europe/London"); 
+  }
+
+  // handle daylight saving time
+  if (sheffieldTime.isDST()) {
+    sheffieldTime.subtract(1, 'hours')
+  }
+
+  // get user's timezone and convert
+  let userTimeZone = timezone || Intl.DateTimeFormat().resolvedOptions().timeZone;
+  let userTime;
+
+  if (userTimeZone == "Europe/London") {
+    userTime = moment(sheffieldTime).format("ddd DD MMMM YYYY, hh:mm A");
+  } else {
+    userTime = moment.tz(sheffieldTime, userTimeZone).format("ddd DD MMMM YYYY, hh:mm A");
+  }
+
+  return {
+    time: userTime,
+    timezone: userTimeZone,
+  }
+}
 
 /**
  * Provide a random thumbnail if not provided
@@ -72,37 +91,40 @@ export function randomNumber() {
   return 0;
 }
 
-
 /**
- * Calculate user local time based on their timezone
- * @param {String} sheffieldTime date/time to be parsed
- * @returns {Object} return timezone and time for the user
+ * Generate share link, share message, and github link for MDX nodes
+ * @param {*} mdx 
  */
-export function calculateUserLocalTime(sheffieldTime, timezone = "") {
-  moment.suppressDeprecationWarnings = true;
+export function getShareLinks(mdx) {
+  const location = useLocation();
+  const folderName = mdx.fields.slugOrigin;
+  const type = mdx.frontmatter.type || "blog";
 
-  // convert string to date 
-  if (typeof sheffieldTime == "string") {
-    sheffieldTime = moment.tz(sheffieldTime, "Europe/London"); 
-  }
-
-  // handle daylight saving time
-  if (sheffieldTime.isDST()) {
-    sheffieldTime.subtract(1, 'hours')
-  }
-
-  // get user's timezone and convert
-  let userTimeZone = timezone || Intl.DateTimeFormat().resolvedOptions().timeZone;
-  let userTime;
-
-  if (userTimeZone == "Europe/London") {
-    userTime = moment(sheffieldTime).format("ddd DD MMMM YYYY, hh:mm A");
-  } else {
-    userTime = moment.tz(sheffieldTime, userTimeZone).format("ddd DD MMMM YYYY, hh:mm A");
-  }
+  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}/${folderName}index.mdx`;
+  const shareLink = `https://${location.host}${mdx.fields.slug}`;
+  const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`;
 
   return {
-    time: userTime,
-    timezone: userTimeZone,
+    githubLink: githubLink,
+    shareLink: shareLink,
+    shareMessage: shareMessage
   }
 }
+
+
+/**
+ * Return shorten text with specified number of words
+ * @param {String} text 
+ * @param {Integer} numOfWords number of words to be retained 
+ * @returns {String} new shorten text
+ */
+ export function shortenText(text, numOfWords) {
+  let newText = text ? text.split(" ").splice(0, numOfWords) : ""
+  
+  if (newText.length < numOfWords) {
+    return newText.join(" ")
+  }
+  
+  return newText.join(" ").concat(" ...")
+}
+

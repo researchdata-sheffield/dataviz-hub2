@@ -3,7 +3,7 @@ import { Link as gatsby_Link } from "gatsby"
 import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
-import { ButtonWithArrow } from "./styled"
+import { ArrowButton } from "./styleComponent"
 import ModalImage from "react-modal-image";
 import { FaTwitter } from "react-icons/fa"
 
@@ -27,9 +27,9 @@ export const LPItem = (props) => {
     >
       {props.children}
       <a href={props.href} rel="noopener noreferrer" target="_blank">
-        <ButtonWithArrow  className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
+        <ArrowButton  className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
           {props.video ? 'watch videos' : 'read more'}
-        </ButtonWithArrow>
+        </ArrowButton>
       </a>
     </a>
   )
@@ -191,7 +191,7 @@ export const P = styled.p`
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-  word-wrap: break-word; /* if you want to cut the compconste word */
+  word-wrap: break-word;
   white-space: normal;
   line-height: 2.0rem;
 `
