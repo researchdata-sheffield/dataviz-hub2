@@ -9,8 +9,6 @@ const VisWorkshop = () => {
   useEffect(() => {
     authentication();
 
-    return () => {
-    }
   }, [authenticated])
 
 

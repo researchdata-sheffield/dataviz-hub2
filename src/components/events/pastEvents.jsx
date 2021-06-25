@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from "prop-types"
-import { BlackWhiteButton } from "../style/styled"
+import { BlackWhiteButton } from "../style/styleComponent"
 import { shortenText, calculateUserLocalTime } from "../../utils/shared"
 
 const PastEvents = ({pastEvent}) => {

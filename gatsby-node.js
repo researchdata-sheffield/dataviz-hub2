@@ -101,79 +101,47 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docsTemplate = path.resolve(`./src/templates/docs/docsTemplate.jsx`);
   const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
 
+  const visTemplate = path.resolve(`./src/templates/visualisation/visTemplate.jsx`)
+
   // one query for each type of file: blog, docs, (insert any new types here)
-  const queryResult = await graphql(`{
-    docsQuery: allMdx(
-      sort: {fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {type: {eq: "docs"}}}
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            template
-            author {
-              name
-              avatar {
+  const queryResult = await graphql(`
+    query loadMdxQuery {
+      allMdx(
+        sort: {fields: [frontmatter___date], order: DESC}
+      ) {
+        edges {
+          node {
+            id
+            fields {
+              slug
+            }
+            frontmatter {
+              template
+              author {
+                name
+                avatar {
+                  childImageSharp {
+                    gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+                  }
+                }
+              }
+              title
+              date(formatString: "dddd Do MMMM YYYY")
+              category
+              tag
+              thumbnail {
                 childImageSharp {
                   gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
                 }
               }
+              d3
+              type
+              isPublished
             }
-            title
-            date(formatString: "dddd Do MMMM YYYY")
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-              }
-            }
-            d3
-            type
-            isPublished
           }
         }
       }
     }
-    blogQuery: allMdx(
-      sort: {fields: [frontmatter___date], order: DESC}
-      filter: {frontmatter: {type: {eq: null}}}
-    ) {
-      edges {
-        node {
-          id
-          fields {
-            slug
-          }
-          frontmatter {
-            template
-            author {
-              name
-              avatar {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-                }
-              }
-            }
-            title
-            date(formatString: "dddd Do MMMM YYYY")
-            category
-            tag
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-              }
-            }
-            d3
-            type
-            isPublished
-          }
-        }
-      }
-    }
-  }
   `)
   if (queryResult.errors) {
     reporter.panicOnBuild('🚨  ERROR: Loading "createPages" query.')
@@ -181,28 +149,55 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   let result = queryResult;
 
-  /* in production, don't create unpublished pages
-  * Query result (result.data) contain one object for each subquery
-  * Example (blog): blogpost = result.data.blogQuery.edges. This is an array of blog post objects.
-  * To get the frontmatter of a blog post, use blogpost[index].node.frontmatter
-  */
+  /** in production, don't create unpublished pages
+   * Query result (result.data) contain one object for each subquery
+   * Example (blog): blogpost = result.data.blogQuery.edges. This is an array of blog post objects.
+   * To get the frontmatter of a blog post, use blogpost[index].node.frontmatter
+   */
   if (process.env.NODE_ENV == "production") {
-    for (const [key] of Object.entries(result.data)) {
-      result.data[key].edges = result.data[key].edges.filter((obj) => {
-        return obj.node.frontmatter.isPublished !== false;
-      })
-    }
+    result.data.allMdx.edges = result.data.allMdx.edges.filter((obj) => {
+      return obj.node.frontmatter.isPublished !== false;
+    })
   }
+
+
+  /**
+   * VISUALISATION
+   */
+  console.log("MESSAGE: Creating visualisation routes ...");
+  let visMdx = result.data.allMdx.edges.filter((obj) => {
+    return obj.node.frontmatter.type === "visualisation"
+  });
+
+  visMdx.forEach(( {node}, index, arr ) => {
+    const prevVis = arr[index - 1]
+    const nextVis = arr[index + 1]
+
+    createPage({
+      path: node.fields.slug,
+      component: visTemplate,
+      context: { 
+        id: node.id,
+        slug: node.fields.slug,
+        prev: prevVis,
+        next: nextVis,
+      },
+    })
+  })
+
+  // TODO Tags page
+
 
 
   /**
    * DOCS
    */
   console.log("MESSAGE: Creating docs routes ...");
-  let docsMdx = result.data.docsQuery.edges;
+  let docsMdx = result.data.allMdx.edges.filter((obj) => {
+    return obj.node.frontmatter.type === "docs"
+  });
 
   docsMdx.forEach(( {node}, index, arr ) => {
-    // position of previous/next post
     const prevDoc = arr[index - 1]
     const nextDoc = arr[index + 1]
 
@@ -212,10 +207,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
-      // This component will wrap our MDX content
       component: docsTemplateFinal,
-      // You can use the values in this context in
-      // our page layout component
+      // You can use the values in this context in page layout component
       context: { 
         id: node.id,
         slug: node.fields.slug,
@@ -231,7 +224,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    */
   console.log("MESSAGE: Creating blog post routes ...");
   console.log("----------------------------------------------------");
-  const posts = result.data.blogQuery.edges
+  const posts = result.data.allMdx.edges.filter((obj) => {
+    return obj.node.frontmatter.type == null
+  })
 
   const POSTS_PER_PAGE = 12
   var numPages = posts.length
@@ -241,8 +236,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // exclude certain tags/categories
   const exclude = ["Learning Path", ]
 
+
   // Call `createPage` for each result/post
-  // index: current index of element
   posts.forEach(( {node}, index, arr ) => {
     var excluded = false;
 
@@ -260,16 +255,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     const prev = arr[index - 1]
     const next = arr[index + 1]
 
-    // Check what template the markdown file have chosen 
     const template = node.frontmatter.template === "custom" ? blogPostTemplateCustom : blogPostTemplate
 
     createPage({
-      // (or `node.frontmatter.slug`)
       path: node.fields.slug,
-      // This component will wrap our MDX content
       component: template,
-      // You can use the values in this context in
-      // our page layout component
       context: { 
         id: node.id,
         slug: node.fields.slug,
@@ -326,7 +316,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         currentPage: i + 1,
         numPages,
         categories: allCategories,
-        tags: allTags,
+        allTags: allTags,
         countTags
       },
     })
@@ -345,7 +335,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: {
           categories: allCategories,
           tag: tag,
-          tags: allTags,
+          allTags: allTags,
           limit: POSTS_PER_PAGE,
           skip: i * POSTS_PER_PAGE,
           currentPage: i + 1,
@@ -369,7 +359,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         context: {
           categories: allCategories,
           category: cat,
-          tags: allTags,
+          allTags: allTags,
           limit: POSTS_PER_PAGE,
           skip: i * POSTS_PER_PAGE,
           currentPage: i + 1,

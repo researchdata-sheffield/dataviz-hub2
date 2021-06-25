@@ -26,10 +26,12 @@ const RelatedPost = (props) => {
                   return node.fields.slug !== currentPost.fields.slug
                 });
 
+  
+
   // create new service for getting related posts
   const service = new RelatedPostServices(currentPost, data, type);
   const relatedPosts = service.getRelatedPosts();
-  
+
   return (
     <div className="max-w-screen-xl mx-auto">
       <Fade fraction={.3} duration={1500} delay={300}>
@@ -43,6 +45,14 @@ const RelatedPost = (props) => {
           let title = shortenText(node.frontmatter.title, 8);
           let description = shortenText(node.frontmatter.description, 34)
           const classes = "group-hover:hidden text-gray-100 font-bold transition duration-500"
+
+          if (type == "visualisation") {
+            return (
+              <div>
+                HEllo
+              </div>
+            )
+          }
 
           return (
             <Link className="w-10/12 md:w-1/3 lg:w-3/10 mx-3 xl:mx-5 my-6 lg:px-2" to={node.fields.slug} key={node.id}>
@@ -107,11 +117,11 @@ RelatedPost.propTypes = {
 class RelatedPostServices {
   constructor (currentPost, posts, type) {
     this.posts = posts;
-    this.maxPosts = 3;
+    this.maxPosts = (type == "visualisation") ? 5 : 3;
     this.title = currentPost.frontmatter.title;
     this.description = currentPost.frontmatter.description;
-    this.category = (type == 'blog') ? currentPost.frontmatter.category : null;
-    this.tags = (type == 'blog') ? currentPost.frontmatter.tag : null;
+    this.category = currentPost.frontmatter.category || null;
+    this.tags = currentPost.frontmatter.tag || null;
     this.mdxType = type;
   }
 

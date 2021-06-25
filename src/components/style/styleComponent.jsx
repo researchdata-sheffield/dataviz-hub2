@@ -232,7 +232,7 @@ export const AnimateButton = styled_twin.button`
 
 `
 
-export const ButtonWithArrow = (props) => {
+export const ArrowButton = (props) => {
   const arrowStyle = "inline-block transform group-hover:translate-x-1 transition duration-100"
 
   switch(props.type){
@@ -269,7 +269,7 @@ export const ButtonWithArrow = (props) => {
       )
   }
 }
-ButtonWithArrow.propTypes = {
+ArrowButton.propTypes = {
   children: PropTypes.any,
   type: PropTypes.any,
   props: PropTypes.any,

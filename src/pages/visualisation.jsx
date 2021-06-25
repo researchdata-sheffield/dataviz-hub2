@@ -4,7 +4,7 @@ import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
 //import { shortenText } from "../utils/shared"
 import { getImageSource } from "../utils/shared"
-import { VisItem } from "../components/style/styled"
+import { VisItem } from "../components/style/styleComponent"
 import Fade from 'react-reveal/Fade';
 import UniversityIcon from "../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
 

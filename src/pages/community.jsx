@@ -7,7 +7,7 @@ import google from "../images/community/google.png"
 import Fade from 'react-reveal/Fade'
 import { Link as Link_effect } from "../components/style/blogPostStyle"
 import bg from "../images/community/community.jpg"
-import { AnimateButton } from "../components/style/styled"
+import { AnimateButton } from "../components/style/styleComponent"
 
 const Community = () => {
 

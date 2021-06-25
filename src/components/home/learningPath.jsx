@@ -2,7 +2,7 @@ import React from 'react'
 import { Link, graphql, useStaticQuery } from "gatsby"
 import Fade from 'react-reveal/Fade'
 
-import { ButtonWithArrow } from "../style/styled"
+import { ArrowButton } from "../style/styleComponent"
 import { getImageSource, shortenText } from "../../utils/shared"
 import Slider from "react-slick";
 import Bg from "../../images/home/learningPath.jpg"
@@ -129,7 +129,7 @@ const LearningPath = () => {
                     <h1 className="font-bold mb-1 text-xl xl:text-2xl">{node.frontmatter.learningPathTitle}</h1>
                     <p className="text-base xl:text-lg">{description}</p>
                     <Link to={isPublished ? node.fields.slug : '#learning_path'} className={`${isPublished ? '' : 'cursor-not-allowed'}`}>
-                      <ButtonWithArrow className={moreBtn}>{isPublished ? node.frontmatter.learningPathBtn : 'Coming soon'}</ButtonWithArrow>
+                      <ArrowButton className={moreBtn}>{isPublished ? node.frontmatter.learningPathBtn : 'Coming soon'}</ArrowButton>
                     </Link>
                   </div>
                 </div>

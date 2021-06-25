@@ -8,7 +8,7 @@ import { useLocation } from "@gatsbyjs/reach-router"
 
 
 const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
-  const [filterTag, setfilterTag] = useState(pageContext.tags);
+  const [filterTag, setfilterTag] = useState(pageContext.allTags);
 
   var { href } = useLocation();
   if(!href) href = "";
@@ -18,7 +18,7 @@ const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
     if(tagMenu === false) handleTagMenu();
 
     let searchWord = e.target.value.toLowerCase();
-    let searchTagList = pageContext.tags.filter(function(tag) {
+    let searchTagList = pageContext.allTags.filter(function(tag) {
       return tag.toLowerCase().indexOf(searchWord) != -1; // returns true or false
     });
     setfilterTag(searchTagList);
