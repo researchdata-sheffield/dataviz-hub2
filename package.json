@@ -95,6 +95,7 @@
     "react-slick": "^0.28.1",
     "react-social-sharing": "^3.3.0",
     "react-spring": "^9.2.3",
+    "react-tabs": "^3.2.2",
     "react-tooltip": "^4.2.21",
     "reading-time": "^1.3.0",
     "remark-html-katex": "^3.0.0",

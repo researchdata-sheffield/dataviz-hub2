@@ -1,8 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby"
 import { getSrc } from "gatsby-plugin-image"
 import moment from "moment-timezone/builds/moment-timezone-with-data"
-import { useLocation } from "@gatsbyjs/reach-router"
-
 
 /**
  * Calculate user local time based on their timezone
@@ -96,12 +94,11 @@ export function randomNumber() {
  * @param {*} mdx 
  */
 export function getShareLinks(mdx) {
-  const location = useLocation();
   const folderName = mdx.fields.slugOrigin;
   const type = mdx.frontmatter.type || "blog";
 
-  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}/${folderName}index.mdx`;
-  const shareLink = `https://${location.host}${mdx.fields.slug}`;
+  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}${folderName}index.mdx`;
+  const shareLink = `https://dataviz.shef.ac.uk/${mdx.fields.slug}`;
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`;
 
   return {

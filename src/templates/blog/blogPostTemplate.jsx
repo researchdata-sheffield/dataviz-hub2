@@ -115,7 +115,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
             
             <div className="flex justify-center mt-12 items-center">
               {author.map((authors) => (
-                <GatsbyImage className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={authors.name} image={authors.avatar.childImageSharp.gatsbyImageData}  />
+                <GatsbyImage className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={authors.name} image={authors.avatar.childImageSharp.gatsbyImageData} alt={authors.name}  />
               ))}
               <div className="inline-block px-2 text-left font-semibold" style={{textShadow: "black 0px 0px 15px"}}>
                 <h1 className="text-sm xl:text-base">
