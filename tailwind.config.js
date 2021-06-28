@@ -253,6 +253,7 @@ module.exports = {
     transitionDuration: ['responsive', 'focus', 'group-hover', 'hover'],
     transitionProperty: ['responsive', 'focus', 'group-hover', 'hover'],
     transitionTimingFunction: ['responsive', 'hover', 'focus', 'group-hover'],
+    margin: ['first', 'last'],
     minHeight: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover', 'first', 'last', 'odd', 'even'],
     maxHeight: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover', 'first', 'last', 'odd', 'even'],
     greyScale: ['responsive', 'hover', 'focus', 'group-focus', 'group-hover'],

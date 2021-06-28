@@ -3,7 +3,9 @@ type: visualisation
 author: ["Yu Liang Weng"]
 title: "People turned to sweets, chocolate and salty snacks during the Covid-19 lockdowns in the UK and Australia"
 thumbnail: thumb.png
-description: A new study has found people turned to sweets, chocolate and salty snacks during the Covid-19 lockdowns in the UK and Australia. 
+category: ["Department of Psychology"]
+tag: ["COVID-19 lockdown", "Mental Health", "Food intake", "High energy density foods", "Craving control"]
+description: A new study led by the University of Sheffield suggests that treats, such as sweets, chocolate and salty treats, increased for some people during Covid-19 lockdowns. People with low control over their cravings were most at risk of increasing their snack intake during the lockdown. Researchers warn about weight and health related issues for at-risk adults due to the impact of lockdowns on our eating behaviours.
 date: "2021-06-24"
 template:
 featured: false
@@ -15,10 +17,27 @@ columnSpan: 1
 import MarimekkoPlot from "./marimekkoPlot"
 
 
-
 <div className="flex justify-center">
   <MarimekkoPlot />
 </div>
 
 
-<h1 className="text-white">{props.mdx.frontmatter.title}</h1>
+<VisPagination mdx={props.mdx} />
+
+<VisDetail mdx={props.mdx} />
+
+
+
+<Tabs className="text-white">
+  <TabList>
+    <Tab>Title 1</Tab>
+    <Tab>Title 2</Tab>
+  </TabList>
+
+  <TabPanel className="text-white">
+    <h2>Any content 1 Add </h2>
+  </TabPanel>
+  <TabPanel>
+    <h2>Any content 2 more content here </h2>
+  </TabPanel>
+</Tabs>

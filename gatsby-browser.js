@@ -9,6 +9,7 @@ import "tailwindcss/dist/base.css"
 import "gitalk/dist/gitalk.css"
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
+import 'react-tabs/style/react-tabs.scss';
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
 import "./src/css/index.css"
 import "./src/css/style.scss"

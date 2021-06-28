@@ -61,7 +61,7 @@ const visualisation = () => {
       
       <div className="mt-14 mx-auto h-full" style={{minHeight: '400px', maxHeight: '600px', maxWidth: '560px'}}>
         <h1 className="text-gray-300 text-center font-bold text-3xl">How do these costs break down?</h1>
-        <h3 className="text-gray-400 text-center -mb-24 md:-mb-10 text-lg">One square = £1 billion</h3>
+        <h3 className="text-gray-400 text-center -mb-10 md:-mb-5 text-lg">One square = £1 billion</h3>
         <ResponsiveWaffle
           data={COSTDATA}
           theme={THEME}

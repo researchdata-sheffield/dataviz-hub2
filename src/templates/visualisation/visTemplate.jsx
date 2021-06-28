@@ -15,15 +15,20 @@ import CommonMdxProvider from "../../components/shared/commonMdxProvider"
 // Utils
 import { useScript } from "../../utils/hooks/useScript"
 import {  getShareLinks } from "../../utils/shared"
-
-
+import VisPagination from "../../components/visualisation/visPagination"
+import VisDetail from "../../components/visualisation/visDetail"
+import { VisDiv } from "../../components/style/visStyle"
 
 
 const visTemplate = ({ data: { mdx }, pageContext }) => {
-  const { title, template } = mdx.frontmatter
-  const {prev, next} = pageContext
+  const components = { VisPagination, VisDetail, VisDiv };
 
   const shareLinks = getShareLinks(mdx);
+  const { title, template } = mdx.frontmatter;
+  const {prev, next} = pageContext;
+
+  mdx.shareLinks = shareLinks;
+  mdx.pageContext = pageContext;
 
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 || null;
@@ -47,12 +52,12 @@ const visTemplate = ({ data: { mdx }, pageContext }) => {
       {/* body */}
       {template === "custom" ? 
         <div className="justify-center mx-auto text-lg lg:text-xl">
-          <CommonMdxProvider mdx={mdx} />
+          <CommonMdxProvider mdx={mdx} components={components} />
         </div>
         :
         <div className="flex flex-wrap relative mx-auto bg-gray-900">
           <div className="relative mx-auto container py-32 px-5 text-lg xl:text-xl" style={{color: '#24292e', maxWidth: '1200px'}}>
-            <CommonMdxProvider mdx={mdx} className="text-gray-100" />
+            <CommonMdxProvider mdx={mdx} components={components} className="text-gray-100" />
           </div>
         </div>   
       }    

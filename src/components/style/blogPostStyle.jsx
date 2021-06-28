@@ -7,6 +7,11 @@ import { ArrowButton } from "./styleComponent"
 import ModalImage from "react-modal-image";
 import { FaTwitter } from "react-icons/fa"
 
+/**
+ * Wrap for Learning path items
+ * @param {*} props 
+ * @returns 
+ */
 export const LPWrap = (props) => {
   return (
     <div className="flex flex-wrap w-full justify-start my-8">
