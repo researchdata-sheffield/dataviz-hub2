@@ -97,11 +97,13 @@ export function getShareLinks(mdx) {
   const folderName = mdx.fields.slugOrigin;
   const type = mdx.frontmatter.type || "blog";
 
-  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}${folderName}index.mdx`;
+  const folderLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}${folderName}`
+  const githubLink = `${folderLink}index.mdx`;
   const shareLink = `https://dataviz.shef.ac.uk/${mdx.fields.slug}`;
   const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`;
 
   return {
+    folderLink: folderLink,
     githubLink: githubLink,
     shareLink: shareLink,
     shareMessage: shareMessage
