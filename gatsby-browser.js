@@ -7,10 +7,10 @@
 
 import "tailwindcss/dist/base.css"
 import "gitalk/dist/gitalk.css"
-import "slick-carousel/slick/slick.css"; 
-import "slick-carousel/slick/slick-theme.css";
-import 'react-tabs/style/react-tabs.scss';
+import "slick-carousel/slick/slick.css"
+import "slick-carousel/slick/slick-theme.css"
 import "prismjs/plugins/line-numbers/prism-line-numbers.css"
+
 import "./src/css/index.css"
 import "./src/css/style.scss"
 import "./src/css/post.scss"
@@ -20,7 +20,7 @@ import "./src/css/gitalk.scss"
 import "./src/css/accordion.scss"
 import "./src/css/d3js.scss"
 import "./src/css/prism-custom.scss"
-
+import './src/css/react-tabs.scss'
 
 
 /* 

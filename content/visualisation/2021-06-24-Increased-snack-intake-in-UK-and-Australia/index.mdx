@@ -14,8 +14,9 @@ rowSpan: 1
 columnSpan: 1
 ---
 
+import React from "react"
 import MarimekkoPlot from "./marimekkoPlot"
-
+import TabTest from "./tabsTest"
 
 <div className="flex justify-center">
   <MarimekkoPlot />
@@ -26,18 +27,6 @@ import MarimekkoPlot from "./marimekkoPlot"
 
 <VisDetail mdx={props.mdx} />
 
-
-
-<Tabs className="text-white">
-  <TabList>
-    <Tab>Title 1</Tab>
-    <Tab>Title 2</Tab>
-  </TabList>
-
-  <TabPanel className="text-white">
-    <h2>Any content 1 Add </h2>
-  </TabPanel>
-  <TabPanel>
-    <h2>Any content 2 more content here </h2>
-  </TabPanel>
-</Tabs>
+<VisDiv>
+  <Tab />
+</VisDiv>
