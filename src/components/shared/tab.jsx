@@ -3,29 +3,24 @@ import PropTypes from "prop-types"
 import sanitizeHtml from 'sanitize-html';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
-const tab = () => {
-  const sanitizeOptions = {
-    allowedAttributes: {
-      '*': [ 'className', 'style' ]
-    }
-  };
-  const data = [
-    {
-      "title": "Source",
-      "content": "<h1 className=\"text-white\">Source, this is source</h1>"
-    },
-    {
-      "title": "Code",
-      "content": "<p>THis is my code</p>"
-    },
-    {
-      "title": "Attribution",
-      "content": "<p>THis is my attribution</p>"
-    },
-  ] 
+const sanitizeOptions = {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img', 'Link' ]),
+  allowedAttributes: {
+    ...sanitizeHtml.defaults.allowedAttributes,
+    '*': [ 'className', 'style', 'class' ]
+
+  },
+  allowedClasses: {
+    ...sanitizeHtml.defaults.allowedClasses,
+    '*': [ '*' ]
+  } 
+};
+
+const tab = (props) => {
+  const data = props.data;
 
   return (
-    <Tabs>
+    <Tabs className={`mt-10 ${props.className}`} {...props}>
       <TabList>
         {data.map((item, idx) => {
           return (
@@ -36,7 +31,7 @@ const tab = () => {
 
       {data.map((item, idx) => {
         return (
-          <TabPanel key={idx + item.title + " content"} dangerouslySetInnerHTML={{ __html: sanitizeHtml(item.content, sanitizeOptions) }} />
+          <TabPanel key={idx + item.title + " content"} dangerouslySetInnerHTML={{ __html: item.content }} />
         )
       })}
     </Tabs>
