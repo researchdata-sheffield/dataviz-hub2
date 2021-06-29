@@ -83,7 +83,7 @@ const Visualisation = ({data: {allMdx} }) => {
       />
       <div className="bg-gray-900 w-full py-36 text-center">
         <h1 
-          className="w-full py-3 text-5xl font-extrabold" 
+          className="w-full py-3 text-6xl font-extrabold" 
           style={{
             background: '-webkit-linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 40%, rgba(41,197,255,1) 65%)', 
             WebkitBackgroundClip: 'text', 
@@ -92,9 +92,9 @@ const Visualisation = ({data: {allMdx} }) => {
             MozTextFillColor: 'transparent'
           }}
         >
-          Information @ The University of Sheffield
+          InfoVis
         </h1> 
-        <h3 className="text-gray-500">Inspired by Beautiful News</h3>
+        <h3 className="text-gray-500">The latest from the University of Sheffield.</h3>
       </div>
       <div className="min-h-100 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">
         <div 
