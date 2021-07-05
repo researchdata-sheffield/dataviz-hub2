@@ -5,15 +5,14 @@ title: "Which Politicians Receive Abuse During 2019 Election Campaign"
 thumbnail: thumb.png
 description: A shiny app built around the spreadsheets contain aggregate statistics for abusive language found in tweets to UK politicians in 2019.
 date: "2021-06-17"
-template:
-featured: false
-isPublished: false
+category: [Dataviz Team]
+tag: [Shiny]
 ---
 
 
 <VisDiv>
 
-![](./thumb.png)
+<img src="./thumb.png" alt="visualisation" style={{borderRadius: '20px'}} />
 
 </VisDiv>
 
@@ -21,3 +20,26 @@ isPublished: false
 <VisPagination mdx={props.mdx} />
 
 <VisDetail mdx={props.mdx} />
+
+export const data = [
+  {
+    "title": "Source",
+    "content": `This shiny app is hosted <a href="https://ylwshef.shinyapps.io/Which-Politicians-Receive-Abuse/">here</a>.`
+  },
+  {
+    "title": "Detail",
+    "content": `The shiny app is built based on the <a href="https://doi.org/10.15131/shef.data.12340994">dataset</a> made available by Gorrell, G., Bakir, M., Roberts, I., Greenwood, M., et al. (2020) on Online Research Data (the University of Sheffield's data repository).`
+  },
+  {
+    "title": "Code",
+    "content": `<a href="https://github.com/researchdata-sheffield/Which-Politicians-Receive-Abuse">GitHub repository</a> for the source code.`
+  },
+  {
+    "title": "License",
+    "content": `Data used in this repository is licensed under a Creative Commons Attribution 4.0 International License. All other content (excluding logos or where explicitly stated) are licensed under the MIT license.`
+  },
+]
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

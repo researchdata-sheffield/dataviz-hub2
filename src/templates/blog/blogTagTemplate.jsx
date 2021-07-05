@@ -58,7 +58,7 @@ blogTagTemplate.propTypes = {
 		data: PropTypes.any
 	}
 
-	export const query = graphql`
+export const query = graphql`
 	query blogTag($tag: String, $skip: Int!, $limit: Int!) {
 		allMdx(
 			sort: { fields: [frontmatter___date], order: DESC }

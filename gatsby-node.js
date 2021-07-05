@@ -92,6 +92,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   // De-structure the createPage function from the actions object
   const { createPage, createRedirect } = actions
 
+  // Load templates
   const blogPostTemplate = path.resolve(`./src/templates/blog/blogPostTemplate.jsx`)
   const blogPostTemplateCustom = path.resolve(`./src/templates/blog/blogPostTemplateCustom.jsx`)
   const blogTemplate = path.resolve(`./src/templates/blog/blogTemplate.jsx`)
@@ -102,6 +103,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
 
   const visTemplate = path.resolve(`./src/templates/visualisation/visTemplate.jsx`)
+  const visTagTemplate = path.resolve(`./src/templates/visualisation/visTagTemplate.jsx`)
+  const visCategoryTemplate = path.resolve(`./src/templates/visualisation/visCategoryTemplate.jsx`)
+
+  // Compare function
+  function compareItem(a, b) {
+    return a.toLowerCase().localeCompare(b.toLowerCase(), 'en', { sensitivity: 'base'})
+  }
 
   // one query for each type of file: blog, docs, (insert any new types here)
   const queryResult = await graphql(`
@@ -165,13 +173,24 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    * VISUALISATION
    */
   console.log("MESSAGE: Creating visualisation routes ...");
+  
   let visMdx = result.data.allMdx.edges.filter((obj) => {
     return obj.node.frontmatter.type === "visualisation"
   });
 
+  const visCategories = []
+  const visTags = []
+
   visMdx.forEach(( {node}, index, arr ) => {
     const prevVis = arr[index - 1]
     const nextVis = arr[index + 1]
+
+    node.frontmatter.category && node.frontmatter.category.forEach((cat) => {
+      visCategories.push(cat)
+    });
+    node.frontmatter.tag && node.frontmatter.tag.forEach((tag) => {
+      visTags.push(tag)
+    });
 
     createPage({
       path: node.fields.slug,
@@ -181,6 +200,52 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         slug: node.fields.slug,
         prev: prevVis,
         next: nextVis,
+      },
+    })
+  })
+
+  // Count number of visualisation in each cat/tag
+  const countVisCats = visCategories.reduce((prev, curr) => {
+    prev[curr] = (prev[curr] || 0) + 1
+    return prev
+  }, {})
+  const allVisCats = Object.keys(countVisCats).sort(compareItem)
+
+  const countVisTags = visTags.reduce((prev, curr) => {
+    prev[curr] = (prev[curr] || 0) + 1
+    return prev
+  }, {})
+  const allVisTags = Object.keys(countVisTags).sort(compareItem)
+
+  // create page for each tag
+  allVisTags.forEach((tag) => {
+    const link = `/visualisation/tag/${kebabCase(tag)}`
+    createPage({
+      path: link,
+      component: visTagTemplate,
+      context: {
+        allVisCategories: allVisCats,
+        tag: tag,
+        allVisTags: allVisTags,
+        countVisTags,
+        countVisCats
+      },
+    })
+  })
+
+  // create page for each category
+  allVisCats.forEach((cat) => {
+    const link = `/visualisation/category/${kebabCase(cat)}`
+
+    createPage({
+      path: link,
+      component: visCategoryTemplate,
+      context: {
+        allVisCategories: allVisCats,
+        category: cat,
+        allVisTags: allVisTags,
+        countVisTags,
+        countVisCats
       },
     })
   })
@@ -285,10 +350,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   numPages = Math.ceil(numPages / POSTS_PER_PAGE)
   //console.log("Number of total posts: " + numPages)
 
-  // Compare function
-  function compareItem(a, b) {
-    return a.toLowerCase().localeCompare(b.toLowerCase(), 'en', { sensitivity: 'base'})
-  }
 
   // Count number of posts in each cat/tag
   const countCategories = categories.reduce((prev, curr) => {

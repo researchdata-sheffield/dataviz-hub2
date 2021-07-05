@@ -56,8 +56,8 @@ const visTemplate = ({ data: { mdx }, pageContext }) => {
         </div>
         :
         <div className="flex flex-wrap relative mx-auto bg-gray-900">
-          <div className="relative mx-auto container py-32 px-5 text-lg xl:text-xl" style={{color: '#24292e', maxWidth: '1200px'}}>
-            <CommonMdxProvider mdx={mdx} components={components} className="text-gray-100" />
+          <div className="relative mx-auto container py-32 px-5 text-lg xl:text-xl text-gray-200" style={{maxWidth: '1200px'}}>
+            <CommonMdxProvider mdx={mdx} components={components} />
           </div>
         </div>   
       }    

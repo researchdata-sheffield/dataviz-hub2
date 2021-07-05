@@ -1,22 +1,47 @@
 ---
 type: visualisation
-author: ["Yu Liang Weng"]
+author: ["Dataviz Team"]
 title: "Covid plot"
 thumbnail: thumb.png
-description: Some descriptions
+description: Plots and analysis relating to the pandemic.
 date: "2021-06-22"
-template:
+category: ["School Of Health And Related Research"]
+tag: ["COVID-19"]
 featured: false
-isPublished: false
+rowSpan: 2
+columnSpan: 2
 ---
 
 
 <VisDiv>
 
-![](./thumb.png)
+<img src="./thumb.png" alt="visualisation" style={{borderRadius: '20px'}} />
 
 </VisDiv>
 
 <VisPagination mdx={props.mdx} />
 
 <VisDetail mdx={props.mdx} />
+
+export const data = [
+  {
+    "title": "Source",
+    "content": `Angus, Colin (2020): CoVid Plots and Analysis. The University of Sheffield. Dataset. https://doi.org/10.15131/shef.data.12328226. <a href="https://github.com/VictimOfMaths/COVID-19">GitHub repository</a>.`
+  },
+  {
+    "title": "Detail",
+    "content": `This visualisation brings together data on health deprivation and estimates of the potential COVID-19 mortality risk based on the age-sex structure of the population (following the approach developed by @ikashnitsky and @jm_aburto) at Lower Super Output Area level and plots bivariate maps highlighting areas with the greatest potential COVID-19 risk.`
+  },
+  {
+    "title": "Code",
+    "content": `This visualisation is created using R, you can find source code <a href="https://github.com/VictimOfMaths/COVID-19/tree/master/Exposure%20mapping">here</a>.`
+  },
+  {
+    "title": "License",
+    "content": `Anyone is free to use any of this code for any purpose (except for evil). Adapted from data from the Office for National Statistics licensed under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v.1.0</a>.`
+  },
+]
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>
