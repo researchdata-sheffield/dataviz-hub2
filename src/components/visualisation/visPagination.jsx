@@ -14,8 +14,8 @@ const visPagination = ({ mdx, className, style }) => {
   return (
     <div className={`${className} flex flex-wrap justify-between mt-5 mx-auto items-center`} style={{maxWidth: '550px', ...style}}>
       {/* Pagination & Share */}
-      <Link to={prev ? prev.node.fields.slug : ``}>
-        <button className={`${prev ? '' : 'cursor-not-allowed pointer-events-none bg-black'} ${buttonStyle}`}>
+      <Link to={prev ? prev.node.fields.slug : ``} className={`${prev ? '' : 'pointer-events-none'}`}>
+        <button className={`${prev ? '' : 'cursor-not-allowed text-gray-700'} ${buttonStyle}`}>
           <MdKeyboardArrowLeft className="inline-block font-bold" /> Prev
         </button>
       </Link>
@@ -28,9 +28,9 @@ const visPagination = ({ mdx, className, style }) => {
           <div className="py-1 px-2 bg-black hover:bg-brand-blue text-white flex justify-center rounded-md text-xl cursor-pointer"><RiEditBoxLine /></div>
         </a>
       </ShareButton> 
-      <Link to={next ? next.node.fields.slug : ``}>
-        <button className={`${next ? '' : 'cursor-not-allowed pointer-events-none bg-black'} ${buttonStyle}`}>
-          Next <MdKeyboardArrowRight className="inline-block font-bold" />
+      <Link to={next ? next.node.fields.slug : ``} className={`${next ? '' : 'pointer-events-none'}`}>
+        <button className={`${next ? '' : 'cursor-not-allowed text-gray-700'} ${buttonStyle}`}>
+          Next <MdKeyboardArrowRight className="inline-block font-bold" /> 
         </button>
       </Link>
     </div>

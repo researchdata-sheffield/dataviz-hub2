@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react"
 import SEO from "../components/shared/seo"
 import { graphql, Link } from "gatsby"
 import PropTypes from "prop-types"
-//import { shortenText } from "../utils/shared"
 import { getImageSource } from "../utils/shared"
 import { VisItem } from "../components/style/visStyle"
 import Fade from 'react-reveal/Fade';
@@ -85,7 +84,7 @@ const Visualisation = ({data: {allMdx} }) => {
         <h1 
           className="w-full py-3 text-6xl font-extrabold" 
           style={{
-            background: '-webkit-linear-gradient(225deg, rgba(255,121,180,1) 20%, rgba(255,134,250,1) 40%, rgba(41,197,255,1) 65%)', 
+            background: '-webkit-linear-gradient(225deg, rgba(255,121,180,1) 50.2%, rgba(255,134,250,1) 36%, rgba(41,197,255,1) 35%)', 
             WebkitBackgroundClip: 'text', 
             WebkitTextFillColor: 'transparent',
             MozBackgroundClip: 'text',
@@ -139,10 +138,7 @@ const Visualisation = ({data: {allMdx} }) => {
             )
 
           })} 
-          <div
-            id="visualisation-invite"
-            style={{gridRow: 'span 1', gridColumn: 'span 1', visibility: 'hidden'}}
-          >
+          <div id="visualisation-invite" style={{gridRow: 'span 1', gridColumn: 'span 1', visibility: 'hidden'}}>
             <Fade delay={1000}>
               <VisItem row={1} col={1}>
                 <div 
@@ -162,6 +158,9 @@ const Visualisation = ({data: {allMdx} }) => {
           </div>
         </div>
         <div ref={nextPageRef} style={{height: '100px', width: '100%'}}></div>
+      </div>
+      <div className="bg-gray-900 text-center text-gray-600 pb-5 text-sm">
+        This page is inspired by <a href="https://informationisbeautiful.net/beautifulnews" target="_blank" rel="noreferrer">Beautiful News</a>.
       </div>
     </>
   )
@@ -184,35 +183,12 @@ export const query = graphql`
         node {
           id
           frontmatter {
-            description
-            tag
-            thumbnail {
-              childImageSharp {
-                gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-              }
-            }
-            d3
-            date(formatString: "DD MMMM YYYY")
-            author {
-              name
-              avatar {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-                }
-              }
-            }
-            category
-            title
-            featured
-            type
+            ...MdxFrontmatter
             rowSpan
             columnSpan
           }
           fields {
-            slug
-            readingTime {
-              text
-            }
+            ...MdxFields
           }
         }
       }

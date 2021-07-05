@@ -168,6 +168,19 @@ blogPostTemplate.propTypes = {
 
 export const query = graphql`
   query BlogPostQuery($id: String) {
-    ...MdxNode
+    mdx(id: {eq: $id}) {
+      id
+      body
+      tableOfContents
+      fields {
+        ...MdxFields
+        slugOrigin
+      }
+      frontmatter {
+        ...MdxFrontmatter
+        disableTOC
+        d3
+      }
+    }
   }
 `

@@ -95,7 +95,17 @@ export const query = graphql`
 			limit: $limit
 			skip: $skip
 		) {
-			...MdxEdge
+			edges {
+				node {
+					id
+					frontmatter {
+						...MdxFrontmatter
+					}
+					fields {
+						...MdxFields
+					}
+				}
+			}
 		}
 	}
 `

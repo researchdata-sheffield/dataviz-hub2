@@ -26,6 +26,7 @@ const marimekkoPlot = () => {
 
 	return (
     <div 
+      id="current-vis"
       style={{backgroundColor: '#FAD961', backgroundImage: 'linear-gradient(315deg, #FAD961 0%, #ff6e00 100%)', maxWidth: '650px', maxHeight: '650px', height: '60vh', width: '60vh', borderRadius: '20px', backgroundSize: 'cover'}}
       className="p-5 relative"
     >

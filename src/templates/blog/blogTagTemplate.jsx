@@ -66,7 +66,17 @@ blogTagTemplate.propTypes = {
 			skip: $skip
 			filter: { frontmatter: { tag: { in: [$tag] }, isPublished: {ne: false} } }
 		) {
-			...MdxEdge
+			edges {
+				node {
+					id
+					frontmatter {
+						...MdxFrontmatter
+					}
+					fields {
+						...MdxFields
+					}
+				}
+			}
 		}
 	}
 `

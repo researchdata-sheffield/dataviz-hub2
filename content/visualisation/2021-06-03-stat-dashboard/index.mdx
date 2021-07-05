@@ -26,3 +26,25 @@ import Visualisation from "./visualisation"
 
 <VisDetail mdx={props.mdx} />
 
+export const data =[
+  {
+    "title": "Source",
+    "content": `The University of Sheffield - <a href="https://www.sheffield.ac.uk/news/workplace-conflict-costs-employers-nearly-ps30bn-year">Latest News</a>`
+  },
+  {
+    "title": "Code",
+    "content": `This visualisation is created using React and <a href="https://nivo.rocks/">nivo</a> package. <br/> <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-06-04-Workplace-Conflict/visualisation.jsx">Link</a> for the source code.`
+  },
+  {
+    "title": "Attribution",
+    "content": `Images used here such as the map and the brain icon were downloaded from <a href="https://uxwing.com/">uxwing.com</a>.`
+  },
+  {
+    "title": "License",
+    "content": `Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  }
+]
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

@@ -54,6 +54,19 @@ docsTemplateCustom.propTypes = {
 
 export const docsCustomQuery = graphql`
   query docsQuery_custom($id: String) {
-    ...MdxNode
+    mdx(id: {eq: $id}) {
+      id
+      body
+      tableOfContents
+      fields {
+        ...MdxFields
+        slugOrigin
+      }
+      frontmatter {
+        ...MdxFrontmatter
+        disableTOC
+        d3
+      }
+    }
   }
 `
