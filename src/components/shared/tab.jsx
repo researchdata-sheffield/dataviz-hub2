@@ -3,12 +3,14 @@ import PropTypes from "prop-types"
 import sanitizeHtml from 'sanitize-html';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
+
+
 const sanitizeOptions = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img', 'Link', 'code' ]),
   allowedAttributes: {
     ...sanitizeHtml.defaults.allowedAttributes,
-    '*': [ 'className', 'style', 'class' ]
-
+    '*': [ 'className', 'style', 'class' ],
+    'a': [ 'href', 'name', 'target', 'rel' ]
   },
   allowedClasses: {
     ...sanitizeHtml.defaults.allowedClasses,
