@@ -4,7 +4,7 @@ import sanitizeHtml from 'sanitize-html';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 const sanitizeOptions = {
-  allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img', 'Link' ]),
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img', 'Link', 'code' ]),
   allowedAttributes: {
     ...sanitizeHtml.defaults.allowedAttributes,
     '*': [ 'className', 'style', 'class' ]
@@ -20,7 +20,7 @@ const tab = (props) => {
   const data = props.data;
 
   return (
-    <Tabs className={`mt-10 ${props.className}`} {...props}>
+    <Tabs className={`mt-16 ${props.className}`} {...props}>
       <TabList>
         {data.map((item, idx) => {
           return (
@@ -43,5 +43,5 @@ export default tab
 
 tab.propTypes = {
   props: PropTypes.any,
-  data: PropTypes.object
+  data: PropTypes.array
 }

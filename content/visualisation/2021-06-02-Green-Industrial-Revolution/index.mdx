@@ -45,5 +45,24 @@ import Bg from "./nuclear-power-station.jpg"
 
 
 <VisPagination mdx={props.mdx} />
-
 <VisDetail mdx={props.mdx} />
+
+export const data =[
+  {
+    "title": "Source",
+    "content": `The University of Sheffield - <a href="https://www.sheffield.ac.uk/energy/news/university-sheffield-researchers-help-bring-green-industrial-revolution">Latest News</a>`
+  },
+  {
+    "title": "Code",
+    "content": `This visualisation is created using HTML and CSS. You can get the source code by right click the visualisation and select 'Inspect'. You will need to adjust CSS if hosted on a different website.`
+  },
+  {
+    "title": "License",
+    "content": `Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  }
+]
+
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

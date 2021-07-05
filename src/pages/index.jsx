@@ -182,16 +182,38 @@ export const query = graphql`
       allMdx(
         filter: {frontmatter: { featured: {eq: true}, isPublished: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
-        limit: 2 ) {
-      ...MdxEdge
+        limit: 2 
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              ...MdxFrontmatter
+            }
+            fields {
+              ...MdxFields
+            }
+          }
+        }
     }
 
     latestPost: 
       allMdx(
         filter: {frontmatter: { type: {eq: null}, isPublished: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
-        limit: 8 ) {
-      ...MdxEdge
+        limit: 8 
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              ...MdxFrontmatter
+            }
+            fields {
+              ...MdxFields
+            }
+          }
+        }
     }
     
     eventBrite: 

@@ -66,7 +66,17 @@ export const query = graphql`
 			skip: $skip
 			filter: { frontmatter: { category: { in: [$category] }, isPublished: {ne: false} } }
 		) {
-			...MdxEdge
+			edges {
+				node {
+					id
+					frontmatter {
+						...MdxFrontmatter
+					}
+					fields {
+						...MdxFields
+					}
+				}
+			}
 		}
 	}
 `
