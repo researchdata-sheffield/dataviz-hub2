@@ -8,6 +8,9 @@ const THEME = {
     text: {
       fontSize: 18
     }
+  },
+  tooltip: {
+    color: '#000'
   }
 };
 

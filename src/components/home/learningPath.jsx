@@ -104,7 +104,7 @@ const LearningPath = () => {
           {data.allMdx && data.allMdx.edges.map(({ node }, index, arr) => {
 
             let imagesrc = getImageSource(node, true);
-            let description = shortenText(node.frontmatter.description, 15);
+            let description = shortenText(node.frontmatter.description, 12);
             let learningPathDescription = shortenText(node.frontmatter.learningPathDescription, 10);
             let published = node.frontmatter.published !== false;
 
