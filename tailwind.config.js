@@ -3,8 +3,8 @@ module.exports = {
   important: '#website',  //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
   purge: {
     content: [
-      './src/**/*.jsx',
-      './content/**/**/*.mdx'
+      './src/**/**/*.{jsx, js}',
+      './content/**/**/*.{mdx, jsx, js}',
     ]
   },
   theme: {
