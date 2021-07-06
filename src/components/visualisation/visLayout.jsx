@@ -22,7 +22,7 @@ const visLayout = ({currentMDXs, nextPageRef, title}) => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz", title ?? '']} 
       />
       <div className="bg-gray-900 w-full py-36 text-center">
-        <Link to="/visualisation">
+
           <h1 
             className="w-full py-3 text-6xl font-extrabold" 
             style={{
@@ -33,9 +33,8 @@ const visLayout = ({currentMDXs, nextPageRef, title}) => {
               MozTextFillColor: 'transparent'
             }}
           >
-            InfoVis
+            <Link to="/visualisation">InfoVis</Link>
           </h1> 
-        </Link>
         <h3 className="text-gray-500">{pageSubtitle}</h3>
       </div>
       <div className="min-h-80 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">

@@ -61,10 +61,9 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
     </li>
   ); 
 
-
   return (
     <div className="relative" key={mdx.id}>
-      <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
+      <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "docs", title, ...mdx.frontmatter?.tag || [], ...mdx.frontmatter?.category || []]} />
       <Helmet >
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type = 'text/javascript' /> 
       </Helmet>

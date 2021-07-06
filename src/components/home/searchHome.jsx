@@ -132,7 +132,7 @@ class Search_Home extends Component {
         .map(node => node.node)
 
       if (process.env.NODE_ENV === "production") {
-        return nodes.filter(item => item.isPublished !== false);
+        return nodes.filter(item => item.published !== false);
       }
 
       return nodes

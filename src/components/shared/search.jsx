@@ -36,7 +36,7 @@ class Search extends Component {
         const data = useStaticQuery(graphql`query postList {
           allMdx(
             sort: {fields: [frontmatter___date], order: DESC},
-            filter: { frontmatter: {isPublished: {ne: false}}}
+            filter: { frontmatter: {published: {ne: false}}}
           ) {
             edges {
               node {

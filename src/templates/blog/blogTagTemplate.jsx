@@ -23,7 +23,7 @@ const blogTagTemplate = ({ data: {allMdx}, pageContext }) => {
 		<>
 			<SEO 
 				title= {`Blog - ${pageContext.tag}`}
-				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
+				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", pageContext.tag]} 
 			/>
 			<div 
 				className="flex flex-wrap content-center justify-center bg-gray-900 text-center shadow-2xl relative z-10 w-full"
@@ -64,7 +64,7 @@ export const query = graphql`
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
-			filter: { frontmatter: { tag: { in: [$tag] }, isPublished: {ne: false} } }
+			filter: { frontmatter: { tag: { in: [$tag] }, published: {ne: false} } }
 		) {
 			edges {
 				node {

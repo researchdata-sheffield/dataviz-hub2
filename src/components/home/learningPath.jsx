@@ -9,7 +9,7 @@ import Bg from "../../images/home/learningPath.jpg"
 
 /**
  * Display all learning paths where the index.mdx specified learningPath: true
- * Latest learning path will get a 'New' icon. If isPublished: false, then 'New' will be replaced by 'Coming soon'
+ * Latest learning path will get a 'New' icon. If published: false, then 'New' will be replaced by 'Coming soon'
  */
 const LearningPath = () => {
   const animationClasses = "transform transition duration-300 ease-in-out"
@@ -30,7 +30,7 @@ const LearningPath = () => {
             slug
           }
           frontmatter {
-            isPublished
+            published
             description
             learningPath
             learningPathBtn
@@ -106,7 +106,7 @@ const LearningPath = () => {
             let imagesrc = getImageSource(node, true);
             let description = shortenText(node.frontmatter.description, 15);
             let learningPathDescription = shortenText(node.frontmatter.learningPathDescription, 10);
-            let isPublished = node.frontmatter.isPublished !== false;
+            let published = node.frontmatter.published !== false;
 
             return (
               <div key={node.id} className="py-4">
@@ -118,7 +118,7 @@ const LearningPath = () => {
                 >
                   {arr.length - 1 === index && 
                     <span className="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg">
-                      {isPublished ? 'New' : 'Coming soon'}
+                      {published ? 'New' : 'Coming soon'}
                     </span>
                   }
                   <div className={frontCard}>
@@ -128,8 +128,8 @@ const LearningPath = () => {
                   <div className={backCard}>
                     <h1 className="font-bold mb-1 text-xl xl:text-2xl">{node.frontmatter.learningPathTitle}</h1>
                     <p className="text-base xl:text-lg">{description}</p>
-                    <Link to={isPublished ? node.fields.slug : '#learning_path'} className={`${isPublished ? '' : 'cursor-not-allowed'}`}>
-                      <ArrowButton className={moreBtn}>{isPublished ? node.frontmatter.learningPathBtn : 'Coming soon'}</ArrowButton>
+                    <Link to={published ? node.fields.slug : '#learning_path'} className={`${published ? '' : 'cursor-not-allowed'}`}>
+                      <ArrowButton className={moreBtn}>{published ? node.frontmatter.learningPathBtn : 'Coming soon'}</ArrowButton>
                     </Link>
                   </div>
                 </div>

@@ -67,7 +67,7 @@ export const query = graphql`
     }
 
     pastEventBlog: 
-    allMdx(limit: 5, filter: {frontmatter: {category: {in: "Events"}, isPublished: {ne: false}}}, sort: {order: DESC, fields: frontmatter___date}) {
+    allMdx(limit: 5, filter: {frontmatter: {category: {in: "Events"}, published: {ne: false}}}, sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           fields {

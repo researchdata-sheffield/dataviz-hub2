@@ -180,7 +180,7 @@ export const query = graphql`
   query {
     featuredItem: 
       allMdx(
-        filter: {frontmatter: { featured: {eq: true}, isPublished: {ne: false} }}, 
+        filter: {frontmatter: { featured: {eq: true}, published: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 2 
       ) {
@@ -199,7 +199,7 @@ export const query = graphql`
 
     latestPost: 
       allMdx(
-        filter: {frontmatter: { type: {eq: null}, isPublished: {ne: false} }}, 
+        filter: {frontmatter: { type: {eq: null}, published: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
         limit: 8 
       ) {

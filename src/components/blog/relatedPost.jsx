@@ -14,7 +14,7 @@ const RelatedPost = (props) => {
     query relatedPostList {
       allMdx(
         sort: {fields: [frontmatter___date], order: DESC},
-        filter: { frontmatter: { isPublished: {ne: false}}}
+        filter: { frontmatter: { published: {ne: false}}}
       ) {
         edges {
           node {

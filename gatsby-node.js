@@ -145,7 +145,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               }
               d3
               type
-              isPublished
+              published
             }
           }
         }
@@ -165,7 +165,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    */
   if (process.env.NODE_ENV == "production") {
     result.data.allMdx.edges = result.data.allMdx.edges.filter((obj) => {
-      return obj.node.frontmatter.isPublished !== false;
+      return obj.node.frontmatter.published !== false;
     })
   }
 

@@ -26,7 +26,7 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
     <>
       <SEO 
       title={mdx.frontmatter.title} 
-      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} 
+      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "docs", mdx.frontmatter.title, ...mdx.frontmatter?.tag || [], ...mdx.frontmatter?.category || []]} 
       />
       <Helmet>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type='text/javascript' /> 

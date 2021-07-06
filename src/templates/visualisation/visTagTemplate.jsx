@@ -27,7 +27,7 @@ export const query = graphql`
 			filter: { 
         frontmatter: { 
           tag: { in: [$tag] }, 
-          isPublished: {ne: false },
+          published: {ne: false },
           type: { eq: "visualisation" }
         } 
       }

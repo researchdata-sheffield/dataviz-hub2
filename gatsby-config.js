@@ -316,9 +316,9 @@ module.exports = {
             store: true,
           },
           {
-            name: 'isPublished',
+            name: 'published',
             indexed: true,
-            resolver: 'frontmatter.isPublished',
+            resolver: 'frontmatter.published',
             attributes: {
               tokenize: "full",
               encode: "extra",
@@ -354,7 +354,7 @@ module.exports = {
             {
               allMdx(
                 sort: { order: DESC, fields: [frontmatter___date] },
-                filter: { frontmatter: {isPublished: {ne: false}}}
+                filter: { frontmatter: {published: {ne: false}}}
               ) {
                 edges {
                   node {
