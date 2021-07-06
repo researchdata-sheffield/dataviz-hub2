@@ -103,6 +103,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   const docsTemplateCustom = path.resolve(`./src/templates/docs/docsTemplateCustom.jsx`)
 
   const visTemplate = path.resolve(`./src/templates/visualisation/visTemplate.jsx`)
+  const visItemTemplate = path.resolve(`./src/templates/visualisation/visItemTemplate.jsx`)
   const visTagTemplate = path.resolve(`./src/templates/visualisation/visTagTemplate.jsx`)
   const visCategoryTemplate = path.resolve(`./src/templates/visualisation/visCategoryTemplate.jsx`)
 
@@ -194,7 +195,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: node.fields.slug,
-      component: visTemplate,
+      component: visItemTemplate,
       context: { 
         id: node.id,
         slug: node.fields.slug,
@@ -224,8 +225,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: link,
       component: visTagTemplate,
       context: {
-        allVisCategories: allVisCats,
         tag: tag,
+        allVisCategories: allVisCats,
         allVisTags: allVisTags,
         countVisTags,
         countVisCats
@@ -241,8 +242,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: link,
       component: visCategoryTemplate,
       context: {
-        allVisCategories: allVisCats,
         category: cat,
+        allVisCategories: allVisCats,
         allVisTags: allVisTags,
         countVisTags,
         countVisCats
@@ -250,8 +251,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     })
   })
 
-  // TODO Tags page
-
+  createPage({
+    path: `/visualisation`,
+    component: visTemplate,
+    context: {
+      allVisCategories: allVisCats,
+      allVisTags: allVisTags,
+      countVisTags,
+      countVisCats
+    },
+  })
 
 
   /**

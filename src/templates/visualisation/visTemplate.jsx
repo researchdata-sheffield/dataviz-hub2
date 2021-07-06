@@ -1,95 +1,54 @@
-// BASE
-import React from "react"
-import { graphql, withPrefix } from "gatsby"
+import React, { useRef } from "react"
+import { graphql } from "gatsby"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { loadMoreVisualisation } from "../../utils/hooks/loadMoreVisualisation"
+import VisLayout from "../../components/visualisation/visLayout"
 
-import SEO from "../../components/shared/seo"
-import PostPagination from "../../components/blog/postPagination"
-import Comment from "../../components/blog/comment"
+const visTemplate = ({data: {allMdx} }) => {
+  const allMDX = [];
+  const nextPageRef = useRef();
 
-// MDX component
-import "katex/dist/katex.min.css"
-import CommonMdxProvider from "../../components/shared/commonMdxProvider"
+  for(let i = 0; i < allMdx.edges.length; ++i){
+    allMDX.push(allMdx.edges[i]);
+    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
+    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
+    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
+    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
+  }
 
-// Utils
-import { useScript } from "../../utils/hooks/useScript"
-import {  getShareLinks } from "../../utils/shared"
-import VisPagination from "../../components/visualisation/visPagination"
-import VisDetail from "../../components/visualisation/visDetail"
-import { VisDiv } from "../../components/style/visStyle"
+  const currentMDXs = loadMoreVisualisation(allMDX, nextPageRef);
 
-
-const visTemplate = ({ data: { mdx }, pageContext }) => {
-  const components = { VisPagination, VisDetail, VisDiv };
-
-  const shareLinks = getShareLinks(mdx);
-  const { title, template } = mdx.frontmatter;
-  const {prev, next} = pageContext;
-
-  mdx.shareLinks = shareLinks;
-  mdx.pageContext = pageContext;
-
-  // include d3 scripts
-  const d3 = mdx.frontmatter.d3 || null;
-
-  {d3 && d3.map((d) => {
-    if (d.includes("https://")) {
-      useScript(d, "", false);  // external script
-    } else {
-      useScript(withPrefix(`d3/${d}`), "", false);   
-    }
-  })}
-
-
-  return (
-    <div className="relative" key={mdx.id}>
-      <SEO title={title} keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} />
-      <Helmet >
-        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type = 'text/javascript' /> 
-      </Helmet>
-      
-      {/* body */}
-      {template === "custom" ? 
-        <div className="justify-center mx-auto text-lg lg:text-xl">
-          <CommonMdxProvider mdx={mdx} components={components} />
-        </div>
-        :
-        <div className="flex flex-wrap relative mx-auto bg-gray-900">
-          <div className="relative mx-auto container py-32 px-5 text-lg xl:text-xl text-gray-200" style={{maxWidth: '1200px'}}>
-            <CommonMdxProvider mdx={mdx} components={components} />
-          </div>
-        </div>   
-      }    
- 
-      <PostPagination mdx={mdx} prev={prev} next={next} shareLinks={shareLinks} displayPagination={false} displayTags={false} displayShareButtons={false} />
-      <Comment mdx={mdx} />
-    </div>
-  );
+  return(
+    <VisLayout currentMDXs={currentMDXs} nextPageRef={nextPageRef} />
+  )
 }
 
 export default visTemplate
 
 visTemplate.propTypes = {
   data: PropTypes.any,
-  pageContext: PropTypes.any,
 }
 
+
 export const query = graphql`
-  query visualisationItemQuery($id: String) {
-    mdx(id: {eq: $id}) {
-      id
-      body
-      tableOfContents
-      fields {
-        ...MdxFields
-        slugOrigin
+	query visualisationList {
+		allMdx(
+			filter: { frontmatter: { type: { eq: "visualisation" } } }
+			sort: { fields: [frontmatter___date], order: DESC }
+		) {
+      edges {
+        node {
+          id
+          frontmatter {
+            ...MdxFrontmatter
+            rowSpan
+            columnSpan
+          }
+          fields {
+            ...MdxFields
+          }
+        }
       }
-      frontmatter {
-        ...MdxFrontmatter
-        disableTOC
-        d3
-      }
-    }
-  }
+		}
+	}
 `
