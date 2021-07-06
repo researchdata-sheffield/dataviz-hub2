@@ -6,7 +6,6 @@ thumbnail: thumb.png
 description: A statistical model is a mathematical model used to describe the relationship between different variables. It contains a set of assumptions about the sample data and usually represent the data generation process in a idealised form.
 date: 2021-03-18
 template: "custom"
-published: false
 learningPath: true
 learningPathBtn: "Explore the path"
 learningPathTitle: "Statistical Modeling"
@@ -17,7 +16,7 @@ learningPathDescription: "Interested in statistics and inferences."
 <div className="py-24 flex justify-center items-center text-center w-full" style={{minHeight: '450px'}}>
   <div className="max-w-6xl mx-auto">
     <h1 className="font-extrabold text-5xl lg:text-6xl">Statistical Modeling</h1>
-    <p className="text-lg text-gray-700 mt-5">Dataviz.Shef Team</p>
+    <p className="text-lg text-gray-700 mt-5">Dataviz Team</p>
   </div>
 </div>
 
@@ -44,30 +43,32 @@ learningPathDescription: "Interested in statistics and inferences."
       </ul>
     </p> */}
     <div className="flex flex-wrap w-full space-x-3">
-      <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-1" className="inline-block py-2 px-3 bg-shefBlue hover:bg-blue-900 text-white cursor-pointer rounded-sm font-semibold transition duration-300">Begin with Part 1</Link>
+      <Link to="/docs/18/03/2021/LearningPath-Statistical-Modeling-1" style={{background: 'rgb(0, 102, 179)'}} className="inline-block py-2 px-3 hover:bg-blue-900 text-white cursor-pointer rounded-sm font-semibold transition duration-300">Begin with Part 1</Link>
       <a noEffect anchor href="#chapter" className="inline-block py-2 px-3 bg-shefYellow hover:bg-yellow-400 text-black cursor-pointer rounded-sm font-semibold transition duration-300">Browse chapters &#11167;</a>
     </div>
   </div>
 </div>
 
-<div id="chapter" className="mx-auto max-w-3xl px-3 md:px-0 flex flex-wrap text-base mt-16 space-y-3">
-  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/18/03/2021/LearningPath-Statistical-Modeling-1">
+export const classStyle = "w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500"
+
+<div id="chapter" className="mx-auto max-w-3xl px-3 md:px-0 flex flex-wrap text-base my-16 space-y-3">
+  <Link className={`${classStyle}`} to="/docs/18/03/2021/LearningPath-Statistical-Modeling-1">
     Part 1: Probability Distributions
   </Link>
-  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2">
+  <Link className={`${classStyle}`} to="/docs/18/03/2021/LearningPath-Statistical-Modeling-2">
     Part 2: Sampling
   </Link>
-  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="">
-    Part 3: Statistical Models
+  <Link className={`pointer-events-none bg-gray-200 ${classStyle}`} to="">
+    <span className="bg-shefPurple text-white px-2 py-1 text-sm rounded-md mr-2">coming soon</span> Part 3: Statistical Models 
   </Link>
-  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/07/04/2021/LearningPath-Statistical-Modeling-4">
-    Part 4: Statistical Testing
+  <Link className={`pointer-events-none bg-gray-200 ${classStyle}`} to="/docs/07/04/2021/LearningPath-Statistical-Modeling-4">
+    <span className="bg-shefPurple text-white px-2 py-1 text-sm rounded-md mr-2">preparing</span> Part 4: Statistical Testing 
   </Link>
-  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">
-    Part 5: Central Limit Theorem
+  <Link className={`pointer-events-none bg-gray-200 ${classStyle}`} to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">
+    <span className="bg-shefPurple text-white px-2 py-1 text-sm rounded-md mr-2">preparing</span> Part 5: Central Limit Theorem
   </Link>
-  <Link className="w-full rounded-md p-3 md:p-5 shadow-sm border-1 border-gray-100 bg-none hover:bg-shefBlue hover:text-white transition duration-500" to="/docs/14/04/2021/LearningPath-Statistical-Modeling-6">
-    Part 6: Models and Distributions
+  <Link className={`pointer-events-none bg-gray-200 ${classStyle}`} to="/docs/14/04/2021/LearningPath-Statistical-Modeling-6">
+    <span className="bg-shefPurple text-white px-2 py-1 text-sm rounded-md mr-2">preparing</span> Part 6: Models and Distributions
   </Link>
 </div>
 
