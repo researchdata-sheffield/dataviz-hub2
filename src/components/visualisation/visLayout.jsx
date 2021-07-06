@@ -10,6 +10,10 @@ import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
 
 const visLayout = ({currentMDXs, nextPageRef, title}) => {
   const pageTitle = title ? `| ${title}` : '';  
+  const pageSubtitle = 
+    title ? 
+      <p>Viewing items in <span className="text-gray-400 font-semibold">{title}</span>.</p> 
+    : <p>The latest from the University of Sheffield.</p>
 
   return(
     <>
@@ -18,21 +22,23 @@ const visLayout = ({currentMDXs, nextPageRef, title}) => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz", title ?? '']} 
       />
       <div className="bg-gray-900 w-full py-36 text-center">
-        <h1 
-          className="w-full py-3 text-6xl font-extrabold" 
-          style={{
-            background: '-webkit-linear-gradient(135deg, rgba(255,121,180,1) 50%, rgba(255,134,250,1) 36%, rgba(41,197,255,1) 35%)',
-            WebkitBackgroundClip: 'text', 
-            WebkitTextFillColor: 'transparent',
-            MozBackgroundClip: 'text',
-            MozTextFillColor: 'transparent'
-          }}
-        >
-          InfoVis
-        </h1> 
-        <h3 className="text-gray-500">{title ? `Viewing items from ${title}` : "The latest from the University of Sheffield."}</h3>
+        <Link to="/visualisation">
+          <h1 
+            className="w-full py-3 text-6xl font-extrabold" 
+            style={{
+              background: '-webkit-linear-gradient(135deg, rgba(255,121,180,1) 50%, rgba(255,134,250,1) 36%, rgba(41,197,255,1) 35%)',
+              WebkitBackgroundClip: 'text', 
+              WebkitTextFillColor: 'transparent',
+              MozBackgroundClip: 'text',
+              MozTextFillColor: 'transparent'
+            }}
+          >
+            InfoVis
+          </h1> 
+        </Link>
+        <h3 className="text-gray-500">{pageSubtitle}</h3>
       </div>
-      <div className="min-h-100 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">
+      <div className="min-h-80 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">
         <div 
           className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
           style={{gridAutoFlow: 'dense', gridTemplateRows: 'min-content'}}

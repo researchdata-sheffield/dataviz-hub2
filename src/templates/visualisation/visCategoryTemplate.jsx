@@ -6,10 +6,10 @@ import VisLayout from "../../components/visualisation/visLayout"
 
 const visCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
   const nextPageRef = useRef();
-  const currentMDXs = loadMoreVisualisation(allMdx, nextPageRef);
+  const currentMDXs = loadMoreVisualisation(allMdx.edges, nextPageRef);
 
   return(
-    <VisLayout currentMDXs={currentMDXs} nextPageRef={nextPageRef} pageContext={pageContext} />
+    <VisLayout currentMDXs={currentMDXs} nextPageRef={nextPageRef} pageContext={pageContext} title={pageContext.category} />
   )
 }
 
