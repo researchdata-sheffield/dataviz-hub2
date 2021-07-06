@@ -6,6 +6,8 @@ import { Link as gatsby_Link } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
 import { MdKeyboardArrowRight } from "react-icons/md"
 
+
+
 export const PostBox = styled.div`
   display: block;
   
@@ -198,44 +200,44 @@ export const AnimateButton = styled_twin.button`
 
 `
 
-export const ButtonWithArrow = (props) => {
+export const ArrowButton = (props) => {
   const arrowStyle = "inline-block transform group-hover:translate-x-1 transition duration-100"
 
   switch(props.type){
     case 'GreyButton':
       return (
         <GreyButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </GreyButton>
       )
 
     case 'BlackWhiteButton':
       return (
         <BlackWhiteButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </BlackWhiteButton>
       )
     
     case 'AnimateButton':
       return (
         <AnimateButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </AnimateButton>
       )
 
     default:
       return (
         <BlackButton {...props}>
-        {props.children}
-        <MdKeyboardArrowRight className={arrowStyle} />
+          {props.children}
+          <MdKeyboardArrowRight className={arrowStyle} />
         </BlackButton>
       )
   }
 }
-ButtonWithArrow.propTypes = {
+ArrowButton.propTypes = {
   children: PropTypes.any,
   type: PropTypes.any,
   props: PropTypes.any,

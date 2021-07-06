@@ -5,7 +5,7 @@ import Slide from 'react-reveal/Slide'
 
 import { MdKeyboardArrowRight, MdPeople } from "react-icons/md"
 import { RiCalendarEventLine, RiBookReadLine, RiMenuAddLine } from "react-icons/ri"
-import { ButtonWithArrow, BlackButton } from "../style/styled"
+import { ArrowButton, BlackButton } from "../style/styleComponent"
 import { GrGroup, GrContactInfo } from "react-icons/gr"
 
 const HomeCommunity = () => {
@@ -44,7 +44,7 @@ const HomeCommunity = () => {
               Discover a variety of events including talks and symposia, workshops, vis-coding clubs and data visualisation hackathons!
             </div>
             <Link to="/events">
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-red-500`} >Upcoming events</ButtonWithArrow>
+              <ArrowButton className={`${buttonClasses} group-hover:bg-red-500`} >Upcoming events</ArrowButton>
             </Link>
           </Slide>
         </div>
@@ -56,7 +56,7 @@ const HomeCommunity = () => {
             <div className={cardTextClasses}>
               Explore different training courses organised by the dedicated dataviz team to help you make the most of your data.
             </div>
-            <ButtonWithArrow className={`${buttonClasses} group-hover:bg-brand-blue`}  >Coming soon</ButtonWithArrow>
+            <ArrowButton className={`${buttonClasses} group-hover:bg-brand-blue`}  >Coming soon</ArrowButton>
           </Slide>
         </div>
       
@@ -66,7 +66,7 @@ const HomeCommunity = () => {
               <MdPeople className="text-3xl" />
               <p className="font-bold py-3">Support</p>
               <div className={cardTextClasses}>Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.</div>
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-green-500`}  href="#" onClick={() => setHelp(!getHelp)}>I want support</ButtonWithArrow>
+              <ArrowButton className={`${buttonClasses} group-hover:bg-green-500`}  href="#" onClick={() => setHelp(!getHelp)}>I want support</ArrowButton>
             </div>
           </Slide>
           {/* Support contact info */}
@@ -90,7 +90,7 @@ const HomeCommunity = () => {
                   ))}
                 </div>
               </div>
-              <ButtonWithArrow className={`${buttonClasses} bg-green-500 py-1 px-2`}  href="#" onClick={() => setHelp(!getHelp)}>Go back</ButtonWithArrow>
+              <ArrowButton className={`${buttonClasses} bg-green-500 py-1 px-2`}  href="#" onClick={() => setHelp(!getHelp)}>Go back</ArrowButton>
             </div>
           </Slide>
         </div>
@@ -105,7 +105,7 @@ const HomeCommunity = () => {
               </div>
             </div>
             <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/README.md" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow className={`${buttonClasses} group-hover:bg-pink-500`} >Our repository</ButtonWithArrow>
+              <ArrowButton className={`${buttonClasses} group-hover:bg-pink-500`} >Our repository</ArrowButton>
             </a>
           </Slide>
         </div>

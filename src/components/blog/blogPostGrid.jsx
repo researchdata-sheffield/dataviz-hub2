@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import { FaStar } from "react-icons/fa"
 import Slide from 'react-reveal/Slide'
-import { ArrowBox, IMG, IMG_DIV, } from "../style/styled"
+import { ArrowBox, IMG, IMG_DIV, } from "../style/styleComponent"
 import { getImageSource, shortenText } from "../../utils/shared"
 
 const blogPostGrid = ({allMdx}) => {

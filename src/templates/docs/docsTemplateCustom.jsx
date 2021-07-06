@@ -2,26 +2,18 @@ import React from "react"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
 import Helmet from "react-helmet"
-import { MDXProvider } from "@mdx-js/react"
-import { MDXRenderer } from "gatsby-plugin-mdx"
 import { graphql, withPrefix } from "gatsby"
-import { H1, H2, H3, H4, H5, H6, P, A, Ol, Li, Hr, Del, Pre, Ul, BlockQuote, Link, IMG, EM, Table, LPWrap, LPItem } from "../../components/style/blogPostStyle"
-import { Accordion, AccordionItem, AccordionItemHeading, AccordionItemButton, AccordionItemPanel } from 'react-accessible-accordion'
-import PaginationPost from "../../components/blog/paginationPost"
+import PostPagination from "../../components/blog/postPagination"
 import "katex/dist/katex.min.css"
 import Comment from "../../components/blog/comment"
 import { useScript } from "../../utils/hooks/useScript"
-import { useLocation } from "@gatsbyjs/reach-router"
+import { getShareLinks } from "../../utils/shared"
+import CommonMdxProvider from "../../components/shared/commonMdxProvider"
 
 
 const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
-  const location = useLocation();
-
   const {prev, next} = pageContext
-  const folderName = mdx.fields.slug.substring(mdx.fields.slug.lastIndexOf("/")+1,)
-  const githubLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${mdx.frontmatter.type}/${folderName}/index.mdx`
-  const shareLink = `https://${location.host}${mdx.fields.slug}`
-  const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
+  const shareLinks = getShareLinks(mdx);
   const d3 = mdx.frontmatter.d3 ? mdx.frontmatter.d3 : null;
   
   // include d3 scripts
@@ -34,26 +26,17 @@ const docsTemplateCustom = ({ data: { mdx }, pageContext }) => {
     <>
       <SEO 
       title={mdx.frontmatter.title} 
-      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "blog"]} 
+      keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "docs", mdx.frontmatter.title, ...mdx.frontmatter?.tag || [], ...mdx.frontmatter?.category || []]} 
       />
       <Helmet>
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" type='text/javascript' /> 
       </Helmet>
 
       <div className="justify-center mx-auto text-lg lg:text-xl">
-        <MDXProvider 
-          components={{ h1: H1, h2: H2, h3: H3, h4: H4, h5: H5, h6: H6, p: P, a: A, ol: Ol, li: Li, 
-                        hr: Hr, del: Del, pre: Pre, ul: Ul, blockquote: BlockQuote, Link: Link, em: EM,
-                        img: IMG, table: Table, LPWrap: LPWrap, LPItem: LPItem, Accordion: Accordion, 
-                        AccordionItem: AccordionItem, AccordionItemHeading: AccordionItemHeading, 
-                        AccordionItemButton: AccordionItemButton, AccordionItemPanel: AccordionItemPanel,
-                      }}
-        >
-          <MDXRenderer>{mdx.body}</MDXRenderer>
-        </MDXProvider>
+        <CommonMdxProvider mdx={mdx} />
       </div>
       
-      <PaginationPost mdx={mdx} type={mdx.frontmatter.type} prev={prev} next={next} share={[shareMessage, shareLink]} github={githubLink} />
+      <PostPagination mdx={mdx} prev={prev} next={next} shareLinks={shareLinks} displayTags={false} />
       <Comment mdx={mdx} />
     </>
   )
@@ -71,6 +54,19 @@ docsTemplateCustom.propTypes = {
 
 export const docsCustomQuery = graphql`
   query docsQuery_custom($id: String) {
-    ...MdxNode
+    mdx(id: {eq: $id}) {
+      id
+      body
+      tableOfContents
+      fields {
+        ...MdxFields
+        slugOrigin
+      }
+      frontmatter {
+        ...MdxFrontmatter
+        disableTOC
+        d3
+      }
+    }
   }
 `

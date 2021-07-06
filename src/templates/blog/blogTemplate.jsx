@@ -1,11 +1,11 @@
-import React, {useState} from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import BlogLayout from "../../components/blog/blogLayout"
 import MenuCategory from "../../components/blog/menuCategory"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
 import Flip from 'react-reveal/Flip'
-import { GreyButton } from "../../components/style/styled"
+import { GreyButton } from "../../components/style/styleComponent"
 import Bg from "../../images/blog/colorful-world.jpg"
 import { backgroundMovement } from "../../utils/hooks/backgroundMovement"
 
@@ -90,12 +90,22 @@ blogTemplate.propTypes = {
 export const query = graphql`
 	query blogList($skip: Int!, $limit: Int!) {
 		allMdx(
-			filter: { frontmatter: { type: { eq: null }, isPublished: {ne: false} } }
+			filter: { frontmatter: { type: { eq: null }, published: {ne: false} } }
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
 		) {
-			...MdxEdge
+			edges {
+				node {
+					id
+					frontmatter {
+						...MdxFrontmatter
+					}
+					fields {
+						...MdxFields
+					}
+				}
+			}
 		}
 	}
 `

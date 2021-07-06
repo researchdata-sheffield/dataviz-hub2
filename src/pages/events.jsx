@@ -9,7 +9,7 @@ import moment from "moment"
 import { calculateUserLocalTime } from "../utils/shared"
 
 const events = ({data: {eventBrite, pastEvent, pastEventBlog}}) => {
-  const UPDATE_TIME_MS = 60000;
+  const UPDATE_TIME_MS = 30000;
   const [currentDate, setDate] = useState(moment().format('ddd DD MMMM YYYY, hh:mm A'));
   let userTimezone = calculateUserLocalTime(currentDate).timezone;
 
@@ -67,7 +67,7 @@ export const query = graphql`
     }
 
     pastEventBlog: 
-    allMdx(limit: 5, filter: {frontmatter: {category: {in: "Events"}, isPublished: {ne: false}}}, sort: {order: DESC, fields: frontmatter___date}) {
+    allMdx(limit: 5, filter: {frontmatter: {category: {in: "Events"}, published: {ne: false}}}, sort: {order: DESC, fields: frontmatter___date}) {
       edges {
         node {
           fields {

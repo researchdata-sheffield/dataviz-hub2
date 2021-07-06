@@ -8,7 +8,7 @@ description: "(UPDATED on 21 Apr 2021) This article will guide you to setup a de
 date: "2020-03-22"
 template:
 featured: false
-isPublished: true
+published: true
 disableTOC: false
 d3: ["https://unpkg.com/topojson@3", "dataviz.js"]
 ---
@@ -276,9 +276,9 @@ The output will be:
 
   <AccordionItem>
     <AccordionItemHeading>
-        <AccordionItemButton>
-          Section 3
-        </AccordionItemButton>
+      <AccordionItemButton>
+        Section 3
+      </AccordionItemButton>
     </AccordionItemHeading>
     <AccordionItemPanel>
       <p>Write something about section 3</p>
@@ -341,10 +341,11 @@ in your post in two steps:
     d3: ["d3-filename.js", "more-file.js"]
     ```  
 
-    Items within squared brackets should be your file names, separate by comma if there is more than one files.
+    Items within squared brackets should be your file names, separate by comma if there are more than one files.
     If you want to inlcude external files (subject to approval), use the format "https://yourfile.address".
 
-<svg id="d3" className="lg:-ml-60 lg:min-w-80 lg:min-h-90"></svg>
+
+<svg id="d3" className="lg:-ml-60 lg:min-w-80" style={{minHeight: '600px', marginLeft: '-150px'}}></svg>
 <div className="tooltip"></div>
 
 

@@ -2,7 +2,7 @@ import React from 'react'
 import user_distribution from "../../images/home/userMap.png"
 import Pulse from "react-reveal/Pulse"
 import Fade from 'react-reveal/Fade'
-import { ButtonWithArrow } from "../style/styled"
+import { ArrowButton } from "../style/styleComponent"
 import Bg from "../../images/home/dataviz.jpg"
 
 const HomeShowcase = () => {
@@ -24,7 +24,7 @@ const HomeShowcase = () => {
               representations of data built by staff and students at the University of Sheffield.
             </div>
             <a className="mt-8" href="https://orda.shef.ac.uk/visualisations" target="_blank" rel="noopener noreferrer">
-              <ButtonWithArrow external type="AnimateButton" className="group">Browse Visualisations</ButtonWithArrow>
+              <ArrowButton external type="AnimateButton" className="group">Browse Visualisations</ArrowButton>
             </a>
             </Fade>
           </div>
@@ -43,9 +43,9 @@ const HomeShowcase = () => {
             research data in the long term, and enabled university research data to be preseved, discovered, and accessed. 
           </p>
           <a className="mt-12" href="https://orda.shef.ac.uk" target="_blank" rel="noopener noreferrer">
-            <ButtonWithArrow type="AnimateButton" className="group mt-0 text-lg" boxShadow="#00aeef">
+            <ArrowButton type="AnimateButton" className="group mt-0 text-lg" boxShadow="#00aeef">
               Learn more about ORDA
-            </ButtonWithArrow>
+            </ArrowButton>
           </a>
         </div>
         </Fade>

@@ -52,6 +52,14 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
+        name: `visualisation`,
+        path: `${__dirname}/content/visualisation`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
         name: 'data',
         path: `${__dirname}/src/data/`,
       },
@@ -306,6 +314,19 @@ module.exports = {
               depth: 1 
             },
             store: true,
+          },
+          {
+            name: 'published',
+            indexed: true,
+            resolver: 'frontmatter.published',
+            attributes: {
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
+            },
+            store: true,
           }
         ],
       },
@@ -333,7 +354,7 @@ module.exports = {
             {
               allMdx(
                 sort: { order: DESC, fields: [frontmatter___date] },
-                filter: { frontmatter: {isPublished: {ne: false}}}
+                filter: { frontmatter: {published: {ne: false}}}
               ) {
                 edges {
                   node {

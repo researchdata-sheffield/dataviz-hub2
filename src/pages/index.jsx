@@ -13,7 +13,7 @@ import Search_Home from "../components/home/searchHome"
 import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/COVIDDeathPropMSOA.png"
 import Bg from "../images/home/lineBackground.png"
-import { ButtonWithArrow, AnimateButton } from "../components/style/styled"
+import { ArrowButton, AnimateButton } from "../components/style/styleComponent"
 import { randomNumber } from "../utils/shared"
 import { backgroundMovement } from "../utils/hooks/backgroundMovement"
 
@@ -66,9 +66,9 @@ const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
             
             <Link to='#explore'>
               <Fade bottom delay={700}>
-                <ButtonWithArrow type="BlackWhiteButton" className="group py-2 px-4 text-sm 2xl:text-lg xl:py-3 xl:px-8 shadow-none bg-white text-gray-900 border-1 border-gray-500 hover:text-white hover:bg-gray-900">
+                <ArrowButton type="BlackWhiteButton" className="group py-2 px-4 text-sm 2xl:text-lg xl:py-3 xl:px-8 shadow-none bg-white text-gray-900 border-1 border-gray-500 hover:text-white hover:bg-gray-900">
                   What is data visualisation
-                </ButtonWithArrow>
+                </ArrowButton>
               </Fade>
             </Link>
             {/* <div className="flex text-xs text-gray-500 mt-12 xl:mt-28 2xl:mt-32 mb-1 mx-auto justify-center w-full">
@@ -143,7 +143,7 @@ const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
               </p>
             </div>
             <Link to="/docs/22/03/2020/datavizhub-guide">
-              <ButtonWithArrow type="AnimateButton" className="group">Read more about data visualisation</ButtonWithArrow>
+              <ArrowButton type="AnimateButton" className="group">Read more about data visualisation</ArrowButton>
             </Link> 
           </div>
         </Fade>
@@ -180,18 +180,40 @@ export const query = graphql`
   query {
     featuredItem: 
       allMdx(
-        filter: {frontmatter: { featured: {eq: true}, isPublished: {ne: false} }}, 
+        filter: {frontmatter: { featured: {eq: true}, published: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
-        limit: 2 ) {
-      ...MdxEdge
+        limit: 2 
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              ...MdxFrontmatter
+            }
+            fields {
+              ...MdxFields
+            }
+          }
+        }
     }
 
     latestPost: 
       allMdx(
-        filter: {frontmatter: { type: {eq: null}, isPublished: {ne: false} }}, 
+        filter: {frontmatter: { type: {eq: null}, published: {ne: false} }}, 
         sort: {order: DESC, fields: frontmatter___date}, 
-        limit: 8 ) {
-      ...MdxEdge
+        limit: 8 
+      ) {
+        edges {
+          node {
+            id
+            frontmatter {
+              ...MdxFrontmatter
+            }
+            fields {
+              ...MdxFields
+            }
+          }
+        }
     }
     
     eventBrite: 

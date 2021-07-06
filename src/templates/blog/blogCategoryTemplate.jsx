@@ -23,7 +23,7 @@ const blogCategoryTemplate = ({ data: {allMdx}, pageContext }) => {
 		<>
 			<SEO 
 				title= {`Blog - ${pageContext.category}`}
-				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research"]} 
+				keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", pageContext.category]} 
 			/>
 			<div 
 				className="flex flex-wrap content-center justify-center text-center shadow-2xl bg-gray-900 relative z-10 w-full"
@@ -64,9 +64,19 @@ export const query = graphql`
 			sort: { fields: [frontmatter___date], order: DESC }
 			limit: $limit
 			skip: $skip
-			filter: { frontmatter: { category: { in: [$category] }, isPublished: {ne: false} } }
+			filter: { frontmatter: { category: { in: [$category] }, published: {ne: false} } }
 		) {
-			...MdxEdge
+			edges {
+				node {
+					id
+					frontmatter {
+						...MdxFrontmatter
+					}
+					fields {
+						...MdxFields
+					}
+				}
+			}
 		}
 	}
 `

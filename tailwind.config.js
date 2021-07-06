@@ -67,6 +67,9 @@ module.exports = {
         'c1': '0px 12px 15px 0px #C8C4C1',
         'c2': '0px 12.3px 15.37px 0px #3A3631',
       },
+      fontFamily: {
+        'stephenson': ["TUOS Stephenson", "Georgia", "Times", "serif"]
+      },
       fontSize: {
         'xxs': '.65rem',
         'med': '.94rem'
@@ -123,6 +126,7 @@ module.exports = {
         'md': '768px',
         'lg': '1024px',
         'xl': '1280px',
+        '8xl': '88rem',
         '0': '0',
         '25': '25vw',
         '30': '30vw',
@@ -178,7 +182,11 @@ module.exports = {
         '74': '18.5rem',
         '78': '19.5rem',
         '82': '20.5rem',
-        '86': '21.5rem'
+        '86': '21.5rem',
+        'full': '100%',
+        'full2': '200%',
+        'full3': '300%',
+        'full4': '400%'
       },
       scale: {
         '170': '1.7',
