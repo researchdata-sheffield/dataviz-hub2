@@ -3,17 +3,27 @@ import PropTypes from "prop-types"
 import SEO from "../shared/seo"
 import { Link } from "gatsby"
 import { getImageSource } from "../../utils/shared"
-import { VisItem } from "../style/visStyle"
+import { VisItem} from "../style/visStyle"
 import Fade from 'react-reveal/Fade';
 import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
+import WordCloud from './wordCloud'
 
 
-const visLayout = ({currentMDXs, nextPageRef, title}) => {
+const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
   const pageTitle = title ? `| ${title}` : '';  
   const pageSubtitle = 
     title ? 
       <p>Viewing items in <span className="text-gray-400 font-semibold">{title}</span>.</p> 
     : <p>The latest from the University of Sheffield.</p>
+
+  
+  // allVisCatTag.sort(
+  //   (a,b) => b.count.toString().localeCompare(a.count.toString(), 'en', { numeric: true })
+  // )
+  const allVisCatTag = pageContext.allVisCatTag
+    .map((a) => ({sort: Math.random(), value: a}))
+    .sort((a, b) => a.sort - b.sort)
+    .map((a) => a.value);
 
   return(
     <>
@@ -21,22 +31,27 @@ const visLayout = ({currentMDXs, nextPageRef, title}) => {
         title={`Visualisation ${pageTitle}`} 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz", title ?? '']} 
       />
-      <div className="bg-gray-900 w-full py-36 text-center">
-
-          <h1 
-            className="w-full py-3 text-6xl font-extrabold" 
-            style={{
-              background: '-webkit-linear-gradient(135deg, rgba(255,121,180,1) 50%, rgba(255,134,250,1) 36%, rgba(41,197,255,1) 35%)',
-              WebkitBackgroundClip: 'text', 
-              WebkitTextFillColor: 'transparent',
-              MozBackgroundClip: 'text',
-              MozTextFillColor: 'transparent'
-            }}
-          >
-            <Link to="/visualisation">InfoVis</Link>
-          </h1> 
+      <div className="bg-gray-900 w-full pt-36 pb-20 text-center">
+        <h1 
+          className="w-full py-3 text-7xl font-extrabold" 
+          style={{
+            background: '-webkit-linear-gradient(135deg, rgba(255,121,180,1) 50%, rgba(255,134,250,1) 36%, rgba(41,197,255,1) 35%)',
+            WebkitBackgroundClip: 'text', 
+            WebkitTextFillColor: 'transparent',
+            MozBackgroundClip: 'text',
+            MozTextFillColor: 'transparent'
+          }}
+        >
+          <Link to="/visualisation">InfoVis</Link>
+        </h1> 
         <h3 className="text-gray-500">{pageSubtitle}</h3>
       </div>
+
+      <div className="bg-gray-900 flex justify-center pb-24">
+        {/* TODO popular tags move wordcloud to other menu */}
+        <WordCloud words={allVisCatTag} />
+      </div>
+
       <div className="min-h-80 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">
         <div 
           className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
@@ -102,7 +117,7 @@ const visLayout = ({currentMDXs, nextPageRef, title}) => {
         <div ref={nextPageRef} style={{height: '100px', width: '100%'}}></div>
       </div>
       <div className="bg-gray-900 text-center text-gray-600 pb-5 text-sm">
-        This page is inspired by <a href="https://informationisbeautiful.net/beautifulnews" target="_blank" rel="noreferrer">Beautiful News</a>.
+        This page is inspired by <a href="https://informationisbeautiful.net/beautifulnews" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-brand-blue">Beautiful News</a>.
       </div>
     </>
   )

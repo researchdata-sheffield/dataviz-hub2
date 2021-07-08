@@ -14,7 +14,7 @@ import Fade from 'react-reveal/Fade'
 import Covid from "../images/home/COVIDDeathPropMSOA.png"
 import Bg from "../images/home/lineBackground.png"
 import { ArrowButton, AnimateButton } from "../components/style/styleComponent"
-import { randomNumber } from "../utils/shared"
+import { randomInteger } from "../utils/shared"
 import { backgroundMovement } from "../utils/hooks/backgroundMovement"
 
 
@@ -30,7 +30,7 @@ const IndexPage = ({data: {featuredItem, latestPost, eventBrite}}) => {
       let dateDiff = dateNow - datePrev;
       if(dateDiff > 5000) {
         datePrev = moment()
-        let index = Math.floor(randomNumber() * words.length); 
+        let index = randomInteger(words.length); 
         input.setAttribute("placeholder", words[index]);
       }
     }, 5000);

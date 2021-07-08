@@ -18,7 +18,7 @@ import CommonMdxProvider from "../../components/shared/commonMdxProvider"
 // Utils
 import kebabCase from "lodash.kebabcase"
 import { useScript } from "../../utils/hooks/useScript"
-import { randomNumber, getShareLinks } from "../../utils/shared"
+import { getShareLinks } from "../../utils/shared"
 import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
 
 import Fade from "react-reveal/Fade"
@@ -84,10 +84,10 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
     var pattern = trianglify({
       width: dimensions.width, 
       height: dimensions.height,
-      cellSize: 60 + Math.ceil(randomNumber() * 100),
-      variance: randomNumber(),
-      strokeWidth: randomNumber() * 5,
-      seed: randomNumber().toString(5)
+      cellSize: 60 + Math.ceil(Math.random() * 100),
+      variance: Math.random(),
+      strokeWidth: Math.random() * 5,
+      seed: Math.random().toString(5)
     }).toCanvas();
 
     var img = pattern.toDataURL("image/png")
