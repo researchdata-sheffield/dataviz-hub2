@@ -79,7 +79,7 @@
     "minimist": "^1.2.5",
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.33",
-    "node-sass": "^5.0.0",
+    "node-sass": "^6.0.1",
     "postcss": "^8.3.4",
     "prismjs": "^1.23.0",
     "prop-types": "^15.7.2",
