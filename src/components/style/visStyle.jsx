@@ -113,14 +113,52 @@ export const WordCloud = styled.div`
 
   .word {
     white-space: nowrap;
+    border-radius: 5px;
     display: inline-block;
     line-height: 1;
     transition: .3s ease;
     font-family: TUoS Blake;
     vertical-align: middle;
+    padding: ${props => props.backgroundColour === true ? '8px 13px' : ''};
     
     &:hover {
       color: #00aeef !important;
+      background-color: ${props => props.backgroundColour === true ? '#000' : ''} !important;
     }
   }
+`
+
+const visHelperButton = styled.div`
+  position: fixed;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  border-radius: 35px;
+  z-index: 99;
+  text-align: center;
+  opacity: 0;
+  visibility: invisible;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;  
+  -o-transition: all 0.3s ease;  
+  transition: all 0.3s ease;
+  cursor: pointer;
+`
+
+export const VisTagMenuBtn = styled(visHelperButton)`
+  right: 140px;
+  background-image: linear-gradient(135deg, rgb(255, 121, 180) 15%, rgb(255, 134, 250) 36%, rgb(41, 197, 255) 85%);
+
+  &:hover {
+    /*     background: rgba(0, 0, 0, 0.9); */
+  background-image: linear-gradient(45deg, rgb(255, 121, 180) 15%, rgb(255, 134, 250) 36%, rgb(41, 197, 255) 85%);
+  }
+`
+
+export const VisFooterBtn = styled(visHelperButton)`
+  right: 80px;
+
 `

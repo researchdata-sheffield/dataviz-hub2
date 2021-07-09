@@ -1,16 +1,17 @@
 import { Link } from "gatsby"
 import React from "react"
+import PropTypes from "prop-types"
 import university_logo from "../../images/TUOSlogo.png"
 import { FaGoogle, FaSlack, FaRss } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 import { A_footer } from "../style/styleComponent"
 
-const Footer = React.memo(() => {
+const Footer = React.memo(({className}) => {
   const currentYear = new Date();
   const linkClasses = "text-gray-400 hover:text-brand-blue"
 
   return (
-    <footer className="bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm relative z-10">
+    <footer className={`${className || ''} bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-10`}>
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
@@ -85,3 +86,7 @@ const Footer = React.memo(() => {
 export default Footer
 
 Footer.displayName = "Footer"
+
+Footer.propTypes = {
+  className: PropTypes.any,
+}

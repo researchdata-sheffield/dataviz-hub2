@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from "prop-types"
 import SEO from "../shared/seo"
 import { Link } from "gatsby"
 import { getImageSource } from "../../utils/shared"
-import { VisItem} from "../style/visStyle"
+import { VisItem } from "../style/visStyle"
 import Fade from 'react-reveal/Fade';
 import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
 import WordCloud from './wordCloud'
+import VisTags from './visTags'
 
 
 const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
+  const [tagMenu, setTagMenu] = useState(false);
+  
+  function handleTagMenu() {
+		setTagMenu(!tagMenu);
+  }
+
   const pageTitle = title ? `| ${title}` : '';  
   const pageSubtitle = 
     title ? 
@@ -26,12 +33,15 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
     .map((a) => a.value);
 
   return(
-    <>
+    <div className="bg-gray-900">
       <SEO 
         title={`Visualisation ${pageTitle}`} 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz", title ?? '']} 
       />
-      <div className="bg-gray-900 w-full pt-36 pb-20 text-center">
+      
+      <VisTags handleTagMenu={handleTagMenu} tagMenu={tagMenu} tags={allVisCatTag} />
+
+      <div className="w-full pt-36 pb-20 text-center">
         <h1 
           className="w-full py-3 text-7xl font-extrabold" 
           style={{
@@ -47,12 +57,20 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
         <h3 className="text-gray-500">{pageSubtitle}</h3>
       </div>
 
-      <div className="bg-gray-900 flex justify-center pb-24">
+      <div className="flex flex-wrap justify-center group">
         {/* TODO popular tags move wordcloud to other menu */}
-        <WordCloud words={allVisCatTag} />
+        <div className="flex w-full h-full justify-center">
+          <WordCloud 
+            words={allVisCatTag} 
+            colours={["#ececec"]} 
+            backgroundColour={["#1f2937"]}  
+            padding="8px 13px"
+          />
+        </div>
+        <button className="text-gray-600 cursor-pointer text-center underline lg:invisible group-hover:visible transition duration-300 text-base">View all categories and tags</button>
       </div>
 
-      <div className="min-h-80 flex flex-wrap justify-center pt-12 pb-32 bg-gray-900 px-5">
+      <div className="min-h-80 flex flex-wrap justify-center pt-36 pb-32 bg-gray-900 px-5">
         <div 
           className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
           style={{gridAutoFlow: 'dense', gridTemplateRows: 'min-content'}}
@@ -116,10 +134,10 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
         </div>
         <div ref={nextPageRef} style={{height: '100px', width: '100%'}}></div>
       </div>
-      <div className="bg-gray-900 text-center text-gray-600 pb-5 text-sm">
+      <div className="text-center text-gray-600 pb-5 text-sm">
         This page is inspired by <a href="https://informationisbeautiful.net/beautifulnews" target="_blank" rel="noreferrer" className="text-gray-500 hover:text-brand-blue">Beautiful News</a>.
       </div>
-    </>
+    </div>
   )
 }
 
