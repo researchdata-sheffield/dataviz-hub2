@@ -106,6 +106,8 @@ export function getNumberWithinRange(num, min, max) {
 /**
  * Generate share link, share message, and github link for MDX nodes
  * @param {*} mdx 
+ * @returns {object}
+ * 
  */
 export function getShareLinks(mdx) {
   const folderName = mdx.fields.slugOrigin;
@@ -118,6 +120,7 @@ export function getShareLinks(mdx) {
 
   return {
     folderLink: folderLink,
+    masterFolderLink: folderLink.replace("dataviz-hub2/tree/development", "dataviz-hub2/tree/master"),
     githubLink: githubLink,
     shareLink: shareLink,
     shareMessage: shareMessage

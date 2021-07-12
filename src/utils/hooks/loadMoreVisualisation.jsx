@@ -20,8 +20,7 @@ export function loadMoreVisualisation(allMdx, nextPageRef, referenceId, pageLeng
   useEffect(() => {
     const options = {
       root: null,
-      rootMargin: "0px 0px 10px 0px",
-      threshold: 0.7,
+      rootMargin: "150px 0px 0px 0px"
     }
     const refObserver = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {

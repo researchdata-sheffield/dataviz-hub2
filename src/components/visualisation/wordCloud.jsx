@@ -1,47 +1,72 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import PropTypes from "prop-types"
 import { Link } from "gatsby"
 import { getNumberWithinRange, randomInteger } from "../../utils/shared"
 import { WordCloud } from "../style/visStyle"
 import kebabCase from "lodash.kebabcase"
 
-
-const wordCloud = React.memo(({ words, colours, width, height, radius, backgroundColour, padding }) => {
+/**
+ * Create word cloud
+ * @param {array} words 
+ * @param {string} width width of the word cloud
+ * @param {string} height height of the word cloud
+ * @param {string} radius radius of the word cloud circle
+ * @param {array} colours text colours
+ * @param {array} backgroundColour background colours for words
+ * @param {string} padding padding style for words 
+ * @param {string} menu which menu will the word cloud be created
+ * @param {string} order order of words - (default or random)
+ * @param {number} minFontSize 
+ * @param {number} maxFontSize
+ * @returns {React.Component} WordCloud component
+ */
+const wordCloud = React.memo(({ words, width, height, radius, colours, backgroundColour, padding, menu = "", order = "default", minFontSize = 0.9, maxFontSize = 2.3}) => {
+  const [wordsArr, setWords] = useState(words);
   const wordCloudColours = colours || ["#808080", "#ff5e5e", "#fedf00", "#0066b3", "#6d3db3", "#52ff9c", "#ade1f8", "#f0f0f0", "#fff", "#ff79b4", "#89f064", "#393939", "#08e8ff", "#00aeef"]
   const wordBackgroundColour = backgroundColour || [];
-
-  // ["#808080", "#ff5e5e", "#fedf00", "#0066b3", "#6d3db3", "#52ff9c", "#ade1f8", "#ff79b4", "#89f064", "#393939", "#08e8ff", "#00aeef"]
-  // ["#556272", "#4ecdc4", "#c8f463", "#ff6b6b", "#c54d57"];
-  // ["#3c6478", "#43ABC9", "#B5C689", "#EFD469", "#F58B4C", "#CD594A"]
-  // ["#6DD3CE", "#C8E9A0", "#F7A278", "#A13D63", "#351E29"]
   
   const FONT_UNIT = "rem";
-  const MAX_FONT_SIZE = 2.5;
-  const MIN_FONT_SIZE = 0.93;
+  const MAX_FONT_SIZE = maxFontSize;
+  const MIN_FONT_SIZE = minFontSize;
 
   // Extract unique tag count values, use it to calculate font-size factor
   const UNIQUE_COUNT = [...new Set(words.map(o => o.count))];
+  
   // (MAX_FONT_SIZE - MIN_FONT_SIZE) is the available size 'distance', divide it into sections
   const FONT_SIZE_FACTOR = (MAX_FONT_SIZE - MIN_FONT_SIZE) / (UNIQUE_COUNT.length - 1);
 
+  useEffect(() => {
+    setWords(words);
+
+    if (order == "random") {
+      setWords(
+        wordsArr && wordsArr.map((a) => ({sort: Math.random(), value: a}))
+        .sort((a, b) => a.sort - b.sort)
+        .map((a) => a.value)
+      );
+    }
+    
+    return () => {
+    };
+  }, [order, words]);
 
   return (
-    <WordCloud width={width} height={height} radius={radius} backgroundColour={wordBackgroundColour.length > 1 ? true : false}>
+    <WordCloud width={width} height={height} radius={radius} backgroundColour={wordBackgroundColour.length > 0 ? true : false}>
       <div className="word-cloud-wrap space-y-0 space-x-2 space-y-1">
-        {words && words.map((item) => {
+        {wordsArr && wordsArr.map((item) => {
           // depends on the item count, calculate the required font size
           let fontSize = getNumberWithinRange(MIN_FONT_SIZE + FONT_SIZE_FACTOR * (item.count - 1), MIN_FONT_SIZE, MAX_FONT_SIZE);
 
           // assign random colour
-          const colour = wordCloudColours[randomInteger(wordCloudColours.length)];
-          const bgColour = wordBackgroundColour[randomInteger(wordBackgroundColour.length)];
+          const colour = wordCloudColours[randomInteger(wordCloudColours.length)] || '';
+          const bgColour = wordBackgroundColour[randomInteger(wordBackgroundColour.length)] || '';
 
           return(
             <Link 
-              key={`${item.type} - ${item.name}`} 
+              key={`${item.name} | ${item.type}${menu ? ` | ${menu}` : ''}`} 
               className={`word ${item.type == "category" ? "font-semibold" : ""}`}
               to={`/visualisation/${item.type}/${kebabCase(item.name)}`}
-              style={{fontSize: `${fontSize}${FONT_UNIT}`, color: `${colour}`, backgroundColor: `${bgColour}`, padding: `${padding}`}}
+              style={{fontSize: `${fontSize}${FONT_UNIT}`, color: `${colour}`, backgroundColor: `${bgColour}`, padding: `${padding || ''}`}}
             >
               {item.name}
             </Link>
@@ -62,7 +87,11 @@ wordCloud.propTypes = {
   height: PropTypes.any,
   radius: PropTypes.any,
   backgroundColour: PropTypes.array,
-  padding: PropTypes.any
+  padding: PropTypes.any,
+  menu: PropTypes.string,
+  order: PropTypes.string,
+  minFontSize: PropTypes.number,
+  maxFontSize: PropTypes.number,
 }
 
 wordCloud.displayName = "WordCloud"

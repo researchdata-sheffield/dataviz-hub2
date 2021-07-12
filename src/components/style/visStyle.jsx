@@ -58,6 +58,11 @@ export const WordCloud = styled.div`
     width: 100%;
     height: 100%;
   }
+
+  @media (max-width: 1440px) {
+    width: ${props => props.width || '60%'};
+    height: ${props => props.height || '55%'};
+  }
   
   &::before{
     content: '';

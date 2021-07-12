@@ -23,14 +23,11 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
       <p>Viewing items in <span className="text-gray-400 font-semibold">{title}</span>.</p> 
     : <p>The latest from the University of Sheffield.</p>
 
-  
-  // allVisCatTag.sort(
-  //   (a,b) => b.count.toString().localeCompare(a.count.toString(), 'en', { numeric: true })
-  // )
-  const allVisCatTag = pageContext.allVisCatTag
-    .map((a) => ({sort: Math.random(), value: a}))
-    .sort((a, b) => a.sort - b.sort)
-    .map((a) => a.value);
+  // Show top N tags
+  const topVisCatTag = 
+    pageContext.allVisCatTag.sort(
+      (a,b) => b.count.toString().localeCompare(a.count.toString(), 'en', { numeric: true })
+    ).slice(0, 20)
 
   return(
     <div className="bg-gray-900">
@@ -39,9 +36,9 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz", title ?? '']} 
       />
       
-      <VisTags handleTagMenu={handleTagMenu} tagMenu={tagMenu} tags={allVisCatTag} />
+      <VisTags handleTagMenu={handleTagMenu} tagMenu={tagMenu} tags={pageContext.allVisCatTag} />
 
-      <div className="w-full pt-36 pb-20 text-center">
+      <div className="w-full pt-32 pb-20 text-center">
         <h1 
           className="w-full py-3 text-7xl font-extrabold" 
           style={{
@@ -58,16 +55,18 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
       </div>
 
       <div className="flex flex-wrap justify-center group">
-        {/* TODO popular tags move wordcloud to other menu */}
         <div className="flex w-full h-full justify-center">
           <WordCloud 
-            words={allVisCatTag} 
+            words={topVisCatTag} 
             colours={["#ececec"]} 
             backgroundColour={["#1f2937"]}  
             padding="8px 13px"
+            order="random"
           />
         </div>
-        <button className="text-gray-600 cursor-pointer text-center underline lg:invisible group-hover:visible transition duration-300 text-base">View all categories and tags</button>
+        <button onClick={() => handleTagMenu()} className="text-center mt-3 lg:opacity-0 group-hover:opacity-100 text-brand-blue bg-black rounded-md transition duration-300 text-md px-3 py-2">
+          Browse all tags
+        </button>
       </div>
 
       <div className="min-h-80 flex flex-wrap justify-center pt-36 pb-32 bg-gray-900 px-5">

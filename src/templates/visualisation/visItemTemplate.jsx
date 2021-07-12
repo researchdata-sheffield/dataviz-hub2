@@ -14,7 +14,7 @@ import CommonMdxProvider from "../../components/shared/commonMdxProvider"
 
 // Utils
 import { useScript } from "../../utils/hooks/useScript"
-import {  getShareLinks } from "../../utils/shared"
+import { getShareLinks } from "../../utils/shared"
 import VisPagination from "../../components/visualisation/visPagination"
 import VisDetail from "../../components/visualisation/visDetail"
 import { VisDiv } from "../../components/style/visStyle"
@@ -88,6 +88,9 @@ export const query = graphql`
         ...MdxFrontmatter
         disableTOC
         d3
+        embedImage {
+          relativePath
+        }
       }
     }
   }
