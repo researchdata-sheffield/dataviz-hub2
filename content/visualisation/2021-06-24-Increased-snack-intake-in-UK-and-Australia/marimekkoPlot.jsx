@@ -23,24 +23,47 @@ export const data = [
 ]
 
 /**
- * This component uses tailwindcss (https://tailwindcss.com/) framework for styling. 
+ * This component uses tailwindcss (https://tailwindcss.com/) framework for styling of some elements. 
  * Visit the website for reference of className.
  * E.g. className="p-5 relative" translates to "padding: 1.25rem; position: relative"
  */ 
 const marimekkoPlot = () => {
+  const plotTitle = {
+    color: 'white',
+    lineHeight: 1.25,
+    fontSize: '1.5rem',
+    fontWeight: 700
+  }
+
+  const visWrapper = {
+    width: '100%',
+    display: 'flex',
+    flexWrap: 'wrap',
+    position: 'relative',
+    zIndex: 10,
+    height: '350px'
+  }
+
+  const sourceInfo = {
+    position: 'absolute',
+    bottom: 0,
+    margin: '1.25rem',
+    fontSize: '0.75rem',
+    color: 'rgb(55, 65, 81)'
+  }
+
 
 	return (
     <div 
       id="current-vis"
-      style={{backgroundColor: '#FAD961', backgroundImage: 'linear-gradient(315deg, #FAD961 0%, #ff6e00 100%)', minHeight: '550px', height: '100%', maxWidth: '550px', borderRadius: '20px', backgroundSize: 'cover'}}
-      className="p-5 relative"
+      style={{backgroundColor: '#FAD961', backgroundImage: 'linear-gradient(315deg, #FAD961 0%, #ff6e00 100%)', minHeight: '550px', height: '100%', maxWidth: '550px', borderRadius: '20px', backgroundSize: 'cover', padding: '1.25rem', position: 'relative'}}
     >
-      <h1 className="text-2xl font-bold" style={{color: 'white', lineHeight: '1.25'}}>
+      <h1 style={plotTitle}>
         People turned to <span style={{background: 'linear-gradient(90deg, #7B3F00 31%, rgb(255, 37, 0) 100%)'}}>sweets, chocolate and salty snacks</span> during the Covid-19 lockdowns in the UK and Australia
       </h1>
-      <h3 className="text-white mt-2 text-sm">“Increased snack intake was associated with higher levels of perceived stress ...”</h3>
+      <h3 style={{color: 'white', marginTop: '0.5rem', fontSize: '0.875rem'}}>“Increased snack intake was associated with higher levels of perceived stress ...”</h3>
       
-      <div className="w-full flex flex-wrap relative z-10" style={{height: '350px'}}>
+      <div style={visWrapper}>
         <ResponsiveMarimekko
           data={data}
           id="country"
@@ -142,9 +165,9 @@ const marimekkoPlot = () => {
           ]}
         />
       </div>
-      <img src={Snack} alt="Snack" className="absolute bottom-0 right-0 m-6" style={{opacity: '0.07', maxWidth: '150px'}}  />
-      <h1 className="absolute bottom-0 left-0 m-5 text-gray-700 font-extrabold text-xs">Dataviz.Shef</h1>
-      <h1 className="absolute bottom-0 right-0 m-5 text-gray-700 text-xs">Source: The University of Sheffield - News</h1>
+      <img src={Snack} alt="Snack" style={{opacity: '0.07', maxWidth: '150px', position: 'absolute', bottom: 0, right: 0, margin: '1.5rem'}}  />
+      <h1 style={{fontWeight: 800, left: 0, ...sourceInfo}}>Dataviz.Shef</h1>
+      <h1 style={{right: 0, ...sourceInfo}}>Source: The University of Sheffield - News</h1>
     </div>
 	)
 }

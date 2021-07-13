@@ -35,6 +35,12 @@ const COSTDATA = [
   }
 ];
 
+
+/**
+ * This component uses tailwindcss (https://tailwindcss.com/) framework for styling of some elements. 
+ * Visit the website for reference of className.
+ * E.g. className="p-5 relative" translates to "padding: 1.25rem; position: relative"
+ */ 
 const visualisation = () => {
 
 	return (
