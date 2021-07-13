@@ -69,7 +69,7 @@ export function getImageSource(node, source = false) {
 
     let imageArray = Object.values(imageData)
     // choose a random image from the result
-    let imageToUse = imageArray[Math.floor(randomNumber() * imageArray.length)]
+    let imageToUse = imageArray[randomInteger(imageArray.length)]
     imagesrc = imageToUse.childImageSharp.gatsbyImageData;
   }
 
@@ -89,9 +89,25 @@ export function randomNumber() {
   return 0;
 }
 
+export function randomInteger(max) {
+  const MAX = max || 100;
+  
+  return Math.floor(Math.random() * MAX)
+}
+
+
+export function getNumberWithinRange(num, min, max) {
+  const MIN = min || 1;
+  const MAX = max || 5;
+  const NUM = parseFloat(num).toFixed(1);
+  return Math.min(Math.max(NUM, MIN), MAX);
+}
+
 /**
  * Generate share link, share message, and github link for MDX nodes
  * @param {*} mdx 
+ * @returns {object}
+ * 
  */
 export function getShareLinks(mdx) {
   const folderName = mdx.fields.slugOrigin;
@@ -104,6 +120,7 @@ export function getShareLinks(mdx) {
 
   return {
     folderLink: folderLink,
+    masterFolderLink: folderLink.replace("dataviz-hub2/tree/development", "dataviz-hub2/tree/master"),
     githubLink: githubLink,
     shareLink: shareLink,
     shareMessage: shareMessage

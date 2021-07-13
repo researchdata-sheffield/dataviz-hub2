@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 /**  
 * Move background on mouse movement
@@ -12,7 +12,7 @@ export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFa
   //const yLocation = useRef(0);
 
 
-  function getTranslateValues(element) {
+  const getTranslateValues = useCallback((element) => {
     const style = getComputedStyle(element);
     const matrix = style.transform || style.MozTransform;
 
@@ -30,7 +30,7 @@ export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFa
       x: parseInt(matArr[12]) || parseInt(matArr[4]),
       y: parseInt(matArr[13]) || parseInt(matArr[5])
     }
-  } 
+  })
 
 
   useEffect(
@@ -78,7 +78,7 @@ export function backgroundMovement(elementId, parent = true, xFactor = 0.06, yFa
         }
       };
     },
-    [location]
+    [location, getTranslateValues]
   );
   return location;
 }

@@ -5,7 +5,7 @@ import BlogPostGrid from "../../components/blog/blogPostGrid"
 import MenuTag from "../../components/blog/menuTag"
 import MenuTagSlide from "../../components/blog/menuTagSlide"
 
-const blogLayout = ({ allMdx, pageContext, pageType, handleTagMenu, tagMenu }) => {
+const blogLayout = React.memo(({ allMdx, pageContext, pageType, handleTagMenu, tagMenu }) => {
 
 	return (
     <div className="flex flex-wrap-reverse">
@@ -18,11 +18,17 @@ const blogLayout = ({ allMdx, pageContext, pageType, handleTagMenu, tagMenu }) =
       <MenuTagSlide pageContext = {pageContext} handleTagMenu={handleTagMenu} tagMenu={tagMenu} />
     </div>
 	)
-}
+})
 
 export default blogLayout
 
 blogLayout.propTypes = {
-		pageContext: PropTypes.any,
-		data: PropTypes.any
-	}
+  allMdx: PropTypes.any,
+  pageContext: PropTypes.any,
+  data: PropTypes.any,
+  pageType: PropTypes.string,
+  handleTagMenu: PropTypes.any,
+  tagMenu: PropTypes.any,
+}
+
+blogLayout.displayName = "BlogLayout"

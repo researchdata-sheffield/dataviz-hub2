@@ -14,7 +14,7 @@ import CommonMdxProvider from "../../components/shared/commonMdxProvider"
 
 // Utils
 import { useScript } from "../../utils/hooks/useScript"
-import {  getShareLinks } from "../../utils/shared"
+import { getShareLinks } from "../../utils/shared"
 import VisPagination from "../../components/visualisation/visPagination"
 import VisDetail from "../../components/visualisation/visDetail"
 import { VisDiv } from "../../components/style/visStyle"
@@ -40,7 +40,6 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
       useScript(withPrefix(`d3/${d}`), "", false);   
     }
   })}
-
 
   return (
     <div className="relative" key={mdx.id}>
@@ -89,6 +88,9 @@ export const query = graphql`
         ...MdxFrontmatter
         disableTOC
         d3
+        embedImage {
+          relativePath
+        }
       }
     }
   }

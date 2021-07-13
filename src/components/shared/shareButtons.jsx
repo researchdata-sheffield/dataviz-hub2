@@ -10,7 +10,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
 
   return (
     <>
-      <div className="left-0 top-0 sticky hidden lg:block z-10">
+      <div className="left-0 top-0 sticky hidden lg:block z-10" style={{height: 'max-content'}}>
         <Fade left cascade delay={1000} duration={1300}>   
           <div className="flex flex-col text-xs" style={{maxWidth: "40px", height: "0", overflow: "visible"}}>
             <Twitter className="greyScale-100 hover:greyScale-0 mt-28 transition duration-500" solid small message={shareMessage} link={shareLink} />

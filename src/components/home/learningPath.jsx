@@ -88,7 +88,7 @@ const LearningPath = () => {
 
   return (
     <div 
-      id="learning_path" 
+      id="learning-path" 
       className="flex flex-wrap justify-center items-center relative" 
       style={{minHeight: '850px', backgroundImage: `linear-gradient(180deg, rgba(17,24,39,.98) 0%, rgba(16,16,30,.94) 100%), url(${Bg})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}
     >
@@ -128,7 +128,7 @@ const LearningPath = () => {
                   <div className={backCard}>
                     <h1 className="font-bold mb-1 text-xl xl:text-2xl">{node.frontmatter.learningPathTitle}</h1>
                     <p className="text-base xl:text-lg">{description}</p>
-                    <Link to={published ? node.fields.slug : '#learning_path'} className={`${published ? '' : 'cursor-not-allowed'}`}>
+                    <Link to={published ? node.fields.slug : '#learning-path'} className={`${published ? '' : 'cursor-not-allowed'}`}>
                       <ArrowButton className={moreBtn}>{published ? node.frontmatter.learningPathBtn : 'Coming soon'}</ArrowButton>
                     </Link>
                   </div>

@@ -1,5 +1,6 @@
 import styled from "styled-components"
 
+
 export const ShareButton = styled.div`
   a {
     margin: 0
@@ -42,4 +43,127 @@ export const VisItem = styled.div`
 export const VisDiv = styled.div`
   max-width: 550px;
   margin: auto;
+`
+
+export const WordCloud = styled.div`
+  text-align: center;
+  width: ${props => props.width || '50%'};
+  height: ${props => props.height || '55%'};
+  border-radius: ${props => props.radius || '10px'};
+  overflow-y: hidden;
+  overflow-x: clip;
+  padding: 1rem;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 1440px) {
+    width: ${props => props.width || '60%'};
+    height: ${props => props.height || '55%'};
+  }
+  
+  &::before{
+    content: '';
+    height: 100%;
+    width: 50%;
+    float: left;
+    shape-outside: polygon(
+      0 0,
+      100% 0,
+      60% 4%,
+      40% 10%,
+      20% 20%,
+      10% 28.2%,
+      5% 34.4%,
+      0 50%,
+      5% 65.6%,
+      10% 71.8%,
+      20% 80%,
+      40% 90%,
+      60% 96%,
+      100% 100%,
+      0% 100%
+    );
+  }
+  div.word-cloud-wrap {
+    text-align: center;
+    display: contents;
+  }
+
+  div.word-cloud-wrap::before{
+    content: '';
+    height: 100%;
+    width: 50%;
+    float: right;
+    shape-outside: polygon(
+      100% 0,
+      0 0,
+      40% 4%,
+      60% 10%,
+      80% 20%,
+      90% 28.2%,
+      95% 34.4%,
+      100% 50%,
+      95% 65.6%,
+      90% 71.8%,
+      80% 80%,
+      60% 90%,
+      40% 96%,
+      0 100%,
+      100% 100%
+    );
+  }
+
+  .word {
+    white-space: nowrap;
+    border-radius: 5px;
+    display: inline-block;
+    line-height: 1;
+    transition: .3s ease;
+    font-family: TUoS Blake;
+    vertical-align: middle;
+    padding: ${props => props.backgroundColour === true ? '8px 13px' : ''};
+    
+    &:hover {
+      color: #00aeef !important;
+      background-color: ${props => props.backgroundColour === true ? '#000' : ''} !important;
+    }
+  }
+`
+
+const visHelperButton = styled.div`
+  position: fixed;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  border-radius: 35px;
+  z-index: 99;
+  text-align: center;
+  opacity: 0;
+  visibility: invisible;
+  -webkit-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;  
+  -o-transition: all 0.3s ease;  
+  transition: all 0.3s ease;
+  cursor: pointer;
+`
+
+export const VisTagMenuBtn = styled(visHelperButton)`
+  right: 140px;
+  background-image: linear-gradient(135deg, rgb(255, 121, 180) 15%, rgb(255, 134, 250) 36%, rgb(41, 197, 255) 85%);
+
+  &:hover {
+    /*     background: rgba(0, 0, 0, 0.9); */
+  background-image: linear-gradient(45deg, rgb(255, 121, 180) 15%, rgb(255, 134, 250) 36%, rgb(41, 197, 255) 85%);
+  }
+`
+
+export const VisFooterBtn = styled(visHelperButton)`
+  right: 80px;
+
 `

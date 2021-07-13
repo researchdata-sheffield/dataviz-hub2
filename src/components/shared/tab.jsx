@@ -4,22 +4,22 @@ import sanitizeHtml from 'sanitize-html';
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 
 
-
-const sanitizeOptions = {
-  allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img', 'Link', 'code' ]),
-  allowedAttributes: {
-    ...sanitizeHtml.defaults.allowedAttributes,
-    '*': [ 'className', 'style', 'class' ],
-    'a': [ 'href', 'name', 'target', 'rel' ]
-  },
-  allowedClasses: {
-    ...sanitizeHtml.defaults.allowedClasses,
-    '*': [ '*' ]
-  } 
-};
-
 const tab = (props) => {
   const data = props.data;
+
+  // add two attributes for all links within the page
+  if (typeof window !== "undefined") {
+    const tabs = document.querySelectorAll("[class^=react-tabs__tab-panel]");
+
+    tabs.forEach((tabItem) => {
+      tabItem.childNodes.forEach((child) => {
+        if (child.href) {
+          child.target = "_blank";
+          child.rel = "noopener noreferrer";
+        }
+      })
+    })
+  }
 
   return (
     <Tabs className={`mt-16 ${props.className}`} {...props}>
@@ -47,3 +47,18 @@ tab.propTypes = {
   props: PropTypes.any,
   data: PropTypes.array
 }
+
+
+
+const sanitizeOptions = {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([ 'img', 'Link', 'code' ]),
+  allowedAttributes: {
+    ...sanitizeHtml.defaults.allowedAttributes,
+    '*': [ 'className', 'style', 'class' ],
+    'a': [ 'href', 'name', 'target', 'rel' ]
+  },
+  allowedClasses: {
+    ...sanitizeHtml.defaults.allowedClasses,
+    '*': [ '*' ]
+  } 
+};

@@ -86,7 +86,7 @@ class Search_Home extends Component {
             <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Dataviz.Shef</div>
               <ul className="list-reset leading-normal text-xs 2xl:text-sm text-left">
                 <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
-                <li><Link className={quickLink} to='/#learning_path' data-tip="#Get started">Learning path</Link></li>
+                <li><Link className={quickLink} to='/#learning-path' data-tip="#Get started">Learning path</Link></li>
                 <li><Link className={quickLink} to='/#home_community' data-tip="#Community">Community</Link></li>
                 <li><Link className={quickLink} to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
                 <li><Link className={quickLink} to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>

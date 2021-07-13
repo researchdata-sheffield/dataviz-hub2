@@ -1,29 +1,31 @@
 import { Link } from "gatsby"
 import React from "react"
+import PropTypes from "prop-types"
 import university_logo from "../../images/TUOSlogo.png"
 import { FaGoogle, FaSlack, FaRss } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 import { A_footer } from "../style/styleComponent"
 
-const Footer = () => {
+const Footer = React.memo(({className}) => {
   const currentYear = new Date();
   const linkClasses = "text-gray-400 hover:text-brand-blue"
 
   return (
-    <footer className="bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm relative z-10">
+    <footer className={`${className || ''} bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-10`}>
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
             <ul className="list-reset leading-normal">
+              <li><Link className={linkClasses} to="/community">Community</Link></li>
+              <li><Link className={linkClasses} to="/#learning-path">Learning Path</Link></li>
               <li><Link className={linkClasses} to="/blog">Blog</Link></li>
               <li><Link className={linkClasses} to="/events">Events</Link></li>
-              <li><Link className={linkClasses} to="/community">Community</Link></li>
               <li><A_footer href="https://orda.shef.ac.uk/visualisations/">Showcase</A_footer></li>
-              <li><Link className={linkClasses} to="/about">About</Link></li>
-              <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
               <li><Link className={linkClasses} to="/privacy">Privacy Policy</Link></li>
               <li><Link className={linkClasses} to="/accessibility">Accessibility</Link></li>
               <li><Link className={linkClasses} to="/sitemap/sitemap-index.xml">Sitemap</Link></li>
+              <li><Link className={linkClasses} to="/about">About</Link></li>
+              <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
             </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
@@ -79,6 +81,12 @@ const Footer = () => {
       </p>
     </footer>
   )
-}
+})
 
 export default Footer
+
+Footer.displayName = "Footer"
+
+Footer.propTypes = {
+  className: PropTypes.any,
+}

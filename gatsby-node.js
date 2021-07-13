@@ -26,7 +26,7 @@ exports.onCreateWebpackConfig = ({
             use: loaders.null(),
           },
         ],
-      },
+      }
     })
   }
 };
@@ -111,6 +111,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   function compareItem(a, b) {
     return a.toLowerCase().localeCompare(b.toLowerCase(), 'en', { sensitivity: 'base'})
   }
+
 
   // one query for each type of file: blog, docs, (insert any new types here)
   const queryResult = await graphql(`
@@ -210,43 +211,58 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     prev[curr] = (prev[curr] || 0) + 1
     return prev
   }, {})
-  const allVisCats = Object.keys(countVisCats).sort(compareItem)
-
   const countVisTags = visTags.reduce((prev, curr) => {
     prev[curr] = (prev[curr] || 0) + 1
     return prev
   }, {})
-  const allVisTags = Object.keys(countVisTags).sort(compareItem)
+ 
+  // Put tags and categories in one array 
+  const allVisCatTag = [];
+
+  for (const [key, value] of Object.entries(countVisCats)) {
+    allVisCatTag.push({
+      name: key,
+      type: "category",
+      count: value
+    })
+  }
+
+  for (const [key, value] of Object.entries(countVisTags)) {
+    allVisCatTag.push({
+      name: key,
+      type: "tag",
+      count: value
+    })
+  }
+
 
   // create page for each tag
-  allVisTags.forEach((tag) => {
-    const link = `/visualisation/tag/${kebabCase(tag)}`
+  allVisCatTag
+  .filter(item => item.type === "tag")
+  .forEach((tag) => {
+    const link = `/visualisation/tag/${kebabCase(tag.name)}`
     createPage({
       path: link,
       component: visTagTemplate,
       context: {
-        tag: tag,
-        allVisCategories: allVisCats,
-        allVisTags: allVisTags,
-        countVisTags,
-        countVisCats
+        tag: tag.name,
+        allVisCatTag: allVisCatTag
       },
     })
   })
 
   // create page for each category
-  allVisCats.forEach((cat) => {
-    const link = `/visualisation/category/${kebabCase(cat)}`
+  allVisCatTag
+  .filter(item => item.type === "category")
+  .forEach((cat) => {
+    const link = `/visualisation/category/${kebabCase(cat.name)}`
 
     createPage({
       path: link,
       component: visCategoryTemplate,
       context: {
-        category: cat,
-        allVisCategories: allVisCats,
-        allVisTags: allVisTags,
-        countVisTags,
-        countVisCats
+        category: cat.name,
+        allVisCatTag: allVisCatTag
       },
     })
   })
@@ -255,10 +271,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     path: `/visualisation`,
     component: visTemplate,
     context: {
-      allVisCategories: allVisCats,
-      allVisTags: allVisTags,
-      countVisTags,
-      countVisCats
+      allVisCatTag: allVisCatTag
     },
   })
 

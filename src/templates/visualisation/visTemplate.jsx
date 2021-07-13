@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { loadMoreVisualisation } from "../../utils/hooks/loadMoreVisualisation"
 import VisLayout from "../../components/visualisation/visLayout"
 
-const visTemplate = ({data: {allMdx} }) => {
+const visTemplate = ({data: {allMdx}, pageContext }) => {
   const allMDX = [];
   const nextPageRef = useRef();
 
@@ -19,7 +19,7 @@ const visTemplate = ({data: {allMdx} }) => {
   const currentMDXs = loadMoreVisualisation(allMDX, nextPageRef);
 
   return(
-    <VisLayout currentMDXs={currentMDXs} nextPageRef={nextPageRef} />
+    <VisLayout currentMDXs={currentMDXs} nextPageRef={nextPageRef} pageContext={pageContext} />
   )
 }
 
