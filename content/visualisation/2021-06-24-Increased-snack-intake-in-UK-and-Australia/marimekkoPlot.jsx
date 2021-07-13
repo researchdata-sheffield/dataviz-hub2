@@ -22,6 +22,11 @@ export const data = [
   }
 ]
 
+/**
+ * This component uses tailwindcss (https://tailwindcss.com/) framework for styling. 
+ * Visit the website for reference of className.
+ * E.g. className="p-5 relative" translates to "padding: 1.25rem; position: relative"
+ */ 
 const marimekkoPlot = () => {
 
 	return (

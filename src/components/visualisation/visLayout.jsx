@@ -12,10 +12,6 @@ import VisTags from './visTags'
 
 const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
   const [tagMenu, setTagMenu] = useState(false);
-  
-  function handleTagMenu() {
-		setTagMenu(!tagMenu);
-  }
 
   const pageTitle = title ? `| ${title}` : '';  
   const pageSubtitle = 
@@ -29,6 +25,15 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
       (a,b) => b.count.toString().localeCompare(a.count.toString(), 'en', { numeric: true })
     ).slice(0, 20)
 
+  // save current path as go back URL in visualisation items 
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('VisGoBackURL', pageContext.pagePath); 
+  }
+
+  function handleTagMenu() {
+    setTagMenu(!tagMenu);
+  }
+  
   return(
     <div className="bg-gray-900">
       <SEO 

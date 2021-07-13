@@ -36,11 +36,11 @@ const visTags = ({ tagMenu, handleTagMenu, tags }) => {
 
   return (
     <div className="relative">
-      <VisTagMenuBtn onClick={() => handleTagMenu()} tabindex="100" id="vis-tag-button" className="shadow-2xl flex justify-center items-center group" title="Tag Menu">
+      <VisTagMenuBtn onClick={() => handleTagMenu()} tabindex="100" id="vis-tag-button" className="group" title="Tag Menu">
         <FaTags className="text-white text-xl transform group-hover:scale-125 transition duration-500" />
       </VisTagMenuBtn>
 
-      <VisFooterBtn onClick={() => setFooter(!footer)} tabindex="101" id="vis-footer-button" className={`shadow-2xl flex justify-center items-center group ${footer ? 'bg-brand-blue' : 'bg-gray-800'}`} title="Footer">
+      <VisFooterBtn onClick={() => setFooter(!footer)} tabindex="101" id="vis-footer-button" className={`group ${footer ? 'bg-brand-blue' : 'bg-gray-800'}`} title="Footer">
         {!footer && <ImMenu4 className={footerIconStyle} />}
         {footer && <ImMenu3 className={footerIconStyle} />}
       </VisFooterBtn>
