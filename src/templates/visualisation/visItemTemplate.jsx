@@ -1,6 +1,6 @@
 // BASE
 import React from "react"
-import { graphql, withPrefix } from "gatsby"
+import { graphql, withPrefix, navigate } from "gatsby"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 
@@ -17,7 +17,8 @@ import { useScript } from "../../utils/hooks/useScript"
 import { getShareLinks } from "../../utils/shared"
 import VisPagination from "../../components/visualisation/visPagination"
 import VisDetail from "../../components/visualisation/visDetail"
-import { VisDiv } from "../../components/style/visStyle"
+import { VisDiv, VisBackBtn } from "../../components/style/visStyle"
+import { AiOutlineRollback, AiOutlineHome } from "react-icons/ai"
 
 
 const visItemTemplate = ({ data: { mdx }, pageContext }) => {
@@ -58,6 +59,13 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
           <div className="relative mx-auto container py-32 px-5 text-lg xl:text-xl text-gray-200" style={{maxWidth: '1200px'}}>
             <CommonMdxProvider mdx={mdx} components={components} />
           </div>
+          <VisBackBtn 
+            onClick={() => navigate(localStorage.getItem("VisGoBackURL") || '/visualisation')} 
+            className="text-xl bg-gray-800 text-gray-100 hover:bg-gray-700 hover:text-brand-blue group overflow-hidden" title="Back to visualisation page"
+          >
+            <AiOutlineRollback className="transform group-hover:translate-x-24" />
+            <AiOutlineHome className="absolute transform translate-x-24 group-hover:translate-x-0" />
+          </VisBackBtn>
         </div>   
       }    
  

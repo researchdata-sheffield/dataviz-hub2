@@ -133,17 +133,15 @@ export const WordCloud = styled.div`
   }
 `
 
-const visHelperButton = styled.div`
+const visHelperButton = styled.button`
   position: fixed;
   bottom: 20px;
   width: 50px;
   height: 50px;
-  display: block;
   text-decoration: none;
   border-radius: 35px;
   z-index: 99;
   text-align: center;
-  opacity: 0;
   visibility: invisible;
   -webkit-transition: all 0.3s ease;
   -ms-transition: all 0.3s ease;
@@ -151,9 +149,19 @@ const visHelperButton = styled.div`
   -o-transition: all 0.3s ease;  
   transition: all 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  &:focus {
+    outline: none;
+  }
 `
 
 export const VisTagMenuBtn = styled(visHelperButton)`
+  opacity: 0;
   right: 140px;
   background-image: linear-gradient(135deg, rgb(255, 121, 180) 15%, rgb(255, 134, 250) 36%, rgb(41, 197, 255) 85%);
 
@@ -164,6 +172,11 @@ export const VisTagMenuBtn = styled(visHelperButton)`
 `
 
 export const VisFooterBtn = styled(visHelperButton)`
+  opacity: 0;
   right: 80px;
+`
 
+export const VisBackBtn = styled(visHelperButton)`
+  right: 80px;
+  opacity: 1;
 `

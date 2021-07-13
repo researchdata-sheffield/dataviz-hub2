@@ -195,7 +195,7 @@ const Header = () => {
         {/* Mobile devices */}
         <div 
           id="mobileHeader"
-          className={`${isExpanded ? "visible" : "invisible opacity-0 translate-x-full transform"} rounded-md xl:hidden shadow-lg px-6 py-10 md:py-16 fixed top-0 left-0 min-h-full min-w-full`} 
+          className={`${isExpanded ? "visible" : "invisible opacity-0 translate-x-full transform"} rounded-md xl:hidden shadow-lg px-6 py-10 md:py-16 fixed top-0 left-0 h-full min-w-full overflow-y-scroll`} 
           style={{zIndex: "990", transition: ".3s linear", backgroundColor: "#fbfbfb"}}
         >
           {/* <div className="mt-5 pt-6 border-gray-200 border-t-1"></div> */}

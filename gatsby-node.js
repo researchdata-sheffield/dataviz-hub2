@@ -245,6 +245,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: link,
       component: visTagTemplate,
       context: {
+        pagePath: link,
         tag: tag.name,
         allVisCatTag: allVisCatTag
       },
@@ -261,6 +262,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       path: link,
       component: visCategoryTemplate,
       context: {
+        pagePath: link,
         category: cat.name,
         allVisCatTag: allVisCatTag
       },
@@ -271,6 +273,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     path: `/visualisation`,
     component: visTemplate,
     context: {
+      pagePath: `/visualisation`,
       allVisCatTag: allVisCatTag
     },
   })
