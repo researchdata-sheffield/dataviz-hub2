@@ -54,8 +54,8 @@ const visTags = ({ tagMenu, handleTagMenu, tags }) => {
             <FiSearch className="inline-block text-center text-xl -mt-2" />
               <input 
                 id="tagSearch" onChange={(e) => setSearchValue(e.target.value)} value={searchValue} 
-                className="py-1 pl-2 text-base focus:outline-none pr-3 text-gray-600" 
-                style={{maxWidth: "40vw"}} type="text" name="search"  placeholder="Search for tags" 
+                className="py-2 pl-2 text-base focus:outline-none pr-3 text-gray-600" 
+                style={{maxWidth: "50vw"}} type="text" name="search"  placeholder="Search for tags" 
               />
           </div>
         </div>

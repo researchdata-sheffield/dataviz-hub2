@@ -20,12 +20,12 @@ import kebabCase from "lodash.kebabcase"
  * @param {number} maxFontSize
  * @returns {React.Component} WordCloud component
  */
-const wordCloud = React.memo(({ words, width, height, radius, colours, backgroundColour, padding, menu = "", order = "default", minFontSize = 0.9, maxFontSize = 2.3}) => {
+const wordCloud = React.memo(({ words, width, height, radius, colours, backgroundColour, padding, menu = "", order = "default", minFontSize = 0.9, maxFontSize = 2.1, fontUnit = "rem"}) => {
   const [wordsArr, setWords] = useState(words);
   const wordCloudColours = colours || ["#808080", "#ff5e5e", "#fedf00", "#0066b3", "#6d3db3", "#52ff9c", "#ade1f8", "#f0f0f0", "#fff", "#ff79b4", "#89f064", "#393939", "#08e8ff", "#00aeef"]
   const wordBackgroundColour = backgroundColour || [];
   
-  const FONT_UNIT = "rem";
+  const FONT_UNIT = fontUnit;
   const MAX_FONT_SIZE = maxFontSize;
   const MIN_FONT_SIZE = minFontSize;
 
@@ -92,6 +92,7 @@ wordCloud.propTypes = {
   order: PropTypes.string,
   minFontSize: PropTypes.number,
   maxFontSize: PropTypes.number,
+  fontUnit: PropTypes.string
 }
 
 wordCloud.displayName = "WordCloud"

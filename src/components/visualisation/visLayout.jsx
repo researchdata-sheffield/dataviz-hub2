@@ -24,7 +24,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
     : <p>The latest from the University of Sheffield.</p>
 
   // Show top N tags
-  const topVisCatTag = 
+  const topVisCatTag = pageContext.allVisCatTag && pageContext.allVisCatTag.length > 1 &&
     pageContext.allVisCatTag.sort(
       (a,b) => b.count.toString().localeCompare(a.count.toString(), 'en', { numeric: true })
     ).slice(0, 20)
@@ -38,7 +38,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
       
       <VisTags handleTagMenu={handleTagMenu} tagMenu={tagMenu} tags={pageContext.allVisCatTag} />
 
-      <div className="w-full pt-32 pb-20 text-center">
+      <div className="w-full pt-24 pb-16 text-center">
         <h1 
           className="w-full py-3 text-7xl font-extrabold" 
           style={{
