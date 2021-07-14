@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches-ignore: [ master ]
+  pull_request:
+    branches: [ '**' ] 
+    types: [ assigned, opened, synchronize, reopened, unlocked, review_requested, edited ]
+  workflow_dispatch:
+    inputs:
+      Name:   
+        required: true
+        default: 'Re-run the workflow'
+      Description:
+        default: ''  
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      # Retrieve cache
+      - name: Gatsby Cache
+        id: gatsby-ci-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-ci-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-gatsby-ci-
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      # Enable incremental build
+      - name: Incremental Build
+        run: npm run build:incremental
+        env:
+          EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
+          EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
+          EVENT_ORG_ID_1: ${{ secrets.EVENT_ORG_ID_1 }}
+          EVENT_ORG_ID_2: ${{ secrets.EVENT_ORG_ID_2 }}
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+          GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
+          GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
+          GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
+

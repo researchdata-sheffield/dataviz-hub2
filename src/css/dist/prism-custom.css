@@ -1,0 +1,167 @@
+code[class*=language-],
+pre[class*=language-] {
+  color: #000;
+  background: none;
+  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*=language-] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+  border-radius: 0.5em;
+}
+
+/**
+ * Add back the container background-color, border-radius, padding, margin
+ * and overflow that we removed from <pre>.
+ */
+.gatsby-highlight {
+  background-color: #f7f7f7;
+  border-radius: 0em;
+  margin: 0.5em auto;
+  padding: 0.1em 1em;
+  overflow: auto;
+  width: 100%;
+  /* box-shadow: rgb(153, 153, 153) 0px 0px 10px; */
+}
+
+:not(pre) > code[class*=language-],
+pre[class*=language-] {
+  background: #f7f7f7;
+}
+
+/* Inline code */
+:not(pre) > code[class*=language-] {
+  padding: 0.15em;
+  border-radius: 0.1em;
+  white-space: normal;
+  background: #f0f0f0;
+  color: black;
+  box-shadow: none;
+}
+
+.gatsby-code-title {
+  margin-bottom: -0.6rem;
+  padding: 0.5em 1em;
+  font-family: Consolas, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", Monaco, "Courier New", Courier, monospace;
+  background-color: #1a202c;
+  color: white;
+  z-index: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+
+/**
+ * Remove the default PrismJS theme background-color, border-radius, margin,
+ * padding and overflow.
+ * 1. Make the element just wide enough to fit its content.
+ * 2. Always fill the visible space in .gatsby-highlight.
+ * 3. Adjust the position of the line numbers
+ */
+.gatsby-highlight pre[class*=language-] {
+  /*   background-color: transparent; */
+  padding: 0;
+  overflow: initial;
+  float: left;
+  /* 1 */
+  min-width: 100%;
+  /* 2 */
+  font-size: 0.95rem;
+}
+
+.gatsby-highlight pre[class*=language-].line-numbers {
+  padding-left: 2.5em;
+}
+
+/* Highlight lines */
+.gatsby-highlight-code-line {
+  background-color: #ececec;
+  display: block;
+  margin-right: -1em;
+  margin-left: -1em;
+  padding-right: 1em;
+  padding-left: 0.75em;
+  border-left: 4px solid #00aeef;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #999988;
+  font-style: italic;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.string,
+.token.attr-value {
+  color: #e3116c;
+}
+
+.token.punctuation,
+.token.operator {
+  color: #393A34;
+  /* no highlight */
+}
+
+.token.entity,
+.token.url,
+.token.symbol,
+.token.number,
+.token.boolean,
+.token.variable,
+.token.constant,
+.token.property,
+.token.regex,
+.token.inserted {
+  color: #36acaa;
+}
+
+.token.atrule,
+.token.keyword,
+.token.attr-name,
+.language-autohotkey .token.selector {
+  color: #00a4db;
+}
+
+.token.function,
+.token.deleted,
+.language-autohotkey .token.tag {
+  color: #9a050f;
+}
+
+.token.tag,
+.token.selector,
+.language-autohotkey .token.keyword {
+  color: #00009f;
+}
+
+.token.important,
+.token.function,
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}

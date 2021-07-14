@@ -3,8 +3,15 @@ import { Link as gatsby_Link } from "gatsby"
 import React from 'react'
 import PropTypes from "prop-types"
 import tw, { styled as styled_twin } from 'twin.macro'
-import { ButtonWithArrow } from "./styled"
+import { ArrowButton } from "./styleComponent"
+import ModalImage from "react-modal-image";
+import { FaTwitter } from "react-icons/fa"
 
+/**
+ * Wrap for Learning path items
+ * @param {*} props 
+ * @returns 
+ */
 export const LPWrap = (props) => {
   return (
     <div className="flex flex-wrap w-full justify-start my-8">
@@ -19,16 +26,15 @@ LPWrap.propTypes = {
 
 export const LPItem = (props) => {
   return (
-    <a href={props.href} className={`${props.className ? props.className : 'md:mx-8'} w-3/4 md:w-1/4 mb-8 flex flex-col p-5 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1`} 
-      style={{fontWeight: '600', 
-              background: `${props.Lab ? 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)' : [props.Workflow ? 'linear-gradient(225deg, rgba(47,255,43,1) 4%, rgba(0,160,255,1) 96%)' : 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)']}`}}
+    <a href={props.href} className={`${props.className ? props.className : 'md:mx-2'} w-3/4 md:w-1/4 lg:w-3/10 mb-8 flex flex-col p-4 shadow-md hover:shadow-2xl rounded-xl transition duration-500 text-lg hover:bg-white group text-white hover:text-gray-100 transform hover:-translate-y-1`} 
+      style={{fontWeight: '600', background: `${props.Lab ? 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)' : [props.Workflow ? 'linear-gradient(225deg, rgba(47,255,43,1) 4%, rgba(0,160,255,1) 96%)' : 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)']}`}}
       rel="noopener noreferrer" target="_blank"
     >
       {props.children}
       <a href={props.href} rel="noopener noreferrer" target="_blank">
-        <ButtonWithArrow type="BlackButton" className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
+        <ArrowButton  className="mt-5 p-0 text-sm bg-transparent text-white hover:underline">
           {props.video ? 'watch videos' : 'read more'}
-        </ButtonWithArrow>
+        </ArrowButton>
       </a>
     </a>
   )
@@ -61,7 +67,7 @@ export const Link = styled(gatsby_Link)`
 `
 
 // Underline effect 'a' tag
-export const A_a = styled.a`
+export const LinkWithEffect = styled.a`
   color: black;
   padding-bottom: 4px;
   background: linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%);   ${'' /* (to right,#00aeef 0%,#00aeef 98%) */}
@@ -82,6 +88,7 @@ export const A_a = styled.a`
   }
 `
 
+
 /* Two version of underline effect 'a'
 * 1. anchor within page (use the anchor prop)
 * 2. external page (default)
@@ -89,57 +96,74 @@ export const A_a = styled.a`
   3. external page (use the a prop)
 */
 export const A = (props) => {
-  const {href, ...props_noRef} = props
-  return (
-    props.anchor === true ? 
-      <A_a {...props_noRef} rel="noopener noreferrer" href={href} key={props.href}>
-        {props.children}
-      </A_a>
-      :
-      [props.a ? 
-        <a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</a>
-        :
-        <A_a {...props} target="_blank" rel="noopener noreferrer" key={props.href}>{props.children}</A_a>
-      ]
-  )  
+  const {href} = props
+
+  // anchor link
+  if(props.anchor === true) {
+    if(props.noEffect) {
+      return( 
+        <a {...props} rel="noopener noreferrer" key={href}>{props.children}</a>
+      )
+    } else {
+      return( 
+        <LinkWithEffect {...props} rel="noopener noreferrer" key={href}>{props.children}</LinkWithEffect>
+      )
+    }
+  }
+  // external
+  if(props.a) {
+    return(
+      <a {...props} target="_blank" rel="noopener noreferrer" key={href}>{props.children}</a>
+    )
+  }
+  // default
+  if(props.noEffect) {
+    return( 
+      <a {...props} target="_blank" rel="noopener noreferrer" key={href}>{props.children}</a>
+    )
+  } else {
+    return( 
+      <LinkWithEffect {...props} target="_blank" rel="noopener noreferrer" key={href}>{props.children}</LinkWithEffect>
+    )
+  }
 }
 
 
 export const H1 = styled.h1`
   display: block;
   font-size: 2em;
-  margin-top: 0.67em;
+  margin-top: 3rem;
   margin-bottom: 0.67em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
-  line-height: 1.2;
+  font-weight: 700;
+  line-height: 2rem;
 `
 
 export const H2 = styled.h2`
   display: block;
-  font-size: 1.5em;
-  margin-top: 0.83em;
+  font-size: 1.45em;
+  margin-top: 2.5rem;
   margin-bottom: 0.83em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: 600;
 `
 
 export const H3 = styled.h3`
   display: block;
-  font-size: 1.17em;
-  margin-top: 1em;
+  font-size: 1.3em;
+  margin-top: 2rem;
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: 500;
 `
 
 export const H4 = styled.h4`
   display: block;
   font-size: 1em;
-  margin-top: 1.33em;
+  margin-top: 1.75rem;
   margin-bottom: 1.33em;
   margin-left: 0;
   margin-right: 0;
@@ -149,7 +173,7 @@ export const H4 = styled.h4`
 export const H5 = styled.h5`
   display: block;
   font-size: .83em;
-  margin-top: 1.67em;
+  margin-top: 1.5em;
   margin-bottom: 1.67em;
   margin-left: 0;
   margin-right: 0;
@@ -159,7 +183,7 @@ export const H5 = styled.h5`
 export const H6 = styled.h6`
   display: block;
   font-size: .67em;
-  margin-top: 2.33em;
+  margin-top: 1.5em;
   margin-bottom: 2.33em;
   margin-left: 0;
   margin-right: 0;
@@ -172,9 +196,9 @@ export const P = styled.p`
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-  word-wrap: break-word; /* if you want to cut the compconste word */
+  word-wrap: break-word;
   white-space: normal;
-  line-height: 1.6;
+  line-height: 2.0rem;
 `
 
 export const Ol = styled.ol`
@@ -185,6 +209,7 @@ export const Ol = styled.ol`
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+  line-height: 2.25rem;
 
   .li {
     list-style-type: square;
@@ -203,6 +228,7 @@ export const Ul = styled.ul`
   margin-left: 0;
   margin-right: 0;
   padding-left: 40px;
+  line-height: 2.25rem;
 
   .li {
     list-style-type: square;
@@ -249,15 +275,26 @@ export const BlockQuote = styled.blockquote`
   }
 `
 
-export const IMG = styled_twin.img`
-  margin-left: auto;
-  margin-right: auto;
+export const IMG = props => (
+  <img style={{ margin: '3rem auto 1rem auto' }} {...props} />
+)
 
-  ${tw`my-12`}
+export const IMGM = (props) => {
+  const {src, className, ...props_noRef} = props
+  return (
+    <ModalImage small={src} large={src} {...props_noRef} hideZoom="true" showRotate="true" className={`${className} mt-10 mb-3 mx-auto`}>{props.children}</ModalImage>
+  )  
+}
+
+export const EM = styled_twin.em`
+  div:has(> img) + & {
+    font-size: .9rem;
+    color: #464646;
+  }
 `
 
 export const Table = styled.table`
-  ${tw`my-10 shadow-lg text-base`};
+  ${tw`my-10 shadow-md text-base`};
     display: block;
     overflow-x: auto;
 
@@ -296,10 +333,28 @@ export const Table = styled.table`
   }
 `
 
+export const TwitterBtn = (props) => {
+  return (
+    <a {...props}>
+      <div className="py-0 px-3 text-sm font-semibold flex items-center bg-brand-blue rounded-md text-white hover:bg-highlight transition duration-500">
+        <FaTwitter className="inline-block text-lg mr-1" /> Follow
+      </div>
+    </a>
+  )  
+}
 
 A.propTypes = {
   children: PropTypes.any,
   anchor: PropTypes.any,
   href: PropTypes.string,
   a: PropTypes.any,
+  rel: PropTypes.any,
+  noEffect: PropTypes.any
+}
+
+IMGM.propTypes = {
+  props: PropTypes.any,
+  children: PropTypes.any,
+  src: PropTypes.any,
+  className: PropTypes.any,
 }

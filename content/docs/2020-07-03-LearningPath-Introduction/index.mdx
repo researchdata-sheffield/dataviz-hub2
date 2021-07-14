@@ -1,0 +1,239 @@
+---
+type: docs
+author: ["Dataviz Team"]
+title: "Learning path - Introduction"
+thumbnail: "./thumb.jpg"  
+description: "Explore data visualisations through definitions, examples, videos, and relevant resources."
+date: "2020-07-03"
+template: "custom"
+featured: false
+learningPath: true
+learningPathBtn: "Get started"
+learningPathTitle: "Introduction to Dataviz"
+learningPathDescription: "New to data visualisation and programming."
+---
+
+import React from 'react'
+import Scrollspy from 'react-scrollspy'
+import Fade from 'react-reveal/Fade'
+import { TiChevronLeft, TiChevronRight } from 'react-icons/ti'
+
+
+<div className="shadow-xl flex justify-center items-center text-center w-full min-h-100" style={{background: '#251d5a'}}>
+  <div >
+    <div className="text-5xl text-white font-bold" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>Learning Path - Introduction</div>
+    <div className="text-gray-400 text-base">Explore data visualisations through definitions, examples, videos, 
+                and relevant resources.</div>
+    <div className="text-lg text-gray-100 mt-10">Dataviz.Shef Team</div>
+    <div className="flex flex-wrap justify-center mt-20">
+      <Link className="" to="/docs/04/07/2020/LearningPath-Lab">
+        <div className="text-gray-800 py-2 px-3 text-sm font-semibold" style={{background: 'linear-gradient(225deg, rgba(237,255,0,1) 2%, rgba(0,160,255,1) 96%)'}}>Learning Path - Lab<TiChevronRight className="inline-block ml-1" /></div>
+      </Link>
+    </div>
+  </div>
+</div>
+<div className="flex flex-wrap justify-between px-3 md:px-32 lg:px-48 2xl:px-78 text-black bg-white text-sm sticky top-0 left-0 z-10 shadow-md">
+  <a href="#sec1" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Welcome</a>
+  <a href="#sec2" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Data visualisation basics</a>
+  <a href="#sec3" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>What charts?</a>
+  <a href="#sec4" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Tools!</a>
+</div>
+
+<div className="py-10">
+  <div className="flex flex-wrap text-black mx-auto px-3 lg:px-16 2xl:px-16 py-8 lg:max-w-70 2xl:max-w-50 rounded-3xl" style={{backgroundColor: "rgba(255, 255, 255, .97)"}}>
+    <Fade duration={2000} fraction={.5}>
+      <div id="sec1" className="lg:min-h-80">
+        <p className="text-brand-blue font-bold text-5xl leading-8">WELCOME!</p>
+        <p>
+          This is the <b>first learning path</b> prepared from the <b>Dataviz.Shef team</b> that helps you to get started. 
+          This learning path is specifically designed for those with no experience in data visualisation that 
+          wish to learn from the basics and explore a broad range of topics such as stages of visualising data, 
+          choosing the right charts, make use of powerful tools and libraries available out there, data exploratory 
+          techniques, and many more. <br /> <br /> 
+          You will soon find out that we are often referring to external resources this is because there are 
+          already enormous amazing resources available on the internet, we have organised them in relevant 
+          sections for you to check out. In addition, the university has a partnership 
+          with <a href="https://www.sheffield.ac.uk/nap/service/redirect/lilearning"><b>Linkedin Learning</b></a> providing thousands 
+          of online training courses to staff and students through <a href="https://www.sheffield.ac.uk/muse"><b>MUSE</b></a>, we have also included some useful 
+          courses to help you get started.
+        </p>
+      </div> 
+    </Fade>
+    
+    <div id="sec2" className="flex-wrap lg:min-h-80 mt-24">
+      <Fade duration={1200}>
+      <p className="text-brand-blue font-bold text-5xl leading-10">Data visualisation basics</p>
+      <div className="flex flex-wrap justify-between px-3 py-2 text-black bg-white text-sm  shadow-md rounded-xl mb-16">
+        <a href="#sec2-1" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Ideas and questions</a>
+        <a href="#sec2-2" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Data preparation</a>
+        <a href="#sec2-3" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Exploratory Analysis</a>
+        <a href="#sec2-4" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Data visualisation</a>
+        <a href="#sec2-5" anchor className="hover:text-brand-blue cursor-pointer py-2 mx-3" style={{background: 'none'}}>Interactivity</a>
+      </div>
+      <div>
+        This section includes common knowledge of data visualisations that you might find useful. 
+        The following book chapter presented a nice overview of the typical process of producing data 
+        visualisation:
+        <ul>
+          <li><a href="https://www.elsevier.com/connect/a-5-step-guide-to-data-visualization">A 5 step guide to data visualisation</a></li>
+          <li><a href="https://www.oreilly.com/library/view/visualizing-data/9780596514556/ch01.html">The Seven Stages of Visualizing Data</a></li>
+        </ul> <br />
+        When we visualise data, the basic process should be to first determine the goal of our visual analysis, 
+        then obtain the relevant data, organise the data, select the appropriate tools, display the data 
+        through appropriate charts, and finally display the visualised results. We have divided this 
+        section further into <b>five sections</b>, feel free to skip some sections if you are comfortable with 
+        the contents. 
+      </div>
+      <br />
+      <h3 id="sec2-1">1. Ideas and questions</h3>
+      <p>
+        A piece of data visualisation often starts with good ideas/questions in mind, then we map data 
+        directly into perceptible graphics, symbols, colors, textures, etc., to communicate the idea or 
+        answer the question. Here are some interesting related articles:
+        <LPWrap>
+          <LPItem href="https://flowingdata.com/2018/10/17/ask-the-question-visualize-the-answer/">Ask the question visualize the answer</LPItem>
+          <LPItem href="https://dataviz.shef.ac.uk/blog/01/06/2020/visualising_high_risk_areas_for_covid_19_mortality">Visualising high risk areas for covid-19 mortality</LPItem>
+          <LPItem href="https://medium.com/the-data-experience/four-questions-you-should-ask-before-visualizing-your-data-cd20a302eb65">Four questions you should ask before visualizing your data</LPItem>
+        </LPWrap>
+        <p>If you are looking for inspiration, explore the following resources:</p>
+        <LPWrap>
+          <LPItem href="https://www.visualisingdata.com/2020/07/the-complete-season-1-of-explore-explain/">EXPLORE EXPLAIN</LPItem>
+          <LPItem href="https://informationisbeautiful.net/beautifulnews/">beautiful news</LPItem>
+        </LPWrap>
+      </p>
+      <br />
+      <h3 id="sec2-2">2. Data Preparation</h3>
+      <p>
+        Once you have a general understanding of what you want to produce, data collection can be 
+        carried out (or you might already have some data). We can collect the data we need to analyse 
+        according to the different methods of data acquisition, such as issuing questionnaires, obtaining 
+        data through experiments, or open source data. After we collect the data, it is likely that we 
+        need to <b>pre-process</b> the data, filter and delete invalid and unnecessary data. This process is 
+        extremely common in day-to-day work of professions such as Data Scientist, Data Engineer, 
+        Data analyst or Machine Learning Engineer. When the data is ready, we can import the data into 
+        the tool of our choice for <b>data exploratory analysis</b>. 
+      </p>
+      <LPWrap>
+        <LPItem href="https://developer.ibm.com/technologies/data-science/articles/data-preprocessing-in-detail/">Data preprocessing in details</LPItem>
+        <LPItem href="https://towardsdatascience.com/data-preprocessing-concepts-fa946d11c825">Data preprocessing concepts</LPItem>
+      </LPWrap>
+      <br />
+      <h3 id="sec2-3">3. Exploratory Analysis</h3>
+      <p>
+        <b>Data exploratory analysis (DEA)</b> is considered as an approach that explores the structure and laws 
+        of the data and verifies a set of hypotheses by means of drawing, tabulation, equation fitting, 
+        and calculating feature quantities. There are a broad range 
+        of <a href="https://en.wikipedia.org/wiki/Exploratory_data_analysis#Techniques_and_tools">techniques and tools</a> but 
+        it is not necessary to use all of these. Watch the following course to get started:
+      </p>
+      <LPWrap>
+        <LPItem video href="https://www.linkedin.com/learning/data-fluency-exploring-and-describing-data/gather-greater-insight-and-make-better-decisions-with-your-data?autoplay=true&resume=false&u=36248012">Data Fluency: Exploring and Describing Data</LPItem>
+      </LPWrap>
+      <p>
+        In short, DEA helps you to get a deep understanding of chosen data and extract meaningful insight 
+        from data so that you can make choices of which information you want to present to your audiences.
+      </p>
+      <br/>
+      <h3 id="sec2-4">4. Data visualisation</h3>
+      <p>
+        After you have made a decision on what kind of information you want to present, it is the time to 
+        produce data visualisations with appropriate selection of charts and graphs, these charts might 
+        have come from <b>DEA</b> you have conducted or you have new ideas to present the insight. The following 
+        videos/articles is helpful in understanding the importance of <b>visual display</b> in data visualisation:
+      </p>
+      <LPWrap>
+        <LPItem video href="https://www.linkedin.com/learning/learning-data-visualization-3/illustration-and-iconography?u=36248012">Illustration and iconography</LPItem>
+        <LPItem href="https://dataviz.shef.ac.uk/blog/20/05/2020/Non-Numeric">Non-Numeric Data Visualisation</LPItem>
+        <LPItem href="https://dataviz.shef.ac.uk/blog/06/05/2020/Colour-Schemes">Using Colour in Data Visualisation</LPItem>
+      </LPWrap>
+      <br/>
+      <p>For more information on selection of charts, go to <a anchor href="#sec3">What Charts?</a> section.</p>
+      <br/>
+      <h3 id="sec2-5">5. Interactivity</h3>
+      <p>
+        Adding interactivity to your data visualisation could take your impact to the next level. 
+        By offering interactive widgets/dashboard for your data visualisations, audiences get some 
+        entertainment while having the freedom to explore different areas of the dataset you have opened 
+        access to. Learn more about <b>interactivity</b> from the following resources:
+      </p>
+      <LPWrap>
+        <LPItem video href="https://www.linkedin.com/learning/learning-data-visualization-3/introducing-motion?u=36248012">Linkedin Learning: Interactivity</LPItem>
+        <LPItem href="https://blog.udacity.com/2015/01/15-data-visualizations-will-blow-mind.html">15 data visualisations</LPItem>
+        <LPItem href="https://dash-widgets.herokuapp.com/">An example of interactive app</LPItem>
+      </LPWrap>
+      <br/>
+      <h3>Other resources</h3>
+      <p>You might want to check out the following courses.</p>
+      <LPWrap>
+        <LPItem video href="https://www.linkedin.com/learning/learning-data-visualization-3/welcome?u=36248012">Learn data visualisation</LPItem>
+        <LPItem href="https://flowingdata.com/2018/10/17/ask-the-question-visualize-the-answer/">Ask the question, visualise the answer</LPItem>
+      </LPWrap>  
+      </Fade>
+    </div>
+    
+    {/* What charts? */}
+    <div id="sec3" className="flex-wrap lg:min-h-80 mt-24">
+      <Fade duration={1200}>
+      <p className="text-brand-blue font-bold text-5xl leading-8">What charts?</p>
+      <p>
+        Choosing the right chart for your data does not come easy. Fortunately, there are some great 
+        websites that can help you to make decisions.
+      </p>
+      <LPWrap>
+        <LPItem href="https://datavizcatalogue.com/">DATAVIZ CATALOGUE</LPItem>
+        <LPItem href="https://www.data-to-viz.com/">DATA-TO-VIZ</LPItem>
+        <LPItem href="https://python-graph-gallery.com/">PYTHON GRAPH GALLERY</LPItem>
+        <LPItem href="https://www.r-graph-gallery.com">R GRAPH GALLERY</LPItem>
+      </LPWrap> 
+      <p>See these resources also:</p>
+      <LPWrap>
+        <LPItem video href="https://www.linkedin.com/learning/picking-the-right-chart-for-your-data/welcome?u=36248012">Picking the Right Chart For Your Data</LPItem>
+        <LPItem href="https://dataviz.shef.ac.uk/blog/06/04/2020/chart-choice">Choosing Between Common Charts</LPItem>
+        <LPItem href="https://dataviz.shef.ac.uk/blog/20/05/2020/Non-Numeric">Non-Numeric Data Visualisation</LPItem>
+      </LPWrap>    
+      </Fade>
+    </div>
+    <div id="sec4" className="flex-wrap lg:min-h-50">
+      <Fade duration={1200}>
+      <p className="text-brand-blue font-bold text-5xl leading-8">Tools!</p>
+      <p>
+        There are many tools available out there to build visualisations and each of them has their own 
+        focus, strength and weaknesses. These tools are either programming languages, open source 
+        software/libraries, or commercial softwares and platforms. Here we listed materials to get 
+        started on some popular programming languages for data visualisations, each programming language 
+        has their own community and no doubt there will be some amazing data visualisation libraries for 
+        you to use. If you want to learn more about other alternatives, check out 
+        this <a href="https://www.creativebloq.com/design-tools/data-visualization-712402">article</a>.
+      </p>
+      <br/>
+      <h3>Python</h3>
+      <LPWrap>
+        <LPItem href="https://www.python.org/doc/">Python's Offcial Documentations</LPItem>
+        <LPItem video href="https://www.linkedin.com/learning/learning-python-2/welcome?u=36248012">Learning Python</LPItem>
+        <LPItem video href="https://www.linkedin.com/learning/python-for-data-visualization/effectively-present-data-with-python?u=36248012">Python for data visualization</LPItem>
+      </LPWrap>  
+      <h3>R</h3>
+      <LPWrap>
+        <LPItem href="https://cran.r-project.org/manuals.html">The R Manuals</LPItem>
+        <LPItem video href="https://www.linkedin.com/learning/learning-r-2?u=36248012">Learning R</LPItem>
+        <LPItem video href="https://www.linkedin.com/learning/r-essential-training-wrangling-and-visualizing-data/make-your-data-make-sense?u=36248012">R Essential Training</LPItem>
+        <LPItem video href="https://www.linkedin.com/learning/data-visualization-in-r-with-ggplot2/welcome?u=36248012">Data visualisation with ggplot2</LPItem>
+      </LPWrap>  
+      <h3>Matlab</h3>
+      <LPWrap>
+        <LPItem video href="https://www.linkedin.com/learning/learning-matlab-2/welcome?u=36248012">Learning Matlab</LPItem>
+      </LPWrap>  
+      <p>When working with Python and Matlab, it is likely you will be working with Jupyter Notebook, 
+      learn more about it on this <a href="https://www.linkedin.com/learning/introducing-jupyter/present-data-like-a-pro-with-jupyter?u=36248012.">course</a>.</p>
+    </Fade>
+    </div>
+    <hr/>
+    <div className="border-t-1 border-gray-200 pt-10 mt-16">
+      <h2 className="inline" style={{background: 'linear-gradient(225deg, rgba(255,121,180,1) 10%, rgba(41,197,255,1) 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent'}}>Congratulations!</h2> You have completed the <b>learning path - Concept</b>. Now you have more understanding 
+      of the data visualisations and some knowledge of programming languages, get started to produce your
+      own visualisations and share it with other people in the community! Meanwhile, there 
+      is <Link to="/docs/04/07/2020/LearningPath-Lab">second learning path - Lab</Link> for you to explore 
+      tutorials and guides on create data visualisations using different tools and languages.
+    </div>
+  </div>
+</div>

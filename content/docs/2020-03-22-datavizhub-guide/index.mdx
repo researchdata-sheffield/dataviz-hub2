@@ -1,0 +1,100 @@
+---
+type: docs
+author: ["Dataviz Team"]
+title: "Data Visualisation"
+thumbnail: 
+description: "What, Why, How, Where. Learn more by go through three different learning paths 
+              which includes contents on explore data visualisations, tutorials and guides on creating
+              data visualisation, and adopt reproducible workflow."
+date: 2020-03-22
+template: "custom"
+featured: false
+---
+
+import React from 'react'
+import Scrollspy from 'react-scrollspy'
+import Fade from 'react-reveal/Fade'
+import bg from './bg1.jpg'
+
+
+<!-- TODO: beautify guide -->
+
+<div className="shadow-xl flex justify-center items-center text-center" style={{backgroundImage: `url(${bg})`, backgroundSize: "cover",  width: "100%", flexDirection: "column", paddingTop: "37vh", paddingBottom: "37vh"}}>
+  <div >
+    <div className="text-5xl text-white font-bold">Data Visualisation</div>
+    <div className="text-lg text-gray-100 mt-5">Dataviz.Shef Team</div>
+  </div>
+</div>
+<div className="flex flex-wrap justify-between px-3 md:px-32 lg:px-48 2xl:px-78 text-black bg-white text-sm sticky top-0 left-0 z-10 shadow-xl">
+  <a href="#what" anchor className=" hover:text-brand-blue cursor-pointer py-2" style={{background: 'none'}}>What is data visualisation</a>
+  <a href="#why" anchor className=" hover:text-brand-blue cursor-pointer py-2" style={{background: 'none'}}>Why is it important</a>
+  <a href="#how" anchor className=" hover:text-brand-blue cursor-pointer py-2" style={{background: 'none'}}>How this site could help</a>
+  <a href="#start" anchor className=" hover:text-brand-blue cursor-pointer py-2" style={{background: 'none'}}>Where should I start</a>
+</div>
+
+<div className="py-16">
+  <div className="flex flex-wrap text-gray-900 mx-auto px-3 lg:px-16 2xl:px-16 py-8 lg:max-w-70 2xl:max-w-50 rounded-3xl" style={{backgroundColor: "rgba(255, 255, 255, .97)"}}>
+    <Fade duration={2000} fraction={.5}>
+      <div id="what" className="lg:min-h-80">
+        <p className="text-brand-blue font-bold text-5xl">What is data visualisation?</p>
+        <p>
+          Data visualisation generally considered as the graphical representation of information and data, it 
+          is currently an extremely active and critical aspect in research, teaching, and development, and 
+          is closely related to information graphics, information visualisation, scientific visualisation, 
+          and statistical graphics.
+          <img src="./img1.jpg" alt="dashboard with visualisations" />
+          The main purpose of data visualisation is to communicate information clearly and effectively by 
+          means of graphical representation. However, this does not mean that data visualisation must be 
+          boring for its functional purpose, or extremely complicated to look gorgeous. 
+          <br /> <br /> In order to effectively communicate ideas and concepts, 
+          aesthetic and functions need to go hand in hand, and by visually communicating key aspects and 
+          features, we get deep insights into fairly sparse and complex datasets.
+          
+        </p>
+      </div> 
+    </Fade>
+    <Fade duration={2000}>
+    <div id="why" className="flex-wrap lg:min-h-80">
+      <p className="text-brand-blue font-bold text-5xl">Why is it important?</p>
+      <p>
+      The huge amount of data is one of the characteristics of the Internet era. Learn to quickly digest 
+      and absorb useful information in huge data groups can greatly help to seize opportunities. Studies 
+      have shown that the amount of information we use visually is far greater than other senses. This also 
+      means that the possibility of finding relevant information through data visualization is far greater 
+      than other methods, and it allow viewers to get more information.  <img style={{width: '100%'}} src="./img2.jpg" alt="huge dataset" />
+      While many organisations and companies across different sectors relying on data to gain insights and 
+      optimising their products, data visualisation is not yet an integral part of research communication. 
+      Today, powerful, modern, open source, interactive and web-based visualisation tools have revolutionised 
+      the potential for research data impact, we are here to help our researchers make the most of their 
+      data and take advantage of such tools. 
+      </p>
+    </div>
+    </Fade>
+    <Fade duration={2000}>
+    <div id="how" className="flex-wrap lg:min-h-80">
+      <p className="text-brand-blue font-bold text-5xl">How this site could help?</p>
+      <p>
+        Support through: <br />
+          &bull; Documentation on dataviz best practice and use of tools  <br />
+          &bull; Communication channels  <br />
+          &bull; Capacity building opportunities through Events  <br />
+          &bull; Help when you needed <br />
+          &bull; Contribution <br />
+      </p>
+    </div>
+    </Fade>
+    <Fade duration={2000}>
+    <div id="start" className="flex-wrap lg:min-h-50">
+      <p className="text-brand-blue font-bold text-5xl">Where should I start?</p>
+      <p>
+        &bull; Learn from <Link to="/blog">documentations</Link> <br />
+        &bull; Share your data visualisations on <a href="https://orda.shef.ac.uk/visualisations/">ORDA showcase</a> <br />
+        &bull; Join the <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group">google group</a> and/or <a href="https://join.slack.com/t/shef-dataviz/signup">slack community</a> <br />
+        &bull; <Link to="/docs/22/03/2020/contribute-blog-post">Contribute blog post</Link> <br />
+        &bull; <a href="https://github.com/researchdata-sheffield/dataviz-hub2">Contribute</a> to the website <br />
+        &bull; Get in touch with ideas for training, coding clubs, hackathons <br />
+      </p>
+    </div>
+    </Fade>
+  </div>
+</div>

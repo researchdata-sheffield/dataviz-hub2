@@ -1,0 +1,84 @@
+/**
+* ----------------------------------------------
+* Demo styles Copied from Github
+* ----------------------------------------------
+**/
+.accordion {
+  /* border: 1px solid rgba(231, 230, 230, 0.596); */
+  border-radius: 2px;
+}
+
+.accordion:focus, .accordion__item:focus, .accordion__button:focus {
+  outline: none;
+}
+
+/* + .accordion__item */
+.accordion__item {
+  border-top: 1px solid rgba(206, 206, 206, 0.288);
+  overflow: auto;
+}
+
+.accordion__button {
+  background-color: transparent;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  padding-right: 36px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  transition: 0.5s ease;
+  font-size: x-large;
+  font-weight: 600;
+}
+
+.accordion__button:hover, .accordion__button:focus {
+  background-color: #f0f0f09a;
+}
+
+.accordion__button:before {
+  display: inline-block;
+  content: "";
+  height: 12px;
+  width: 12px;
+  margin-right: 40px;
+  margin-top: 15px;
+  border-bottom: 4px solid currentColor;
+  border-right: 4px solid currentColor;
+  transform: rotate(45deg) translate(0px, -6px);
+  transition: 0.4s ease;
+  color: #0066b3;
+  position: absolute;
+  right: 0;
+}
+
+.accordion__button[aria-expanded=true]::before,
+.accordion__button[aria-selected=true]::before {
+  transform: rotate(225deg) translate(-1px, 4px);
+}
+
+.accordion__item .accordion__button[aria-expanded=true] {
+  background-color: #e5f4ff;
+}
+
+[hidden] {
+  display: none;
+}
+
+.accordion__panel {
+  padding: 20px;
+  animation: fadein 0.35s ease-in;
+  background: #f8f8f87c;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

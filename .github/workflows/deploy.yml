@@ -1,0 +1,57 @@
+name: Deploy
+
+on:
+  push:
+    branches: [ master ]
+  schedule:
+    - cron: '0 5 * * *'
+  workflow_dispatch:
+    inputs:
+      Name:   
+        required: true
+        default: 'Re-run the workflow'
+      Description:
+        default: ''  
+
+jobs:
+  deploy:
+    name: Deploy to GitHub Pages
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: master
+      
+      - name: Gatsby Cache
+        id: gatsby-ci-cache
+        uses: actions/cache@v2
+        with:
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-ci-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-gatsby-ci-
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Set user info
+        run: |
+          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+        
+      - name: Deploy
+        run: npm run deploy:incremental
+        env:
+          EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
+          EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
+          EVENT_ORG_ID_1: ${{ secrets.EVENT_ORG_ID_1 }}
+          EVENT_ORG_ID_2: ${{ secrets.EVENT_ORG_ID_2 }}
+          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
+          GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
+          GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
+          GH_TOKEN: ${{ secrets.GH_TOKEN }}
+          GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
+
+

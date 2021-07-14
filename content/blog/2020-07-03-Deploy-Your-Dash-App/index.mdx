@@ -1,0 +1,135 @@
+---
+author: ["Yu Liang Weng"]
+title: "Deploy your dash app on Heroku platform"
+thumbnail: ./Fig1.png
+description: "It is exciting to see your beautiful dash app running locally, but it would be even more interesting if 
+            others can interact it over the web too!"
+date: "2020-07-03"
+category: ["Tutorial"]
+tag: ["Python", "Dash", "Web", "Plotly", "Deploy", "Host", "Heroku"]
+---
+
+*It is exciting to see your beautiful dash app running locally, but it would be even more interesting if 
+    others can interact with it over the web too!*  
+
+---
+
+<br />
+
+## 1. Introduction
+This documentation assumes some prior knowledge of [Python](https://www.python.org/) and HTML/CSS. A minimum of being able to install Python, packages, and be able to execute code should 
+get you a example visualisation. If you need assistance with Python, [python.org](https://docs.python.org/3/tutorial/index.html) provides documentation and tutorials.
+
+In this documentation you will see the app that was built in **<Link to="/blog/12/06/2020/dash-tutorial-2">Dash tutorial</Link>** 
+deployed onto an online cloud platform - **Heroku**, step by step. Although there are other providers you can choose from
+such as **Microsoft Azure** and **Amazon Web Services**, but **Heroku** offering a free plan which is sufficient for most of us. 
+If you do require more scaled solutions, check out their websites. 
+
+If you simply want to share your Jupyter Notebook, find out options 
+at **<Link to="/blog/24/06/2020/host-jupyter-notebook">Host Jupyter Notebook</Link>**. 
+
+My codes for the app can be found [here](https://github.com/researchdata-sheffield/dash_widgets), 
+and my dash app is published as **[dash-widgets](https://dash-widgets.herokuapp.com)**.
+
+<br />
+
+## 2. Installation
+To host a dash app with Heroku, you'll need the following (at minimum):
+ - [Git](https://git-scm.com/)
+ - [Heroku account](https://signup.heroku.com/)
+ - [Heroku Command Line](https://devcenter.heroku.com/categories/command-line)
+ - [virtualenv](https://pypi.org/project/virtualenv/)
+
+If you're using Jupyter notebook you'll need to change the extension **.ipynb** to **.py**. To do this, install 
+*nbconvert* use the command `pip install nbconvert`,then `jupyter nbconvert --to script app.ipynb` 
+for conversion. 
+
+<br />
+
+## 3. Initialisation
+Nagivates to the folder where your dash app located, and initialise the folder:
+```shell
+git init                  # initialises an git repo at current directory
+virtualenv venv           # creates an virtual environment called "venv"
+source venv/bin/activate  # enter the virtual environment
+```
+If you're using Windows, use `source venv/Scripts/activate` instead for the last command. If you close the 
+terminal then you'll need to re-enter this command to activate virtualenv. Since this is a fresh environment 
+we have to re-install dependencies, this depends on what packages you're using. My packages: 
+```shell
+pip install dash
+pip install plotly
+pip install pandas
+pip install numpy
+pip install gunicorn # you have to install this to deploy the app
+```
+
+<br />  
+
+Now add three addition files **Procfile**, **.gitignore**, and **requirements.txt** to app's directory.  
+
+---
+
+**Procfile** (without any file extension):
+```procfile
+web: gunicorn app:server
+```
+*NOTE: app and server refers to the python file `app.py`'s filename and server variable*:
+```python
+app = dash.Dash(__name__)
+server = app.server
+```
+You can change them to whatever you like.
+
+---
+
+**.gitignore** (prevent git upload files listed in this file):
+```git
+venv
+*.pyc
+.DS_Store
+.env
+```
+
+<br />
+
+---
+
+**requirements.txt** (specify dependencies for your environment), use the following command to generate this file 
+automatically:
+```shell
+pip freeze > requirements.txt
+```
+
+<br />
+
+## 4. Deployment
+To continue, make sure you've installed [Heroku Command Line](https://devcenter.heroku.com/categories/command-line). 
+First create a named heroku app:
+```shell
+heroku create your-app-name
+```
+*If this is the first time you use the heroku CLI then it will ask you for username and password.*  
+Then push your directory to heroku:
+```shell
+git add .
+git commit -m 'My dash app'
+git push heroku master
+```
+If you're using Windows and encountering a similar message *'No matching distribution found for pywin32=323'* 
+when push to heroku, then go to the *requirements.txt* and delete the line **pywin32=323**, this should 
+resolve the issue and you can execute `git push heroku master` again.  
+Last step, run the heroku app on web:
+```shell
+heroku ps:scale web=1
+```
+Type `https://your-app-name.herokuapp.com` in your browser and hit enter should get you to your first web 
+dash app!  
+  
+Whenever you've made changes to your **.py** file, you'll need to repeat commands from `git add .` onward to 
+update the app.
+
+
+
+
+

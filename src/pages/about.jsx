@@ -1,12 +1,9 @@
 import React from "react"
 import { Link } from "gatsby"
-import Header from "../components/shared/header"
-import Footer from "../components/shared/footer"
-//import BackgroundSection from "../components/images/about_background"
 import SEO from "../components/shared/seo"
 import RSE from "../images/about/rse.png"
 import ITS from "../images/about/its.png"
-import ORDA from "../images/about/orda_logo.png"
+import ORDA from "../images/about/orda_logo.jpg"
 import Fade from 'react-reveal/Fade'
 import bg from "../images/about/about.jpg"
 
@@ -19,7 +16,6 @@ const About = () => {
         title="About" 
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz"]} 
       />
-      <Header />
       <div className="flex flex-col min-h-100 items-center justify-center text-center w-full" style={{backgroundImage: `linear-gradient(0deg, rgba(0,0,0,0.2) 70%, rgba(0,0,0,0.65) 100%), url(${bg})`, backgroundPosition: 'center', backgroundSize: 'cover'}}>
         <Fade cascade delay={700} duration={2000}>
           <div className="text-white" style={{fontFamily: "TUoS Blake"}}>
@@ -28,7 +24,7 @@ const About = () => {
           </div>
 
           <Link to="/about#more">
-            <button className="mt-16 bg-gray-300 hover:bg-highlight_2 text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
+            <button className="mt-16 bg-gray-300 hover:bg-brand-blue text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">Learn more</button>
           </Link>
         </Fade>
       </div>
@@ -37,20 +33,20 @@ const About = () => {
         <div className="flex flex-wrap mx-auto justify-center content-center border-solid border-gray-100 border-b-2"> 
           <Fade>
             <a className={`${logoStyle} text-black`} href="https://www.sheffield.ac.uk/library/index" target="_blank" rel="noopener noreferrer">
-              <p className="font-medium text-4xl leading-tight" style={{fontFamily: "TUoS Stephenson"}}>The<br />University<br />Library.</p>
+              <p className="font-medium text-4xl leading-tight" style={{fontFamily: "TUOS Stephenson,Georgia,Times,serif"}}>The<br />University<br />Library.</p>
             </a>
             <a className={logoStyle} href="https://www.sheffield.ac.uk/it-services" target="_blank" rel="noopener noreferrer">
-            <img src={ITS}/>
+            <img src={ITS} alt="IT Services site" />
             </a>
             <a className={logoStyle} href="https://rse.shef.ac.uk/" target="_blank" rel="noopener noreferrer">
-              <img src={RSE} />
+              <img src={RSE} alt="Research Software Engineering site" />
             </a>
           </Fade>
         </div>
 
         <div className="flex flex-wrap text-gray-900 text-xl px-3 lg:px-32 xl:px-48 py-16">
           <Fade>
-            <p className=""><b className="text-highlight_2">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
+            <p className=""><b className="text-brand-blue">Dataviz.Shef</b> is a joint initiative between <b>The University Library</b>, <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>.
               This community website exists to provide research staff and students at the University of Sheffield with information and inspiration about the visual presentation of data.
             </p>
             
@@ -63,10 +59,10 @@ const About = () => {
                 posters, grey literature and other non-traditional research outputs. As part of ORDA, we&apos;ve developed a data visualisation showcase site where researchers are able to host 
                 interactive data visualisations and also link them to reposited data in ORDA. 
               </p>
-              <a href="https://orda.shef.ac.uk/" target="_blank" rel="noopener noreferrer"><img src={ORDA} className="shadow-lg mx-auto" style={{maxWidth: "35vh"}} /></a>
+              <a href="https://orda.shef.ac.uk/" target="_blank" rel="noopener noreferrer"><img src={ORDA} className="shadow-lg mx-auto" style={{maxWidth: "35vh"}} alt="Online Research Data" /></a>
             </div>
             
-            <p className="text-highlight_2 text-4xl py-8">Contribute</p>  
+            <p className="text-brand-blue text-4xl py-8">Contribute</p>  
             
             <p className="text-gray-900">From ideas to content for the ORDA showcase, our blog or Dataviz documentation, contributions are open to all. For the moment just get in touch with us through 
               the <a className="link-effect" href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">email</a>, &nbsp;
@@ -76,7 +72,6 @@ const About = () => {
         </div>
       
       </div>
-      <Footer />
     </>
   )
 }

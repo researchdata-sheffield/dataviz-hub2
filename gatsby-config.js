@@ -10,15 +10,22 @@ module.exports = {
     author: 'Yu Liang Weng <y.weng@sheffield.ac.uk>',
     siteUrl: "https://dataviz.shef.ac.uk"
   },
+  flags: { 
+    FAST_DEV: true,
+    PRESERVE_WEBPACK_CACHE: true
+  },
   plugins: [
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GA_TRACKING_ID,
+        trackingId: "UA-165060977-1",
         head: true,
       },
     },
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -31,13 +38,37 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/content/blog`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
       },
     },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'author',
-        path: `./src/author`,
+        name: `docs`,
+        path: `${__dirname}/content/docs`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `visualisation`,
+        path: `${__dirname}/content/visualisation`,
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/data/`,
+      },
+    },
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/components/shared/layout.jsx`),
       },
     },
     /******************************* MDX Plugins *******************************************/
@@ -47,21 +78,16 @@ module.exports = {
         // Apply gatsby-mdx to both .mdx and .md files
         extensions: ['.mdx', '.md'],
         defaultLayouts: {
-          default: require.resolve('./src/templates/blogPostTemplate.jsx'),
+          posts: require.resolve('./src/templates/blog/blogPostTemplate.jsx'),
+          docs: require.resolve('./src/templates/docs/docsTemplate.jsx')
         },
-        plugins: [
-          `gatsby-remark-prismjs`
+        remarkPlugins: [
+          require('remark-math'),
+          require('remark-html-katex')
         ],
-
         gatsbyRemarkPlugins: [
+          'gatsby-remark-code-titles',
           `gatsby-remark-embedder`,
-          {
-            resolve: `gatsby-remark-katex`,
-            options: {
-              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
-              strict: `ignore`
-            }
-          },
           {
             resolve: `gatsby-remark-embed-video`,
             options: {
@@ -82,7 +108,6 @@ module.exports = {
             resolve: `gatsby-remark-responsive-iframe`,
             options: {
               wrapperStyle: `margin: 2rem auto 1.075rem auto, max-width: 800px, height: 600px`,
-
             },
           },
           {
@@ -91,7 +116,7 @@ module.exports = {
               exclude: "Table of Contents",
               tight: false,
               fromHeading: 1,
-              toHeading: 6
+              toHeading: 3
             }
           },
           {
@@ -120,13 +145,14 @@ module.exports = {
                 sh: `bash`,
                 styl: `stylus`,
                 terminal: `bash`,
+                'r': `c`
                 },
               showLineNumbers: true,
               noInlineHighlight: false,
             },
           },
           {
-            // Use this plugin instead of remark-image, since latter cannot style images individuallly
+            // Use this plugin instead of remark-image, since latter cannot style images individually
             resolve: `gatsby-remark-copy-linked-files`,
             options: {
               ignoreFileExtensions: [`bmp`, `tiff`],
@@ -137,33 +163,24 @@ module.exports = {
       }
     },
     /************************** END MDX Plugins *********************************/
-    {
-      resolve: 'gatsby-plugin-load-script',
-      options: {
-        src: 'https://cdnjs.cloudflare.com/ajax/libs/trianglify/2.0.0/trianglify.min.js',
-      },
-    },
     "gatsby-remark-embed-video",
     `gatsby-remark-responsive-iframe`,
-    `gatsby-remark-reading-time`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    'gatsby-plugin-eslint',
+    {
+      resolve: 'gatsby-plugin-eslint',
+      options: {
+        stages: ['develop'],
+        extensions: ['js', 'jsx'],
+        exclude: ['node_modules', '.cache', 'public'],
+        // Any eslint-webpack-plugin options below
+      }
+    },
     `gatsby-plugin-styled-components`,
     `babel-plugin-styled-components`,
-    //`gatsby-plugin-smoothscroll`,
-    `gatsby-transformer-json`,
     `gatsby-plugin-emotion`,
-    //`gatsby-plugin-twitter`,
     `gatsby-plugin-instagram-embed`,
     {
-      resolve: `gatsby-plugin-layout`,
-      options: {
-        component: require.resolve(`./src/components/shared/layout.jsx`),
-      },
-    },
-    {
       resolve: `gatsby-source-eventbrite-multi-accounts`,
+      //resolve: `../gatsby-source-eventbrite-multi-accounts`, // local plugin test
       options: {
         organisations: [
           {
@@ -191,24 +208,8 @@ module.exports = {
         cache_busting_mode: 'none'   // Work with offline plugin
       },
     },
-    {
-      resolve: "gatsby-plugin-postcss",
-      options: {
-        postCssPlugins: [
-          require('tailwindcss')(`./tailwind.config.js`),
-          require(`autoprefixer`),
-          require(`cssnano`)
-        ]
-      }
-    },
-
-    {
-      resolve: 'gatsby-background-image',
-      options: {
-        // add your own characters to escape, replacing the default ':/'
-        specialChars: '/:',
-      },
-    },
+    `gatsby-plugin-offline`, // should be listed after the manifest plugin
+    "gatsby-plugin-postcss",
     /***************** FLEXSEARCH ********************/
     {
       resolve: 'gatsby-plugin-flexsearch',
@@ -301,58 +302,119 @@ module.exports = {
             },
             store: true,
           },
+          {
+            name: 'type',
+            indexed: true,
+            resolver: 'frontmatter.type',
+            attributes: {
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
+            },
+            store: true,
+          },
+          {
+            name: 'published',
+            indexed: true,
+            resolver: 'frontmatter.published',
+            attributes: {
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1, 
+              resolution: 12,
+              depth: 1 
+            },
+            store: true,
+          }
         ],
       },
     },
     /***************** END FLEXSEARCH ********************/
-
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
+    /*********** RSS Feed ***************/
     {
-      resolve: 'gatsby-plugin-offline',
+      resolve: `gatsby-plugin-feed`,
       options: {
-         workboxConfig: {
-            globPatterns: ['**/*']
-         }
-      }
-    },
-    `gatsby-plugin-sass`,
-    {
-      resolve: `gatsby-plugin-advanced-sitemap`,
-      options: {
-          // 1 query for each data type
         query: `
-        {
-          allMdx {
-            edges {
-              node {
-                id
-                frontmatter {
-                  title
-                }
-                fields {
-                  slug
-                }
+          {
+            site {
+              siteMetadata {
+                title
+                description
+                siteUrl
+                site_url: siteUrl
               }
             }
           }
-        }`,
-        mapping: {
-            // Each data type can be mapped to a predefined sitemap
-            // Routes can be grouped in one of: posts, tags, authors, pages, or a custom name
-            // The default sitemap - if none is passed - will be pages
-            allMdx: {
-                sitemap: `posts`,
-            },
-        },
-        exclude: [
-          `/404`,
-          /(\/)?hash-\S*/, // you can also pass valid RegExp to exclude internal tags for example
-        ],
-        createLinkInHead: true, // optional: create a link in the `<head>` of your site
-        addUncaughtPages: true, 
-      }
-    }
+        `,
+        feeds: [
+          {
+            query: `
+            {
+              allMdx(
+                sort: { order: DESC, fields: [frontmatter___date] },
+                filter: { frontmatter: {published: {ne: false}}}
+              ) {
+                edges {
+                  node {
+                    excerpt(pruneLength: 600)
+                    fields { 
+                      slug 
+                    }
+                    frontmatter {
+                      type
+                      title
+                      date
+                      featured
+                      author {
+                        name
+                      }
+                      tag
+                      category
+                    }
+                  }
+                }
+              }
+            }`,  
+            // For more options/fields in RSS go to https://www.npmjs.com/package/rss
+            serialize: ({ query: { site, allMdx } }) => {
+              function getAuthorName(node) {
+                let authorArr = node.frontmatter.author;
+                let authorNames = authorArr.reduce((author1, author2) => author1.name + ", " + author2.name);
+              
+                if(authorArr.length === 1) {
+                  return authorNames.name;
+                }
+                return authorNames;
+              }
 
+              return allMdx.edges.map(({node}) => {
+                let category = node.frontmatter.category || [];
+                let tag = node.frontmatter.tag || [];
+
+                return Object.assign({}, node.frontmatter, {
+                  description: node.description,
+                  date: node.frontmatter.date,
+                  author: getAuthorName(node),
+                  categories: [node.frontmatter.type || 'blog', ...category, ...tag],
+                  url: site.siteMetadata.siteUrl + node.fields.slug,
+                  guid: site.siteMetadata.siteUrl + node.fields.slug,
+                  custom_elements: [{ "content:encoded": node.excerpt }]
+                });
+              });
+            },
+            output: "/rss.xml",
+            title: "Dataviz.Shef RSS Feed",
+            image_url: "https://github.com/researchdata-sheffield/dataviz-hub2/blob/development/src/images/author/dataviz.png",
+            ttl: 1440, // number of minutes feed can be cached before refreshing from source
+          },
+        ],
+      },
+    },
+    /*********** END RSS Feed ************* */
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ],
 }

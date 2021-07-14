@@ -1,0 +1,439 @@
+---
+author: ["Yu Liang Weng"]
+title: "D3.js for data visualisation"
+thumbnail: ./thumb.png
+description: "A simple introduction to D3.js (Data-Driven Documents) - a powerful Javascript Library for creating interactive data visualisation in web browers by manipulating Document Object Model (DOM)."
+date: "2020-08-26"
+category: ["Articles"]
+tag: ["D3.js", "HTML", "Web", "Javascript"]
+template:
+featured: false
+published: true
+disableTOC: false
+d3: ["https://unpkg.com/topojson@3", "dataviz.js", "d3js_for_dataviz.js"]
+---
+
+<div id="example1"></div>
+
+# What is D3.js
+**D3** stands for **Data-Driven Document** and **[D3.js](https://d3js.org/)** is known as an open-source Javascript 
+library that is capable of producing *web-based interactive data visualisations* 
+in web browsers using **SVG**, **HTML** and **CSS**. It is powerful and customisable yet has 
+a *steep learning curve*. If you are interested in online data visualisation or 
+you have used many data visulisation libraries and want to DIY your own 
+chart then give it a go!  
+  
+**[Mike Bostock](https://twitter.com/mbostock)** - the main author of **D3.js** also created an online platform called 
+**[ObservableHQ](https://observablehq.com/)** where you can host your javascript notebooks (similar to how 
+Jupyter Notebook works for Python) to explore and visualise your data. This 
+platform is especially useful when you first start learning D3.js, as no 
+installation is required to import D3 modules plus you can fork other people's 
+notebook and build on top of it!  
+
+<br/> 
+
+# What you need to know 
+Unlike programming languages such as **Python** and **R** that have some high-level 
+libraries that allow you to draw interactive and informative graphics, 
+D3.js gives you the freedom to build whatever you can imagine from 
+low-levels. Although there are plenty of resources available online for you to 
+learn D3.js, it is **recommended** you have some practical knowledge of following 
+things before you proceed:  
+  - **Javascript**
+  - **SVG** (Scalable Vector Graphics)
+  - **HTML5** (HyperText Markup Language)
+  - **CSS** (Cascade Style Sheet)
+    
+**D3.js** is built from Javascript and no doubt you will need to know Javascript 
+so that you will have no trouble dealing with data and functions. **SVG** is an 
+XML-based vector graphics format and should always be the first and largest 
+element of any D3 graphic you want to create. SVG acts as a container which 
+allows you to draw any shapes within it using a set of basic shape elements 
+such as rectangles, circles, ellipses, paths, straight lines, polylines, and 
+polygons. D3 makes use of this mechanism which adds graphics and text to SVG 
+and then binds data to those elements. An example of SVG:
+
+```html:title=svg-example
+<svg width="500" height="300">
+   <rect x="0" y="0" width="300" height="200" fill="yellow"></rect>
+</svg>
+```
+
+<svg width="500" height="300">
+   <rect x="0" y="0" width="300" height="200" fill="yellow"></rect>
+</svg>  
+  
+If you have ever experience in creating web pages or similar then you should be 
+familiar with HTML and CSS. HTML is the standard markup language for creating 
+web pages as well as defining the structure of web pages, whereas HTML5 is the 
+latest standard of HTML. CSS is the style language used for styling HTML documents 
+and hence different websites have their presentation styles depending on how they 
+define it.  
+  
+  
+
+# Installation
+To use D3.js you can either download the latest version 
+from [d3js.org](https://d3js.org/) then include it in the head tag or place the 
+following script within the head tag of your html file:
+
+```html
+<script src="https://d3js.org/d3.v5.min.js"></script>
+```  
+  
+
+
+# Core Concepts
+Rather than include everything (which are not possible) here, this article aims 
+to give an introduction to the foundation of **D3** and let you discover other methods 
+in the **[D3 API document](https://github.com/d3/d3/blob/master/API.md)** when needed. Note that this article is written based on D3 
+version 5.16 and there might be some changes to D3 in the future which invalid 
+some of the codes here.  
+
+## Selections
+One important aspect of D3 is the *DOM manipulation*. The 
+**DOM** (Document Object Model) is an independent interface which organises an 
+XML/HTML document into tree structure and each node within the tree represents 
+a part of the document. Selection methods in D3 look similar to CSS 
+selectors (actually it is based on CSS selectors) and allow you select elements 
+within the DOM of the current web page then perform any other actions on it. There 
+are two selection methods:  
+  - **select()** - select the DOM element matched the given criteria within the 
+  bracket. If there are more than one elements matched, only select the first 
+  element. For example, *select("div")* will return the first div element in the 
+  DOM tree, `select(".myclass")` return the first element that has the 
+  class `myclass`.
+  - **selectAll()** - similar to *select()* method but returns all elements that match 
+  the criteria.  
+
+
+
+But what could you do with **selected elements**? 
+
+## New elements
+  - **Append()** - allows you to modify the element or add new elements within 
+  the selected element. For example, `d3.select("div").append("g")` add a `<g>` tag 
+  element to the first div element (beware it doesnt change or replace existing 
+  elements).
+  
+  ```html
+  <div>
+    <g></g>
+  </div>
+  ```
+
+  - **text()** - set the content of the selected element
+
+
+
+## Manipulation
+  - **attr()** - Probably the most common methods used after the append method. This 
+  method is used to add or update the specified attribute of the selected elements.
+  - **style()** - Used to set the styles of the selected elements as how you would for 
+  inline CSS styles. For example, `attr("background-color", "#000")` set the 
+  background colour to black.
+  - **html()** - Used to set the html content of selected elements, that means you can 
+  actually write a html document within it! 
+
+  ```js
+  d3.select("svg")
+    .html("<h1>Hello WOrld!</h1><p>My name is Dataviz!<p>")
+  ```
+
+  <div id="html"></div>
+
+  - **insert()** - insert a new element at the end of selected elements.
+  - **remove()** - delete selected elements.
+  - **property()** - set attributes that cannot set by attr(), e.g your custom 
+  attributes.
+  - **classed()** - Set or modify the classlist of selected elements.
+
+For more information about D3 selections, 
+visit [D3-Selection](https://github.com/d3/d3-selection).  
+  
+
+
+## Data-binding / data-join
+Previously we have mentioned that we can draw shapes using basic shapes within 
+SVG elements and indeed these basic shapes will have some required attributes to 
+specify, for a rectangle you will need *height* and *width* and (*x*, *y*) coordinates. If 
+you have multiple rectangles to create then it would be a good idea to use some 
+function and map attribute data to the shape, otherwise you will end up with 
+multiple replicate lines. Rather than using a for loop, D3 have provided a useful 
+method:  
+
+```js
+var data = [5,10,15,20,25]
+
+svg.selectAll("rect")
+    .data(data)
+    .enter().append("rect")
+    .attr("height", function(d,i) { return d; })
+    .attr("width", "60")
+    .attr("x", function(d,i) { return 40*i }
+    .attr("y", function(d,i) { return 400-(d*10); })
+```
+
+To bind the data you need to use `data()` methods with your data. But what is 
+the `enter()` method and why do we append rectangles after we have already selected 
+rectangle elements? Consider the scenario that there are no rectangles for we 
+to select, so `svg.selectAll("rect")` will just return an empty selection, this 
+means data has not bind to any elements, and what `enter()` methods does is select 
+these unbound data, then `.append("rect")` will append a rectangle element to each 
+of these data elements. The same procedure applies to the case when the number 
+of rectangles is less than the number of data objects. In the case of more 
+rectangles than data objects, then instead of `.enter().append("rect")` 
+we use `.exit().remove()` to remove any unused rectangles.  
+  
+If you only want to bind data to a single element and does not require any 
+updates then you can also use the `datum()` method.
+
+
+
+## Dynamic properties
+In the data binding section we have code look like this:
+
+```js
+svg.selectAll("rect")
+    .data(data)
+    .enter().append("rect")
+    .attr("height", function(d,i) { return d; })
+```
+
+In the height attribute of each rectangle, instead of a value we assign a function 
+to it which returns `d`. The `d` and `i` here refers to the corresponding **data point**
+and **index** of the current rectangle. This means we can pass data dynamically to 
+each element and assign attributes at your will. You can call `d` and `i` whatever 
+you want but **the order is important**. Even if you use `i` only, `d` must be specified 
+because the index is always the **second parameter** in the function. 
+
+
+
+## Events
+As in vanilla javascript, D3.js also allows you to bind an event listener to any 
+DOM element using d3.selection.on() method which can capture event types you 
+would normally use. Here is a simple example that the text colour will change 
+once you are hovering it:  
+
+```js
+d3.select("#event")
+  .style("padding", "3rem 2rem")
+	.on("mouseover", function() {
+		d3.select(this)
+			.style("background-color", "black")
+      .style("color", "white");
+	})
+	.on("mouseout", function() {
+		d3.select(this)
+      .style("background-color", "yellow")
+      .style("color", "black")
+	});
+```
+
+<div id="event" className="text-2xl font-bold" style={{fontFamily: 'ink Free'}}>D3.js for data visualisation</div>
+
+
+
+Learn more about events on:
+
+<LPWrap>
+  <LPItem href="https://octoperf.com/blog/2018/04/17/d3-js-mouse-events-and-transitions-tutorial/#how-to-handle-mouse-event-using-d3-js">
+    How to handle mouse event using D3.js
+  </LPItem>
+  <LPItem href="https://github.com/d3/d3/blob/master/API.md#handling-events">
+    D3 API: Handing events
+  </LPItem>
+</LPWrap>
+
+
+
+# A simple example
+Let's use 2020 world population data to create an interactive world map that 
+displays each country's population and growth rate.  
+
+The first step is to create a `svg` element and a `div` element with *tooltip* class 
+in your html file:
+
+```html
+<svg id="worldMap" style="min-width: 80vw; min-height: 60vh"></svg>
+<div className="tooltip"></div>
+```
+We also need to add styles for the *tooltip* class and *hiddenTt* class (appears later):
+
+```css
+div.tooltip {
+  color: #222; 
+  background: #fff; 
+  border-radius: 3px; 
+  box-shadow: 0px 0px 2px 0px #a6a6a6; 
+  padding: .5em; 
+  text-shadow: #f5f5f5 0 1px 0;
+  opacity: 0.9; 
+  position: absolute;
+}
+.hiddenTt {
+  display: none;
+}
+```
+
+Then define the population dataset and geographic locations for 
+each country.
+
+```js:title=dataviz.js
+countryCoor = "https://unpkg.com/world-atlas@1/world/110m.json"
+countryNames = "https://gist.githubusercontent.com/lkopacz/dfd9cc04a4d5a5f0fe87c89a79524479/raw/39100d4f6b7c784bd5d838a4e357873ef6877579/world-country-names.csv"
+populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv"
+```
+
+The next step is to create a projection that transforms **latitude** and **longitude** 
+coordinates intoto **x** and **y** coordinates which can be used to display on our 
+screen. Then we create a geographic path generator using the projection. 
+Notice that we have appended the `g` tag to the `svg` element, so that we can 
+append all paths to `g` later. This ensure all paths are grouped for better 
+code management and visibility.  
+
+```js:title=Create_Projection
+var projection = d3.geoNaturalEarth1();
+var path = d3.geoPath()
+              .projection(projection);
+var svg = d3.select("#worldMap")
+              .append("g")
+              .attr("position", "center");
+var tooltip = d3.select("div.tooltip");
+```  
+
+To load datasets we are using D3 functions `d3.json` and `d3.csv`, and the use of 
+*Promise* is to ensure we do not perform any actions until data are loaded sucessfully. 
+The *createMap* function is the function we have created for create the actual map.
+
+```js:title=Promise {6}
+Promise.all([
+	d3.json(countryCoor),
+	d3.csv(countryNames),
+	d3.csv(populationData)
+]).then(data => {
+		createMap(data[0], data[1], data[2])
+}).catch(err => {
+		throw err;
+})
+```
+
+Let's go through the `createMap` function in more details. Before drawing the map we need 
+to make sure we have the right data structure. The first step is to get **GeoJSON** 
+features (geometry coordinates of each country's border) by using **TopoJSON** functions.  
+Read more about **TopoJSON** on:
+<LPWrap>
+  <LPItem href="https://github.com/topojson/topojson-client/blob/master/README.md#feature">
+    TopoJSON API
+  </LPItem>
+  <LPItem href="https://medium.com/@amy.degenaro/introduction-to-digital-cartography-geojson-and-d3-js-c27f066aa84">
+    Introduction to Digital Cartography
+  </LPItem>
+</LPWrap>
+
+However, the *countryCoor* dataset contain only country ids rather than the country 
+names. Therefore, we join the dataset with the *countryNames* dataset and return 
+the country name if there is a match on id. Similarly, we join with 
+the *populationData* dataset to get the population and yearly change rate for each 
+country.
+
+```js:title=Create_map_function
+function createMap(world, names, population) {
+	var countriesData = topojson.feature(world, world.objects.countries).features;
+	countries = countriesData.filter(d => {
+		return names.some(n => {
+			if (d.id == n.id) return d.name = n.name;
+		})
+	});
+	countries = countries.filter(d => {
+		return population.some(function(p) {
+			name1 = d.name;
+			name2 = p.Region;
+			if(name1.includes(name2)) {
+				d.population = p.Population;
+				return d.Yearly_Change = p.Yearly_Change
+			}
+		})
+  })
+ ...
+}
+```
+
+Now we move on to create the map. If you have read the section above then you should
+have find the following code familiar:
+
+```js:title=Create_map_function
+function createMap(world, names, population) {
+  ...
+  svg.selectAll("path")
+      .data(countries)
+      .enter()
+      .append("path")
+      .attr("stroke","#313131")
+      .attr("stroke-width",1)
+      .attr("fill", "#535353")
+      .attr("d", path)
+      .on("mouseover",function(d,i){
+        d3.select(this).attr("fill","#00b2ec").attr("stroke-width",2);
+        return tooltip.style("hidden", false).html(d.name + "<br/>" + d.population);
+      })
+      .on("mousemove",function(d){
+        tooltip.classed("hiddenTt", false)
+                .style("top", (d3.event.pageY + -460) + "px")
+                .style("left", (d3.event.pageX + 10) + "px")
+                .html(d.name + "<br/>" + "<p style='font-size: 13px'>Population: " + d.population + "</p><p style='font-size: 13px; margin-top: -10px'>Yearly change: " + d.Yearly_Change + "</p>");
+      })
+      .on("mouseout",function(d,i){
+        d3.select(this).attr("fill","#535353").attr("stroke-width",1);
+        tooltip.classed("hiddenTt", true);
+      });
+  ...
+}
+```
+
+In here we are creating paths using data from above then add three events monitoring 
+user's mouse movement on the map.  
+
+Lastly, we can make the map more interactive by monitoring user's dragging action and 
+rotate/translate the map accordingly.
+
+```js:title=Monitor-User-Action
+function createMap(world, names, population) {
+  ...
+	svg.call(d3.drag()
+    .on("drag", function() {
+      var xy = d3.mouse(this);
+      projection.rotate(xy).translate([xy[0], xy[1]])
+      svg.selectAll("path")
+        .attr("d",path);
+    }));
+```
+
+<svg id="d3" className="lg:-ml-60 md:min-w-80 md:min-h-60 lg:min-h-60"></svg>
+<div className="tooltip"></div>
+
+
+# Interested?
+D3.js is a really powerful tool for creating online data visualisation, if you want to 
+explore more about it, check out the following resources:
+
+<LPWrap>
+  <LPItem href="https://github.com/d3/d3/wiki/Tutorials">
+    D3 Wiki Tutorials
+  </LPItem>
+  <LPItem href="https://observablehq.com/@d3/learn-d3">
+    ObservableHQ - Learn D3
+  </LPItem>
+  <LPItem href="https://www.d3-graph-gallery.com/">
+    D3 graph gallery
+  </LPItem>
+  <LPItem href="https://github.com/d3/d3/blob/master/API.md">
+    D3 API Reference
+  </LPItem>
+  <LPItem video href="https://www.linkedin.com/learning/d3-js-essential-training-for-data-scientists">
+    D3.js essential training
+  </LPItem>
+  <LPItem video href="https://www.linkedin.com/learning/learning-data-visualization-with-d3-js/welcome?u=36248012">
+    Learning data visualisation with D3.js
+  </LPItem>
+</LPWrap>

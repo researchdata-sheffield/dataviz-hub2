@@ -1,0 +1,43 @@
+---
+type: visualisation
+author: ["Yu Liang Weng"]
+title: "This is a test item."
+thumbnail: thumb.jpg
+description: This is a test item.
+date: "2021-06-03"
+template:
+featured: false
+rowSpan: 1
+columnSpan: 2
+---
+
+
+This is a test item.
+
+
+<VisPagination mdx={props.mdx} />
+
+<VisDetail mdx={props.mdx} />
+
+export const data =[
+  {
+    "title": "Source",
+    "content": `This is a test item.`
+  },
+  {
+    "title": "Code",
+    "content": `This is a test item.`
+  },
+  {
+    "title": "Attribution",
+    "content": `This is a test item.`
+  },
+  {
+    "title": "License",
+    "content": `This is a test item.`
+  }
+]
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

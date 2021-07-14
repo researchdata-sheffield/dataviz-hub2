@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
-import { navigate } from 'gatsby'
+import { navigate, Link } from 'gatsby'
 import PropTypes from "prop-types"
 import {FiSearch} from "react-icons/fi"
 import Highlighter from 'react-highlight-words';
+import ReactTooltip from "react-tooltip"
+
+
 
 // Search component
 class Search_Home extends Component {
@@ -11,17 +14,27 @@ class Search_Home extends Component {
     results: [],
   }
 
+  // componentDidMount() {
+  //   // Set search result width = search box width
+  //   setTimeout(() => {
+  //     var box = document.querySelector('#searchBox');
+  //     var result = document.querySelector('#searchResult');
+  //     result.style['maxWidth'] = box.offsetWidth + 'px';
+  //   }, 2000);
+  // }
+
   render() {
+    const quickLink = "text-gray-700 hover:underline";
 
     const ResultList = () => {
       if (this.state.results.length > 0 && this.state.query.length > 0 ) {
         
         return (
-          <div className="z-30 text-left overflow-auto max-h-50 xl:max-h-55 mx-auto ipadp:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
+          <div className="text-left overflow-auto max-h-50 xl:max-h-55 mx-auto lg:max-w-25 2xl:max-w-30 border-1 border-gray-200 shadow-2xl noScrollBar">
             {this.state.results.slice(0,5).map((page, i) => {
 
               return( 
-                <div className="text-gray-800 group border-b-1 border-gray-200 hover:bg-gray-200" key={i}>
+                <div className="text-gray-800 group border-b-1 bg-white border-gray-200 hover:bg-gray-200" key={i}>
                   <a href={`${page.url}`} target="_blank" rel="noopener noreferrer">
                     <div className="flex self-center items-center justify-end">
                       <div className="w-full">
@@ -36,7 +49,12 @@ class Search_Home extends Component {
               )
             })}
             {this.state.results.length > 6 ? 
-              <div className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-highlight_2 border-t-1 cursor-pointer" onClick={ () => {navigate("/search", {state: {searchWord: this.state.query}} )} }>{this.state.results.length - 6} more results</div>
+              <div 
+                className="text-center py-2 bg-gray-800 text-white font-semibold hover:bg-white hover:text-brand-blue border-t-1 cursor-pointer" 
+                onClick={ () => {navigate("/search", {state: {searchWord: this.state.query}} )} }
+              >
+                {this.state.results.length - 6} more results
+              </div>
               : <div className="text-center py-2 bg-gray-800 text-white font-semibold border-t-1">End of results</div>
             }
             
@@ -54,20 +72,46 @@ class Search_Home extends Component {
     }
 
     return (
-      <div className={`${this.props.classNames} mt-16 2xl:mt-20 relative text-gray-700 w-full text-center`} >
-        <div className="inline-block focus:outline-none text-gray-600 bg-white p-3 rounded-lg" style={{boxShadow: "#4e4e4e 0px 5px 20px -16px"}}>
+      <div className={`${this.props.classNames || ''} w-full relative text-gray-900 text-center`} >
+        <div id="searchBox" className="relative group inline-block text-gray-700 bg-white p-3 rounded-sm border-1 border-white hover:border-gray-400 transition duration-300" style={{boxShadow: "rgb(238, 238, 238) 0px 5px 15px"}}>
           <FiSearch className="inline-block text-center text-3xl -mt-1" />
           <input id="homeSearch" onChange={this.search} onInput={this.search} autoComplete="off" className="search__input py-1 pl-4 text-lg focus:outline-none pr-5 text-gray-700" style={{minWidth: "21vw"}} type="text" name="search" placeholder="What are you looking for?" />
+          <div id="searchResult" className="absolute z-10 w-full hidden group-hover:block mt-3" style={{ transform: 'translate(-50%, 0%)', left: '50%' }}>
+            <ResultList />
+          </div>
         </div>
-        <div className="search__list">
-          <ResultList />
+
+        <div className="hidden md:flex justify-evenly pt-5 2xl:pt-8 z-10 w-full">
+          <div className="w-2/7 text-left">
+            <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Dataviz.Shef</div>
+              <ul className="list-reset leading-normal text-xs 2xl:text-sm text-left">
+                <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
+                <li><Link className={quickLink} to='/#learning-path' data-tip="#Get started">Learning path</Link></li>
+                <li><Link className={quickLink} to='/#home_community' data-tip="#Community">Community</Link></li>
+                <li><Link className={quickLink} to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
+                <li><Link className={quickLink} to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
+                <li><Link className={quickLink} to='/blog'>Blog</Link></li>
+                <ReactTooltip />
+              </ul>
+          </div>
+          
+          <div className="w-2/7 text-left">
+            <div className="mb-1 font-semibold text-xs 2xl:text-base text-gray-800">Featured</div>
+              <ul className="list-reset leading-normal text-xs 2xl:text-sm">
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Chart"}}) }} href="#">Chart</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Colour"}}) }} href="#">Colour</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Statistical Modeling"}}) }} href="#">Statistical Modeling</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "Docs"}}) }} href="#">Docs</a></li>
+                <li><a className={quickLink} onClick={ () => { navigate( "/search", {state: {searchWord: "R"}}) }} href="#">R</a></li>
+              </ul>
+          </div>
         </div>
+
       </div>
     )
   }
 
   getSearchResults(query) {
-    // adicionar variável para língua
     var index = window.__FLEXSEARCH__.en.index
     var store = window.__FLEXSEARCH__.en.store
     if (!query || !index) {
@@ -83,9 +127,13 @@ class Search_Home extends Component {
       results = Array.from(new Set(results))
 
       // return the corresponding nodes in the store
-      var nodes = store
+      let nodes = store
         .filter(node => (results.includes(node.id) ? node : null))
         .map(node => node.node)
+
+      if (process.env.NODE_ENV === "production") {
+        return nodes.filter(item => item.published !== false);
+      }
 
       return nodes
     }

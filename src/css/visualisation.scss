@@ -1,0 +1,96 @@
+$screen-sm: 640px;
+$screen-md: 768px;
+$screen-lg: 1024px;
+$screen-xl: 1280px;
+$screen-2xl: 1441px;
+
+
+.visualisationColourBorder {
+  position: relative;
+  display: block;
+  border-radius: .675rem;
+  background: linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%) border-box;
+
+  &:hover {
+    background: linear-gradient(135deg, #141e30 0%,#152033 6%,#20344c 65%,#243b55 100%) border-box;
+  }
+  div {
+    height: 100%;
+  }
+}
+
+/*
+BACKUP
+Each item will have the padding-bottom property to specify:
+- axa: 100%
+- 1xa: 100%/a
+- ax1: a*100%
+- axb: a/b * 100%
+*/
+
+.visItem-1x1, .visItem-2x2, .visItem-3x3, .visItem-4x4 {
+  padding-bottom: 100%;
+  
+  @media screen and (max-width: $screen-md) {
+    padding-bottom: inherit;
+  }
+}
+
+.visItem-2x1 {
+  padding-bottom: 200%;
+}
+
+.visItem-3x1 {
+  padding-bottom: 300%;
+}
+
+.visItem-4x1 {
+  padding-bottom: 400%;
+}
+
+.visItem-1x2 {
+  padding-bottom: calc(100%/2);
+}
+
+.visItem-1x3 {
+  padding-bottom: calc(100%/3);
+}
+
+.visItem-1x4 {
+  padding-bottom: calc(100%/4);
+}
+
+.visItem-2x3 {
+  padding-bottom: calc(2 / 3 * 100%);
+}
+
+.visItem-2x4 {
+  padding-bottom: calc(2 / 4 * 100%);
+}
+
+.visItem-3x2 {
+  padding-bottom: calc(3 / 2 * 100%);
+}
+
+.visItem-3x4 {
+  padding-bottom: calc(3 / 4 * 100%);
+}
+
+.visItem-4x2 {
+  padding-bottom: calc(4 / 2 * 100%);
+}
+
+.visItem-4x3 {
+  padding-bottom: calc(4 / 3 * 100%);
+}
+
+
+@media screen and (max-width: $screen-md) {
+  .visItem-2x1, .visItem-3x1, .visItem-4x1, 
+  .visItem-1x2, .visItem-1x3, .visItem-1x4, 
+  .visItem-2x3, .visItem-2x4, .visItem-3x2,
+  .visItem-3x4, .visItem-4x2, .visItem-4x3 {
+    padding-bottom: inherit;
+  }
+}
+

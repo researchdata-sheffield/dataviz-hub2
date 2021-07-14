@@ -1,0 +1,209 @@
+/* Small (sm) */
+/* Medium (md) */
+/* Large (lg) */
+@media (min-width: 1024px) {
+  .fade-box2 {
+    max-height: 130px;
+  }
+}
+/* ipap pro (ipadp) */
+/* Extra Large (xl) */
+@media (min-width: 1281px) {
+  .fade-box2 {
+    max-height: 175px;
+  }
+}
+/* Extra 2 Large (2xl) */
+@media (min-width: 1400px) {
+  .fade-box2 {
+    max-height: 232px;
+  }
+
+  .fade-box2:after {
+    height: calc((13.75vw - 30px)/2) !important;
+  }
+}
+/*****
+* Linear Faded box for blog grid
+*/
+.fade-box:before {
+  content: "";
+  width: 100%;
+  height: 10%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+  background: linear-gradient(transparent 10px, white);
+}
+
+.fade-box2:after {
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0, rgba(255, 255, 255, 0)), color-stop(100%, #fff));
+  background-image: -moz-linear-gradient(rgba(255, 255, 255, 0), #fff);
+  background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0), #fff);
+  background-image: linear-gradient(rgba(255, 255, 255, 0), #fff);
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: calc((18.75vw - 30px)/ 2);
+}
+
+/*******
+* Scroll to Top button 
+*/
+.scrollTop-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  width: 50px;
+  height: 50px;
+  display: block;
+  text-decoration: none;
+  border-radius: 35px;
+  display: block;
+  transition: all 0.7s ease;
+  z-index: 99;
+  text-align: center;
+  opacity: 0;
+}
+.scrollTop-btn:hover {
+  /*     background: rgba(0, 0, 0, 0.9); */
+  background: #00aeef;
+  z-index: 99;
+}
+.scrollTop-btn > .scrollTopArrow {
+  top: 7px;
+  left: 10px;
+  transition: all 0.4s ease;
+}
+.scrollTop-btn:hover > .scrollTopArrow {
+  top: 2px;
+  left: 10px;
+  z-index: 99;
+  color: white;
+  transition: all 0.4s ease;
+}
+
+/*********  
+Home Search bar & animation 
+**********
+*****/
+.searchIcon {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.typewriter p {
+  white-space: nowrap;
+  overflow: hidden;
+  -webkit-animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
+  animation: typing 1.5s steps(30, end), blink 0.75s step-end infinite;
+}
+.typewriter p:nth-child(2) {
+  opacity: 0;
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+/******** 
+*Home Scroll down button & animation  
+**/
+#scrollDown-btn span {
+  position: absolute;
+  top: 0;
+  border-left: 2px solid #3d3d3d;
+  border-bottom: 2px solid #444444;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb 1.5s infinite;
+  animation: sdb 1.5s infinite;
+  box-sizing: border-box;
+}
+
+/******** 
+* Link hover animation 
+**/
+.link-effect {
+  color: #000000;
+  padding-bottom: 4px;
+  background: linear-gradient(225deg, #ff79b4 10%, #29c5ff 100%);
+  background-size: 100% 2px;
+  background-repeat: no-repeat;
+  background-position: right 85%;
+  text-shadow: none;
+  transition: 0.3s linear;
+}
+
+.link-effect:hover, .link-effect:link:active, .link-effect:visited:active, .link-effect:visited:hover,
+.link-effect-hover:hover, .link-effect-hover:link:active, .link-effect-hover:visited:active, .link-effect-hover:visited:hover {
+  color: #00aeef;
+  animation: inline-link-hover 0.6s ease-out 1;
+}
+
+/* Past event effect 
+*
+*/
+.pastEvent {
+  border-top: solid 4px #2c5282;
+  border-right: solid 6px #2c5282;
+  transition: 0.2s ease;
+}
+.pastEvent:hover {
+  border-image-source: linear-gradient(225deg, #ff79b4 10%, #29c5ff 100%);
+  border-image-slice: 1;
+}
+
+/* Text effect
+*
+*/
+.text-effect {
+  background: linear-gradient(225deg, black 10%, black 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: 0.5s ease;
+}
+.text-effect:hover {
+  background: linear-gradient(225deg, #ff79b4 10%, #29c5ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.TOC li > a {
+  color: #9e9e9e;
+  transition: 0.5s ease;
+}
+.TOC li.active > a {
+  color: #222222;
+  font-weight: 600;
+}
+
+/* 
+*  Accessibility statement
+*/
+.accAbt, h2.accAbt, h1.accAbt {
+  padding-left: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 1.3rem;
+  border-left: 1rem solid #11b1ff;
+  font-family: TUOS Stephenson,Georgia,Times,serif;
+}
+
+h1.accAbt {
+  font-size: 2rem;
+  margin-top: 5rem;
+  border-left: 1.7rem solid #1961ae;
+}
+
+h2.accAbt {
+  font-size: 1.7rem;
+  font-family: TUoS Blake;
+}
+
+.accAbtSubItem {
+  padding-left: 2rem;
+}

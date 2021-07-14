@@ -1,0 +1,67 @@
+---
+type: visualisation
+author: ["Yu Liang Weng"]
+title: "University of Sheffield researchers to help bring Green Industrial Revolution"
+thumbnail: thumbnail.png
+description: Researchers from the University of Sheffield Energy Institute are set to work with the Drax power station to generate hydrogen and sustainable aviation fuels from biomass gasification and carbon capture as part of a £20m UKRI-funded project. 
+category: ["Energy Institute"]
+tag: ["Drax power station", "IDRIC"]
+date: "2021-06-02"
+template:
+featured: false
+---
+
+import Bg from "./nuclear-power-station.jpg"
+
+
+<div 
+  style={{backgroundImage: `linear-gradient(45deg, rgba(100,100,100,.7) 5%, rgba(30,30,60,.85) 96%), url(${Bg})`, maxWidth: '550px', maxHeight: '550px', minHeight: '550px', width: '100%', borderRadius: '20px', backgroundSize: 'cover'}}
+  className="p-5 relative mx-auto"
+>
+  <h1 className="mt-0 text-2xl md:text-4xl font-extrabold" style={{color: 'transparent', background: 'linear-gradient(315deg, rgba(47,255,43,1) 4%, rgba(0,160,255,1) 96%)', backgroundClip: 'text'}}>University of Sheffield researchers to help bring Green Industrial Revolution</h1>
+  <div className="mt-12 md:mt-20 w-full flex space-x-8">
+    <div className="text-right">
+      <h1 className="my-0 text-3xl md:text-6xl font-bold text-white">£20m</h1>
+      <h3 className="mt-0 font-normal text-base text-gray-400">project</h3>
+    </div>
+    <div className="text-right">
+      <h1 className="my-0 text-3xl md:text-6xl font-bold text-white">140</h1>
+      <h3 className="mt-0 font-normal text-base text-gray-400">partners</h3>
+    </div>
+    <div className="text-right relative">
+      <span className="text-sm text-gray-400 inline-block text-right absolute top-0 right-0 -mt-4">by</span>
+      <h1 className="my-0 text-3xl md:text-6xl font-bold text-green-300">2030</h1>
+      <h3 className="mt-0 font-normal text-base text-gray-400">four low-carbon clusters</h3>
+    </div>
+  </div>
+  <div className="mt-4 md:mt-16 text-gray-400 text-center text-xs md:text-base">
+    + world’s first net-zero emissions industrial cluster by <span className="text-green-400 text-lg">2040</span>
+  </div>
+
+  <h1 className="absolute bottom-0 left-0 m-5 text-gray-500 font-extrabold text-xs">Dataviz.Shef</h1>
+  <h1 className="absolute bottom-0 right-0 m-5 text-gray-500 text-xs">Source: The University of Sheffield - News</h1>
+</div>
+
+
+<VisPagination mdx={props.mdx} />
+<VisDetail mdx={props.mdx} />
+
+export const data =[
+  {
+    "title": "Source",
+    "content": `The University of Sheffield - <a href="https://www.sheffield.ac.uk/energy/news/university-sheffield-researchers-help-bring-green-industrial-revolution">Latest News</a>`
+  },
+  {
+    "title": "Code",
+    "content": `This visualisation is created using HTML and CSS. You can get the source code by right click the visualisation and select 'Inspect'. You will need to adjust CSS if hosted on a different website. This website uses tailwindcss (https://tailwindcss.com/) framework for styling of some elements. E.g. className="p-5 relative" translates to "padding: 1.25rem; position: relative".`
+  },
+  {
+    "title": "License",
+    "content": `Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  }
+]
+
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

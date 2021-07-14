@@ -1,0 +1,53 @@
+---
+type: visualisation
+author: ["Yu Liang Weng"]
+title: "People turned to sweets, chocolate and salty snacks during the Covid-19 lockdowns in the UK and Australia"
+thumbnail: thumb.png
+category: ["Department of Psychology"]
+tag: ["COVID-19 lockdown", "Food intake", "Craving control"]
+description: A new study led by the University of Sheffield suggests that treats, such as sweets, chocolate and salty treats, increased for some people during Covid-19 lockdowns. People with low control over their cravings were most at risk of increasing their snack intake during the lockdown. Researchers warn about weight and health related issues for at-risk adults due to the impact of lockdowns on our eating behaviours.
+date: "2021-06-24"
+embedImage: share.png
+rowSpan: 1
+columnSpan: 1
+---
+
+import React from "react"
+import MarimekkoPlot from "./marimekkoPlot"
+
+
+export const data = [
+  {
+    "title": "Source",
+    "content": `Low craving control predicts increased high energy density food intake during the COVID-19 lockdown: Result replicated in an Australian sample (<a href="https://doi.org/10.1016/j.appet.2021.105317">https://doi.org/10.1016/j.appet.2021.105317</a>). <br/> The University of Sheffield - <a href="https://www.sheffield.ac.uk/news/more-half-brits-snacked-more-lockdown">Latest News</a>.`
+  },
+  {
+    "title": "Detail",
+    "content": `The <a href="https://nivo.rocks/marimekko/">marimekko</a> component (similar to a bar chart) is used for this visualisation for extra dimensions - population in each country and percentages of respondents. If you would like to try this component, <a href="https://reactjs.org/docs/add-react-to-a-website.html">add React to your website</a> and install nivo and marimekko using <code class="language-text">npm install @nivo/core @nivo/bmarimekko</code>.`
+  },
+  {
+    "title": "Code",
+    "content": `This visualisation is created using React and <a href="https://nivo.rocks/">nivo</a> package. <br/> <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-06-24-Increased-snack-intake-in-UK-and-Australia/marimekkoPlot.jsx">Link</a> for the source code.`
+  },
+  {
+    "title": "Attribution",
+    "content": `Images used here such as flags and snack were downloaded from <a href="https://uxwing.com/">uxwing.com</a>.`
+  },
+  {
+    "title": "License",
+    "content": `This is covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  },
+]
+
+
+<div className="flex justify-center">
+  <MarimekkoPlot />
+</div>
+
+
+<VisPagination mdx={props.mdx} />
+<VisDetail mdx={props.mdx} />
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

@@ -62,6 +62,24 @@ pre[class*="language-"] {
 }
 
 
+.gatsby-code-title {
+  margin-bottom: -0.6rem;
+  padding: 0.5em 1em;
+  font-family: Consolas, 'Andale Mono WT', 'Andale Mono', 'Lucida Console',
+    'Lucida Sans Typewriter', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Liberation Mono', 'Nimbus Mono L', Monaco, 'Courier New', Courier,
+    monospace;
+
+  background-color:#1a202c;
+  color: white;
+  z-index: 0;
+  font-size: 1.1rem;
+  font-weight: 500;
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+}
+
+
 /**
  * Remove the default PrismJS theme background-color, border-radius, margin,
  * padding and overflow.

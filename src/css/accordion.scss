@@ -22,37 +22,47 @@
   color: #444;
   cursor: pointer;
   padding: 18px;
+  padding-right: 36px;
   width: 100%;
   text-align: left;
   border: none;
   transition: .5s ease;
   font-size: x-large;
   font-weight: 600;
+  position: relative;
 }
 
-.accordion__button:hover {
-  background-color: #f0f0f09a;
+.accordion__button:hover, .accordion__button:focus {
+  background-color: #f0f0f03d;
 }
 
 .accordion__button:before {
   display: inline-block;
   content: '';
-  height: 10px;
-  width: 10px;
-  margin-right: 30px;
-  border-bottom: 3px solid currentColor;
-  border-right: 3px solid currentColor;
-  transform: rotate(-45deg) translate(2px, 0px);
-  transition: .5s ease;
+  height: 12px;
+  width: 12px;
+  margin-right: 40px;
+  margin-top: 15px;
+  border-bottom: 4px solid currentColor;
+  border-right: 4px solid currentColor;
+  transform: rotate(45deg) translate(0px, -6px);
+  transition: .4s ease;
+  //color: #0066b3;
+  color: #251d5a;
+  position: absolute;
+  right: 0;
 }
 
 .accordion__button[aria-expanded='true']::before,
 .accordion__button[aria-selected='true']::before {
-  transform: rotate(45deg) translate(-0px, -6px);
+  transform: rotate(225deg) translate(-1px, 4px);
+  color: white;
 }
 
 .accordion__item .accordion__button[aria-expanded='true'] {
-  background-color: #f0f0f09a;
+  //background-color: #e5f4ff;
+  background-color: #251d5a;
+  color: white;
 }
 
 [hidden] {
@@ -62,6 +72,7 @@
 .accordion__panel {
   padding: 20px;
   animation: fadein 0.35s ease-in;
+  background: #f8f8f84f;
 }
 
 /* -------------------------------------------------- */

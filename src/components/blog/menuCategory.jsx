@@ -4,16 +4,44 @@ import { Link } from "gatsby"
 import kebabCase from "lodash.kebabcase"
 import Flip from 'react-reveal/Flip'
 
-const menuCategory = ({ pageContext }) => {
-
+const menuCategory = ({ pageContext, handleTagMenu, tagMenu }) => {
+  const buttonStyle = "bg-white text-gray-900 border-1 border-gray-100 py-2 px-3 mr-2 mt-2 rounded-sm text-sm transition duration-300 ease-in-out"
+  const topTags = Object.entries(pageContext.countTags)
+                  .sort((a,b) => b[1] - a[1])
+                  .slice(0,15);
+  
   return (
     <Flip cascade top delay={1000}>
-      <div id="read" className="flex flex-wrap absolute bottom-0 p-1 mr-2 right-0">
+      <div className="flex flex-wrap px-5 w-full mt-10" style={{maxWidth: '650px'}}>
         {pageContext.categories.map((cat) => (
-          <Link key={cat} to={`/blog/category/${kebabCase(cat)}`} activeStyle={{ color: "white" }} partiallyActive={true}
-            className="bg-transparent text-gray-500 font-semibold hover:text-white py-2 px-3 hover:border-transparent rounded text-sm xl:text-base transition duration-1300 ease-in-out">{cat}
+          <Link
+            key={cat} 
+            to={`/blog/category/${kebabCase(cat)}`} 
+            activeStyle={{ color: "#00aeef" }} 
+            partiallyActive={true}
+            className={`${buttonStyle} hover:text-brand-blue hover:border-blue-300 font-semibold`}
+          >
+            {cat}
           </Link>
         ))}
+        {topTags.map((tag) => (
+          <Link 
+            key={tag[0]} 
+            to={`/blog/tag/${kebabCase(tag[0])}`}
+            activeStyle={{ color: "#ff79b4" }} 
+            partiallyActive={true}
+            className={`${buttonStyle} hover:text-brand-pink hover:border-pink-300`}
+          >
+            {tag[0]}
+          </Link>  
+        ))}
+        <div 
+          title="Click to open the menu"
+          onClick={() => handleTagMenu()}
+          className={`${buttonStyle} hover:text-white hover:bg-gray-900 hover:border-gray-900 font-bold cursor-pointer`}
+        >
+          {tagMenu ? 'CLOSE' : 'MORE'}
+        </div>
       </div>
     </Flip>
   )
