@@ -126,7 +126,7 @@
     "gatsby-plugin-emotion": "^6.7.1",
     "gatsby-plugin-eslint": "^3.0.0",
     "gatsby-remark-code-titles": "^1.1.0",
-    "gh-pages": "^3.2.1",
+    "gh-pages": "^3.2.3",
     "husky": "^6.0.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^27.0.4",
