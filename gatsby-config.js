@@ -12,7 +12,8 @@ module.exports = {
   },
   flags: { 
     FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PRESERVE_WEBPACK_CACHE: false
   },
   plugins: [
     {
@@ -20,6 +21,7 @@ module.exports = {
       options: {
         trackingId: "UA-165060977-1",
         head: true,
+        enableWebVitalsTracking: true
       },
     },
     `gatsby-plugin-image`,
