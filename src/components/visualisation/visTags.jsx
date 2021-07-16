@@ -9,6 +9,14 @@ import {FiSearch} from "react-icons/fi"
 import Footer from "../shared/footer"
 import WordCloud from "./wordCloud"
 
+
+/**
+ * This component has the following functions:
+ * 1. Render visualisation tag menu
+ * 2. Button for toggle footer
+ * 3. Button for toggle visualisation tag menu
+ * 4. 
+ */
 const visTags = React.memo(({ tagMenu, handleTagMenu, tags }) => {
   const [searchValue, setSearchValue] = useState("");
   const [filterTag, setfilterTag] = useState(tags);
@@ -45,6 +53,7 @@ const visTags = React.memo(({ tagMenu, handleTagMenu, tags }) => {
         {footer && <ImMenu3 className={footerIconStyle} />}
       </VisFooterBtn>
  
+      {/* Tag menu */}
       <div className={`${tagMenu ? 'block' : 'translate-x-full'} bg-gray-900 transform duration-500 transition fixed h-full w-full top-0 right-0`} style={{zIndex: '1000', maxWidth: '450px'}}>
         <button onClick={() => handleTagMenu()} className="text-gray-500 hover:text-red-400 bg-black rounded-md transition duration-300 text-lg px-3 py-1 absolute top-0 right-0 m-6 flex items-center">
           <MdCancel className="text-xl mr-1" />CLOSE

@@ -11,9 +11,7 @@ module.exports = {
     siteUrl: "https://dataviz.shef.ac.uk"
   },
   flags: { 
-    FAST_DEV: true,
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PRESERVE_WEBPACK_CACHE: false
+    FAST_DEV: true
   },
   plugins: [
     {

@@ -45,6 +45,7 @@ const visualisation = () => {
 
 	return (
     <div 
+      id="visualisation"
       // linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)
       style={{
         backgroundImage: `linear-gradient(145deg, #1f2124 0%, #323537 100%)`, 
@@ -55,7 +56,7 @@ const visualisation = () => {
         borderRadius: '20px', 
         backgroundSize: 'cover'
       }}
-      className="p-5 relative m-5"
+      className="p-5 relative"
     >
       <h1 className="text-6xl font-bold mb-10 pb-2 font-stephenson" style={{color: '#fff', lineHeight: 1.3}}>
         Workplace conflict costs employers <br/> <span style={{ background: 'linear-gradient(90deg, rgba(255,85,28,1) 31%, rgba(244,117,96,1) 100%)'}}>£28 billion</span> a year

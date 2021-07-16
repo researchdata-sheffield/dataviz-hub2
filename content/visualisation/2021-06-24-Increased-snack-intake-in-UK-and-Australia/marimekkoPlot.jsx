@@ -55,11 +55,11 @@ const marimekkoPlot = () => {
 
 	return (
     <div 
-      id="current-vis"
+      id="visualisation"
       style={{backgroundColor: '#FAD961', backgroundImage: 'linear-gradient(315deg, #FAD961 0%, #ff6e00 100%)', minHeight: '550px', height: '100%', maxWidth: '550px', borderRadius: '20px', backgroundSize: 'cover', padding: '1.25rem', position: 'relative'}}
     >
       <h1 style={plotTitle}>
-        People turned to <span style={{background: 'linear-gradient(90deg, #7B3F00 31%, rgb(255, 37, 0) 100%)'}}>sweets, chocolate and salty snacks</span> during the Covid-19 lockdowns in the UK and Australia
+        People turned to <span style={{backgroundImage: 'linear-gradient(90deg, #7B3F00 31%, rgb(255, 37, 0) 100%)', backgroundColor: '#ff6e00'}}>sweets, chocolate and salty snacks</span> during the Covid-19 lockdowns in the UK and Australia
       </h1>
       <h3 style={{color: 'white', marginTop: '0.5rem', fontSize: '0.875rem'}}>“Increased snack intake was associated with higher levels of perceived stress ...”</h3>
       
