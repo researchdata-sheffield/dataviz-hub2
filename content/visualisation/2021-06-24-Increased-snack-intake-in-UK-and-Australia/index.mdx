@@ -47,9 +47,28 @@ export const data = [
 </div>
 
 
-<VisPagination mdx={props.mdx} />
+<VisPagination mdx={props.mdx}>
+  <EmbedCode>
+
+  ```html
+  <a 
+    href=\`${props.mdx.frontmatter.title}https://dataviz.shef.ac.uk/visualisation/24/06/2021/Increased-snack-intake-in-UK-and-Australia\` 
+    target="_blank"
+  >
+    <img 
+      alt="Increased snack intake in UK and Australia" 
+      src="https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2/master/content/visualisation/2021-06-24-Increased-snack-intake-in-UK-and-Australia/Increased-snack-intake-in-UK-and-Australia.svg" 
+      style="height:550px; width:auto" 
+    />
+  </a>
+  ```
+
+  </EmbedCode>
+</VisPagination>
+
 <VisDetail mdx={props.mdx} />
 
 <VisDiv>
   <Tab data={data} />
 </VisDiv>
+
