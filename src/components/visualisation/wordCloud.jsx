@@ -20,7 +20,11 @@ import kebabCase from "lodash.kebabcase"
  * @param {number} maxFontSize
  * @returns {React.Component} WordCloud component
  */
-const wordCloud = React.memo(({ words, width, height, radius, colours, backgroundColour, padding, menu = "", order = "default", minFontSize = 0.9, maxFontSize = 2.1, fontUnit = "rem"}) => {
+const wordCloud = React.memo(({ 
+  words, width, height, radius, colours, backgroundColour, padding, 
+  menu = "", order = "default", minFontSize = 0.9, maxFontSize = 2.1, 
+  fontUnit = "rem", wordStyle
+}) => {
   const [wordsArr, setWords] = useState(words);
   const wordCloudColours = colours || ["#808080", "#ff5e5e", "#fedf00", "#0066b3", "#6d3db3", "#52ff9c", "#ade1f8", "#f0f0f0", "#fff", "#ff79b4", "#89f064", "#393939", "#08e8ff", "#00aeef"]
   const wordBackgroundColour = backgroundColour || [];
@@ -66,7 +70,7 @@ const wordCloud = React.memo(({ words, width, height, radius, colours, backgroun
               key={`${item.name} | ${item.type}${menu ? ` | ${menu}` : ''}`} 
               className={`word ${item.type == "category" ? "font-semibold" : ""}`}
               to={`/visualisation/${item.type}/${kebabCase(item.name)}`}
-              style={{fontSize: `${fontSize}${FONT_UNIT}`, color: `${colour}`, backgroundColor: `${bgColour}`, padding: `${padding || ''}`}}
+              style={{fontSize: `${fontSize}${FONT_UNIT}`, color: `${colour}`, backgroundColor: `${bgColour}`, padding: `${padding || ''}`, ...wordStyle || ''}}
             >
               {item.name}
             </Link>
@@ -92,7 +96,8 @@ wordCloud.propTypes = {
   order: PropTypes.string,
   minFontSize: PropTypes.number,
   maxFontSize: PropTypes.number,
-  fontUnit: PropTypes.string
+  fontUnit: PropTypes.string,
+  wordStyle: PropTypes.object
 }
 
 wordCloud.displayName = "WordCloud"

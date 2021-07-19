@@ -9,7 +9,15 @@ import {FiSearch} from "react-icons/fi"
 import Footer from "../shared/footer"
 import WordCloud from "./wordCloud"
 
-const visTags = ({ tagMenu, handleTagMenu, tags }) => {
+
+/**
+ * This component has the following functions:
+ * 1. Render visualisation tag menu
+ * 2. Button for toggle footer
+ * 3. Button for toggle visualisation tag menu
+ * 4. 
+ */
+const visTags = React.memo(({ tagMenu, handleTagMenu, tags }) => {
   const [searchValue, setSearchValue] = useState("");
   const [filterTag, setfilterTag] = useState(tags);
   const [footer, setFooter] = useState(false);
@@ -45,11 +53,12 @@ const visTags = ({ tagMenu, handleTagMenu, tags }) => {
         {footer && <ImMenu3 className={footerIconStyle} />}
       </VisFooterBtn>
  
-      <div className={`${tagMenu ? 'block' : 'translate-x-full'} bg-gray-900 transform duration-500 transition fixed h-full w-full flex flex-wrap justify-center items-center`} style={{zIndex: '1000'}}>
-        <button onClick={() => handleTagMenu()} className="text-brand-blue bg-black rounded-md transition duration-300 text-lg px-3 py-1 absolute top-0 right-0 m-10 flex items-center">
-          <MdCancel className="text-xl mr-1" /> Close
+      {/* Tag menu */}
+      <div className={`${tagMenu ? 'block' : 'translate-x-full'} bg-gray-900 transform duration-500 transition fixed h-full w-full top-0 right-0`} style={{zIndex: '1000', maxWidth: '450px'}}>
+        <button onClick={() => handleTagMenu()} className="text-gray-500 hover:text-red-400 bg-black rounded-md transition duration-300 text-lg px-3 py-1 absolute top-0 right-0 m-6 flex items-center">
+          <MdCancel className="text-xl mr-1" />CLOSE
         </button>
-        <div className="w-full justify-center flex my-10">
+        <div className="w-full m-6">
           <div className="inline-block focus:outline-none text-gray-600 bg-white shadow px-2 rounded-lg ml-2">
             <FiSearch className="inline-block text-center text-xl -mt-2" />
               <input 
@@ -61,22 +70,28 @@ const visTags = ({ tagMenu, handleTagMenu, tags }) => {
         </div>
         <div className="w-full text-center">{filterTag.length == 0 && <h1 className="text-gray-300">No results.</h1>}</div>
         <WordCloud   
-          width="100%"
-          height="100%"       
+          width="100%"   
+          height="auto"    
           words={filterTag}
           menu="Tag menu"
           minFontSize={0.97}
           maxFontSize={2.8}
+          colour={["#808080", "#ff5e5e", "#fedf00", "#6d3db3", "#52ff9c", "#ade1f8", "#f0f0f0", "#fff", "#ff56a1", "#89f064", "#393939", "#08e8ff", "#00aeef"]}
+          wordStyle={{whiteSpace: 'normal'}}
         />
       </div>
       
       <Footer className={`${footer ? 'fixed bottom-0' : 'hidden' }`} />
     </div>
   )
-}
+})
 
 export default visTags
 
 visTags.propTypes = {
-  className: PropTypes.any,
+  tagMenu: PropTypes.any, 
+  handleTagMenu: PropTypes.func, 
+  tags: PropTypes.array
 }
+
+visTags.displayName ="VisTags"

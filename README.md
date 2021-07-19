@@ -4,7 +4,7 @@
 
 <center>
 <h1 style="color: #00aeef"> Dataviz.Shef </h1>
-<h5 style="font-weight: 500">Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</h5>
+<h4 style="font-weight: 400">Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</h4>
 </center>
 
 <br />
@@ -54,26 +54,10 @@ We has adopted a Code of Conduct that we expect participants to adhere to. Pleas
 
 ### Useful resources
 
-EventBrite API 
-+ https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
-+ https://www.eventbriteapi.com/v3/organizations/OrgId/venues/?token=YOURTOKEN
+- EventBrite API 
+  - https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
+  - https://www.eventbriteapi.com/v3/organizations/OrgId/venues/?token=YOURTOKEN
 
-[Gatsby plugins](https://www.gatsbyjs.org/plugins/)
-
-[TailwindCSS](https://tailwindcss.com/docs/preflight)
-
-[React-Icons](https://react-icons.netlify.com/#/)
-
-[Unplash](https://unsplash.com/)
-
-### IDE/Code Editor
-Visual Studio Code was used for development.
-A list of extensions installed:
-  - ES7 React/Redux/GraphQL/React-Native snippets
-  - MDX
-  - Prettier - Code formatter
-  - Tailwind CSS IntelliSense
-  - npm Intellisense
-  - Material Icon Theme
-
-
+- [Gatsby plugins](https://www.gatsbyjs.org/plugins/)  
+- [TailwindCSS](https://tailwindcss.com/docs/preflight)  
+- [React-Icons](https://react-icons.netlify.com/#/)

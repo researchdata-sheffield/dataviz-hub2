@@ -15,23 +15,17 @@ This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framew
 
   4. Fork this [repository](https://github.com/researchdata-sheffield/dataviz-hub2) and open up your Git Bash/terminal (and navigate to a directory you want to place the site) and run:
     
-    ```
-    git clone https://github.com/yourusername/dataviz-hub2.git
-    cd dataviz-hub2
-    npm install      //install dependencies
-    ```
-  5. Once you've setup, run `gatsby develop`. Now you can view the site at **http://localhost:8000/**. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally. 
+  ```bash
+  git clone https://github.com/yourusername/dataviz-hub2.git
+  cd dataviz-hub2
+  npm install      # install dependencies
+  ```
+
+  5. Run `gatsby develop`. Now you can view the site at **http://localhost:8000/**. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally. 
   If you're happy with your changes, you could also run `npm run serve` to make a production build and check everything is identical to the development version at **http://localhost:9000/**.
 
-## Note
-  At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
-  If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run **npm install** etc.
 
+### Submit your code
+Before submitting your code, serve the production build to check if the website is running fine. Always try to write test cases for new codes and use `npm run test` to check if all tests passed. 
 
-```
-If you have cloned the repository a while a ago, 
-fetch the latest commits from origin repository:
-
-git checkout development
-git pull upstream development
-```
+Whenever you want to submit new codes, create a new pull request and merge it into the `development` branch. **DO NOT** attempt to merge new code into the `master` branch directly.

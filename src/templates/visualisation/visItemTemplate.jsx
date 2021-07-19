@@ -34,7 +34,7 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 || null;
 
-  {d3 && d3.map((d) => {
+  {d3 && d3.forEach((d) => {
     if (d.includes("https://")) {
       useScript(d, "", false);  // external script
     } else {
@@ -96,9 +96,14 @@ export const query = graphql`
         ...MdxFrontmatter
         disableTOC
         d3
-        embedImage {
+        pngImagePath {
           relativePath
         }
+        svgImagePath {
+          relativePath
+        }
+        pngExternalImagePath
+        svgExternalImagePath
       }
     }
   }

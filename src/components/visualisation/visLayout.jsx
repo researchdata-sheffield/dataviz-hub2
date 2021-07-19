@@ -43,7 +43,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
       
       <VisTags handleTagMenu={handleTagMenu} tagMenu={tagMenu} tags={pageContext.allVisCatTag} />
 
-      <div className="w-full pt-24 pb-16 text-center">
+      <div className="w-full pt-24 pb-8 text-center">
         <h1 
           className="w-full py-3 text-7xl font-extrabold" 
           style={{
@@ -74,7 +74,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
         </button>
       </div>
 
-      <div className="min-h-80 flex flex-wrap justify-center pt-36 pb-32 bg-gray-900 px-5">
+      <div className="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5">
         <div 
           className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
           style={{gridAutoFlow: 'dense', gridTemplateRows: 'min-content'}}
