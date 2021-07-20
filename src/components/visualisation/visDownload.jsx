@@ -4,6 +4,7 @@ import * as htmlToImage from 'html-to-image';
 import kebabCase from "lodash.kebabcase"
 import { FiDownload } from "react-icons/fi"
 import { MdCancel, MdError } from "react-icons/md"
+import { checkURL } from "../../utils/shared"
 
 /**
  * Render visualisation pagination component
@@ -163,15 +164,3 @@ export function createLinkForImage(fileName, imageURL) {
   link.click();
 }
 
-/**
- * Check if current string is a URL
- * @param {string} myString 
- * @returns {boolean}
- */
-export function checkURL(myString) {
-  if (myString.length == 0) {
-    return false;
-  }
-
-  return (myString.includes("https://") || myString.includes("http://"));
-}

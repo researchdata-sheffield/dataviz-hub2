@@ -180,3 +180,7 @@ export const VisBackBtn = styled(visHelperButton)`
   right: 80px;
   opacity: 1;
 `
+
+export const EmbedCode = styled.div`
+  display: hidden;
+`

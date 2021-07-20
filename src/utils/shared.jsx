@@ -144,3 +144,15 @@ export function getShareLinks(mdx) {
   return newText.join(" ").concat(" ...")
 }
 
+/**
+ * Check if current string is a URL
+ * @param {string} myString 
+ * @returns {boolean}
+ */
+ export function checkURL(myString) {
+  if (myString.length == 0) {
+    return false;
+  }
+
+  return (myString.includes("https://") || myString.includes("http://"));
+}

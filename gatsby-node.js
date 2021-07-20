@@ -9,25 +9,36 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const kebabCase = require(`lodash.kebabcase`);
 const path = require("path");
 const readingTime = require("reading-time");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 
-// prevent error from canvas used by trianglify
 exports.onCreateWebpackConfig = ({
   stage,
   loaders,
   actions,
 }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      new NodePolyfillPlugin()
+    ],
+    resolve: {
+      fallback: {
+        "fs": false
+      }
+    }
+  });
+
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
-          {
+          { // prevent error from canvas used by trianglify
             test: /canvas/,
-            use: loaders.null(),
-          },
+            use: loaders.null(),  
+          }
         ],
-      }
-    })
+      },
+    });
   }
 };
 
