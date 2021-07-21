@@ -1,58 +1,94 @@
-![CI](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development) ![Deployment](https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=master) [![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=researchdata-sheffield_dataviz-hub2) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=security_rating)](https://sonarcloud.io/dashboard?id=researchdata-sheffield_dataviz-hub2) [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=researchdata-sheffield_dataviz-hub2)  
-
-
-
-<center>
-<h1 style="color: #00aeef"> Dataviz.Shef </h1>
-<h4 style="font-weight: 400">Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</h4>
-</center>
-
-<br />
+<h1 align="center">Dataviz.Shef</h1>
 
 <div align="center">
-  <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Slack_Technologies_Logo.svg/1280px-Slack_Technologies_Logo.svg.png" width="20%" />
-  </a>
-  <span width="10%">&nbsp; &nbsp;</span>
-  <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="5%" />
-  </a>
+  <i>Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</i>
+  <br><br>
+  
+  <p>
+    <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Slack_Technologies_Logo.svg/1280px-Slack_Technologies_Logo.svg.png" width="20%" />
+    </a>
     <span width="10%">&nbsp; &nbsp;</span>
-  <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Antu-mail-folder-sent-16.svg" width="5%" />
-  </a>
+    <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" width="5%" />
+    </a>
+      <span width="10%">&nbsp; &nbsp;</span>
+    <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Antu-mail-folder-sent-16.svg" width="5%" />
+    </a>
+  </p>
 </div>
 
+<p align="center">
+  <a href="https://dataviz.shef.ac.uk"><strong>dataviz.shef.ac.uk</strong></a>
+</p>
 
-<br />
+<p align="center">
+  <a href="CONTRIBUTING.md">Contributing</a>
+  ·
+  <a href="https://github.com/researchdata-sheffield/dataviz-hub2/issues">Submit an Issue</a>
+  ·
+  <a href="dataviz.shef.ac.uk/blog">Blog</a>
+  <br>
+  <br>
+</p>
 
+<p align="center">
+  <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/ci.yml">
+    <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development" alt="CI status" />
+  </a>&nbsp;
+  <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/deploy.yml">
+    <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=development" alt="Deploy status" />
+  </a>&nbsp;
+  <a href="https://sonarcloud.io/component_measures?id=researchdata-sheffield_dataviz-hub2&metric=Reliability">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=reliability_rating" alt="Reliability Rating" />
+  </a>&nbsp;
+  <a href="https://sonarcloud.io/component_measures?id=researchdata-sheffield_dataviz-hub2&metric=Security">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=security_rating" alt="Security Rating" />
+  </a>&nbsp;
+  <a href="https://sonarcloud.io/component_measures?id=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities" alt="Vulnerabilities" />
+  </a>
+</p>
+
+
+<hr>
 
 ![Fig1](./src/images/readme/readme.png)
 
+<p align="center">
+  <a href="https://dataviz.shef.ac.uk/#learning-path">Learning path</a>
+  ·
+  <a href="https://dataviz.shef.ac.uk/events">Events</a>
+  ·
+  <a href="https://dataviz.shef.ac.uk/rss.xml">RSS feed</a>
+  <br>
+</p>
+
+We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group][datavizGoogle], [slack team][datavizSlack] or [email][datavizEmail] with any suggestions. We encourage you to contribute to our online resources directly through **this repository** including blogposts and tutorials!
+
 <br />
-
-We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group](https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group), [slack team](https://shef-dataviz.slack.com) or [email](mailto:rdm@sheffield.ac.uk) with any suggestions. We encourage you to contribute to our online resources directly through **this repository** including blogposts and turtorials!
-
-
-
-<br />
-
-## Table of Contents
-
- - <a href="#contributing">Contributing</a>
- - <a href="#code-of-conduct">Code of conduct</a>
- - <a href="#note">Note</a>
-
 
 ## Contributing
-See the [CONTRIBUTING](./CONTRIBUTING.md) document.
+
+### Contributing guidelines
+Read through our [contributing guidelines][contributing] to find out different ways you can contribute to the website.
 
 ## Code of Conduct
-We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text](./CODE-OF-CONDUCT.md) so that you can understand what actions will and will not be tolerated.
+We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text][codeofconduct] so that you can understand what actions will and will not be tolerated.
 
-## Note
 
-### Useful resources
+## Community
+Join the conversation and have fun in the community.
+
+- [Slack][datavizSlack]
+- [Google Group][datavizGoogle]
+
+<br>
+
+<hr>
+
+### Useful Links
 
 - EventBrite API 
   - https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
@@ -61,3 +97,13 @@ We has adopted a Code of Conduct that we expect participants to adhere to. Pleas
 - [Gatsby plugins](https://www.gatsbyjs.org/plugins/)  
 - [TailwindCSS](https://tailwindcss.com/docs/preflight)  
 - [React-Icons](https://react-icons.netlify.com/#/)
+
+
+
+
+[contributing]: CONTRIBUTING.md
+[codeofconduct]: CODE-OF-CONDUCT.md
+[changelog]: https://dataviz.shef.ac.uk/docs/
+[datavizSlack]: https://shef-dataviz.slack.com
+[datavizGoogle]: https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group
+[datavizEmail]: mailto:rdm@sheffield.ac.uk

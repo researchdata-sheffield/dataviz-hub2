@@ -53,7 +53,7 @@ const visEmbed = (props) => {
     setEmbedCode(htmlTemplate);
   }, [props]);
 
-  //Hide code block's scrollbar
+  // Hide code block's scrollbar & wrap code block
   useEffect(() => {
     if (typeof window === "undefined") { return; }
 

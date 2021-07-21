@@ -26,10 +26,10 @@ You can also use Google Docs to write a post then [share](mailto:rdm@sheffield.a
 
 
 # Setup
-You will probably want to install Gatsby so that you can test your contribution before submitting it.
+You probably want to install Gatsby so that you can test your contribution before submitting it.
 To do this you'll need to setup a gatsby development environment in order to preview the website. Otherwise, go to <a href="#write-a-post" anchor>write a post</a> section.
 
-  ## Installation
+## Installation
   1. For Windows users, Download and install the latest Node.js version from <a href="https://nodejs.org/en/">the official Node.js website</a>. 
   For other OS visit <a href="https://www.gatsbyjs.org/tutorial/part-zero/#install-nodejs-for-your-appropriate-operating-system">here</a>. (You might also need to download Visual Studio installer to install node.js development tools).
   
@@ -39,18 +39,14 @@ To do this you'll need to setup a gatsby development environment in order to pre
 
   4. Fork this [repository](https://github.com/researchdata-sheffield/dataviz-hub2) and open up your Git Bash/terminal (and navigate to a directory you want to place the site) and run:
     
-    ```
-    git clone https://github.com/yourusername/dataviz-hub2.git
-    cd dataviz-hub2
-    npm install      //install dependencies
-    ```
+  ```bash
+  git clone https://github.com/yourusername/dataviz-hub2.git
+  cd dataviz-hub2
+  npm install      # install dependencies
+  ```
 
-## Note
-  At step 4, If you have write permission for the origin repository, then you could just create a new branch in the origin repository and clone it. 
-  If you have <b>Github Desktop</b> installed then just clone the repository into your computer and under the repository you would need to use Git Bash to run **npm install** etc.
-
-
-
+  5. Run `gatsby develop`. Now you can view the site at **http://localhost:8000/**. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` if you want to stop the server running locally. 
+  If you're happy with your changes, you could also run `npm run serve` to make a production build and check everything is identical to the development version at **http://localhost:9000/**.
 
 ```
 If you have cloned the repository a while a ago, 
@@ -345,7 +341,7 @@ in your post in two steps:
     If you want to inlcude external files (subject to approval), use the format "https://yourfile.address".
 
 
-<svg id="d3" className="lg:-ml-60 lg:min-w-80" style={{minHeight: '600px', marginLeft: '-150px'}}></svg>
+<svg id="d3" className="lg:-ml-60 lg:min-w-80 lg:min-h-40"></svg>
 <div className="tooltip"></div>
 
 
@@ -363,7 +359,7 @@ https://www.youtube.com/watch?v=dKno6ojJd_Q
 
 Note: you can't styling videos at the moment.
 `video: https://www.youtube.com/watch?v=N5yRLFcbv4s`
-for more informtion about embedding videos using the first option, visit  <a href="https://www.gatsbyjs.org/packages/gatsby-remark-embed-video/#usage" target="_blank" rel="noreferrer noopener">here</a>.
+for more information about embedding videos using the first option, visit  <a href="https://www.gatsbyjs.org/packages/gatsby-remark-embed-video/#usage" target="_blank" rel="noreferrer noopener">here</a>.
 
 https://www.youtube.com/watch?v=dKno6ojJd_Q
 
