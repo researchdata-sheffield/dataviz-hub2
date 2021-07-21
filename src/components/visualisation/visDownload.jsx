@@ -22,7 +22,7 @@ const visDownload = ({ mdx }) => {
   const [targetVis, setTargetVis] = useState('');
   const pngImagePath = mdx.frontmatter?.pngImagePath?.relativePath || mdx.frontmatter?.pngExternalImagePath || '';
   const svgImagePath = mdx.frontmatter?.svgImagePath?.relativePath || mdx.frontmatter?.svgExternalImagePath || '';
-  const folderLink = "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2/master/content/visualisation/";
+  const folderLink = "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2/master/content/visualisation";
   mdx.folderLink = folderLink;
 
   useEffect(() => {
@@ -41,8 +41,8 @@ const visDownload = ({ mdx }) => {
       
       {/* Pop-up window */}
       <div 
-        className={`${menu ? 'z-20' : 'hidden z-0'} fixed rounded-lg py-5 px-6 bg-gray-700 text-white text-base shadow-2xl text-left`} 
-        style={{left: '50%', top: '50%', transform: 'translate(-50%, -50%)', maxWidth: '300px'}}
+        className={`${menu ? 'z-20' : 'hidden z-0'} fixed rounded-lg py-5 px-6 bg-gray-700 text-white text-base text-left`} 
+        style={{left: '50%', top: '50%', transform: 'translate(-50%, -50%)', maxWidth: '350px', boxShadow: '0 10px 50px -5px #ff79b4'}}
       >
         <h4 className="text-gray-300">Download this visualisation in one of the following format:</h4>
         <div className="w-full flex justify-evenly mt-3 space-x-1">
@@ -70,7 +70,7 @@ const visDownload = ({ mdx }) => {
           </button>
         </div>
         {/* cancel button */}
-        <button onClick={() => setMenu(!menu)} className="text-gray-100 hover:text-brand-pink rounded-md transition duration-300 text-3xl p-1 absolute top-0 right-0 flex items-center">
+        <button onClick={() => setMenu(!menu)} className="text-gray-100 hover:text-brand-pink rounded-md transition duration-300 text-2xl p-1 absolute top-0 right-0 flex items-center">
           <MdCancel />
         </button>
       </div>

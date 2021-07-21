@@ -46,7 +46,9 @@ import Bg from "./nuclear-power-station.jpg"
 </VisDiv>
 
 
-<VisPagination mdx={props.mdx} />
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
 <VisDetail mdx={props.mdx} />
 
 export const data = [

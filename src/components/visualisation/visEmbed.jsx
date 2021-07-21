@@ -25,7 +25,7 @@ const visEmbed = (props) => {
   const [embedMenu, setEmbedMenu] = useState(false);
   const [embedCode, setEmbedCode] = useState('');
  
-
+  // process content in <EmbedCode>
   useEffect(() => {
     const filtered = React.Children.toArray(props.children).filter((child) => {
       return child.props.mdxType == "EmbedCode";
@@ -33,7 +33,7 @@ const visEmbed = (props) => {
 
     if (filtered.length == 0) { return; }
     
-    // check if the document contains custom code script
+    // check if <EmbedCode> contains custom code script
     if (filtered[0].props.custom === true) {
       const customContent = ReactDOMServer.renderToStaticMarkup(filtered[0].props.children);
       const htmlString = "```html" + "\n" + customContent + "\n" + "```";
@@ -101,7 +101,7 @@ const visEmbed = (props) => {
       <div 
         id="embedMenu"
         className={`${embedMenu ? 'z-20' : 'hidden z-0'} fixed rounded-lg py-5 px-6 text-left text-gray-700`} 
-        style={{left: '50%', top: '50%', transform: 'translate(-50%, -50%)', maxWidth: '800px', userSelect: 'text', backgroundColor: '#f7f7f7', boxShadow: '0 10px 50px -5px rgb(167, 243, 208)'}}
+        style={{left: '50%', top: '50%', transform: 'translate(-50%, -50%)', maxWidth: '800px', userSelect: 'text', backgroundColor: '#f7f7f7', boxShadow: '0 10px 50px -5px #00aeef'}}
       >
         {!embedCode && 
           <div style={{maxWidth: '450px'}}>
@@ -164,16 +164,10 @@ export function getCodeTemplate(mdx, type = "image", url = "", localPath = "", h
   }
 
   if (type == "iframe") {
-    return `
-    \`\`\`html
-    <a 
-      href="${PAGE_URL}" 
-      target="_blank"
-    >
-      <iframe width="100%" height="${height}" src="${urlToUse}" />
-    </a>
-    \`\`\`
-    `;
+    return "```html" + "\n" +
+    `<a href="${PAGE_URL}" target="_blank">` + "\n" +
+      `  <iframe width="100%" height="${height}" src="${urlToUse}" />` + "\n" +
+    "</a>" + "\n" + "```";
   }
 
   return `

@@ -23,7 +23,9 @@ import Visualisation from "./visualisation"
 </div>
 
 
-<VisPagination mdx={props.mdx} />
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
 <VisDetail mdx={props.mdx} />
 
 export const data =[
