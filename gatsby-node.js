@@ -343,11 +343,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     var excluded = false;
 
     // For each post, add their tags/categories to arrays
-    node.frontmatter.category.forEach((cat) => {
+    node.frontmatter.category && node.frontmatter.category.forEach((cat) => {
       if(!exclude.includes(cat)) categories.push(cat)
       else excluded = true
     })
-    node.frontmatter.tag.forEach((tag) => {
+    node.frontmatter.tag && node.frontmatter.tag.forEach((tag) => {
       if(!exclude.includes(tag)) tags.push(tag)
       else excluded = true
     })

@@ -1,0 +1,49 @@
+---
+type: visualisation
+author: ["Dataviz Team"]
+title: "Low vaccination rate in London"
+thumbnail: thumb.png
+description: Covid cases rates are rising in London where vaccine coverage in the over 50s is low. What this might mean for the capital as cases rise and restrictions are relaxed on 19th July 2021.
+date: "2021-07-12"
+category: ["School Of Health And Related Research"]
+tag: ["COVID-19"]
+featured: false
+rowSpan: 2
+columnSpan: 2
+pngExternalImagePath: https://static.independent.co.uk/2021/07/09/19/Screen%20Shot%202021-07-09%20at%2019-1.05?width=1368&auto=png&quality=100
+---
+
+<VisDiv style={{maxWidth: '1200px'}}>
+
+<img id="visualisation" src="https://static.independent.co.uk/2021/07/09/19/Screen%20Shot%202021-07-09%20at%2019-1.05?width=1368&auto=png&quality=100" alt="visualisation" style={{borderRadius: '20px'}} />
+
+</VisDiv>
+
+
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="pngExternalImagePath" />
+</VisPagination>
+
+
+<VisDetail mdx={props.mdx} />
+
+
+export const data = [
+  {
+    "title": "Source",
+    "content": `Analysis by Colin Angus (<a href="https://twitter.com/VictimOfMaths">VictimOfMaths</a>) for <a href="https://independent.co.uk">Independent</a> for news by <a href="https://twitter.com/samueljlovett">@samueljlovett</a>. <br/>Independent News: <a href="https://www.independent.co.uk/independentpremium/covid-london-vaccine-rates-latest-b1881499.html">Fears London could be hit hardest once Covid restrictions lifted with half a million over-50s unvaccinated</a>`
+  },
+  {
+    "title": "Code",
+    "content": `The source code is yet to be published.`
+  },
+  {
+    "title": "License",
+    "content": `Data from https://coronavirus.data.gov.uk are licensed under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v.3.0</a>.`
+  }
+]
+
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

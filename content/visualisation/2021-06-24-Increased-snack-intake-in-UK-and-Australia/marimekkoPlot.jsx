@@ -48,7 +48,7 @@ const marimekkoPlot = () => {
     position: 'absolute',
     bottom: 0,
     margin: '1.25rem',
-    fontSize: '0.75rem',
+    fontSize: '0.72rem',
     color: 'rgb(55, 65, 81)'
   }
 
@@ -61,7 +61,7 @@ const marimekkoPlot = () => {
       <h1 style={plotTitle}>
         People turned to <span style={{backgroundImage: 'linear-gradient(90deg, #7B3F00 31%, rgb(255, 37, 0) 100%)', backgroundColor: '#ff6e00'}}>sweets, chocolate and salty snacks</span> during the Covid-19 lockdowns in the UK and Australia
       </h1>
-      <h3 style={{color: 'white', marginTop: '0.5rem', fontSize: '0.875rem'}}>“Increased snack intake was associated with higher levels of perceived stress ...”</h3>
+      <h3 style={{color: 'white', marginTop: '0.5rem', fontSize: '0.85rem'}}>“Increased snack intake was associated with higher levels of perceived stress ...”</h3>
       
       <div style={visWrapper}>
         <ResponsiveMarimekko
@@ -166,7 +166,7 @@ const marimekkoPlot = () => {
         />
       </div>
       <img src={Snack} alt="Snack" style={{opacity: '0.07', maxWidth: '150px', position: 'absolute', bottom: 0, right: 0, margin: '1.5rem'}}  />
-      <h1 style={{fontWeight: 800, left: 0, ...sourceInfo}}>Dataviz.Shef</h1>
+      <h1 style={{fontWeight: 800, left: 0, fontSize: '.9rem', ...sourceInfo}}>Dataviz.Shef</h1>
       <h1 style={{right: 0, ...sourceInfo}}>Source: The University of Sheffield - News</h1>
     </div>
 	)

@@ -2,7 +2,7 @@
 
 <div align="center">
   <i>Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</i>
-  <br><br>
+  <br><br><br>
   
   <p>
     <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
@@ -18,6 +18,7 @@
     </a>
   </p>
 </div>
+<br>
 
 <p align="center">
   <a href="https://dataviz.shef.ac.uk"><strong>dataviz.shef.ac.uk</strong></a>

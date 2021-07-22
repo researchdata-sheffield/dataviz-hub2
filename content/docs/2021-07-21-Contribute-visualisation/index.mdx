@@ -9,16 +9,46 @@ date: "2021-07-21"
 
 
 ## Setup
-The setup process is identical to the one in [contributing blog post][contributeBlogPost]. You will need a GitHub account in order to submit your visualisation. Once you've setup, run `gatsby develop` in the base directory. Now you can view the site at `http://localhost:8000/`. Any changes you made to posts locally will be updated instantly on preview. Press `Ctrl + C` (`Command + C` on macOS) if you want to stop the server running locally. 
+The setup process is identical to the one in [contributing blog post][contributeBlogPost]. You will need to install [git](https://git-scm.com/) and [Nodejs](https://nodejs.org/en/), and have a GitHub account in order to preview and submit your visualisation. Once you've set up, open git bash and run `gatsby develop` in the base directory. Now you can view the site at `http://localhost:8000/`. The website will be reloaded automatically on changes. Press `Ctrl + C` (`Command + C` on macOS) if you want to stop the server running locally. Your visualisation item page will be located at `http://localhost:8000
+
+Alternatively, skip the setup and follow the steps below if you do not wish to use command line tools. The difference is that you would not be able to preview the page and would have to upload files manually on GitHub.
 
 ## Add files
-Go to the directory `dataviz-hub2/content/visualisation` and create a new folder with a name of the format `YYYY-MM-DD-this-is-my-title`. The folder name will be used when creating page url. Within this new folder, add all required files to display your visualisation such as thumbnail and javascript files. Then create a new text file and name it `index.mdx`.
+Go to the directory `dataviz-hub2/content/visualisation` and create a new folder with a name of the format `YYYY-MM-DD-this-is-my-title`. The folder name will be used when creating the page url. Within this new folder, add all required files to display your visualisation such as thumbnail and javascript files. Then create a new text file and name it `index.mdx`.  
+
+If you haven't set up, create a new folder anywhere in your machine and follow the steps.
 
 ## Edit index.mdx
-MDX is a variant of the MD format that allows us to write JSX in markdown files. This website uses MDX to provide interactive experience to users while preserving the benefit of using markdown.
+MDX is a variant of the MD format that allows us to write JSX in markdown files. This website uses MDX to provide interactive experience to users while preserving the benefit of using markdown. This is an example of the file:
+
+```html
+---
+frontmatter...
+---
+
+visualisation code...
+
+
+<VisPagination mdx={props.mdx}>
+  ...
+</VisPagination>
+
+<VisDetail mdx={props.mdx} />
+
+
+export const dataArray = [
+  ...
+]
+
+<VisDiv>
+  <Tab data={dataArray} />
+</VisDiv>
+```
+
+Let's dive in to see how each component works.
 
 ### Frontmatter
-Frontmatter is the first section you will need to define in the `index.mdx` file. This section is used for specify important properties for the visualisation.  
+Frontmatter is the first section you will need to define in the `index.mdx` file. This section is used to specify important properties for the visualisation.  
 
 An example of the frontmatter (make sure you also include `---`):  
 ```mdx
@@ -63,21 +93,21 @@ The following table listed all properties you can specify:
 | d3                   |           | Path of D3 documents to include. See [contribute blog posts][contributeBlogPost] for more information.
 
 
-If this is the first time you contributing something to the website, it is neccessary to add your name and avatar to the file `author.json` located at dataviz-hub2/src/data, otherwise author info will not be shown on the page (and the website will produce errors). Format:  
+If this is the first time you contributing something to the website, it is necessary to add your name and avatar to the file `author.json` located at dataviz-hub2/src/data, otherwise author info will not be shown on the page (and the website will produce errors). Format:  
 
 ```json
 ...
 },  // Make sure you've added comma after the previous right curly bracket
 {   // Start with left curly bracket     
   "name": "New Author",  
-  // The exact same name you've put in mdx file, use the same name for all mdx files you created
+  // The exact same name you've put in the mdx file, use the same name for all mdx files you created
   "avatar": "../images/author/default.jpg",  
   // If you want to add your own avatar, place it under the /src/images/author folder and replace "default.jpg" with your image name   
 } // No comma       
 ```
 
 ### Add visualisation
-Regardless the type of visualisation (except iframe) you are adding, rememeber to set `id="visualisation"` on the parent element of the visualisation, this allows the website to capture your visualisation as images. If what you have created does not fall into the types listed here, please get in touch to dicuss options.  
+Regardless of the type of visualisation (except iframe) you are adding, remember to set `id="visualisation"` on the parent element of the visualisation, this allows the website to capture your visualisation as images. If what you have created does not fall into the types listed here, please get in touch to discuss options.  
 
 #### Image
 If you want to add an image, you can use the following code:  
@@ -107,7 +137,7 @@ See [contribute blog posts][contributeBlogPost] for more information. The genera
 #### React packages
 You have created visualisations using a React visualisation package? That's great! You can wrap the visualisation in a React component then import it in the `index.mdx` file. This process can be break down into the following steps:  
 1. Install the package using `npm install package-name`.
-2. Create a react component that includes your visualisation in a seperate file called `visualisation.jsx` (any name will do). Don't forget to set `id="visualisation"` on the component.
+2. Create a react component that includes your visualisation in a separate file called `visualisation.jsx` (any name will do). Don't forget to set `id="visualisation"` on the component.
 3. Import the visualisation in `index.mdx`.
 
 An example visualisation of this use case is - [Increased snack intake in UK and Australia](https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/visualisation/2021-06-24-Increased-snack-intake-in-UK-and-Australia).
@@ -142,7 +172,7 @@ visualisation code
 The `mdx={props.mdx}` ensures the details of the current page are passed to the *VisPagination* component. Make sure code for visualisation always comes before other elements in the `index.mdx` file.
 
 ### Embed code
-Every visualisation item page contains a 'embed code' button which allows visitors to copy the code snippet and embed the visualisation elsewhere. It would be really helpful if you could add extra details to make this possible.  
+Every visualisation item page contains an 'embed code' button which allows visitors to copy the code snippet and embed the visualisation elsewhere. It would be really helpful if you could add extra details to make this possible.  
 
 To make embed code available, we need to make some changes to the pagination component. In here we open the *Vispagination* tag and insert the *EmbedCode* tag:
 
@@ -173,7 +203,7 @@ Then this component will convert to something like the following:
 <a href="https://dataviz-shef.ac.uk/my-url" target="_blank">
   <img 
     alt="visualisation title" 
-    src="https://link-to-vis.com" 
+    src="https://example.com/my-image.svg" 
     style="height: 550px; width:auto" 
   />
 </a>
@@ -192,7 +222,7 @@ The final output:
 <a href="https://dataviz-shef.ac.uk/my-url" target="_blank">
   <iframe 
     width="100%" height="550px"
-    src="https://link-to-vis.com"
+    src="https://example.com/some-page"
   />
 </a>
 ```
@@ -210,7 +240,7 @@ In both types we have an addition attribute `height` (default: 550px) can specif
 <hr/>
 
 #### Custom code
-If you want to customise the output seen by visitors, insert your code snippet inbetween the *EmbedCode* tag and pass `true` to the `custom` attribute:
+If you want to customise the output seen by visitors, insert your code snippet in between the *EmbedCode* tag and pass `true` to the `custom` attribute:
 
 ```html
 <EmbedCode custom={true}>
@@ -224,7 +254,7 @@ If you want to customise the output seen by visitors, insert your code snippet i
 </EmbedCode>
 ```
 
-Note that all attribute passed to the *EmbedCode* do not have any effects if `custom` is set to `true`.
+Note that any other attributes passed to the *EmbedCode* do not have any effects if `custom` is set to `true`.
 
 ### Visualisation details
 In the item page we can display several information (description, author details, tags, categories) about the visualisation using the *VisDetail* tag:
@@ -254,14 +284,14 @@ if you wish to not display certain information, consider using the following att
 
 
 ### Open research
-This community encourages an open research culture and adheres to the FAIR (findable, accessible, interoperable, reusable) principle. Therefore, it would be wonderful if you could include as much details about the visualisation as possible. You can choose to use the visualisation tab component, or simply write information in plain text.  
+This community encourages an open research culture and adheres to the FAIR (findable, accessible, interoperable, reusable) principle. Therefore, it would be wonderful if you could include as many details about the visualisation as possible. You can choose to use the visualisation tab component, or simply write information in plain text.  
 
 #### Visualisation tabs
-We have prepared a tab component for you to organise information for the visualisation, but of course this is not compulsory.
+We have prepared a tab component for you to organise information for the visualisation, but of course this is non-compulsory.
 
 ![The tab component](tabs.png)
 
-The tab component receives ab array of data objects and maps each data object to a tab. The first step is to create a data array like the following in the `index.mdx` file:
+The tab component receives an array of data objects and maps each data object to a tab. The first step is to create a data array like the following in the `index.mdx` file:
 
 ```js
 export const dataArray = [
@@ -288,7 +318,7 @@ export const dataArray = [
 ]
 ```
 
-The data array starts with `export const` then follow by the array name `dataArray`. There are five objects in the data array corresponding to five tabs. Each object has two properties and is wrapped by a pair of curly brackets. `title` is the tab name, and `content` is the text visitors will see under the tab name. You can write html in the content but note that it must be one line only - use `<br/>` for line break instead of press enter.  
+The data array starts with `export const` then followed by the array name `dataArray`. There are five objects in the data array corresponding to five tabs. Each object has two properties and is wrapped by a pair of curly brackets. `title` is the tab name, and `content` is the text visitors will see under the tab name. You can write html in the content but note that it must be one line only - use `<br/>` for line break instead of press enter.  
 
 Once you have prepared the data, pass the data array to the *Tab* component:  
 
@@ -305,6 +335,27 @@ export const dataArray = [
 
 ### Submit
 Once you are happy with your visualisation page, create a [pull reqeuest](https://github.com/researchdata-sheffield/dataviz-hub2/pulls) to merge your commits!
+
+
+If you haven't set up a local development environment, go ahead to the GitHub [repository](https://github.com/researchdata-sheffield/dataviz-hub2) and click the `Fork` button on the top right of the page. Then go to the forked repository by click your profile icon on the top right and click *Your repositories*. Go to the repository and continue to navigate to `content/visualisation`. Since we cannot create a folder without a new file, click the `Create new file` button as shown in the image below:
+
+![Upload files on Github](uploadFile.png)
+
+Copy the name of the folder you have created in previous steps into the box with the placeholder `Name your file...`, followed by a slash and `index.mdx`. Then copy all the text in your local `index.mdx` to the editor below.
+
+![Create file on GitHub](createFile.png)
+
+Once that's done, scroll to the bottom of the page and click `commit new file`. The webpage will then bring you to the new folder and you can now upload all other files in your local machine.  
+
+If all goes well, go to the repository's main page and open a pull request.
+
+![Open PR](openPR.png)
+
+Make sure the base repository is `researchdata-sheffield/dataviz-hub2/development` and the head repository will be the branch you are working on.
+
+![Create PR](createPR.png)
+
+After you have created a pull request, we will review your submission and make it live!
 
 
 [contributeBlogPost]: https://dataviz.shef.ac.uk/docs/22/03/2020/contribute-blog-post

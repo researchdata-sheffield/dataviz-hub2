@@ -160,7 +160,7 @@ export function getCodeTemplate(mdx, type = "image", url = "", localPath = "", h
   if (localPath) {
     urlToUse = localPath.includes("External") ? 
         mdx.frontmatter?.[localPath] 
-      : `${mdx.folderLink}/${mdx.frontmatter?.[localPath].relativePath}`
+      : `${mdx.folderLink}/${mdx.frontmatter?.[localPath]?.relativePath}`
   }
 
   if (type == "iframe") {
