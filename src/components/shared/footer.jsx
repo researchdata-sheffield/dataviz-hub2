@@ -47,8 +47,9 @@ const Footer = React.memo(({className}) => {
         <div className="sm:w-2/12 h-auto sm:mt-0 mt-8">
           <div className="text-white text-md mb-2 font-bold">Collaboration</div>
           <ul className="list-reset leading-normal">
+            <li><A_footer href="https://github.com/researchdata-sheffield/dataviz-hub2/issues">Submit an Issue or feedback</A_footer></li>
             <li><A_footer href="https://github.com/researchdata-sheffield/dataviz-hub2">Github repository</A_footer></li>
-            <li><Link className={linkClasses} to="/docs/22/03/2020/contribute-blog-post">Contribute blog post</Link></li>
+            <li><Link className={linkClasses} to="/docs/22/03/2020/contribute-blog-post">Contribute blog posts</Link></li>
           </ul>
         </div>
         
