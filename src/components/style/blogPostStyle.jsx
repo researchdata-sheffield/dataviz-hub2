@@ -157,7 +157,7 @@ export const H3 = styled.h3`
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: 500;
+  font-weight: 600;
 `
 
 export const H4 = styled.h4`
@@ -167,7 +167,7 @@ export const H4 = styled.h4`
   margin-bottom: 1.33em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: 500;
 `
 
 export const H5 = styled.h5`
@@ -177,7 +177,7 @@ export const H5 = styled.h5`
   margin-bottom: 1.67em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: 500;
 `
 
 export const H6 = styled.h6`
@@ -187,7 +187,7 @@ export const H6 = styled.h6`
   margin-bottom: 2.33em;
   margin-left: 0;
   margin-right: 0;
-  font-weight: bold;
+  font-weight: 500;
 `
 
 export const P = styled.p`
@@ -294,7 +294,7 @@ export const EM = styled_twin.em`
 `
 
 export const Table = styled.table`
-  ${tw`my-10 shadow-md text-base`};
+  ${tw`my-10 text-base`};
     display: block;
     overflow-x: auto;
 

@@ -115,8 +115,8 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
                 </Fade>
               </Link>
             )
-
           })} 
+          
           <div id="visualisation-invite" style={{gridRow: 'span 1', gridColumn: 'span 1', visibility: 'hidden'}}>
             <Fade delay={1000}>
               <VisItem row={1} col={1}>
@@ -126,7 +126,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
                 >
                   <h1 className="text-gray-300 font-bold m-auto">Add your visualisations here</h1>
                   <Link 
-                    to=""
+                    to="/docs/21/07/2021/Contribute-visualisation"
                     className="absolute text-sm text-gray-200 font-bold cursor-pointer bg-gray-600 rounded-md py-1 px-2 hidden group-hover:block" 
                     style={{transform: 'translate(-50%, 0%)', left: '50%', top: '70%'}}>
                       Learn how

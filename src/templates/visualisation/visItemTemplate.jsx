@@ -17,12 +17,12 @@ import { useScript } from "../../utils/hooks/useScript"
 import { getShareLinks } from "../../utils/shared"
 import VisPagination from "../../components/visualisation/visPagination"
 import VisDetail from "../../components/visualisation/visDetail"
-import { VisDiv, VisBackBtn } from "../../components/style/visStyle"
+import { VisDiv, VisBackBtn, EmbedCode } from "../../components/style/visStyle"
 import { AiOutlineRollback, AiOutlineHome } from "react-icons/ai"
 
 
 const visItemTemplate = ({ data: { mdx }, pageContext }) => {
-  const components = { VisPagination, VisDetail, VisDiv };
+  const components = { VisPagination, VisDetail, VisDiv, EmbedCode };
 
   const shareLinks = getShareLinks(mdx);
   const { title, template } = mdx.frontmatter;

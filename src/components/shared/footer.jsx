@@ -11,7 +11,7 @@ const Footer = React.memo(({className}) => {
   const linkClasses = "text-gray-400 hover:text-brand-blue"
 
   return (
-    <footer className={`${className || ''} bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-10`}>
+    <footer className={`${className || 'relative'} bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-50`}>
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>

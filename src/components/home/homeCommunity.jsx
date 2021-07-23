@@ -24,7 +24,7 @@ const HomeCommunity = () => {
 
   return (
     <div 
-      id="home_community" 
+      id="home-community" 
       className="flex flex-wrap justify-center items-center relative" 
       style={{transition: '.5s ease', background: `linear-gradient(180deg, ${bgColour} 0%, #fff 60%)`, backgroundColor: `${bgColour}`, minHeight: '700px'}}
     >

@@ -9,6 +9,8 @@ tag: ["Drax power station", "IDRIC"]
 date: "2021-06-02"
 template:
 featured: false
+pngImagePath: Green-Industrial-Revolution.png
+svgImagePath: Green-Industrial-Revolution.svg
 ---
 
 import Bg from "./nuclear-power-station.jpg"
@@ -44,7 +46,9 @@ import Bg from "./nuclear-power-station.jpg"
 </VisDiv>
 
 
-<VisPagination mdx={props.mdx} />
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
 <VisDetail mdx={props.mdx} />
 
 export const data = [

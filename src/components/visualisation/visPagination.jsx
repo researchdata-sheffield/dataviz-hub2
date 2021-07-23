@@ -6,12 +6,14 @@ import { RiEditBoxLine } from "react-icons/ri"
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md"
 import { ShareButton } from "../../components/style/visStyle"
 import VisDownload from "./visDownload"
+import VisEmbed from "./visEmbed"
 
-
-const visPagination = ({ mdx, className, style }) => {
+const visPagination = (props) => {
+  const { mdx, className, style } = props;
   const { githubLink, shareLink, shareMessage } = mdx.shareLinks;
   const {prev, next} = mdx.pageContext;
   const buttonStyle = "py-2 px-2 bg-gray-800 text-white font-semibold text-sm rounded-md hover:bg-gray-700 transition duration-300";
+
 
   return (
     <div className={`${className} flex flex-wrap justify-between mt-2 space-y-3 mx-auto items-center relative z-10`} style={{...style, maxWidth: '550px'}}>
@@ -32,6 +34,7 @@ const visPagination = ({ mdx, className, style }) => {
           <div className="py-1 px-2 bg-black hover:bg-brand-blue text-white flex justify-center rounded-md text-xl cursor-pointer"><RiEditBoxLine /></div>
         </a>
         <VisDownload mdx={mdx} />
+        <VisEmbed {...props} />
       </ShareButton> 
 
       {/* Next visualisation */}
@@ -48,5 +51,6 @@ const visPagination = ({ mdx, className, style }) => {
 export default visPagination
 
 visPagination.propTypes = {
+  props: PropTypes.any,
   mdx: PropTypes.any,
 }

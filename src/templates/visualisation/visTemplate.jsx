@@ -5,18 +5,8 @@ import { loadMoreVisualisation } from "../../utils/hooks/loadMoreVisualisation"
 import VisLayout from "../../components/visualisation/visLayout"
 
 const visTemplate = ({data: {allMdx}, pageContext }) => {
-  const allMDX = [];
   const nextPageRef = useRef();
-
-  for(let i = 0; i < allMdx.edges.length; ++i){
-    allMDX.push(allMdx.edges[i]);
-    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
-    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
-    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
-    allMDX.push(allMdx.edges[Math.floor(Math.random() *allMdx.edges.length)]);
-  }
-
-  const currentMDXs = loadMoreVisualisation(allMDX, nextPageRef);
+  const currentMDXs = loadMoreVisualisation(allMdx.edges, nextPageRef);
 
   return(
     <VisLayout currentMDXs={currentMDXs} nextPageRef={nextPageRef} pageContext={pageContext} />
