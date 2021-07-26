@@ -44,8 +44,7 @@ const radarPlot = () => {
     lineHeight: 1.25,
     fontSize: '1.6rem',
     fontWeight: 900,
-    textAlign: 'center',
-    fontFamily: 'Open sans'
+    textAlign: 'center'
   }
 
   const visWrapper = {
