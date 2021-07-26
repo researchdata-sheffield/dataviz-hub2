@@ -22,7 +22,7 @@ const visDownload = ({ mdx }) => {
   const [targetVis, setTargetVis] = useState('');
   const pngImagePath = mdx.frontmatter?.pngImagePath?.relativePath || mdx.frontmatter?.pngExternalImagePath || '';
   const svgImagePath = mdx.frontmatter?.svgImagePath?.relativePath || mdx.frontmatter?.svgExternalImagePath || '';
-  const folderLink = "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2/master/content/visualisation";
+  const folderLink = "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2/master/content/visualisation/";
   mdx.folderLink = folderLink;
 
   useEffect(() => {
