@@ -10,10 +10,10 @@ disableTOC: true
 ---
 
 # Objectives
-Last article introduced some basic descriptive statistics such as measures of central tendency and measures of variation. In this article we will apply some measures to get a 
+The last article introduced some basic descriptive statistics such as measures of central tendency and measures of variation. In this article, we will apply some measures to get a 
 better understanding of selected datasets. Datasets we're using are Road Safety Data for accidents between 2016-2018, 
-it can be download on <a href="https://data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data">data.gov.uk</a>. You'll probably want to look at *Variable lookup data guide* on the website as well, 
-since some of variables are coded and represented by numbers.
+it can be download on <a href="https://data.gov.uk/dataset/cb7ae6f0-4be6-4935-9277-47e5ce24a11f/road-safety-data">data.gov.uk</a>. You'll probably want to look at *Variable lookup data guide* on the website as well 
+since some of the variables are coded and represented by numbers.
 
 <br />
 
@@ -35,7 +35,7 @@ sns.set_style("whitegrid", {'axes.grid' : False})
 plt.rcParams['figure.figsize'] = [11.7, 8.17]
 ```
 
-Datasets were renamed to *acc_2016.csv*, *acc_2017.csv*, and *acc_2018.csv*. In here, we can concatnate them into one single dataframe.
+Datasets were renamed to *acc_2016.csv*, *acc_2017.csv*, and *acc_2018.csv*. In here, we can concatenate them into one single dataframe.
 
 
 ```python
@@ -65,7 +65,7 @@ The dataset has columns:
 'Year'].  
 To see more details about the dataset, use **df_acc** and **df_acc.dtypes**.
 
-If you look at datsets closely then you'll find some variables such as *Weather_Conditions* and *Road_Type* are coded in numbers, in here we transform numbers back to text according to *Variable lookup data guide* mentioned at the beginning. Backward slashes are used to indent code in new lines.
+If you look at dataset closely, you'll find some variables such as *Weather_Conditions* and *Road_Type* are coded in numbers; here, we transform numbers back to text according to *Variable lookup data guide* mentioned at the beginning. Backward slashes are used to indent code in new lines.
 
 
 ```python
@@ -86,7 +86,7 @@ df_acc['Road_Type'] = df_acc['Road_Type'] \
 
 # Accidents by year, week, and day
 
-Start with time and date, we can use barplot to visualise number of accidents by year, week, and day. From the plot below, we can see that the number of accidents decreases over three years period.
+Start with time and date; we can use barplot to visualise the number of accidents by year, week, and day. From the plot below, we can see that the number of accidents decreases over three years period.
 
 
 ```python
@@ -103,7 +103,7 @@ plot.set_title("Number of accidents for each year 2016-2018")
   
 ![png](./output_10_1.png)  
 
-The distribution of accidents by day of the week looks a bit more interesting - more accidents occured on days towards weekend. Working days has higher number of accidents and over a sixth of overall accidents occured on Friday.  
+The distribution of accidents by day of the week looks a bit more interesting - more accidents occurred on days at the end of the week, closer to the weekend. Typically working days have a higher number of accidents, and over a sixth of overall accidents occurred on Friday.  
 
 ```python
 # calculate proportion of accidents for each day of the week.
@@ -117,7 +117,7 @@ for i, val in enumerate(Week_Days.values):
 
 ![png](./output_12_0.png)  
 
-Most accidents occured around communte time.  
+Most accidents occurred during typical commuter times.  
 
 ```python
 acc_by_time = df_acc.Time.value_counts()
@@ -145,7 +145,7 @@ plt.ylabel("Number of Accidents")
 ![png](./output_16_1.png)  
 
 
-Now we look at density distrbutions to see average, median and standard deviation of number of accidents for each year. The plot has also includes the day of which the highest number of accident occured (mostly on Friday).  
+Now we look at density distributions to see the average, median and standard deviation of the number of accidents for each year. The plot also includes the day on which the highest number of accidents occurred (mostly on Friday).  
 
 ```python
 fig, ax = plt.subplots(nrows=1, ncols=3, figsize=(16,7))
@@ -170,7 +170,7 @@ plt.show()
 
 ![png](./output_18_0.png)  
 
-We can also use boxplot to illustrate the outliers, minimum, maximum, median and quartiles.  
+We can also use a boxplot to illustrate the outliers, minimum, maximum, median and quartiles.  
 
 ```python
 sns.set(style="whitegrid")
@@ -195,7 +195,7 @@ plt.title("Box plots - a different representation for distribution of number of 
 
 Now we look at some categorical variables such as *Weather_Conditions*, *Road_Type* and *Accident_Severity*.  
 
-Count number of accidents under each weather condition.  
+Count the number of accidents under each weather condition.  
   
   
 ```python
@@ -207,7 +207,7 @@ df_wc[0]/len(df_acc)*100
     81.22845148726486
 
 
-*Fine no high winds* condition appeared in over 80% of all accidents, what about other conditions?  
+*Fine no high winds* condition appeared in over 80% of all accidents; what about other conditions?  
   
   
 ```python
@@ -232,7 +232,7 @@ plot_rt.set_xticklabels(plot_rt.get_xticklabels(), rotation=30)
 
 ![png](./output_28_1.png)
 
-Base on *Road_Type*, let's find out accident servity for each road.  
+Based on *Road_Type*, let's find out about accident severity for each road.  
 
 ```python
 acc_sev = { 1: "Fatal", 2: "Serious", 3: "Slight" }
