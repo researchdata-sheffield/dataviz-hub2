@@ -1,0 +1,56 @@
+---
+type: visualisation
+author: [Yu Liang Weng]
+title: Millions of UK residents struggle to access food
+thumbnail: thumb.jpg
+description: >
+  A new study from the University of Sheffield has revealed the areas in the UK where residents most struggle to afford or access food.
+  For the first time researchers were able to identify food insecurity at local authority scale across three categories, from those experiencing hunger, to those just one emergency away from going without food.
+date: "2021-07-22"
+category: [Institute for Sustainable Food]
+tag: [Food Insecurity]
+svgImagePath: millions-of-uk-residents-struggle-to-access-food.svg
+pngImagePath: millions-of-uk-residents-struggle-to-access-food.png
+---
+
+import RadarPlot from "./radarPlot"
+
+
+export const data = [
+  {
+    "title": "Source",
+    "content": `The University of Sheffield - <a href="https://www.sheffield.ac.uk/news/new-map-shows-where-millions-uk-residents-struggle-access-food">Latest News</a>. <br/>Also check out this exciting <a href="https://shefuni.maps.arcgis.com/apps/instant/interactivelegend/index.html">new map</a> - Adult Food insecurity at Local Authority Scale.`
+  },
+  {
+    "title": "Detail",
+    "content": `This visualisation is based on the map mentioned in the source tab. I have chosen five cities across UK including two cities from Yorkshire and the Humber area, in which "almost half of local areas in here have very high percentages of people who were hungry in January", as suggested by researchers. The <a href="https://nivo.rocks/radar/">radar</a> component is used for this visualisation. If you would like to try this component, <a href="https://reactjs.org/docs/add-react-to-a-website.html">add React to your website</a> and install nivo and radar using <code class="language-text">npm install @nivo/core @nivo/radar</code>.`
+  },
+  {
+    "title": "Code",
+    "content": `This visualisation is created using React and <a href="https://nivo.rocks/">nivo</a> package. <br/> <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/radarPlot.jsx">Link</a> for the source code.`
+  },
+  {
+    "title": "Attribution",
+    "content": `The food dish image used here were downloaded from <a href="https://uxwing.com/">uxwing.com</a>.`
+  },
+  {
+    "title": "License",
+    "content": `This visualisation is covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  },
+]
+
+
+<div className="flex justify-center">
+  <RadarPlot />
+</div>
+
+
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
+
+<VisDetail mdx={props.mdx} />
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

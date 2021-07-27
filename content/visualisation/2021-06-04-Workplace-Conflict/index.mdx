@@ -2,7 +2,7 @@
 type: visualisation
 author: ["Yu Liang Weng"]
 title: "Workplace conflict costs employers £28 billion a year"
-thumbnail: visualisations.png
+thumbnail: thumb.png
 description: New analysis published today (11 May 2021) estimates workplace conflict costs UK employers £28.5 billion every year - just over £1,000 on average for every employee.
 date: "2021-06-04"
 category: ["Management School"]
@@ -11,6 +11,8 @@ template:
 featured: false
 rowSpan: 2
 columnSpan: 1
+pngImagePath: workplace-conflict-costs-employers-28-billion-a-year.png
+svgImagePath: workplace-conflict-costs-employers-28-billion-a-year.svg
 ---
 
 import Visualisation from "./visualisation"
@@ -21,7 +23,9 @@ import Visualisation from "./visualisation"
 </div>
 
 
-<VisPagination mdx={props.mdx} />
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
 <VisDetail mdx={props.mdx} />
 
 export const data =[

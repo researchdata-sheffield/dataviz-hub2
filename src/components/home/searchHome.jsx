@@ -87,7 +87,7 @@ class Search_Home extends Component {
               <ul className="list-reset leading-normal text-xs 2xl:text-sm text-left">
                 <li><Link className={quickLink} to='/#explore' data-tip="#Data and visualisation">Data visualisation</Link></li>
                 <li><Link className={quickLink} to='/#learning-path' data-tip="#Get started">Learning path</Link></li>
-                <li><Link className={quickLink} to='/#home_community' data-tip="#Community">Community</Link></li>
+                <li><Link className={quickLink} to='/#home-community' data-tip="#Community">Community</Link></li>
                 <li><Link className={quickLink} to='/#home_showcase' data-tip="#Showcase">Showcase</Link></li>
                 <li><Link className={quickLink} to='/#collaboration' data-tip="#collaboration">Collaboration</Link></li>
                 <li><Link className={quickLink} to='/blog'>Blog</Link></li>

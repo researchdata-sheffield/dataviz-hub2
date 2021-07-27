@@ -7,19 +7,19 @@ description: Plots and analysis relating to the pandemic.
 date: "2021-06-22"
 category: ["School Of Health And Related Research"]
 tag: ["COVID-19"]
-featured: false
-rowSpan: 2
-columnSpan: 2
+pngExternalImagePath: https://raw.githubusercontent.com/VictimOfMaths/COVID-19/master/Exposure%20mapping/COVIDBivariateLondon.png
 ---
 
 
-<VisDiv style={{maxWidth: '800px'}}>
+<VisDiv style={{maxWidth: '1000px'}}>
 
-<img src="./thumb.png" alt="visualisation" style={{borderRadius: '20px'}} />
+<img id="visualisation" src="https://raw.githubusercontent.com/VictimOfMaths/COVID-19/master/Exposure%20mapping/COVIDBivariateLondon.png" alt="visualisation" style={{borderRadius: '20px'}} />
 
 </VisDiv>
 
-<VisPagination mdx={props.mdx} />
+<VisPagination mdx={props.mdx}>
+  <EmbedCode url="https://raw.githubusercontent.com/VictimOfMaths/COVID-19/master/Exposure%20mapping/COVIDBivariateLondon.png" />
+</VisPagination>
 
 <VisDetail mdx={props.mdx} />
 
@@ -38,7 +38,7 @@ export const data = [
   },
   {
     "title": "License",
-    "content": `Anyone is free to use any of this code for any purpose (please make appropriate attribution to the author). Adapted from data from the Office for National Statistics licensed under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v.1.0</a>.`
+    "content": `Anyone is free to use any of this code for any purpose (please make appropriate attribution to the author). Adapted from data from the Office for National Statistics licensed under the <a href="http://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v.3.0</a>.`
   },
 ]
 

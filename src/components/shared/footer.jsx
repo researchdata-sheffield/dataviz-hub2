@@ -11,7 +11,7 @@ const Footer = React.memo(({className}) => {
   const linkClasses = "text-gray-400 hover:text-brand-blue"
 
   return (
-    <footer className={`${className || ''} bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-10`}>
+    <footer className={`${className || 'relative'} bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-50`}>
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
             <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
@@ -47,8 +47,9 @@ const Footer = React.memo(({className}) => {
         <div className="sm:w-2/12 h-auto sm:mt-0 mt-8">
           <div className="text-white text-md mb-2 font-bold">Collaboration</div>
           <ul className="list-reset leading-normal">
+            <li><A_footer href="https://github.com/researchdata-sheffield/dataviz-hub2/issues">Submit an Issue or feedback</A_footer></li>
             <li><A_footer href="https://github.com/researchdata-sheffield/dataviz-hub2">Github repository</A_footer></li>
-            <li><Link className={linkClasses} to="/docs/22/03/2020/contribute-blog-post">Contribute blog post</Link></li>
+            <li><Link className={linkClasses} to="/docs/22/03/2020/contribute-blog-post">Contribute blog posts</Link></li>
           </ul>
         </div>
         

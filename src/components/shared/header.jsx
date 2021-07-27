@@ -161,16 +161,6 @@ const Header = () => {
 
   return (
     <header className="font-semibold z-50 relative group">
-      <div id="rssBox" className={`${isOpen ? '' : 'invisible'} fixed z-50 bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center`} style={{top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}>
-        <FaTimes className="text-2xl absolute top-0 right-0 text-gray-800 m-2 rounded-full hover:text-white hover:bg-red-500 transition duration-300 p-1" onClick={() => {toggleOpen(!isOpen)}} />
-        <FaRss className="text-5xl mx-auto" />
-        <h2 className="text-2xl font-bold mt-4">RSS Feed link copied!</h2>
-        <h6 className="text-gray-600 text-sm mt-1">Doesn&apos;t work? Use the following link</h6>
-        <div className="inline-block bg-white shadow rounded-md mt-5">
-          <input id="rssLink" readOnly={true} className="py-2 pl-2 text-base focus:outline-none pr-3 text-gray-500" type="text" value="https://dataviz.shef.ac.uk/rss.xml" />
-          <button id="copyBtn" className="bg-brand-pink p-2 rounded-md cursor-pointer" onClick={() => copyRssLink}> COPY </button>
-        </div>
-      </div>
       <nav 
         id="navbar" 
         className={`${isScroll ? 'shadow-lg bg-white' : 'group-hover:bg-white'} transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
@@ -185,12 +175,12 @@ const Header = () => {
           </div>
         </div>
 
+        {/* Mobile menu icon */}
         <div onClick={() => toggleExpansion(!isExpanded)} className="block xl:hidden py-2" style={{zIndex: '999'}}>
           <button className={mobileMenuIconClass()} title="Menu">
             { isExpanded ? <FaTimes /> : <FaBars /> } 
           </button>
         </div>
-        
 
         {/* Mobile devices */}
         <div 
@@ -305,6 +295,21 @@ const Header = () => {
             <NavLink type="Link-icon" to="/search" title="Search">
               <div className="mr-4 ml-2 text-sm xl:text-lg transition duration-500 ease-in-out md:mr-2 inline-block no-underline"><FiSearch  /></div>
             </NavLink>
+          </div>
+        </div>
+        
+        {/* RSS BOX */}
+        <div id="rssBox" 
+          className={`${isOpen ? '' : 'invisible'} fixed z-50 bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center`} 
+          style={{top: '50%', left: '50%', transform: 'translate(-50%, -50%)'}}
+        >
+          <FaTimes className="text-2xl absolute top-0 right-0 text-gray-800 m-2 rounded-full hover:text-white hover:bg-red-500 transition duration-300 p-1" onClick={() => {toggleOpen(!isOpen)}} />
+          <FaRss className="text-5xl mx-auto" />
+          <h2 className="text-2xl font-bold mt-4">RSS Feed link copied!</h2>
+          <h6 className="text-gray-600 text-sm mt-1">Doesn&apos;t work? Use the following link</h6>
+          <div className="inline-block bg-white shadow rounded-md mt-5">
+            <input id="rssLink" readOnly={true} className="py-2 pl-2 text-base focus:outline-none pr-3 text-gray-500" type="text" value="https://dataviz.shef.ac.uk/rss.xml" />
+            <button id="copyBtn" className="bg-brand-pink p-2 rounded-md cursor-pointer" onClick={() => copyRssLink}> COPY </button>
           </div>
         </div>
       </nav>
