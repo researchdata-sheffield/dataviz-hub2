@@ -27,9 +27,7 @@ import './src/css/react-tabs.scss'
  * the Gatsby browser runtime first starts
  */
 export const onClientEntry = () => {
-  // setTimeout(() => {
-  //   window.location.reload();
-  // }, 3000)
+
 }
 
 /**
@@ -79,7 +77,7 @@ export const shouldUpdateScroll = ({
   if(location.hash) {
     setTimeout(() => {
       document.querySelector(`${location.hash}`).scrollIntoView()
-    }, 500);
+    }, 800);
   }
   
 }

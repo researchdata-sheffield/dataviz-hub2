@@ -11,8 +11,7 @@ module.exports = {
     siteUrl: "https://dataviz.shef.ac.uk"
   },
   flags: { 
-    FAST_DEV: true,
-    PRESERVE_WEBPACK_CACHE: true
+    FAST_DEV: true
   },
   plugins: [
     {
@@ -20,6 +19,7 @@ module.exports = {
       options: {
         trackingId: "UA-165060977-1",
         head: true,
+        enableWebVitalsTracking: true
       },
     },
     `gatsby-plugin-image`,

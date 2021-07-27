@@ -9,25 +9,36 @@ const { createFilePath } = require('gatsby-source-filesystem');
 const kebabCase = require(`lodash.kebabcase`);
 const path = require("path");
 const readingTime = require("reading-time");
+const NodePolyfillPlugin = require("node-polyfill-webpack-plugin")
 
 
-// prevent error from canvas used by trianglify
 exports.onCreateWebpackConfig = ({
   stage,
   loaders,
   actions,
 }) => {
+  actions.setWebpackConfig({
+    plugins: [
+      new NodePolyfillPlugin()
+    ],
+    resolve: {
+      fallback: {
+        "fs": false
+      }
+    }
+  });
+
   if (stage === "build-html") {
     actions.setWebpackConfig({
       module: {
         rules: [
-          {
+          { // prevent error from canvas used by trianglify
             test: /canvas/,
-            use: loaders.null(),
-          },
+            use: loaders.null(),  
+          }
         ],
-      }
-    })
+      },
+    });
   }
 };
 
@@ -332,11 +343,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     var excluded = false;
 
     // For each post, add their tags/categories to arrays
-    node.frontmatter.category.forEach((cat) => {
+    node.frontmatter.category && node.frontmatter.category.forEach((cat) => {
       if(!exclude.includes(cat)) categories.push(cat)
       else excluded = true
     })
-    node.frontmatter.tag.forEach((tag) => {
+    node.frontmatter.tag && node.frontmatter.tag.forEach((tag) => {
       if(!exclude.includes(tag)) tags.push(tag)
       else excluded = true
     })

@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from "prop-types"
 import { FaMapMarkerAlt, FaClock } from "react-icons/fa"
 import { shortenText, calculateUserLocalTime } from "../../utils/shared"
-
+import NoThumb from "../../images/no_thumbnail.png"
 
 const UpcomingEvents = ({allEventbriteEvents}) => {
   let size = allEventbriteEvents.edges.length
@@ -35,8 +35,15 @@ const UpcomingEvents = ({allEventbriteEvents}) => {
                   </p>
               </div>
             </div>
-            <div className="w-full md:w-3/12 overflow-hidden relative min-h-15 2xl:min-h-15" style={{backgroundImage: `url(${node.logo.original.url})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: '.5s ease'}}>
-              <button href={node.url} target="_blank" rel="noopener noreferrer" className="hidden group-hover:flex py-1 px-3 font-semibold text-md bg-black text-white hover:bg-blue-900 absolute" style={{bottom: '0%', right: '0%', }}>
+            <div 
+              className="w-full md:w-3/12 overflow-hidden relative min-h-15 2xl:min-h-15" 
+              style={{backgroundImage: `url(${node?.logo?.original?.url || NoThumb})`, backgroundPosition: 'center', backgroundSize: 'cover', transition: '.5s ease'}}
+            >
+              <button 
+                href={node.url} 
+                target="_blank" rel="noopener noreferrer" 
+                className="hidden group-hover:flex py-1 px-3 font-semibold text-md bg-black text-white hover:bg-blue-900 absolute" style={{bottom: '0%', right: '0%', }}
+              >
                 Register
               </button>
             </div>

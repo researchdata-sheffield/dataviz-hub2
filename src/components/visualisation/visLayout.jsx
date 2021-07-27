@@ -43,7 +43,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
       
       <VisTags handleTagMenu={handleTagMenu} tagMenu={tagMenu} tags={pageContext.allVisCatTag} />
 
-      <div className="w-full pt-24 pb-16 text-center">
+      <div className="w-full pt-24 pb-8 text-center">
         <h1 
           className="w-full py-3 text-7xl font-extrabold" 
           style={{
@@ -74,7 +74,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
         </button>
       </div>
 
-      <div className="min-h-80 flex flex-wrap justify-center pt-36 pb-32 bg-gray-900 px-5">
+      <div className="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5">
         <div 
           className="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
           style={{gridAutoFlow: 'dense', gridTemplateRows: 'min-content'}}
@@ -115,8 +115,8 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
                 </Fade>
               </Link>
             )
-
           })} 
+          
           <div id="visualisation-invite" style={{gridRow: 'span 1', gridColumn: 'span 1', visibility: 'hidden'}}>
             <Fade delay={1000}>
               <VisItem row={1} col={1}>
@@ -126,7 +126,7 @@ const visLayout = ({currentMDXs, nextPageRef, title, pageContext}) => {
                 >
                   <h1 className="text-gray-300 font-bold m-auto">Add your visualisations here</h1>
                   <Link 
-                    to=""
+                    to="/docs/21/07/2021/Contribute-visualisation"
                     className="absolute text-sm text-gray-200 font-bold cursor-pointer bg-gray-600 rounded-md py-1 px-2 hidden group-hover:block" 
                     style={{transform: 'translate(-50%, 0%)', left: '50%', top: '70%'}}>
                       Learn how
