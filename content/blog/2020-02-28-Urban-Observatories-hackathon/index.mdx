@@ -12,13 +12,12 @@ tag: ["Data Engineering", "Data Analytics", "Research & Innovation", "Urban Obse
 
 ---
 
-In February, The University of Sheffield hosted a three-day hackathon, an intensive collaborative software development event, organised by 
-the <a href="https://www.dafni.ac.uk/">Data & Analytics Facility for National Infrastructure</a> (DAFNI). The event aimed to begin tackling the 
-complex challenges involved in coordinating analytics using data from urban observatories across the UK. DAFNI provides an analytics platform to enable innovative data analysis solutions 
+In February, The University of Sheffield hosted a three-day hackathon, an intensive collaborative software development event organised by the <a href="https://www.dafni.ac.uk/">Data & Analytics Facility for National Infrastructure</a> (DAFNI). 
+The event aimed to begin tackling the complex challenges involved in coordinating analytics using data from urban observatories across the UK. DAFNI provides an analytics platform to enable innovative data analysis solutions 
 for infrastructure research.
 
 An urban observatory is a network of sensors capturing atmospheric and energy flow data from across a city. Several <a href="https://urbanobservatory.ac.uk/">such projects</a> are being set up nationally aiming to offer the largest set of 
-publicly-available real-time urban data in the country by UKRIC (UK Collaboratorium for Research on Infrastructure and Cities).
+publicly available real-time urban data in the country by UKRIC (UK Collaboratorium for Research on Infrastructure and Cities).
 
 The Research & Innovation team supports the Sheffield observatory being run by the <a href="https://urbanflows.ac.uk/">Urban Flows</a> project by providing data engineering work. IT Services provide infrastructure and security support.
 
@@ -44,8 +43,8 @@ on JavaScript Object Notation (JSON.) This provided the front-end discussed abov
 
 ![solution](./solution.jpg)
 
-Another team focussed on integrated data from the different platforms in each city. It developed data pipelines using Python to extract and transform data from the Newcastle and Sheffield observatories 
-respectively. These data were then loaded into a PostgreSQL database that ran in a Docker container hosted on a cloud container service provider. The database used a Postgres foreign data wrapper called <a href="https://github.com/citusdata/cstore_fdw">cstore</a> 
+Another team focussed on integrated data from the different platforms in each city. It developed data pipelines using Python to extract and transform data from the Newcastle and Sheffield observatories, respectively. 
+These data were then loaded into a PostgreSQL database that ran in a Docker container hosted on a cloud container service provider. The database used a Postgres foreign data wrapper called <a href="https://github.com/citusdata/cstore_fdw">cstore</a> 
 to store the data in columnar form to facilitate faster analytics queries.
 
 A system was developed that allowed the end-user to use a simple web-based form to select the data they are interested in, run a query against this database and spawn a small container 
