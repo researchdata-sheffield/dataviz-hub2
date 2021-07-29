@@ -146,10 +146,11 @@ const flowChart = () => {
         console.log('flow loaded:', rfi);
         localStorage.removeItem('dataviz-flowchart');
       }
-      setTimeout(() => rfi.fitView(), 1000);
+      setTimeout(() => rfi.fitView(), 500);
     },
     [reactflowInstance]
   );
+
 
   const handleShowButton = useCallback(() => {
     if (!showAll) {
@@ -158,11 +159,13 @@ const flowChart = () => {
         groupedData.map(el => ({...el, isHidden: false}))
       );
       toggleShowAll(!showAll);
+      setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
       return;
     }
     const restore = JSON.parse(localStorage.getItem('dataviz-flowchart')) || groupedData;
     setElements(restore);
     toggleShowAll(!showAll);
+    setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
   });
 
   const onElementClick = useCallback((event, element) => {
@@ -180,16 +183,22 @@ const flowChart = () => {
       });
 
     let newElement = element;
+    let domEl = document.querySelector(`div[data-id='${newElement.id}'] > div`);
 
-
-    if (newElement.type == "decision" && newElement.data.innerStyle) {
-      delete newElement.data.innerStyle;
-    } else if (newElement.type == "decision" && !newElement.data.innerStyle) {
-      newElement.data.innerStyle = {border: '5px solid #00aeef', background: 'rgba(34, 32, 31, 0.97)', color: 'white'};
+    if (newElement.type == "decision" && newElement.selected) {
+      newElement.selected = false;
+      domEl.style.border = '5px solid orange';
+      domEl.style.background = 'white';
+      domEl.style.color = 'black';
+    } else if (newElement.type == "decision" && !newElement.selected) {
+      newElement.selected = true;
+      domEl.style.border = '5px solid #00aeef';
+      domEl.style.background = 'rgba(34, 32, 31, 0.97)';
+      domEl.style.color = 'white';
     }
 
     setElements([...currentElements, newElement]);
-    reactflowInstance.setTransform({ x: -element.position.x+250, y: -element.position.y+100, zoom: 1.1 });
+    //setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
   });
 
   return (
@@ -206,7 +215,7 @@ const flowChart = () => {
             connectionLineStyle={connectionLineStyle}
             snapToGrid={true}
             snapGrid={snapGrid}
-            defaultZoom={1.5}
+            defaultZoom={0.8}
             onElementClick={onElementClick}
           >
             <MiniMap
