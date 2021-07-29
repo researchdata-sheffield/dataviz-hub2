@@ -3,7 +3,8 @@ export const chartNodeData = [
     id: 'start',
     type: 'start',
     data: { label: 'Start!' },
-    position: { x: 2900, y: 3000 }
+    position: { x: 2900, y: 3000 },
+    isHidden: false
   },
   {
     id: 'D.bothDepVars',

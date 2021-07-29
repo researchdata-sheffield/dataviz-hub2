@@ -1,6 +1,6 @@
 export const chartEdgeData = [
   {
-    id: 'start',
+    id: 'eStart',
     source: 'start',
     target: 'D.bothDepVars',
     arrowHeadType: 'arrow',

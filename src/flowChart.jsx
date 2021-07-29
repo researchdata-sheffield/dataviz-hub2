@@ -25,7 +25,7 @@ TriangleNodeComponent.displayName = "TriangleNodeComponent"
 
 const DecisionNodeComponent = memo(({ data }) => {
   return (
-    <div style={{...data.innerStyle, background: 'rgba(255, 255, 255, .99)', height: '140px', textAlign: 'center', transform: 'rotate(45deg)', width: '140px', border: '4px solid orange'}}>
+    <div style={{background: 'rgba(255, 255, 255, .99)', height: '140px', textAlign: 'center', transform: 'rotate(45deg)', width: '140px', border: '4px solid orange', ...data.innerStyle}}>
       <Handle 
         type="target"
         id="a" 
@@ -68,6 +68,52 @@ InfoNodeComponent.displayName = "InfoNodeComponent"
 /******** END of custom node components *********/
 /************************************************/
 
+/**
+ * Get nodes and edges of an clicked element recursively
+ * Strategy:
+ * -> Return current element's direct node and edges if children are not visible yet.
+ * OR
+ * -> If children are visible, recursively find visible children (of children) by setting "deepLevel" to true.
+ *  If "deepLevel" is true, it will skip hidden children.
+ * @param {array} data current flow chart data
+ * @param {object} element element that user clicked 
+ * @param {boolean} deepLevel whether to get data more than one level deep
+ * @returns {array} array of element ids.
+ */
+export const getNodesAndEdges = (data, element, deepLevel = false) => {
+  // Get all child of current element
+  const edges = data.filter(item => item.source == element.id);
+
+  if (edges.length == 0) {
+    return [];
+  }
+
+  if (deepLevel && edges[0].isHidden) {
+    return [];
+  }
+
+  const edgeTargetIds = edges.map(el => el.target);
+
+  const nodes = data.filter(node => edgeTargetIds.includes(node.id));
+  const nodeIds = nodes.map(el => el.id);
+  
+  // check if child node is showing
+  let childShowing = (nodes && nodes[0] && !nodes[0].isHidden) || false;
+
+  // if children nodes are showing, recursively get their children
+  if (childShowing && !element.isHidden) {
+    let childNodesAndEdges = nodes
+      .filter(node => !node.isHidden)
+      .map(node => getNodesAndEdges(data, node, true));
+
+    let mergeAllArray = [].concat.apply([], childNodesAndEdges);
+    return [...edges.map(el => el.id), ...nodeIds, ...mergeAllArray];
+  }
+
+  return [...edges.map(el => el.id), ...nodeIds];
+}
+
+
 const nodeTypes = {
   start: TriangleNodeComponent,
   decision: DecisionNodeComponent,
@@ -75,9 +121,13 @@ const nodeTypes = {
 };
 
 const snapGrid = [20, 20];
-const groupedData = [...chartNodeData, ...chartEdgeData];
 const connectionLineStyle = { stroke: '#fff' };
 
+// Initialise data
+let groupedData = [...chartNodeData, ...chartEdgeData]
+  .map(el => (
+    {...el, isHidden: el.id != "start"}
+  ));
 
 /**
  * Return flow chart
@@ -86,7 +136,7 @@ const connectionLineStyle = { stroke: '#fff' };
 const flowChart = () => {
   const [displayChart, setDisplayChart] = useState(true);
   const [reactflowInstance, setReactflowInstance] = useState(null);
-  const [elements, setElements] = useState(groupedData.filter((item) => item.id == "start"));
+  const [elements, setElements] = useState(groupedData);
   const [showAll, toggleShowAll] = useState(false);
 
   const onLoad = useCallback(
@@ -104,56 +154,42 @@ const flowChart = () => {
   const handleShowButton = useCallback(() => {
     if (!showAll) {
       localStorage.setItem('dataviz-flowchart', JSON.stringify(elements));
-      setElements(groupedData);
+      setElements(
+        groupedData.map(el => ({...el, isHidden: false}))
+      );
       toggleShowAll(!showAll);
       return;
     }
-    const restore = JSON.parse(localStorage.getItem('dataviz-flowchart')) || groupedData.filter((item) => item.id == "start");
+    const restore = JSON.parse(localStorage.getItem('dataviz-flowchart')) || groupedData;
     setElements(restore);
     toggleShowAll(!showAll);
   });
 
   const onElementClick = useCallback((event, element) => {
-    // TODO: start element replication
-    // check if element's children already showing
-    const edges = groupedData.filter(item => item.source == element.id);
-    const childId = edges.map(el => el.target);
-    const nodes = groupedData.filter(node => childId.includes(node.id));
+    const childIds = getNodesAndEdges(elements, element);
 
-    console.log(nodes)
+    // Show/hide
+    let currentElements = elements
+      .filter(el => el.id != element.id)
+      .map(el => {
+        if (!childIds.includes(el.id)) {
+          return {...el};
+        }
 
-    const elementsToAdd = [...edges, ...nodes];
-    let elementsToRemove = element.id == "start" ? [] : [element];
+        return {...el, isHidden: !el.isHidden}
+      });
 
-    let newElement = element.id != "start" ? element : '';
+    let newElement = element;
 
-    if (newElement) {
-      newElement.data.innerStyle = {};
+
+    if (newElement.type == "decision" && newElement.data.innerStyle) {
+      delete newElement.data.innerStyle;
+    } else if (newElement.type == "decision" && !newElement.data.innerStyle) {
+      newElement.data.innerStyle = {border: '5px solid #00aeef', background: 'rgba(34, 32, 31, 0.97)', color: 'white'};
     }
 
-    // if element to add is already showing, remove them
-    const intersect = elements.filter(el => elementsToAdd.includes(el));
-    
-    if (intersect.length != 0) {
-      elementsToRemove = [...elementsToRemove, ...intersect];
-
-      setElements([
-        newElement || {},
-        ...elements.filter(el => !elementsToRemove.includes(el)) // remove elements 
-      ]);
-
-      return;
-    }
-
-    // remove current element, add current element with styles, add element's children
-    newElement.data.innerStyle = {border: '4px solid #00aeef'};
-
-    setElements([
-      ...elements.filter(el => !elementsToRemove.includes(el)),
-      ...elementsToAdd,
-      newElement || {}
-    ])
-    console.log(elements)
+    setElements([...currentElements, newElement]);
+    reactflowInstance.setTransform({ x: -element.position.x+250, y: -element.position.y+100, zoom: 1.1 });
   });
 
   return (
@@ -191,7 +227,7 @@ const flowChart = () => {
         </div>
         <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-4xl self-center cursor-pointer" onClick={() => handleShowButton()}>
           {showAll ? <FaToggleOn /> : <FaToggleOff />}
-          <span className="text-xl ml-3">Show all paths</span>
+          <span className="text-lg ml-3">Show all paths</span>
         </button>
       </div>
     </div>
