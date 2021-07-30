@@ -25,7 +25,7 @@ TriangleNodeComponent.displayName = "TriangleNodeComponent"
 
 const DecisionNodeComponent = memo(({ data }) => {
   return (
-    <div style={{background: 'rgba(255, 255, 255, .99)', height: '140px', textAlign: 'center', transform: 'rotate(45deg)', width: '140px', border: '4px solid orange', ...data.innerStyle}}>
+    <div data-type="decision" style={{background: 'rgba(255, 255, 255, .99)', height: '140px', textAlign: 'center', transform: 'rotate(45deg)', width: '140px', border: '4px solid orange', ...data.innerStyle}}>
       <Handle 
         type="target"
         id="a" 
@@ -182,19 +182,44 @@ const flowChart = () => {
     setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
   });
 
+  
+  const updateNodeStyle = useCallback((elementId, action = "add") => {
+    if (elementId == "start") {
+      return;
+    }
+    let domEl = document.querySelector(`div[data-id='${elementId}'] > div`);
+    const type = domEl.dataset.type || '';
+
+    if(type != "decision") {
+      return;
+    }
+
+    if (action == "remove") {
+      domEl.style.border = '5px solid orange';
+      domEl.style.background = 'white';
+      domEl.style.color = 'black';
+      return;
+    } 
+
+    domEl.style.border = '5px solid #00aeef';
+    domEl.style.background = 'rgba(34, 32, 31, 0.97)';
+    domEl.style.color = 'white';
+  })
+
   /**
    * utility function for update current list of clicked nodes
    * @param {array} clickedNodes 
    * @param {array} childIds 
    * @param {object} element 
    */
-  const updateClickedNodes = (clickedNodes, childIds, element) => {
+  const updateClickedNodes = useCallback((clickedNodes, childIds, element) => {
     let newClickedNodes = clickedNodes;
     const index = clickedNodes.indexOf(element.id);
 
     // if exists, remove from the array
     if (index !== -1) {
       newClickedNodes.splice(index, 1);
+      updateNodeStyle(element.id, "remove");
     }
     // remove children nodes
     if (index !== -1 && childIds.length != 0) {
@@ -202,14 +227,16 @@ const flowChart = () => {
         let childIndex = newClickedNodes.indexOf(childIds[i]);
         if (childIndex == -1) continue;
         newClickedNodes.splice(childIndex, 1);
+        updateNodeStyle(childIds[i], "remove");
       }
     }
     if (index == -1) {
       newClickedNodes.push(element.id);
+      updateNodeStyle(element.id);
     }
 
     return newClickedNodes;
-  }
+  })
 
   /**
    * Execute when nodes are clicked
@@ -221,24 +248,6 @@ const flowChart = () => {
     // update clicked nodes
     let newClickedNodes = updateClickedNodes(clickedNodes, childIds, element);
     setClickedNodes(newClickedNodes);
-
-    // change clicked element style
-    let newElement = element;
-    let domEl = document.querySelector(`div[data-id='${element.id}'] > div`);
-    const highlightStatus = domEl.dataset.highlight;
-    console.log("before", highlightStatus)
-
-    if (element.type == "decision" && highlightStatus) {
-      domEl.dataset.highlight = false;
-      domEl.style.border = '5px solid orange';
-      domEl.style.background = 'white';
-      domEl.style.color = 'black';
-    } else if (element.type == "decision" && !highlightStatus) {
-      domEl.dataset.highlight = true;
-      domEl.style.border = '5px solid #00aeef';
-      domEl.style.background = 'rgba(34, 32, 31, 0.97)';
-      domEl.style.color = 'white';
-    }
 
     // Show/hide children elements
     let currentElements = elements
@@ -260,7 +269,6 @@ const flowChart = () => {
           isHidden: !el.isHidden
         }
       });
-
 
     // for all elements, change property accordingly
     for (let i in currentElements) {
@@ -284,8 +292,8 @@ const flowChart = () => {
         currentElements[i].style = {stroke: '#00aeef'};
       }
     }
-    console.log("after",document.querySelector(`div[data-id='${element.id}'] > div`).dataset.highlight)
-    setElements([...currentElements, newElement]);
+
+    setElements([...currentElements, element]);
   });
 
   /**
