@@ -64,6 +64,8 @@ const InfoNodeComponent = memo(({ data }) => {
   )
 })
 InfoNodeComponent.displayName = "InfoNodeComponent"
+
+
 /************************************************/
 /******** END of custom node components *********/
 /************************************************/
@@ -113,14 +115,16 @@ export const getNodesAndEdges = (data, element, deepLevel = false) => {
   return [...edges.map(el => el.id), ...nodeIds];
 }
 
-
+/***********************************
+ * Flow chart Data and settings
+ **********************************/
 const nodeTypes = {
   start: TriangleNodeComponent,
   decision: DecisionNodeComponent,
   info: InfoNodeComponent
 };
 
-const snapGrid = [20, 20];
+const snapGrid = [15, 15];
 const connectionLineStyle = { stroke: '#fff' };
 
 // Initialise data
@@ -129,15 +133,19 @@ let groupedData = [...chartNodeData, ...chartEdgeData]
     {...el, isHidden: el.id != "start"}
   ));
 
-/**
+
+
+/**************************
  * Return flow chart
  * @returns 
- */
+ *************************/
 const flowChart = () => {
   const [displayChart, setDisplayChart] = useState(true);
   const [reactflowInstance, setReactflowInstance] = useState(null);
   const [elements, setElements] = useState(groupedData);
   const [showAll, toggleShowAll] = useState(false);
+  const [elementData, setElementData] = useState({label: '', description: ''});
+  const [clickedNodes, setClickedNodes] = useState(['']);
 
   const onLoad = useCallback(
     (rfi) => {
@@ -151,27 +159,88 @@ const flowChart = () => {
     [reactflowInstance]
   );
 
-
+  /**
+   * Handle show all button
+   */ 
   const handleShowButton = useCallback(() => {
     if (!showAll) {
       localStorage.setItem('dataviz-flowchart', JSON.stringify(elements));
+      
       setElements(
         groupedData.map(el => ({...el, isHidden: false}))
       );
+      
       toggleShowAll(!showAll);
       setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
       return;
     }
+    
     const restore = JSON.parse(localStorage.getItem('dataviz-flowchart')) || groupedData;
+    
     setElements(restore);
     toggleShowAll(!showAll);
     setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
   });
 
+  /**
+   * utility function for update current list of clicked nodes
+   * @param {array} clickedNodes 
+   * @param {array} childIds 
+   * @param {object} element 
+   */
+  const updateClickedNodes = (clickedNodes, childIds, element) => {
+    let newClickedNodes = clickedNodes;
+    const index = clickedNodes.indexOf(element.id);
+
+    // if exists, remove from the array
+    if (index !== -1) {
+      newClickedNodes.splice(index, 1);
+    }
+    // remove children nodes
+    if (index !== -1 && childIds.length != 0) {
+      for (let i in childIds) {
+        let childIndex = newClickedNodes.indexOf(childIds[i]);
+        if (childIndex == -1) continue;
+        newClickedNodes.splice(childIndex, 1);
+      }
+    }
+    if (index == -1) {
+      newClickedNodes.push(element.id);
+    }
+
+    return newClickedNodes;
+  }
+
+  /**
+   * Execute when nodes are clicked
+   */
   const onElementClick = useCallback((event, element) => {
+    // Get all children nodes and edges
     const childIds = getNodesAndEdges(elements, element);
 
-    // Show/hide
+    // update clicked nodes
+    let newClickedNodes = updateClickedNodes(clickedNodes, childIds, element);
+    setClickedNodes(newClickedNodes);
+
+    // change clicked element style
+    let newElement = element;
+    let domEl = document.querySelector(`div[data-id='${element.id}'] > div`);
+    const highlightStatus = domEl.dataset.highlight;
+    console.log("before", highlightStatus)
+
+    if (element.type == "decision" && highlightStatus) {
+      domEl.dataset.highlight = false;
+      domEl.style.border = '5px solid orange';
+      domEl.style.background = 'white';
+      domEl.style.color = 'black';
+    } else if (element.type == "decision" && !highlightStatus) {
+      domEl.dataset.highlight = true;
+      domEl.style.border = '5px solid #00aeef';
+      domEl.style.background = 'rgba(34, 32, 31, 0.97)';
+      domEl.style.color = 'white';
+    }
+
+    // Show/hide children elements
     let currentElements = elements
       .filter(el => el.id != element.id)
       .map(el => {
@@ -179,33 +248,70 @@ const flowChart = () => {
           return {...el};
         }
 
-        return {...el, isHidden: !el.isHidden}
+        if (el.id.charAt(0) != 'e') {
+          let domEl = document.querySelector(`div[data-id='${el.id}'] > div`);
+          if(domEl) {
+            domEl.dataset.highlight = false;
+          }
+        }
+        // toggle child elements
+        return {
+          ...el, 
+          isHidden: !el.isHidden
+        }
       });
 
-    let newElement = element;
-    let domEl = document.querySelector(`div[data-id='${newElement.id}'] > div`);
 
-    if (newElement.type == "decision" && newElement.selected) {
-      newElement.selected = false;
-      domEl.style.border = '5px solid orange';
-      domEl.style.background = 'white';
-      domEl.style.color = 'black';
-    } else if (newElement.type == "decision" && !newElement.selected) {
-      newElement.selected = true;
-      domEl.style.border = '5px solid #00aeef';
-      domEl.style.background = 'rgba(34, 32, 31, 0.97)';
-      domEl.style.color = 'white';
+    // for all elements, change property accordingly
+    for (let i in currentElements) {
+      if (currentElements[i].id.charAt(0) != 'e') {
+        continue;
+      }
+      if (currentElements[i].isHidden) {
+        currentElements[i].animated = false;
+        currentElements[i].style = {};
+        continue;
+      }
+      const includeSource = newClickedNodes.includes(currentElements[i].source);
+      const includeTarget = newClickedNodes.includes(currentElements[i].target);
+
+      if (!includeSource || !includeTarget) {
+        currentElements[i].animated = false;
+        currentElements[i].style = {};
+      }
+      if (includeSource && includeTarget) {
+        currentElements[i].animated = true;
+        currentElements[i].style = {stroke: '#00aeef'};
+      }
     }
-
+    console.log("after",document.querySelector(`div[data-id='${element.id}'] > div`).dataset.highlight)
     setElements([...currentElements, newElement]);
-    //setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
   });
+
+  /**
+   * Execute when mouse enters nodes
+   */
+  const onNodeMouseEnter = useCallback((_event, node) => {
+    setElementData(node.data);
+    let el = document.querySelector('#nodeDescriptionBox');
+    el.style.visibility = "visible";
+    setTimeout(() => el.style.opacity = 100, 300);
+  });
+
+  /**
+   * Execute when mouse leaves nodes
+   */
+  const onNodeMouseLeave = useCallback(() => {
+    let el = document.querySelector('#nodeDescriptionBox');
+    el.opacity = 0;
+    el.style.visibility = "hidden";
+  })
 
   return (
     <div>
       <button className="px-2 py-1 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>What test to use?</button>
       <div className={`${displayChart ? 'block' : 'hidden'} w-full min-h-100 fixed flex flex-wrap top-0 left-0`} style={{zIndex: '100'}}>
-        <div className="w-full md:w-10/12" style={{height: '100vh'}}>
+        <div id="flowChartWrap" className="relative w-full md:w-10/12" style={{height: '100vh'}}>
           <ReactFlow
             elements={elements}
             //onElementClick={onElementClick}
@@ -217,8 +323,11 @@ const flowChart = () => {
             snapGrid={snapGrid}
             defaultZoom={0.8}
             onElementClick={onElementClick}
+            onNodeMouseEnter={onNodeMouseEnter}
+            onNodeMouseLeave={onNodeMouseLeave}
           >
             <MiniMap
+              style={{width: '150px', height: '120px'}}
               nodeStrokeColor={(n) => {
                 if (n.type === 'start') return '#0041d0';
                 if (n.type === 'decision') return '#ff9500';
@@ -228,16 +337,24 @@ const flowChart = () => {
             />
             <Controls />
           </ReactFlow>
+          <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-4xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => handleShowButton()}>
+            {showAll ? <FaToggleOn /> : <FaToggleOff style={{color: '#969696'}} />}
+            <span className="text-base ml-3">Show all paths</span>
+          </button>
+          <div 
+            id="nodeDescriptionBox" 
+            className="absolute p-4 bg-white shadow-2xl rounded-lg z-50 opacity-0 invisible" 
+            style={{transform: 'translate(-50%, 0%)', left: '50%', bottom: '20px', width: '350px', boxShadow: '0 10px 50px -5px #00aeef', transition: 'visibility .2s, opacity 0.5s linear'}}
+          >
+            <h1 className="font-bold mb-2 leading-5">{elementData.label}</h1>
+            <p className="text-sm leading-4">{elementData.description}</p>
+          </div>
         </div>
         <div className="w-full md:w-2/12 bg-white" style={{height: '100vh'}}>
           <div className="w-full flex flex-wrap">
             <button className="px-2 py-1 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>Close</button>
           </div>
         </div>
-        <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-4xl self-center cursor-pointer" onClick={() => handleShowButton()}>
-          {showAll ? <FaToggleOn /> : <FaToggleOff />}
-          <span className="text-lg ml-3">Show all paths</span>
-        </button>
       </div>
     </div>
   )
