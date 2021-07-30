@@ -58,5 +58,21 @@ export const chartEdgeData = [
     arrowHeadType: 'arrow',
     type: 'smoothstep',
     label: 'No'
+  },
+  {
+    id: 'eD.Info.LogDependent-Info.normality',
+    source: 'Info.LogDependent',
+    target: 'Info.normality',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep'
+  },
+  {
+    id: 'eD.D.VarPropMean-Info.LogDependent',
+    source: 'D.VarPropMean',
+    target: 'Info.LogDependent',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes',
+    targetHandle: 'b',
   }
 ]

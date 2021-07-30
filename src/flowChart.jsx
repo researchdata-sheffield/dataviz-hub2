@@ -65,6 +65,48 @@ const InfoNodeComponent = memo(({ data }) => {
 })
 InfoNodeComponent.displayName = "InfoNodeComponent"
 
+const GreenNodeComponent = memo(({ data }) => {
+  return (
+    <div style={{borderRadius: '10px', background: '#c1eabe', width: '150px', height: '80px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #9af292'}}>
+      <Handle 
+        type="target"
+        id="a" 
+        position="top" 
+        style={{ borderRadius: 0 }}
+      />
+      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '1.1rem', lineHeight: 1.3 }}>{data.label}</div>
+      <Handle
+        type="source"
+        id="b"
+        position="bottom"
+        style={{ borderRadius: 0 }}
+      />
+    </div>
+  )
+})
+GreenNodeComponent.displayName = "GreenNodeComponent"
+
+const RedNodeComponent = memo(({ data }) => {
+  return (
+    <div style={{borderRadius: '10px', background: '#fadbdb', width: '150px', height: '80px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #f9aeae'}}>
+      <Handle 
+        type="target"
+        id="a" 
+        position="top" 
+        style={{ borderRadius: 0 }}
+      />
+      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '1.1rem', lineHeight: 1.3 }}>{data.label}</div>
+      <Handle
+        type="source"
+        id="b"
+        position="bottom"
+        style={{ borderRadius: 0 }}
+      />
+    </div>
+  )
+})
+RedNodeComponent.displayName = "RedNodeComponent"
+
 
 /************************************************/
 /******** END of custom node components *********/
@@ -121,7 +163,9 @@ export const getNodesAndEdges = (data, element, deepLevel = false) => {
 const nodeTypes = {
   start: TriangleNodeComponent,
   decision: DecisionNodeComponent,
-  info: InfoNodeComponent
+  info: InfoNodeComponent,
+  test: GreenNodeComponent,
+  help: RedNodeComponent
 };
 
 const snapGrid = [15, 15];
@@ -182,17 +226,17 @@ const flowChart = () => {
     setTimeout(() => reactflowInstance.fitView({padding: .2}), 100);
   });
 
-  
+  /**
+   * Utility function for update decision node style
+   */
   const updateNodeStyle = useCallback((elementId, action = "add") => {
-    if (elementId == "start") {
-      return;
-    }
+    if (elementId == "start") { return; }
+    
     let domEl = document.querySelector(`div[data-id='${elementId}'] > div`);
-    const type = domEl.dataset.type || '';
+    if (!domEl) { return; }
 
-    if(type != "decision") {
-      return;
-    }
+    const type = domEl.dataset.type || '';
+    if (type != "decision") { return; }
 
     if (action == "remove") {
       domEl.style.border = '5px solid orange';
@@ -335,7 +379,6 @@ const flowChart = () => {
             onNodeMouseLeave={onNodeMouseLeave}
           >
             <MiniMap
-              style={{width: '150px', height: '120px'}}
               nodeStrokeColor={(n) => {
                 if (n.type === 'start') return '#0041d0';
                 if (n.type === 'decision') return '#ff9500';
