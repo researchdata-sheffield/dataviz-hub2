@@ -354,7 +354,49 @@ export const chartEdgeData = [
     type: 'smoothstep',
     label: 'No'
   },
-
+  /**
+   * Top Branches of "What type of variable is your dependent?" - Nominal
+   */
+  {
+    id: 'eD.typeOfDep-D.nominalIndVarNominal',
+    source: 'D.typeOfDep',
+    target: 'D.nominalIndVarNominal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Nominal'
+  },
+  {
+    id: 'eD.nominalIndVarNominal-Yes',
+    source: 'D.nominalIndVarNominal',
+    target: 'T.nominalChiSqTest',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.nominalIndVarNominal-No',
+    source: 'D.nominalIndVarNominal',
+    target: 'D.nominalTwoCats',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.nominalTwoCats-Yes',
+    source: 'D.nominalTwoCats',
+    target: 'T.nominalLogistic',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.nominalTwoCats-No',
+    source: 'D.nominalTwoCats',
+    target: 'H.nominalSeeStatistician',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
   /**
    * RIGHT branches of "What type of variable is your dependent?" - Ordinal
    */
@@ -367,7 +409,70 @@ export const chartEdgeData = [
     type: 'smoothstep',
     label: 'Ordinal'
   },
-
+  {
+    id: 'eD.howManyCats-H.ordinalRegression',
+    source: 'D.howManyCats',
+    target: 'H.ordinalRegression',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'More than 5 (Consult a statistician)'
+  },
+  {
+    id: 'eD.howManyCats-D.ordinalIndVarNominal',
+    source: 'D.howManyCats',
+    target: 'D.ordinalIndVarNominal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Less than 5'
+  },
+  {
+    id: 'eD.ordinalIndVarNominal-T.ChiSq',
+    source: 'D.ordinalIndVarNominal',
+    target: 'T.ordinalChiSq',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.ordinalIndVarNominal-D.ordinalCheckOrdinal',
+    source: 'D.ordinalIndVarNominal',
+    target: 'D.ordinalCheckOrdinal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.ordinalCheckOrdinal-H.ordinalRegression',
+    source: 'D.ordinalCheckOrdinal',
+    target: 'H.ordinalRegression',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No (Consult a statistician)'
+  },
+  {
+    id: 'eD.ordinalCheckOrdinal-D.ordinalNumOfCats',
+    source: 'D.ordinalCheckOrdinal',
+    target: 'D.ordinalNumOfCats',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.ordinalNumOfCats-D.ordinalSeeStatistician',
+    source: 'D.ordinalNumOfCats',
+    target: 'H.ordinalSeeStatistician',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'More than 5'
+  },
+  {
+    id: 'eD.ordinalNumOfCats-T.ChiSq',
+    source: 'D.ordinalNumOfCats',
+    target: 'T.ordinalChiSq',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'More than 5'
+  },
   /*********************************************
    * BOTTOM BRANCH
    * Are they both dependent variables? - YES
@@ -380,4 +485,154 @@ export const chartEdgeData = [
     type: 'smoothstep',
     label: 'Yes'
   },
+  {
+    id: 'eD.avgDiff-No',
+    source: 'D.avgDiff',
+    target: 'D.bothSameThing-Left',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.avgDiff-Yes',
+    source: 'D.avgDiff',
+    target: 'D.bothSameThing-Right',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.bothSameThing-Right-SeeStatistician',
+    source: 'D.bothSameThing-Right',
+    target: 'H.bothSameThing-Right-No',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.bothSameThing-Right-Yes',
+    source: 'D.bothSameThing-Right',
+    target: 'D.AreTheyScalar',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  /**
+   * LEFT-MOST branch
+   */
+  {
+    id: 'eD.bothSameThing-bothScalar',
+    source: 'D.bothSameThing-Left',
+    target: 'D.BothScalar',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.BothScalar-T.Pearsons',
+    source: 'D.BothScalar',
+    target: 'T.PearsonsCorrelation',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.bothScalar-D.OneTypeEach',
+    source: 'D.BothScalar',
+    target: 'D.OneTypeEach',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.OneTypeEach-T.SpearmanCorrelationOneTypeEach',
+    source: 'D.OneTypeEach',
+    target: 'T.SpearmanCorrelationOneTypeEach',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes - Spearman Correlation'
+  },
+  {
+    id: 'eD.OneTypeEach-D.BothOrdinal',
+    source: 'D.OneTypeEach',
+    target: 'D.BothOrdinal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.BothOrdinal-T.SpearmanCorrelationOneTypeEach',
+    source: 'D.BothOrdinal',
+    target: 'T.SpearmanCorrelationOneTypeEach',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes - Spearman Correlation'
+  },
+  {
+    id: 'eD.BothOrdinal-D.NominalAndOrdinal',
+    source: 'D.BothOrdinal',
+    target: 'D.NominalAndOrdinal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.NominalAndOrdinal-D.howManyCats',
+    source: 'D.NominalAndOrdinal',
+    target: 'D.HowManyCatsInOrdinal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.HowManyCatsInOrdinal-T.HowManyCatsInOrdinal-ChiSq',
+    source: 'D.HowManyCatsInOrdinal',
+    target: 'T.HowManyCatsInOrdinal-ChiSq',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Less than 5 - Chi-squared Test'
+  },
+  {
+    id: 'eD.bothLessThanFive-T.HowManyCatsInOrdinal-ChiSq',
+    source: 'D.bothLessThanFive',
+    target: 'T.HowManyCatsInOrdinal-ChiSq',
+    arrowHeadType: 'arrow',
+    label: 'Both Less than 5 - Chi-squared Test'
+  },
+  {
+    id: 'eD.NominalAndOrdinal-D.avgDiffLeftBothOrdinal',
+    source: 'D.NominalAndOrdinal',
+    target: 'D.avgDiffLeftBothOrdinal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.avgDiffLeftBothOrdinal-D.bothLessThanFive',
+    source: 'D.avgDiffLeftBothOrdinal',
+    target: 'D.bothLessThanFive',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.avgDiffLeftBothOrdinal-T.avgDiffLeftSeeStatistician',
+    source: 'D.avgDiffLeftBothOrdinal',
+    target: 'H.avgDiffLeftSeeStatistician',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  /**
+   * LEFT-CENTRE branch
+   */
+
+
+  /**
+   * RIGHT - LEFT branch
+   */
+
+  /**
+   * RIGHT-MOST branch
+   */
 ]
