@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { memo, useState, useCallback } from 'react'
-import ReactFlow, { Handle, MiniMap, Controls } from 'react-flow-renderer';
+import ReactFlow, { ReactFlowProvider, Handle, MiniMap, Controls } from 'react-flow-renderer';
 import { chartNodeData } from "./chartNode"
 import { chartEdgeData } from "./chartEdge"
 import { FaToggleOff, FaToggleOn } from "react-icons/fa"
@@ -67,7 +67,7 @@ InfoNodeComponent.displayName = "InfoNodeComponent"
 
 const GreenNodeComponent = memo(({ data }) => {
   return (
-    <div style={{borderRadius: '10px', background: '#c1eabe', width: '150px', height: '80px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #9af292'}}>
+    <div style={{borderRadius: '10px', background: '#c1eabe', width: '160px', height: '100px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #9af292'}}>
       <Handle 
         type="target"
         id="a" 
@@ -88,7 +88,7 @@ GreenNodeComponent.displayName = "GreenNodeComponent"
 
 const RedNodeComponent = memo(({ data }) => {
   return (
-    <div style={{borderRadius: '10px', background: '#fadbdb', width: '150px', height: '80px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #f9aeae'}}>
+    <div style={{borderRadius: '10px', background: '#fadbdb', width: '160px', height: '100px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #f9aeae'}}>
       <Handle 
         type="target"
         id="a" 
@@ -191,6 +191,7 @@ const flowChart = () => {
   const [elementData, setElementData] = useState({label: '', description: ''});
   const [clickedNodes, setClickedNodes] = useState(['']);
 
+
   const onLoad = useCallback(
     (rfi) => {
       if (!reactflowInstance) {
@@ -286,6 +287,8 @@ const flowChart = () => {
    * Execute when nodes are clicked
    */
   const onElementClick = useCallback((event, element) => {
+
+    if (showAll) { return; }
     // Get all children nodes and edges
     const childIds = getNodesAndEdges(elements, element);
 
@@ -338,6 +341,8 @@ const flowChart = () => {
     }
 
     setElements([...currentElements, element]);
+
+    //setCenter(event.clientX, event.clientY, 1.5)
   });
 
   /**
@@ -364,6 +369,7 @@ const flowChart = () => {
       <button className="px-2 py-1 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>What test to use?</button>
       <div className={`${displayChart ? 'block' : 'hidden'} w-full min-h-100 fixed flex flex-wrap top-0 left-0`} style={{zIndex: '100'}}>
         <div id="flowChartWrap" className="relative w-full md:w-10/12" style={{height: '100vh'}}>
+          <ReactFlowProvider>
           <ReactFlow
             elements={elements}
             //onElementClick={onElementClick}
@@ -387,7 +393,8 @@ const flowChart = () => {
               }}
             />
             <Controls />
-          </ReactFlow>
+          </ReactFlow> 
+          </ReactFlowProvider>
           <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-4xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => handleShowButton()}>
             {showAll ? <FaToggleOn /> : <FaToggleOff style={{color: '#969696'}} />}
             <span className="text-base ml-3">Show all paths</span>
@@ -398,9 +405,10 @@ const flowChart = () => {
             style={{transform: 'translate(-50%, 0%)', left: '50%', bottom: '20px', width: '350px', boxShadow: '0 10px 50px -5px #00aeef', transition: 'visibility .2s, opacity 0.5s linear'}}
           >
             <h1 className="font-bold mb-2 leading-5">{elementData.label}</h1>
-            <p className="text-sm leading-4">{elementData.description}</p>
+            <p className="text-sm leading-5">{elementData.description}</p>
           </div>
         </div>
+
         <div className="w-full md:w-2/12 bg-white" style={{height: '100vh'}}>
           <div className="w-full flex flex-wrap">
             <button className="px-2 py-1 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>Close</button>
