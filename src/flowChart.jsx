@@ -6,7 +6,7 @@ import { chartEdgeData } from "./chartEdge"
 import { FaToggleOff, FaToggleOn } from "react-icons/fa"
 import Consultation from "./consultation.gif"
 import TestGif from "./test.gif"
-
+import UniversityLogo from "./TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
 
 /*********************************
  * Define custom node components
@@ -19,7 +19,7 @@ const TriangleNodeComponent = memo(({ data }) => {
         type="source"
         position="right"
         id="b"
-        style={{ borderRadius: 0 }}
+        style={{ borderRadius: 0, zIndex: '-1', visibility: 'hidden', marginRight: '10px' }}
       />
     </div>
   )
@@ -32,16 +32,14 @@ const DecisionNodeComponent = memo(({ data }) => {
       <Handle 
         type="target"
         id="a" 
-        position="top" 
-        style={{ borderRadius: 0, left: 0 }}
+        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
+      />
+      <Handle 
+        type="source"
+        id="b" 
+        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
       />
       <div style={{transform: 'rotate(-45deg)', display: 'table-cell', verticalAlign: 'bottom', textAlign: 'center', width: '110px', height: '100px', fontSize: '.88rem', lineHeight: 1.3, }}>{data.label}</div>
-      <Handle
-        type="source"
-        id="b"
-        position="bottom"
-        style={{ borderRadius: 0, right: '-4px', left: 'unset', transform: 'unset', bottom: '-4px' }}
-      />
     </div>
   )
 })
@@ -53,16 +51,14 @@ const InfoNodeComponent = memo(({ data }) => {
       <Handle 
         type="target"
         id="a" 
-        position="top" 
-        style={{ borderRadius: 0 }}
+        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
+      />
+      <Handle 
+        type="source"
+        id="b" 
+        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
       />
       <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.88rem', lineHeight: 1.3 }}>{data.label}</div>
-      <Handle
-        type="source"
-        id="b"
-        position="bottom"
-        style={{ borderRadius: 0 }}
-      />
     </div>
   )
 })
@@ -74,17 +70,10 @@ const GreenNodeComponent = memo(({ data }) => {
       <Handle 
         type="target"
         id="a" 
-        position="top" 
-        style={{ borderRadius: 0 }}
+        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1' }}
       />
       <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.91rem', lineHeight: 1.2, marginTop: '-30px' }}>{data.label}</div>
-      <Handle
-        type="source"
-        id="b"
-        position="bottom"
-        style={{ borderRadius: 0 }}
-      />
-      <img src={TestGif} className="absolute" width="40" style={{top: '69%', left: '50%', transform: 'translate(-50%, -50%)'}} />
+      <img alt="Test" src={TestGif} className="absolute" width="40" style={{top: '69%', left: '50%', transform: 'translate(-50%, -50%)'}} />
     </div>
   )
 })
@@ -96,17 +85,10 @@ const RedNodeComponent = memo(({ data }) => {
       <Handle 
         type="target"
         id="a" 
-        position="top" 
-        style={{ borderRadius: 0 }}
+        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1' }}
       />
       <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.95rem', lineHeight: 1.2 }}>{data.label}</div>
-      <Handle
-        type="source"
-        id="b"
-        position="bottom"
-        style={{ borderRadius: 0 }}
-      />
-      <img src={Consultation} className="absolute" width="50" style={{right: '0px', bottom: '0px'}} />
+      <img alt="Consultation" src={Consultation} className="absolute" width="50" style={{right: '0px', bottom: '0px'}} />
     </div>
   )
 })
@@ -130,7 +112,7 @@ RedNodeComponent.displayName = "RedNodeComponent"
  * @returns {array} array of element ids.
  */
 export const getNodesAndEdges = (data, element, deepLevel = false) => {
-  // Get all child of current element
+  // Get all child edges of current element
   const edges = data.filter(item => item.source == element.id);
 
   if (edges.length == 0) {
@@ -141,12 +123,13 @@ export const getNodesAndEdges = (data, element, deepLevel = false) => {
     return [];
   }
 
+  // get nodes on the other end of edges
   const edgeTargetIds = edges.map(el => el.target);
 
   const nodes = data.filter(node => edgeTargetIds.includes(node.id));
   const nodeIds = nodes.map(el => el.id);
   
-  // check if child node is showing
+  // check if child nodes is showing
   let childShowing = (nodes && nodes[0] && !nodes[0].isHidden) || false;
 
   // if children nodes are showing, recursively get their children
@@ -160,6 +143,26 @@ export const getNodesAndEdges = (data, element, deepLevel = false) => {
   }
 
   return [...edges.map(el => el.id), ...nodeIds];
+}
+
+/**
+ * Get edge according to node ids
+ * @param {array} data 
+ * @param {string} firstNodeId 
+ * @param {string} secondNodeId 
+ * @returns object
+ */
+export const getEdge = (data, firstNodeId, secondNodeId) => {
+  if (data.length <= 1) { return false; }
+
+  const result = data.filter(edge => 
+    (edge.source == firstNodeId && edge.target == secondNodeId) 
+    | (edge.source == secondNodeId && edge.target == firstNodeId)
+  )
+
+  if (result.length == 0) { return false; }
+
+  return result[0];
 }
 
 /***********************************
@@ -179,7 +182,11 @@ const connectionLineStyle = { stroke: '#fff' };
 // Initialise data
 let groupedData = [...chartNodeData, ...chartEdgeData]
   .map(el => (
-    {...el, isHidden: el.id != "start"}
+    {
+      ...el, 
+      isHidden: el.id != "start",
+      labelStyle: el.id.charAt(0) == 'e' && { fontSize: '.95rem' }
+    }
   ));
 
 
@@ -190,18 +197,22 @@ let groupedData = [...chartNodeData, ...chartEdgeData]
  *************************/
 const flowChart = () => {
   const [displayChart, setDisplayChart] = useState(true);
-  const [reactflowInstance, setReactflowInstance] = useState(null);
-  const [elements, setElements] = useState(groupedData);
   const [showAll, toggleShowAll] = useState(false);
-  const [elementData, setElementData] = useState({label: '', description: ''});
-  const [clickedNodes, setClickedNodes] = useState(['']);
+  const [centreOnClick, toggleCentre] = useState(true);
+  const [reactflowInstance, setReactflowInstance] = useState(null);
   const { setCenter } = useZoomPanHelper();
+  // data for all edges and nodes
+  const [elements, setElements] = useState(groupedData);
+  // dialog box
+  const [elementData, setElementData] = useState({label: '', description: ''});
+  //list of clicked nodes
+  const [clickedNodes, setClickedNodes] = useState(['']);
+
 
   const onLoad = useCallback(
     (rfi) => {
       if (!reactflowInstance) {
         setReactflowInstance(rfi);
-        console.log('flow loaded:', rfi);
         localStorage.removeItem('dataviz-flowchart');
       }
       setTimeout(() => rfi.fitView(), 500);
@@ -252,7 +263,7 @@ const flowChart = () => {
     } 
 
     domEl.style.border = '5px solid #00aeef';
-    domEl.style.background = 'rgba(34, 32, 31, 0.97)';
+    domEl.style.background = 'rgba(34, 32, 31, 0.98)';
     domEl.style.color = 'white';
   })
 
@@ -308,12 +319,14 @@ const flowChart = () => {
           return {...el};
         }
 
-        if (el.id.charAt(0) != 'e') {
-          let domEl = document.querySelector(`div[data-id='${el.id}'] > div`);
-          if(domEl) {
-            domEl.dataset.highlight = false;
+        // If child node already shown from other node, don't hide it
+        if (el.id.charAt(0) != 'e' && !el.isHidden && getEdge(elements, element.id, el.id)) {
+          return {
+            ...el,
+            isHidden: !newClickedNodes.includes(element.id)
           }
         }
+
         // toggle child elements
         return {
           ...el, 
@@ -331,6 +344,8 @@ const flowChart = () => {
         currentElements[i].style = {};
         continue;
       }
+
+      // highlight all edges between clicked nodes
       const includeSource = newClickedNodes.includes(currentElements[i].source);
       const includeTarget = newClickedNodes.includes(currentElements[i].target);
 
@@ -345,7 +360,10 @@ const flowChart = () => {
     }
 
     setElements([...currentElements, element]);
-    setCenter(element.position.x, element.position.y, 1.1)
+
+    if (centreOnClick) {
+      setCenter(element.position.x, element.position.y, 1.1);
+    }
   });
 
   /**
@@ -356,26 +374,59 @@ const flowChart = () => {
     let el = document.querySelector('#nodeDescriptionBox');
     el.style.visibility = "visible";
     setTimeout(() => el.style.opacity = 100, 300);
+
+    let newElements = elements.map(element => {
+      if (element.target == node.id) {
+        return {
+          ...element,
+          animated: true,
+          style: {...element.style, stroke: element.style.stroke == '#00aeef' ? '#00aeef' : 'orange'}
+        }
+      }
+      return element;
+    });
+
+    setElements(newElements)
   });
 
   /**
    * Execute when mouse leaves nodes
    */
-  const onNodeMouseLeave = useCallback(() => {
+  const onNodeMouseLeave = useCallback((_event, node) => {
     let el = document.querySelector('#nodeDescriptionBox');
     el.opacity = 0;
     el.style.visibility = "hidden";
+
+    let newElements = elements.map(element => {
+      if (element.target == node.id) {
+        return {
+          ...element,
+          animated: (element.style.stroke == '#00aeef'),
+          style: {...element.style, stroke: element.style.stroke == '#00aeef' ? '#00aeef' : '#fff'}
+        }
+      }
+      return element;
+    });
+
+    setElements(newElements)
   })
 
   return (
     <div>
       <button className="px-3 py-2 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>Which statistical test to use for two variables?</button>
-      <div className={`${displayChart ? 'block' : 'hidden'} w-full min-h-100 fixed flex flex-wrap top-0 left-0`} style={{zIndex: '100'}}>
-        <div id="flowChartWrap" className="relative w-full md:w-10/12" style={{height: '100vh'}}>
+      <div 
+        className={`${displayChart ? 'block' : 'hidden'} w-full min-h-100 fixed flex flex-wrap top-0 left-0`} 
+        style={{zIndex: '100'}}
+      >
+        <div 
+          id="flowChartWrap" 
+          className="relative w-full md:w-9/12 2xl:w-10/12" 
+          style={{height: '100vh'}}
+        >
           <ReactFlow
             elements={elements}
             //onElementClick={onElementClick}
-            style={{ background: 'linear-gradient(45deg, #251d5a 10%, #000 100%)' }}
+            style={{ background: 'linear-gradient(215deg, #251d5a 10%, #000 100%)' }}
             onLoad={onLoad}
             nodeTypes={nodeTypes}
             connectionLineStyle={connectionLineStyle}
@@ -396,9 +447,13 @@ const flowChart = () => {
             />
             <Controls />
           </ReactFlow> 
-          <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-4xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => handleShowButton()}>
-            {showAll ? <FaToggleOn /> : <FaToggleOff style={{color: '#969696'}} />}
-            <span className="text-base ml-3">Show all paths</span>
+          <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-3xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => handleShowButton()}>
+            {showAll ? <FaToggleOn style={{filter: 'drop-shadow(0px 1px 7px rgb(0, 0, 0))'}} /> : <FaToggleOff style={{color: '#969696'}} />}
+            <span className={`${!showAll && 'text-gray-300'} text-base ml-3`} style={{textShadow: '0px 1px 5px #000'}}>Show all paths</span>
+          </button>
+          <button className="z-10 absolute bottom-0 left-0 ml-16 mb-12 text-white flex text-3xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => toggleCentre(!centreOnClick)}>
+            {centreOnClick ? <FaToggleOn style={{filter: 'drop-shadow(0px 1px 7px rgb(0, 0, 0))'}} /> : <FaToggleOff style={{color: '#969696'}} />}
+            <span className={`${!centreOnClick && 'text-gray-300'} text-base ml-3`} style={{textShadow: '0px 1px 5px #000'}}>Follow clicked nodes</span>
           </button>
           <div 
             id="nodeDescriptionBox" 
@@ -408,15 +463,29 @@ const flowChart = () => {
             <h1 className="font-bold mb-2 leading-5">{elementData.label}</h1>
             <p className="text-sm leading-5">{elementData.description}</p>
           </div>
+          <img src={UniversityLogo} alt="TUoS Logo" className="absolute" style={{right: '0%', top: '0%', margin: '30px'}} width="150" />
         </div>
 
-        <div className="w-full md:w-2/12 bg-white p-3" style={{height: '100vh'}}>
-          <div className="w-full flex flex-wrap space-x-2 space-y-2">
-            <button className="px-2 py-1 rounded-md bg-blue-900 hover:bg-blue-800 text-white" onClick={() => reactflowInstance.fitView()}>Fit view</button>
-            <button className="px-2 py-1 rounded-md bg-blue-900 hover:bg-blue-800 text-white" onClick={() => setDisplayChart(!displayChart)}>CLOSE</button>
+        {/* sidebar */}
+        <div className="w-full md:w-3/12 2xl:w-2/12 bg-white p-3" style={{height: '100vh'}}>
+          <div className="w-full flex flex-wrap pb-5 space-x-2 space-y-2 border-b-1 border-gray-100">
+            <button 
+              title="Centre the flow chart" 
+              className="mt-2 ml-2 px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
+              onClick={() => reactflowInstance.fitView()}
+            >Fit view</button>
+            <button 
+              title="Reset the flow chart" 
+              className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
+              onClick={() => {setElements(groupedData); reactflowInstance.fitView()}}
+            >Restart</button>
+            <button 
+              title="Exit this page" className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
+              onClick={() => setDisplayChart(!displayChart)}
+            >CLOSE</button>
           </div>
-          <div>
-            
+          <div className="mt-5">
+              <h1 className="font-bold text-xl">Your paths:</h1>
           </div>
         </div>
       </div>

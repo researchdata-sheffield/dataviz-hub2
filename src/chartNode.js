@@ -667,7 +667,7 @@ export const chartNodeData = [
       label: 'PLease consult a statistician',
       description: 'See a statistician as there is no standard test for this scenario.'
     },
-    position: { x: 2985, y: 3945 }
+    position: { x: 2985, y: 4195 }
   },
   {
     id: 'Info.centreLogData',
