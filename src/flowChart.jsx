@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import React, { memo, useState, useCallback } from 'react'
-import ReactFlow, { ReactFlowProvider, Handle, MiniMap, Controls } from 'react-flow-renderer';
+import ReactFlow, { Handle, MiniMap, Controls, useZoomPanHelper } from 'react-flow-renderer';
 import { chartNodeData } from "./chartNode"
 import { chartEdgeData } from "./chartEdge"
 import { FaToggleOff, FaToggleOn } from "react-icons/fa"
+import Consultation from "./consultation.gif"
+import TestGif from "./test.gif"
+
 
 /*********************************
  * Define custom node components
@@ -74,13 +77,14 @@ const GreenNodeComponent = memo(({ data }) => {
         position="top" 
         style={{ borderRadius: 0 }}
       />
-      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '1.1rem', lineHeight: 1.3 }}>{data.label}</div>
+      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.91rem', lineHeight: 1.2, marginTop: '-30px' }}>{data.label}</div>
       <Handle
         type="source"
         id="b"
         position="bottom"
         style={{ borderRadius: 0 }}
       />
+      <img src={TestGif} className="absolute" width="40" style={{top: '69%', left: '50%', transform: 'translate(-50%, -50%)'}} />
     </div>
   )
 })
@@ -88,20 +92,21 @@ GreenNodeComponent.displayName = "GreenNodeComponent"
 
 const RedNodeComponent = memo(({ data }) => {
   return (
-    <div style={{borderRadius: '10px', background: '#fadbdb', width: '160px', height: '100px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #f9aeae'}}>
+    <div style={{borderRadius: '10px', background: '#fff1f0', width: '160px', height: '100px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #ffa39e', color: '#f5222d'}}>
       <Handle 
         type="target"
         id="a" 
         position="top" 
         style={{ borderRadius: 0 }}
       />
-      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '1.1rem', lineHeight: 1.3 }}>{data.label}</div>
+      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.95rem', lineHeight: 1.2 }}>{data.label}</div>
       <Handle
         type="source"
         id="b"
         position="bottom"
         style={{ borderRadius: 0 }}
       />
+      <img src={Consultation} className="absolute" width="50" style={{right: '0px', bottom: '0px'}} />
     </div>
   )
 })
@@ -190,7 +195,7 @@ const flowChart = () => {
   const [showAll, toggleShowAll] = useState(false);
   const [elementData, setElementData] = useState({label: '', description: ''});
   const [clickedNodes, setClickedNodes] = useState(['']);
-
+  const { setCenter } = useZoomPanHelper();
 
   const onLoad = useCallback(
     (rfi) => {
@@ -257,9 +262,9 @@ const flowChart = () => {
    * @param {array} childIds 
    * @param {object} element 
    */
-  const updateClickedNodes = useCallback((clickedNodes, childIds, element) => {
-    let newClickedNodes = clickedNodes;
-    const index = clickedNodes.indexOf(element.id);
+  const updateClickedNodes = useCallback((OldClickedNodes, childIds, element) => {
+    let newClickedNodes = OldClickedNodes;
+    const index = OldClickedNodes.indexOf(element.id);
 
     // if exists, remove from the array
     if (index !== -1) {
@@ -287,7 +292,6 @@ const flowChart = () => {
    * Execute when nodes are clicked
    */
   const onElementClick = useCallback((event, element) => {
-
     if (showAll) { return; }
     // Get all children nodes and edges
     const childIds = getNodesAndEdges(elements, element);
@@ -341,8 +345,7 @@ const flowChart = () => {
     }
 
     setElements([...currentElements, element]);
-
-    //setCenter(event.clientX, event.clientY, 1.5)
+    setCenter(element.position.x, element.position.y, 1.1)
   });
 
   /**
@@ -366,10 +369,9 @@ const flowChart = () => {
 
   return (
     <div>
-      <button className="px-2 py-1 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>What test to use?</button>
+      <button className="px-3 py-2 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>Which statistical test to use for two variables?</button>
       <div className={`${displayChart ? 'block' : 'hidden'} w-full min-h-100 fixed flex flex-wrap top-0 left-0`} style={{zIndex: '100'}}>
         <div id="flowChartWrap" className="relative w-full md:w-10/12" style={{height: '100vh'}}>
-          <ReactFlowProvider>
           <ReactFlow
             elements={elements}
             //onElementClick={onElementClick}
@@ -394,7 +396,6 @@ const flowChart = () => {
             />
             <Controls />
           </ReactFlow> 
-          </ReactFlowProvider>
           <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-4xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => handleShowButton()}>
             {showAll ? <FaToggleOn /> : <FaToggleOff style={{color: '#969696'}} />}
             <span className="text-base ml-3">Show all paths</span>
@@ -409,9 +410,13 @@ const flowChart = () => {
           </div>
         </div>
 
-        <div className="w-full md:w-2/12 bg-white" style={{height: '100vh'}}>
-          <div className="w-full flex flex-wrap">
-            <button className="px-2 py-1 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>Close</button>
+        <div className="w-full md:w-2/12 bg-white p-3" style={{height: '100vh'}}>
+          <div className="w-full flex flex-wrap space-x-2 space-y-2">
+            <button className="px-2 py-1 rounded-md bg-blue-900 hover:bg-blue-800 text-white" onClick={() => reactflowInstance.fitView()}>Fit view</button>
+            <button className="px-2 py-1 rounded-md bg-blue-900 hover:bg-blue-800 text-white" onClick={() => setDisplayChart(!displayChart)}>CLOSE</button>
+          </div>
+          <div>
+            
           </div>
         </div>
       </div>

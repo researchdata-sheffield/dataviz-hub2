@@ -308,7 +308,7 @@ export const chartNodeData = [
       label: 'Linear Regression',
       description: 'An approach used for modelling the linear relationship between the dependent variable and independent variables.'
     },
-    position: { x: 2685, y: 1275 }
+    position: { x: 2685, y: 615 }
   },
   {
     id: 'D.normalityCombineCats',
@@ -352,7 +352,7 @@ export const chartNodeData = [
       label: 'Spearman\'s correlation',
       description: 'This is the coefficient calculated using ranked values for each variable, indicate the direction and the magnitude of a relationship between two variables.' 
     },
-    position: { x: 2755, y: 615 }
+    position: { x: 3395, y: 615 }
   },
   {
     id: 'H.normalityNotCombineCats-SeeStatistician',
@@ -624,13 +624,153 @@ export const chartNodeData = [
   /**
    * LEFT-CENTRE branch
    */
-
-
+  {
+    id: 'D.centreBothScalar',
+    type: 'decision',
+    data: { 
+      label: 'Are they both scalar?',
+      description: 'Check if both variables are continuous.'
+    },
+    position: { x: 3000, y: 3630 }
+  },
+  {
+    id: 'D.centreAssumeConstVar',
+    type: 'decision',
+    data: { 
+      label: 'Are you happy to assume constancy of variance?',
+      description: 'Constant variance is the assumption of homoscedasticity. This means the variance of distances of data points to the regression line is constant.'
+    },
+    position: { x: 3300, y: 3630 }
+  },
+  {
+    id: 'T.ICC',
+    type: 'test',
+    data: { 
+      label: 'Intraclass correlation coefficient',
+      description: 'ICC measures the similarity of population in the same group, on a scale of 0 to 1.'
+    },
+    position: { x: 3600, y: 3645 }
+  },
+  {
+    id: 'D.centreVarMean',
+    type: 'decision',
+    data: { 
+      label: 'Does variation increase with mean score?',
+      description: 'Increase in variance with increases in mean is suggesting data points might have different scales - one or more points are significant larger.'
+    },
+    position: { x: 3300, y: 3930 }
+  },
+  {
+    id: 'H.centreSeeStatistician',
+    type: 'help',
+    data: { 
+      label: 'PLease consult a statistician',
+      description: 'See a statistician as there is no standard test for this scenario.'
+    },
+    position: { x: 2985, y: 3945 }
+  },
+  {
+    id: 'Info.centreLogData',
+    type: 'info',
+    data: { 
+      label: 'Log Data',
+      description: 'Transform your data by taking natural logarithm.'
+    },
+    position: { x: 3605, y: 3930 }
+  },
   /**
    * RIGHT - LEFT branch
    */
-
+  {
+    id: 'D.RLeftBothOrdinal',
+    type: 'decision',
+    data: { 
+      label: 'Are they both ordinal variables?'
+    },
+    position: { x: 3950, y: 3930 }
+  },
+  {
+    id: 'T.RLeftWilcoxon',
+    type: 'test',
+    data: { 
+      label: 'Wilcoxon Paired Test',
+      description: 'This test is used for data that doesn\'t follow the normal distribution, can be use to test the statistical difference between two paired groups.'
+    },
+    position: { x: 3935, y: 4245 }
+  },
+  {
+    id: 'D.RLeftTalk',
+    type: 'decision',
+    data: { 
+      label: 'Are you willing to talk to a statistician?',
+      description: 'We strongly recommend you seek advice from a statistician.'
+    },
+    position: { x: 3600, y: 4230 }
+  },
+  {
+    id: 'H.RLeftStatistician',
+    type: 'help',
+    data: { 
+      label: 'Please consult a statistician',
+      description: 'Talk to a statistician to clarify your question and get advice.'
+    },
+    position: { x: 3585, y: 4530 }
+  },
+  {
+    id: 'T.RLeftKappa',
+    type: 'test',
+    data: { 
+      label: 'Kappa',
+      description: 'Cohen\'s kappa coefficient measures consistency between categorical variables X and Y.'
+    },
+    position: { x: 3250, y: 4245 }
+  },
   /**
    * RIGHT-MOST branch
    */
+   {
+    id: 'D.RightAssumeConstVar',
+    type: 'decision',
+    data: { 
+      label: 'Are you happy to assume constancy of variance?',
+      description: 'Constant variance is the assumption of homoscedasticity. This means the variance of distances of data points to the regression line is constant.'
+    },
+    position: { x: 4550, y: 3630 }
+  },
+  {
+    id: 'D.RightVarMean',
+    type: 'decision',
+    data: { 
+      label: 'Does variation increase with mean score?',
+      description: 'Increase in variance with increases in mean is suggesting data points might have different scales - one or more points are significant larger.'
+    },
+    position: { x: 4550, y: 3930 }
+  },
+  {
+    id: 'T.RightWilcoxon',
+    type: 'test',
+    data: { 
+      label: 'Wilcoxon Paired Test',
+      description: 'This test is used for data that doesn\'t follow the normal distribution, can be use to test the statistical difference between two paired groups.'
+    },
+    position: { x: 4540, y: 4230 }
+  },
+  {
+    id: 'Info.RightLogData',
+    type: 'info',
+    data: { 
+      label: 'Log Data',
+      description: 'Transform your data by taking natural logarithm.'
+    },
+    position: { x: 4840, y: 3930 }
+  },
+  {
+    id: 'T.RightPairedTtest',
+    type: 'test',
+    data: { 
+      label: 'Paired T-Test',
+      description: 'The T-test is a hypothesis test that investigate the significance difference between two paired groups sampled from the same population.'
+    },
+    position: { x: 4835, y: 3645 }
+  },
 ]

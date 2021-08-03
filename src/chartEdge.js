@@ -1,3 +1,6 @@
+/**
+ * Ensure ID begin with "e"
+ */
 export const chartEdgeData = [
   {
     id: 'eStart',
@@ -626,13 +629,162 @@ export const chartEdgeData = [
   /**
    * LEFT-CENTRE branch
    */
-
-
+  {
+    id: 'eD.bothSameThingLEft-D.centreBothScalar',
+    source: 'D.bothSameThing-Left',
+    target: 'D.centreBothScalar',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.centreBothScalar-D.centreAssumeConstVar',
+    source: 'D.centreBothScalar',
+    target: 'D.centreAssumeConstVar',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.centreBothScalar-H.centreSeeStatistician',
+    source: 'D.centreBothScalar',
+    target: 'H.centreSeeStatistician',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No - see a statistician'
+  },
+  {
+    id: 'eD.centreVarMean-H.centreSeeStatistician',
+    source: 'D.centreVarMean',
+    target: 'H.centreSeeStatistician',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No - see a statistician'
+  },
+  {
+    id: 'eD.centreVarMean-Info.LogData',
+    source: 'D.centreVarMean',
+    target: 'Info.centreLogData',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.centreAssumeConstVar-D.centreVarMean',
+    source: 'D.centreAssumeConstVar',
+    target: 'D.centreVarMean',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.centreAssumeConstVar-T.ICC',
+    source: 'D.centreAssumeConstVar',
+    target: 'T.ICC',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes - ICC'
+  },
+  {
+    id: 'eInfo.LogData-T.ICC',
+    source: 'Info.centreLogData',
+    target: 'T.ICC',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Intraclass correlation coefficient'
+  },
   /**
    * RIGHT - LEFT branch
    */
-
+  {
+    id: 'eD.AreTheyScalar-D.BothOrdinal',
+    source: 'D.AreTheyScalar',
+    target: 'D.RLeftBothOrdinal',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.RLeftBothOrdinal-T.RLeftWilcoxon',
+    source: 'D.RLeftBothOrdinal',
+    target: 'T.RLeftWilcoxon',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.RLeftBothOrdinal-D.RLeftTalk',
+    source: 'D.RLeftBothOrdinal',
+    target: 'D.RLeftTalk',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.RLeftTalk-H.RLeftStatistician',
+    source: 'D.RLeftTalk',
+    target: 'H.RLeftStatistician',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'I\'m willing'
+  },
+  {
+    id: 'eD.RLeftTalk-T.RLeftKappa',
+    source: 'D.RLeftTalk',
+    target: 'T.RLeftKappa',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Not now'
+  },
   /**
    * RIGHT-MOST branch
    */
+  {
+    id: 'eD.AreTheyScalar-D.RightAssumeConstVar',
+    source: 'D.AreTheyScalar',
+    target: 'D.RightAssumeConstVar',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.RightAssumeConstVar-D.RightVarMean',
+    source: 'D.RightAssumeConstVar',
+    target: 'D.RightVarMean',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eD.RightAssumeConstVar-T.RightPairedTtest',
+    source: 'D.RightAssumeConstVar',
+    target: 'T.RightPairedTtest',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.RightVarMean-Info.RightLogData',
+    source: 'D.RightVarMean',
+    target: 'Info.RightLogData',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Yes'
+  },
+  {
+    id: 'eD.RightVarMean-T.RightWilcoxon',
+    source: 'D.RightVarMean',
+    target: 'T.RightWilcoxon',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'No'
+  },
+  {
+    id: 'eInfo.RightLogData-T.RightPairedTtest',
+    source: 'Info.RightLogData',
+    target: 'T.RightPairedTtest',
+    arrowHeadType: 'arrow',
+    type: 'smoothstep',
+    label: 'Paired T-Test'
+  },
 ]
