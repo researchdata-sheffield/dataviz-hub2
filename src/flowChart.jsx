@@ -4,6 +4,7 @@ import ReactFlow, { Handle, Controls, useZoomPanHelper } from 'react-flow-render
 import { chartNodeData } from "./chartNode"
 import { chartEdgeData } from "./chartEdge"
 import { FaToggleOff, FaToggleOn } from "react-icons/fa"
+import { MdHelp } from "react-icons/md"
 import Consultation from "./consultation.gif"
 import TestGif from "./test.gif"
 import UniversityLogo from "./TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
@@ -199,7 +200,28 @@ let groupedData = [...chartNodeData, ...chartEdgeData]
     }
   ));
 
-
+const textForHelp = [
+  {
+    question: 'Introduction',
+    answer: 'This flow chart is a simple tool that help you to choose what statistical test to use when comparing two variables.'
+  },
+  {
+    question: 'How do I get started?',
+    answer: 'To get started, click on the \'Click to start\' animated triangle button. Click on the node (orange colour diamond shape) with question to see more options. Then you can follow options on different lines and click on the next node. Repeat this process until you have reached a rectangle node.'
+  },
+  {
+    question: 'Unselect nodes/shapes',
+    answer: 'Selected nodes will be highlighted in different colours, click it again if you want to unselect the target node.'
+  },
+  {
+    question: 'How do I move around the chart?',
+    answer: 'You can drag the background to move around, and scroll up and down to zoom in or out. Or instead, click on the buttons on the bottom left which provides the same functionality.'
+  },
+  {
+    question: 'Shapes/nodes disappear',
+    answer: 'If nothing shows up on the panel, you can either click on the \'window\' button (just under the zoom out button) on the bottom left, or the \'Fit view\' button on the right panel to restore the view.'
+  }
+]
 
 /**************************
  * Return flow chart
@@ -211,6 +233,7 @@ const flowChart = () => {
   const [centreOnClick, toggleCentre] = useState(true);
   const [reactflowInstance, setReactflowInstance] = useState(null);
   const { setCenter } = useZoomPanHelper();
+  const [showHelp, setShowHelp] = useState(false);
   // data for all edges and nodes
   const [elements, setElements] = useState(groupedData);
   // dialog box
@@ -218,6 +241,13 @@ const flowChart = () => {
   //list of clicked nodes
   const [clickedNodes, setClickedNodes] = useState([]);
 
+
+
+
+
+  /****************************************
+   * Utility functions for the flow chart
+   ***************************************/
 
   const onLoad = useCallback(
     (rfi) => {
@@ -420,18 +450,20 @@ const flowChart = () => {
 
     setElements(newElements)
   })
+  /****************************************
+   * End of Utility functions
+   ***************************************/
 
   return (
     <div>
       <button className="px-3 py-2 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>Which statistical test to use for two variables?</button>
       <div 
-        className={`${displayChart ? 'block' : 'hidden'} w-full min-h-100 fixed flex flex-wrap top-0 left-0`} 
-        style={{zIndex: '100'}}
+        className={`${displayChart ? 'block' : 'hidden'} w-full hideScrollBar min-h-100 fixed flex flex-wrap top-0 left-0`} 
+        style={{zIndex: '100', height: '100vh', overflowY: 'scroll'}}
       >
         <div 
           id="flowChartWrap" 
-          className="relative w-full md:w-8/12 2xl:w-9/12" 
-          style={{height: '100vh'}}
+          className="relative w-full md:w-8/12 2xl:w-9/12 min-h-70 md:min-h-100" 
         >
           <ReactFlow
             elements={elements}
@@ -466,6 +498,36 @@ const flowChart = () => {
             <p className="text-sm leading-5">{elementData.description}</p>
           </div>
           <img src={UniversityLogo} alt="TUoS Logo" className="absolute" style={{right: '0%', top: '0%', margin: '30px'}} width="150" />
+          <MdHelp 
+            title="Help / tutorial" 
+            onClick={() => setShowHelp(!showHelp)}
+            className={`${showHelp && 'text-green-200 text-5xl'} z-10 absolute bottom-0 right-0 m-6 text-white text-4xl cursor-pointer`} 
+          />
+          <div data-for="help" 
+            className={`${!showHelp && 'hidden'} rounded-xl shadow-2xl fixed z-10 p-5 bg-white`} 
+            style={{width: '650px', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', borderTop: 'solid 10px #00aeef'}}
+          >
+            {
+              textForHelp.map(text => {
+                return (
+                  <div key={`help-${text.question}`}>
+                    <h1 className="mb-2 font-semibold">{text.question}</h1>
+                    <p className="mb-3 leading-5 text-gray-700">{text.answer}</p>
+                  </div>
+                )
+              })
+            }
+            <div className="w-full mt-5 flex justify-end">
+              <button
+                onClick={() => window.open("https://shef-dataviz.slack.com/archives/C99CXQGK1")}
+                className="mr-2 p-2 bg-red-100 text-red-700 border-red-200 border-1"
+              >I need some help</button>
+              <button 
+                onClick={() => setShowHelp(!showHelp)}
+                className="p-2 bg-green-100 text-green-700 border-green-200 border-1"
+              >I&apos;ve got it</button>
+            </div>
+          </div>
         </div>
 
         {/* sidebar */}
@@ -479,36 +541,46 @@ const flowChart = () => {
             <button 
               title="Reset the flow chart" 
               className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
-              onClick={() => {setElements(groupedData); setClickedNodes(['']); reactflowInstance.fitView()}}
+              onClick={() => {setElements(groupedData); setClickedNodes([]); reactflowInstance.fitView()}}
             >Restart</button>
             <button 
               title="Exit this page" className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
               onClick={() => setDisplayChart(!displayChart)}
             >CLOSE</button>
           </div>
+          {/* Path tracking */}
           <div className="mt-5">
-            <h1 className="font-bold text-xl">Your paths:</h1>
+            <h1 className="font-bold text-xl">
+              {
+                clickedNodes.length >= 2 
+                ? 'Your paths:' 
+                : 'Please click on the first two shapes to start. Click on questions to see more options.'
+              }
+            </h1>
             <div className="py-3 hideScrollBar" style={{height: '85vh', overflowY: 'scroll'}}>
               {clickedNodes.length >= 2 && clickedNodes.map((node, index) => {
-                if (index == 0) { return ""; }
+                if (index == 0) { return false; }
                 if (index >= 2 && !getEdge(elements, clickedNodes[index - 1], clickedNodes[index - 2])) {
                   return false;
                 }
 
                 const currentNodeObj = getNode(elements, node);
-                console.log(currentNodeObj)
                 const lastNode = getNode(elements, clickedNodes[index - 1])
                 const edge = getEdge(elements, node, lastNode.id)
                 const pathNotification = !edge?.label && "Looks like you have jumped to a different path. Please unselect the shape you don't want."
 
                 return (
-                  <div key={`path-${node}`} className="mt-2 flex flex-wrap justify-center w-full space-x-3">
-                    <div 
-                      title="Click to go to this node."
-                      onClick={() => setCenter(lastNode.position.x, lastNode.position.y, 1.1)} 
-                      className="w-8/12 p-2 text-white rounded-md cursor-pointer"
-                      style={{border: 'solid 2px #00aeef', background: 'rgba(0,0,0,.94)'}}
-                    >{lastNode?.data?.label}</div>
+                  <div key={`path-${node}`} className="mt-2 flex flex-wrap justify-center w-full">
+                    <div className="w-9/12 pr-3">
+                      <div 
+                        title="Click to go to this node."
+                        onClick={() => setCenter(lastNode.position.x, lastNode.position.y, 1.1)} 
+                        className="w-full p-2 text-white rounded-md cursor-pointer"
+                        style={{border: 'solid 2px #00aeef', background: 'rgba(0,0,0,.94)'}}
+                      >
+                        {lastNode?.data?.label}
+                      </div>
+                    </div>
                     <div className="w-3/12 p-2 text-center bg-blue-100 text-blue-700 border-1 border-blue-200 rounded-md">{edge.label}</div>
                     {
                       pathNotification &&
@@ -518,8 +590,11 @@ const flowChart = () => {
                     }
                     {
                       (currentNodeObj.type == "help" || currentNodeObj.type == "test") &&
-                      <div className={`${currentNodeObj.type == "help" ? 'border-red-200 bg-red-100 text-red-700' : 'border-green-200 bg-green-100 text-green-700'} mt-2 border-1 w-full text-center p-2`}>
-                        <h1 className="font-bold">{currentNodeObj.data.label}</h1><br/>
+                      <div 
+                        className={`${currentNodeObj.type == "help" ? 'border-red-200 bg-red-100 text-red-700' : 'border-green-200 bg-green-100 text-green-700'} mt-2 border-1`}
+                        style={{width: '100%', textAlign: 'center', padding: '.5rem', borderRadius: '.375rem'}}
+                      >
+                        <h1 className="font-bold mb-1">{currentNodeObj.data.label}</h1>
                         {currentNodeObj.data?.description}
                       </div>
                     }

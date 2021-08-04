@@ -1,0 +1,50 @@
+---
+type: visualisation
+author: [Yu Liang Weng]
+title: Which statistical test to use for two variables?
+thumbnail: thumb.jpg
+description: >
+  An interative tool based on the flow chart made by Jean Russell (Statistical Consultancy Service - IT Services) to help you determine which statistical test to use when comparing two variables. 
+date: "2021-08-04"
+category: [Research & Innovation IT]
+tag: [Statistics, Interative]
+---
+
+
+export const data = [
+  {
+    "title": "Source",
+    "content": ``
+  },
+  {
+    "title": "Detail",
+    "content": ``
+  },
+  {
+    "title": "Code",
+    "content": ``
+  },
+  {
+    "title": "Attribution",
+    "content": ``
+  },
+  {
+    "title": "License",
+    "content": `This visualisation is covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  },
+]
+
+
+<div className="flex justify-center">
+  <RadarPlot />
+</div>
+
+
+<VisPagination mdx={props.mdx}>
+</VisPagination>
+
+<VisDetail mdx={props.mdx} />
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>
