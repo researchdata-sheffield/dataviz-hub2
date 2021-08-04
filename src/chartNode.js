@@ -8,7 +8,7 @@ export const chartNodeData = [
   {
     id: 'start',
     type: 'start',
-    data: { label: 'Start!', description: 'Find out which test to use with two variables.' },
+    data: { label: 'Click to start!', description: 'Find out which statistical test to use for comparing two variables.' },
     position: { x: 2900, y: 3000 },
     isHidden: false
   },
@@ -30,7 +30,7 @@ export const chartNodeData = [
     type: 'decision',
     data: { 
       label: 'What type of variable is your dependent?',
-      description: 'Choose Scalar or Ordinal (ordered categories).' 
+      description: 'Choose Scalar, Nominal (categorical), or Ordinal (ordered categories).' 
     },
     position: { x: 3350, y: 2730 }
   },
@@ -42,7 +42,7 @@ export const chartNodeData = [
     type: 'decision',
     data: { 
       label: 'Are you happy to assume constant variance?',
-      description: 'Constant variance is the assumption of homoscedasticity. This means the variance of distances of data points to the regression line is constant.'
+      description: 'Constant variance is the assumption of homoscedasticity. This means the variance of distances of data points to the regression line are constant.'
     },
     position: { x: 3000, y: 2730 }
   },

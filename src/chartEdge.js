@@ -8,6 +8,7 @@ export const chartEdgeData = [
     target: 'D.bothDepVars',
     arrowHeadType: 'arrow',
     type: 'smoothstep',
+    label: 'Begin'
   },
   /*********************************************
    * TOP BRANCH
@@ -86,7 +87,8 @@ export const chartEdgeData = [
     target: 'D.IndVarScalar',
     arrowHeadType: 'arrow',
     type: 'smoothstep',
-    targetHandle: 'b'
+    targetHandle: 'b',
+    label: 'Non-parametric route'
   },
   {
     id: 'eD.IndVarScalar-D.TreatBothDep',

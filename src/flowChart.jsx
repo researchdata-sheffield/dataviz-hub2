@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { memo, useState, useCallback } from 'react'
-import ReactFlow, { Handle, MiniMap, Controls, useZoomPanHelper } from 'react-flow-renderer';
+import ReactFlow, { Handle, Controls, useZoomPanHelper } from 'react-flow-renderer';
 import { chartNodeData } from "./chartNode"
 import { chartEdgeData } from "./chartEdge"
 import { FaToggleOff, FaToggleOn } from "react-icons/fa"
@@ -165,6 +165,16 @@ export const getEdge = (data, firstNodeId, secondNodeId) => {
   return result[0];
 }
 
+export const getNode = (data, nodeId) => {
+  if (data.length <= 1) { return false; }
+
+  const result = data.filter(node => node.id == nodeId);
+
+  if (result.length == 0) { return false; }
+
+  return result[0];
+}
+
 /***********************************
  * Flow chart Data and settings
  **********************************/
@@ -206,7 +216,7 @@ const flowChart = () => {
   // dialog box
   const [elementData, setElementData] = useState({label: '', description: ''});
   //list of clicked nodes
-  const [clickedNodes, setClickedNodes] = useState(['']);
+  const [clickedNodes, setClickedNodes] = useState([]);
 
 
   const onLoad = useCallback(
@@ -380,7 +390,7 @@ const flowChart = () => {
         return {
           ...element,
           animated: true,
-          style: {...element.style, stroke: element.style.stroke == '#00aeef' ? '#00aeef' : 'orange'}
+          style: {...element?.style, stroke: element?.style?.stroke == '#00aeef' ? '#00aeef' : 'orange'}
         }
       }
       return element;
@@ -402,7 +412,7 @@ const flowChart = () => {
         return {
           ...element,
           animated: (element.style.stroke == '#00aeef'),
-          style: {...element.style, stroke: element.style.stroke == '#00aeef' ? '#00aeef' : '#fff'}
+          style: {...element?.style, stroke: element?.style?.stroke == '#00aeef' ? '#00aeef' : '#fff'}
         }
       }
       return element;
@@ -420,7 +430,7 @@ const flowChart = () => {
       >
         <div 
           id="flowChartWrap" 
-          className="relative w-full md:w-9/12 2xl:w-10/12" 
+          className="relative w-full md:w-8/12 2xl:w-9/12" 
           style={{height: '100vh'}}
         >
           <ReactFlow
@@ -437,14 +447,6 @@ const flowChart = () => {
             onNodeMouseEnter={onNodeMouseEnter}
             onNodeMouseLeave={onNodeMouseLeave}
           >
-            <MiniMap
-              nodeStrokeColor={(n) => {
-                if (n.type === 'start') return '#0041d0';
-                if (n.type === 'decision') return '#ff9500';
-                if (n.type === 'selectorNode') return '#00aeef';
-                if (n.type === 'output') return '#9bf542';
-              }}
-            />
             <Controls />
           </ReactFlow> 
           <button className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-3xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => handleShowButton()}>
@@ -453,7 +455,7 @@ const flowChart = () => {
           </button>
           <button className="z-10 absolute bottom-0 left-0 ml-16 mb-12 text-white flex text-3xl self-center cursor-pointer" style={{alignItems: 'center'}} onClick={() => toggleCentre(!centreOnClick)}>
             {centreOnClick ? <FaToggleOn style={{filter: 'drop-shadow(0px 1px 7px rgb(0, 0, 0))'}} /> : <FaToggleOff style={{color: '#969696'}} />}
-            <span className={`${!centreOnClick && 'text-gray-300'} text-base ml-3`} style={{textShadow: '0px 1px 5px #000'}}>Follow clicked nodes</span>
+            <span className={`${!centreOnClick && 'text-gray-300'} text-base ml-3`} style={{textShadow: '0px 1px 5px #000'}}>Follow clicked shapes</span>
           </button>
           <div 
             id="nodeDescriptionBox" 
@@ -467,7 +469,7 @@ const flowChart = () => {
         </div>
 
         {/* sidebar */}
-        <div className="w-full md:w-3/12 2xl:w-2/12 bg-white p-3" style={{height: '100vh'}}>
+        <div className="w-full md:w-4/12 2xl:w-3/12 bg-white p-3" style={{height: '100vh'}}>
           <div className="w-full flex flex-wrap pb-5 space-x-2 space-y-2 border-b-1 border-gray-100">
             <button 
               title="Centre the flow chart" 
@@ -477,7 +479,7 @@ const flowChart = () => {
             <button 
               title="Reset the flow chart" 
               className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
-              onClick={() => {setElements(groupedData); reactflowInstance.fitView()}}
+              onClick={() => {setElements(groupedData); setClickedNodes(['']); reactflowInstance.fitView()}}
             >Restart</button>
             <button 
               title="Exit this page" className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
@@ -485,7 +487,46 @@ const flowChart = () => {
             >CLOSE</button>
           </div>
           <div className="mt-5">
-              <h1 className="font-bold text-xl">Your paths:</h1>
+            <h1 className="font-bold text-xl">Your paths:</h1>
+            <div className="py-3 hideScrollBar" style={{height: '85vh', overflowY: 'scroll'}}>
+              {clickedNodes.length >= 2 && clickedNodes.map((node, index) => {
+                if (index == 0) { return ""; }
+                if (index >= 2 && !getEdge(elements, clickedNodes[index - 1], clickedNodes[index - 2])) {
+                  return false;
+                }
+
+                const currentNodeObj = getNode(elements, node);
+                console.log(currentNodeObj)
+                const lastNode = getNode(elements, clickedNodes[index - 1])
+                const edge = getEdge(elements, node, lastNode.id)
+                const pathNotification = !edge?.label && "Looks like you have jumped to a different path. Please unselect the shape you don't want."
+
+                return (
+                  <div key={`path-${node}`} className="mt-2 flex flex-wrap justify-center w-full space-x-3">
+                    <div 
+                      title="Click to go to this node."
+                      onClick={() => setCenter(lastNode.position.x, lastNode.position.y, 1.1)} 
+                      className="w-8/12 p-2 text-white rounded-md cursor-pointer"
+                      style={{border: 'solid 2px #00aeef', background: 'rgba(0,0,0,.94)'}}
+                    >{lastNode?.data?.label}</div>
+                    <div className="w-3/12 p-2 text-center bg-blue-100 text-blue-700 border-1 border-blue-200 rounded-md">{edge.label}</div>
+                    {
+                      pathNotification &&
+                      <div className="mt-2 rounded-md w-full border-1 border-yellow-200 bg-yellow-100 text-yellow-700 p-2">
+                        {pathNotification}
+                      </div>
+                    }
+                    {
+                      (currentNodeObj.type == "help" || currentNodeObj.type == "test") &&
+                      <div className={`${currentNodeObj.type == "help" ? 'border-red-200 bg-red-100 text-red-700' : 'border-green-200 bg-green-100 text-green-700'} mt-2 border-1 w-full text-center p-2`}>
+                        <h1 className="font-bold">{currentNodeObj.data.label}</h1><br/>
+                        {currentNodeObj.data?.description}
+                      </div>
+                    }
+                  </div>
+                )
+              })}
+            </div>
           </div>
         </div>
       </div>
