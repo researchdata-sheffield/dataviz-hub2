@@ -146,3 +146,21 @@
     transform-origin:top left;
   }
 }
+
+
+@keyframes random-border-colour {
+  0% { border-left-color: rgb(7, 241, 191); }
+  10% { border-left-color: #00aeef; }
+  30% { border-left-color: #ea005e; }
+  40% { border-left-color: #A3CE71; }
+  50% { border-left-color: '#ffaf0f' }
+  60% { border-left-color: '#bf0fff' }
+  70% { border-left-color: '#251d5a' }
+  80% { border-left-color: #a0aec0; }
+  90% { border-left-color: rgb(253, 95, 109); }
+}
+
+.random-border-colour {
+  color: white;
+  animation: random-border-colour 20s ease infinite;
+}
