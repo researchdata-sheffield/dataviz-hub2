@@ -1,8 +1,9 @@
 /* eslint-disable react/prop-types */
 import React, { memo } from 'react'
 import { Handle } from 'react-flow-renderer';
-import Consultation from "./consultation.gif"
-import TestGif from "./test.gif"
+import Consultation from "./consultation.png"
+import TestImg from "./test.png"
+
 
 export const TriangleNodeComponent = memo(({ data }) => {
   return (
@@ -66,7 +67,7 @@ export const GreenNodeComponent = memo(({ data }) => {
         style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1' }}
       />
       <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.91rem', lineHeight: 1.2, marginTop: '-30px' }}>{data.label}</div>
-      <img alt="Test" src={TestGif} className="absolute" width="40" style={{top: '69%', left: '50%', transform: 'translate(-50%, -50%)'}} />
+      <img alt="Test" src={TestImg} className="absolute" width="40" style={{top: '69%', left: '50%', transform: 'translate(-50%, -50%)'}} />
     </div>
   )
 })
