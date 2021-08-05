@@ -9,7 +9,8 @@ published: false
 ---  
 
 import { HiOutlineLightBulb } from "react-icons/hi"  
-
+import FlowChart from "./flowChart/flowChart"
+import { ReactFlowProvider } from 'react-flow-renderer';
 
 ## Introduction
 Statistical (hypothesis) testing is a methodology that is used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference. The basic principle of which is to  
@@ -17,7 +18,7 @@ Statistical (hypothesis) testing is a methodology that is used to determine whet
 - then make inference through studies of samples, and
 - decide whether the hypothesis/assumption should be rejected or accepted  
 
-Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters are fully specified.  
+Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters of the distribution are fully specified.  
 
 
 Parametric tests has the following applications:  
@@ -34,10 +35,16 @@ Performing a test usually consists the following steps:
 3. Choose a suitable statistical test.
 4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$.  
 
+
 In part 4 we will be looking at common hypothesis test method and their application in linear models. You can download the R script file [here](./script.R).  
-
-
   
+We have also prepared a flow chart helps you to choose a statistical test for comparing two variables. Please click the button below to start.  
+
+<ReactFlowProvider>
+  <FlowChart />
+</ReactFlowProvider>
+
+<br/>
 
 ## Prerequisites
 
