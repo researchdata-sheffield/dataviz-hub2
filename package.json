@@ -44,7 +44,7 @@
     "canvas": "^2.8.0",
     "debug": "^4.3.2",
     "gatsby": "^3.9.1",
-    "gatsby-plugin-feed": "^3.9.0",
+    "gatsby-plugin-feed": "^3.11.0",
     "gatsby-plugin-flexsearch": "^1.0.3",
     "gatsby-plugin-google-analytics": "^3.9.0",
     "gatsby-plugin-image": "^1.9.0",
