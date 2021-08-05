@@ -8,6 +8,7 @@
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "build": "gatsby build",
     "build:incremental": "gatsby build --log-pages",
+    "build:noCache": "gatsby clean && gatsby build",
     "develop-noCache": "gatsby clean && gatsby develop",
     "develop": "gatsby develop",
     "lint": "npx lint-staged",
