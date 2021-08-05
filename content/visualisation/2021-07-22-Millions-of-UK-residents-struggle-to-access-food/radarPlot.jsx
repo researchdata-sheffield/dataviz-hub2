@@ -64,6 +64,13 @@ const radarPlot = () => {
     color: 'rgb(55, 65, 81)'
   }
 
+  const percentageInfo = {
+    position: 'absolute',  
+    left: '48%', 
+    color: '#eee', 
+    fontSize: '.82rem'
+  }
+
   const theme = {
     dots: {
       text: {
@@ -162,6 +169,9 @@ const radarPlot = () => {
         % adults experiencing hunger, <br/>struggled to have food, <br/>worried about having<br/>enough food in<br/>five UK cities.
       </h3>
       <img src={Dish} alt="Food dish" style={{opacity: '0.05', maxWidth: '180px', position: 'absolute', top: '13%', right: 0, margin: '1.5rem'}}  />
+      <h3 style={{bottom: '10%', ...percentageInfo}}>21%</h3>
+      <h3 style={{bottom: '20%', ...percentageInfo}}>14%</h3>
+      <h3 style={{bottom: '30%', ...percentageInfo}}>&nbsp;7%</h3>
       <h1 style={{fontWeight: 800, left: 0, fontSize: '.9rem', ...sourceInfo}}>Dataviz.Shef</h1>
       <h1 style={{right: 0, ...sourceInfo}}>Source: The University of Sheffield - News</h1>
     </div>

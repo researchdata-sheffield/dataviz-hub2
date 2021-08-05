@@ -1,180 +1,14 @@
 /* eslint-disable react/prop-types */
-import React, { memo, useState, useCallback } from 'react'
-import ReactFlow, { Handle, Controls, useZoomPanHelper } from 'react-flow-renderer';
-import { chartNodeData } from "./chartNode"
-import { chartEdgeData } from "./chartEdge"
+import React, { useState, useCallback } from 'react'
+import ReactFlow, { Controls, useZoomPanHelper } from 'react-flow-renderer';
+import { TriangleNodeComponent, DecisionNodeComponent, GreenNodeComponent, InfoNodeComponent, RedNodeComponent } from "./nodeComponents"
+import { getEdge, getNode, getNodesAndEdges } from "./utils"
+import { chartNodeData } from "./nodeData"
+import { chartEdgeData } from "./edgeData"
+import { textForHelp } from "./textData"
 import { FaToggleOff, FaToggleOn } from "react-icons/fa"
 import { MdHelp } from "react-icons/md"
-import Consultation from "./consultation.gif"
-import TestGif from "./test.gif"
-import UniversityLogo from "./TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
 
-/*********************************
- * Define custom node components
- *********************************/
-const TriangleNodeComponent = memo(({ data }) => {
-  return (
-    <div className="random-border-colour" style={{width: 0, height: 0, borderTop: '100px solid transparent', borderBottom: '100px solid transparent', borderLeft: '200px solid rgba(255, 255, 255, .96)', position: 'relative'}}>
-      <div style={{margin: '-15px 0 0 -165px', fontSize: '1rem', fontWeight: '800'}}>{data.label}</div>
-      <Handle
-        type="source"
-        position="right"
-        id="b"
-        style={{ borderRadius: 0, zIndex: '-1', visibility: 'hidden', marginRight: '10px' }}
-      />
-    </div>
-  )
-})
-TriangleNodeComponent.displayName = "TriangleNodeComponent"
-
-const DecisionNodeComponent = memo(({ data }) => {
-  return (
-    <div data-type="decision" style={{background: 'rgba(255, 255, 255, .99)', height: '140px', textAlign: 'center', transform: 'rotate(45deg)', width: '140px', border: '4px solid orange', ...data.innerStyle}}>
-      <Handle 
-        type="target"
-        id="a" 
-        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
-      />
-      <Handle 
-        type="source"
-        id="b" 
-        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
-      />
-      <div style={{transform: 'rotate(-45deg)', display: 'table-cell', verticalAlign: 'bottom', textAlign: 'center', width: '110px', height: '100px', fontSize: '.88rem', lineHeight: 1.3, }}>{data.label}</div>
-    </div>
-  )
-})
-DecisionNodeComponent.displayName = "DecisionNodeComponent"
-
-const InfoNodeComponent = memo(({ data }) => {
-  return (
-    <div style={{borderRadius: '999px', background: 'white', width: '150px', height: '150px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #959595'}}>
-      <Handle 
-        type="target"
-        id="a" 
-        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
-      />
-      <Handle 
-        type="source"
-        id="b" 
-        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1', visibility: 'hidden' }}
-      />
-      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.88rem', lineHeight: 1.3 }}>{data.label}</div>
-    </div>
-  )
-})
-InfoNodeComponent.displayName = "InfoNodeComponent"
-
-const GreenNodeComponent = memo(({ data }) => {
-  return (
-    <div style={{borderRadius: '10px', background: '#c1eabe', width: '160px', height: '100px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #9af292'}}>
-      <Handle 
-        type="target"
-        id="a" 
-        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1' }}
-      />
-      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.91rem', lineHeight: 1.2, marginTop: '-30px' }}>{data.label}</div>
-      <img alt="Test" src={TestGif} className="absolute" width="40" style={{top: '69%', left: '50%', transform: 'translate(-50%, -50%)'}} />
-    </div>
-  )
-})
-GreenNodeComponent.displayName = "GreenNodeComponent"
-
-const RedNodeComponent = memo(({ data }) => {
-  return (
-    <div style={{borderRadius: '10px', background: '#fff1f0', width: '160px', height: '100px', lineHeight: '150px', display: 'table-cell', verticalAlign: 'middle', border: '5px solid #ffa39e', color: '#f5222d'}}>
-      <Handle 
-        type="target"
-        id="a" 
-        style={{ borderRadius: 0, top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: '-1' }}
-      />
-      <div style={{verticalAlign: 'center', textAlign: 'center', fontSize: '.95rem', lineHeight: 1.2 }}>{data.label}</div>
-      <img alt="Consultation" src={Consultation} className="absolute" width="50" style={{right: '0px', bottom: '0px'}} />
-    </div>
-  )
-})
-RedNodeComponent.displayName = "RedNodeComponent"
-
-
-/************************************************/
-/******** END of custom node components *********/
-/************************************************/
-
-/**
- * Get nodes and edges of an clicked element recursively
- * Strategy:
- * -> Return current element's direct node and edges if children are not visible yet.
- * OR
- * -> If children are visible, recursively find visible children (of children) by setting "deepLevel" to true.
- *  If "deepLevel" is true, it will skip hidden children.
- * @param {array} data current flow chart data
- * @param {object} element element that user clicked 
- * @param {boolean} deepLevel whether to get data more than one level deep
- * @returns {array} array of element ids.
- */
-export const getNodesAndEdges = (data, element, deepLevel = false) => {
-  // Get all child edges of current element
-  const edges = data.filter(item => item.source == element.id);
-
-  if (edges.length == 0) {
-    return [];
-  }
-
-  if (deepLevel && edges[0].isHidden) {
-    return [];
-  }
-
-  // get nodes on the other end of edges
-  const edgeTargetIds = edges.map(el => el.target);
-
-  const nodes = data.filter(node => edgeTargetIds.includes(node.id));
-  const nodeIds = nodes.map(el => el.id);
-  
-  // check if child nodes is showing
-  let childShowing = (nodes && nodes[0] && !nodes[0].isHidden) || false;
-
-  // if children nodes are showing, recursively get their children
-  if (childShowing && !element.isHidden) {
-    let childNodesAndEdges = nodes
-      .filter(node => !node.isHidden)
-      .map(node => getNodesAndEdges(data, node, true));
-
-    let mergeAllArray = [].concat.apply([], childNodesAndEdges);
-    return [...edges.map(el => el.id), ...nodeIds, ...mergeAllArray];
-  }
-
-  return [...edges.map(el => el.id), ...nodeIds];
-}
-
-/**
- * Get edge according to node ids
- * @param {array} data 
- * @param {string} firstNodeId 
- * @param {string} secondNodeId 
- * @returns object
- */
-export const getEdge = (data, firstNodeId, secondNodeId) => {
-  if (data.length <= 1) { return false; }
-
-  const result = data.filter(edge => 
-    (edge.source == firstNodeId && edge.target == secondNodeId) 
-    | (edge.source == secondNodeId && edge.target == firstNodeId)
-  )
-
-  if (result.length == 0) { return false; }
-
-  return result[0];
-}
-
-export const getNode = (data, nodeId) => {
-  if (data.length <= 1) { return false; }
-
-  const result = data.filter(node => node.id == nodeId);
-
-  if (result.length == 0) { return false; }
-
-  return result[0];
-}
 
 /***********************************
  * Flow chart Data and settings
@@ -200,35 +34,13 @@ let groupedData = [...chartNodeData, ...chartEdgeData]
     }
   ));
 
-const textForHelp = [
-  {
-    question: 'Introduction',
-    answer: 'This flow chart is a simple tool that help you to choose what statistical test to use when comparing two variables.'
-  },
-  {
-    question: 'How do I get started?',
-    answer: 'To get started, click on the \'Click to start\' animated triangle button. Click on the node (orange colour diamond shape) with question to see more options. Then you can follow options on different lines and click on the next node. Repeat this process until you have reached a rectangle node.'
-  },
-  {
-    question: 'Unselect nodes/shapes',
-    answer: 'Selected nodes will be highlighted in different colours, click it again if you want to unselect the target node.'
-  },
-  {
-    question: 'How do I move around the chart?',
-    answer: 'You can drag the background to move around, and scroll up and down to zoom in or out. Or instead, click on the buttons on the bottom left which provides the same functionality.'
-  },
-  {
-    question: 'Shapes/nodes disappear',
-    answer: 'If nothing shows up on the panel, you can either click on the \'window\' button (just under the zoom out button) on the bottom left, or the \'Fit view\' button on the right panel to restore the view.'
-  }
-]
 
 /**************************
  * Return flow chart
  * @returns 
  *************************/
 const flowChart = () => {
-  const [displayChart, setDisplayChart] = useState(true);
+  const [displayChart, setDisplayChart] = useState(false);
   const [showAll, toggleShowAll] = useState(false);
   const [centreOnClick, toggleCentre] = useState(true);
   const [reactflowInstance, setReactflowInstance] = useState(null);
@@ -240,9 +52,6 @@ const flowChart = () => {
   const [elementData, setElementData] = useState({label: '', description: ''});
   //list of clicked nodes
   const [clickedNodes, setClickedNodes] = useState([]);
-
-
-
 
 
   /****************************************
@@ -456,14 +265,14 @@ const flowChart = () => {
 
   return (
     <div>
-      <button className="px-3 py-2 rounded-md bg-shefPurple text-white" onClick={() => setDisplayChart(!displayChart)}>Which statistical test to use for two variables?</button>
+      <button className="px-5 py-3 rounded-md bg-shefPurple text-white my-10" onClick={() => setDisplayChart(!displayChart)}>Click here to open the flow chart</button>
       <div 
         className={`${displayChart ? 'block' : 'hidden'} w-full hideScrollBar min-h-100 fixed flex flex-wrap top-0 left-0`} 
         style={{zIndex: '100', height: '100vh', overflowY: 'scroll'}}
       >
         <div 
           id="flowChartWrap" 
-          className="relative w-full md:w-8/12 2xl:w-9/12 min-h-70 md:min-h-100" 
+          className="relative w-full md:w-8/12 2xl:w-9/12 min-h-70 md:min-h-100 text-black" 
         >
           <ReactFlow
             elements={elements}
@@ -494,10 +303,9 @@ const flowChart = () => {
             className="absolute p-4 bg-white shadow-2xl rounded-lg z-50 opacity-0 invisible" 
             style={{transform: 'translate(-50%, 0%)', left: '50%', bottom: '20px', width: '350px', boxShadow: '0 10px 50px -5px #00aeef', transition: 'visibility .2s, opacity 0.5s linear'}}
           >
-            <h1 className="font-bold mb-2 leading-5">{elementData.label}</h1>
+            <h1 className="text-base font-bold mb-2 leading-5">{elementData.label}</h1>
             <p className="text-sm leading-5">{elementData.description}</p>
           </div>
-          <img src={UniversityLogo} alt="TUoS Logo" className="absolute" style={{right: '0%', top: '0%', margin: '30px'}} width="150" />
           <MdHelp 
             title="Help / tutorial" 
             onClick={() => setShowHelp(!showHelp)}
@@ -505,26 +313,26 @@ const flowChart = () => {
           />
           <div data-for="help" 
             className={`${!showHelp && 'hidden'} rounded-xl shadow-2xl fixed z-10 p-5 bg-white`} 
-            style={{width: '650px', left: '50%', top: '50%', transform: 'translate(-50%, -50%)', borderTop: 'solid 10px #00aeef'}}
+            style={{width: '650px', left: '50%', top: '50%', transform: 'translate(-50%, -50%)'}}
           >
             {
               textForHelp.map(text => {
                 return (
                   <div key={`help-${text.question}`}>
-                    <h1 className="mb-2 font-semibold">{text.question}</h1>
-                    <p className="mb-3 leading-5 text-gray-700">{text.answer}</p>
+                    <h1 className="text-base mb-2 font-semibold">{text.question}</h1>
+                    <p className="text-sm mb-3 leading-5 text-gray-700">{text.answer}</p>
                   </div>
                 )
               })
             }
-            <div className="w-full mt-5 flex justify-end">
+            <div className="w-full mt-6 flex justify-end">
               <button
                 onClick={() => window.open("https://shef-dataviz.slack.com/archives/C99CXQGK1")}
-                className="mr-2 p-2 bg-red-100 text-red-700 border-red-200 border-1"
+                className="mr-2 p-2 bg-red-100 text-red-700 border-red-200 border-1 text-base"
               >I need some help</button>
               <button 
                 onClick={() => setShowHelp(!showHelp)}
-                className="p-2 bg-green-100 text-green-700 border-green-200 border-1"
+                className="p-2 bg-green-100 text-green-700 border-green-200 border-1 text-base"
               >I&apos;ve got it</button>
             </div>
           </div>
@@ -544,17 +352,17 @@ const flowChart = () => {
               onClick={() => {setElements(groupedData); setClickedNodes([]); reactflowInstance.fitView()}}
             >Restart</button>
             <button 
-              title="Exit this page" className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
+              title="Exit this page" className="px-2 py-1 rounded-md bg-pink-700 hover:bg-pink-600 text-white font-semibold" 
               onClick={() => setDisplayChart(!displayChart)}
             >CLOSE</button>
           </div>
           {/* Path tracking */}
           <div className="mt-5">
-            <h1 className="font-bold text-xl">
+            <h1 className="font-bold text-xl text-black">
               {
                 clickedNodes.length >= 2 
                 ? 'Your paths:' 
-                : 'Please click on the first two shapes to start. Click on questions to see more options.'
+                : '< Please click on the first two shapes to start. Click on questions to see more options.'
               }
             </h1>
             <div className="py-3 hideScrollBar" style={{height: '85vh', overflowY: 'scroll'}}>
@@ -575,13 +383,13 @@ const flowChart = () => {
                       <div 
                         title="Click to go to this node."
                         onClick={() => setCenter(lastNode.position.x, lastNode.position.y, 1.1)} 
-                        className="w-full p-2 text-white rounded-md cursor-pointer"
+                        className="w-full p-2 text-base text-white rounded-md cursor-pointer"
                         style={{border: 'solid 2px #00aeef', background: 'rgba(0,0,0,.94)'}}
                       >
                         {lastNode?.data?.label}
                       </div>
                     </div>
-                    <div className="w-3/12 p-2 text-center bg-blue-100 text-blue-700 border-1 border-blue-200 rounded-md">{edge.label}</div>
+                    <div className="w-3/12 p-2 text-base text-center bg-blue-100 text-blue-700 border-1 border-blue-200 rounded-md">{edge.label}</div>
                     {
                       pathNotification &&
                       <div className="mt-2 rounded-md w-full border-1 border-yellow-200 bg-yellow-100 text-yellow-700 p-2">
@@ -595,7 +403,7 @@ const flowChart = () => {
                         style={{width: '100%', textAlign: 'center', padding: '.5rem', borderRadius: '.375rem'}}
                       >
                         <h1 className="font-bold mb-1">{currentNodeObj.data.label}</h1>
-                        {currentNodeObj.data?.description}
+                        <p className="text-base">{currentNodeObj.data?.description}</p>
                       </div>
                     }
                   </div>

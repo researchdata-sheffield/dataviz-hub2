@@ -1,8 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from "react"
 import SEO from "../components/shared/seo"
-import FlowChart from "../flowChart"
-import { ReactFlowProvider } from 'react-flow-renderer';
 
 const VisWorkshop = () => {
   const [authenticated, setAuth] = useState(process.env.NODE_ENV === "development" ?? false); 
@@ -38,9 +36,6 @@ const VisWorkshop = () => {
         keywords={["the university of sheffield", "data visualisation", "data visualisation hub", "research", "about dataviz"]} 
       />
       <div className="min-h-100 flex flex-wrap justify-center py-32">
-        <ReactFlowProvider>
-          <FlowChart />
-        </ReactFlowProvider>
       </div>
     </>
   )

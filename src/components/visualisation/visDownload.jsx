@@ -143,7 +143,10 @@ export function downloadAsPng(visElement, mdxObject, pngPath = '') {
     return;
   }
 
-  htmlToImage.toPng(visElement)
+  htmlToImage.toPng(visElement, {
+    quality: 1,
+    pixelRatio: 4,
+  })
   .then((dataURL) => {
     createLinkForImage(`${kebabCase(mdxObject.frontmatter.title)}.png`, dataURL);
   })

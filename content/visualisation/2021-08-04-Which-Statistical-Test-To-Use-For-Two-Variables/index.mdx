@@ -2,41 +2,44 @@
 type: visualisation
 author: [Yu Liang Weng]
 title: Which statistical test to use for two variables?
-thumbnail: thumb.jpg
+thumbnail: thumbnail/thumbnail.png
 description: >
-  An interative tool based on the flow chart made by Jean Russell (Statistical Consultancy Service - IT Services) to help you determine which statistical test to use when comparing two variables. 
+  An interative tool based on the flow chart made by Jean Russell to help you determine which statistical test to use for two variables. This tool is a part of the statistical modelling learning path.
 date: "2021-08-04"
 category: [Research & Innovation IT]
 tag: [Statistics, Interative]
 ---
 
+import FlowChart from "./flowChart/flowChart"
+import { ReactFlowProvider } from 'react-flow-renderer';
+import Thumbnail from "./thumbnail/thumb"
+import Thumb from "./thumbnail/flowChartInside.png"
 
 export const data = [
   {
     "title": "Source",
-    "content": ``
+    "content": `This flow chart was prepared by <a href="https://scholar.google.co.uk/citations?user=UesDIkYAAAAJ&hl=en">Jean Russell</a> for the <a href="https://dataviz.shef.ac.uk/docs/18/03/2021/LearningPath-Statistical-Modeling">statistical modelling learning path</a>.`
   },
   {
     "title": "Detail",
-    "content": ``
+    "content": `This chart was created using React and <a href="https://reactflow.dev/">React Flow</a> with customised components. Unfortunately, you can not embed the flow chart at the moment.`
   },
   {
     "title": "Code",
-    "content": ``
-  },
-  {
-    "title": "Attribution",
-    "content": ``
+    "content": `<a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-08-04-Which-Statistical-Test-To-Use-For-Two-Variables/flowChart">Link</a> for the source code.`
   },
   {
     "title": "License",
-    "content": `This visualisation is covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+    "content": `Code and content are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
   },
 ]
 
-
 <div className="flex justify-center">
-  <RadarPlot />
+  <div style={{backgroundImage: `url(${Thumb})`, backgroundSize: 'cover', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '500px', height: '500px', maxWidth: '100vw', backgroundPosition: 'center'}}>
+    <ReactFlowProvider>
+      <FlowChart />
+    </ReactFlowProvider>
+  </div>
 </div>
 
 

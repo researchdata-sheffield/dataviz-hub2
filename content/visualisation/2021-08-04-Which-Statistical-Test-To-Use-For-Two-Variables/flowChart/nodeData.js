@@ -8,7 +8,7 @@ export const chartNodeData = [
   {
     id: 'start',
     type: 'start',
-    data: { label: 'Click to start!', description: 'Find out which statistical test to use for comparing two variables.' },
+    data: { label: 'Click to start!', description: 'Find out which statistical test to use for two variables.' },
     position: { x: 2900, y: 3000 },
     isHidden: false
   },
