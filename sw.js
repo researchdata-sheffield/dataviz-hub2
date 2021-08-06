@@ -27,44 +27,50 @@ workbox.core.clientsClaim();
  */
 self.__precacheManifest = [
   {
-    "url": "webpack-runtime-bc6d61bbfe7fd71d0cd6.js"
+    "url": "webpack-runtime-c287e36beb3714663174.js"
   },
   {
-    "url": "styles.f4d0e3c7150a3ab934ab.css"
+    "url": "styles.aaea8a905955275be4da.css"
   },
   {
-    "url": "framework-e69d67739883b6aa3256.js"
+    "url": "framework-a564afea5b9c0ff2293c.js"
   },
   {
-    "url": "de71a805-7836a3f1316e0a635a5c.js"
+    "url": "de71a805-9d4b1f644990161f6ca2.js"
   },
   {
-    "url": "252f366e-bc199f1f428609369666.js"
+    "url": "252f366e-cb5950c545a67199f102.js"
   },
   {
-    "url": "95b64a6e-54f2447c781636b64dff.js"
+    "url": "95b64a6e-8fe88ea5eb03296a66ac.js"
   },
   {
-    "url": "d64684d8-50c1bbb8b43a493a9709.js"
+    "url": "d64684d8-854a1d6136aa30fefebe.js"
   },
   {
-    "url": "5e2a4920-1d0e67d5914454dd93f0.js"
+    "url": "5e2a4920-21b507f312e872bb1d8c.js"
   },
   {
-    "url": "1bfc9850-f7f472e9ab2598265534.js"
+    "url": "1bfc9850-bb2729450f3787e20854.js"
   },
   {
-    "url": "app-8425a51bdd2c062b8967.js"
+    "url": "b9e0c7b4-fa1796cab1cd382b9145.js"
+  },
+  {
+    "url": "dc6a8720040df98778fe970bf6c000a41750d3ae-374d80537d735690926f.js"
+  },
+  {
+    "url": "app-8ad39167ba93b169067b.js"
   },
   {
     "url": "offline-plugin-app-shell-fallback/index.html",
-    "revision": "eeabc436a32a4710fd2f48a1bd5def78"
+    "revision": "76719c19293549b14d27efd5f2af2f6c"
   },
   {
-    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-0680fa66f0dd5096ca38.js"
+    "url": "component---cache-caches-gatsby-plugin-offline-app-shell-js-3e463f10012332484932.js"
   },
   {
-    "url": "polyfill-c6f50af6043cccef156a.js"
+    "url": "polyfill-d16e3cd09a7b2075829a.js"
   },
   {
     "url": "manifest.webmanifest",
@@ -160,7 +166,7 @@ const navigationRoute = new NavigationRoute(async ({ event }) => {
   // Check for resources + the app bundle
   // The latter may not exist if the SW is updating to a new version
   const resources = await idbKeyval.get(`resources:${pathname}`)
-  if (!resources || !(await caches.match(`/app-8425a51bdd2c062b8967.js`))) {
+  if (!resources || !(await caches.match(`/app-8ad39167ba93b169067b.js`))) {
     return await fetch(event.request)
   }
 
