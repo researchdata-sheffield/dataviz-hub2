@@ -106,7 +106,7 @@ const visEmbed = (props) => {
         {!embedCode && 
           <div style={{maxWidth: '450px'}}>
             <MdError className="mx-auto text-5xl text-red-500 mb-2 font-semibold" />
-            <h5 className="text-lg w-full text-center">Embed code are not provided for this visualisation, please contact the author for more information.</h5>
+            <h5 className="text-lg w-full text-center">Embed code is not provided for this visualisation, please contact the author for more information.</h5>
           </div>
         }
 
