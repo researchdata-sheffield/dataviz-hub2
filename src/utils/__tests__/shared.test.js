@@ -114,11 +114,19 @@ describe("Calculate user's local time", () => {
       moment.tz.setDefault('Europe/London');
       return moment;
     });
-    expect(calculateUserLocalTime("2021-05-17 01:00 PM"))
-      .toEqual({
+
+    let objArr = [
+      {
+        time: "Mon 17 May 2021, 12:00 PM",
+        timezone: "Europe/London"
+      },
+      {
         time: "Mon 17 May 2021, 01:00 PM",
         timezone: "Europe/London"
-      })
+      },
+    ]
+
+    expect(calculateUserLocalTime("2021-05-17 01:00 PM")).toMatchOneObject(objArr);
   });
 
   it("returns the date and time in China", () => {
