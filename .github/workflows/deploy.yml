@@ -26,13 +26,15 @@ jobs:
         with:
           ref: master
 
-      - name: Run unit tests
+      - name: Jest cache
         id: gatsby-jest-cache
         uses: actions/cache@v2
-        run: npm run test:update
         with: 
           path: .jest-cache
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}
+      
+      - name: Run unit tests
+        run: npm run test:update
       
       - name: Gatsby Cache
         id: gatsby-deploy-cache
