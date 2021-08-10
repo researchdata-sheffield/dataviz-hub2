@@ -11,7 +11,7 @@ import { MdHelp } from "react-icons/md"
 
 
 /***********************************
- * Flow chart Data and settings
+ * Flowchart Data and settings
  **********************************/
 const nodeTypes = {
   start: TriangleNodeComponent,
@@ -36,7 +36,7 @@ let groupedData = [...chartNodeData, ...chartEdgeData]
 
 
 /**************************
- * Return flow chart
+ * Return flowchart
  * @returns 
  *************************/
 const flowChart = () => {
@@ -55,7 +55,7 @@ const flowChart = () => {
 
 
   /****************************************
-   * Utility functions for the flow chart
+   * Utility functions for the flowchart
    ***************************************/
 
   const onLoad = useCallback(
@@ -277,7 +277,7 @@ const flowChart = () => {
 
   return (
     <div>
-      <button className="px-5 py-3 rounded-md bg-shefPurple text-white my-10" onClick={() => setDisplayChart(!displayChart)}>Click here to open the flow chart</button>
+      <button className="px-5 py-3 rounded-md bg-shefPurple text-white my-10" onClick={() => setDisplayChart(!displayChart)}>Click here to open the flowchart</button>
       <div 
         className={`${displayChart ? 'block' : 'hidden'} w-full hideScrollBar min-h-100 fixed flex flex-wrap top-0 left-0`} 
         style={{zIndex: '100', height: '100vh', overflowY: 'scroll'}}
@@ -354,12 +354,12 @@ const flowChart = () => {
         <div id="sidebar" className="w-full md:w-4/12 2xl:w-3/12 bg-white p-3 overflow-y-auto hideScrollBar" style={{height: '100vh'}}>
           <div className="w-full flex flex-wrap pb-5 space-x-2 space-y-2 border-b-1 border-gray-100">
             <button 
-              title="Centre the flow chart" 
+              title="Centre the flowchart" 
               className="mt-2 ml-2 px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
               onClick={() => reactflowInstance.fitView()}
             >Fit view</button>
             <button 
-              title="Reset the flow chart" 
+              title="Reset the flowchart" 
               className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold" 
               onClick={() => {setElements(groupedData); setClickedNodes([]); reactflowInstance.fitView()}}
             >Restart</button>
@@ -370,11 +370,18 @@ const flowChart = () => {
           </div>
           {/* Path tracking */}
           <div className="mt-5">
-            <h1 className="font-bold text-xl text-black">
+            <h1 className="font-semibold text-xl text-black">
               {
                 clickedNodes.length >= 2 
                 ? 'Your paths:' 
-                : '< Please click on the first two shapes to start. Click on questions to see more options.'
+                : <span className="font-light text-lg">
+                    &#10140; Please click the first two shapes to start. <br/><br/>
+                    &#10140; Click on questions (diamond shape) to see more options. <br/><br/>
+                    &#10140; This flowchart is draggable and zoomable. <br/><br/>
+                    &#10140; The screen will follow the clicked shapes by default. You can use the button on the bottom left to turn this off.<br/><br/>
+                    &#10140; FAQ on the bottom right.
+                  </span>
+                  
               }
             </h1>
             <div className="py-3">

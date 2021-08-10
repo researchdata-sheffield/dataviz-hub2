@@ -1,7 +1,7 @@
 export const textForHelp = [
   {
     question: 'Introduction',
-    answer: 'This flow chart is a simple tool that help you to choose what statistical test to use for two variables. This was prepared for the Statistical Modelling learning path at dataviz.shef.ac.uk.'
+    answer: 'This flowchart is a simple tool that help you to choose what statistical test to use for two variables. This was prepared for the Statistical Modelling learning path at dataviz.shef.ac.uk.'
   },
   {
     question: 'How do I get started?',
@@ -21,6 +21,6 @@ export const textForHelp = [
   },
   {
     question: 'License',
-    answer: 'This flow chart and its content are covered by a Creative Commons license CC BY-SA 4.0.'
+    answer: 'This flowchart and its content are covered by a Creative Commons license CC BY-SA 4.0.'
   }
 ]

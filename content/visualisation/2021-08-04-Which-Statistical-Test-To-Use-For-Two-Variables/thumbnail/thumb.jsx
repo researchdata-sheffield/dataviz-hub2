@@ -13,7 +13,7 @@ const thumbnail = () => {
         id="visualisation"
         style={{background: `url(${flowChartImg})`, maxWidth: '550px', maxHeight: '550px', minHeight: '550px', backgroundSize: 'cover', backgroundPosition: 'center', position: 'relative', padding: '1.25rem'}}
       >
-        <h1 className="mt-0 font-bold" style={{fontSize: '2.2rem', lineHeight: '1.2', color: 'white', textShadow: '0px 1px 10px #2f2f2f'}}>An interactive flow chart helps you choose a <span style={{background: 'linear-gradient(45deg, rgba(0, 171, 255, 0.64) 10%, rgba(56, 255, 0, 0.6) 100%)', padding: '0 .1rem', textShadow: 'none', fontWeight: '800'}}>statistical test</span> for two variables</h1>
+        <h1 className="mt-0 font-bold" style={{fontSize: '2.2rem', lineHeight: '1.2', color: 'white', textShadow: '0px 1px 10px #2f2f2f'}}>An interactive flowchart helps you choose a <span style={{background: 'linear-gradient(45deg, rgba(0, 171, 255, 0.64) 10%, rgba(56, 255, 0, 0.6) 100%)', padding: '0 .1rem', textShadow: 'none', fontWeight: '800'}}>statistical test</span> for two variables</h1>
         <div className="absolute right-0 m-5 text-xs text-right" style={{bottom: '25%', color: '#686868'}}>
           <p>ANOVA</p> 
           <p>T-Test</p>
