@@ -126,7 +126,7 @@ describe("Calculate user's local time", () => {
       },
     ]
 
-    expect(calculateUserLocalTime("2021-05-17 01:00 PM")).toMatchOneObject(objArr);
+    expect(calculateUserLocalTime("2021-05-17 01:00 PM", "Europe/London")).toMatchOneObject(objArr);
   });
 
   it("returns the date and time in China", () => {
