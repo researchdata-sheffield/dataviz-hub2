@@ -27,7 +27,9 @@ jobs:
           ref: master
 
       - name: Run unit tests
-        run: npm run test:ci
+        id: gatsby-jest-cache
+        uses: actions/cache@v2
+        run: npm run test:update
         with: 
           path: .jest-cache
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}
