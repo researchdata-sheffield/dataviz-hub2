@@ -1,4 +1,4 @@
-import { shortenText, getImageSource, randomNumber, calculateUserLocalTime } from "../shared"
+import { shortenText, getImageSource, randomInteger, getNumberWithinRange, calculateUserLocalTime, getShareLinks } from "../shared"
 
 describe("ShortenText", () => {
   const text = "Build a community around interactive data visualisation at TUoS."
@@ -71,29 +71,36 @@ describe("getImageSource", () => {
 });
 
 
-
-var nodeCrypto = require('crypto');
-global.crypto = {
-    getRandomValues: function(buffer) { 
-      return nodeCrypto.randomFillSync(buffer)
-    }
-};
-
-describe("Random number generator - defined window", () => {
-  it("returns a non-zero value", () => {
-    expect(randomNumber()).not.toBe(0)
+describe("Random integer generator", () => {
+  it("returns a value between the range", () => {
+    const max = 5;
+    const generatedNum = randomInteger(max);
+    expect(generatedNum).toBeGreaterThanOrEqual(0);
+    expect(generatedNum).toBeLessThan(max);
   })
-
+  
+  it("returns zero", () => {
+    const max = 0;
+    const generatedNum = randomInteger(max);
+    expect(generatedNum).toEqual(0);
+  })
 })
 
-describe("Random number generator - undefined window", () => {
-  beforeEach(() => {
-    delete global.window;
+describe("get Number Within Range", () => {
+  it('should return upper bound', () => {
+    const result = getNumberWithinRange(20, 5, 10);
+    expect(result).toEqual(10);
   });
 
-  it("returns zero", () => {
-    expect(randomNumber()).toBe(0);
-  })
+  it('should return lower bound', () => {
+    const result = getNumberWithinRange(2, 5, 10);
+    expect(result).toEqual(5);
+  });
+
+  it('should return the number', () => {
+    const result = getNumberWithinRange(7, 5, 10);
+    expect(result).toEqual(7);
+  });
 })
 
 
@@ -153,4 +160,56 @@ describe("Calculate user's local time", () => {
       }
     }
   });
+})
+
+describe("Get share links for a MDX document", () => {
+  const mdxObj = {
+    fields: {
+      slug: "visualisation/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
+      slugOrigin: "/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/"
+    },
+    frontmatter: {
+      type: "visualisation",
+      title: "Millions of UK residents struggle to access food",
+      description: "This is test description"
+    }
+  }
+
+  const mdxObjBlog = {
+    fields: {
+      slug: "blog/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
+      slugOrigin: "/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/"
+    },
+    frontmatter: {
+      title: "Millions of UK residents struggle to access food",
+      description: "This is test description"
+    }
+  }
+
+  const matchObj = {
+    folderLink: "https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/visualisation/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/",
+    masterFolderLink: "https://github.com/researchdata-sheffield/dataviz-hub2/tree/master/content/visualisation/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/",
+    githubLink: "https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/visualisation/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/index.mdx",
+    shareLink: "https://dataviz.shef.ac.uk/visualisation/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
+    shareMessage: "Millions of UK residents struggle to access food - This is test description"
+  }
+
+  const matchObjBlog = {
+    folderLink: "https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/",
+    masterFolderLink: "https://github.com/researchdata-sheffield/dataviz-hub2/tree/master/content/blog/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/",
+    githubLink: "https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/blog/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/index.mdx",
+    shareLink: "https://dataviz.shef.ac.uk/blog/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
+    shareMessage: "Millions of UK residents struggle to access food - This is test description"
+  }
+
+  it('should return the correct object for visualisation type', () => {
+    const result = getShareLinks(mdxObj);
+    expect(result).toEqual(matchObj);
+  });
+
+  it('should return the correct object for blog type', () => {
+    const result = getShareLinks(mdxObjBlog);
+    expect(result).toEqual(matchObjBlog);
+  });
+
 })

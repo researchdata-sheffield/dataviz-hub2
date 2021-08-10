@@ -29,7 +29,6 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
 
   return (
     <Helmet 
-    
       defer={false}
       htmlAttributes={{
         lang,
@@ -75,7 +74,6 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
                         content: keywords.join(',')
                     } : [] )
           }
-    
     />
     
   )

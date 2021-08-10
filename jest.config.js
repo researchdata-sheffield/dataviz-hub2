@@ -27,4 +27,7 @@ module.exports = {
   setupFiles: [
     "<rootDir>/tests/loadershim.js"
   ],
+  setupFilesAfterEnv: [
+    "<rootDir>/tests/setupAfterEnv.js"
+  ]
 }
