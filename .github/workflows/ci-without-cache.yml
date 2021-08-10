@@ -15,9 +15,12 @@ jobs:
     
     steps:
       - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.0
+        uses: styfle/cancel-workflow-action@0.9.1
 
       - uses: actions/checkout@v2
+
+      - name: Install dependencies
+        run: npm ci
 
       - name: Jest cache
         id: gatsby-jest-cache
@@ -28,9 +31,6 @@ jobs:
       
       - name: Run unit tests
         run: npm run test:update
-
-      - name: Install dependencies
-        run: npm ci
       
       # Not using incremental build
       - name: Build without Cache
