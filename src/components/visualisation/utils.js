@@ -1,7 +1,21 @@
 import * as htmlToImage from 'html-to-image';
-import kebabCase from "lodash.kebabcase"
-import { checkURL } from "../../utils/shared"
+import kebabCase from 'lodash.kebabcase';
+import { checkURL } from '../../utils/shared';
 
+/**
+ * Solution for nested function within a mocked function
+ * https://github.com/facebook/jest/issues/936
+ * 
+ * Require() make an object reference to the module, and when 
+ * you mock a function A() this will overwrite the reference object.
+ * 
+ * When you call A() and it has a nested function B() in the same module, 
+ * the actual function will be called rather the one in the reference,
+ * Even if B() is also mocked.
+ * 
+ * To solve this issue, use current file
+ */
+import * as thisFile from "./utils"
 
 /**
  * Handle image download for current visualisation
@@ -14,9 +28,9 @@ import { checkURL } from "../../utils/shared"
  */
 export const handleImageDownload = (targetVis, mdx, pngImagePath = "", svgImagePath = "", type = "png") => {
   if (type == "png") {
-    return exports.downloadAsPng(targetVis, mdx, pngImagePath);
+    return thisFile.downloadAsPng(targetVis, mdx, pngImagePath);
   }
-  return exports.downloadAsSvg(targetVis, mdx, svgImagePath);
+  return thisFile.downloadAsSvg(targetVis, mdx, svgImagePath);
 }
 
 /**
@@ -84,21 +98,3 @@ export const createLinkForImage = (fileName, imageURL) => {
   link.href = imageURL;
   link.click();
 }
-
-
-/**
- * Solution for nested function within a mocked function
- * https://github.com/facebook/jest/issues/936
- * 
- * Require() make an object reference to the module, and when 
- * you mock a function A() this will overwrite the reference object.
- * 
- * When you call A() and it has a nested function B() in the same module, 
- * the actual function will be called rather the one in the reference,
- * Even if B() is also mocked.
- * 
- * To solve this issue, link exports to the actual function
- */
-exports.handleImageDownload = handleImageDownload;
-exports.downloadAsPng = downloadAsPng;
-exports.downloadAsSvg = downloadAsSvg;

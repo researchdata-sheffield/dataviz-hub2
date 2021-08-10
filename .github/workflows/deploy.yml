@@ -25,6 +25,12 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: master
+
+      - name: Run unit tests
+        run: npm run test:ci
+        with: 
+          path: .jest-cache
+          key: ${{ runner.os }}-jestCache-${{ github.run_id }}
       
       - name: Gatsby Cache
         id: gatsby-deploy-cache
