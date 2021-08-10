@@ -2,23 +2,31 @@ name: Test
 
 on:
   push:
-    branches-ignore: [ master ]
+    branches-ignore: [master]
   pull_request:
-    branches: [ '**' ] 
-    types: [ assigned, opened, synchronize, reopened, unlocked, review_requested, edited ]
+    branches: ["**"]
+    types:
+      [
+        assigned,
+        opened,
+        synchronize,
+        reopened,
+        unlocked,
+        review_requested,
+        edited
+      ]
   workflow_dispatch:
     inputs:
-      Name:   
+      Name:
         required: true
-        default: 'Re-run the workflow'
+        default: "Re-run the workflow"
       Description:
-        default: ''  
-
+        default: ""
 
 jobs:
   build:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
@@ -31,10 +39,10 @@ jobs:
       - name: Jest cache
         id: gatsby-jest-cache
         uses: actions/cache@v2
-        with: 
+        with:
           path: .jest-cache
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}
-      
+          restore-keys: ${{ runner.os }}-jestCache-
+
       - name: Run unit tests
         run: npm run test
-
