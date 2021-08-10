@@ -36,5 +36,5 @@ jobs:
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}
       
       - name: Run unit tests
-        run: npm run test:update
+        run: npm run test
 
