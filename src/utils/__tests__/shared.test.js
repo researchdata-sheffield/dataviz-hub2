@@ -162,7 +162,9 @@ describe("Calculate user's local time", () => {
       } else {
         return {
           message: () =>
-            `the object is NOT in the object array`,
+            `the object ${JSON.stringify(received)} is NOT in the object array:
+             ${JSON.stringify(objectsArray)}
+            `,
           pass: false,
         };
       }
