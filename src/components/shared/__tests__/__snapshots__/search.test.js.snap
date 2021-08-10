@@ -1,0 +1,366 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Search component renders correctly 1`] = `
+<div
+  className="undefined relative text-gray-700 w-full text-center"
+>
+  <div
+    className="pt-40 pb-10 bg-white"
+    style={
+      Object {
+        "backgroundImage": "url(test-file-stub)",
+        "backgroundPosition": "center",
+        "backgroundRepeat": "no-repeat",
+        "backgroundSize": "contain",
+        "minHeight": "600px",
+        "width": "100%",
+      }
+    }
+  >
+    <p
+      className="react-reveal text-lg text-gray-800 mb-5 font-extrabold"
+      style={
+        Object {
+          "opacity": undefined,
+        }
+      }
+    >
+      What are you looking for?
+    </p>
+    <div
+      className="react-reveal inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg"
+      style={
+        Object {
+          "opacity": undefined,
+        }
+      }
+    >
+      <svg
+        className="inline-block text-center text-3xl -mt-1"
+        fill="none"
+        height="1em"
+        stroke="currentColor"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth="2"
+        style={
+          Object {
+            "color": undefined,
+          }
+        }
+        viewBox="0 0 24 24"
+        width="1em"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle
+          cx="11"
+          cy="11"
+          r="8"
+        />
+        <line
+          x1="21"
+          x2="16.65"
+          y1="21"
+          y2="16.65"
+        />
+      </svg>
+      <input
+        autoComplete="off"
+        className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600"
+        id="pageSearch"
+        name="search"
+        onChange={[Function]}
+        onInput={[Function]}
+        placeholder="Search title, description, date..."
+        style={
+          Object {
+            "minWidth": "25vw",
+          }
+        }
+        type="text"
+      />
+    </div>
+  </div>
+  <div
+    className="search__list bg-gray-100"
+  >
+    <div
+      className="bg-gray-50 text-gray-700 py-2"
+    >
+      Type something in the search box ...
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Search component return search result without error 1`] = `
+<div>
+  <div
+    class="undefined relative text-gray-700 w-full text-center"
+  >
+    <div
+      class="pt-40 pb-10 bg-white"
+      style="background-image: url(test-file-stub); background-size: contain; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 600px;"
+    >
+      <p
+        class="react-reveal text-lg text-gray-800 mb-5 font-extrabold"
+      >
+        What are you looking for?
+      </p>
+      <div
+        class="react-reveal inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg"
+      >
+        <svg
+          class="inline-block text-center text-3xl -mt-1"
+          fill="none"
+          height="1em"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1em"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <circle
+            cx="11"
+            cy="11"
+            r="8"
+          />
+          <line
+            x1="21"
+            x2="16.65"
+            y1="21"
+            y2="16.65"
+          />
+        </svg>
+        <input
+          autocomplete="off"
+          class="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600"
+          id="pageSearch"
+          name="search"
+          placeholder="Search title, description, date..."
+          style="min-width: 25vw;"
+          type="text"
+        />
+      </div>
+    </div>
+    <div
+      class="search__list bg-gray-100"
+    >
+      <div>
+        <div
+          class="bg-white text-gray-900 py-2"
+        >
+          Found 
+          2
+           results for you.
+        </div>
+        <div
+          class="flex flex-wrap py-10 xl:pt-16 xl:pb-64 justify-center bg-gray-100"
+        >
+          <a
+            href="/docs/07/04/2021/LearningPath-Statistical-Modeling-4"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div
+              class="shadow-lg hover:shadow-xl rounded-lg group text-left relative md:mx-6 my-6 transform hover:scale-105 transition duration-500"
+              style="width: 363px; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 420px;"
+            >
+              <div
+                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-35 group-hover:bg-black-75"
+                style="min-height: 420px;"
+              >
+                <div
+                  class="absolute pt-8 lg:pt-12 2xl:pt-16 overflow-hidden"
+                  style="max-width: 320px;"
+                >
+                  <h1
+                    class="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md"
+                    style="text-shadow: none; padding: .15rem .65rem;"
+                  >
+                    docs
+                  </h1>
+                  <h1
+                    class="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100"
+                  >
+                    <span>
+                      <span
+                        class=""
+                      >
+                        Statistical Testing
+                      </span>
+                    </span>
+                  </h1>
+                  <h1
+                    class="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500"
+                    style="text-shadow: #000 0px 0px 30px;"
+                  >
+                    <span
+                      class="text-white"
+                    >
+                      <span
+                        class=""
+                      >
+                        Dataviz Team, 
+                      </span>
+                    </span>
+                    <span
+                      class="text-white"
+                    >
+                      <span
+                        class=""
+                      >
+                        Jean Russell
+                      </span>
+                    </span>
+                  </h1>
+                  <p
+                    class="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"
+                  >
+                    <span>
+                      <span
+                        class=""
+                      >
+                        /DOCS/07/04/2021/LEARNINGPATH-STATISTICAL-MODELING-4
+                      </span>
+                    </span>
+                  </p>
+                  <h1
+                    class="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"
+                  >
+                    <span>
+                      <span
+                        class=""
+                      >
+                        Statistical Modeling Part 4 - What is Statistical testing? Why do we need to test? How do we perform tests?
+                      </span>
+                    </span>
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </a>
+          <a
+            href="/visualisation/04/08/2021/Which-Statistical-Test-To-Use-For-Two-Variables"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <div
+              class="shadow-lg hover:shadow-xl rounded-lg group text-left relative md:mx-6 my-6 transform hover:scale-105 transition duration-500"
+              style="width: 363px; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 420px;"
+            >
+              <div
+                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-35 group-hover:bg-black-75"
+                style="min-height: 420px;"
+              >
+                <div
+                  class="absolute pt-8 lg:pt-12 2xl:pt-16 overflow-hidden"
+                  style="max-width: 320px;"
+                >
+                  <h1
+                    class="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md"
+                    style="text-shadow: none; padding: .15rem .65rem;"
+                  >
+                    visualisation
+                  </h1>
+                  <h1
+                    class="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100"
+                  >
+                    <span>
+                      <span
+                        class=""
+                      >
+                        Which statistical test to use for two variables? ...
+                      </span>
+                    </span>
+                  </h1>
+                  <h1
+                    class="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500"
+                    style="text-shadow: #000 0px 0px 30px;"
+                  >
+                    <span
+                      class="text-white"
+                    >
+                      <span
+                        class=""
+                      >
+                        Yu Liang Weng
+                      </span>
+                    </span>
+                  </h1>
+                  <h1
+                    class="group-hover:hidden text-gray-200 font-bold transition duration-500"
+                  >
+                    CAT:  
+                    <span>
+                      <span
+                        class="text-white"
+                      >
+                        <span
+                          class=""
+                        >
+                          RESEARCH & INNOVATION IT
+                        </span>
+                      </span>
+                      <span>
+                         
+                      </span>
+                    </span>
+                  </h1>
+                  <h1
+                    class="group-hover:hidden text-gray-200 font-bold transition duration-500"
+                  >
+                    TAG:  
+                    <span
+                      class="text-white"
+                    >
+                      <span
+                        class=""
+                      >
+                        STATISTICS, 
+                      </span>
+                    </span>
+                    <span
+                      class="text-white"
+                    >
+                      <span
+                        class=""
+                      >
+                        INTERATIVE
+                      </span>
+                    </span>
+                  </h1>
+                  <p
+                    class="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"
+                  >
+                    <span>
+                      <span
+                        class=""
+                      >
+                        /VISUALISATION/04/08/2021/WHICH-STATISTICAL-TEST-TO-USE-FOR-TWO-VARIABLES
+                      </span>
+                    </span>
+                  </p>
+                  <h1
+                    class="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"
+                  >
+                    <span>
+                      <span
+                        class=""
+                      >
+                        An interative tool based on the flow chart made by Jean Russell to help you determine which statistical test to use for two variables. This tool is a part of ...
+                      </span>
+                    </span>
+                  </h1>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

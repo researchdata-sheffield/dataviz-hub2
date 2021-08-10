@@ -80,3 +80,6 @@ yarn-error.log
 # R project
 *.Rproj
 *.Rproj.*
+
+# Jest
+.jest-cache

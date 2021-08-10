@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useState, useCallback } from 'react'
+import React, { useState, useCallback, useEffect } from 'react'
 import ReactFlow, { Controls, useZoomPanHelper } from 'react-flow-renderer';
 import { TriangleNodeComponent, DecisionNodeComponent, GreenNodeComponent, InfoNodeComponent, RedNodeComponent } from "./nodeComponents"
 import { getEdge, getNode, getNodesAndEdges } from "./utils"
@@ -259,6 +259,18 @@ const flowChart = () => {
 
     setElements(newElements)
   })
+
+
+  useEffect(() => {
+    if (clickedNodes.length < 7) { return; }
+    
+    setTimeout(() => {
+      let sidebar = document.getElementById('sidebar');
+      sidebar.scrollTop = sidebar.scrollHeight;
+    }, 100)
+
+  }, [elements])
+
   /****************************************
    * End of Utility functions
    ***************************************/
@@ -339,7 +351,7 @@ const flowChart = () => {
         </div>
 
         {/* sidebar */}
-        <div className="w-full md:w-4/12 2xl:w-3/12 bg-white p-3" style={{height: '100vh'}}>
+        <div id="sidebar" className="w-full md:w-4/12 2xl:w-3/12 bg-white p-3 overflow-y-auto hideScrollBar" style={{height: '100vh'}}>
           <div className="w-full flex flex-wrap pb-5 space-x-2 space-y-2 border-b-1 border-gray-100">
             <button 
               title="Centre the flow chart" 
@@ -365,7 +377,7 @@ const flowChart = () => {
                 : '< Please click on the first two shapes to start. Click on questions to see more options.'
               }
             </h1>
-            <div className="py-3 hideScrollBar" style={{height: '85vh', overflowY: 'scroll'}}>
+            <div className="py-3">
               {clickedNodes.length >= 2 && clickedNodes.map((node, index) => {
                 if (index == 0) { return false; }
                 if (index >= 2 && !getEdge(elements, clickedNodes[index - 1], clickedNodes[index - 2])) {
@@ -392,7 +404,7 @@ const flowChart = () => {
                     <div className="w-3/12 p-2 text-base text-center bg-blue-100 text-blue-700 border-1 border-blue-200 rounded-md">{edge.label}</div>
                     {
                       pathNotification &&
-                      <div className="mt-2 rounded-md w-full border-1 border-yellow-200 bg-yellow-100 text-yellow-700 p-2">
+                      <div className="mt-2 text-base rounded-md w-full border-1 border-yellow-200 bg-yellow-100 text-yellow-700 p-2">
                         {pathNotification}
                       </div>
                     }

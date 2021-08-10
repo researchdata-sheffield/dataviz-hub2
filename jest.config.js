@@ -1,4 +1,5 @@
 module.exports = {
+  cacheDirectory: ".jest-cache",
   // transform js/jsx files using jest-preprocess.js file
   transform: {
     "^.+\\.jsx?$": `<rootDir>/tests/jest-preprocess.js`,
@@ -27,4 +28,7 @@ module.exports = {
   setupFiles: [
     "<rootDir>/tests/loadershim.js"
   ],
+  setupFilesAfterEnv: [
+    "<rootDir>/tests/setupAfterEnv.js"
+  ]
 }

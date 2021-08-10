@@ -32,8 +32,8 @@ const visDetail = ({ mdx, className, style, displayDescription, displayAuthor, d
             <div className="flex flex-wrap justify-center space-x-1 w-full">
               {authors.map((author) => (
                 <>
-                <GatsbyImage data-tip={author.name} className="rounded-full shadow-xl mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} image={author.avatar.childImageSharp.gatsbyImageData} alt={author.name}  />
-                <ReactTooltip className="text-gray-200 bg-gray-800" place="top" type="dark" effect="float" />
+                  <GatsbyImage data-tip={author.name} className="rounded-full shadow-xl mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px" key={author.name} image={author.avatar.childImageSharp.gatsbyImageData} alt={author.name}  />
+                  <ReactTooltip className="text-gray-200 bg-gray-800" place="top" type="dark" effect="float" />
                 </>
               ))} 
             </div>

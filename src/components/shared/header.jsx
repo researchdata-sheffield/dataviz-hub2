@@ -5,7 +5,7 @@ import university_logo from "../../images/TUOSlogo.png"
 import { FiSearch } from "react-icons/fi"
 import { FaGoogle, FaSlack, FaTimes, FaBars, FaRss } from "react-icons/fa"
 import { A } from "../style/blogPostStyle"
-import { useLocation,  } from "@gatsbyjs/reach-router"
+import { useLocation } from "@gatsbyjs/reach-router"
 
 
 const Header = () => {
@@ -32,7 +32,7 @@ const Header = () => {
     }
     document.addEventListener('scroll', handleScroll, {passive: true});
     return () => {
-      document.removeEventListener('scroll', handleScroll);
+      document?.removeEventListener('scroll', handleScroll);
     };
   }, [isScroll]);
 
@@ -43,9 +43,9 @@ const Header = () => {
     document.querySelector("#rssDesktop").addEventListener("click", copyRssLink);
 
     return () => {
-      document.querySelector("#copyBtn").removeEventListener("click", copyRssLink);
-      document.querySelector("#rssMobile").removeEventListener("click", copyRssLink);
-      document.querySelector("#rssDesktop").removeEventListener("click", copyRssLink);
+      document?.querySelector("#copyBtn")?.removeEventListener("click", copyRssLink);
+      document?.querySelector("#rssMobile")?.removeEventListener("click", copyRssLink);
+      document?.querySelector("#rssDesktop")?.removeEventListener("click", copyRssLink);
     }
   });
 
@@ -69,7 +69,7 @@ const Header = () => {
         || (maxScroll <= 0 && prevScrollPos > currentScrollPos)
         || (prevScrollPos <= 0 && currentScrollPos <= 0)
         ) {
-        document.getElementById("navbar").style.top = "0";
+        document.getElementById("navbar").style.top = "0px";
       } else {
         document.getElementById("navbar").style.top = "-300px";
         document.getElementById("navbar").style.paddingTop = "1px";
@@ -163,6 +163,7 @@ const Header = () => {
     <header className="font-semibold z-50 relative group">
       <nav 
         id="navbar" 
+        role="navigation"
         className={`${isScroll ? 'shadow-lg bg-white' : 'group-hover:bg-white'} transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`} 
         style={{transition: "top 0.3s"}}
       > 
@@ -232,7 +233,7 @@ const Header = () => {
               <NavLink type="a-icon" mobile="true" className="block mt-3" href="https://join.slack.com/t/shef-dataviz/signup" title="Join Slack channel">
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline"><FaSlack /></div>
               </NavLink>
-              <NavLink id="rssMobile" type="Link-icon" mobile="true" className="block mt-3" target="_self" title="RSS Feed" to="#" onClick={()=>{return false}}>
+              <NavLink id="rssMobile" type="Link-icon" mobile="true" className="block mt-3" target="_self" title="RSS Feed" onClick={()=>{return false}}>
                 <div className="relative px-4 text-2xl transition duration-500 ease-in-out no-underline">
                   <FaRss />
                   <span className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md text-xs -mt-4 -mr-2" style={{padding: '2px 5px'}}>new</span>

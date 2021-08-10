@@ -79,23 +79,21 @@ export function getImageSource(node, source = false) {
   return imagesrc
 }
 
-/**
- * Generate cryptographically strong random value between 0 and 1
- */
-export function randomNumber() {
-  if (typeof window !== "undefined") {
-    return window.crypto.getRandomValues(new Uint16Array(1))[0] / 2**16;
-  }
-  return 0;
-}
 
 export function randomInteger(max) {
-  const MAX = max || 100;
+  const MAX = max ?? 100;
   
   return Math.floor(Math.random() * MAX)
 }
 
-
+/**
+ * For a given number, if it is smaller than the minimum, return minimum
+ * If it is greater than the maximum, return maximum
+ * @param {number} num 
+ * @param {number} min 
+ * @param {number} max 
+ * @returns 
+ */
 export function getNumberWithinRange(num, min, max) {
   const MIN = min || 1;
   const MAX = max || 5;
