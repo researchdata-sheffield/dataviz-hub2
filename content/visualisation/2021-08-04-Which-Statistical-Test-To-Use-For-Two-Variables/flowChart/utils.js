@@ -5,7 +5,7 @@
  * OR
  * -> If children are visible, recursively find visible children (of children) by setting "deepLevel" to true.
  *  If "deepLevel" is true, it will skip hidden children.
- * @param {array} data current flow chart data
+ * @param {array} data current flowchart data
  * @param {object} element element that user clicked 
  * @param {boolean} deepLevel whether to get data more than one level deep
  * @returns {array} array of element ids.

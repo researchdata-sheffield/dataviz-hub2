@@ -350,7 +350,7 @@ exports[`Search component return search result without error 1`] = `
                       <span
                         class=""
                       >
-                        An interative tool based on the flow chart made by Jean Russell to help you determine which statistical test to use for two variables. This tool is a part of ...
+                        An interative tool based on the flowchart made by Jean Russell to help you determine which statistical test to use for two variables. This tool is a part of ...
                       </span>
                     </span>
                   </h1>
