@@ -71,7 +71,7 @@
     "gatsby-transformer-json": "^3.9.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "gitalk": "^1.7.2",
-    "html-to-image": "^1.6.2",
+    "html-to-image": "^1.7.0",
     "intersection-observer": "^0.12.0",
     "lodash.kebabcase": "^4.1.1",
     "marked": "^2.1.3",
