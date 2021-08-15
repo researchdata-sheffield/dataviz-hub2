@@ -68,7 +68,7 @@
     "gatsby-remark-table-of-contents": "1.0.0",
     "gatsby-source-eventbrite-multi-accounts": "^1.0.11",
     "gatsby-source-filesystem": "^3.9.0",
-    "gatsby-transformer-json": "^3.9.0",
+    "gatsby-transformer-json": "^3.11.0",
     "gatsby-transformer-sharp": "^3.9.0",
     "gitalk": "^1.7.2",
     "html-to-image": "^1.6.2",
