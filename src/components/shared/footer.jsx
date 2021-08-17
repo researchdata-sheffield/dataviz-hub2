@@ -6,7 +6,7 @@ import { FaGoogle, FaSlack, FaRss } from "react-icons/fa"
 import { MdEmail } from "react-icons/md"
 import { A_footer } from "../style/styleComponent"
 
-const Footer = React.memo(({className}) => {
+const Footer = React.memo(({ className }) => {
   const currentYear = new Date();
   const linkClasses = "text-gray-400 hover:text-brand-blue"
 
@@ -14,35 +14,33 @@ const Footer = React.memo(({className}) => {
     <footer className={`${className || 'relative'} bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-50`}>
       <div className="sm:flex mb-4">
         <div className="sm:w-2/12 h-auto">
-            <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
-            <ul className="list-reset leading-normal">
-              <li><Link className={linkClasses} to="/community">Community</Link></li>
-              <li><Link className={linkClasses} to="/#learning-path">Learning Path</Link></li>
-              <li><Link className={linkClasses} to="/blog">Blog</Link></li>
-              <li><Link className={linkClasses} to="/events">Events</Link></li>
-              <li><A_footer href="https://orda.shef.ac.uk/visualisations/">Showcase</A_footer></li>
-              <li><Link className={linkClasses} to="/privacy">Privacy Policy</Link></li>
-              <li><Link className={linkClasses} to="/accessibility">Accessibility</Link></li>
-              <li><Link className={linkClasses} to="/sitemap/sitemap-index.xml">Sitemap</Link></li>
-              <li><Link className={linkClasses} to="/about">About</Link></li>
-              <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
-            </ul>
+          <div className="mb-2"><Link className="text-white font-bold text-md" to="/">Dataviz.Shef</Link></div>
+          <ul className="list-reset leading-normal">
+            <li><Link className={linkClasses} to="/community">Community</Link></li>
+            <li><Link className={linkClasses} to="/#learning-path">Learning Path</Link></li>
+            <li><Link className={linkClasses} to="/blog">Blog</Link></li>
+            <li><Link className={linkClasses} to="/events">Events</Link></li>
+            <li><A_footer href="https://orda.shef.ac.uk/visualisations/">Showcase</A_footer></li>
+            <li><Link className={linkClasses} to="/privacy">Privacy Policy</Link></li>
+            <li><Link className={linkClasses} to="/accessibility">Accessibility</Link></li>
+            <li><Link className={linkClasses} to="/sitemap/sitemap-index.xml">Sitemap</Link></li>
+            <li><Link className={linkClasses} to="/about">About</Link></li>
+            <li><A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer></li>
+          </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">
-            <div className="text-md mb-2 font-bold text-white">Online Research Data</div>
-              <ul className="list-reset leading-normal">
-                <li><A_footer href="https://orda.shef.ac.uk/articles/list/desc/published_date/all">Datasets</A_footer></li>
-                <li><A_footer href="https://orda.shef.ac.uk/#orda-fac">Faculties</A_footer></li>
-                <li><A_footer href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643">Visualised datasets</A_footer></li>
-              </ul>
-
+          <div className="text-md mb-2 font-bold text-white">Online Research Data</div>
+          <ul className="list-reset leading-normal">
+            <li><A_footer href="https://orda.shef.ac.uk/articles/list/desc/published_date/all">Datasets</A_footer></li>
+            <li><A_footer href="https://orda.shef.ac.uk/#orda-fac">Faculties</A_footer></li>
+            <li><A_footer href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643">Visualised datasets</A_footer></li>
+          </ul>
           <div className="mb-2 mt-4 text-md font-bold text-white">The University of Sheffield</div>
-            <ul className="list-reset leading-normal">
-            <li><A_footer href="https://sheffield.ac.uk/library/rdm">Research Data Management support</A_footer></li>
-                <li><A_footer href="https://www.sheffield.ac.uk/it-services">IT Services</A_footer></li>
-                <li><A_footer href="https://rse.shef.ac.uk/">Research Software Engineering</A_footer></li>
-            </ul>
-
+          <ul className="list-reset leading-normal">
+          <li><A_footer href="https://sheffield.ac.uk/library/rdm">Research Data Management support</A_footer></li>
+              <li><A_footer href="https://www.sheffield.ac.uk/it-services">IT Services</A_footer></li>
+              <li><A_footer href="https://rse.shef.ac.uk/">Research Software Engineering</A_footer></li>
+          </ul>
         </div>
         <div className="sm:w-2/12 h-auto sm:mt-0 mt-8">
           <div className="text-white text-md mb-2 font-bold">Collaboration</div>

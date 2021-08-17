@@ -112,16 +112,15 @@ class Search extends Component {
                             <h1 className="group-hover:hidden text-gray-200 font-bold transition duration-500">
                               CAT: &nbsp;
                               {item.category.map((cat) => (
-                                <>
+                                <span key={cat}>
                                   <Highlighter 
-                                    key={cat}
                                     className="text-white" 
                                     highlightClassName={highlightClasses} 
                                     textToHighlight={cat.toUpperCase()} 
                                     searchWords={this.state.query.split()} 
                                   />
                                   <span>&nbsp;</span>
-                                </>
+                                </span>
                               ))}
                             </h1>
                           }
@@ -226,6 +225,7 @@ class Search extends Component {
 
     var index = window.__FLEXSEARCH__.en.index
     var store = window.__FLEXSEARCH__.en.store
+
     if (!query || !index) {
       return []
     } else {

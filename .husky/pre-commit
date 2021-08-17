@@ -1,0 +1,15 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npx lint-staged && npm run test
+
+
+
+
+# Restrict to specific branch
+# branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
+
+# if [ "$branch" == "development" ]
+# then
+#   npx lint-staged && npm run test
+# fi
