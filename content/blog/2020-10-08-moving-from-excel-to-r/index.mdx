@@ -19,10 +19,10 @@ more structured and detailed introduction to R, see following resources:
 	<LPItem video href="https://www.linkedin.com/learning/learning-r-2/r-for-data-science?u=36248012">Learning R</LPItem>
 </LPWrap>  
 
-If you have any suggestions please leave a comment below.
+If you have any suggestions, please leave a comment below.
 
 # Installation
-R is a popular programming language and software environment that is originally designed for statistical purposes. Unlike Microsoft Excel you 
+R is a popular programming language and software environment that was originally designed for statistical purposes. Unlike Microsoft Excel you 
 might have to pay a few hundred pounds for a one-time purchase or enter a yearly subscription of Microsoft 365 unless you have an academic email address, 
 R is completely free and backed by a strong community. To install R, download and install the relevant version for your Operating System from either 
 of two links below:  
@@ -45,7 +45,7 @@ such as install, update, and delete. I would recommend you to use the **Help** t
 very useful manual and you can even browser packages reference without leaving RStudio. Finally, if you decided to explore more about generating web 
 contents using RStudio, then you can preview the result in the **Viewer** tab.  
 
-To get started, click the `File` button on the top left then click `New Project`. In the pop-up window choose `New Directory` then select `New Project` to 
+To get started, click the `File` button on the top left, then click `New Project`. In the pop-up window, choose `New Directory` then select `New Project` to 
 create a new project, on the last step enter a directory name, in this case I have used `ExcelToR`. Note that if you have used *git* you can also set the 
 directory to be a *Git repository* for tracking changes in your project/source code. 
 
@@ -55,7 +55,7 @@ Next, create a new R script either by clicking on the `File`, `New File` and `R 
  
 ![Create a new file in RStudio](./rstudio3.png)
  
-There is one more thing I want you to do before create visualisations - install packages **ggplot2** (a popular data visualisation tool),  **dplyr** (for 
+There is one more thing I want you to do before creating visualisations - install packages **ggplot2** (a popular data visualisation tool),  **dplyr** (for 
 data manipulation), and **readr** (fast file reading capability). There are two ways to do this:  
 
 1. Go to the **Packages** tab on the right hand side then click on **install**. In the pop-up window as shown below, enter *ggplot2* and click install, make 
@@ -154,8 +154,8 @@ functionName <- function(parameter1, parameter2=TRUE, ...) {
 	Function Body
 }
 ```
-Parameters or arguments are optional and could have an default value (like parameter2), if 
-the function body uses any parameters then you should input them when calling the function. 
+Parameters or arguments are optional and could have a default value (like parameter2), if 
+the function body uses any parameters, then you should input them when calling the function. 
 The return value of the function will be the last expression in the function body. Here is a 
 function that returns the square of a number plus seven:
 ```r
@@ -194,7 +194,7 @@ max(mtcars$mpg)
 sum(mtcars$carb)
 ```
 
-As you can see we have a dollar sign `$` in between the name of the dataset and the name of the particular column. This dollar sign allows us to extract 
+As you can see, we have a dollar sign `$` in between the name of the dataset and the name of the particular column. This dollar sign allows us to extract 
 elements from a particular column. Alternatively, if you know the index (in R, Indexes are starting from 1) of the column name you can also 
 do something like `sd(mtcars[1])`.
 
@@ -405,7 +405,7 @@ ggplot(mtcars, aes(x=mpg, y=hp)) + geom_point()
 <img src="./ggplotBlank.png" alt="ggplot blank sheet" />
 <em>'Blank sheet' created by <i>ggplot()</i> function</em>
 
-When you using *ggplot2* all plots must begin with a call to the function `ggplot()`, within the 
+When you are using *ggplot2* all plots must begin with a call to the function `ggplot()`, within the 
 function we specify the dataset and aesthetics for the plot. The `ggplot()` only creates 
 a "blank sheet" but *ggplot2* provides *geom_* functions which allows us to add additional 
 layers on top of this sheet. There are different *geom_* functions for different types of 
@@ -429,8 +429,8 @@ ggplot(mtcars, aes(mpg, hp, label=rownames(mtcars))) + geom_point(aes(color=fact
 ![Scatter plot - colour by cylinders](./sp_label.png)
 *Colouring points according to the cyl value, with labels* 
 
-Make sure the function `geom_text()` is added to the plot otherwise labels won't work. As you can see labels 
-are not well spreaded so I have installed a new package **ggrepel**:
+Make sure the function `geom_text()` is added to the plot otherwise, labels won't work. As you can see labels 
+are not well spread so I have installed a new package **ggrepel**:
 
 ```r {5}
 library(ggrepel)
@@ -518,7 +518,7 @@ ggplot(mtcars, aes(mpg, hp, label=rownames(mtcars))) +
   theme(legend.position = "bottom", text=element_text(size=17), legend.title=element_text(size = 18), plot.subtitle=element_text(size=13)) +
   scale_x_continuous(position = "top") + scale_y_reverse()
 
-# I have also twerk axes 
+# I have also tweaked the axes 
 ```
 
 ![Final scatter plot](./sp_final.png)  
@@ -532,9 +532,9 @@ Alternatively, use the `ggsave()`` function like this:
 ggsave("myImage.png", dpi=300, width = 24, height = 16, units = "cm")
 ```
 
-By default the function will save the last plot created using *ggplot2*.  
+By default, the function will save the last plot created using *ggplot2*.  
 
-Hopefully this is a useful section and as mentioned before there are functions 
+Hopefully, this is a useful section and, as mentioned before, there are functions 
 for other types of graphs, for more information visit *[ggplot2](https://ggplot2.tidyverse.org/reference/index.html)*.
 
 # Most used functions in Excel
@@ -564,7 +564,7 @@ about how to display a formatted data frame, packages like [pillar](https://pill
 
 ## VLOOKUP
 The *VLOOKUP* function is versatile and has multiple usage. A common approach is that given a value *x*, 
-return values in the *nth* column which has value *x* in the same row. The following code returns 
+return values in the *nth* column, which has value *x* in the same row. The following code returns 
 the land area of China.
 ```r
 pop_2020[pop_2020$Region=="China",]$Land_Area
@@ -630,7 +630,7 @@ pop_2020 %>% drop_na(Net_Migrants) %>% count(Net_Migrants > 500000)
 ```
 
 ## INDEX 
-Retrieve data elements based on index is quite straightforward and very 
+Retrieve data elements based on an index is quite straightforward and very 
 similar to Excel:
 ```r
 # row 1
