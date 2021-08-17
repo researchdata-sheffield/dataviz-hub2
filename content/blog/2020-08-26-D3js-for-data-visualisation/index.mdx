@@ -63,7 +63,7 @@ and then binds data to those elements. An example of SVG:
    <rect x="0" y="0" width="300" height="200" fill="yellow"></rect>
 </svg>  
   
-If you have ever experience in creating web pages or similar then you should be 
+If you have ever had experience in creating web pages or similar then you should be 
 familiar with HTML and CSS. HTML is the standard markup language for creating 
 web pages as well as defining the structure of web pages, whereas HTML5 is the 
 latest standard of HTML. CSS is the style language used for styling HTML documents 
@@ -157,7 +157,7 @@ visit [D3-Selection](https://github.com/d3/d3-selection).
 Previously we have mentioned that we can draw shapes using basic shapes within 
 SVG elements and indeed these basic shapes will have some required attributes to 
 specify, for a rectangle you will need *height* and *width* and (*x*, *y*) coordinates. If 
-you have multiple rectangles to create then it would be a good idea to use some 
+you have multiple rectangles to create, then it would be a good idea to use some 
 function and map attribute data to the shape, otherwise you will end up with 
 multiple replicate lines. Rather than using a for loop, D3 have provided a useful 
 method:  
@@ -174,11 +174,11 @@ svg.selectAll("rect")
     .attr("y", function(d,i) { return 400-(d*10); })
 ```
 
-To bind the data you need to use `data()` methods with your data. But what is 
+To bind the data, you need to use `data()` methods with your data. But what is 
 the `enter()` method and why do we append rectangles after we have already selected 
 rectangle elements? Consider the scenario that there are no rectangles for we 
 to select, so `svg.selectAll("rect")` will just return an empty selection, this 
-means data has not bind to any elements, and what `enter()` methods does is select 
+means data has not bound to any elements, and what `enter()` methods does is select 
 these unbound data, then `.append("rect")` will append a rectangle element to each 
 of these data elements. The same procedure applies to the case when the number 
 of rectangles is less than the number of data objects. In the case of more 
@@ -200,7 +200,7 @@ svg.selectAll("rect")
     .attr("height", function(d,i) { return d; })
 ```
 
-In the height attribute of each rectangle, instead of a value we assign a function 
+In the height attribute of each rectangle, instead of a value, we assign a function 
 to it which returns `d`. The `d` and `i` here refers to the corresponding **data point**
 and **index** of the current rectangle. This means we can pass data dynamically to 
 each element and assign attributes at your will. You can call `d` and `i` whatever 
@@ -286,10 +286,10 @@ populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0
 ```
 
 The next step is to create a projection that transforms **latitude** and **longitude** 
-coordinates intoto **x** and **y** coordinates which can be used to display on our 
+coordinates into **x** and **y** coordinates which can be used to display on our 
 screen. Then we create a geographic path generator using the projection. 
 Notice that we have appended the `g` tag to the `svg` element, so that we can 
-append all paths to `g` later. This ensure all paths are grouped for better 
+append all paths to `g` later. This ensures all paths are grouped for better 
 code management and visibility.  
 
 ```js:title=Create_Projection
@@ -303,8 +303,8 @@ var tooltip = d3.select("div.tooltip");
 ```  
 
 To load datasets we are using D3 functions `d3.json` and `d3.csv`, and the use of 
-*Promise* is to ensure we do not perform any actions until data are loaded sucessfully. 
-The *createMap* function is the function we have created for create the actual map.
+*Promise* is to ensure we do not perform any actions until data are loaded successfully. 
+The *createMap* function is the function we have created to produce the actual map.
 
 ```js:title=Promise {6}
 Promise.all([
@@ -331,7 +331,7 @@ Read more about **TopoJSON** on:
   </LPItem>
 </LPWrap>
 
-However, the *countryCoor* dataset contain only country ids rather than the country 
+However, the *countryCoor* dataset contains only country ids rather than the country 
 names. Therefore, we join the dataset with the *countryNames* dataset and return 
 the country name if there is a match on id. Similarly, we join with 
 the *populationData* dataset to get the population and yearly change rate for each 
@@ -359,8 +359,7 @@ function createMap(world, names, population) {
 }
 ```
 
-Now we move on to create the map. If you have read the section above then you should
-have find the following code familiar:
+Now we move on to create the map. If you have read the section above then you should find the following code familiar:
 
 ```js:title=Create_map_function
 function createMap(world, names, population) {
