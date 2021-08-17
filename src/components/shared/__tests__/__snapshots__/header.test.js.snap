@@ -238,7 +238,7 @@ exports[`Header renders correctly 1`] = `
             title="RSS Feed"
             type="Link-icon"
           >
-            <div
+            <button
               className="relative px-4 text-2xl transition duration-500 ease-in-out no-underline"
             >
               <svg
@@ -269,7 +269,7 @@ exports[`Header renders correctly 1`] = `
               >
                 new
               </span>
-            </div>
+            </button>
           </a>
           <a
             className="transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
@@ -454,7 +454,7 @@ exports[`Header renders correctly 1`] = `
           title="RSS Feed"
           type="a-icon"
         >
-          <div
+          <button
             className="relative text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1 cursor-pointer"
           >
             <svg
@@ -487,7 +487,7 @@ exports[`Header renders correctly 1`] = `
             >
               new
             </span>
-          </div>
+          </button>
         </a>
         <a
           className="transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
@@ -606,7 +606,9 @@ exports[`Header renders correctly 1`] = `
           id="copyBtn"
           onClick={[Function]}
         >
-           COPY 
+           
+          COPY
+           
         </button>
       </div>
     </div>
