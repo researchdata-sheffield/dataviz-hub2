@@ -76,7 +76,7 @@ const radarPlot = () => {
     dots: {
       text: {
         fill: "#fff",
-        fontSize: 10,
+        fontSize: 11,
         fontWeight: 600,
         textShadow: "0px 0px 2px #000"
       }

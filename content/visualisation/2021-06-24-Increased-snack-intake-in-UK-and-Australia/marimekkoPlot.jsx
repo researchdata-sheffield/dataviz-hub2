@@ -118,7 +118,7 @@ const marimekkoPlot = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 10,
-            legend: "Country population (million)",
+            legend: "Nation population (million)",
             legendOffset: 36,
             legendPosition: "middle"
           }}
@@ -127,7 +127,7 @@ const marimekkoPlot = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: "Respondent %",
+            legend: "Percentage of Respondents (%)",
             legendOffset: -40,
             legendPosition: "middle"
           }}
@@ -211,12 +211,12 @@ const marimekkoPlot = () => {
       <img
         src={UKFlag}
         alt="UK flag"
-        style={{ position: "absolute", top: "30%", left: "38%", width: "25px" }}
+        style={{ position: "absolute", top: "31%", left: "39%", width: "20px" }}
       />
       <img
         src={AUFlag}
         alt="Australia flag"
-        style={{ position: "absolute", top: "30%", left: "72%", width: "25px" }}
+        style={{ position: "absolute", top: "31%", left: "71%", width: "20px" }}
       />
       <h1
         style={{ fontWeight: 800, left: 0, fontSize: ".9rem", ...sourceInfo }}

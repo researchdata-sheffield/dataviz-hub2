@@ -28,54 +28,57 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
   const metaDescription = description || site.siteMetadata.description
 
   return (
-    <Helmet 
+    <Helmet
       defer={false}
       htmlAttributes={{
-        lang,
+        lang
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: title,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ].concat(meta)
-             .concat(keywords.length > 0 ? {
-                        name: 'keywords',
-                        content: keywords.join(',')
-                    } : [] )
-          }
+        {
+          name: `description`,
+          content: metaDescription
+        },
+        {
+          property: `og:title`,
+          content: title
+        },
+        {
+          property: `og:description`,
+          content: metaDescription
+        },
+        {
+          property: `og:type`,
+          content: `website`
+        },
+        {
+          name: `twitter:card`,
+          content: `summary`
+        },
+        {
+          name: `twitter:creator`,
+          content: "dataviz.shef.ac.uk"
+        },
+        {
+          name: `twitter:title`,
+          content: title
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription
+        }
+      ]
+        .concat(meta)
+        .concat(
+          keywords.length > 0
+            ? {
+                name: "keywords",
+                content: keywords.join(",")
+              }
+            : []
+        )}
     />
-    
   )
 }
 

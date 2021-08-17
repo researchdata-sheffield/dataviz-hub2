@@ -51,6 +51,7 @@ a:hover {
   color: #00aeef;
 }
 
+button:focus,
 a:focus {
   border: 1px solid #00aeef;
 }
