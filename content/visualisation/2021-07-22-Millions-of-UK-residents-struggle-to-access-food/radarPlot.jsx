@@ -177,27 +177,6 @@ const radarPlot = () => {
           ]}
         />
       </div>
-      <h3
-        style={{
-          right: "5%",
-          top: "25%",
-          position: "absolute",
-          textAlign: "right",
-          fontSize: ".75rem",
-          color: "rgba(255,255,255,.75)",
-          width: "220px",
-          lineHeight: "1.6",
-          zIndex: "10"
-        }}
-      >
-        % adults experiencing hunger, <br />
-        struggled to have food, <br />
-        worried about having
-        <br />
-        enough food in
-        <br />
-        five UK cities.
-      </h3>
       <img
         src={Dish}
         alt="Food dish"
@@ -210,6 +189,26 @@ const radarPlot = () => {
           margin: "1.5rem"
         }}
       />
+      <h3
+        style={{
+          right: "5%",
+          top: "25%",
+          position: "absolute",
+          textAlign: "right",
+          fontSize: ".75rem",
+          color: "rgba(255,255,255,.75)",
+          width: "220px",
+          lineHeight: "1.6"
+        }}
+      >
+        % adults experiencing hunger, <br />
+        struggled to have food, <br />
+        worried about having
+        <br />
+        enough food in
+        <br />
+        five UK cities.
+      </h3>
       <h3 style={{ bottom: "10%", ...percentageInfo }}>21%</h3>
       <h3 style={{ bottom: "20%", ...percentageInfo }}>14%</h3>
       <h3 style={{ bottom: "30%", ...percentageInfo }}>&nbsp;7%</h3>

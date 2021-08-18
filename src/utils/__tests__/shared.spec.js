@@ -188,7 +188,7 @@ describe("Calculate user's local time", () => {
 describe("Get share links for a MDX document", () => {
   const mdxObj = {
     fields: {
-      slug: "visualisation/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
+      slug: "/visualisation/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
       slugOrigin:
         "/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/"
     },
@@ -201,7 +201,7 @@ describe("Get share links for a MDX document", () => {
 
   const mdxObjBlog = {
     fields: {
-      slug: "blog/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
+      slug: "/blog/22/07/2021/Millions-of-UK-residents-struggle-to-access-food",
       slugOrigin:
         "/2021-07-22-Millions-of-UK-residents-struggle-to-access-food/"
     },
