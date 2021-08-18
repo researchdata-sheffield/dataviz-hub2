@@ -186,7 +186,8 @@ const radarPlot = () => {
           fontSize: ".75rem",
           color: "rgba(255,255,255,.75)",
           width: "220px",
-          lineHeight: "1.6"
+          lineHeight: "1.6",
+          zIndex: "10"
         }}
       >
         % adults experiencing hunger, <br />
@@ -201,7 +202,7 @@ const radarPlot = () => {
         src={Dish}
         alt="Food dish"
         style={{
-          opacity: "0.05",
+          opacity: "0.15",
           maxWidth: "180px",
           position: "absolute",
           top: "13%",

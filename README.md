@@ -38,8 +38,11 @@
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/ci.yml">
     <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development" alt="CI status" />
   </a>&nbsp;
+  <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/test.yml">
+    <img src="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/test.yml/badge.svg?branch=development" alt="Test status" />
+  </a>&nbsp;
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/deploy.yml">
-    <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=development" alt="Deploy status" />
+    <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=master" alt="Deploy status" />
   </a>&nbsp;
   <a href="https://sonarcloud.io/component_measures?id=researchdata-sheffield_dataviz-hub2&metric=Reliability">
     <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=reliability_rating" alt="Reliability Rating" />
@@ -51,7 +54,6 @@
     <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities" alt="Vulnerabilities" />
   </a>
 </p>
-
 
 <hr>
 
@@ -66,24 +68,26 @@
   <br>
 </p>
 
-We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group][datavizGoogle], [slack team][datavizSlack] or [email][datavizEmail] with any suggestions. We encourage you to contribute to our online resources directly through **this repository** including blogposts and tutorials!
+We are constantly looking for new ideas and suggestions for events, workshops or tutorials. Feel free to get in touch with us through the [google group][datavizgoogle], [slack team][datavizslack] or [email][datavizemail] with any suggestions. We encourage you to contribute to our online resources directly through **this repository** including blogposts and tutorials!
 
 <br />
 
 ## Contributing
 
 ### Contributing guidelines
+
 Read through our [contributing guidelines][contributing] to find out different ways you can contribute to the website.
 
 ## Code of Conduct
+
 We has adopted a Code of Conduct that we expect participants to adhere to. Please read the [full text][codeofconduct] so that you can understand what actions will and will not be tolerated.
 
-
 ## Community
+
 Join the conversation and have fun in the community.
 
-- [Slack][datavizSlack]
-- [Google Group][datavizGoogle]
+- [Slack][datavizslack]
+- [Google Group][datavizgoogle]
 
 <br>
 
@@ -91,20 +95,18 @@ Join the conversation and have fun in the community.
 
 ### Useful Links
 
-- EventBrite API 
+- EventBrite API
+
   - https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
   - https://www.eventbriteapi.com/v3/organizations/OrgId/venues/?token=YOURTOKEN
 
-- [Gatsby plugins](https://www.gatsbyjs.org/plugins/)  
-- [TailwindCSS](https://tailwindcss.com/docs/preflight)  
+- [Gatsby plugins](https://www.gatsbyjs.org/plugins/)
+- [TailwindCSS](https://tailwindcss.com/docs/preflight)
 - [React-Icons](https://react-icons.netlify.com/#/)
-
-
-
 
 [contributing]: CONTRIBUTING.md
 [codeofconduct]: CODE-OF-CONDUCT.md
 [changelog]: https://dataviz.shef.ac.uk/docs/
-[datavizSlack]: https://shef-dataviz.slack.com
-[datavizGoogle]: https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group
-[datavizEmail]: mailto:rdm@sheffield.ac.uk
+[datavizslack]: https://shef-dataviz.slack.com
+[datavizgoogle]: https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group
+[datavizemail]: mailto:rdm@sheffield.ac.uk

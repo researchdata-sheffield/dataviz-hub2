@@ -12,7 +12,8 @@ import VisTags from "./visTags"
 const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   const [tagMenu, setTagMenu] = useState(false)
 
-  const pageTitle = title ? `| ${title}` : ""
+  // category & tag will pass a title
+  const pageTitle = title ? `${title} |` : ""
   const pageSubtitle = title ? (
     <p>
       Viewing items in{" "}
@@ -46,7 +47,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   return (
     <div className="bg-gray-900">
       <SEO
-        title={`Visualisation ${pageTitle}`}
+        title={`${pageTitle} Visualisation`}
         keywords={[
           "the university of sheffield",
           "data visualisation",
@@ -55,6 +56,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
           "about dataviz",
           title ?? ""
         ]}
+        description="Browse the latest visualisations from the Data Visualisation Hub at The University of Sheffield."
       />
 
       <VisTags

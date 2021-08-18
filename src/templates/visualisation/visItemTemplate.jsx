@@ -32,16 +32,14 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
 
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 || null
-
-  {
-    d3 &&
-      d3.forEach((d) => {
-        if (d.includes("https://")) {
-          useScript(d, "", false) // external script
-        } else {
-          useScript(withPrefix(`d3/${d}`), "", false)
-        }
-      })
+  if (d3) {
+    d3.forEach((d) => {
+      if (d.includes("https://")) {
+        useScript(d, "", false) // external script
+      } else {
+        useScript(withPrefix(`d3/${d}`), "", false)
+      }
+    })
   }
 
   return (
@@ -58,8 +56,12 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
           ...(mdx.frontmatter?.tag || []),
           ...(mdx.frontmatter?.category || [])
         ]}
+        author={mdx.frontmatter.author.map((a) => a.name).join(", ")}
         description={mdx.frontmatter?.description}
-        meta={[]}
+        twitterImage={
+          mdx.frontmatter?.thumbnail?.childImageSharp?.gatsbyImageData
+        }
+        twitterImageAlt={`Thumbnail image for the visualisation - ${mdx.frontmatter?.title}`}
       />
       <Helmet>
         <script

@@ -9,9 +9,20 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
+import { getSrc } from "gatsby-plugin-image"
 
-const SEO = ({ description, lang, meta, title, keywords }) => {
-  const { site } = useStaticQuery(
+const SEO = ({
+  title,
+  author,
+  description,
+  lang,
+  keywords,
+  twitterCard,
+  twitterImage,
+  twitterImageAlt,
+  meta
+}) => {
+  const { site, ogImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,6 +30,12 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
             title
             description
             author
+            siteUrl
+          }
+        }
+        ogImage: file(relativePath: { eq: "readme/readme.png" }) {
+          childImageSharp {
+            gatsbyImageData
           }
         }
       }
@@ -26,6 +43,12 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
   )
 
   const metaDescription = description || site.siteMetadata.description
+  const metaAuthor = author || "dataviz.shef.ac.uk"
+  const metaTwitterCard = twitterCard || "summary_large_image"
+  const metaTwitterImage =
+    getSrc(twitterImage) || getSrc(ogImage?.childImageSharp?.gatsbyImageData)
+  const metaTwitterImageAlt =
+    twitterImageAlt || "Thumbnail for the website - dataviz.shef.ac.uk"
 
   return (
     <Helmet
@@ -53,12 +76,20 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
           content: `website`
         },
         {
+          property: `twitter:site`,
+          content: `dataviz.shef.ac.uk`
+        },
+        {
+          property: `twitter:site:id`,
+          content: `@OpenResShef`
+        },
+        {
           name: `twitter:card`,
-          content: `summary`
+          content: metaTwitterCard
         },
         {
           name: `twitter:creator`,
-          content: "dataviz.shef.ac.uk"
+          content: metaAuthor
         },
         {
           name: `twitter:title`,
@@ -67,6 +98,14 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
         {
           name: `twitter:description`,
           content: metaDescription
+        },
+        {
+          name: `twitter:image`,
+          content: `https://dataviz.shef.ac.uk${metaTwitterImage}`
+        },
+        {
+          name: `twitter:image:alt`,
+          content: metaTwitterImageAlt
         }
       ]
         .concat(meta)
@@ -92,9 +131,13 @@ SEO.defaultProps = {
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  author: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  keywords: PropTypes.arrayOf(PropTypes.string)
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  twitterCard: PropTypes.string,
+  twitterImage: PropTypes.object,
+  twitterImageAlt: PropTypes.object
 }
 
 export default SEO
