@@ -62,9 +62,9 @@ p {
   word-break: keep-all;
   line-break: strict;
   -moz-hyphens: none;
-  hyphens: none;
   -webkit-hyphens: none;
-  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 a,
