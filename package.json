@@ -130,7 +130,7 @@
     "eslint-plugin-import": "2.24.0",
     "eslint-plugin-react": "7.24.0",
     "eslint-webpack-plugin": "^3.0.1",
-    "gatsby-plugin-emotion": "^6.11.0",
+    "gatsby-plugin-emotion": "^6.12.0",
     "gatsby-plugin-eslint": "^3.0.0",
     "gatsby-remark-code-titles": "^1.1.0",
     "gh-pages": "^3.2.3",
