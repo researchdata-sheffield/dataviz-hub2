@@ -63,7 +63,7 @@
     "gatsby-remark-copy-linked-files": "^4.8.0",
     "gatsby-remark-embed-video": "^3.1.1",
     "gatsby-remark-embedder": "^5.0.0",
-    "gatsby-remark-prismjs": "^5.8.0",
+    "gatsby-remark-prismjs": "^5.9.0",
     "gatsby-remark-responsive-iframe": "^4.8.0",
     "gatsby-remark-table-of-contents": "1.0.0",
     "gatsby-source-eventbrite-multi-accounts": "^1.0.11",
