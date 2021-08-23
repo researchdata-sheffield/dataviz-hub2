@@ -5,7 +5,7 @@
       "category": "Behavioural",
       "data": [
         { "x": 1990, "y": 2 },
-        { "x": 2010, "y": 2 },
+        { "x": 2010, "y": 1 },
         { "x": 2019, "y": 1 }
       ]
     },
@@ -13,7 +13,7 @@
       "id": "Short gestation",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 5 },
+        { "x": 1990, "y": 4 },
         { "x": 2010, "y": 3 },
         { "x": 2019, "y": 2 }
       ]
@@ -23,7 +23,7 @@
       "category": "Behavioural",
       "data": [
         { "x": 1990, "y": 1 },
-        { "x": 2010, "y": 1 },
+        { "x": 2010, "y": 2 },
         { "x": 2019, "y": 3 }
       ]
     },
@@ -31,7 +31,7 @@
       "id": "Household air pollution",
       "category": "Environmental",
       "data": [
-        { "x": 1990, "y": 4 },
+        { "x": 1990, "y": 3 },
         { "x": 2010, "y": 4 },
         { "x": 2019, "y": 4 }
       ]
@@ -40,7 +40,7 @@
       "id": "Unsafe water",
       "category": "Environmental",
       "data": [
-        { "x": 1990, "y": 3 },
+        { "x": 1990, "y": 5 },
         { "x": 2010, "y": 5 },
         { "x": 2019, "y": 5 }
       ]
@@ -59,7 +59,7 @@
       "category": "Environmental",
       "data": [
         { "x": 1990, "y": 8 },
-        { "x": 2010, "y": 9 },
+        { "x": 2010, "y": 7 },
         { "x": 2019, "y": 7 }
       ]
     },
@@ -67,9 +67,18 @@
       "id": "High Blood pressure",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 12 },
-        { "x": 2010, "y": 11 },
+        { "x": 1990, "y": 13 },
+        { "x": 2010, "y": 9 },
         { "x": 2019, "y": 8 }
+      ]
+    },
+    {
+      "id": "Smoking",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 11 },
+        { "x": 2010, "y": 11 },
+        { "x": 2019, "y": 9 }
       ]
     },
     {
@@ -78,15 +87,6 @@
       "data": [
         { "x": 1990, "y": 6 },
         { "x": 2010, "y": 8 },
-        { "x": 2019, "y": 9 }
-      ]
-    },
-    {
-      "id": "Unsafe sex",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 11 },
-        { "x": 2010, "y": 7 },
         { "x": 2019, "y": 10 }
       ]
     },
@@ -104,8 +104,8 @@
       "category": "Behavioural",
       "data": [
         { "x": 1990, "y": 10 },
-        { "x": 2010, "y": 13 },
-        { "x": 2019, "y": 16 }
+        { "x": 2010, "y": 15 },
+        { "x": 2019, "y": 19 }
       ]
     }
   ],
@@ -114,9 +114,18 @@
       "id": "Low birth weight",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 2 },
+        { "x": 1990, "y": 1 },
         { "x": 2010, "y": 1 },
         { "x": 2019, "y": 1 }
+      ]
+    },
+    {
+      "id": "Smoking",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 8 },
+        { "x": 2010, "y": 3 },
+        { "x": 2019, "y": 2 }
       ]
     },
     {
@@ -124,8 +133,8 @@
       "category": "Metabolic",
       "data": [
         { "x": 1990, "y": 10 },
-        { "x": 2010, "y": 6 },
-        { "x": 2019, "y": 2 }
+        { "x": 2010, "y": 5 },
+        { "x": 2019, "y": 3 }
       ]
     },
     {
@@ -134,16 +143,34 @@
       "data": [
         { "x": 1990, "y": 3 },
         { "x": 2010, "y": 2 },
-        { "x": 2019, "y": 3 }
+        { "x": 2019, "y": 4 }
       ]
     },
     {
       "id": "High fasting plasma glucose",
       "category": "Metabolic",
       "data": [
+        { "x": 1990, "y": 15 },
+        { "x": 2010, "y": 8 },
+        { "x": 2019, "y": 5 }
+      ]
+    },
+    {
+      "id": "Ambient particulate matter",
+      "category": "Environmental",
+      "data": [
         { "x": 1990, "y": 14 },
+        { "x": 2010, "y": 10 },
+        { "x": 2019, "y": 6 }
+      ]
+    },
+    {
+      "id": "Alcohol use",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 12 },
         { "x": 2010, "y": 9 },
-        { "x": 2019, "y": 4 }
+        { "x": 2019, "y": 7 }
       ]
     },
     {
@@ -151,26 +178,35 @@
       "category": "Environmental",
       "data": [
         { "x": 1990, "y": 4 },
-        { "x": 2010, "y": 3 },
-        { "x": 2019, "y": 5 }
+        { "x": 2010, "y": 4 },
+        { "x": 2019, "y": 8 }
       ]
     },
     {
       "id": "High body-mass index",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 19 },
-        { "x": 2010, "y": 11 },
-        { "x": 2019, "y": 6 }
+        { "x": 1990, "y": 23 },
+        { "x": 2010, "y": 13 },
+        { "x": 2019, "y": 9 }
       ]
     },
     {
-      "id": "Ambient particulate matter",
-      "category": "Environmental",
+      "id": "High LDL",
+      "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 15 },
-        { "x": 2010, "y": 10 },
-        { "x": 2019, "y": 7 }
+        { "x": 1990, "y": 18 },
+        { "x": 2010, "y": 12 },
+        { "x": 2019, "y": 10 }
+      ]
+    },
+    {
+      "id": "Child wasting",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 2 },
+        { "x": 2010, "y": 6 },
+        { "x": 2019, "y": 11 }
       ]
     },
     {
@@ -178,26 +214,8 @@
       "category": "Environmental",
       "data": [
         { "x": 1990, "y": 5 },
-        { "x": 2010, "y": 5 },
-        { "x": 2019, "y": 8 }
-      ]
-    },
-    {
-      "id": "Child wasting",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 1 },
-        { "x": 2010, "y": 4 },
-        { "x": 2019, "y": 9 }
-      ]
-    },
-    {
-      "id": "Unsafe sex",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 21 },
-        { "x": 2010, "y": 8 },
-        { "x": 2019, "y": 10 }
+        { "x": 2010, "y": 7 },
+        { "x": 2019, "y": 12 }
       ]
     },
     {
@@ -205,8 +223,8 @@
       "category": "Behavioural",
       "data": [
         { "x": 1990, "y": 6 },
-        { "x": 2010, "y": 13 },
-        { "x": 2019, "y": 18 }
+        { "x": 2010, "y": 16 },
+        { "x": 2019, "y": 26 }
       ]
     },
     {
@@ -214,7 +232,7 @@
       "category": "Environmental",
       "data": [
         { "x": 1990, "y": 7 },
-        { "x": 2010, "y": 7 },
+        { "x": 2010, "y": 11 },
         { "x": 2019, "y": 14 }
       ]
     },
@@ -222,47 +240,47 @@
       "id": "Handwashing",
       "category": "Environmental",
       "data": [
-        { "x": 1990, "y": 8 },
-        { "x": 2010, "y": 12 },
-        { "x": 2019, "y": 17 }
-      ]
-    },
-    {
-      "id": "Child stunting",
-      "category": "Behavioural",
-      "data": [
         { "x": 1990, "y": 9 },
-        { "x": 2010, "y": 18 },
-        { "x": 2019, "y": 33 }
+        { "x": 2010, "y": 14 },
+        { "x": 2019, "y": 18 }
       ]
     }
   ],
   "Middle": [
     {
+      "id": "Smoking",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 2 },
+        { "x": 2010, "y": 1 },
+        { "x": 2019, "y": 1 }
+      ]
+    },
+    {
       "id": "High Blood pressure",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 5 },
-        { "x": 2010, "y": 1 },
-        { "x": 2019, "y": 1 }
+        { "x": 1990, "y": 6 },
+        { "x": 2010, "y": 2 },
+        { "x": 2019, "y": 2 }
       ]
     },
     {
       "id": "High fasting plasma glucose",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 7 },
-        { "x": 2010, "y": 2 },
-        { "x": 2019, "y": 2 }
+        { "x": 1990, "y": 10 },
+        { "x": 2010, "y": 4 },
+        { "x": 2019, "y": 3 }
       ]
     },
     {
       "id": "High body-mass index",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 11 },
-        { "x": 2010, "y": 3 },
-        { "x": 2019, "y": 3 }
+        { "x": 1990, "y": 15 },
+        { "x": 2010, "y": 7 },
+        { "x": 2019, "y": 4 }
       ]
     },
     {
@@ -270,190 +288,43 @@
       "category": "Environmental",
       "data": [
         { "x": 1990, "y": 8 },
-        { "x": 2010, "y": 5 },
-        { "x": 2019, "y": 4 }
+        { "x": 2010, "y": 3 },
+        { "x": 2019, "y": 5 }
+      ]
+    },
+    {
+      "id": "Alcohol use",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 7 },
+        { "x": 2010, "y": 6 },
+        { "x": 2019, "y": 6 }
+      ]
+    },
+    {
+      "id": "High LDL",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 12 },
+        { "x": 2010, "y": 9 },
+        { "x": 2019, "y": 7 }
       ]
     },
     {
       "id": "Kidney dysfunction",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 14 },
-        { "x": 2010, "y": 8 },
-        { "x": 2019, "y": 5 }
-      ]
-    },
-    {
-      "id": "High LDL",
-      "category": "Metabolic",
-      "data": [
-        { "x": 1990, "y": 13 },
-        { "x": 2010, "y": 9 },
-        { "x": 2019, "y": 6 }
+        { "x": 1990, "y": 18 },
+        { "x": 2010, "y": 10 },
+        { "x": 2019, "y": 8 }
       ]
     },
     {
       "id": "Low birth weight",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 2 },
-        { "x": 2010, "y": 4 },
-        { "x": 2019, "y": 7 }
-      ]
-    },
-    {
-      "id": "Short gestation",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 3 },
-        { "x": 2010, "y": 6 },
-        { "x": 2019, "y": 8 }
-      ]
-    },
-    {
-      "id": "Unsafe sex",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 24 },
-        { "x": 2010, "y": 7 },
-        { "x": 2019, "y": 9 }
-      ]
-    },
-    {
-      "id": "Smoking",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 17 },
-        { "x": 2010, "y": 12 },
-        { "x": 2019, "y": 10 }
-      ]
-    },
-    {
-      "id": "Child wasting",
-      "category": "Behavioural",
-      "data": [
         { "x": 1990, "y": 1 },
-        { "x": 2010, "y": 11 },
-        { "x": 2019, "y": 16 }
-      ]
-    },
-    {
-      "id": "Household air pollution",
-      "category": "Environmental",
-      "data": [
-        { "x": 1990, "y": 4 },
-        { "x": 2010, "y": 10 },
-        { "x": 2019, "y": 13 }
-      ]
-    },
-    {
-      "id": "Unsafe water",
-      "category": "Environmental",
-      "data": [
-        { "x": 1990, "y": 6 },
-        { "x": 2010, "y": 15 },
-        { "x": 2019, "y": 20 }
-      ]
-    },
-    {
-      "id": "Unsafe sanitation",
-      "category": "Environmental",
-      "data": [
-        { "x": 1990, "y": 9 },
-        { "x": 2010, "y": 21 },
-        { "x": 2019, "y": 33 }
-      ]
-    },
-    {
-      "id": "Second-hand smoke ",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 10 },
-        { "x": 2010, "y": 13 },
-        { "x": 2019, "y": 11 }
-      ]
-    }
-  ],
-  "High-middle": [
-    {
-      "id": "High Blood pressure",
-      "category": "Metabolic",
-      "data": [
-        { "x": 1990, "y": 1 },
-        { "x": 2010, "y": 1 },
-        { "x": 2019, "y": 1 }
-      ]
-    },
-    {
-      "id": "High body-mass index",
-      "category": "Metabolic",
-      "data": [
-        { "x": 1990, "y": 2 },
-        { "x": 2010, "y": 2 },
-        { "x": 2019, "y": 2 }
-      ]
-    },
-    {
-      "id": "High fasting plasma glucose",
-      "category": "Metabolic",
-      "data": [
-        { "x": 1990, "y": 3 },
-        { "x": 2010, "y": 3 },
-        { "x": 2019, "y": 3 }
-      ]
-    },
-    {
-      "id": "High LDL",
-      "category": "Metabolic",
-      "data": [
-        { "x": 1990, "y": 4 },
-        { "x": 2010, "y": 4 },
-        { "x": 2019, "y": 4 }
-      ]
-    },
-    {
-      "id": "Smoking",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 5 },
         { "x": 2010, "y": 5 },
-        { "x": 2019, "y": 5 }
-      ]
-    },
-    {
-      "id": "Ambient particulate matter",
-      "category": "Environmental",
-      "data": [
-        { "x": 1990, "y": 8 },
-        { "x": 2010, "y": 6 },
-        { "x": 2019, "y": 6 }
-      ]
-    },
-    {
-      "id": "Kidney dysfunction",
-      "category": "Metabolic",
-      "data": [
-        { "x": 1990, "y": 12 },
-        { "x": 2010, "y": 7 },
-        { "x": 2019, "y": 7 }
-      ]
-    },
-
-    {
-      "id": "Low whole grains",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 14 },
-        { "x": 2010, "y": 9 },
-        { "x": 2019, "y": 8 }
-      ]
-    },
-    {
-      "id": "Second-hand smoke",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 11 },
-        { "x": 2010, "y": 10 },
         { "x": 2019, "y": 9 }
       ]
     },
@@ -461,8 +332,137 @@
       "id": "High sodium",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 15 },
+        { "x": 1990, "y": 16 },
         { "x": 2010, "y": 12 },
+        { "x": 2019, "y": 10 }
+      ]
+    },
+    {
+      "id": "Short gestation",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 3 },
+        { "x": 2010, "y": 8 },
+        { "x": 2019, "y": 11 }
+      ]
+    },
+    {
+      "id": "Child wasting",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 4 },
+        { "x": 2010, "y": 13 },
+        { "x": 2019, "y": 23 }
+      ]
+    },
+    {
+      "id": "Household air pollution",
+      "category": "Environmental",
+      "data": [
+        { "x": 1990, "y": 5 },
+        { "x": 2010, "y": 11 },
+        { "x": 2019, "y": 13 }
+      ]
+    },
+    {
+      "id": "Unsafe water",
+      "category": "Environmental",
+      "data": [
+        { "x": 1990, "y": 9 },
+        { "x": 2010, "y": 18 },
+        { "x": 2019, "y": 24 }
+      ]
+    }
+  ],
+  "High-middle": [
+    {
+      "id": "Smoking",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 1 },
+        { "x": 2010, "y": 1 },
+        { "x": 2019, "y": 1 }
+      ]
+    },
+    {
+      "id": "High Blood pressure",
+      "category": "Metabolic",
+      "data": [
+        { "x": 1990, "y": 2 },
+        { "x": 2010, "y": 2 },
+        { "x": 2019, "y": 2 }
+      ]
+    },
+    {
+      "id": "High body-mass index",
+      "category": "Metabolic",
+      "data": [
+        { "x": 1990, "y": 6 },
+        { "x": 2010, "y": 4 },
+        { "x": 2019, "y": 3 }
+      ]
+    },
+    {
+      "id": "Alcohol use",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 3 },
+        { "x": 2010, "y": 3 },
+        { "x": 2019, "y": 4 }
+      ]
+    },
+    {
+      "id": "High fasting plasma glucose",
+      "category": "Metabolic",
+      "data": [
+        { "x": 1990, "y": 9 },
+        { "x": 2010, "y": 5 },
+        { "x": 2019, "y": 5 }
+      ]
+    },
+    {
+      "id": "High LDL",
+      "category": "Metabolic",
+      "data": [
+        { "x": 1990, "y": 4 },
+        { "x": 2010, "y": 6 },
+        { "x": 2019, "y": 6 }
+      ]
+    },
+    {
+      "id": "Ambient particulate matter",
+      "category": "Environmental",
+      "data": [
+        { "x": 1990, "y": 7 },
+        { "x": 2010, "y": 7 },
+        { "x": 2019, "y": 7 }
+      ]
+    },
+    {
+      "id": "High sodium",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 11 },
+        { "x": 2010, "y": 8 },
+        { "x": 2019, "y": 8 }
+      ]
+    },
+    {
+      "id": "Kidney dysfunction",
+      "category": "Metabolic",
+      "data": [
+        { "x": 1990, "y": 14 },
+        { "x": 2010, "y": 9 },
+        { "x": 2019, "y": 9 }
+      ]
+    },
+
+    {
+      "id": "Low whole grains",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 12 },
+        { "x": 2010, "y": 10 },
         { "x": 2019, "y": 10 }
       ]
     },
@@ -470,36 +470,27 @@
       "id": "Low birth weight",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 6 },
+        { "x": 1990, "y": 5 },
         { "x": 2010, "y": 11 },
-        { "x": 2019, "y": 14 }
+        { "x": 2019, "y": 16 }
       ]
     },
     {
       "id": "Short gestation",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 7 },
-        { "x": 2010, "y": 14 },
-        { "x": 2019, "y": 15 }
+        { "x": 1990, "y": 8 },
+        { "x": 2010, "y": 13 },
+        { "x": 2019, "y": 19 }
       ]
     },
     {
       "id": "Household air pollution",
       "category": "Environmental",
       "data": [
-        { "x": 1990, "y": 9 },
-        { "x": 2010, "y": 19 },
-        { "x": 2019, "y": 25 }
-      ]
-    },
-    {
-      "id": "Child wasting",
-      "category": "Behavioural",
-      "data": [
         { "x": 1990, "y": 10 },
-        { "x": 2010, "y": 27 },
-        { "x": 2019, "y": null }
+        { "x": 2010, "y": 20 },
+        { "x": 2019, "y": 28 }
       ]
     }
   ],
@@ -508,16 +499,16 @@
       "id": "Smoking",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 2 },
+        { "x": 1990, "y": 1 },
         { "x": 2010, "y": 1 },
         { "x": 2019, "y": 1 }
       ]
     },
     {
-      "id": "High body-mass index",
+      "id": "High Blood pressure",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 3 },
+        { "x": 1990, "y": 2 },
         { "x": 2010, "y": 2 },
         { "x": 2019, "y": 2 }
       ]
@@ -526,27 +517,45 @@
       "id": "High fasting plasma glucose",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 4 },
+        { "x": 1990, "y": 6 },
         { "x": 2010, "y": 4 },
         { "x": 2019, "y": 3 }
       ]
     },
     {
-      "id": "High Blood pressure",
+      "id": "High body-mass index",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 1 },
+        { "x": 1990, "y": 5 },
         { "x": 2010, "y": 3 },
         { "x": 2019, "y": 4 }
+      ]
+    },
+    {
+      "id": "Alcohol use",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 4 },
+        { "x": 2010, "y": 5 },
+        { "x": 2019, "y": 5 }
       ]
     },
     {
       "id": "High LDL",
       "category": "Metabolic",
       "data": [
-        { "x": 1990, "y": 5 },
-        { "x": 2010, "y": 5 },
-        { "x": 2019, "y": 5 }
+        { "x": 1990, "y": 3 },
+        { "x": 2010, "y": 6 },
+        { "x": 2019, "y": 6 }
+      ]
+    },
+    {
+      "id": "Drug use",
+      "category": "Behavioural",
+      "data": [
+        { "x": 1990, "y": 12 },
+        { "x": 2010, "y": 7 },
+        { "x": 2019, "y": 7 }
       ]
     },
     {
@@ -554,24 +563,6 @@
       "category": "Metabolic",
       "data": [
         { "x": 1990, "y": 8 },
-        { "x": 2010, "y": 6 },
-        { "x": 2019, "y": 6 }
-      ]
-    },
-    {
-      "id": "Alcohol use",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 6 },
-        { "x": 2010, "y": 7 },
-        { "x": 2019, "y": 7 }
-      ]
-    },
-    {
-      "id": "Drug use",
-      "category": "Behavioural",
-      "data": [
-        { "x": 1990, "y": 20 },
         { "x": 2010, "y": 8 },
         { "x": 2019, "y": 8 }
       ]
@@ -586,21 +577,21 @@
       ]
     },
     {
-      "id": "Low temperature",
-      "category": "Environmental",
+      "id": "Low whole grains",
+      "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 10 },
+        { "x": 1990, "y": 9 },
         { "x": 2010, "y": 10 },
         { "x": 2019, "y": 10 }
       ]
     },
     {
-      "id": "Low whole grains",
+      "id": "Low legumes",
       "category": "Behavioural",
       "data": [
-        { "x": 1990, "y": 9 },
-        { "x": 2010, "y": 11 },
-        { "x": 2019, "y": 12 }
+        { "x": 1990, "y": 10 },
+        { "x": 2010, "y": 14 },
+        { "x": 2019, "y": 14 }
       ]
     }
   ]
