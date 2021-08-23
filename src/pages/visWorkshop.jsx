@@ -1,7 +1,6 @@
 /* eslint-disable no-undef */
 import React, { useState, useEffect } from "react"
 import SEO from "../components/shared/seo"
-import Visualisation from "../visualisation"
 
 const VisWorkshop = () => {
   const [authenticated, setAuth] = useState(
@@ -43,9 +42,7 @@ const VisWorkshop = () => {
             "about dataviz"
           ]}
         />
-        <div className="min-h-100 flex flex-wrap justify-center py-32">
-          <Visualisation />
-        </div>
+        <div className="min-h-100 flex flex-wrap justify-center py-32"></div>
       </>
     )
   )

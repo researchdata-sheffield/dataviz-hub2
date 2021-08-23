@@ -139,7 +139,7 @@ const Visualisation = () => {
           fontWeight: "700",
           fontSize: "1.8rem",
           lineHeight: "1.1",
-          marginBottom: "30px"
+          marginBottom: "25px"
         }}
       >
         Leading risk factors for disability-adjusted life years in different SDI
@@ -282,13 +282,21 @@ const Visualisation = () => {
           </div>
         </div>
         <div
-          style={{ width: "55%", display: "flex", justifyContent: "flex-end" }}
+          style={{
+            width: "55%",
+            display: "flex",
+            justifyContent: "flex-end",
+            fontSize: ".83rem"
+          }}
         >
-          <span style={{ fontSize: ".83rem", marginRight: "10px" }}>
-            Countries with
-          </span>
+          <span style={{ marginRight: "10px" }}>Countries with</span>
           <select
-            style={{ color: "black", textAlign: "center" }}
+            style={{
+              color: "black",
+              textAlign: "center",
+              fontSize: ".9rem",
+              fontWeight: "700"
+            }}
             type="radio"
             onChange={onInputChange}
             title="Select level of Sustainable Development Index countries"
@@ -299,7 +307,7 @@ const Visualisation = () => {
             <option value="High-middle" label="High-middle"></option>
             <option value="High" label="High"></option>
           </select>
-          <span style={{ fontSize: ".83rem", marginLeft: "10px" }}>
+          <span style={{ marginLeft: "10px" }}>
             Sustainable Development Index
           </span>
         </div>
@@ -310,7 +318,7 @@ const Visualisation = () => {
         Dataviz.Shef
       </h1>
       <h1 style={{ right: 0, ...sourceInfo }}>
-        Source: The Lancet Global Burden of Disease (GBD)
+        Source: The Lancet Global Health Metrics
       </h1>
     </div>
   )

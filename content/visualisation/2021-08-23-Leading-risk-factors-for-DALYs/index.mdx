@@ -1,0 +1,54 @@
+---
+type: visualisation
+author: [Yu Liang Weng]
+title: Leading risk factors for disability-adjusted life years in different SDI countries
+thumbnail:
+description: >
+  A simple visualisation that shows leading risk factors for number of years lost due to overall disease burden, in countries with different sustainable development indexes.
+date: "2021-08-23"
+category: [School Of Health And Related Research]
+tag: []
+rowSpan: 1
+columnSpan: 2
+---
+
+import Visualisation from "./code/visualisation"
+
+export const data = [
+  {
+    title: "Source",
+    content: `This visualisation is produced based on figures <code>S1a</code> to <code>S1j</code> (supplementary appendix 2a) in the study <i>'Global burden of 87 risk factors in 204 countries and territories, 1990–2019: a systematic analysis for the Global Burden of Disease Study 2019'</i> (<a href="https://doi.org/10.1016/S0140-6736(20)30752-2">DOI</a>) - The Lancet Global Health Metrics.`
+  },
+  {
+    title: "Detail",
+    content: `The visualisation is created using React and <a href="https://nivo.rocks/bump/">nivo bump chart</a>. You can use the selection box at the bottom right to view risk factors in countries with other level of SDI.<br/>
+    Top 10 risk factors are listed for each year of 1990, 2010 and 2019, regardless of risk's ranking in other years. Each risk factor belongs to certain category and is highlighted with different colours.
+    `
+  },
+  {
+    title: "Glossary",
+    content: `<b>SDI (Sustainable Development Index)</b> - an efficiency metric on a scale of zero to one (best) measures a country's progress towards a sustainable economy, society and environment.<br/>
+    <b>DALY (disability-adjusted life year)</b> - a metric summaries overall disease burden into number of years of life lost due to ill-health, disability or early death.
+    `
+  },
+  {
+    title: "Code",
+    content: `The source code is hosted on website's GitHub repository, you can find it <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-08-23-Leading-risk-factors-for-DALYs/code">here</a>.`
+  },
+  {
+    title: "License",
+    content: `Code and content are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  }
+]
+
+<div className="flex justify-center">
+  <Visualisation />
+</div>
+
+<VisPagination mdx={props.mdx}></VisPagination>
+
+<VisDetail mdx={props.mdx} />
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>
