@@ -169,7 +169,7 @@ exports[`Search component return search result without error 1`] = `
               style="width: 363px; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 420px;"
             >
               <div
-                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-35 group-hover:bg-black-75"
+                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-65 group-hover:bg-black-85"
                 style="min-height: 420px;"
               >
                 <div
@@ -252,7 +252,7 @@ exports[`Search component return search result without error 1`] = `
               style="width: 363px; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 420px;"
             >
               <div
-                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-35 group-hover:bg-black-75"
+                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-65 group-hover:bg-black-85"
                 style="min-height: 420px;"
               >
                 <div

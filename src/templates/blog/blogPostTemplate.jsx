@@ -2,7 +2,7 @@
 import React, { useEffect } from "react"
 import { graphql, withPrefix } from "gatsby"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { GatsbyImage } from "gatsby-plugin-image"
 
 import SEO from "../../components/shared/seo"
