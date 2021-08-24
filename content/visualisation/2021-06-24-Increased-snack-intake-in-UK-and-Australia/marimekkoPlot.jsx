@@ -1,3 +1,9 @@
+/**
+ * dataviz.shef.ac.uk
+ * This visualisation is covered by a CC BY-SA 4.0 license.
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
 import React from "react"
 import PropTypes from "prop-types"
 import { ResponsiveMarimekko } from "@nivo/marimekko"
@@ -47,9 +53,10 @@ const marimekkoPlot = () => {
   const sourceInfo = {
     position: "absolute",
     bottom: 0,
-    margin: "1.25rem",
+    margin: "1rem",
     fontSize: "0.72rem",
-    color: "rgb(55, 65, 81)"
+    color: "rgb(55, 65, 81)",
+    lineHeight: 1
   }
 
   const theme = {
@@ -68,7 +75,7 @@ const marimekkoPlot = () => {
         maxWidth: "550px",
         borderRadius: "20px",
         backgroundSize: "cover",
-        padding: "1.25rem",
+        padding: "1rem",
         position: "relative"
       }}
     >
@@ -211,12 +218,12 @@ const marimekkoPlot = () => {
       <img
         src={UKFlag}
         alt="UK flag"
-        style={{ position: "absolute", top: "31%", left: "39%", width: "20px" }}
+        style={{ position: "absolute", top: "30%", left: "39%", width: "20px" }}
       />
       <img
         src={AUFlag}
         alt="Australia flag"
-        style={{ position: "absolute", top: "31%", left: "71%", width: "20px" }}
+        style={{ position: "absolute", top: "30%", left: "71%", width: "20px" }}
       />
       <h1
         style={{ fontWeight: 800, left: 0, fontSize: ".9rem", ...sourceInfo }}

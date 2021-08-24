@@ -1,3 +1,9 @@
+/**
+ * dataviz.shef.ac.uk
+ * This visualisation is covered by a CC BY-SA 4.0 license.
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
 import React from "react"
 import PropTypes from "prop-types"
 import { ResponsiveRadar } from "@nivo/radar"
@@ -59,9 +65,10 @@ const radarPlot = () => {
   const sourceInfo = {
     position: "absolute",
     bottom: 0,
-    margin: "1.25rem",
+    margin: "1rem",
     fontSize: "0.72rem",
-    color: "rgb(255, 255, 255)"
+    color: "rgb(255, 255, 255)",
+    lineHeight: 1
   }
 
   const percentageInfo = {
@@ -115,7 +122,7 @@ const radarPlot = () => {
         maxWidth: "580px",
         borderRadius: "20px",
         backgroundSize: "cover",
-        padding: "1.25rem",
+        padding: "1rem",
         position: "relative"
       }}
     >
