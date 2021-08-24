@@ -7,6 +7,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState, useCallback, useEffect } from "react"
 import ReactFlow, { Controls, useZoomPanHelper } from "react-flow-renderer"
+import { FlowchartDiv } from "./style"
 import {
   TriangleNodeComponent,
   DecisionNodeComponent,
@@ -15,9 +16,9 @@ import {
   RedNodeComponent
 } from "./nodeComponents"
 import { getEdge, getNode, getNodesAndEdges } from "./utils"
-import { chartNodeData } from "./nodeData"
-import { chartEdgeData } from "./edgeData"
-import { textForHelp } from "./textData"
+import { chartNodeData } from "./data/nodeData"
+import { chartEdgeData } from "./data/edgeData"
+import { textForHelp } from "./data/textData"
 import { FaToggleOff, FaToggleOn } from "react-icons/fa"
 import { MdHelp } from "react-icons/md"
 
@@ -285,13 +286,15 @@ const flowChart = () => {
     setElements(newElements)
   })
 
+  /**
+   * When add new node to the sidebar, scroll to the bottom
+   */
   useEffect(() => {
     if (clickedNodes.length < 7) {
       return
     }
-
     setTimeout(() => {
-      let sidebar = document.getElementById("sidebar")
+      const sidebar = document.getElementById("sidebar")
       sidebar.scrollTop = sidebar.scrollHeight
     }, 100)
   }, [elements])
@@ -308,12 +311,7 @@ const flowChart = () => {
       >
         Click here to open the flowchart
       </button>
-      <div
-        className={`${
-          displayChart ? "block" : "hidden"
-        } w-full hideScrollBar min-h-100 fixed flex flex-wrap top-0 left-0`}
-        style={{ zIndex: "100", height: "100vh", overflowY: "scroll" }}
-      >
+      <FlowchartDiv displayChart={displayChart} className="hideScrollBar">
         <div
           id="flowChartWrap"
           className="relative w-full md:w-8/12 2xl:w-9/12 min-h-70 md:min-h-100 text-black"
@@ -336,6 +334,8 @@ const flowChart = () => {
           >
             <Controls />
           </ReactFlow>
+
+          {/* Utility buttons on the bottom left */}
           <button
             className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-3xl self-center cursor-pointer"
             style={{ alignItems: "center" }}
@@ -374,6 +374,8 @@ const flowChart = () => {
               Follow clicked shapes
             </span>
           </button>
+
+          {/* Description box on hover nodes */}
           <div
             id="nodeDescriptionBox"
             className="absolute p-4 bg-white shadow-2xl rounded-lg z-50 opacity-0 invisible"
@@ -391,6 +393,8 @@ const flowChart = () => {
             </h1>
             <p className="text-sm leading-5">{elementData.description}</p>
           </div>
+
+          {/* Help button (& its content) on the bottom right */}
           <MdHelp
             title="Help / tutorial"
             onClick={() => setShowHelp(!showHelp)}
@@ -504,6 +508,9 @@ const flowChart = () => {
                   if (index == 0) {
                     return false
                   }
+                  {
+                    /* Check if there is an edge between two nodes */
+                  }
                   if (
                     index >= 2 &&
                     !getEdge(
@@ -543,32 +550,19 @@ const flowChart = () => {
                             background: "rgba(0,0,0,.94)"
                           }}
                         >
-                          {currentNodeObj.id == "D.avgDiff" && (
-                            <h3 className="text-red-500">
-                              WARNING: This path requires further clarity and
-                              correction, if you are not sure about anything
-                              please{" "}
-                              <a
-                                href="https://shef-dataviz.slack.com/archives/C99CXQGK1"
-                                target="_blank"
-                                rel="noreferrer"
-                              >
-                                contact us
-                              </a>
-                              .
-                            </h3>
-                          )}
                           {lastNode?.data?.label}
                         </div>
                       </div>
                       <div className="w-3/12 p-2 text-base text-center bg-blue-100 text-blue-700 border-1 border-blue-200 rounded-md">
                         {edge.label}
                       </div>
+                      {/* Warning box when the user jumped to different path */}
                       {pathNotification && (
                         <div className="mt-2 text-base rounded-md w-full border-1 border-yellow-200 bg-yellow-100 text-yellow-700 p-2">
                           {pathNotification}
                         </div>
                       )}
+                      {/* Colour box when reaching help or test node */}
                       {(currentNodeObj.type == "help" ||
                         currentNodeObj.type == "test") && (
                         <div
@@ -598,7 +592,7 @@ const flowChart = () => {
             </div>
           </div>
         </div>
-      </div>
+      </FlowchartDiv>
     </div>
   )
 }
