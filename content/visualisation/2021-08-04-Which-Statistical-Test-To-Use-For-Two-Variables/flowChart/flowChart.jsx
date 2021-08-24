@@ -1,3 +1,9 @@
+/**
+ * dataviz.shef.ac.uk
+ * This visualisation is covered by a CC BY-SA 4.0 license.
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
 /* eslint-disable react/prop-types */
 import React, { useState, useCallback, useEffect } from "react"
 import ReactFlow, { Controls, useZoomPanHelper } from "react-flow-renderer"

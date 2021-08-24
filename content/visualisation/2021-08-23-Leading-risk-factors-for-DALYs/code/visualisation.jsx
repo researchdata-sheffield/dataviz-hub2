@@ -1,10 +1,14 @@
 import React, { useState } from "react"
-//import PropTypes from 'prop-types'
 import { ResponsiveBump } from "@nivo/bump"
 
 import femaleJsonData from "./female.json"
 import maleJsonData from "./male.json"
 
+/**
+ * dataviz.shef.ac.uk
+ * This visualisation is covered by a CC BY-SA 4.0 license.
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
 const Visualisation = () => {
   const [maleData, setMaleData] = useState(maleJsonData["Low"])
   const [femaleData, setFemaleData] = useState(femaleJsonData["Low"])
@@ -125,9 +129,9 @@ const Visualisation = () => {
           "linear-gradient(135deg, #212121 0%,#212121 40%,#3a3a3a 77%,#434343 100%)",
         minHeight: "600px",
         height: "100%",
-        minWidth: "1100px",
+        minWidth: "400px",
         maxWidth: "1200px",
-        borderRadius: "0px",
+        borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
         position: "relative"

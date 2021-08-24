@@ -2,14 +2,16 @@
 type: visualisation
 author: [Yu Liang Weng]
 title: Leading risk factors for disability-adjusted life years in different SDI countries
-thumbnail:
+thumbnail: thumb.jpg
 description: >
   A simple visualisation that shows leading risk factors for number of years lost due to overall disease burden, in countries with different sustainable development indexes.
 date: "2021-08-23"
 category: [School Of Health And Related Research]
-tag: []
+tag: [Global Burden of Diseases]
 rowSpan: 1
 columnSpan: 2
+pngImagePath: leading-risk-factors-for-DALYs-in-different-sdi-countries.png
+svgImagePath: leading-risk-factors-for-DALYs-in-different-sdi-countries.svg
 ---
 
 import Visualisation from "./code/visualisation"
@@ -45,7 +47,9 @@ export const data = [
   <Visualisation />
 </div>
 
-<VisPagination mdx={props.mdx}></VisPagination>
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
 
 <VisDetail mdx={props.mdx} />
 

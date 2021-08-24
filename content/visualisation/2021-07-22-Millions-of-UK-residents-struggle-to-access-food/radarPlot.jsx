@@ -1,3 +1,9 @@
+/**
+ * dataviz.shef.ac.uk
+ * This visualisation is covered by a CC BY-SA 4.0 license.
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
 import React from "react"
 import PropTypes from "prop-types"
 import { ResponsiveRadar } from "@nivo/radar"
