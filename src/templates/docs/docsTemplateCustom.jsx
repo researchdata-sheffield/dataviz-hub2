@@ -1,7 +1,7 @@
 import React from "react"
 import PropTypes from "prop-types"
 import SEO from "../../components/shared/seo"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 import { graphql, withPrefix } from "gatsby"
 import PostPagination from "../../components/blog/postPagination"
 import "katex/dist/katex.min.css"

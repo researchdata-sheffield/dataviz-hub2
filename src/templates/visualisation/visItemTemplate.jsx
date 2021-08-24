@@ -2,7 +2,7 @@
 import React from "react"
 import { graphql, withPrefix, navigate } from "gatsby"
 import PropTypes from "prop-types"
-import Helmet from "react-helmet"
+import { Helmet } from "react-helmet"
 
 import SEO from "../../components/shared/seo"
 import PostPagination from "../../components/blog/postPagination"
