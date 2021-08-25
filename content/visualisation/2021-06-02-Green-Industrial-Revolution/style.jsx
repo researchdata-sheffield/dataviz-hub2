@@ -34,7 +34,7 @@ export const InfoDiv = styled.div`
       color: white;
 
       @media (min-width: 768px) {
-        font-size: 3.75rem;
+        font-size: 3.2rem;
         line-height: 1;
       }
     }
@@ -42,7 +42,8 @@ export const InfoDiv = styled.div`
     h3 {
       margin-top: 0;
       font-weight: 400;
-      font-size: 1rem;
+      font-size: 0.85rem;
+      line-height: 1;
       color: rgb(156, 163, 175);
     }
   }

@@ -46,7 +46,7 @@ const COSTDATA = [
  * Visit the website for reference of className.
  * E.g. className="p-5 relative" translates to "padding: 1.25rem; position: relative"
  */
-const visualisation = () => {
+const Workconflict = () => {
   return (
     <div
       id="visualisation"
@@ -195,8 +195,8 @@ const visualisation = () => {
   );
 };
 
-export default visualisation;
+export default Workconflict;
 
-visualisation.propTypes = {
+Workconflict.propTypes = {
   data: PropTypes.any
 };
