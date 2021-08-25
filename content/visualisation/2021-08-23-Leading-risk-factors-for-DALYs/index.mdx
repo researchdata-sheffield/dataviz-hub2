@@ -10,9 +10,11 @@ category: [School Of Health And Related Research]
 tag: [Global Burden of Diseases]
 rowSpan: 1
 columnSpan: 2
+svgImagePath: leading-risk-factors-for-DALYs-in-different-sdi-countries.svg
+pngImagePath: leading-risk-factors-for-DALYs-in-different-sdi-countries.png
 ---
 
-import Visualisation from "./bumpChart/visualisation"
+import RiskFactorVis from "./bumpChart/RiskFactorVis";
 
 export const data = [
   {
@@ -39,7 +41,7 @@ export const data = [
     title: "License",
     content: `Code and content are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
   }
-]
+];
 
 <div className="flex justify-center">
   <Visualisation />

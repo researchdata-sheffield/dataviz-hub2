@@ -14,7 +14,8 @@ svgImagePath: Green-Industrial-Revolution.svg
 svgExternalImagePath: https://upload.wikimedia.org/wikipedia/commons/4/4f/SVG_Logo.svg
 ---
 
-import Bg from "./nuclear-power-station.jpg"
+import Bg from "./nuclear-power-station.jpg";
+import { Title, InfoDiv, SourceTitle, BrandTitle, SubTitle } from "./style";
 
 <VisDiv>
   <div
@@ -26,12 +27,12 @@ import Bg from "./nuclear-power-station.jpg"
       minHeight: "550px",
       width: "100%",
       borderRadius: "20px",
-      backgroundSize: "cover"
+      backgroundSize: "cover";
+      padding: '1.25rem';
+      position: 'relative'
     }}
-    className="p-5 relative"
   >
-    <h1
-      className="mt-0 text-2xl md:text-4xl font-extrabold"
+    <Title
       style={{
         color: "transparent",
         background:
@@ -43,38 +44,38 @@ import Bg from "./nuclear-power-station.jpg"
     >
       University of Sheffield researchers to help bring Green Industrial
       Revolution
-    </h1>
-    <div className="mt-12 md:mt-20 w-full flex space-x-8">
-      <div className="text-right">
-        <h1 className="my-0 text-3xl md:text-6xl font-bold text-white">£20m</h1>
-        <h3 className="mt-0 font-normal text-base text-gray-400">project</h3>
+    </Title>
+    <InfoDiv className="mt-12 md:mt-20 w-full flex space-x-8">
+      <div>
+        <h1>£20m</h1>
+        <h3>project</h3>
       </div>
-      <div className="text-right">
-        <h1 className="my-0 text-3xl md:text-6xl font-bold text-white">140</h1>
-        <h3 className="mt-0 font-normal text-base text-gray-400">partners</h3>
+      <div>
+        <h1>140</h1>
+        <h3>partners</h3>
       </div>
-      <div className="text-right relative">
-        <span className="text-sm text-gray-400 inline-block text-right absolute top-0 right-0 -mt-4">
+      <div style={{position: 'relative'}}>
+        <span style={{color: 'rgb(156, 163, 175)', display: 'inline-block', textAlign: 'right', position: 'absolute', right: 0, top: 0, fontSize: '0.875rem', lineHeight: '1.25rem', marginTop: '-1rem'}}>
           by
         </span>
-        <h1 className="my-0 text-3xl md:text-6xl font-bold text-green-300">
+        <h1 style={{color: 'rgb(110, 231, 183)'}}>
           2030
         </h1>
-        <h3 className="mt-0 font-normal text-base text-gray-400">
+        <h3>
           four low-carbon clusters
         </h3>
       </div>
-    </div>
-    <div className="mt-4 md:mt-16 text-gray-400 text-center text-xs md:text-base">
+    </InfoDiv>
+    <SubTitle>
       + world’s first net-zero emissions industrial cluster by{" "}
-      <span className="text-green-400 text-lg">2040</span>
-    </div>
-    <h1 className="absolute bottom-0 left-0 m-5 text-gray-500 font-extrabold text-xs">
+      <span>2040</span>
+    </SubTitle>
+    <BrandTitle>
       Dataviz.Shef
-    </h1>
-    <h1 className="absolute bottom-0 right-0 m-5 text-gray-500 text-xs">
+    </BrandTitle>
+    <SourceTitle>
       Source: The University of Sheffield - News
-    </h1>
+    </SourceTitle>
   </div>
 </VisDiv>
 
@@ -90,13 +91,13 @@ export const data = [
   },
   {
     title: "Code",
-    content: `This visualisation is created using HTML and CSS. You can get the source code by right click the visualisation and select 'Inspect'. You will need to adjust CSS if hosted on a different website. This website uses tailwindcss (https://tailwindcss.com/) framework for styling of some elements. E.g. className="p-5 relative" translates to "padding: 1.25rem; position: relative".`
+    content: `This visualisation is created using HTML and CSS. You can get the source code by right click the visualisation and select 'Inspect'.`
   },
   {
     title: "License",
     content: `Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
   }
-]
+];
 
 <VisDiv>
   <Tab data={data} />

@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import tw from "twin.macro"
-import { Link as gatsby_Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { MdKeyboardArrowRight } from "react-icons/md"
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { Link as gatsby_Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 export const PostBox = styled.div`
   display: block;
@@ -18,7 +18,7 @@ export const PostBox = styled.div`
     top: 0;
     background: linear-gradient(transparent 150px, white);
   }
-`
+`;
 
 // ************ Box style for blogposts ************//
 export const ArrowBox = styled.div`
@@ -62,7 +62,7 @@ export const ArrowBox = styled.div`
   .group:hover > &:before {
     border-bottom-color: #00aeef;
   }
-`
+`;
 
 export const ArrowBox_featured = styled(ArrowBox)`
   background-color: #111827;
@@ -74,14 +74,14 @@ export const ArrowBox_featured = styled(ArrowBox)`
   .group:hover > & {
     border-top: 0px solid #111827;
   }
-`
+`;
 
 export const IMG = styled(GatsbyImage)`
   transition: 0.5s ease;
   background-size: cover;
   background-position: center;
   ${tw`transform group-hover:scale-110`}
-`
+`;
 
 export const IMG_DIV = styled.div`
   position: relative;
@@ -122,34 +122,34 @@ export const IMG_DIV = styled.div`
     min-height: 500px;
     max-height: 600px;
   }
-`
+`;
 
 export const CatBtn = styled(gatsby_Link)`
   ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
-`
+`;
 
 export const TagBtn = styled(gatsby_Link)`
   ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
-`
+`;
 
 export const HomeBlogNav = styled.div`
   ${tw`w-1/2 md:w-1/4 py-2 lg:py-3 hover:text-white border-b-2 border-black transition duration-700 ease-in-out`}
-`
+`;
 
 export const BlackButton = styled.button`
   ${({ external }) => !external && tw`mt-8`};
   ${tw`bg-gray-900 rounded-sm relative inline-block hover:bg-brand-blue text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
-`
+`;
 
 export const GreyButton = styled.button`
   ${({ external }) => !external && tw`mt-8`};
   ${tw`bg-gray-100 rounded-sm text-gray-700 hover:bg-brand-blue text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
-`
+`;
 
 export const BlackWhiteButton = styled.button`
   ${({ external }) => !external && tw`mt-8`};
   ${tw`bg-gray-900 rounded-sm text-center hover:text-brand-blue hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent `}
-`
+`;
 
 export const AnimateButton = styled.button`
   ${({ external }) => !external && tw`mt-8`};
@@ -191,11 +191,11 @@ export const AnimateButton = styled.button`
       width: 100%;
     }
   }
-`
+`;
 
 export const ArrowButton = (props) => {
   const arrowStyle =
-    "inline-block transform group-hover:translate-x-1 transition duration-100"
+    "inline-block transform group-hover:translate-x-1 transition duration-100";
 
   switch (props.type) {
     case "GreyButton":
@@ -204,7 +204,7 @@ export const ArrowButton = (props) => {
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </GreyButton>
-      )
+      );
 
     case "BlackWhiteButton":
       return (
@@ -212,7 +212,7 @@ export const ArrowButton = (props) => {
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </BlackWhiteButton>
-      )
+      );
 
     case "AnimateButton":
       return (
@@ -220,7 +220,7 @@ export const ArrowButton = (props) => {
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </AnimateButton>
-      )
+      );
 
     default:
       return (
@@ -228,14 +228,14 @@ export const ArrowButton = (props) => {
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </BlackButton>
-      )
+      );
   }
-}
+};
 ArrowButton.propTypes = {
   children: PropTypes.any,
   type: PropTypes.any,
   props: PropTypes.any
-}
+};
 
 export const A_footer = (props) => {
   return (
@@ -247,10 +247,10 @@ export const A_footer = (props) => {
     >
       {props.children}
     </a>
-  )
-}
+  );
+};
 A_footer.propTypes = {
   children: PropTypes.any,
   href: PropTypes.any,
   className: PropTypes.any
-}
+};

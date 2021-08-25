@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import React, { memo } from "react"
-import { Handle } from "react-flow-renderer"
-import Consultation from "./images/consultation.png"
-import TestImg from "./images/test.png"
+import React, { memo } from "react";
+import { Handle } from "react-flow-renderer";
+import Consultation from "./images/consultation.png";
+import TestImg from "./images/test.png";
 
 const handleStyle = {
   borderRadius: 0,
@@ -10,7 +10,7 @@ const handleStyle = {
   left: "50%",
   transform: "translate(-50%, -50%)",
   zIndex: "-1"
-}
+};
 
 export const TriangleNodeComponent = memo(({ data }) => {
   return (
@@ -46,9 +46,9 @@ export const TriangleNodeComponent = memo(({ data }) => {
         }}
       />
     </div>
-  )
-})
-TriangleNodeComponent.displayName = "TriangleNodeComponent"
+  );
+});
+TriangleNodeComponent.displayName = "TriangleNodeComponent";
 
 export const DecisionNodeComponent = memo(({ data }) => {
   return (
@@ -86,12 +86,12 @@ export const DecisionNodeComponent = memo(({ data }) => {
           lineHeight: 1.3
         }}
       >
-        {data.label}
+        {data?.label}
       </div>
     </div>
-  )
-})
-DecisionNodeComponent.displayName = "DecisionNodeComponent"
+  );
+});
+DecisionNodeComponent.displayName = "DecisionNodeComponent";
 
 export const InfoNodeComponent = memo(({ data }) => {
   return (
@@ -128,9 +128,9 @@ export const InfoNodeComponent = memo(({ data }) => {
         {data.label}
       </div>
     </div>
-  )
-})
-InfoNodeComponent.displayName = "InfoNodeComponent"
+  );
+});
+InfoNodeComponent.displayName = "InfoNodeComponent";
 
 const nodeCommonStyle = {
   borderRadius: "10px",
@@ -139,7 +139,7 @@ const nodeCommonStyle = {
   lineHeight: "150px",
   display: "table-cell",
   verticalAlign: "middle"
-}
+};
 
 export const GreenNodeComponent = memo(({ data }) => {
   return (
@@ -170,9 +170,9 @@ export const GreenNodeComponent = memo(({ data }) => {
         style={{ top: "69%", left: "50%", transform: "translate(-50%, -50%)" }}
       />
     </div>
-  )
-})
-GreenNodeComponent.displayName = "GreenNodeComponent"
+  );
+});
+GreenNodeComponent.displayName = "GreenNodeComponent";
 
 export const RedNodeComponent = memo(({ data }) => {
   return (
@@ -203,9 +203,9 @@ export const RedNodeComponent = memo(({ data }) => {
         style={{ right: "0px", bottom: "0px" }}
       />
     </div>
-  )
-})
-RedNodeComponent.displayName = "RedNodeComponent"
+  );
+});
+RedNodeComponent.displayName = "RedNodeComponent";
 
 /**
  * Styles for the animation

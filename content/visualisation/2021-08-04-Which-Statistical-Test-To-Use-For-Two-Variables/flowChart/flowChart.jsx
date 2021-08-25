@@ -5,22 +5,52 @@
  */
 
 /* eslint-disable react/prop-types */
-import React, { useState, useCallback, useEffect } from "react"
-import ReactFlow, { Controls, useZoomPanHelper } from "react-flow-renderer"
-import { FlowchartDiv } from "./style"
+import React, { useState, useCallback, useEffect } from "react";
+import ReactFlow, { Controls, useZoomPanHelper } from "react-flow-renderer";
+import sanitizeHtml from "sanitize-html";
+import {
+  FlowchartDiv,
+  FlowchartWrap,
+  UtilityBtn,
+  DescriptionBox,
+  HelpDiv,
+  HelpText,
+  Sidebar,
+  SidebarUtility,
+  PathTrackingDiv,
+  ColourBox
+} from "./style";
 import {
   TriangleNodeComponent,
   DecisionNodeComponent,
   GreenNodeComponent,
   InfoNodeComponent,
   RedNodeComponent
-} from "./nodeComponents"
-import { getEdge, getNode, getNodesAndEdges } from "./utils"
-import { chartNodeData } from "./data/nodeData"
-import { chartEdgeData } from "./data/edgeData"
-import { textForHelp } from "./data/textData"
-import { FaToggleOff, FaToggleOn } from "react-icons/fa"
-import { MdHelp } from "react-icons/md"
+} from "./nodeComponents";
+import { getEdge, getNode, getNodesAndEdges } from "./utils";
+import { chartNodeData } from "./data/nodeData";
+import { chartEdgeData } from "./data/edgeData";
+import { textForHelp } from "./data/textData";
+import { FaToggleOff, FaToggleOn } from "react-icons/fa";
+import { MdHelp } from "react-icons/md";
+
+const sanitizeOptions = {
+  allowedTags: sanitizeHtml.defaults.allowedTags.concat([
+    "img",
+    "Link",
+    "code",
+    "br"
+  ]),
+  allowedAttributes: {
+    ...sanitizeHtml.defaults.allowedAttributes,
+    "*": ["className", "style", "class"],
+    a: ["href", "name", "target", "rel"]
+  },
+  allowedClasses: {
+    ...sanitizeHtml.defaults.allowedClasses,
+    "*": ["*"]
+  }
+};
 
 /***********************************
  * Flowchart Data and settings
@@ -31,35 +61,38 @@ const nodeTypes = {
   info: InfoNodeComponent,
   test: GreenNodeComponent,
   help: RedNodeComponent
-}
+};
 
-const snapGrid = [15, 15]
-const connectionLineStyle = { stroke: "#fff" }
+const snapGrid = [15, 15];
+const connectionLineStyle = { stroke: "#fff" };
 
 // Initialise data
 let groupedData = [...chartNodeData, ...chartEdgeData].map((el) => ({
   ...el,
-  isHidden: el.id != "start",
-  labelStyle: el.id.charAt(0) == "e" && { fontSize: ".95rem" }
-}))
+  isHidden: el.id != "start", // only show the start button
+  labelStyle: el.id.charAt(0) == "e" && { fontSize: ".95rem" } // set edges' font size
+}));
 
 /**************************
  * Return flowchart
  * @returns
  *************************/
 const flowChart = () => {
-  const [displayChart, setDisplayChart] = useState(false)
-  const [showAll, toggleShowAll] = useState(false)
-  const [centreOnClick, toggleCentre] = useState(true)
-  const [reactflowInstance, setReactflowInstance] = useState(null)
-  const { setCenter } = useZoomPanHelper()
-  const [showHelp, setShowHelp] = useState(false)
+  const [displayChart, setDisplayChart] = useState(false);
+  const [showAll, toggleShowAll] = useState(false);
+  const [centreOnClick, toggleCentre] = useState(true);
+  const [reactflowInstance, setReactflowInstance] = useState(null);
+  const { setCenter } = useZoomPanHelper();
+  const [showHelp, setShowHelp] = useState(false);
   // data for all edges and nodes
-  const [elements, setElements] = useState(groupedData)
+  const [elements, setElements] = useState(groupedData);
   // dialog box
-  const [elementData, setElementData] = useState({ label: "", description: "" })
+  const [elementData, setElementData] = useState({
+    label: "",
+    description: ""
+  });
   //list of clicked nodes
-  const [clickedNodes, setClickedNodes] = useState([])
+  const [clickedNodes, setClickedNodes] = useState([]);
 
   /****************************************
    * Utility functions for the flowchart
@@ -68,65 +101,65 @@ const flowChart = () => {
   const onLoad = useCallback(
     (rfi) => {
       if (!reactflowInstance) {
-        setReactflowInstance(rfi)
-        localStorage.removeItem("dataviz-flowchart")
+        setReactflowInstance(rfi);
+        localStorage.removeItem("dataviz-flowchart");
       }
-      setTimeout(() => rfi.fitView(), 500)
+      setTimeout(() => rfi.fitView(), 500);
     },
     [reactflowInstance]
-  )
+  );
 
   /**
    * Handle show all button
    */
   const handleShowButton = useCallback(() => {
     if (!showAll) {
-      localStorage.setItem("dataviz-flowchart", JSON.stringify(elements))
+      localStorage.setItem("dataviz-flowchart", JSON.stringify(elements));
 
-      setElements(groupedData.map((el) => ({ ...el, isHidden: false })))
+      setElements(groupedData.map((el) => ({ ...el, isHidden: false })));
 
-      toggleShowAll(!showAll)
-      setTimeout(() => reactflowInstance.fitView({ padding: 0.2 }), 100)
-      return
+      toggleShowAll(!showAll);
+      setTimeout(() => reactflowInstance.fitView({ padding: 0.2 }), 100);
+      return;
     }
 
     const restore =
-      JSON.parse(localStorage.getItem("dataviz-flowchart")) || groupedData
+      JSON.parse(localStorage.getItem("dataviz-flowchart")) || groupedData;
 
-    setElements(restore)
-    toggleShowAll(!showAll)
-    setTimeout(() => reactflowInstance.fitView({ padding: 0.2 }), 100)
-  })
+    setElements(restore);
+    toggleShowAll(!showAll);
+    setTimeout(() => reactflowInstance.fitView({ padding: 0.2 }), 100);
+  });
 
   /**
    * Utility function for update decision node style
    */
   const updateNodeStyle = useCallback((elementId, action = "add") => {
     if (elementId == "start") {
-      return
+      return;
     }
 
-    let domEl = document.querySelector(`div[data-id='${elementId}'] > div`)
+    let domEl = document.querySelector(`div[data-id='${elementId}'] > div`);
     if (!domEl) {
-      return
+      return;
     }
 
-    const type = domEl.dataset.type || ""
+    const type = domEl.dataset.type || "";
     if (type != "decision") {
-      return
+      return;
     }
 
     if (action == "remove") {
-      domEl.style.border = "5px solid orange"
-      domEl.style.background = "white"
-      domEl.style.color = "black"
-      return
+      domEl.style.border = "5px solid orange";
+      domEl.style.background = "white";
+      domEl.style.color = "black";
+      return;
     }
 
-    domEl.style.border = "5px solid #00aeef"
-    domEl.style.background = "rgba(34, 32, 31, 0.98)"
-    domEl.style.color = "white"
-  })
+    domEl.style.border = "5px solid #00aeef";
+    domEl.style.background = "rgba(34, 32, 31, 0.98)";
+    domEl.style.color = "white";
+  });
 
   /**
    * utility function for update current list of clicked nodes
@@ -136,52 +169,52 @@ const flowChart = () => {
    */
   const updateClickedNodes = useCallback(
     (OldClickedNodes, childIds, element) => {
-      let newClickedNodes = OldClickedNodes
-      const index = OldClickedNodes.indexOf(element.id)
+      let newClickedNodes = OldClickedNodes;
+      const index = OldClickedNodes.indexOf(element.id);
 
       // if exists, remove from the array
       if (index !== -1) {
-        newClickedNodes.splice(index, 1)
-        updateNodeStyle(element.id, "remove")
+        newClickedNodes.splice(index, 1);
+        updateNodeStyle(element.id, "remove");
       }
       // remove children nodes
       if (index !== -1 && childIds.length != 0) {
         for (let i in childIds) {
-          let childIndex = newClickedNodes.indexOf(childIds[i])
-          if (childIndex == -1) continue
-          newClickedNodes.splice(childIndex, 1)
-          updateNodeStyle(childIds[i], "remove")
+          let childIndex = newClickedNodes.indexOf(childIds[i]);
+          if (childIndex == -1) continue;
+          newClickedNodes.splice(childIndex, 1);
+          updateNodeStyle(childIds[i], "remove");
         }
       }
       if (index == -1) {
-        newClickedNodes.push(element.id)
-        updateNodeStyle(element.id)
+        newClickedNodes.push(element.id);
+        updateNodeStyle(element.id);
       }
 
-      return newClickedNodes
+      return newClickedNodes;
     }
-  )
+  );
 
   /**
    * Execute when nodes are clicked
    */
   const onElementClick = useCallback((event, element) => {
     if (showAll) {
-      return
+      return;
     }
     // Get all children nodes and edges
-    const childIds = getNodesAndEdges(elements, element)
+    const childIds = getNodesAndEdges(elements, element);
 
     // update clicked nodes
-    let newClickedNodes = updateClickedNodes(clickedNodes, childIds, element)
-    setClickedNodes(newClickedNodes)
+    let newClickedNodes = updateClickedNodes(clickedNodes, childIds, element);
+    setClickedNodes(newClickedNodes);
 
     // Show/hide children elements
     let currentElements = elements
       .filter((el) => el.id != element.id)
       .map((el) => {
         if (!childIds.includes(el.id)) {
-          return { ...el }
+          return { ...el };
         }
 
         // If child node already shown from other node, don't hide it
@@ -193,56 +226,56 @@ const flowChart = () => {
           return {
             ...el,
             isHidden: !newClickedNodes.includes(element.id)
-          }
+          };
         }
 
         // toggle child elements
         return {
           ...el,
           isHidden: !el.isHidden
-        }
-      })
+        };
+      });
 
     // for all elements, change property accordingly
     for (let i in currentElements) {
       if (currentElements[i].id.charAt(0) != "e") {
-        continue
+        continue;
       }
       if (currentElements[i].isHidden) {
-        currentElements[i].animated = false
-        currentElements[i].style = {}
-        continue
+        currentElements[i].animated = false;
+        currentElements[i].style = {};
+        continue;
       }
 
       // highlight all edges between clicked nodes
-      const includeSource = newClickedNodes.includes(currentElements[i].source)
-      const includeTarget = newClickedNodes.includes(currentElements[i].target)
+      const includeSource = newClickedNodes.includes(currentElements[i].source);
+      const includeTarget = newClickedNodes.includes(currentElements[i].target);
 
       if (!includeSource || !includeTarget) {
-        currentElements[i].animated = false
-        currentElements[i].style = {}
+        currentElements[i].animated = false;
+        currentElements[i].style = {};
       }
       if (includeSource && includeTarget) {
-        currentElements[i].animated = true
-        currentElements[i].style = { stroke: "#00aeef" }
+        currentElements[i].animated = true;
+        currentElements[i].style = { stroke: "#00aeef" };
       }
     }
 
-    setElements([...currentElements, element])
+    setElements([...currentElements, element]);
 
     if (centreOnClick) {
-      setCenter(element.position.x, element.position.y, 1.1)
+      setCenter(element.position.x, element.position.y, 1.1);
     }
-  })
+  });
 
   /**
    * Execute when mouse enters nodes
    */
   const onNodeMouseEnter = useCallback((_event, node) => {
-    setElementData(node.data)
-    let el = document.querySelector("#nodeDescriptionBox")
-    el.style.visibility = "visible"
-    setTimeout(() => (el.style.opacity = 100), 300)
+    setElementData(node.data);
+    let el = document.querySelector("#nodeDescriptionBox");
+    el.style.visibility = "visible";
+    setTimeout(() => (el.style.opacity = 100), 300);
 
     let newElements = elements.map((element) => {
       if (element.target == node.id) {
@@ -253,21 +286,21 @@ const flowChart = () => {
             ...element?.style,
             stroke: element?.style?.stroke == "#00aeef" ? "#00aeef" : "orange"
           }
-        }
+        };
       }
-      return element
-    })
+      return element;
+    });
 
-    setElements(newElements)
-  })
+    setElements(newElements);
+  });
 
   /**
    * Execute when mouse leaves nodes
    */
   const onNodeMouseLeave = useCallback((_event, node) => {
-    let el = document.querySelector("#nodeDescriptionBox")
-    el.opacity = 0
-    el.style.visibility = "hidden"
+    let el = document.querySelector("#nodeDescriptionBox");
+    el.style.opacity = 0;
+    el.style.visibility = "hidden";
 
     let newElements = elements.map((element) => {
       if (element.target == node.id) {
@@ -278,26 +311,26 @@ const flowChart = () => {
             ...element?.style,
             stroke: element?.style?.stroke == "#00aeef" ? "#00aeef" : "#fff"
           }
-        }
+        };
       }
-      return element
-    })
+      return element;
+    });
 
-    setElements(newElements)
-  })
+    setElements(newElements);
+  });
 
   /**
    * When add new node to the sidebar, scroll to the bottom
    */
   useEffect(() => {
     if (clickedNodes.length < 7) {
-      return
+      return;
     }
     setTimeout(() => {
-      const sidebar = document.getElementById("sidebar")
-      sidebar.scrollTop = sidebar.scrollHeight
-    }, 100)
-  }, [elements])
+      const sidebar = document.getElementById("sidebar");
+      sidebar.scrollTop = sidebar.scrollHeight;
+    }, 100);
+  }, [elements]);
 
   /****************************************
    * End of Utility functions
@@ -306,19 +339,21 @@ const flowChart = () => {
   return (
     <div>
       <button
-        className="px-5 py-3 rounded-md bg-shefPurple text-white my-10"
+        style={{
+          padding: ".75rem 1.25rem",
+          borderRadius: ".375rem",
+          backgroundColor: "rgb(37, 29, 90)",
+          color: "white",
+          margin: "2.5rem auto"
+        }}
         onClick={() => setDisplayChart(!displayChart)}
       >
         Click here to open the flowchart
       </button>
       <FlowchartDiv displayChart={displayChart} className="hideScrollBar">
-        <div
-          id="flowChartWrap"
-          className="relative w-full md:w-8/12 2xl:w-9/12 min-h-70 md:min-h-100 text-black"
-        >
+        <FlowchartWrap id="flowChartWrap">
           <ReactFlow
             elements={elements}
-            //onElementClick={onElementClick}
             style={{
               background: "linear-gradient(215deg, #251d5a 10%, #000 100%)"
             }}
@@ -336,157 +371,151 @@ const flowChart = () => {
           </ReactFlow>
 
           {/* Utility buttons on the bottom left */}
-          <button
-            className="z-10 absolute bottom-0 left-0 ml-16 mb-4 text-white flex text-3xl self-center cursor-pointer"
-            style={{ alignItems: "center" }}
+          <UtilityBtn
             onClick={() => handleShowButton()}
+            style={{ marginBottom: "1rem" }}
           >
-            {showAll ? (
-              <FaToggleOn
-                style={{ filter: "drop-shadow(0px 1px 7px rgb(0, 0, 0))" }}
-              />
-            ) : (
-              <FaToggleOff style={{ color: "#969696" }} />
-            )}
-            <span
-              className={`${!showAll && "text-gray-300"} text-base ml-3`}
-              style={{ textShadow: "0px 1px 5px #000" }}
-            >
+            {showAll ? <FaToggleOn /> : <FaToggleOff />}
+            <span style={{ color: !showAll && "rgb(209, 213, 219)" }}>
               Show all paths
             </span>
-          </button>
-          <button
-            className="z-10 absolute bottom-0 left-0 ml-16 mb-12 text-white flex text-3xl self-center cursor-pointer"
-            style={{ alignItems: "center" }}
+          </UtilityBtn>
+          <UtilityBtn
             onClick={() => toggleCentre(!centreOnClick)}
+            style={{ marginBottom: "3rem" }}
           >
-            {centreOnClick ? (
-              <FaToggleOn
-                style={{ filter: "drop-shadow(0px 1px 7px rgb(0, 0, 0))" }}
-              />
-            ) : (
-              <FaToggleOff style={{ color: "#969696" }} />
-            )}
-            <span
-              className={`${!centreOnClick && "text-gray-300"} text-base ml-3`}
-              style={{ textShadow: "0px 1px 5px #000" }}
-            >
+            {centreOnClick ? <FaToggleOn /> : <FaToggleOff />}
+            <span style={{ color: !centreOnClick && "rgb(209, 213, 219)" }}>
               Follow clicked shapes
             </span>
-          </button>
+          </UtilityBtn>
 
           {/* Description box on hover nodes */}
-          <div
-            id="nodeDescriptionBox"
-            className="absolute p-4 bg-white shadow-2xl rounded-lg z-50 opacity-0 invisible"
-            style={{
-              transform: "translate(-50%, 0%)",
-              left: "50%",
-              bottom: "20px",
-              width: "350px",
-              boxShadow: "0 10px 50px -5px #00aeef",
-              transition: "visibility .2s, opacity 0.5s linear"
-            }}
-          >
-            <h1 className="text-base font-bold mb-2 leading-5">
-              {elementData.label}
-            </h1>
-            <p className="text-sm leading-5">{elementData.description}</p>
-          </div>
+          <DescriptionBox id="nodeDescriptionBox">
+            <h1>{elementData.label}</h1>
+            <p
+              dangerouslySetInnerHTML={{
+                __html: sanitizeHtml(
+                  elementData.description || "",
+                  sanitizeOptions
+                )
+              }}
+            ></p>
+          </DescriptionBox>
 
           {/* Help button (& its content) on the bottom right */}
           <MdHelp
             title="Help / tutorial"
             onClick={() => setShowHelp(!showHelp)}
-            className={`${
-              showHelp && "text-green-200 text-5xl"
-            } z-10 absolute bottom-0 right-0 m-6 text-white text-4xl cursor-pointer`}
-          />
-          <div
-            data-for="help"
-            className={`${
-              !showHelp && "hidden"
-            } rounded-xl shadow-2xl fixed z-10 p-5 bg-white`}
             style={{
-              width: "650px",
-              left: "50%",
-              top: "50%",
-              transform: "translate(-50%, -50%)"
+              zIndex: "10",
+              position: "absolute",
+              bottom: 0,
+              right: 0,
+              margin: "1.5rem",
+              color: showHelp ? "rgb(167, 243, 208)" : "white",
+              fontSize: showHelp ? "3rem" : "2.25rem",
+              cursor: "pointer"
             }}
-          >
+          />
+          <HelpDiv data-for="help" style={{ display: !showHelp && "none" }}>
             {textForHelp.map((text) => {
               return (
-                <div key={`help-${text.question}`}>
-                  <h1 className="text-base mb-2 font-semibold">
-                    {text.question}
-                  </h1>
-                  <p className="text-sm mb-3 leading-5 text-gray-700">
-                    {text.answer}
-                  </p>
-                </div>
-              )
+                <HelpText key={`help-${text.question}`}>
+                  <h1>{text.question}</h1>
+                  <p>{text.answer}</p>
+                </HelpText>
+              );
             })}
-            <div className="w-full mt-6 flex justify-end">
+            <div
+              style={{
+                width: "100%",
+                marginTop: "1.5rem",
+                display: "flex",
+                justifyContent: "flex-end"
+              }}
+            >
               <button
                 onClick={() =>
                   window.open(
                     "https://shef-dataviz.slack.com/archives/C99CXQGK1"
                   )
                 }
-                className="mr-2 p-2 bg-red-100 text-red-700 border-red-200 border-1 text-base"
+                style={{
+                  marginRight: ".5rem",
+                  padding: ".5rem",
+                  backgroundColor: "rgb(254, 226, 226)",
+                  color: "rgb(185, 28, 28)",
+                  border: "solid 1px rgb(254, 202, 202)",
+                  fontSize: "1rem",
+                  lineHeight: "1.5rem"
+                }}
               >
                 I need some help / I have suggestions
               </button>
               <button
                 onClick={() => setShowHelp(!showHelp)}
-                className="p-2 bg-green-100 text-green-700 border-green-200 border-1 text-base"
+                style={{
+                  padding: ".5rem",
+                  backgroundColor: "rgb(209, 250, 229)",
+                  color: "rgb(4, 120, 87)",
+                  border: "solid 1px rgb(167, 243, 208)",
+                  fontSize: "1rem",
+                  lineHeight: "1.5rem"
+                }}
               >
                 I&apos;ve got it
               </button>
             </div>
-          </div>
-        </div>
+          </HelpDiv>
+        </FlowchartWrap>
 
         {/* sidebar */}
-        <div
-          id="sidebar"
-          className="w-full md:w-4/12 2xl:w-3/12 bg-white p-3 overflow-y-auto hideScrollBar"
-          style={{ height: "100vh" }}
-        >
-          <div className="w-full flex flex-wrap pb-5 space-x-2 space-y-2 border-b-1 border-gray-100">
+        <Sidebar id="sidebar" className="hideScrollBar">
+          <SidebarUtility>
             <button
               title="Centre the flowchart"
-              className="mt-2 ml-2 px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold"
               onClick={() => reactflowInstance.fitView()}
             >
               Fit view
             </button>
             <button
               title="Reset the flowchart"
-              className="px-2 py-1 rounded-md bg-pink-600 hover:bg-pink-500 text-white font-semibold"
               onClick={() => {
-                setElements(groupedData)
-                setClickedNodes([])
-                reactflowInstance.fitView()
+                setElements(groupedData);
+                setClickedNodes([]);
+                reactflowInstance.fitView();
               }}
             >
               Restart
             </button>
             <button
               title="Exit this page"
-              className="px-2 py-1 rounded-md bg-pink-700 hover:bg-pink-600 text-white font-semibold"
               onClick={() => setDisplayChart(!displayChart)}
             >
               CLOSE
             </button>
-          </div>
+          </SidebarUtility>
           {/* Path tracking */}
-          <div className="mt-5">
-            <h1 className="font-semibold text-xl text-black">
+          <div style={{ marginTop: "1.25rem" }}>
+            <h1
+              style={{
+                fontWeight: "600",
+                fontSize: "1.25rem",
+                lineHeight: "1.75rem",
+                color: "black"
+              }}
+            >
               {clickedNodes.length >= 2 ? (
                 "Your paths:"
               ) : (
-                <span className="font-light text-lg">
+                <span
+                  style={{
+                    fontWeight: "300",
+                    fontSize: "1.125rem",
+                    lineHeight: "1.75rem"
+                  }}
+                >
                   &#10140; Please click the first two shapes to start. <br />
                   <br />
                   &#10140; Click on questions (diamond shape) to see more
@@ -502,11 +531,11 @@ const flowChart = () => {
                 </span>
               )}
             </h1>
-            <div className="py-3">
+            <div style={{ padding: ".75rem auto" }}>
               {clickedNodes.length >= 2 &&
                 clickedNodes.map((node, index) => {
                   if (index == 0) {
-                    return false
+                    return false;
                   }
                   {
                     /* Check if there is an edge between two nodes */
@@ -519,22 +548,19 @@ const flowChart = () => {
                       clickedNodes[index - 2]
                     )
                   ) {
-                    return false
+                    return false;
                   }
 
-                  const currentNodeObj = getNode(elements, node)
-                  const lastNode = getNode(elements, clickedNodes[index - 1])
-                  const edge = getEdge(elements, node, lastNode.id)
+                  const currentNodeObj = getNode(elements, node);
+                  const lastNode = getNode(elements, clickedNodes[index - 1]);
+                  const edge = getEdge(elements, node, lastNode.id);
                   const pathNotification =
                     !edge?.label &&
-                    "Looks like you have jumped to a different path. Please unselect the shape you don't want."
+                    "Looks like you have jumped to a different path. Please unselect the shape you don't want.";
 
                   return (
-                    <div
-                      key={`path-${node}`}
-                      className="mt-2 flex flex-wrap justify-center w-full"
-                    >
-                      <div className="w-9/12 pr-3">
+                    <PathTrackingDiv key={`path-${node}`}>
+                      <div className="nodeLabel">
                         <div
                           title="Click to go to this node."
                           onClick={() =>
@@ -544,57 +570,46 @@ const flowChart = () => {
                               1.1
                             )
                           }
-                          className="w-full p-2 text-base text-white rounded-md cursor-pointer"
-                          style={{
-                            border: "solid 2px #00aeef",
-                            background: "rgba(0,0,0,.94)"
-                          }}
                         >
                           {lastNode?.data?.label}
                         </div>
                       </div>
-                      <div className="w-3/12 p-2 text-base text-center bg-blue-100 text-blue-700 border-1 border-blue-200 rounded-md">
-                        {edge.label}
-                      </div>
+                      <div className="edgeLabel">{edge.label}</div>
                       {/* Warning box when the user jumped to different path */}
                       {pathNotification && (
-                        <div className="mt-2 text-base rounded-md w-full border-1 border-yellow-200 bg-yellow-100 text-yellow-700 p-2">
+                        <div
+                          style={{
+                            marginTop: ".5rem",
+                            fontSize: "1rem",
+                            lineHeight: "1.5rem",
+                            borderRadius: ".375rem",
+                            width: "100%",
+                            border: "solid 1px rgb(253, 230, 138)",
+                            backgroundColor: "rgb(254, 243, 199)",
+                            color: "rgb(180, 83, 9)",
+                            padding: ".5rem"
+                          }}
+                        >
                           {pathNotification}
                         </div>
                       )}
                       {/* Colour box when reaching help or test node */}
                       {(currentNodeObj.type == "help" ||
                         currentNodeObj.type == "test") && (
-                        <div
-                          className={`${
-                            currentNodeObj.type == "help"
-                              ? "border-red-200 bg-red-100 text-red-700"
-                              : "border-green-200 bg-green-100 text-green-700"
-                          } mt-2 border-1`}
-                          style={{
-                            width: "100%",
-                            textAlign: "center",
-                            padding: ".5rem",
-                            borderRadius: ".375rem"
-                          }}
-                        >
-                          <h1 className="font-bold mb-1">
-                            {currentNodeObj.data.label}
-                          </h1>
-                          <p className="text-base">
-                            {currentNodeObj.data?.description}
-                          </p>
-                        </div>
+                        <ColourBox type={currentNodeObj.type}>
+                          <h1>{currentNodeObj.data.label}</h1>
+                          <p>{currentNodeObj.data?.description}</p>
+                        </ColourBox>
                       )}
-                    </div>
-                  )
+                    </PathTrackingDiv>
+                  );
                 })}
             </div>
           </div>
-        </div>
+        </Sidebar>
       </FlowchartDiv>
     </div>
-  )
-}
+  );
+};
 
-export default flowChart
+export default flowChart;

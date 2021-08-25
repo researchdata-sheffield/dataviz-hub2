@@ -13,7 +13,7 @@ svgImagePath: millions-of-uk-residents-struggle-to-access-food.svg
 pngImagePath: millions-of-uk-residents-struggle-to-access-food.png
 ---
 
-import RadarPlot from "./radarPlot"
+import RadarPlot from "./radarPlot";
 
 export const data = [
   {
@@ -22,7 +22,7 @@ export const data = [
   },
   {
     title: "Detail",
-    content: `This visualisation is based on the map mentioned in the source tab. I have chosen five cities across UK including two cities from Yorkshire and the Humber area, in which "almost half of local areas in here have very high percentages of people who were hungry in January", as suggested by researchers. The <a href="https://nivo.rocks/radar/">radar</a> component is used for this visualisation. If you would like to try this component, <a href="https://reactjs.org/docs/add-react-to-a-website.html">add React to your website</a> and install nivo and radar using <code class="language-text">npm install @nivo/core @nivo/radar</code>.`
+    content: `This visualisation is based on the map mentioned in the source tab. I have chosen five cities across UK including two cities from Yorkshire and the Humber area, in which "almost half of local areas in here have very high percentages of people who were hungry in January", as suggested by researchers. The <a href="https://nivo.rocks/radar/">radar</a> component is used for this visualisation. If you would like to try this component, <a href="https://reactjs.org/docs/add-react-to-a-website.html">add React to your website</a> and install nivo and radar using <code class="language-sh">npm install @nivo/core @nivo/radar</code>. Then import the plot using <code class="language-js">import RadarPlot from "./radarPlot"</code>.`
   },
   {
     title: "Code",
@@ -36,7 +36,7 @@ export const data = [
     title: "License",
     content: `This visualisation is covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
   }
-]
+];
 
 <div className="flex justify-center">
   <RadarPlot />

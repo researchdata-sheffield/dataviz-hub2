@@ -10,10 +10,10 @@ category: [Research & Innovation IT]
 tag: [Statistics, Interative]
 ---
 
-import FlowChart from "./flowChart/flowChart"
-import { ReactFlowProvider } from "react-flow-renderer"
-import Thumbnail from "./thumbnail/thumb"
-import Thumb from "./thumbnail/flowChartInside.png"
+import FlowChart from "./flowChart/flowChart";
+import { ReactFlowProvider } from "react-flow-renderer";
+import Thumbnail from "./thumbnail/thumb";
+import Thumb from "./thumbnail/flowChartInside.png";
 
 export const data = [
   {
@@ -22,7 +22,7 @@ export const data = [
   },
   {
     title: "Detail",
-    content: `This chart was created using React and <a href="https://reactflow.dev/">React Flow</a> with customised components. Unfortunately, you can not embed the flowchart at the moment. Once you have setup a website using React and install the React Flow library and styled-components, import the flowchart by using <br/><code>import FlowChart from "./flowChart/flowChart"<br/>import { ReactFlowProvider } from 'react-flow-renderer'</code>`
+    content: `This chart was created using React and <a href="https://reactflow.dev/">React Flow</a> with customised components. Unfortunately, you can not embed the flowchart at the moment. Once you have setup a website using React, go ahead to install the React Flow library and styled-components (I'm using this to achieve locally scoped CSS). Then import the flowchart using the following code: <br/><code>import FlowChart from "./flowChart/flowChart"<br/>import { ReactFlowProvider } from 'react-flow-renderer'</code>`
   },
   {
     title: "Code",
@@ -32,7 +32,7 @@ export const data = [
     title: "License",
     content: `Code and content are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
   }
-]
+];
 
 <div className="flex justify-center">
   <div

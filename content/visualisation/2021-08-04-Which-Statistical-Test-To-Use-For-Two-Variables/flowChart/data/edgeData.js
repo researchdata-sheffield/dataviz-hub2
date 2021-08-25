@@ -476,7 +476,7 @@ export const chartEdgeData = [
     target: "T.ordinalChiSq",
     arrowHeadType: "arrow",
     type: "smoothstep",
-    label: "More than 5"
+    label: "Less than 5"
   },
   /*********************************************
    * BOTTOM BRANCH
@@ -736,7 +736,7 @@ export const chartEdgeData = [
     target: "T.RLeftKappa",
     arrowHeadType: "arrow",
     type: "smoothstep",
-    label: "Not now"
+    label: "I'm not willing/ready"
   },
   /**
    * RIGHT-MOST branch
@@ -789,4 +789,4 @@ export const chartEdgeData = [
     type: "smoothstep",
     label: "Paired T-Test"
   }
-]
+];

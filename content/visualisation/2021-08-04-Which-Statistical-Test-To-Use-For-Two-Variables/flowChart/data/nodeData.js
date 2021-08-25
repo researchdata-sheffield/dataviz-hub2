@@ -33,8 +33,11 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "What type of variable is your dependent?",
-      description:
-        "Choose Scalar, Nominal (categorical), or Ordinal (ordered categories)."
+      description: `Choose from Scalar, Nominal, or Ordinal. <br/><br/>
+        Scalar:  variables that are for continuous numeric measurements such as height, temperature, and salary. <br/><br/>
+        Nominal: variables that has two or more UNORDERED categories or groups. Examples are gender, age, hair colour, answers to True or False questions, and faculties within the university. <br/><br/>
+        Ordinal: ORDERED nominal variables so now the order matters. For example, a survey might ask surveyees to rate something at a scale from 0 to 9. 
+        `
     },
     position: { x: 3350, y: 2730 }
   },
@@ -47,7 +50,7 @@ export const chartNodeData = [
     data: {
       label: "Are you happy to assume constant variance?",
       description:
-        "Constant variance is the assumption of homoscedasticity. This means the variance of distances of data points to the regression line are constant."
+        "Constant variance is the assumption of homoscedasticity. This means the data points are evenly scattered around the regression line."
     },
     position: { x: 3000, y: 2730 }
   },
@@ -57,7 +60,7 @@ export const chartNodeData = [
     data: {
       label: "Does spread increase with increases in mean?",
       description:
-        "Increase in variance with increases in mean is suggesting data points might have different scales - one or more points are significant larger."
+        "Increase in variance with increases in mean is suggesting data points might have different scales - one or more points are significant larger. On the graph you will see data points moving further away on the higher end of the regression line."
     },
     position: { x: 2650, y: 2730 }
   },
@@ -66,7 +69,8 @@ export const chartNodeData = [
     type: "info",
     data: {
       label: "Assume normality",
-      description: "Assuming your data follows Gaussian/normal distribution."
+      description:
+        "Assuming your data follows Gaussian/normal distribution. You can check this visually by plotting a histogram."
     },
     position: { x: 2995, y: 2400 }
   },
@@ -99,7 +103,8 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "Is your independent variable Scalar?",
-      description: "Continuous variable?"
+      description:
+        "Scalar variables are for continuous numeric measurements such as height, temperature, and salary."
     },
     position: { x: 2350, y: 2330 }
   },
@@ -107,7 +112,8 @@ export const chartNodeData = [
     id: "D.TreatBothDep",
     type: "decision",
     data: {
-      label: "Are you prepared to treat both as dependent?"
+      label: "Are you prepared to treat both as dependent?",
+      description: "A dependent variable depends on changes in other variable."
     },
     position: { x: 2050, y: 2330 }
   },
@@ -135,7 +141,8 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "Is your independent variable nominal?",
-      description: "Check if independent variable have at least two categories."
+      description:
+        "Check if your independent variable have at least two categories."
     },
     position: { x: 2350, y: 2000 }
   },
@@ -144,7 +151,8 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "How many categories?",
-      description: "Number of categories in this nominal independent variable."
+      description:
+        "Number of categories in this nominal (unordered categorical) independent variable."
     },
     position: { x: 2050, y: 2000 }
   },
@@ -172,8 +180,7 @@ export const chartNodeData = [
     type: "test",
     data: {
       label: "Mann-Whitney",
-      description:
-        "Mann-Whitney tests whether there is a difference between two dependent variables."
+      description: `Mann-Whitney tests whether there is a difference between two dependent variables.`
     },
     position: { x: 1745, y: 1715 }
   },
@@ -277,7 +284,8 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "How many categories?",
-      description: "Number of categories in your nominal independent variable."
+      description:
+        "Number of categories in your nominal (unordered categorical) independent variable."
     },
     position: { x: 2695, y: 1600 }
   },
@@ -287,7 +295,7 @@ export const chartNodeData = [
     data: {
       label: "T-test",
       description:
-        "A hypothesis test that investigate the significance difference between two groups."
+        "A hypothesis test that investigate the significant difference (whether there are measurable difference) between two groups."
     },
     position: { x: 2585, y: 1850 }
   },
@@ -316,7 +324,7 @@ export const chartNodeData = [
     data: {
       label: "Prepared to consider linearly spaced?",
       description:
-        "Are these categories equally spaced? If so, it might be an interval variable."
+        "Are these categories equally spaced? If so, it might be an interval variable. An interval variable is used, as the the name suggesting, for define values along a scale. The length/distance between adjacent values is the same. Examples of interval variable are temperature, time, and percentages."
     },
     position: { x: 2695, y: 900 }
   },
@@ -334,7 +342,9 @@ export const chartNodeData = [
     id: "D.normalityCombineCats",
     type: "decision",
     data: {
-      label: "Willing to combine neighbouring categories?"
+      label: "Willing to combine neighbouring categories?",
+      description:
+        "For example, suppose 50 balls are divided into categories Red (18), Green (15), Blue (12), Yellow (2), Orange (1), and White (2). We can combine Yellow, Orange and White into the category 'Other' because they are minority."
     },
     position: { x: 3095, y: 900 }
   },
@@ -405,7 +415,8 @@ export const chartNodeData = [
     type: "test",
     data: {
       label: "Chi-squared Test",
-      description: "Test the significance difference between categories."
+      description:
+        "Test the significant difference (whether there are measurable difference) between categories."
     },
     position: { x: 3650, y: 2445 }
   },
@@ -413,7 +424,7 @@ export const chartNodeData = [
     id: "D.nominalTwoCats",
     type: "decision",
     data: {
-      label: "Do you have two categories in your dependent variable?"
+      label: "Do you have only two categories in your dependent variable?"
     },
     position: { x: 3350, y: 2130 }
   },
@@ -442,14 +453,17 @@ export const chartNodeData = [
   {
     id: "D.howManyCats",
     type: "decision",
-    data: { label: "How many categories?" },
+    data: {
+      label: "How many categories?",
+      description: "How many categories in your dependent ordinal variable?"
+    },
     position: { x: 3700, y: 2730 }
   },
   {
     id: "H.ordinalRegression",
     type: "help",
     data: {
-      label: "PLease consult a statistician",
+      label: "Please consult a statistician",
       description: "You should be using Ordinal Regression."
     },
     position: { x: 3545, y: 3045 }
@@ -469,7 +483,7 @@ export const chartNodeData = [
     type: "test",
     data: {
       label: "Chi-squared Test",
-      description: "Test the significance difference between categories."
+      description: "Test the significant difference between categories."
     },
     position: { x: 4300, y: 2745 }
   },
@@ -488,7 +502,7 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "How many categories?",
-      description: "Number of categories in the ordinal variable."
+      description: "Number of categories in the independent ordinal variable."
     },
     position: { x: 4315, y: 3030 }
   },
@@ -499,7 +513,7 @@ export const chartNodeData = [
       label: "Please consult a statistician",
       description: "Please see a statistician to discuss options."
     },
-    position: { x: 4600, y: 3045 }
+    position: { x: 4700, y: 3045 }
   },
   /*********************************************
    * BOTTOM BRANCH
@@ -549,7 +563,9 @@ export const chartNodeData = [
     id: "D.AreTheyScalar",
     type: "decision",
     data: {
-      label: "Are they both scalar?"
+      label: "Are they both scalar?",
+      description:
+        "Scalar variables are for continuous numeric measurements such as height, temperature, and salary."
     },
     position: { x: 4250, y: 3630 }
   },
@@ -560,7 +576,9 @@ export const chartNodeData = [
     id: "D.BothScalar",
     type: "decision",
     data: {
-      label: "Are they both scalar?"
+      label: "Are they both scalar?",
+      description:
+        "Scalar variables are for continuous numeric measurements such as height, temperature, and salary."
     },
     position: { x: 2700, y: 3330 }
   },
@@ -580,7 +598,7 @@ export const chartNodeData = [
     data: {
       label: "One ordinal and one scalar?",
       description:
-        "Are you comparing an ordinal variable and a scalar variable?"
+        "Are you comparing an ordinal variable and a scalar variable? <br/><br/>Ordinal variables has two or more ORDERED categories or groups. For example, a survey might ask surveyees to rate something at a scale from 0 to 9."
     },
     position: { x: 2700, y: 3630 }
   },
@@ -599,7 +617,8 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "Both ordinal variables",
-      description: "Both variables have ordered categories."
+      description:
+        "Both variables have ordered categories. <br/><br/>Ordinal variables has two or more ORDERED categories or groups. For example, a survey might ask surveyees to rate something at a scale from 0 to 9."
     },
     position: { x: 2700, y: 3930 }
   },
@@ -617,7 +636,9 @@ export const chartNodeData = [
     id: "D.HowManyCatsInOrdinal",
     type: "decision",
     data: {
-      label: "How many categories in your ordinal variable?"
+      label: "How many categories in your ordinal variable?",
+      description:
+        "Ordinal variables has two or more ORDERED categories or groups. For example, a survey might ask surveyees to rate something at a scale from 0 to 9."
     },
     position: { x: 2400, y: 4230 }
   },
@@ -626,7 +647,7 @@ export const chartNodeData = [
     type: "test",
     data: {
       label: "Chi-squared Test",
-      description: "Test the significance difference between categories."
+      description: "Test the significant difference between categories."
     },
     position: { x: 2390, y: 4545 }
   },
@@ -634,7 +655,9 @@ export const chartNodeData = [
     id: "D.avgDiffLeftBothOrdinal",
     type: "decision",
     data: {
-      label: "Both variables are ordinal"
+      label: "Both variables are ordinal",
+      description:
+        "Ordinal variables has two or more ORDERED categories or groups. For example, a survey might ask surveyees to rate something at a scale from 0 to 9."
     },
     position: { x: 2700, y: 4530 }
   },
@@ -664,7 +687,8 @@ export const chartNodeData = [
     type: "decision",
     data: {
       label: "Are they both scalar?",
-      description: "Check if both variables are continuous."
+      description:
+        "Check if both variables contains continuous numeric measurements."
     },
     position: { x: 3000, y: 3630 }
   },
@@ -674,7 +698,7 @@ export const chartNodeData = [
     data: {
       label: "Are you happy to assume constancy of variance?",
       description:
-        "Constant variance is the assumption of homoscedasticity. This means the variance of distances of data points to the regression line is constant."
+        "Constant variance is the assumption of homoscedasticity. This means the data points are evenly scattered around the regression line."
     },
     position: { x: 3300, y: 3630 }
   },
@@ -702,7 +726,7 @@ export const chartNodeData = [
     id: "H.centreSeeStatistician",
     type: "help",
     data: {
-      label: "PLease consult a statistician",
+      label: "Please consult a statistician",
       description:
         "See a statistician as there is no standard test for this scenario."
     },
@@ -724,7 +748,9 @@ export const chartNodeData = [
     id: "D.RLeftBothOrdinal",
     type: "decision",
     data: {
-      label: "Are they both ordinal variables?"
+      label: "Are they both ordinal variables?",
+      description:
+        "Ordinal variables has two or more ORDERED categories or groups. For example, a survey might ask surveyees to rate something at a scale from 0 to 9."
     },
     position: { x: 3950, y: 3930 }
   },
@@ -776,7 +802,7 @@ export const chartNodeData = [
     data: {
       label: "Are you happy to assume constancy of variance?",
       description:
-        "Constant variance is the assumption of homoscedasticity. This means the variance of distances of data points to the regression line is constant."
+        "Constant variance is the assumption of homoscedasticity. This means the data points are evenly scattered around the regression line."
     },
     position: { x: 4550, y: 3630 }
   },
@@ -815,8 +841,8 @@ export const chartNodeData = [
     data: {
       label: "Paired T-Test",
       description:
-        "The T-test is a hypothesis test that investigate the significance difference between two paired groups sampled from the same population."
+        "The T-test is a hypothesis test that investigate the significant difference between two paired groups sampled from the same population."
     },
     position: { x: 4835, y: 3645 }
   }
-]
+];

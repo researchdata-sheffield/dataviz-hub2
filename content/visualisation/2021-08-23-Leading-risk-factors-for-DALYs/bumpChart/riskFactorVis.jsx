@@ -1,17 +1,17 @@
-import React, { useState } from "react"
-import BumpChart from "./bumpChart"
+import React, { useState } from "react";
+import BumpChart from "./bumpChart";
 
-import femaleJsonData from "./female.json"
-import maleJsonData from "./male.json"
+import femaleJsonData from "./female.json";
+import maleJsonData from "./male.json";
 
 /**
  * dataviz.shef.ac.uk
  * This visualisation is covered by a CC BY-SA 4.0 license.
  * https://creativecommons.org/licenses/by-sa/4.0/
  */
-const Visualisation = () => {
-  const [maleData, setMaleData] = useState(maleJsonData["Low"])
-  const [femaleData, setFemaleData] = useState(femaleJsonData["Low"])
+const RiskFactorVis = () => {
+  const [maleData, setMaleData] = useState(maleJsonData["Low"]);
+  const [femaleData, setFemaleData] = useState(femaleJsonData["Low"]);
 
   const sourceInfo = {
     position: "absolute",
@@ -19,7 +19,7 @@ const Visualisation = () => {
     margin: "1rem",
     fontSize: "0.72rem",
     color: "rgb(255, 255, 255)"
-  }
+  };
 
   const genderSpan = {
     color: "#DBDBDB",
@@ -27,7 +27,7 @@ const Visualisation = () => {
     padding: ".15rem .25rem",
     fontSize: ".8rem",
     borderRadius: ".3rem"
-  }
+  };
 
   const theme = {
     textColor: "#C9C9C9",
@@ -38,19 +38,19 @@ const Visualisation = () => {
         boxShadow: "0 3px 9px rgba(0, 0, 0, 0.5)"
       }
     }
-  }
+  };
 
   const legendStyle = {
     width: "20px",
     height: "4px",
     display: "inline-block",
     marginRight: "5px"
-  }
+  };
 
   function onInputChange(event) {
-    const value = event.target.value
-    setMaleData(maleJsonData[value])
-    setFemaleData(femaleJsonData[value])
+    const value = event.target.value;
+    setMaleData(maleJsonData[value]);
+    setFemaleData(femaleJsonData[value]);
   }
 
   return (
@@ -172,9 +172,9 @@ const Visualisation = () => {
         Source: The Lancet Global Health Metrics
       </h1>
     </div>
-  )
-}
+  );
+};
 
-Visualisation.propTypes = {}
+RiskFactorVis.propTypes = {};
 
-export default Visualisation
+export default RiskFactorVis;
