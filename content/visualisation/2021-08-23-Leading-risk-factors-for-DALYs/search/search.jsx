@@ -5,11 +5,12 @@ import regionJSONData from "./SDI_1990_2019.json";
 import quintilesJSONData from "./quintiles.json";
 
 const ResultDiv = styled.div`
-  margin: 1.5rem auto;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
   display: flex;
-  width: 300px;
+  width: 100%;
   text-align: center;
-  justify-content: center;
+  justify-content: space-around;
 
   .childDiv {
     h2 {
@@ -33,6 +34,9 @@ const search = () => {
     setRegion(region);
   }, 500);
 
+  /**
+   * If input region changed, update region's data and SDI levels
+   */
   useEffect(() => {
     if (currentRegion == "") {
       setData(null);
@@ -44,17 +48,22 @@ const search = () => {
     );
 
     if (result.length > 0) {
-      const levels = {
+      const newLevels = {
         1990: updateLevel(result[0]["1990"]),
         2010: updateLevel(result[0]["2010"]),
         2019: updateLevel(result[0]["2019"])
       };
 
       setData(result[0]);
-      setLevels(levels);
+      setLevels(newLevels);
     }
   }, [currentRegion]);
 
+  /**
+   * Get the level of current SDI value based on quintiles
+   * @param {number} sdi sdi value
+   * @returns {string} level (Low / Low-middle / Middle / High-middle / High)
+   */
   const updateLevel = (sdi) => {
     let level = "Unknown";
 
@@ -68,8 +77,18 @@ const search = () => {
   };
 
   return (
-    <div style={{ color: "white", margin: "2rem auto" }}>
-      <h2 style={{ fontSize: "1.1rem" }}>
+    <div
+      style={{
+        color: "white",
+        margin: "3rem auto",
+        background: "#1a2131",
+        padding: "1rem 2rem",
+        borderRadius: ".5rem",
+        boxShadow:
+          currentRegion !== "" ? "0 25px 50px -12px rgb(0 0 0 / 47%)" : "none"
+      }}
+    >
+      <h2 style={{ fontSize: "1.1rem", color: "#b5b5b5", fontWeight: "700" }}>
         Curious about certain regions&apos; SDI?
       </h2>
       <div style={{ margin: "1rem auto" }}>
@@ -95,26 +114,40 @@ const search = () => {
         </datalist>
       </div>
       {currentData && (
-        <ResultDiv>
-          <div style={{ width: "100px" }} className="childDiv">
-            <h2>Year</h2>
-            <h3>1990</h3>
-            <h3>2010</h3>
-            <h3>2019</h3>
-          </div>
-          <div style={{ width: "100px" }} className="childDiv">
-            <h2>SDI</h2>
-            <h3>{currentData["1990"]}</h3>
-            <h3>{currentData["2010"]}</h3>
-            <h3>{currentData["2019"]}</h3>
-          </div>
-          <div style={{ width: "100px" }} className="childDiv">
-            <h2>Level</h2>
-            <h3>{levels["1990"]}</h3>
-            <h3>{levels["2010"]}</h3>
-            <h3>{levels["2019"]}</h3>
-          </div>
-        </ResultDiv>
+        <>
+          <ResultDiv>
+            <div className="childDiv">
+              <h2>Year</h2>
+              <h3>1990</h3>
+              <h3>2010</h3>
+              <h3>2019</h3>
+            </div>
+            <div className="childDiv">
+              <h2>SDI</h2>
+              <h3>{currentData["1990"]}</h3>
+              <h3>{currentData["2010"]}</h3>
+              <h3>{currentData["2019"]}</h3>
+            </div>
+            <div className="childDiv">
+              <h2>Level</h2>
+              <h3>{levels["1990"]}</h3>
+              <h3>{levels["2010"]}</h3>
+              <h3>{levels["2019"]}</h3>
+            </div>
+          </ResultDiv>
+          <h3
+            style={{
+              fontSize: ".85rem",
+              color: "#ADADAD",
+              margin: "auto",
+              lineHeight: "1.2",
+              maxWidth: "350px"
+            }}
+          >
+            Note: the latest Quintiles might not accurately reflect the level at
+            older years.
+          </h3>
+        </>
       )}
       {currentRegion && !currentData && (
         <h2 style={{ fontSize: ".9rem", margin: "auto" }}>No results.</h2>

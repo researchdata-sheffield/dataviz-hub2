@@ -18,7 +18,8 @@ const RiskFactorVis = () => {
     bottom: 0,
     margin: "1rem",
     fontSize: "0.72rem",
-    color: "rgb(255, 255, 255)"
+    color: "rgb(255, 255, 255)",
+    lineHeight: "1"
   };
 
   const genderSpan = {

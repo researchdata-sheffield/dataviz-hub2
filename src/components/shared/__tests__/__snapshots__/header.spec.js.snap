@@ -18,7 +18,7 @@ exports[`Header renders correctly 1`] = `
       className="flex items-center flex-shrink-0 mr-5"
     >
       <a
-        className="sc-crzoAE dYdblk invisible "
+        className="sc-crrszt fCPgvf invisible "
         href="https://www.sheffield.ac.uk/"
         rel="noopener noreferrer"
         target="_blank"
@@ -131,7 +131,7 @@ exports[`Header renders correctly 1`] = `
           Blog
         </a>
         <a
-          className="sc-crzoAE dYdblk transition duration-300 text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           href="https://orda.shef.ac.uk/visualisations/"
           rel="noopener noreferrer"
           style={
@@ -157,7 +157,7 @@ exports[`Header renders correctly 1`] = `
           className="flex flex-wrap w-full justify-center space-x-4 mt-8 pt-6 border-t-2 border-gray-200"
         >
           <a
-            className="sc-crzoAE dYdblk transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
             href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
             rel="noopener noreferrer"
             style={
@@ -193,7 +193,7 @@ exports[`Header renders correctly 1`] = `
             </div>
           </a>
           <a
-            className="sc-crzoAE dYdblk transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
             href="https://join.slack.com/t/shef-dataviz/signup"
             rel="noopener noreferrer"
             style={
@@ -347,7 +347,7 @@ exports[`Header renders correctly 1`] = `
           Blog
         </a>
         <a
-          className="sc-crzoAE dYdblk transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           href="https://orda.shef.ac.uk/visualisations/"
           rel="noopener noreferrer"
           style={
@@ -369,7 +369,7 @@ exports[`Header renders correctly 1`] = `
           About
         </a>
         <a
-          className="sc-crzoAE dYdblk transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
           href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
           rel="noopener noreferrer"
           style={
@@ -405,7 +405,7 @@ exports[`Header renders correctly 1`] = `
           </div>
         </a>
         <a
-          className="sc-crzoAE dYdblk transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
           href="https://join.slack.com/t/shef-dataviz/signup"
           rel="noopener noreferrer"
           style={
@@ -441,7 +441,7 @@ exports[`Header renders correctly 1`] = `
           </div>
         </a>
         <a
-          className="sc-crzoAE dYdblk transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
           id="rssDesktop"
           onClick={[Function]}
           rel="noopener noreferrer"

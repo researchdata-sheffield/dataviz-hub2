@@ -106,7 +106,7 @@
     "rewire": "^5.0.0",
     "sanitize-html": "^2.4.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.0",
+    "styled-components": "^5.3.1",
     "trianglify": "^4.1.1"
   },
   "devDependencies": {
