@@ -56,7 +56,8 @@ const marimekkoPlot = () => {
     margin: "1rem",
     fontSize: "0.72rem",
     color: "rgb(55, 65, 81)",
-    lineHeight: 1
+    lineHeight: 1,
+    whiteSpace: "nowrap"
   };
 
   const theme = {

@@ -183,11 +183,16 @@ const Workconflict = () => {
         }}
       >
         <h1
-          style={{ lineHeight: "1", fontSize: "1.125rem", fontWeight: "800" }}
+          style={{
+            lineHeight: "1",
+            fontSize: "1.125rem",
+            fontWeight: "800",
+            whiteSpace: "nowrap"
+          }}
         >
           Dataviz.Shef
         </h1>
-        <h1 style={{ lineHeight: "1" }}>
+        <h1 style={{ lineHeight: "1", whiteSpace: "nowrap" }}>
           Source: The University of Sheffield - News
         </h1>
       </div>

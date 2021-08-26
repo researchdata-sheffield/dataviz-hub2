@@ -77,6 +77,7 @@ export const SourceTitle = styled.h1`
   color: rgb(156, 163, 175);
   font-size: 0.75rem;
   line-height: 1rem;
+  white-space: nowrap;
 `;
 
 export const BrandTitle = styled(SourceTitle)`

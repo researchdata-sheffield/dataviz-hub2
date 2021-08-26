@@ -24,6 +24,18 @@ const ResultDiv = styled.div`
   }
 `;
 
+const CustomInput = styled.input`
+  color: black;
+  font-size: 0.95rem;
+  padding: 0.2rem 0.5rem;
+  width: 100%;
+  border-radius: 0.25rem;
+
+  @media (min-width: 640px) {
+    width: 350px;
+  }
+`;
+
 const search = () => {
   const [currentRegion, setRegion] = useState("");
   const [currentData, setData] = useState(null);
@@ -89,19 +101,12 @@ const search = () => {
       }}
     >
       <h2 style={{ fontSize: "1.1rem", color: "#b5b5b5", fontWeight: "700" }}>
-        Curious about certain regions&apos; SDI?
+        Curious about certain region&apos;s SDI?
       </h2>
       <div style={{ margin: "1rem auto" }}>
-        <input
+        <CustomInput
           list="regions"
           onChange={onChangeRegion}
-          style={{
-            color: "black",
-            fontSize: ".95rem",
-            padding: ".2rem .5rem",
-            width: "350px",
-            borderRadius: ".25rem"
-          }}
           placeholder="Double click to select | Type to search"
         />
         <datalist id="regions">

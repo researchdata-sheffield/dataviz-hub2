@@ -4,10 +4,10 @@
  * https://creativecommons.org/licenses/by-sa/4.0/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { ResponsiveRadar } from "@nivo/radar"
-import Dish from "./food-dish.svg"
+import React from "react";
+import PropTypes from "prop-types";
+import { ResponsiveRadar } from "@nivo/radar";
+import Dish from "./food-dish.svg";
 
 export const data = [
   {
@@ -37,7 +37,7 @@ export const data = [
     "Glasgow City": 8.4
     //"Westminster": 12.96
   }
-]
+];
 
 /**
  * This component uses tailwindcss (https://tailwindcss.com/) framework for styling of some elements.
@@ -51,7 +51,7 @@ const radarPlot = () => {
     fontSize: "1.6rem",
     fontWeight: 900,
     textAlign: "center"
-  }
+  };
 
   const visWrapper = {
     width: "100%",
@@ -60,7 +60,7 @@ const radarPlot = () => {
     position: "relative",
     zIndex: 10,
     height: "480px"
-  }
+  };
 
   const sourceInfo = {
     position: "absolute",
@@ -68,8 +68,9 @@ const radarPlot = () => {
     margin: "1rem",
     fontSize: "0.72rem",
     color: "rgb(255, 255, 255)",
-    lineHeight: 1
-  }
+    lineHeight: 1,
+    whiteSpace: "nowrap"
+  };
 
   const percentageInfo = {
     position: "absolute",
@@ -77,7 +78,7 @@ const radarPlot = () => {
     color: "#fff",
     fontSize: ".82rem",
     textShadow: "0px 1px 3px #000"
-  }
+  };
 
   const theme = {
     dots: {
@@ -108,7 +109,7 @@ const radarPlot = () => {
         }
       }
     }
-  }
+  };
 
   return (
     <div
@@ -151,8 +152,8 @@ const radarPlot = () => {
           dotBorderColor={{ theme: "background" }}
           enableDotLabel={true}
           dotLabel={(e) => {
-            if (e.index == "Worried") return
-            return e.key
+            if (e.index == "Worried") return;
+            return e.key;
           }}
           dotLabelYOffset={-10}
           colors={{ scheme: "yellow_green_blue" }}
@@ -228,11 +229,11 @@ const radarPlot = () => {
         Source: The University of Sheffield - News
       </h1>
     </div>
-  )
-}
+  );
+};
 
-export default radarPlot
+export default radarPlot;
 
 radarPlot.propTypes = {
   data: PropTypes.any
-}
+};
