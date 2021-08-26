@@ -4,10 +4,10 @@
  * https://creativecommons.org/licenses/by-sa/4.0/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { ResponsiveWaffle } from "@nivo/waffle"
-import depression from "./depression.png"
+import React from "react";
+import PropTypes from "prop-types";
+import { ResponsiveWaffle } from "@nivo/waffle";
+import depression from "./depression.png";
 
 const THEME = {
   legends: {
@@ -18,7 +18,7 @@ const THEME = {
   tooltip: {
     color: "#000"
   }
-}
+};
 
 const COSTDATA = [
   {
@@ -39,14 +39,14 @@ const COSTDATA = [
     value: 2.2,
     color: "#a1cfff"
   }
-]
+];
 
 /**
  * This component uses tailwindcss (https://tailwindcss.com/) framework for styling of some elements.
  * Visit the website for reference of className.
  * E.g. className="p-5 relative" translates to "padding: 1.25rem; position: relative"
  */
-const visualisation = () => {
+const Workconflict = () => {
   return (
     <div
       id="visualisation"
@@ -63,8 +63,15 @@ const visualisation = () => {
       className="p-4 relative"
     >
       <h1
-        className="text-6xl font-bold mb-10 pb-2 font-stephenson"
-        style={{ color: "#fff", lineHeight: 1.3 }}
+        style={{
+          color: "#fff",
+          lineHeight: 1.3,
+          fontFamily: "TUOS Stephenson, Georgia, Times, serif",
+          fontSize: "3.75rem",
+          fontWeight: "700",
+          marginBottom: "2.5rem",
+          paddingBottom: ".5rem"
+        }}
       >
         Workplace conflict costs employers <br />{" "}
         <span
@@ -78,7 +85,7 @@ const visualisation = () => {
         a year
       </h1>
 
-      <img className="my-5" src={depression} />
+      <img style={{ margin: "1rem auto" }} src={depression} />
       <h1 className="text-white text-base text-right">
         <span
           style={{
@@ -94,13 +101,36 @@ const visualisation = () => {
       </h1>
 
       <div
-        className="mt-14 mx-auto h-full"
-        style={{ minHeight: "400px", maxHeight: "600px", maxWidth: "560px" }}
+        style={{
+          minHeight: "400px",
+          maxHeight: "600px",
+          maxWidth: "560px",
+          marginTop: "3.5rem",
+          marginLeft: "auto",
+          marginRight: "auto",
+          height: "100%"
+        }}
       >
-        <h1 className="text-gray-300 text-center font-bold text-3xl">
+        <h1
+          style={{
+            color: "rgb(209, 213, 219)",
+            textAlign: "center",
+            fontWeight: "700",
+            fontSize: "1.875rem",
+            lineHeight: "2.25rem"
+          }}
+        >
           How do these costs break down?
         </h1>
-        <h3 className="text-gray-400 text-center -mb-10 md:-mb-5 text-lg">
+        <h3
+          style={{
+            color: "rgb(156, 163, 175)",
+            textAlign: "center",
+            fontSize: "1.125rem",
+            lineHeight: "1.75rem",
+            marginBottom: "-2rem"
+          }}
+        >
           One square = £1 billion
         </h3>
         <ResponsiveWaffle
@@ -140,18 +170,33 @@ const visualisation = () => {
         />
       </div>
 
-      <div className="absolute bottom-0 right-0 m-5 text-gray-500 text-xs text-right">
-        <h1 className="font-extrabold text-lg leading-none">Dataviz.Shef</h1>
-        <h1 className="leading-none">
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          right: 0,
+          margin: "1.25rem",
+          fontSize: "0.75rem",
+          lineHeight: "1rem",
+          textAlign: "right",
+          color: "rgb(107, 114, 128)"
+        }}
+      >
+        <h1
+          style={{ lineHeight: "1", fontSize: "1.125rem", fontWeight: "800" }}
+        >
+          Dataviz.Shef
+        </h1>
+        <h1 style={{ lineHeight: "1" }}>
           Source: The University of Sheffield - News
         </h1>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default visualisation
+export default Workconflict;
 
-visualisation.propTypes = {
+Workconflict.propTypes = {
   data: PropTypes.any
-}
+};
