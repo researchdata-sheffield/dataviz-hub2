@@ -4,22 +4,25 @@ author: [Yu Liang Weng]
 title: Leading risk factors for disability-adjusted life years in different SDI countries
 thumbnail: thumb.jpg
 description: >
-  A simple visualisation that shows leading risk factors for number of years lost due to overall disease burden, in countries with different sustainable development indexes.
+  A simple visualisation that shows leading risk factors for number of years lost due to overall disease burden, in countries with different Socio-Demographic Indexes.
 date: "2021-08-23"
 category: [School Of Health And Related Research]
 tag: [Global Burden of Diseases]
 rowSpan: 1
 columnSpan: 2
-pngImagePath: leading-risk-factors-for-DALYs-in-different-sdi-countries.png
 svgImagePath: leading-risk-factors-for-DALYs-in-different-sdi-countries.svg
+pngImagePath: leading-risk-factors-for-DALYs-in-different-sdi-countries.png
 ---
 
-import Visualisation from "./code/visualisation"
+import RiskFactorVis from "./bumpChart/riskFactorVis";
+import Search from "./search/search";
 
 export const data = [
   {
     title: "Source",
-    content: `This visualisation is produced based on figures <code>S1a</code> to <code>S1j</code> (supplementary appendix 2a) in the study <i>'Global burden of 87 risk factors in 204 countries and territories, 1990–2019: a systematic analysis for the Global Burden of Disease Study 2019'</i> (<a href="https://doi.org/10.1016/S0140-6736(20)30752-2">DOI</a>) - The Lancet Global Health Metrics.`
+    content: `This visualisation is produced based on figures <code>S1a</code> to <code>S1j</code> (supplementary appendix 2a) in the study <i>'Global burden of 87 risk factors in 204 countries and territories, 1990–2019: a systematic analysis for the Global Burden of Disease Study 2019'</i> (<a href="https://doi.org/10.1016/S0140-6736(20)30752-2">DOI</a>) - The Lancet Global Health Metrics.<br/><br/>
+    Datasets for the SDI search component were downloaded from <i>Global Burden of Disease Collaborative Network. Global Burden of Disease Study 2019 (GBD 2019) Socio-Demographic Index (SDI) 1950–2019. Seattle, United States of America: Institute for Health Metrics and Evaluation (IHME), 2020</i> (<a href="https://doi.org/10.6069/D8QB-JK35">DOI</a>), and was converted to JSON formats.
+    `
   },
   {
     title: "Detail",
@@ -29,22 +32,24 @@ export const data = [
   },
   {
     title: "Glossary",
-    content: `<b>SDI (Sustainable Development Index)</b> - an efficiency metric on a scale of zero to one (best) measures a country's progress towards a sustainable economy, society and environment.<br/>
+    content: `<b>SDI (Socio-demographic Index)</b> - an summary metric on a scale of zero to one (best) measures the composite average of the rankings of the incomes per capita, average educational attainment, and fertility rates of all areas in the GBD study. (<a href="http://www.healthdata.org/taxonomy/glossary/socio-demographic-index-sdi">source</a>)<br/>
     <b>DALY (disability-adjusted life year)</b> - a metric summaries overall disease burden into number of years of life lost due to ill-health, disability or early death.
     `
   },
   {
     title: "Code",
-    content: `The source code is hosted on website's GitHub repository, you can find it <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-08-23-Leading-risk-factors-for-DALYs/code">here</a>.`
+    content: `The source code is hosted on website's GitHub repository, you can find it <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-08-23-Leading-risk-factors-for-DALYs/">here</a>.`
   },
   {
     title: "License",
-    content: `Code and content are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+    content: `Code and content for the visualisation are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>). <br/>Datasets for the SDI search component are covered by a CC BY-NC 4.0 (<a href="https://creativecommons.org/licenses/by-nc/4.0/">Attribution-NonCommercial</a>) license.`
   }
-]
+];
 
-<div className="flex justify-center">
-  <Visualisation />
+<div className="flex justify-center flex-wrap">
+  <RiskFactorVis />
+  <br />
+  <Search />
 </div>
 
 <VisPagination mdx={props.mdx}>

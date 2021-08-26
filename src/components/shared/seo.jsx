@@ -5,11 +5,11 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
-import { getSrc } from "gatsby-plugin-image"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
+import { getSrc } from "gatsby-plugin-image";
 
 const SEO = ({
   title,
@@ -40,15 +40,15 @@ const SEO = ({
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
-  const metaAuthor = author || "dataviz.shef.ac.uk"
-  const metaTwitterCard = twitterCard || "summary_large_image"
+  const metaDescription = description || site.siteMetadata.description;
+  const metaAuthor = author || "dataviz.shef.ac.uk";
+  const metaTwitterCard = twitterCard || "summary_large_image";
   const metaTwitterImage =
-    getSrc(twitterImage) || getSrc(ogImage?.childImageSharp?.gatsbyImageData)
+    getSrc(twitterImage) || getSrc(ogImage?.childImageSharp?.gatsbyImageData);
   const metaTwitterImageAlt =
-    twitterImageAlt || "Thumbnail for the website - dataviz.shef.ac.uk"
+    twitterImageAlt || "Thumbnail for the website - dataviz.shef.ac.uk";
 
   return (
     <Helmet
@@ -118,15 +118,15 @@ const SEO = ({
             : []
         )}
     />
-  )
-}
+  );
+};
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
   keywords: []
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
@@ -137,7 +137,7 @@ SEO.propTypes = {
   keywords: PropTypes.arrayOf(PropTypes.string),
   twitterCard: PropTypes.string,
   twitterImage: PropTypes.object,
-  twitterImageAlt: PropTypes.object
-}
+  twitterImageAlt: PropTypes.string
+};
 
-export default SEO
+export default SEO;

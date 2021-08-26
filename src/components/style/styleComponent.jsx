@@ -1,35 +1,33 @@
-import React from 'react'
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import tw, { styled as styled_twin } from 'twin.macro'
-import { Link as gatsby_Link } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
-import { MdKeyboardArrowRight } from "react-icons/md"
-
-
+import React from "react";
+import PropTypes from "prop-types";
+import styled from "styled-components";
+import tw from "twin.macro";
+import { Link as gatsby_Link } from "gatsby";
+import { GatsbyImage } from "gatsby-plugin-image";
+import { MdKeyboardArrowRight } from "react-icons/md";
 
 export const PostBox = styled.div`
   display: block;
-  
-  &:before {
-    content:'';
-    width:100%;
-    height:100%;    
-    position:absolute;
-    left:0;
-    top:0;
-    background:linear-gradient(transparent 150px, white);
- }
-`
 
+  &:before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    background: linear-gradient(transparent 150px, white);
+  }
+`;
 
 // ************ Box style for blogposts ************//
 export const ArrowBox = styled.div`
   position: relative;
   background-color: #fff;
   border-top: 0px solid white;
-  
-  &:before, &:after {
+
+  &:before,
+  &:after {
     bottom: 100%;
     left: 14%;
     border: solid white;
@@ -42,17 +40,17 @@ export const ArrowBox = styled.div`
 
   &:before {
     border-color: transparent;
-    ${'' /* triangle border */}
-    border-bottom-color: transparent;  
-    border-width: 20px;   
+    ${"" /* triangle border */}
+    border-bottom-color: transparent;
+    border-width: 20px;
     margin-left: -20px;
   }
 
   &:after {
     border-color: transparent;
-    ${'' /* triangle inside color */}
+    ${"" /* triangle inside color */}
     border-bottom-color: #fff;
-    ${'' /* 4px less than :before */}
+    ${"" /* 4px less than :before */}
     border-width: 15px;
     margin-left: -15px;
   }
@@ -64,8 +62,7 @@ export const ArrowBox = styled.div`
   .group:hover > &:before {
     border-bottom-color: #00aeef;
   }
-
-`
+`;
 
 export const ArrowBox_featured = styled(ArrowBox)`
   background-color: #111827;
@@ -77,15 +74,14 @@ export const ArrowBox_featured = styled(ArrowBox)`
   .group:hover > & {
     border-top: 0px solid #111827;
   }
-
-`
+`;
 
 export const IMG = styled(GatsbyImage)`
-  transition: .5s ease;
+  transition: 0.5s ease;
   background-size: cover;
   background-position: center;
   ${tw`transform group-hover:scale-110`}
-`
+`;
 
 export const IMG_DIV = styled.div`
   position: relative;
@@ -126,53 +122,51 @@ export const IMG_DIV = styled.div`
     min-height: 500px;
     max-height: 600px;
   }
-`
+`;
 
-
-
-
-export const CatBtn = styled_twin(gatsby_Link)`
+export const CatBtn = styled(gatsby_Link)`
   ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
-`
+`;
 
-export const TagBtn = styled_twin(gatsby_Link)`
+export const TagBtn = styled(gatsby_Link)`
   ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
-`
+`;
 
-export const HomeBlogNav = styled_twin.div`
+export const HomeBlogNav = styled.div`
   ${tw`w-1/2 md:w-1/4 py-2 lg:py-3 hover:text-white border-b-2 border-black transition duration-700 ease-in-out`}
-`
+`;
 
-export const BlackButton = styled_twin.button`
-  ${ ({ external }) => !external && tw`mt-8` };
+export const BlackButton = styled.button`
+  ${({ external }) => !external && tw`mt-8`};
   ${tw`bg-gray-900 rounded-sm relative inline-block hover:bg-brand-blue text-center hover:text-white text-gray-100 font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
-`
+`;
 
-export const GreyButton = styled_twin.button`
-  ${ ({ external }) => !external && tw`mt-8` };
+export const GreyButton = styled.button`
+  ${({ external }) => !external && tw`mt-8`};
   ${tw`bg-gray-100 rounded-sm text-gray-700 hover:bg-brand-blue text-center hover:text-white font-semibold py-2 px-6 border-2 border-transparent transition duration-500`}
-`
+`;
 
-export const BlackWhiteButton = styled_twin.button`
-  ${ ({ external }) => !external && tw`mt-8` };
+export const BlackWhiteButton = styled.button`
+  ${({ external }) => !external && tw`mt-8`};
   ${tw`bg-gray-900 rounded-sm text-center hover:text-brand-blue hover:bg-white transition duration-500 shadow-lg hover:shadow-2xl text-gray-100 font-semibold py-2 px-6 border-2 border-transparent `}
+`;
 
-`
-
-export const AnimateButton = styled_twin.button`
-  ${ ({ external }) => !external && tw`mt-8` };
+export const AnimateButton = styled.button`
+  ${({ external }) => !external && tw`mt-8`};
   ${tw`bg-white text-black text-center font-semibold py-2 px-4 shadow`};
   border: none;
   z-index: 1;
   position: relative;
   text-align: center;
   overflow: hidden;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
   display: inline-block;
-  box-shadow: ${({boxShadow}) => boxShadow ? boxShadow : `rgba(255,121,180,1)`} 4px 4px .1px;
+  box-shadow: ${({ boxShadow }) =>
+      boxShadow ? boxShadow : `rgba(255,121,180,1)`}
+    4px 4px 0.1px;
 
   &:after {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
@@ -181,52 +175,52 @@ export const AnimateButton = styled_twin.button`
     z-index: -2;
   }
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     bottom: 0;
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: ${({hoverBC}) => hoverBC ? hoverBC : `#111827`};
-    transition: all .3s;
+    background-color: ${({ hoverBC }) => (hoverBC ? hoverBC : `#111827`)};
+    transition: all 0.3s;
     z-index: -1;
   }
   &:hover {
     color: #fff;
     &:before {
-        width: 100%;
+      width: 100%;
     }
   }
-
-`
+`;
 
 export const ArrowButton = (props) => {
-  const arrowStyle = "inline-block transform group-hover:translate-x-1 transition duration-100"
+  const arrowStyle =
+    "inline-block transform group-hover:translate-x-1 transition duration-100";
 
-  switch(props.type){
-    case 'GreyButton':
+  switch (props.type) {
+    case "GreyButton":
       return (
         <GreyButton {...props}>
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </GreyButton>
-      )
+      );
 
-    case 'BlackWhiteButton':
+    case "BlackWhiteButton":
       return (
         <BlackWhiteButton {...props}>
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </BlackWhiteButton>
-      )
-    
-    case 'AnimateButton':
+      );
+
+    case "AnimateButton":
       return (
         <AnimateButton {...props}>
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </AnimateButton>
-      )
+      );
 
     default:
       return (
@@ -234,25 +228,29 @@ export const ArrowButton = (props) => {
           {props.children}
           <MdKeyboardArrowRight className={arrowStyle} />
         </BlackButton>
-      )
+      );
   }
-}
+};
 ArrowButton.propTypes = {
   children: PropTypes.any,
   type: PropTypes.any,
-  props: PropTypes.any,
-}
-
+  props: PropTypes.any
+};
 
 export const A_footer = (props) => {
   return (
-    <a {...props} className={`${props.className} text-gray-400 hover:text-brand-blue`} target="_blank" rel="noopener noreferrer">{props.children}</a>
-  )  
-}
+    <a
+      {...props}
+      className={`${props.className} text-gray-400 hover:text-brand-blue`}
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {props.children}
+    </a>
+  );
+};
 A_footer.propTypes = {
   children: PropTypes.any,
   href: PropTypes.any,
-  className: PropTypes.any,
-}
-
-
+  className: PropTypes.any
+};
