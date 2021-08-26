@@ -1,45 +1,45 @@
 // BASE
-import React from "react"
-import { graphql, withPrefix, navigate } from "gatsby"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
+import React from "react";
+import { graphql, withPrefix, navigate } from "gatsby";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
 
-import SEO from "../../components/shared/seo"
-import PostPagination from "../../components/blog/postPagination"
-import Comment from "../../components/blog/comment"
+import SEO from "../../components/shared/seo";
+import PostPagination from "../../components/blog/postPagination";
+import Comment from "../../components/blog/comment";
 
 // MDX component
-import "katex/dist/katex.min.css"
-import CommonMdxProvider from "../../components/shared/commonMdxProvider"
+import "katex/dist/katex.min.css";
+import CommonMdxProvider from "../../components/shared/commonMdxProvider";
 
 // Utils
-import { useScript } from "../../utils/hooks/useScript"
-import { getShareLinks } from "../../utils/shared"
-import VisPagination from "../../components/visualisation/visPagination"
-import VisDetail from "../../components/visualisation/visDetail"
-import { VisDiv, VisBackBtn, EmbedCode } from "../../components/style/visStyle"
-import { AiOutlineRollback, AiOutlineHome } from "react-icons/ai"
+import { useScript } from "../../utils/hooks/useScript";
+import { getShareLinks } from "../../utils/shared";
+import VisPagination from "../../components/visualisation/visPagination";
+import VisDetail from "../../components/visualisation/visDetail";
+import { VisDiv, VisBackBtn, EmbedCode } from "../../components/style/visStyle";
+import { AiOutlineRollback, AiOutlineHome } from "react-icons/ai";
 
 const visItemTemplate = ({ data: { mdx }, pageContext }) => {
-  const components = { VisPagination, VisDetail, VisDiv, EmbedCode }
+  const components = { VisPagination, VisDetail, VisDiv, EmbedCode };
 
-  const shareLinks = getShareLinks(mdx)
-  const { title, template } = mdx.frontmatter
-  const { prev, next } = pageContext
+  const shareLinks = getShareLinks(mdx);
+  const { title, template } = mdx.frontmatter;
+  const { prev, next } = pageContext;
 
-  mdx.shareLinks = shareLinks
-  mdx.pageContext = pageContext
+  mdx.shareLinks = shareLinks;
+  mdx.pageContext = pageContext;
 
   // include d3 scripts
-  const d3 = mdx.frontmatter.d3 || null
+  const d3 = mdx.frontmatter.d3 || null;
   if (d3) {
     d3.forEach((d) => {
       if (d.includes("https://")) {
-        useScript(d, "", false) // external script
+        useScript(d, "", false); // external script
       } else {
-        useScript(withPrefix(`d3/${d}`), "", false)
+        useScript(withPrefix(`d3/${d}`), "", false);
       }
-    })
+    });
   }
 
   return (
@@ -80,7 +80,7 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
       ) : (
         <div className="flex flex-wrap relative mx-auto bg-gray-900">
           <div
-            className="relative mx-auto container py-32 px-5 text-lg xl:text-xl text-gray-200"
+            className="relative mx-auto container py-32 px-3 text-lg xl:text-xl text-gray-200"
             style={{ maxWidth: "1200px" }}
           >
             <CommonMdxProvider mdx={mdx} components={components} />
@@ -109,15 +109,15 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
       />
       <Comment mdx={mdx} />
     </div>
-  )
-}
+  );
+};
 
-export default visItemTemplate
+export default visItemTemplate;
 
 visItemTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any
-}
+};
 
 export const query = graphql`
   query visualisationItemQuery($id: String) {
@@ -144,4 +144,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

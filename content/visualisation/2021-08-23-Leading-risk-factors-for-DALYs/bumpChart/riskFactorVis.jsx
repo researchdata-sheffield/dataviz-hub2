@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import BumpChart from "./bumpChart";
-
+import { BumpChartWrap, ChartUtility } from "./style";
 import femaleJsonData from "./female.json";
 import maleJsonData from "./male.json";
 
@@ -19,7 +19,8 @@ const RiskFactorVis = () => {
     margin: "1rem",
     fontSize: "0.72rem",
     color: "rgb(255, 255, 255)",
-    lineHeight: "1"
+    lineHeight: "1",
+    whiteSpace: "nowrap"
   };
 
   const genderSpan = {
@@ -63,7 +64,7 @@ const RiskFactorVis = () => {
           "linear-gradient(135deg, #212121 0%,#212121 40%,#3a3a3a 77%,#434343 100%)",
         minHeight: "600px",
         height: "100%",
-        minWidth: "400px",
+        minWidth: "300px",
         maxWidth: "1200px",
         borderRadius: "20px",
         backgroundSize: "cover",
@@ -93,35 +94,18 @@ const RiskFactorVis = () => {
           justifyContent: "space-between"
         }}
       >
-        <div style={{ width: "49%", height: "400px", textAlign: "right" }}>
+        <BumpChartWrap>
           <span style={genderSpan}>Male</span>
           <BumpChart theme={theme} data={maleData} gender="male" />
-        </div>
-        <div style={{ width: "49%", height: "400px", textAlign: "right" }}>
+        </BumpChartWrap>
+        <BumpChartWrap>
           <span style={genderSpan}>Female</span>
           <BumpChart theme={theme} data={femaleData} gender="female" />
-        </div>
+        </BumpChartWrap>
       </div>
       {/* Legend & Selection box */}
-      <div
-        style={{
-          width: "100%",
-          display: "flex",
-          flexWrap: "wrap",
-          color: "#D4D4D4",
-          marginTop: "50px",
-          justifyContent: "center"
-        }}
-      >
-        <div
-          style={{
-            width: "32%",
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "space-between",
-            fontSize: ".7rem"
-          }}
-        >
+      <ChartUtility>
+        <div className="line-legend">
           <div>
             <span style={{ backgroundColor: "#A9FF6B", ...legendStyle }}></span>
             <span>Environmental</span>
@@ -135,21 +119,15 @@ const RiskFactorVis = () => {
             <span>Metabolic</span>
           </div>
         </div>
-        <div
-          style={{
-            width: "55%",
-            display: "flex",
-            justifyContent: "flex-end",
-            fontSize: ".83rem"
-          }}
-        >
+        <div className="SDI-selector">
           <span style={{ marginRight: "10px" }}>Countries with</span>
           <select
             style={{
               color: "black",
               textAlign: "center",
               fontSize: ".9rem",
-              fontWeight: "700"
+              fontWeight: "700",
+              maxHeight: "35px"
             }}
             type="radio"
             onChange={onInputChange}
@@ -163,7 +141,7 @@ const RiskFactorVis = () => {
           </select>
           <span style={{ marginLeft: "10px" }}>Socio-demographic Index</span>
         </div>
-      </div>
+      </ChartUtility>
       <h1
         style={{ fontWeight: 800, left: 0, fontSize: ".9rem", ...sourceInfo }}
       >
