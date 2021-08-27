@@ -45,6 +45,7 @@ export const ChartUtility = styled.div`
     font-size: 0.83rem;
     margin-top: 10px;
     line-height: 1.1;
+    align-items: center;
 
     @media (min-width: 768px) {
       width: 55%;

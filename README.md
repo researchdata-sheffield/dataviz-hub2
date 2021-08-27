@@ -89,20 +89,7 @@ Join the conversation and have fun in the community.
 - [Slack][datavizslack]
 - [Google Group][datavizgoogle]
 
-<br>
-
 <hr>
-
-### Useful Links
-
-- EventBrite API
-
-  - https://www.eventbriteapi.com/v3/users/me/?token=YOURTOKEN
-  - https://www.eventbriteapi.com/v3/organizations/OrgId/venues/?token=YOURTOKEN
-
-- [Gatsby plugins](https://www.gatsbyjs.org/plugins/)
-- [TailwindCSS](https://tailwindcss.com/docs/preflight)
-- [React-Icons](https://react-icons.netlify.com/#/)
 
 [contributing]: CONTRIBUTING.md
 [codeofconduct]: CODE-OF-CONDUCT.md
