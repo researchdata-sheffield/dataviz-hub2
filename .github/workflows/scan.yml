@@ -5,7 +5,10 @@ on:
     branches: [ development ]
   pull_request:
     branches: [ '**' ] 
-    types: [ assigned, opened, synchronize, reopened, unlocked, review_requested, edited ]
+    types: [        
+      opened,
+      synchronize,
+      reopened ]
   workflow_dispatch:
     inputs:
       Name:   

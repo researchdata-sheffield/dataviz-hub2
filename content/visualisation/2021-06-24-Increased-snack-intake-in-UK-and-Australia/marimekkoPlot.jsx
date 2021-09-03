@@ -1,9 +1,15 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { ResponsiveMarimekko } from "@nivo/marimekko"
-import Snack from "./snacks.svg"
-import AUFlag from "./australia.svg"
-import UKFlag from "./united-kingdom.svg"
+/**
+ * dataviz.shef.ac.uk
+ * This visualisation is covered by a CC BY-SA 4.0 license.
+ * https://creativecommons.org/licenses/by-sa/4.0/
+ */
+
+import React from "react";
+import PropTypes from "prop-types";
+import { ResponsiveMarimekko } from "@nivo/marimekko";
+import Snack from "./snacks.svg";
+import AUFlag from "./australia.svg";
+import UKFlag from "./united-kingdom.svg";
 
 export const data = [
   {
@@ -20,7 +26,7 @@ export const data = [
     NoChanges: 26,
     population: 25.36
   }
-]
+];
 
 /**
  * This component uses tailwindcss (https://tailwindcss.com/) framework for styling of some elements.
@@ -33,7 +39,7 @@ const marimekkoPlot = () => {
     lineHeight: 1.25,
     fontSize: "1.5rem",
     fontWeight: 700
-  }
+  };
 
   const visWrapper = {
     width: "100%",
@@ -42,19 +48,21 @@ const marimekkoPlot = () => {
     position: "relative",
     zIndex: 10,
     height: "350px"
-  }
+  };
 
   const sourceInfo = {
     position: "absolute",
     bottom: 0,
-    margin: "1.25rem",
+    margin: "1rem",
     fontSize: "0.72rem",
-    color: "rgb(55, 65, 81)"
-  }
+    color: "rgb(55, 65, 81)",
+    lineHeight: 1,
+    whiteSpace: "nowrap"
+  };
 
   const theme = {
     textColor: "#000"
-  }
+  };
 
   return (
     <div
@@ -68,7 +76,7 @@ const marimekkoPlot = () => {
         maxWidth: "550px",
         borderRadius: "20px",
         backgroundSize: "cover",
-        padding: "1.25rem",
+        padding: "1rem",
         position: "relative"
       }}
     >
@@ -118,7 +126,7 @@ const marimekkoPlot = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 10,
-            legend: "Country population (million)",
+            legend: "Nation population (million)",
             legendOffset: 36,
             legendPosition: "middle"
           }}
@@ -127,7 +135,7 @@ const marimekkoPlot = () => {
             tickSize: 5,
             tickPadding: 5,
             tickRotation: 0,
-            legend: "Respondent %",
+            legend: "Percentage of Respondents (%)",
             legendOffset: -40,
             legendPosition: "middle"
           }}
@@ -155,18 +163,22 @@ const marimekkoPlot = () => {
             }
           ]}
           tooltip={function (e) {
-            let country = e.bar.datum.data.country
-            let flag = country == "United Kingdom" ? UKFlag : AUFlag
+            let country = e.bar.datum.data.country;
+            let flag = country == "United Kingdom" ? UKFlag : AUFlag;
 
-            return React.createElement(
-              "div",
-              { className: "bg-white p-2 rounded-md text-gray-800" },
-              React.createElement("img", {
-                src: flag,
-                style: { maxWidth: "20px" }
-              }),
-              ` ${e.bar.id}: ${e.bar.value}%`
-            )
+            return (
+              <div
+                style={{
+                  backgroundColor: "white",
+                  padding: ".5rem",
+                  borderRadius: ".375rem",
+                  color: "black"
+                }}
+              >
+                <img src={flag} style={{ maxWidth: "20px" }} />
+                {` ${e.bar.id}: ${e.bar.value}%`}
+              </div>
+            );
           }}
           motionConfig="wobbly"
           legends={[
@@ -211,12 +223,12 @@ const marimekkoPlot = () => {
       <img
         src={UKFlag}
         alt="UK flag"
-        style={{ position: "absolute", top: "30%", left: "38%", width: "25px" }}
+        style={{ position: "absolute", top: "30%", left: "39%", width: "20px" }}
       />
       <img
         src={AUFlag}
         alt="Australia flag"
-        style={{ position: "absolute", top: "30%", left: "72%", width: "25px" }}
+        style={{ position: "absolute", top: "30%", left: "71%", width: "20px" }}
       />
       <h1
         style={{ fontWeight: 800, left: 0, fontSize: ".9rem", ...sourceInfo }}
@@ -227,11 +239,11 @@ const marimekkoPlot = () => {
         Source: The University of Sheffield - News
       </h1>
     </div>
-  )
-}
+  );
+};
 
-export default marimekkoPlot
+export default marimekkoPlot;
 
 marimekkoPlot.propTypes = {
   data: PropTypes.any
-}
+};

@@ -7,13 +7,9 @@ on:
     branches: ["**"]
     types:
       [
-        assigned,
         opened,
         synchronize,
-        reopened,
-        unlocked,
-        review_requested,
-        edited
+        reopened
       ]
   workflow_dispatch:
     inputs:

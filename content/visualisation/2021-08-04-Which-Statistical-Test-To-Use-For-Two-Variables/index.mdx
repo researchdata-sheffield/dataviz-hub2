@@ -10,41 +10,51 @@ category: [Research & Innovation IT]
 tag: [Statistics, Interative]
 ---
 
-import FlowChart from "./flowChart/flowChart"
-import { ReactFlowProvider } from 'react-flow-renderer';
-import Thumbnail from "./thumbnail/thumb"
-import Thumb from "./thumbnail/flowChartInside.png"
+import FlowChart from "./flowChart/flowChart";
+import { ReactFlowProvider } from "react-flow-renderer";
+import Thumbnail from "./thumbnail/thumb";
+import Thumb from "./thumbnail/flowChartInside.png";
 
 export const data = [
   {
-    "title": "Source",
-    "content": `This flowchart was prepared by <a href="https://scholar.google.co.uk/citations?user=UesDIkYAAAAJ&hl=en">Jean Russell</a> for the <a href="https://dataviz.shef.ac.uk/docs/18/03/2021/LearningPath-Statistical-Modeling">statistical modelling learning path</a>.`
+    title: "Source",
+    content: `This flowchart was prepared by <a href="https://scholar.google.co.uk/citations?user=UesDIkYAAAAJ&hl=en">Jean Russell</a> for the <a href="https://dataviz.shef.ac.uk/docs/18/03/2021/LearningPath-Statistical-Modeling">statistical modelling learning path</a>.`
   },
   {
-    "title": "Detail",
-    "content": `This chart was created using React and <a href="https://reactflow.dev/">React Flow</a> with customised components. Unfortunately, you can not embed the flowchart at the moment.`
+    title: "Detail",
+    content: `This chart was created using React and <a href="https://reactflow.dev/">React Flow</a> with customised components. Unfortunately, you can not embed the flowchart at the moment. Once you have setup a website using React, go ahead to install the React Flow library and styled-components (I'm using this to achieve locally scoped CSS). Then import the flowchart using the following code: <br/><code>import FlowChart from "./flowChart/flowChart"<br/>import { ReactFlowProvider } from 'react-flow-renderer'</code>`
   },
   {
-    "title": "Code",
-    "content": `<a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-08-04-Which-Statistical-Test-To-Use-For-Two-Variables/flowChart">Link</a> for the source code.`
+    title: "Code",
+    content: `<a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-08-04-Which-Statistical-Test-To-Use-For-Two-Variables/flowChart">Link</a> for the source code.`
   },
   {
-    "title": "License",
-    "content": `Code and content are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
-  },
-]
+    title: "License",
+    content: `Code and content are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  }
+];
 
 <div className="flex justify-center">
-  <div style={{backgroundImage: `url(${Thumb})`, backgroundSize: 'cover', display: 'flex', justifyContent: 'center', alignItems: 'center', width: '500px', height: '500px', maxWidth: '100vw', backgroundPosition: 'center'}}>
+  <div
+    style={{
+      backgroundImage: `url(${Thumb})`,
+      backgroundSize: "cover",
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      width: "500px",
+      height: "500px",
+      maxWidth: "100vw",
+      backgroundPosition: "center"
+    }}
+  >
     <ReactFlowProvider>
       <FlowChart />
     </ReactFlowProvider>
   </div>
 </div>
 
-
-<VisPagination mdx={props.mdx}>
-</VisPagination>
+<VisPagination mdx={props.mdx}></VisPagination>
 
 <VisDetail mdx={props.mdx} />
 

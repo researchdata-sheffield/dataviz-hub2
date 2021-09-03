@@ -5,13 +5,24 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import React from "react";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { useStaticQuery, graphql } from "gatsby";
+import { getSrc } from "gatsby-plugin-image";
 
-const SEO = ({ description, lang, meta, title, keywords }) => {
-  const { site } = useStaticQuery(
+const SEO = ({
+  title,
+  author,
+  description,
+  lang,
+  keywords,
+  twitterCard,
+  twitterImage,
+  twitterImageAlt,
+  meta
+}) => {
+  const { site, ogImage } = useStaticQuery(
     graphql`
       query {
         site {
@@ -19,79 +30,114 @@ const SEO = ({ description, lang, meta, title, keywords }) => {
             title
             description
             author
+            siteUrl
+          }
+        }
+        ogImage: file(relativePath: { eq: "readme/readme.png" }) {
+          childImageSharp {
+            gatsbyImageData
           }
         }
       }
     `
-  )
+  );
 
-  const metaDescription = description || site.siteMetadata.description
+  const metaDescription = description || site.siteMetadata.description;
+  const metaAuthor = author || "dataviz.shef.ac.uk";
+  const metaTwitterCard = twitterCard || "summary_large_image";
+  const metaTwitterImage =
+    getSrc(twitterImage) || getSrc(ogImage?.childImageSharp?.gatsbyImageData);
+  const metaTwitterImageAlt =
+    twitterImageAlt || "Thumbnail for the website - dataviz.shef.ac.uk";
 
   return (
-    <Helmet 
+    <Helmet
       defer={false}
       htmlAttributes={{
-        lang,
+        lang
       }}
       title={title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
-              {
-                name: `description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:title`,
-                content: title,
-              },
-              {
-                property: `og:description`,
-                content: metaDescription,
-              },
-              {
-                property: `og:type`,
-                content: `website`,
-              },
-              {
-                name: `twitter:card`,
-                content: `summary`,
-              },
-              {
-                name: `twitter:creator`,
-                content: site.siteMetadata.author,
-              },
-              {
-                name: `twitter:title`,
-                content: title,
-              },
-              {
-                name: `twitter:description`,
-                content: metaDescription,
-              },
-            ].concat(meta)
-             .concat(keywords.length > 0 ? {
-                        name: 'keywords',
-                        content: keywords.join(',')
-                    } : [] )
-          }
+        {
+          name: `description`,
+          content: metaDescription
+        },
+        {
+          property: `og:title`,
+          content: title
+        },
+        {
+          property: `og:description`,
+          content: metaDescription
+        },
+        {
+          property: `og:type`,
+          content: `website`
+        },
+        {
+          property: `twitter:site`,
+          content: `dataviz.shef.ac.uk`
+        },
+        {
+          property: `twitter:site:id`,
+          content: `@OpenResShef`
+        },
+        {
+          name: `twitter:card`,
+          content: metaTwitterCard
+        },
+        {
+          name: `twitter:creator`,
+          content: metaAuthor
+        },
+        {
+          name: `twitter:title`,
+          content: title
+        },
+        {
+          name: `twitter:description`,
+          content: metaDescription
+        },
+        {
+          name: `twitter:image`,
+          content: `https://dataviz.shef.ac.uk${metaTwitterImage}`
+        },
+        {
+          name: `twitter:image:alt`,
+          content: metaTwitterImageAlt
+        }
+      ]
+        .concat(meta)
+        .concat(
+          keywords.length > 0
+            ? {
+                name: "keywords",
+                content: keywords.join(",")
+              }
+            : []
+        )}
     />
-    
-  )
-}
+  );
+};
 
 SEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
   keywords: []
-}
+};
 
 SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
+  author: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
-  keywords: PropTypes.arrayOf(PropTypes.string)
-}
+  keywords: PropTypes.arrayOf(PropTypes.string),
+  twitterCard: PropTypes.string,
+  twitterImage: PropTypes.object,
+  twitterImageAlt: PropTypes.string
+};
 
-export default SEO
+export default SEO;

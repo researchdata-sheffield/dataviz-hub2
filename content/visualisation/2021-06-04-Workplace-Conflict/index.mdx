@@ -15,37 +15,35 @@ pngImagePath: workplace-conflict-costs-employers-28-billion-a-year.png
 svgImagePath: workplace-conflict-costs-employers-28-billion-a-year.svg
 ---
 
-import Visualisation from "./visualisation"
-
+import Workconflict from "./workconflict";
 
 <div className="flex justify-center">
-  <Visualisation />
+  <Workconflict />
 </div>
-
 
 <VisPagination mdx={props.mdx}>
   <EmbedCode localPath="svgImagePath" />
 </VisPagination>
 <VisDetail mdx={props.mdx} />
 
-export const data =[
+export const data = [
   {
-    "title": "Source",
-    "content": `The University of Sheffield - <a href="https://www.sheffield.ac.uk/news/workplace-conflict-costs-employers-nearly-ps30bn-year">Latest News</a>. This <a href="https://www.acas.org.uk/estimating-the-costs-of-workplace-conflict-report">analysis</a> was prepared for Acas by Professor Richard Saundry of the University of Sheffield Management School and Professor Peter Urwin of the Centre for Employment Research, University of Westminster.`
+    title: "Source",
+    content: `The University of Sheffield - <a href="https://www.sheffield.ac.uk/news/workplace-conflict-costs-employers-nearly-ps30bn-year">Latest News</a>. This <a href="https://www.acas.org.uk/estimating-the-costs-of-workplace-conflict-report">analysis</a> was prepared for Acas by Professor Richard Saundry of the University of Sheffield Management School and Professor Peter Urwin of the Centre for Employment Research, University of Westminster.`
   },
   {
-    "title": "Code",
-    "content": `This visualisation is created using React and <a href="https://nivo.rocks/">nivo</a> package. <br/> <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-06-04-Workplace-Conflict/visualisation.jsx">Link</a> for the source code.`
+    title: "Code",
+    content: `This visualisation is created using React and <a href="https://nivo.rocks/">nivo</a> package. <br/> <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-06-04-Workplace-Conflict/visualisation.jsx">Link</a> for the source code.`
   },
   {
-    "title": "Attribution",
-    "content": `Images used here such as the map and the brain icon were downloaded from <a href="https://uxwing.com/">uxwing.com</a>.`
+    title: "Attribution",
+    content: `Images used here such as the map and the brain icon were downloaded from <a href="https://uxwing.com/">uxwing.com</a>.`
   },
   {
-    "title": "License",
-    "content": `Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+    title: "License",
+    content: `Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
   }
-]
+];
 
 <VisDiv>
   <Tab data={data} />

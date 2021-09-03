@@ -45,12 +45,13 @@ html {
 
 a {
   color: #4e4e4e;
+
+  &:hover {
+    color: #00aeef;
+  }
 }
 
-a:hover {
-  color: #00aeef;
-}
-
+button:focus,
 a:focus {
   border: 1px solid #00aeef;
 }
@@ -60,9 +61,10 @@ p {
   word-wrap: break-word;
   word-break: keep-all;
   line-break: strict;
-  hyphens: none;
-  -webkit-hyphens: none;
   -moz-hyphens: none;
+  -webkit-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
 }
 
 a,
@@ -74,9 +76,9 @@ h3,
 h4,
 h5,
 h6 {
-  text-overflow: ellipsis;
   -ms-text-overflow: ellipsis;
   -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
 }
 
 ::-moz-selection {
@@ -120,10 +122,10 @@ textarea::placeholder {
 .noScrollBar {
   -ms-overflow-style: none; /* Internet Explorer 10+ */
   scrollbar-width: none; /* Firefox */
-}
 
-.noScrollBar::-webkit-scrollbar {
-  display: none; /* Safari and Chrome */
+  &::-webkit-scrollbar {
+    display: none; /* Safari and Chrome */
+  }
 }
 
 @responsive {
