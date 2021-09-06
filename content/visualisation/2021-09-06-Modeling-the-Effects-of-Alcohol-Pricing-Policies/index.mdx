@@ -1,0 +1,48 @@
+---
+type: visualisation
+author: [Yu Liang Weng]
+title: Alcohol pricing policies are estimated to be more effective at reducing consumption and harm for men than women
+thumbnail: thumb.jpg
+description: >
+  A sunburst visualisation that shows Modelled effects of tax and minimum unit pricing (MUP) policies on Consumption (units per year), Expenditure (annual £ spent), and Hospitalisations (at full effect).
+  You can choose to see the modelled effects in percentage change (default choice, express the change in percentage) or absolute change (real value).
+date: 2021-09-06
+category: [School Of Health And Related Research]
+tag: [Alcohol Policies]
+---
+
+import SunburstChart from "./sunburst/sunburstChart";
+
+export const data = [
+  {
+    title: "Source",
+    content: `Meier, P. S., Holmes, J., Brennan, A., and Angus, C. (2021) Alcohol policy and gender: a modelling study estimating gender-specific effects of alcohol pricing policies. Addiction, 116: 2372– 2384. <a href="https://doi.org/10.1111/add.15464">https://doi.org/10.1111/add.15464</a>.<br/><br/>
+    This visualisation is produced based on <i>Table 4. Policy effects on alcohol consumption, spending and hospital admissions</i> from the paper above.
+    `
+  },
+  {
+    title: "Code",
+    content: `The source code is hosted on website's GitHub repository, you can find it <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-09-06-Modeling-the-Effects-of-Alcohol-Pricing-Policies/">here</a>.<br/>
+    The visualisation is created using React and <a href="https://charts.ant.design/demos/sunburst">sunburst chart</a>. After setup a React website, install the following dependencies: <br/>
+    <code class="language-text">npm install @ant-design/charts styled-components</code>, or replace <code class="language-text">npm install</code> with <code class="language-text">yarn add</code> if you are using Yarn.<br/>
+    `
+  },
+  {
+    title: "License",
+    content: `Code and content for the visualisation are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).`
+  }
+];
+
+<div className="flex justify-center">
+  <SunburstChart />
+</div>
+
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
+
+<VisDetail mdx={props.mdx} />
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>

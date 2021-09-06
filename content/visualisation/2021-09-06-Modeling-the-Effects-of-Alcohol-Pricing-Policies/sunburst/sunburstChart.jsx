@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Sunburst } from "@ant-design/charts";
 import JSONdata from "./data.json";
 import styled from "styled-components";
+import PoundPriceTag from "./pound-price-tag.svg";
+import WineBottle from "./wine-bottle-glass.svg";
 
 const sourceInfo = {
   position: "absolute",
@@ -22,7 +24,7 @@ const plotTitle = {
 };
 
 const OptionBtn = styled.button`
-  color: #292929;
+  color: #262626;
   font-size: 0.77rem;
   background: ${(props) => (props.value == props.type ? "#fb989F" : "white")};
   padding: 0.3rem;
@@ -51,7 +53,7 @@ const transformValue = (data) => {
  * Visualisation component
  * @returns
  */
-const Visualisation = () => {
+const SunburstChart = () => {
   const [valueOption, setValueOption] = useState("percentageChange");
 
   const tooltipStyle = (data) => {
@@ -102,7 +104,7 @@ const Visualisation = () => {
         if (!data) {
           return;
         }
-        console.log(data);
+
         if (
           !data[0]?.data?.data["policy"] &&
           !data[0]?.data?.data["category"]
@@ -161,7 +163,7 @@ const Visualisation = () => {
         consumption and harm{" "}
         <span style={{ color: "#FB989F" }}>for men than women</span>
       </h1>
-      <div style={{ height: "420px", marginBottom: "20px" }}>
+      <div style={{ height: "420px", marginBottom: "20px", zIndex: "10" }}>
         <Sunburst {...chartConfig} />
       </div>
       <div
@@ -189,6 +191,30 @@ const Visualisation = () => {
           Absolute Change
         </OptionBtn>
       </div>
+      <img
+        src={PoundPriceTag}
+        alt="Pound price tag"
+        style={{
+          opacity: "0.3",
+          maxWidth: "40px",
+          position: "absolute",
+          bottom: "3%",
+          left: "15%",
+          margin: "1rem"
+        }}
+      />
+      <img
+        src={WineBottle}
+        alt="Wine bottle glass image"
+        style={{
+          opacity: "0.2",
+          maxWidth: "100px",
+          position: "absolute",
+          bottom: "8%",
+          left: "0",
+          margin: "1rem"
+        }}
+      />
       <h1
         style={{ fontWeight: 800, left: 0, fontSize: ".9rem", ...sourceInfo }}
       >
@@ -201,4 +227,4 @@ const Visualisation = () => {
   );
 };
 
-export default Visualisation;
+export default SunburstChart;
