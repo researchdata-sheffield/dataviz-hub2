@@ -31,6 +31,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@ant-design/charts": "^1.2.10",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "@nivo/bump": "^0.73.0",
