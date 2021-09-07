@@ -26,7 +26,17 @@ jobs:
         uses: styfle/cancel-workflow-action@0.9.1
 
       - uses: actions/checkout@v2
-      # Retrieve cache
+
+      - name: NPM Cache
+        id: npm-cache
+        uses: actions/cache@v3
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm-cache-
+          
+      # Retrieve gatsby cache
+      # Creates new cache when OS/run_id changes
       - name: Gatsby Cache
         id: gatsby-ci-cache
         uses: actions/cache@v2
@@ -34,7 +44,7 @@ jobs:
           path: |
             public
             .cache
-          key: ${{ runner.os }}-gatsby-ci-${{ github.run_id }}
+          key: ${{ runner.os }}-gatsby-ci-${{ github.run_id }} 
           restore-keys: ${{ runner.os }}-gatsby-ci-
 
       - name: Install dependencies
