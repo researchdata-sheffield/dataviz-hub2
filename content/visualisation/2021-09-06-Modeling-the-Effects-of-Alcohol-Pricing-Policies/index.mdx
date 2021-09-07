@@ -3,12 +3,14 @@ type: visualisation
 author: [Yu Liang Weng]
 title: Alcohol pricing policies are estimated to be more effective at reducing consumption and harm for men than women
 thumbnail: thumb.jpg
-description: >
-  A sunburst visualisation that shows Modelled effects of tax and minimum unit pricing (MUP) policies on Consumption (units per year), Expenditure (annual £ spent), and Hospitalisations (at full effect).
+description: |
+  A sunburst visualisation that shows modelled effects of tax and minimum unit pricing (MUP) policies on Consumption (units per year), Expenditure (annual £ spent), and Hospitalisations (at full effect).
   You can choose to see the modelled effects in percentage change (default choice, express the change in percentage) or absolute change (real value).
 date: 2021-09-06
 category: [School Of Health And Related Research]
-tag: [Alcohol Policies]
+tag: [Alcohol Policy, Gender]
+pngImagePath: alcohol-pricing-policies-are-estimated-to-be-more-effective-at-reducing-consumption-and-harm-for-men-than-women.png
+svgImagePath: alcohol-pricing-policies-are-estimated-to-be-more-effective-at-reducing-consumption-and-harm-for-men-than-women.svg
 ---
 
 import SunburstChart from "./sunburst/sunburstChart";
@@ -28,14 +30,37 @@ export const data = [
     `
   },
   {
+    title: "Attribution",
+    content: `Svg images such as wine-bottle-glass and pound-price-tag were downloaded from <a href="https://uxwing.com">uxwing.com</a>.`
+  },
+  {
     title: "License",
     content: `Code and content for the visualisation are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>).`
+  },
+  {
+    title: "How to see modelled effects?",
+    content: `There are two ways to find out modelled effects.<br/>  1. Hover the mouse on different areas of the chart to see information on the tooltip.<br/>  2. Always start from the centre of the chart, click on any sections to drilldown and see information for that section only. To go back, click on any text in the breadcrumb located below the chart. <br/><br/>`
   }
 ];
 
-<div className="flex justify-center">
+<div className="flex justify-center flex-wrap">
   <SunburstChart />
 </div>
+
+<VisDiv classname="my-8">
+  <p
+    className="text-gray-300"
+    style={{ fontSize: ".82rem", lineHeight: "1.3" }}
+  >
+    HINT:{" "}
+    <span className="text-red-300">
+      Policy / £0.70 MUP / Consumption (units per year) / Male drinkers
+    </span>{" "}
+    displays the modelled effects of the £0.70 minimum unit price policy on the
+    consumption of Male drinkers with different risks (Moderate, Increasing, and
+    High).
+  </p>
+</VisDiv>
 
 <VisPagination mdx={props.mdx}>
   <EmbedCode localPath="svgImagePath" />

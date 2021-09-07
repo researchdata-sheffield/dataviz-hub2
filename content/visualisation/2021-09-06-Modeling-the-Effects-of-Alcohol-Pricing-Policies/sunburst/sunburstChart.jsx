@@ -25,9 +25,9 @@ const plotTitle = {
 
 const OptionBtn = styled.button`
   color: #262626;
-  font-size: 0.77rem;
+  font-size: 0.75rem;
   background: ${(props) => (props.value == props.type ? "#fb989F" : "white")};
-  padding: 0.3rem;
+  padding: 0.1rem 0.3rem;
   margin-top: 5px;
   border-radius: 2px;
   border: 1px solid
@@ -77,6 +77,12 @@ const SunburstChart = () => {
       type: "linear"
     },
     interactions: [{ type: "element-active" }],
+    label: {
+      layout: [{ type: "limit-in-shape" }],
+      style: {
+        fontSize: 11
+      }
+    },
     drilldown: {
       enabled: true,
       breadCrumb: {
@@ -87,9 +93,7 @@ const SunburstChart = () => {
         position: "bottom-left"
       }
     },
-    pattern: {
-      type: "line"
-    },
+
     state: {
       active: {
         style: {
@@ -126,7 +130,9 @@ const SunburstChart = () => {
 
         if (data[0]?.data?.data["policy"]) {
           return (
-            <div style={{ ...tooltipStyle(data) }}>Policy: {data[0].name}</div>
+            <div style={{ ...tooltipStyle(data) }}>
+              Policy: {data[0].name.replace("MUP", "Minimum Unit Price")}
+            </div>
           );
         }
 
@@ -163,7 +169,7 @@ const SunburstChart = () => {
         consumption and harm{" "}
         <span style={{ color: "#FB989F" }}>for men than women</span>
       </h1>
-      <div style={{ height: "420px", marginBottom: "20px", zIndex: "10" }}>
+      <div style={{ height: "430px", marginBottom: "20px", zIndex: "10" }}>
         <Sunburst {...chartConfig} />
       </div>
       <div
@@ -195,7 +201,7 @@ const SunburstChart = () => {
         src={PoundPriceTag}
         alt="Pound price tag"
         style={{
-          opacity: "0.3",
+          opacity: "0.2",
           maxWidth: "40px",
           position: "absolute",
           bottom: "3%",
@@ -221,7 +227,7 @@ const SunburstChart = () => {
         Dataviz.Shef
       </h1>
       <h1 style={{ right: 0, ...sourceInfo }}>
-        Source: The University of Sheffield - News
+        Source: Society for the Study of Addiction
       </h1>
     </div>
   );

@@ -183,7 +183,7 @@
       ]
     },
     {
-      "label": "£0.50 minimum unit price",
+      "label": "£0.50 MUP",
       "percentageChange": 1,
       "policy": true,
       "children": [
@@ -364,7 +364,7 @@
       ]
     },
     {
-      "label": "£0.70 minimum unit price",
+      "label": "£0.70 MUP",
       "policy": true,
       "percentageChange": 1,
       "children": [
