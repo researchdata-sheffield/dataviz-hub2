@@ -10,7 +10,7 @@ const path = require("path");
 const readingTime = require("reading-time");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 
-exports.onCreateWebpackConfig = ({ actions }) => {
+exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
   actions.setWebpackConfig({
     plugins: [new NodePolyfillPlugin()],
     resolve: {
@@ -20,18 +20,21 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     }
   });
 
-  // if (stage === "build-html") {
-  //   actions.setWebpackConfig({
-  //     module: {
-  //       rules: [
-  //         { // prevent error from canvas used by trianglify
-  //           test: /canvas/,
-  //           use: loaders.null(),
-  //         }
-  //       ],
-  //     },
-  //   });
-  // }
+  if (stage === "build-html") {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            /* prevent error from canvas used by trianglify:
+             * error Generating SSR bundle failed Unexpected character '' (1:0)
+             */
+            test: /canvas/,
+            use: loaders.null()
+          }
+        ]
+      }
+    });
+  }
 };
 
 /**
