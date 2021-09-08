@@ -1,16 +1,25 @@
 module.exports = {
+  preset: "jest-playwright-preset",
   cacheDirectory: ".jest-cache",
+
   // transform js/jsx files using jest-preprocess.js file
   transform: {
     "^.+\\.jsx?$": `<rootDir>/tests/jest-preprocess.js`
   },
+
   // handling mocking static file imports
   moduleNameMapper: {
     ".+\\.(css|styl|less|sass|scss)$": `identity-obj-proxy`,
     ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`
   },
+  testMatch: [
+    "**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)",
+    "**/?(*.)+(spec|test).[jt]s?(x)"
+  ],
+
   // ignore these files when testing
   testPathIgnorePatterns: ["node_modules", "\\.cache", "<rootDir>.*/public"],
+
   // IMPORTANT: because Gatsby includes un-transpiled ES6 code
   // And it will try to transform files within Gatsby-name folders under node_modules
   // gatsby-browser-entry.js isn’t being transpiled before running in Jest
@@ -18,8 +27,10 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ""
   },
-  testURL: "http://localhost",
+  testURL: "http://localhost:9000",
+
   // files will be included before all tests are run
   setupFiles: ["<rootDir>/tests/loadershim.js"],
-  setupFilesAfterEnv: ["<rootDir>/tests/setupAfterEnv.js"]
+  setupFilesAfterEnv: ["<rootDir>/tests/setupAfterEnv.js", "expect-playwright"],
+  testTimeout: 20000
 };
