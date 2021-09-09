@@ -41,11 +41,11 @@ jobs:
         run: npm ci
 
       - name: Install playwright
-        run: npx playwright install
+        run: node_modules/.bin/playwright install
           
       - name: Install playwright Linux dependencies
-        run: sudo npx playwright install-deps
-        
+        run: sudo node_modules/.bin/playwright install-deps
+
       - name: Jest cache
         id: gatsby-jest-cache
         uses: actions/cache@v2
