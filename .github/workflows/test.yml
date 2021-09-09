@@ -33,7 +33,7 @@ jobs:
         run: npm ci
 
       - name: Install playwright OS dependencies
-        run: sudo npx playwright install-deps
+        run: npx playwright install && sudo npx playwright install-deps
 
       - name: Jest cache
         id: gatsby-jest-cache
