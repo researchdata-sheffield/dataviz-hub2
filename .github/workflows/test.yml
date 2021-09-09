@@ -40,11 +40,12 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Install playwright OS dependencies
-        run: |
-        npx playwright install
-        sudo npx playwright install-deps
-
+      - name: Install playwright
+        run: npx playwright install
+          
+      - name: Install playwright Linux dependencies
+        run: sudo npx playwright install-deps
+        
       - name: Jest cache
         id: gatsby-jest-cache
         uses: actions/cache@v2
