@@ -311,7 +311,7 @@ const Header = () => {
                 type="a-icon"
                 mobile="true"
                 className="block mt-3"
-                href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+                href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
                 title="Join Google group"
               >
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline">
@@ -411,7 +411,7 @@ const Header = () => {
             )}
             <NavLink
               type="a-icon"
-              href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+              href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
               title="Join Google group"
             >
               <div className="text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1">
