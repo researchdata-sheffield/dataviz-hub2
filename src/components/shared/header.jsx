@@ -322,7 +322,7 @@ const Header = () => {
                 type="a-icon"
                 mobile="true"
                 className="block mt-3"
-                href="https://join.slack.com/t/shef-dataviz/signup"
+                href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
                 title="Join Slack channel"
               >
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline">
@@ -420,7 +420,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               type="a-icon"
-              href="https://join.slack.com/t/shef-dataviz/signup"
+              href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
               title="Join Slack channel"
             >
               <div className="text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1">

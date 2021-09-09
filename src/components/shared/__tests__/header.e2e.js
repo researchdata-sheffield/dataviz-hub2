@@ -9,21 +9,18 @@ describe("Header e2e tests", () => {
   });
 
   it("disappear on scroll down", async () => {
-    await page.click('a[href="/#explore"]');
+    //await page.click('a[href="/#explore"]');
+    await page.evaluate(() => window.scrollTo(0, 400));
     await page.waitForSelector("id=navbar", { state: "hidden" });
-
+    await page.waitForTimeout(100);
     expect(await page.isHidden("id=navbar")).toBeTruthy();
   }, 5000);
 
   it.jestPlaywrightSkip(
-    { browsers: ["firefox"] },
-    "[Chromium, Webkit] appears on scroll up",
+    { browsers: [] },
+    "appears on scroll up",
     async () => {
-      await Promise.all([
-        page.waitForNavigation(),
-        await page.focus('a[href="/#explore"]')
-      ]);
-      //await page.click('a[href="/#explore"]');
+      await page.evaluate(() => window.scrollTo(0, 100));
       await page.waitForSelector("id=navbar", { state: "visible" });
 
       expect(await page.isVisible("id=navbar")).toBeTruthy();
@@ -31,15 +28,15 @@ describe("Header e2e tests", () => {
     5000
   );
 
-  it.jestPlaywrightSkip(
-    { browsers: ["chromium", "webkit"] },
-    "[Firefox] appears on scroll up",
-    async () => {
-      await page.click('a[href="/#explore"]', { clickCount: 0, delay: 300 });
-      await page.waitForSelector("id=navbar", { state: "visible" });
+  it("navigate to pages", async () => {
+    const hrefs = await page.$$eval("#navbar a", (links) =>
+      links.map((a) => a.href)
+    );
+    console.log(hrefs);
 
-      expect(await page.isVisible("id=navbar")).toBeTruthy();
-    },
-    5000
-  );
+    for (const link of hrefs) {
+      await page.goto(link);
+      expect(page.url()).toContain(link);
+    }
+  });
 });

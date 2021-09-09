@@ -13,8 +13,8 @@ module.exports = {
     ".+\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": `<rootDir>/__mocks__/file-mock.js`
   },
   testMatch: [
-    "**/__tests__/**/?(*.)+(spec|test).[jt]s?(x)",
-    "**/?(*.)+(spec|test).[jt]s?(x)"
+    "**/__tests__/**/*.[jt]s?(x)",
+    "**/?(*.)+(spec|test|e2e).[jt]s?(x)"
   ],
 
   // ignore these files when testing
