@@ -51,8 +51,10 @@ jobs:
         run: npm ci
       
       # Enable incremental build
-      - name: Incremental Build and Serve
-        run: npm run serve
+      - name: Incremental Build, Serve, E2E test
+        run: | 
+          npm run serve &
+          npm run test:e2e
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
@@ -62,7 +64,4 @@ jobs:
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
-
-      - name: E2E tests
-        run: npm run test:e2e
 
