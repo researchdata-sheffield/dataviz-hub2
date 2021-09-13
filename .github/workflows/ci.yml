@@ -63,3 +63,9 @@ jobs:
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
 
+      - name: Serve application
+        run: gatsby serve
+
+      - name: E2E tests
+        run: npm run test:e2e
+
