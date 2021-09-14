@@ -65,17 +65,17 @@ jobs:
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
 
-      - name: Upload production build
+      - name: Upload build artifact
         uses: actions/upload-artifact@v2
         with:
           name: production-build-ci
-          path: /
+          path: /home/runner/work/dataviz-hub2/dataviz-hub2
   
   E2E-test:
     needs: build
     runs-on: ubuntu-20.04
     steps: 
-      - name: Download production build
+      - name: Download build artifact
         uses: actions/download-artifact@v2
         with:
           name: production-build-ci
