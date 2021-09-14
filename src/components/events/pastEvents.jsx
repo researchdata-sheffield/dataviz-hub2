@@ -14,7 +14,7 @@ const PastEvents = ({ pastEvent }) => {
 
         return (
           <button
-            className="cursor-pointer flex flex-wrap p-4 w-full overflow-hidden group themeColourBorder"
+            className="cursor-pointer flex flex-wrap p-4 w-full overflow-hidden group themeColourBorder text-left"
             key={node.id}
             onClick={() =>
               window.open(node.url, "_blank", "noopener, noreferrer")
