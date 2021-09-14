@@ -71,7 +71,7 @@ jobs:
           name: production-build-ci
           path: /
   
-  E2E Test:
+  E2E-test:
     runs-on: ubuntu-20.04
     steps: 
       - name: Download production build
