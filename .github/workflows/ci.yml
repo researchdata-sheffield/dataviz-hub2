@@ -64,21 +64,20 @@ jobs:
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
-
-      - name: Upload build artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: production-build-ci
-          path: /home/runner/work/dataviz-hub2/dataviz-hub2
   
   E2E-test:
     needs: build
     runs-on: ubuntu-20.04
     steps: 
-      - name: Download build artifact
-        uses: actions/download-artifact@v2
+      - name: Gatsby Cache
+        id: gatsby-ci-cache
+        uses: actions/cache@v2
         with:
-          name: production-build-ci
+          path: |
+            public
+            .cache
+          key: ${{ runner.os }}-gatsby-ci-${{ github.run_id }} 
+          restore-keys: ${{ runner.os }}-gatsby-ci-
 
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e
