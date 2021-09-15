@@ -1,51 +1,51 @@
 // BASE
-import React from "react"
-import { graphql, withPrefix } from "gatsby"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React from "react";
+import { graphql, withPrefix } from "gatsby";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-import SEO from "../../components/shared/seo"
-import PostPagination from "../../components/blog/postPagination"
-import Comment from "../../components/blog/comment"
-import ShareButtons from "../../components/shared/shareButtons"
+import SEO from "../../components/shared/seo";
+import PostPagination from "../../components/blog/postPagination";
+import Comment from "../../components/blog/comment";
+import ShareButtons from "../../components/shared/shareButtons";
 
 // MDX component
-import CommonMdxProvider from "../../components/shared/commonMdxProvider"
-import "katex/dist/katex.min.css"
+import CommonMdxProvider from "../../components/shared/commonMdxProvider";
+import "katex/dist/katex.min.css";
 
 // Utils
-import { useScript } from "../../utils/hooks/useScript"
-import { getShareLinks } from "../../utils/shared"
-import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
+import { useScript } from "../../utils/hooks/useScript";
+import { getShareLinks } from "../../utils/shared";
+import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent";
 
-import Fade from "react-reveal/Fade"
+import Fade from "react-reveal/Fade";
 
 const docsTemplate = ({ data: { mdx }, pageContext }) => {
-  const { title, date, author, disableTOC } = mdx.frontmatter
-  const { prev, next } = pageContext
+  const { title, date, author, disableTOC } = mdx.frontmatter;
+  const { prev, next } = pageContext;
 
-  const shareLinks = getShareLinks(mdx)
+  const shareLinks = getShareLinks(mdx);
 
   // include d3 scripts
-  const d3 = mdx.frontmatter.d3 || null
+  const d3 = mdx.frontmatter.d3 || null;
   {
     d3 &&
       d3.map((d) => {
-        if (d.includes("https://")) useScript(d, "", false)
+        if (d.includes("https://")) useScript(d, "", false);
         // external script
-        else useScript(withPrefix(`d3/${d}`), "", false)
-      })
+        else useScript(withPrefix(`d3/${d}`), "", false);
+      });
   }
 
   // enable/disable table of content
-  var tableOfContent
+  var tableOfContent;
 
   if (disableTOC === true) {
-    tableOfContent = null
+    tableOfContent = null;
   } else {
-    tableOfContent = mdx.tableOfContents
-    trackTableOfContent(`.TOC li a`, `.mdxBody`)
+    tableOfContent = mdx.tableOfContents;
+    trackTableOfContent(`.TOC li a`, `.mdxBody`);
   }
 
   //Rendering table of content
@@ -62,7 +62,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
         <></>
       )}
     </li>
-  )
+  );
   const renderSubItem = (item) => (
     <li key={item.title} className="pt-1 list-none">
       {item.url ? <a href={item.url}> {item.title}</a> : <></>}
@@ -72,7 +72,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
         <></>
       )}
     </li>
-  )
+  );
 
   return (
     <div className="relative" key={mdx.id}>
@@ -201,15 +201,15 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
       />
       <Comment mdx={mdx} />
     </div>
-  )
-}
+  );
+};
 
-export default docsTemplate
+export default docsTemplate;
 
 docsTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any
-}
+};
 
 export const docsQuery = graphql`
   query docsQuery($id: String) {
@@ -228,4 +228,4 @@ export const docsQuery = graphql`
       }
     }
   }
-`
+`;

@@ -1,31 +1,31 @@
-import React, { Component } from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import PropTypes from "prop-types"
-import { FiSearch } from "react-icons/fi"
-import Highlighter from "react-highlight-words"
-import Zoom from "react-reveal/Zoom"
-import Fade from "react-reveal/Fade"
-import bg from "../../images/search/search.png"
-import { getImageSource, shortenText } from "../../utils/shared"
+import React, { Component } from "react";
+import { graphql, useStaticQuery } from "gatsby";
+import PropTypes from "prop-types";
+import { FiSearch } from "react-icons/fi";
+import Highlighter from "react-highlight-words";
+import Zoom from "react-reveal/Zoom";
+import Fade from "react-reveal/Fade";
+import bg from "../../images/search/search.png";
+import { getImageSource, shortenText } from "../../utils/shared";
 
 // Search component
 class Search extends Component {
   state = {
     query: "",
     results: []
-  }
+  };
 
   componentDidMount = () => {
     setTimeout(() => {
       if (this.props.location.state && this.props.location.state.searchWord) {
-        var queryHome = this.props.location.state.searchWord
-        var input = document.getElementById("pageSearch")
-        this.setState({ query: queryHome })
-        input.setAttribute("value", queryHome)
-        this.searchFunction(queryHome)
+        var queryHome = this.props.location.state.searchWord;
+        var input = document.getElementById("pageSearch");
+        this.setState({ query: queryHome });
+        input.setAttribute("value", queryHome);
+        this.searchFunction(queryHome);
       }
-    }, 100)
-  }
+    }, 100);
+  };
 
   render() {
     const ResultList = () => {
@@ -55,7 +55,7 @@ class Search extends Component {
               }
             }
           }
-        `)
+        `);
 
         return (
           <div>
@@ -65,18 +65,18 @@ class Search extends Component {
 
             <div className="flex flex-wrap py-10 xl:pt-16 xl:pb-64 justify-center bg-gray-100">
               {this.state.results.map((item, i) => {
-                let imagesrc
+                let imagesrc;
                 {
                   data.allMdx.edges.map(({ node }) => {
                     if (item.id == node.id) {
-                      imagesrc = getImageSource(node, true)
+                      imagesrc = getImageSource(node, true);
                     }
-                  })
+                  });
                 }
 
-                let title = shortenText(item.title, 8)
-                let description = shortenText(item.description, 30)
-                const highlightClasses = "text-blue-400 bg-black"
+                let title = shortenText(item.title, 8);
+                let description = shortenText(item.description, 30);
+                const highlightClasses = "text-blue-400 bg-black";
 
                 return (
                   <a
@@ -139,7 +139,7 @@ class Search extends Component {
                                   searchWords={this.state.query.split()}
                                   key={author}
                                 />
-                              )
+                              );
                             })}
                           </h1>
                           {/* category */}
@@ -179,7 +179,7 @@ class Search extends Component {
                                       key={tag}
                                     />
                                   )
-                                )
+                                );
                               })}
                               {item.tag.length > 3 && (
                                 <p className="inline-block text-white">
@@ -207,36 +207,25 @@ class Search extends Component {
                       </div>
                     </div>
                   </a>
-                )
+                );
               })}
             </div>
           </div>
-        )
-      }
-      // else if (this.state.query.length > 2) {
-      //   return (
-      //     <div className="bg-orange-700 text-gray-100 py-2">No results for {this.state.query}</div>
-      //   )
-
-      // } else if (this.state.query.length > 0) {
-      //   return (
-      //     <div className="bg-orange-700 text-gray-100 py-2">Please insert at least 3 characters</div>
-      //   )
-      // }
-      else if (this.state.query.length > 0) {
+        );
+      } else if (this.state.query.length > 0) {
         return (
           <div className="bg-white text-gray-900 py-2">
             No results for {this.state.query}
           </div>
-        )
+        );
       } else {
         return (
           <div className="bg-gray-50 text-gray-700 py-2">
             Type something in the search box ...
           </div>
-        )
+        );
       }
-    }
+    };
 
     return (
       <div
@@ -279,20 +268,20 @@ class Search extends Component {
           <ResultList />
         </div>
       </div>
-    )
+    );
   }
 
   getSearchResults(query) {
     //index - a flexsearch index instance (variables set in gatsby-config)
     //store - object that stores the indexed gatsby nodes where the id of each node corresponds to the id the filter, according with flexsearch.js best practices (https://github.com/nextapps-de/flexsearch#best-practices)).
 
-    var index = window.__FLEXSEARCH__.en.index
-    var store = window.__FLEXSEARCH__.en.store
+    var index = window.__FLEXSEARCH__.en.index;
+    var store = window.__FLEXSEARCH__.en.store;
 
     if (!query || !index) {
-      return []
+      return [];
     } else {
-      var results = []
+      var results = [];
       // search the indexed fields
       Object.keys(index).forEach((idx) => {
         results.push(
@@ -300,39 +289,37 @@ class Search extends Component {
             query: query,
             suggest: true
           })
-        )
-      })
+        );
+      });
       // find the unique ids of the nodes
-      results = Array.from(new Set(results))
+      results = Array.from(new Set(results));
 
       // return the corresponding nodes in the store
-      var nodes = store
+      return store
         .filter((node) => (results.includes(node.id) ? node : null))
-        .map((node) => node.node)
-
-      return nodes
+        .map((node) => node.node);
     }
   }
 
   search = (event) => {
-    const query = event.target.value
-    this.searchFunction(query)
-  }
+    const query = event.target.value;
+    this.searchFunction(query);
+  };
 
   searchFunction = (query) => {
     if (this.state.query.length > -1) {
-      const results = this.getSearchResults(query)
-      this.setState({ results: results, query: query })
+      const results = this.getSearchResults(query);
+      this.setState({ results: results, query: query });
     } else {
-      this.setState({ results: [], query: query })
+      this.setState({ results: [], query: query });
     }
-  }
+  };
 }
 
-export default Search
+export default Search;
 
 Search.propTypes = {
   classNames: PropTypes.any,
   data: PropTypes.any,
   location: PropTypes.any
-}
+};
