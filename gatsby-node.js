@@ -9,6 +9,32 @@ const kebabCase = require(`lodash.kebabcase`);
 const path = require("path");
 const readingTime = require("reading-time");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
+const fs = require("fs");
+
+exports.onPostBuild = async ({ graphql }) => {
+  const { data } = await graphql(`
+    {
+      pages: allSitePage {
+        nodes {
+          path
+        }
+      }
+    }
+  `);
+
+  const paths = data.pages.nodes.map((item) => item.path);
+
+  return fs.promises
+    .writeFile("./tests/websitePaths.json", JSON.stringify(paths))
+    .then(() =>
+      console.log(
+        "Success [/tests/websitePaths.json]: Paths stored in websitePaths.json."
+      )
+    )
+    .catch((error) =>
+      console.log("Failed [/tests/websitePaths.json]: ", error)
+    );
+};
 
 exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
   actions.setWebpackConfig({

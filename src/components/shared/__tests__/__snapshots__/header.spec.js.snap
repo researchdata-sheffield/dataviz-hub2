@@ -158,7 +158,7 @@ exports[`Header renders correctly 1`] = `
         >
           <a
             className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
-            href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+            href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
             rel="noopener noreferrer"
             style={
               Object {
@@ -194,7 +194,7 @@ exports[`Header renders correctly 1`] = `
           </a>
           <a
             className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
-            href="https://join.slack.com/t/shef-dataviz/signup"
+            href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
             rel="noopener noreferrer"
             style={
               Object {
@@ -370,7 +370,7 @@ exports[`Header renders correctly 1`] = `
         </a>
         <a
           className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
-          href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+          href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
           rel="noopener noreferrer"
           style={
             Object {
@@ -406,7 +406,7 @@ exports[`Header renders correctly 1`] = `
         </a>
         <a
           className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
-          href="https://join.slack.com/t/shef-dataviz/signup"
+          href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
           rel="noopener noreferrer"
           style={
             Object {

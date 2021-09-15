@@ -20,14 +20,25 @@ on:
         default: ""
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  Test:
+    runs-on: ubuntu-20.04
 
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
 
       - uses: actions/checkout@v2
+
+      - name: NPM Cache
+        id: npm-cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm-cache-
+
+      - name: Install playwright dependencies
+        uses: microsoft/playwright-github-action@v1
 
       - name: Install dependencies
         run: npm ci
@@ -40,5 +51,5 @@ jobs:
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}
           restore-keys: ${{ runner.os }}-jestCache-
 
-      - name: Run unit tests
+      - name: Unit tests
         run: npm run test
