@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Shared | Footer should renders correctly 1`] = `
+exports[`Home | Featured Items should renders correctly 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>

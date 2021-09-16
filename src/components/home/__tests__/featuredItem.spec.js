@@ -16,7 +16,7 @@ jest.mock("../../../utils/shared", () => {
   };
 });
 
-describe("Shared | Footer", () => {
+describe("Home | Featured Items", () => {
   const mockData = {
     edges: [
       {
@@ -145,6 +145,11 @@ describe("Shared | Footer", () => {
       }
     ]
   };
+
+  beforeAll(() => {
+    jest.spyOn(console, "warn").mockImplementation(() => {});
+  });
+
   it("should renders correctly", async () => {
     let featured = render(<FeaturedItem item={mockData} />);
     expect(featured).toMatchSnapshot();

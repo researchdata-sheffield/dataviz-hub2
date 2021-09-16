@@ -13,5 +13,6 @@ module.exports = {
     }
   },
   exitOnPageError: false, // process won't exit on http errors anymore
-  browsers: ["chromium", "firefox", "webkit"]
+  browsers: ["chromium", "firefox", "webkit"],
+  collectCoverage: true
 };

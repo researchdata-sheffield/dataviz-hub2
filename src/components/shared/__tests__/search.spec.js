@@ -3,11 +3,11 @@
  */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import React from "react"
-import renderer from "react-test-renderer"
-import { render, fireEvent, screen } from "@testing-library/react"
-import Search from "../search"
-import { useStaticQuery } from "gatsby"
+import React from "react";
+import renderer from "react-test-renderer";
+import { render, fireEvent, screen } from "@testing-library/react";
+import Search from "../search";
+import { useStaticQuery } from "gatsby";
 
 const mockResult = [
   {
@@ -31,21 +31,24 @@ const mockResult = [
     url: "/visualisation/04/08/2021/Which-Statistical-Test-To-Use-For-Two-Variables",
     type: "visualisation"
   }
-]
+];
 
 describe("Search component", () => {
-  let spy
+  let spy;
+
+  beforeAll(() => {
+    jest.spyOn(console, "warn").mockImplementation(() => {});
+  });
 
   beforeEach(() => {
-    jest.spyOn(console, "warn").mockImplementation(() => {})
     spy = jest
       .spyOn(Search.prototype, "getSearchResults")
       .mockImplementation((query) => {
         if (!query) {
-          return []
+          return [];
         }
-        return mockResult
-      })
+        return mockResult;
+      });
 
     useStaticQuery.mockReturnValue({
       allMdx: {
@@ -118,26 +121,26 @@ describe("Search component", () => {
           }
         ]
       }
-    })
-  })
+    });
+  });
 
   it("renders correctly", async () => {
-    let tree = renderer.create(<Search />).toJSON()
-    expect(tree).toMatchSnapshot()
-  })
+    let tree = renderer.create(<Search />).toJSON();
+    expect(tree).toMatchSnapshot();
+  });
 
   it("return search result without error", async () => {
     // TODO: mock mdx queries
 
-    let search = render(<Search />)
+    let search = render(<Search />);
     const inputNode = screen.getByPlaceholderText(
       "Search title, description, date..."
-    )
+    );
 
     await fireEvent.change(inputNode, {
       target: { value: "test search query" }
-    })
+    });
 
-    expect(search.container).toMatchSnapshot()
-  })
-})
+    expect(search.container).toMatchSnapshot();
+  });
+});
