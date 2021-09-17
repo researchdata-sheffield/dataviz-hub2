@@ -50,7 +50,7 @@ describe("Home | Event Notice Banner", () => {
 
   beforeAll(() => {
     jest.spyOn(console, "warn").mockImplementation(() => {});
-    Date.now = jest.fn(() => new Date("2021-09-16T10:00:00.000Z"));
+    Date.now = jest.fn(() => new Date("2021-09-16T10:00:00.00"));
   });
 
   let notice;

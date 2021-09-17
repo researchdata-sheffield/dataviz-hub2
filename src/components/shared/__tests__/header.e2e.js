@@ -13,23 +13,22 @@ describe("Header e2e tests", () => {
   });
 
   it("disappear on scroll down", async () => {
+    await page.waitForSelector("id=navbar");
     await page.evaluate(() => window.scrollTo(0, 400));
+
     await page.waitForSelector("id=navbar", { state: "hidden" });
     await page.waitForTimeout(100);
     expect(await page.isHidden("id=navbar")).toBeTruthy();
   }, 30000);
 
-  it.jestPlaywrightSkip(
-    { browsers: [] },
-    "appears on scroll up",
-    async () => {
-      await page.evaluate(() => window.scrollTo(0, 100));
-      await page.waitForSelector("id=navbar", { state: "visible" });
+  it("appears on scroll up", async () => {
+    await page.waitForSelector("id=navbar");
 
-      expect(await page.isVisible("id=navbar")).toBeTruthy();
-    },
-    30000
-  );
+    await page.evaluate(() => window.scrollTo(0, 100));
+    await page.waitForSelector("id=navbar", { state: "visible" });
+
+    expect(await page.isVisible("id=navbar")).toBeTruthy();
+  }, 30000);
 
   it("navigate to pages (Desktop)", async () => {
     const hrefs = await page.$$eval("#desktopHeader a", (links) =>
