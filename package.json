@@ -49,7 +49,7 @@
     "gatsby-plugin-instagram-embed": "^3.0.0",
     "gatsby-plugin-layout": "^2.12.0",
     "gatsby-plugin-manifest": "^3.12.0",
-    "gatsby-plugin-mdx": "^2.12.0",
+    "gatsby-plugin-mdx": "^2.13.0",
     "gatsby-plugin-meta-redirect": "^1.1.1",
     "gatsby-plugin-offline": "^4.12.0",
     "gatsby-plugin-page-creator": "^3.12.0",
