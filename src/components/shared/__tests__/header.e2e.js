@@ -1,6 +1,6 @@
 describe("Header e2e tests", () => {
   beforeAll(async () => {
-    await page.goto("/");
+    await page.goto("/", { waitUntil: "domcontentloaded" });
     await page.waitForSelector("id=__loader", { state: "hidden" });
   }, 300000);
 
@@ -13,7 +13,6 @@ describe("Header e2e tests", () => {
   });
 
   it("disappear on scroll down", async () => {
-    await page.waitForSelector("id=navbar");
     await page.evaluate(() => window.scrollTo(0, 400));
 
     await page.waitForSelector("id=navbar", { state: "hidden" });
@@ -22,8 +21,6 @@ describe("Header e2e tests", () => {
   }, 30000);
 
   it("appears on scroll up", async () => {
-    await page.waitForSelector("id=navbar");
-
     await page.evaluate(() => window.scrollTo(0, 100));
     await page.waitForSelector("id=navbar", { state: "visible" });
 
