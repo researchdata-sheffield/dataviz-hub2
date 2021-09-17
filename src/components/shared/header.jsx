@@ -135,6 +135,7 @@ const Header = () => {
       case "Link":
         return (
           <Link
+            to={props.to}
             {...props}
             className={`${navColourClass(props.mobile)} ${
               props.className
@@ -160,6 +161,7 @@ const Header = () => {
       case "Link-icon":
         return (
           <Link
+            to={props.to}
             {...props}
             className={`${navColourClass(props.mobile)} ${
               props.className
@@ -510,7 +512,8 @@ Header.propTypes = {
   children: PropTypes.any,
   location: PropTypes.any,
   className: PropTypes.string,
-  mobile: PropTypes.bool
+  mobile: PropTypes.bool,
+  to: PropTypes.any
 };
 
 Header.defaultProps = {
