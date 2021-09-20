@@ -1,0 +1,1368 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Visualisation | Page layout should renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="bg-gray-900"
+      >
+        <div />
+        <div
+          class="relative"
+        >
+          <button
+            class="sc-eCstlR sc-jSgvzq jBitoC hxmXqB group"
+            id="vis-tag-button"
+            title="Tag Menu"
+          >
+            <svg
+              class="text-white text-xl transform group-hover:scale-125 transition duration-500"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 640 512"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"
+              />
+            </svg>
+          </button>
+          <button
+            class="sc-eCstlR sc-gKseQn jBitoC bkctff group bg-gray-800"
+            id="vis-footer-button"
+            title="Footer"
+          >
+            <svg
+              class="text-white text-2xl transform group-hover:scale-110 transition duration-500"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              version="1.1"
+              viewBox="0 0 22 16"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M0 3h14v3h-14v-3zM0 7h14v3h-14v-3zM0 11h14v3h-14v-3z"
+              />
+              <path
+                d="M15.5 10l3-3 3 3z"
+              />
+            </svg>
+          </button>
+          <div
+            class="translate-x-full bg-gray-900 transform duration-500 transition fixed h-full w-full top-0 right-0"
+            style="z-index: 1000; max-width: 450px;"
+          >
+            <button
+              class="text-gray-500 hover:text-red-400 bg-black rounded-md transition duration-300 text-lg px-3 py-1 absolute top-0 right-0 m-6 flex items-center"
+            >
+              <svg
+                class="text-xl mr-1"
+                fill="currentColor"
+                height="1em"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+                />
+              </svg>
+              CLOSE
+            </button>
+            <div
+              class="w-full m-6"
+            >
+              <div
+                class="inline-block focus:outline-none text-gray-600 bg-white shadow px-2 rounded-lg ml-2"
+              >
+                <svg
+                  class="inline-block text-center text-xl -mt-2"
+                  fill="none"
+                  height="1em"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <circle
+                    cx="11"
+                    cy="11"
+                    r="8"
+                  />
+                  <line
+                    x1="21"
+                    x2="16.65"
+                    y1="21"
+                    y2="16.65"
+                  />
+                </svg>
+                <input
+                  class="py-2 pl-2 text-base focus:outline-none pr-3 text-gray-600"
+                  id="tagSearch"
+                  name="search"
+                  placeholder="Search for tags"
+                  style="max-width: 50vw;"
+                  type="text"
+                  value=""
+                />
+              </div>
+            </div>
+            <div
+              class="w-full text-center"
+            >
+              <h1
+                class="text-gray-300"
+              >
+                No results.
+              </h1>
+            </div>
+            <div
+              class="sc-hKgJUU giiBvf"
+              height="auto"
+              width="100%"
+            >
+              <div
+                class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+              />
+            </div>
+          </div>
+          <footer
+            class="hidden bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-50"
+          >
+            <div
+              class="sm:flex mb-4"
+            >
+              <div
+                class="sm:w-2/12 h-auto"
+              >
+                <div
+                  class="mb-2"
+                >
+                  <a
+                    class="text-white font-bold text-md"
+                    gatsby="true"
+                    href="/"
+                  >
+                    Dataviz.Shef
+                  </a>
+                </div>
+                <ul
+                  class="list-reset leading-normal"
+                >
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/community"
+                    >
+                      Community
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/#learning-path"
+                    >
+                      Learning Path
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/blog"
+                    >
+                      Blog
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/events"
+                    >
+                      Events
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://orda.shef.ac.uk/visualisations/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Showcase
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/privacy"
+                    >
+                      Privacy Policy
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/accessibility"
+                    >
+                      Accessibility
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/sitemap/sitemap-index.xml"
+                    >
+                      Sitemap
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/about"
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="mailto:rdm@sheffield.ac.uk"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Contact us
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="sm:w-3/12 h-auto sm:mt-0 mt-8"
+              >
+                <div
+                  class="text-md mb-2 font-bold text-white"
+                >
+                  Online Research Data
+                </div>
+                <ul
+                  class="list-reset leading-normal"
+                >
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://orda.shef.ac.uk/articles/list/desc/published_date/all"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Datasets
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://orda.shef.ac.uk/#orda-fac"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Faculties
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Visualised datasets
+                    </a>
+                  </li>
+                </ul>
+                <div
+                  class="mb-2 mt-4 text-md font-bold text-white"
+                >
+                  The University of Sheffield
+                </div>
+                <ul
+                  class="list-reset leading-normal"
+                >
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://sheffield.ac.uk/library/rdm"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Research Data Management support
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://www.sheffield.ac.uk/it-services"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      IT Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://rse.shef.ac.uk/"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Research Software Engineering
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="sm:w-2/12 h-auto sm:mt-0 mt-8"
+              >
+                <div
+                  class="text-white text-md mb-2 font-bold"
+                >
+                  Collaboration
+                </div>
+                <ul
+                  class="list-reset leading-normal"
+                >
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://github.com/researchdata-sheffield/dataviz-hub2/issues"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Submit an Issue or feedback
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://github.com/researchdata-sheffield/dataviz-hub2"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Github repository
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/docs/22/03/2020/contribute-blog-post"
+                    >
+                      Contribute blog posts
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="sm:w-5/12 sm:flex sm:mt-0 mt-8 h-auto justify-center flex-wrap"
+              >
+                <div
+                  class="sm:w-2/3 text-white text-lg mb-2 pr-6"
+                >
+                  <div
+                    class="font-semibold text-brand-blue"
+                  >
+                    Data Visualisation Hub
+                     
+                  </div>
+                  <div
+                    class="text-gray-100 text-lg mb-2 font-medium"
+                  >
+                    The University of Sheffield.
+                  </div>
+                  <p
+                    class="text-gray-400 leading-normal text-sm"
+                  >
+                    To help our researchers make the most of their data and take advantage of tools, we have been working on Dataviz.Shef, a multi-pronged initiative to provide tools, training and build a community around interactive data visualisation at TUoS.
+                  </p>
+                </div>
+                <div
+                  class="sm:w-1/3 pl-6"
+                >
+                  <a
+                    class="m-20 text-gray-400 hover:text-brand-blue"
+                    href="https://www.sheffield.ac.uk/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="The University of Sheffield Logo"
+                  >
+                    <img
+                      alt="The University of Sheffield Logo"
+                      class="w-11/12"
+                      src="test-file-stub"
+                    />
+                  </a>
+                  <div
+                    class="flex flex-wrap text-center justify-around w-11/12 text-gray-300"
+                  >
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Join Google group"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 488 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://join.slack.com/t/shef-dataviz/signup"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="Join Slack Channel"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="/rss.xml"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="RSS Feed"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 448 512"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"
+                        />
+                      </svg>
+                    </a>
+                    <a
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="mailto:rdm@sheffield.ac.uk"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      title="contact us on email"
+                    >
+                      <svg
+                        fill="currentColor"
+                        height="1em"
+                        stroke="currentColor"
+                        stroke-width="0"
+                        viewBox="0 0 24 24"
+                        width="1em"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                        />
+                      </svg>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <p
+              class="text-gray-500 leading-normal text-center text-sm pt-16"
+            >
+              © 2018 - 
+              2021
+               The University of Sheffield.
+            </p>
+          </footer>
+        </div>
+        <div
+          class="w-full pt-24 pb-8 text-center"
+        >
+          <h1
+            class="w-full py-3 text-7xl font-extrabold"
+          >
+            <a
+              gatsby="true"
+              href="/visualisation"
+            >
+              InfoVis
+            </a>
+          </h1>
+          <h3
+            class="text-gray-500"
+          >
+            <p>
+              Viewing items in
+               
+              <span
+                class="text-gray-400 font-semibold"
+              >
+                Test Visualisation Layout
+              </span>
+              .
+            </p>
+          </h3>
+        </div>
+        <div
+          class="flex flex-wrap justify-center group"
+        >
+          <div
+            class="flex w-full h-full justify-center"
+          >
+            <div
+              class="sc-hKgJUU ecgUJx"
+            >
+              <div
+                class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+              />
+            </div>
+          </div>
+          <button
+            class="text-center mt-3 lg:opacity-0 group-hover:opacity-100 text-brand-blue bg-black rounded-md transition duration-300 text-md px-3 py-2"
+            title="Browse all tags"
+          >
+            Browse all tags
+          </button>
+        </div>
+        <div
+          class="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5"
+        >
+          <div
+            class="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
+            style="grid-auto-flow: dense; grid-template-rows: min-content;"
+          >
+            <a
+              class="shadow-xl rounded-xl visualisationColourBorder"
+              gatsby="true"
+              href="/visualisation/06/09/2021/Test-Title"
+              style="grid-row: span 1; grid-column: span 1;"
+            >
+              <img
+                class="absolute"
+                src="test-file-stub"
+                style="max-width: 100px; left: 50%; top: 50%; transform: translate(-50%, -50%);"
+              />
+              <div
+                class="react-reveal"
+              >
+                <div
+                  class="sc-gsTEea bLwyGX"
+                >
+                  <div
+                    class="rounded-xl md:absolute md:top-0 md:left-0"
+                    style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                  >
+                    <img
+                      alt="Visualisation: Test Title"
+                      class="rounded-xl"
+                      style="height: 100%; width: 100%; object-fit: cover; object-position: center; transition: .2s ease-out;"
+                    />
+                  </div>
+                </div>
+              </div>
+            </a>
+            <div
+              id="visualisation-invite"
+              style="grid-row: span 1; grid-column: span 1; visibility: hidden;"
+            >
+              <div
+                class="react-reveal"
+              >
+                <div
+                  class="sc-gsTEea bLwyGX"
+                >
+                  <div
+                    class="group rounded-xl relative md:absolute md:top-0 md:left-0 text-center flex"
+                    style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                  >
+                    <h1
+                      class="text-gray-300 font-bold m-auto"
+                    >
+                      Add your visualisations here
+                    </h1>
+                    <a
+                      class="absolute text-sm text-gray-200 font-bold cursor-pointer bg-gray-600 rounded-md py-1 px-2 hidden group-hover:block"
+                      gatsby="true"
+                      href="/docs/21/07/2021/Contribute-visualisation"
+                      style="transform: translate(-50%, 0%); left: 50%; top: 70%;"
+                    >
+                      Learn how
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            style="height: 100px; width: 100%;"
+          />
+        </div>
+        <div
+          class="text-center text-gray-600 pb-5 text-sm"
+        >
+          This page is inspired by
+           
+          <a
+            class="text-gray-500 hover:text-brand-blue"
+            href="https://informationisbeautiful.net/beautifulnews"
+            rel="noreferrer"
+            target="_blank"
+          >
+            Beautiful News
+          </a>
+          .
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="bg-gray-900"
+    >
+      <div />
+      <div
+        class="relative"
+      >
+        <button
+          class="sc-eCstlR sc-jSgvzq jBitoC hxmXqB group"
+          id="vis-tag-button"
+          title="Tag Menu"
+        >
+          <svg
+            class="text-white text-xl transform group-hover:scale-125 transition duration-500"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            viewBox="0 0 640 512"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M497.941 225.941L286.059 14.059A48 48 0 0 0 252.118 0H48C21.49 0 0 21.49 0 48v204.118a48 48 0 0 0 14.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882 0l204.118-204.118c18.745-18.745 18.745-49.137 0-67.882zM112 160c-26.51 0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882 0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882z"
+            />
+          </svg>
+        </button>
+        <button
+          class="sc-eCstlR sc-gKseQn jBitoC bkctff group bg-gray-800"
+          id="vis-footer-button"
+          title="Footer"
+        >
+          <svg
+            class="text-white text-2xl transform group-hover:scale-110 transition duration-500"
+            fill="currentColor"
+            height="1em"
+            stroke="currentColor"
+            stroke-width="0"
+            version="1.1"
+            viewBox="0 0 22 16"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0 3h14v3h-14v-3zM0 7h14v3h-14v-3zM0 11h14v3h-14v-3z"
+            />
+            <path
+              d="M15.5 10l3-3 3 3z"
+            />
+          </svg>
+        </button>
+        <div
+          class="translate-x-full bg-gray-900 transform duration-500 transition fixed h-full w-full top-0 right-0"
+          style="z-index: 1000; max-width: 450px;"
+        >
+          <button
+            class="text-gray-500 hover:text-red-400 bg-black rounded-md transition duration-300 text-lg px-3 py-1 absolute top-0 right-0 m-6 flex items-center"
+          >
+            <svg
+              class="text-xl mr-1"
+              fill="currentColor"
+              height="1em"
+              stroke="currentColor"
+              stroke-width="0"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+              />
+            </svg>
+            CLOSE
+          </button>
+          <div
+            class="w-full m-6"
+          >
+            <div
+              class="inline-block focus:outline-none text-gray-600 bg-white shadow px-2 rounded-lg ml-2"
+            >
+              <svg
+                class="inline-block text-center text-xl -mt-2"
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle
+                  cx="11"
+                  cy="11"
+                  r="8"
+                />
+                <line
+                  x1="21"
+                  x2="16.65"
+                  y1="21"
+                  y2="16.65"
+                />
+              </svg>
+              <input
+                class="py-2 pl-2 text-base focus:outline-none pr-3 text-gray-600"
+                id="tagSearch"
+                name="search"
+                placeholder="Search for tags"
+                style="max-width: 50vw;"
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            class="w-full text-center"
+          >
+            <h1
+              class="text-gray-300"
+            >
+              No results.
+            </h1>
+          </div>
+          <div
+            class="sc-hKgJUU giiBvf"
+            height="auto"
+            width="100%"
+          >
+            <div
+              class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+            />
+          </div>
+        </div>
+        <footer
+          class="hidden bg-black px-8 pt-8 pb-4 lg:px-12 lg:pt-16 lg:pb-6 text-sm z-50"
+        >
+          <div
+            class="sm:flex mb-4"
+          >
+            <div
+              class="sm:w-2/12 h-auto"
+            >
+              <div
+                class="mb-2"
+              >
+                <a
+                  class="text-white font-bold text-md"
+                  gatsby="true"
+                  href="/"
+                >
+                  Dataviz.Shef
+                </a>
+              </div>
+              <ul
+                class="list-reset leading-normal"
+              >
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/community"
+                  >
+                    Community
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/#learning-path"
+                  >
+                    Learning Path
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/blog"
+                  >
+                    Blog
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/events"
+                  >
+                    Events
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://orda.shef.ac.uk/visualisations/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Showcase
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/privacy"
+                  >
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/accessibility"
+                  >
+                    Accessibility
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/sitemap/sitemap-index.xml"
+                  >
+                    Sitemap
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/about"
+                  >
+                    About
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="mailto:rdm@sheffield.ac.uk"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Contact us
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="sm:w-3/12 h-auto sm:mt-0 mt-8"
+            >
+              <div
+                class="text-md mb-2 font-bold text-white"
+              >
+                Online Research Data
+              </div>
+              <ul
+                class="list-reset leading-normal"
+              >
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://orda.shef.ac.uk/articles/list/desc/published_date/all"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Datasets
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://orda.shef.ac.uk/#orda-fac"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Faculties
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://figshare.shef.ac.uk/collections/University_of_Sheffield_visualisation_showcase/3879643"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Visualised datasets
+                  </a>
+                </li>
+              </ul>
+              <div
+                class="mb-2 mt-4 text-md font-bold text-white"
+              >
+                The University of Sheffield
+              </div>
+              <ul
+                class="list-reset leading-normal"
+              >
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://sheffield.ac.uk/library/rdm"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Research Data Management support
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://www.sheffield.ac.uk/it-services"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    IT Services
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://rse.shef.ac.uk/"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Research Software Engineering
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="sm:w-2/12 h-auto sm:mt-0 mt-8"
+            >
+              <div
+                class="text-white text-md mb-2 font-bold"
+              >
+                Collaboration
+              </div>
+              <ul
+                class="list-reset leading-normal"
+              >
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://github.com/researchdata-sheffield/dataviz-hub2/issues"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Submit an Issue or feedback
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://github.com/researchdata-sheffield/dataviz-hub2"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    Github repository
+                  </a>
+                </li>
+                <li>
+                  <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/docs/22/03/2020/contribute-blog-post"
+                  >
+                    Contribute blog posts
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div
+              class="sm:w-5/12 sm:flex sm:mt-0 mt-8 h-auto justify-center flex-wrap"
+            >
+              <div
+                class="sm:w-2/3 text-white text-lg mb-2 pr-6"
+              >
+                <div
+                  class="font-semibold text-brand-blue"
+                >
+                  Data Visualisation Hub
+                   
+                </div>
+                <div
+                  class="text-gray-100 text-lg mb-2 font-medium"
+                >
+                  The University of Sheffield.
+                </div>
+                <p
+                  class="text-gray-400 leading-normal text-sm"
+                >
+                  To help our researchers make the most of their data and take advantage of tools, we have been working on Dataviz.Shef, a multi-pronged initiative to provide tools, training and build a community around interactive data visualisation at TUoS.
+                </p>
+              </div>
+              <div
+                class="sm:w-1/3 pl-6"
+              >
+                <a
+                  class="m-20 text-gray-400 hover:text-brand-blue"
+                  href="https://www.sheffield.ac.uk/"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                  title="The University of Sheffield Logo"
+                >
+                  <img
+                    alt="The University of Sheffield Logo"
+                    class="w-11/12"
+                    src="test-file-stub"
+                  />
+                </a>
+                <div
+                  class="flex flex-wrap text-center justify-around w-11/12 text-gray-300"
+                >
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="Join Google group"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 488 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://join.slack.com/t/shef-dataviz/signup"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="Join Slack Channel"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M94.12 315.1c0 25.9-21.16 47.06-47.06 47.06S0 341 0 315.1c0-25.9 21.16-47.06 47.06-47.06h47.06v47.06zm23.72 0c0-25.9 21.16-47.06 47.06-47.06s47.06 21.16 47.06 47.06v117.84c0 25.9-21.16 47.06-47.06 47.06s-47.06-21.16-47.06-47.06V315.1zm47.06-188.98c-25.9 0-47.06-21.16-47.06-47.06S139 32 164.9 32s47.06 21.16 47.06 47.06v47.06H164.9zm0 23.72c25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06H47.06C21.16 243.96 0 222.8 0 196.9s21.16-47.06 47.06-47.06H164.9zm188.98 47.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06s-21.16 47.06-47.06 47.06h-47.06V196.9zm-23.72 0c0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06V79.06c0-25.9 21.16-47.06 47.06-47.06 25.9 0 47.06 21.16 47.06 47.06V196.9zM283.1 385.88c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06-25.9 0-47.06-21.16-47.06-47.06v-47.06h47.06zm0-23.72c-25.9 0-47.06-21.16-47.06-47.06 0-25.9 21.16-47.06 47.06-47.06h117.84c25.9 0 47.06 21.16 47.06 47.06 0 25.9-21.16 47.06-47.06 47.06H283.1z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="/rss.xml"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="RSS Feed"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 448 512"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M128.081 415.959c0 35.369-28.672 64.041-64.041 64.041S0 451.328 0 415.959s28.672-64.041 64.041-64.041 64.04 28.673 64.04 64.041zm175.66 47.25c-8.354-154.6-132.185-278.587-286.95-286.95C7.656 175.765 0 183.105 0 192.253v48.069c0 8.415 6.49 15.472 14.887 16.018 111.832 7.284 201.473 96.702 208.772 208.772.547 8.397 7.604 14.887 16.018 14.887h48.069c9.149.001 16.489-7.655 15.995-16.79zm144.249.288C439.596 229.677 251.465 40.445 16.503 32.01 7.473 31.686 0 38.981 0 48.016v48.068c0 8.625 6.835 15.645 15.453 15.999 191.179 7.839 344.627 161.316 352.465 352.465.353 8.618 7.373 15.453 15.999 15.453h48.068c9.034-.001 16.329-7.474 16.005-16.504z"
+                      />
+                    </svg>
+                  </a>
+                  <a
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="mailto:rdm@sheffield.ac.uk"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                    title="contact us on email"
+                  >
+                    <svg
+                      fill="currentColor"
+                      height="1em"
+                      stroke="currentColor"
+                      stroke-width="0"
+                      viewBox="0 0 24 24"
+                      width="1em"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"
+                      />
+                    </svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <p
+            class="text-gray-500 leading-normal text-center text-sm pt-16"
+          >
+            © 2018 - 
+            2021
+             The University of Sheffield.
+          </p>
+        </footer>
+      </div>
+      <div
+        class="w-full pt-24 pb-8 text-center"
+      >
+        <h1
+          class="w-full py-3 text-7xl font-extrabold"
+        >
+          <a
+            gatsby="true"
+            href="/visualisation"
+          >
+            InfoVis
+          </a>
+        </h1>
+        <h3
+          class="text-gray-500"
+        >
+          <p>
+            Viewing items in
+             
+            <span
+              class="text-gray-400 font-semibold"
+            >
+              Test Visualisation Layout
+            </span>
+            .
+          </p>
+        </h3>
+      </div>
+      <div
+        class="flex flex-wrap justify-center group"
+      >
+        <div
+          class="flex w-full h-full justify-center"
+        >
+          <div
+            class="sc-hKgJUU ecgUJx"
+          >
+            <div
+              class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+            />
+          </div>
+        </div>
+        <button
+          class="text-center mt-3 lg:opacity-0 group-hover:opacity-100 text-brand-blue bg-black rounded-md transition duration-300 text-md px-3 py-2"
+          title="Browse all tags"
+        >
+          Browse all tags
+        </button>
+      </div>
+      <div
+        class="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5"
+      >
+        <div
+          class="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
+          style="grid-auto-flow: dense; grid-template-rows: min-content;"
+        >
+          <a
+            class="shadow-xl rounded-xl visualisationColourBorder"
+            gatsby="true"
+            href="/visualisation/06/09/2021/Test-Title"
+            style="grid-row: span 1; grid-column: span 1;"
+          >
+            <img
+              class="absolute"
+              src="test-file-stub"
+              style="max-width: 100px; left: 50%; top: 50%; transform: translate(-50%, -50%);"
+            />
+            <div
+              class="react-reveal"
+            >
+              <div
+                class="sc-gsTEea bLwyGX"
+              >
+                <div
+                  class="rounded-xl md:absolute md:top-0 md:left-0"
+                  style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                >
+                  <img
+                    alt="Visualisation: Test Title"
+                    class="rounded-xl"
+                    style="height: 100%; width: 100%; object-fit: cover; object-position: center; transition: .2s ease-out;"
+                  />
+                </div>
+              </div>
+            </div>
+          </a>
+          <div
+            id="visualisation-invite"
+            style="grid-row: span 1; grid-column: span 1; visibility: hidden;"
+          >
+            <div
+              class="react-reveal"
+            >
+              <div
+                class="sc-gsTEea bLwyGX"
+              >
+                <div
+                  class="group rounded-xl relative md:absolute md:top-0 md:left-0 text-center flex"
+                  style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                >
+                  <h1
+                    class="text-gray-300 font-bold m-auto"
+                  >
+                    Add your visualisations here
+                  </h1>
+                  <a
+                    class="absolute text-sm text-gray-200 font-bold cursor-pointer bg-gray-600 rounded-md py-1 px-2 hidden group-hover:block"
+                    gatsby="true"
+                    href="/docs/21/07/2021/Contribute-visualisation"
+                    style="transform: translate(-50%, 0%); left: 50%; top: 70%;"
+                  >
+                    Learn how
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          style="height: 100px; width: 100%;"
+        />
+      </div>
+      <div
+        class="text-center text-gray-600 pb-5 text-sm"
+      >
+        This page is inspired by
+         
+        <a
+          class="text-gray-500 hover:text-brand-blue"
+          href="https://informationisbeautiful.net/beautifulnews"
+          rel="noreferrer"
+          target="_blank"
+        >
+          Beautiful News
+        </a>
+        .
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

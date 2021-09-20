@@ -1,0 +1,2034 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home | Learning Paths should renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="flex flex-wrap justify-center items-center relative"
+        id="learning-path"
+        style="min-height: 850px; background-repeat: no-repeat; background-size: cover;"
+      >
+        <div
+          class="react-reveal container mx-auto justify-center flex flex-wrap text-center mt-8"
+        >
+          <div
+            class="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold"
+            style="font-family: TUOS Stephenson,Georgia,Times,serif;"
+          >
+            Learning paths.
+          </div>
+          <p
+            class="mt-3 text-gray-100 px-5"
+          >
+            Discover how to get the most out of statistics, visualisations and tool sets.
+          </p>
+        </div>
+        <div
+          class="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+        >
+          <div
+            class="slick-slider center slick-initialized"
+            dir="ltr"
+          >
+            <button
+              class="slick-arrow slick-prev"
+              data-role="none"
+              style="display: block;"
+              type="button"
+            >
+               
+              Previous
+            </button>
+            <div
+              class="slick-list"
+              style="padding: 0px 60px;"
+            >
+              <div
+                class="slick-track"
+                style="width: -480px; opacity: 1; transform: translate3d(120px, 0px, 0px);"
+              >
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-center slick-cloned"
+                  data-index="-4"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Introduction to Dataviz
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            New to data visualisation and programming.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Introduction to Dataviz
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Explore data visualisations through definitions, examples, videos, and relevant resources.
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/03/07/2020/LearningPath-Introduction"
+                            title="Learning Path - Introduction to Dataviz"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Get started
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="-3"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Dataviz Lab
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Previous knowledge of programming languages.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Dataviz Lab
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Tutorials and guides on create data visualisations using different tools and languages. ...
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/04/07/2020/LearningPath-Lab"
+                            title="Learning Path - Dataviz Lab"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Go to Lab
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="-2"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Dataviz Workflows
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Experienced in producing data visualisations.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Dataviz Workflows
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Increase your research impact through reproducible data visualisation workflows.
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/05/07/2020/LearningPath-Workflow"
+                            title="Learning Path - Dataviz Workflows"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Learn workflows
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="false"
+                  class="slick-slide slick-active slick-cloned"
+                  data-index="-1"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                        >
+                          Coming soon
+                        </span>
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Statistical Modeling
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Interested in statistics and inferences.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Statistical Modeling
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            A statistical model is a mathematical model used to describe the relationship ...
+                          </p>
+                          <a
+                            class="cursor-not-allowed"
+                            gatsby="true"
+                            href="#learning-path"
+                            title="This learning path is not published yet"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Coming soon
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="false"
+                  class="slick-slide slick-active slick-center slick-current"
+                  data-index="0"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Introduction to Dataviz
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            New to data visualisation and programming.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Introduction to Dataviz
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Explore data visualisations through definitions, examples, videos, and relevant resources.
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/03/07/2020/LearningPath-Introduction"
+                            title="Learning Path - Introduction to Dataviz"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Get started
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="false"
+                  class="slick-slide slick-active"
+                  data-index="1"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Dataviz Lab
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Previous knowledge of programming languages.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Dataviz Lab
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Tutorials and guides on create data visualisations using different tools and languages. ...
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/04/07/2020/LearningPath-Lab"
+                            title="Learning Path - Dataviz Lab"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Go to Lab
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide"
+                  data-index="2"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Dataviz Workflows
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Experienced in producing data visualisations.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Dataviz Workflows
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Increase your research impact through reproducible data visualisation workflows.
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/05/07/2020/LearningPath-Workflow"
+                            title="Learning Path - Dataviz Workflows"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Learn workflows
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide"
+                  data-index="3"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                        >
+                          Coming soon
+                        </span>
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Statistical Modeling
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Interested in statistics and inferences.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Statistical Modeling
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            A statistical model is a mathematical model used to describe the relationship ...
+                          </p>
+                          <a
+                            class="cursor-not-allowed"
+                            gatsby="true"
+                            href="#learning-path"
+                            title="This learning path is not published yet"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Coming soon
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-center slick-cloned"
+                  data-index="4"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Introduction to Dataviz
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            New to data visualisation and programming.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Introduction to Dataviz
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Explore data visualisations through definitions, examples, videos, and relevant resources.
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/03/07/2020/LearningPath-Introduction"
+                            title="Learning Path - Introduction to Dataviz"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Get started
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="5"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Dataviz Lab
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Previous knowledge of programming languages.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Dataviz Lab
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Tutorials and guides on create data visualisations using different tools and languages. ...
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/04/07/2020/LearningPath-Lab"
+                            title="Learning Path - Dataviz Lab"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Go to Lab
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="6"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Dataviz Workflows
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Experienced in producing data visualisations.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Dataviz Workflows
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            Increase your research impact through reproducible data visualisation workflows.
+                          </p>
+                          <a
+                            class=""
+                            gatsby="true"
+                            href="/docs/05/07/2020/LearningPath-Workflow"
+                            title="Learning Path - Dataviz Workflows"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Learn workflows
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="7"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                        >
+                          Coming soon
+                        </span>
+                        <div
+                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        >
+                          <div
+                            class="text-xl mt-5 font-bold xl:text-2xl"
+                          >
+                            Statistical Modeling
+                          </div>
+                          <div
+                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          >
+                            Interested in statistics and inferences.
+                          </div>
+                        </div>
+                        <div
+                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        >
+                          <h1
+                            class="font-bold mb-1 text-xl xl:text-2xl"
+                          >
+                            Statistical Modeling
+                          </h1>
+                          <p
+                            class="text-base leading-5"
+                          >
+                            A statistical model is a mathematical model used to describe the relationship ...
+                          </p>
+                          <a
+                            class="cursor-not-allowed"
+                            gatsby="true"
+                            href="#learning-path"
+                            title="This learning path is not published yet"
+                          >
+                            <button
+                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            >
+                              Coming soon
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button
+              class="slick-arrow slick-next"
+              data-role="none"
+              style="display: block;"
+              type="button"
+            >
+               
+              Next
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      class="flex flex-wrap justify-center items-center relative"
+      id="learning-path"
+      style="min-height: 850px; background-repeat: no-repeat; background-size: cover;"
+    >
+      <div
+        class="react-reveal container mx-auto justify-center flex flex-wrap text-center mt-8"
+      >
+        <div
+          class="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold"
+          style="font-family: TUOS Stephenson,Georgia,Times,serif;"
+        >
+          Learning paths.
+        </div>
+        <p
+          class="mt-3 text-gray-100 px-5"
+        >
+          Discover how to get the most out of statistics, visualisations and tool sets.
+        </p>
+      </div>
+      <div
+        class="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+      >
+        <div
+          class="slick-slider center slick-initialized"
+          dir="ltr"
+        >
+          <button
+            class="slick-arrow slick-prev"
+            data-role="none"
+            style="display: block;"
+            type="button"
+          >
+             
+            Previous
+          </button>
+          <div
+            class="slick-list"
+            style="padding: 0px 60px;"
+          >
+            <div
+              class="slick-track"
+              style="width: -480px; opacity: 1; transform: translate3d(120px, 0px, 0px);"
+            >
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-center slick-cloned"
+                data-index="-4"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Introduction to Dataviz
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          New to data visualisation and programming.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Introduction to Dataviz
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Explore data visualisations through definitions, examples, videos, and relevant resources.
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/03/07/2020/LearningPath-Introduction"
+                          title="Learning Path - Introduction to Dataviz"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Get started
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-3"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Dataviz Lab
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Previous knowledge of programming languages.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Dataviz Lab
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Tutorials and guides on create data visualisations using different tools and languages. ...
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/04/07/2020/LearningPath-Lab"
+                          title="Learning Path - Dataviz Lab"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Go to Lab
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-2"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Dataviz Workflows
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Experienced in producing data visualisations.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Dataviz Workflows
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Increase your research impact through reproducible data visualisation workflows.
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/05/07/2020/LearningPath-Workflow"
+                          title="Learning Path - Dataviz Workflows"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Learn workflows
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-cloned"
+                data-index="-1"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <span
+                        class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                      >
+                        Coming soon
+                      </span>
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Statistical Modeling
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Interested in statistics and inferences.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Statistical Modeling
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          A statistical model is a mathematical model used to describe the relationship ...
+                        </p>
+                        <a
+                          class="cursor-not-allowed"
+                          gatsby="true"
+                          href="#learning-path"
+                          title="This learning path is not published yet"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Coming soon
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-center slick-current"
+                data-index="0"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Introduction to Dataviz
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          New to data visualisation and programming.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Introduction to Dataviz
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Explore data visualisations through definitions, examples, videos, and relevant resources.
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/03/07/2020/LearningPath-Introduction"
+                          title="Learning Path - Introduction to Dataviz"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Get started
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active"
+                data-index="1"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Dataviz Lab
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Previous knowledge of programming languages.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Dataviz Lab
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Tutorials and guides on create data visualisations using different tools and languages. ...
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/04/07/2020/LearningPath-Lab"
+                          title="Learning Path - Dataviz Lab"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Go to Lab
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="2"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Dataviz Workflows
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Experienced in producing data visualisations.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Dataviz Workflows
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Increase your research impact through reproducible data visualisation workflows.
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/05/07/2020/LearningPath-Workflow"
+                          title="Learning Path - Dataviz Workflows"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Learn workflows
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="3"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <span
+                        class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                      >
+                        Coming soon
+                      </span>
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Statistical Modeling
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Interested in statistics and inferences.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Statistical Modeling
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          A statistical model is a mathematical model used to describe the relationship ...
+                        </p>
+                        <a
+                          class="cursor-not-allowed"
+                          gatsby="true"
+                          href="#learning-path"
+                          title="This learning path is not published yet"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Coming soon
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-center slick-cloned"
+                data-index="4"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Introduction to Dataviz
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          New to data visualisation and programming.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Introduction to Dataviz
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Explore data visualisations through definitions, examples, videos, and relevant resources.
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/03/07/2020/LearningPath-Introduction"
+                          title="Learning Path - Introduction to Dataviz"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Get started
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="5"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Dataviz Lab
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Previous knowledge of programming languages.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Dataviz Lab
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Tutorials and guides on create data visualisations using different tools and languages. ...
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/04/07/2020/LearningPath-Lab"
+                          title="Learning Path - Dataviz Lab"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Go to Lab
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="6"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Dataviz Workflows
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Experienced in producing data visualisations.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Dataviz Workflows
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          Increase your research impact through reproducible data visualisation workflows.
+                        </p>
+                        <a
+                          class=""
+                          gatsby="true"
+                          href="/docs/05/07/2020/LearningPath-Workflow"
+                          title="Learning Path - Dataviz Workflows"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Learn workflows
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="7"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <span
+                        class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                      >
+                        Coming soon
+                      </span>
+                      <div
+                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                      >
+                        <div
+                          class="text-xl mt-5 font-bold xl:text-2xl"
+                        >
+                          Statistical Modeling
+                        </div>
+                        <div
+                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                        >
+                          Interested in statistics and inferences.
+                        </div>
+                      </div>
+                      <div
+                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                      >
+                        <h1
+                          class="font-bold mb-1 text-xl xl:text-2xl"
+                        >
+                          Statistical Modeling
+                        </h1>
+                        <p
+                          class="text-base leading-5"
+                        >
+                          A statistical model is a mathematical model used to describe the relationship ...
+                        </p>
+                        <a
+                          class="cursor-not-allowed"
+                          gatsby="true"
+                          href="#learning-path"
+                          title="This learning path is not published yet"
+                        >
+                          <button
+                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                          >
+                            Coming soon
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M8.59 16.34l4.58-4.59-4.58-4.59L10 5.75l6 6-6 6z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button
+            class="slick-arrow slick-next"
+            data-role="none"
+            style="display: block;"
+            type="button"
+          >
+             
+            Next
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

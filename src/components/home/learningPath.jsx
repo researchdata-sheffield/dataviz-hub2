@@ -1,23 +1,23 @@
-import React from "react"
-import { Link, graphql, useStaticQuery } from "gatsby"
-import Fade from "react-reveal/Fade"
+import React from "react";
+import { Link, graphql, useStaticQuery } from "gatsby";
+import Fade from "react-reveal/Fade";
 
-import { ArrowButton } from "../style/styleComponent"
-import { getImageSource, shortenText } from "../../utils/shared"
-import Slider from "react-slick"
-import Bg from "../../images/home/learningPath.jpg"
+import { ArrowButton } from "../style/styleComponent";
+import { getImageSource, shortenText } from "../../utils/shared";
+import Slider from "react-slick";
+import Bg from "../../images/home/learningPath.jpg";
 
 /**
  * Display all learning paths where the index.mdx specified learningPath: true
  * Latest learning path will get a 'New' icon. If published: false, then 'New' will be replaced by 'Coming soon'
  */
 const LearningPath = () => {
-  const animationClasses = "transform transition duration-300 ease-in-out"
-  const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md`
-  const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0`
-  const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`
+  const animationClasses = "transform transition duration-300 ease-in-out";
+  const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md`;
+  const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0`;
+  const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`;
   const moreBtn =
-    "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+    "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base";
 
   const data = useStaticQuery(graphql`
     query LearningPathQuery {
@@ -48,7 +48,7 @@ const LearningPath = () => {
         }
       }
     }
-  `)
+  `);
 
   // https://react-slick.neostack.com/docs/example/simple-slider
   const carouselSettings = {
@@ -87,7 +87,7 @@ const LearningPath = () => {
         }
       }
     ]
-  }
+  };
 
   return (
     <div
@@ -119,13 +119,13 @@ const LearningPath = () => {
         <Slider {...carouselSettings}>
           {data.allMdx &&
             data.allMdx.edges.map(({ node }, index, arr) => {
-              let imagesrc = getImageSource(node, true)
-              let description = shortenText(node.frontmatter.description, 12)
+              let imagesrc = getImageSource(node, true);
+              let description = shortenText(node.frontmatter.description, 12);
               let learningPathDescription = shortenText(
                 node.frontmatter.learningPathDescription,
                 10
-              )
-              let published = node.frontmatter.published !== false
+              );
+              let published = node.frontmatter.published !== false;
 
               return (
                 <div key={node.id} className="py-4">
@@ -148,7 +148,7 @@ const LearningPath = () => {
                       <div className="text-xl mt-5 font-bold xl:text-2xl">
                         {node.frontmatter.learningPathTitle}
                       </div>
-                      <div className="text-gray-300 text-base mt-3 xl:text-lg">
+                      <div className="text-gray-300 text-base mt-3 xl:text-lg leading-4">
                         {learningPathDescription}
                       </div>
                     </div>
@@ -156,7 +156,7 @@ const LearningPath = () => {
                       <h1 className="font-bold mb-1 text-xl xl:text-2xl">
                         {node.frontmatter.learningPathTitle}
                       </h1>
-                      <p className="text-base xl:text-lg">{description}</p>
+                      <p className="text-base leading-5">{description}</p>
                       <Link
                         to={published ? node.fields.slug : "#learning-path"}
                         className={`${published ? "" : "cursor-not-allowed"}`}
@@ -175,12 +175,12 @@ const LearningPath = () => {
                     </div>
                   </div>
                 </div>
-              )
+              );
             })}
         </Slider>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default LearningPath
+export default LearningPath;
