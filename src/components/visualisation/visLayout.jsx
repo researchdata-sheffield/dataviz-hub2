@@ -1,19 +1,27 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import SEO from "../shared/seo"
-import { Link } from "gatsby"
-import { getImageSource } from "../../utils/shared"
-import { VisItem } from "../style/visStyle"
-import Fade from "react-reveal/Fade"
-import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png"
-import WordCloud from "./wordCloud"
-import VisTags from "./visTags"
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import SEO from "../shared/seo";
+import { Link } from "gatsby";
+import { getImageSource } from "../../utils/shared";
+import { VisItem } from "../style/visStyle";
+import Fade from "react-reveal/Fade";
+import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png";
+import WordCloud from "./wordCloud";
+import VisTags from "./visTags";
 
+/**
+ *
+ * @param {object} allMdx All visualisation items
+ * @param {*} nextPageRef React useRef - referencing load-more div.
+ * @param {string} title Element id for load-more div.
+ * @param {Object} pageContext Other page related information
+ * @returns
+ */
 const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
-  const [tagMenu, setTagMenu] = useState(false)
+  const [tagMenu, setTagMenu] = useState(false);
 
   // category & tag will pass a title
-  const pageTitle = title ? `${title} |` : ""
+  const pageTitle = title ? `${title} |` : "";
   const pageSubtitle = title ? (
     <p>
       Viewing items in{" "}
@@ -21,27 +29,28 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
     </p>
   ) : (
     <p>The latest from the University of Sheffield.</p>
-  )
+  );
 
   // Show top N tags
   const topVisCatTag =
-    pageContext.allVisCatTag &&
-    pageContext.allVisCatTag.length > 1 &&
-    pageContext.allVisCatTag
-      .sort((a, b) =>
-        b.count
-          .toString()
-          .localeCompare(a.count.toString(), "en", { numeric: true })
-      )
-      .slice(0, 20)
+    (pageContext.allVisCatTag &&
+      pageContext.allVisCatTag.length > 1 &&
+      pageContext.allVisCatTag
+        .sort((a, b) =>
+          b.count
+            .toString()
+            .localeCompare(a.count.toString(), "en", { numeric: true })
+        )
+        .slice(0, 20)) ||
+    [];
 
   // save current path as go back URL in visualisation items
   if (typeof window !== "undefined") {
-    localStorage.setItem("VisGoBackURL", pageContext.pagePath)
+    localStorage.setItem("VisGoBackURL", pageContext.pagePath);
   }
 
   function handleTagMenu() {
-    setTagMenu(!tagMenu)
+    setTagMenu(!tagMenu);
   }
 
   return (
@@ -108,9 +117,9 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
         >
           {currentMDXs.length > 0 &&
             currentMDXs.map(({ node }) => {
-              let imagesrc = getImageSource(node, true)
-              let rowSpan = node.frontmatter.rowSpan ?? 1
-              let columnSpan = node.frontmatter.columnSpan ?? 1
+              let imagesrc = getImageSource(node, true);
+              let rowSpan = node.frontmatter.rowSpan ?? 1;
+              let columnSpan = node.frontmatter.columnSpan ?? 1;
 
               return (
                 <Link
@@ -161,7 +170,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
                     </VisItem>
                   </Fade>
                 </Link>
-              )
+              );
             })}
 
           <div
@@ -218,12 +227,12 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
         .
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default visLayout
+export default visLayout;
 
 visLayout.propTypes = {
   currentMDXs: PropTypes.any,
   nextPageRef: PropTypes.any
-}
+};

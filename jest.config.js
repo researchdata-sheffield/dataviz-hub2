@@ -32,5 +32,7 @@ module.exports = {
   // files will be included before all tests are run
   setupFiles: ["<rootDir>/tests/loadershim.js"],
   setupFilesAfterEnv: ["<rootDir>/tests/setupAfterEnv.js", "expect-playwright"],
-  testTimeout: 20000
+  testTimeout: 20000,
+  collectCoverage: true,
+  coverageReporters: ["text", "html"]
 };
