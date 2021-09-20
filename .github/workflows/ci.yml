@@ -18,7 +18,7 @@ on:
         default: ''  
 
 jobs:
-  build:
+  CI-Build:
     runs-on: ubuntu-20.04
     steps:
       - name: Cancel Previous Runs
