@@ -18,7 +18,7 @@
     "test:update": "npm run test -- --updateSnapshot",
     "test:e2e": "jest --testPathPattern=\".*/.+(e2e).+(ts|js)\"",
     "start": "npm run develop",
-    "serve": "npm run build && gatsby serve",
+    "serve": "gatsby serve",
     "serve:qa": "cross-env QA_ENV=true gatsby serve --prefix-paths",
     "serve-noCache": "gatsby clean && gatsby build && gatsby serve",
     "clean": "gatsby clean",
