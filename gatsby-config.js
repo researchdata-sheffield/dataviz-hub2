@@ -3,7 +3,7 @@ require("dotenv").config({
 });
 
 module.exports = {
-  pathPrefix: process.env.QA_ENV && "/dataviz-hub2-qa",
+  pathPrefix: "/dataviz-hub2-qa",
   siteMetadata: {
     title: `Data Visualisation Hub - The University of Sheffield`,
     description: `Promoting and building community around data visualisation at the University of Sheffield.`,
