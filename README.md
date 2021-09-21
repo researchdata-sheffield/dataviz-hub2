@@ -38,9 +38,6 @@
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/ci.yml">
     <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development" alt="CI status" />
   </a>&nbsp;
-  <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/test.yml">
-    <img src="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/test.yml/badge.svg?branch=development" alt="Test status" />
-  </a>&nbsp;
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/deploy.yml">
     <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=master" alt="Deploy status" />
   </a>&nbsp;
