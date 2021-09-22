@@ -1,50 +1,23 @@
-import React, { useState } from "react";
-import { Sunburst } from "@ant-design/charts";
-import JSONdata from "./data.json";
-import styled from "styled-components";
+import React from "react";
+//import styled from "styled-components";
+import Chicken from "./images/chicken.svg";
+import Rice from "./images/grain-rice.svg";
+import Mushroom from "./images/mushroom.svg";
+import Seafood from "./images/seafood.svg";
+import Water from "./images/water-droplet.svg";
 
 const sourceInfo = {
   position: "absolute",
   bottom: 0,
   margin: "1rem",
   fontSize: "0.72rem",
-  color: "#BDBDBD",
+  color: "#fff",
   lineHeight: 1,
   whiteSpace: "nowrap"
 };
 
-const plotTitle = {
-  color: "white",
-  lineHeight: 1.1,
-  fontSize: "1.6rem",
-  fontWeight: 700,
-  textAlign: "center"
-};
-
-const OptionBtn = styled.button`
-  color: #292929;
-  font-size: 0.77rem;
-  background: ${(props) => (props.value == props.type ? "#fb989F" : "white")};
-  padding: 0.3rem;
-  margin-top: 5px;
-  border-radius: 2px;
-  border: 1px solid
-    ${(props) => (props.value == props.type ? "#fb989F" : "white")};
-`;
-
-const transformValue = (data) => {
-  if (data["absoluteChange"]) {
-    data["absoluteChangeLog"] =
-      Math.log10(Math.abs(data["absoluteChange"])) || 0.1;
-  }
-
-  if (data["children"]) {
-    data["children"].forEach((child) => {
-      return transformValue(child);
-    });
-  }
-
-  return data;
+const imageStyle = {
+  margin: "0 10px"
 };
 
 /**
@@ -52,142 +25,91 @@ const transformValue = (data) => {
  * @returns
  */
 const Visualisation = () => {
-  const [valueOption, setValueOption] = useState("percentageChange");
-
-  const tooltipStyle = (data) => {
-    return {
-      margin: ".5rem .2rem",
-      padding: ".2rem .5rem",
-      fontSize: ".88rem",
-      lineHeight: "1.2",
-      borderLeft: `8px solid ${data[0]?.color}`
-    };
-  };
-
-  const chartConfig = {
-    data: transformValue(JSONdata),
-    innerRadius: 0.3,
-    hierarchyConfig: {
-      field: "absoluteChangeLog",
-      ignoreParentValue: true
-    },
-    meta: {
-      type: "linear"
-    },
-    interactions: [{ type: "element-active" }],
-    drilldown: {
-      enabled: true,
-      breadCrumb: {
-        rootText: "Policy",
-        textStyle: {
-          fill: "#A8A8A8"
-        },
-        position: "bottom-left"
-      }
-    },
-    pattern: {
-      type: "line"
-    },
-    state: {
-      active: {
-        style: {
-          stroke: "#fff",
-          lineWidth: 2
-        }
-      }
-    },
-    tooltip: {
-      position: "bottom",
-      customContent: (title, data) => {
-        if (!data) {
-          return;
-        }
-        console.log(data);
-        if (
-          !data[0]?.data?.data["policy"] &&
-          !data[0]?.data?.data["category"]
-        ) {
-          return (
-            <div style={{ ...tooltipStyle(data) }}>
-              <span>{data[0]?.name || ""}: </span>
-              <span style={{ fontWeight: "700", fontSize: ".95rem" }}>
-                {valueOption == "absoluteChange" &&
-                  (data[0]?.name.includes("Expenditure") ||
-                    data[0]?.data?.data["expenditure"]) &&
-                  "£"}
-                {data[0]?.data?.data[valueOption] || ""}
-                {valueOption == "percentageChange" && "%"}
-              </span>
-            </div>
-          );
-        }
-
-        if (data[0]?.data?.data["policy"]) {
-          return (
-            <div style={{ ...tooltipStyle(data) }}>Policy: {data[0].name}</div>
-          );
-        }
-
-        if (data[0]?.data?.data["category"]) {
-          return (
-            <div style={{ ...tooltipStyle(data) }}>
-              Category: {data[0].name}
-            </div>
-          );
-        }
-      }
-    }
-  };
-
   return (
     <div
       id="visualisation"
       style={{
-        backgroundColor: "#df3b57",
-        backgroundImage:
-          "linear-gradient(135deg, #1c000a 0%, #2a0010 20%, #460001 50%, #54001f 80%, #70002a 100%)",
-        minHeight: "550px",
-        height: "100%",
-        maxWidth: "580px",
+        backgroundImage: `linear-gradient(195deg, #20201f 20%, #745310 60%, #964B00 100%)`,
+        minWidth: "500px",
+        minHeight: "1000px",
+        maxWidth: "550px",
+        maxHeight: "1100px",
         borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
         position: "relative"
       }}
     >
-      <h1 style={plotTitle}>
-        Alcohol pricing policies are estimated to be{" "}
-        <span style={{ color: "#FB989F" }}>more effective</span> at reducing
-        consumption and harm{" "}
-        <span style={{ color: "#FB989F" }}>for men than women</span>
-      </h1>
-      <div style={{ height: "420px", marginBottom: "20px" }}>
-        <Sunburst {...chartConfig} />
-      </div>
-      <div
+      <h1
         style={{
-          position: "absolute",
-          right: 0,
-          marginRight: "1rem",
-          bottom: "12%",
-          display: "flex",
-          flexDirection: "column"
+          color: "#fff",
+          lineHeight: 1.1,
+          fontSize: "2.3rem",
+          fontWeight: "700",
+          marginBottom: "2rem",
+          paddingBottom: ".5rem"
         }}
       >
-        <OptionBtn
-          type="percentageChange"
-          value={valueOption}
-          onClick={() => setValueOption("percentageChange")}
+        Improved rice cooking approach to{" "}
+        <span style={{ color: "#EE9381" }}>maximise arsenic removal</span> while
+        preserving NUTRIENT elements
+      </h1>
+      <div
+        style={{
+          padding: "1rem 0",
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between"
+        }}
+      >
+        <div
+          style={{
+            width: "30%",
+            padding: ".5rem",
+            background: "#742110",
+            textAlign: "center",
+            borderRadius: ".375rem",
+            color: "#DBDBDB",
+            fontSize: ".79rem",
+            fontWeight: "600",
+            boxShadow:
+              "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)"
+          }}
         >
-          % Change
-        </OptionBtn>
-        <OptionBtn
-          type="absoluteChange"
-          value={valueOption}
-          onClick={() => setValueOption("absoluteChange")}
+          <h3>33</h3>
+          <h1 style={{ fontWeight: "800", fontSize: "2.1rem" }}>As</h1>
+          <h3>Arsenic</h3>
+          <h3>74.922</h3>
+        </div>
+        <div
+          style={{
+            width: "65%",
+            color: "#DBDBDB",
+            alignSelf: "center",
+            fontSize: ".87rem"
+          }}
         >
-          Absolute Change
-        </OptionBtn>
+          <span style={{ fontSize: "1.2rem" }}>&#128161;</span> Arsenic is
+          classified as a Group-A carcinogen that can cause lung and skin
+          cancer.
+        </div>
+      </div>
+      <h1
+        style={{
+          color: "#DBDBDB",
+          textAlign: "center",
+          margin: "1rem 0 .5rem 0",
+          fontSize: ".87rem"
+        }}
+      >
+        It can be found in ...
+      </h1>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <img style={{ ...imageStyle, width: "35px" }} src={Chicken} />
+        <img style={{ ...imageStyle, width: "50px" }} src={Seafood} />
+        <img style={{ ...imageStyle, width: "75px" }} src={Rice} />
+        <img style={{ ...imageStyle, width: "50px" }} src={Water} />
+        <img style={{ ...imageStyle, width: "35px" }} src={Mushroom} />
       </div>
       <h1
         style={{ fontWeight: 800, left: 0, fontSize: ".9rem", ...sourceInfo }}
@@ -195,7 +117,7 @@ const Visualisation = () => {
         Dataviz.Shef
       </h1>
       <h1 style={{ right: 0, ...sourceInfo }}>
-        Source: The University of Sheffield - News
+        Source: Science of The Total Environment
       </h1>
     </div>
   );
