@@ -1,6 +1,6 @@
-import { graphql, useStaticQuery } from "gatsby"
-import { getSrc } from "gatsby-plugin-image"
-import moment from "moment-timezone/builds/moment-timezone-with-data"
+import { graphql, useStaticQuery } from "gatsby";
+import { getSrc } from "gatsby-plugin-image";
+import moment from "moment-timezone/builds/moment-timezone-with-data";
 
 /**
  * Calculate user local time based on their timezone
@@ -8,35 +8,35 @@ import moment from "moment-timezone/builds/moment-timezone-with-data"
  * @returns {Object} return timezone and time for the user
  */
 export function calculateUserLocalTime(sheffieldTime, timezone = "") {
-  moment.suppressDeprecationWarnings = true
+  moment.suppressDeprecationWarnings = true;
 
   // convert string to date
   if (typeof sheffieldTime == "string") {
-    sheffieldTime = moment.tz(sheffieldTime, "Europe/London")
+    sheffieldTime = moment.tz(sheffieldTime, "Europe/London");
   }
 
   // handle daylight saving time
   if (sheffieldTime.isDST()) {
-    sheffieldTime.subtract(1, "hours")
+    sheffieldTime.subtract(1, "hours");
   }
 
   // get user's timezone and convert
   let userTimeZone =
-    timezone || Intl.DateTimeFormat().resolvedOptions().timeZone
-  let userTime
+    timezone || Intl.DateTimeFormat().resolvedOptions().timeZone;
+  let userTime;
 
   if (userTimeZone == "Europe/London") {
-    userTime = moment(sheffieldTime).format("ddd DD MMMM YYYY, hh:mm A")
+    userTime = moment(sheffieldTime).format("ddd DD MMMM YYYY, hh:mm A");
   } else {
     userTime = moment
       .tz(sheffieldTime, userTimeZone)
-      .format("ddd DD MMMM YYYY, hh:mm A")
+      .format("ddd DD MMMM YYYY, hh:mm A");
   }
 
   return {
     time: userTime,
     timezone: userTimeZone
-  }
+  };
 }
 
 /**
@@ -46,13 +46,13 @@ export function calculateUserLocalTime(sheffieldTime, timezone = "") {
  * @returns {object / string} an object contains image urls or an absolute path to the image
  */
 export function getImageSource(node, source = false) {
-  let imagesrc
+  let imagesrc;
   if (
     node.frontmatter &&
     node.frontmatter.thumbnail &&
     node.frontmatter.thumbnail.childImageSharp
   ) {
-    imagesrc = node.frontmatter.thumbnail.childImageSharp.gatsbyImageData
+    imagesrc = node.frontmatter.thumbnail.childImageSharp.gatsbyImageData;
   } else {
     const imageData = useStaticQuery(graphql`
       query getImageFiles {
@@ -72,24 +72,24 @@ export function getImageSource(node, source = false) {
           ...ImageSharp
         }
       }
-    `)
+    `);
 
-    let imageArray = Object.values(imageData)
+    let imageArray = Object.values(imageData);
     // choose a random image from the result
-    let imageToUse = imageArray[randomInteger(imageArray.length)]
-    imagesrc = imageToUse.childImageSharp.gatsbyImageData
+    let imageToUse = imageArray[randomInteger(imageArray.length)];
+    imagesrc = imageToUse.childImageSharp.gatsbyImageData;
   }
 
   if (source === true) {
-    return getSrc(imagesrc)
+    return getSrc(imagesrc);
   }
-  return imagesrc
+  return imagesrc;
 }
 
 export function randomInteger(max) {
-  const MAX = max ?? 100
+  const MAX = max ?? 100;
 
-  return Math.floor(Math.random() * MAX)
+  return Math.floor(Math.random() * MAX);
 }
 
 /**
@@ -101,10 +101,10 @@ export function randomInteger(max) {
  * @returns
  */
 export function getNumberWithinRange(num, min, max) {
-  const MIN = min || 1
-  const MAX = max || 5
-  const NUM = parseFloat(num).toFixed(1)
-  return Math.min(Math.max(NUM, MIN), MAX)
+  const MIN = min || 1;
+  const MAX = max || 5;
+  const NUM = parseFloat(num).toFixed(1);
+  return Math.min(Math.max(NUM, MIN), MAX);
 }
 
 /**
@@ -114,13 +114,13 @@ export function getNumberWithinRange(num, min, max) {
  *
  */
 export function getShareLinks(mdx) {
-  const folderName = mdx.fields.slugOrigin
-  const type = mdx.frontmatter.type || "blog"
+  const folderName = mdx.fields.slugOrigin;
+  const type = mdx.frontmatter.type || "blog";
 
-  const folderLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}${folderName}`
-  const githubLink = `${folderLink}index.mdx`
-  const shareLink = `https://dataviz.shef.ac.uk${mdx.fields.slug}`
-  const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`
+  const folderLink = `https://github.com/researchdata-sheffield/dataviz-hub2/tree/development/content/${type}${folderName}`;
+  const githubLink = `${folderLink}index.mdx`;
+  const shareLink = `https://dataviz.shef.ac.uk${mdx.fields.slug}`;
+  const shareMessage = `${mdx.frontmatter.title} - ${mdx.frontmatter.description}`;
 
   return {
     folderLink: folderLink,
@@ -131,7 +131,7 @@ export function getShareLinks(mdx) {
     githubLink: githubLink,
     shareLink: shareLink,
     shareMessage: shareMessage
-  }
+  };
 }
 
 /**
@@ -141,13 +141,17 @@ export function getShareLinks(mdx) {
  * @returns {String} new shorten text
  */
 export function shortenText(text, numOfWords) {
-  let newText = text ? text.split(" ").splice(0, numOfWords) : ""
-
-  if (newText.length < numOfWords) {
-    return newText.join(" ")
+  if (!text) {
+    return "";
   }
 
-  return newText.join(" ").concat(" ...")
+  let newText = text.split(" ").splice(0, numOfWords);
+
+  if (newText.length < numOfWords) {
+    return newText.join(" ");
+  }
+
+  return newText.join(" ").concat(" ...");
 }
 
 /**
@@ -157,8 +161,8 @@ export function shortenText(text, numOfWords) {
  */
 export function checkURL(myString) {
   if (myString.length == 0) {
-    return false
+    return false;
   }
 
-  return myString.includes("https://") || myString.includes("http://")
+  return myString.includes("https://") || myString.includes("http://");
 }
