@@ -20,6 +20,10 @@ describe("ShortenText", () => {
   it("shorten text with full sentence", () => {
     expect(shortenText(text, 11)).toEqual(text);
   });
+
+  it("should return empty string", () => {
+    expect(shortenText("", 5)).toEqual("");
+  });
 });
 
 describe("getImageSource", () => {

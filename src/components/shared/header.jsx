@@ -199,8 +199,10 @@ const Header = () => {
         id="navbar"
         role="navigation"
         className={`${
-          isScroll ? "shadow-lg bg-white" : "group-hover:bg-white"
-        } transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`}
+          isScroll
+            ? "shadow-lg bg-white"
+            : "group-hover:bg-white bg-transparent"
+        } transition duration-500 flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`}
         style={{ transition: "top 0.3s" }}
       >
         <div className="flex items-center flex-shrink-0 mr-5">

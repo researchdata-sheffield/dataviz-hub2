@@ -58,9 +58,10 @@ const Workconflict = () => {
         maxWidth: "700px",
         maxHeight: "1400px",
         borderRadius: "20px",
-        backgroundSize: "cover"
+        backgroundSize: "cover",
+        padding: "1rem",
+        position: "relative"
       }}
-      className="p-4 relative"
     >
       <h1
         style={{

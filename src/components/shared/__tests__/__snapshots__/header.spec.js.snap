@@ -5,7 +5,7 @@ exports[`Header renders correctly 1`] = `
   className="font-semibold z-50 relative group"
 >
   <nav
-    className="group-hover:bg-white transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden"
+    className="group-hover:bg-white bg-transparent transition duration-500 flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden"
     id="navbar"
     role="navigation"
     style={
