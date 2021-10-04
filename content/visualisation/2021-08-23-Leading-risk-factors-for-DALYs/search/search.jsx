@@ -96,6 +96,8 @@ const search = () => {
         background: "#1a2131",
         padding: "1rem 2rem",
         borderRadius: ".5rem",
+        display: "block",
+        width: "max-content",
         boxShadow:
           currentRegion !== "" ? "0 25px 50px -12px rgb(0 0 0 / 47%)" : "none"
       }}

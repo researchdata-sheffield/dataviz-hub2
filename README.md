@@ -50,6 +50,9 @@
   <a href="https://sonarcloud.io/component_measures?id=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities">
     <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities" alt="Vulnerabilities" />
   </a>
+  <a href="https://sonarcloud.io/dashboard?id=researchdata-sheffield_dataviz-hub2">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=alert_status" />
+  </a>
 </p>
 
 <hr>

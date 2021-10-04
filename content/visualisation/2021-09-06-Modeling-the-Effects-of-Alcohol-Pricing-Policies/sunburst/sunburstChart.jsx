@@ -154,13 +154,15 @@ const SunburstChart = () => {
         backgroundColor: "#df3b57",
         backgroundImage:
           "linear-gradient(135deg, #1c000a 0%, #2a0010 20%, #460001 50%, #54001f 80%, #70002a 100%)",
-        minHeight: "550px",
+        maxHeight: "600px",
         height: "100%",
+        minWidth: "550px",
         maxWidth: "580px",
         borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
-        position: "relative"
+        position: "relative",
+        margin: "0 auto"
       }}
     >
       <h1 style={plotTitle}>

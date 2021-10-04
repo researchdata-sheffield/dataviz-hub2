@@ -63,7 +63,6 @@ const RiskFactorVis = () => {
         backgroundImage:
           "linear-gradient(135deg, #212121 0%,#212121 40%,#3a3a3a 77%,#434343 100%)",
         minHeight: "600px",
-        height: "100%",
         minWidth: "300px",
         maxWidth: "1200px",
         borderRadius: "20px",

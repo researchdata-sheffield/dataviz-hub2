@@ -71,13 +71,13 @@ const marimekkoPlot = () => {
         backgroundColor: "#FAD961",
         backgroundImage:
           "linear-gradient(325deg, #FFC800 0%, #FF7800 50%, #ea3a05 100%)",
-        minHeight: "550px",
-        height: "100%",
-        maxWidth: "550px",
+        height: "550px",
+        width: "550px",
         borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
-        position: "relative"
+        position: "relative",
+        margin: "0 auto"
       }}
     >
       <h1 style={plotTitle}>

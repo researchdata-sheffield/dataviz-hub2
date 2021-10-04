@@ -99,7 +99,8 @@ const ImprovedApproach = () => {
         borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
-        position: "relative"
+        position: "relative",
+        margin: "0 auto"
       }}
     >
       <h1
@@ -474,11 +475,15 @@ const ImprovedApproach = () => {
                   borderRight: `16px solid ${color}`,
                   padding: ".5rem",
                   borderRadius: ".5rem",
-                  fontSize: ".85rem"
+                  fontSize: ".82rem"
                 }}
               >
-                <h1>Rice: {indexValue}</h1>
-                <h1>Treatment: {id}</h1>
+                <h1 style={{ margin: "2px auto", lineHeight: "1.1" }}>
+                  Rice: {indexValue}
+                </h1>
+                <h1 style={{ margin: "2px auto", lineHeight: "1.1" }}>
+                  Treatment: {id}
+                </h1>
               </div>
             );
           }}

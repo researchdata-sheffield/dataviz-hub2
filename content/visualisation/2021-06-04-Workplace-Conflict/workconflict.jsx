@@ -53,14 +53,13 @@ const Workconflict = () => {
       // linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)
       style={{
         backgroundImage: `linear-gradient(145deg, #1f2124 0%, #323537 100%)`,
-        minWidth: "400px",
-        minHeight: "600px",
-        maxWidth: "700px",
-        maxHeight: "1400px",
+        width: "600px",
+        height: "1300px",
         borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
-        position: "relative"
+        position: "relative",
+        margin: "0 auto"
       }}
     >
       <h1

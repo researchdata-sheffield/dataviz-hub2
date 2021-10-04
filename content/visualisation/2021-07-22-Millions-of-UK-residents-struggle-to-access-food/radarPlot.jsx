@@ -119,12 +119,12 @@ const radarPlot = () => {
         backgroundImage:
           "linear-gradient(135deg, #790115 0%, #991120 30%, #CA1000 60%, #E6AC00 100%)",
         minHeight: "550px",
-        height: "100%",
-        maxWidth: "580px",
+        width: "550px",
         borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
-        position: "relative"
+        position: "relative",
+        margin: "0 auto"
       }}
     >
       <h1 style={plotTitle}>
