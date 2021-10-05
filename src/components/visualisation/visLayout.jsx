@@ -7,7 +7,7 @@ import { VisItem } from "../style/visStyle";
 import Fade from "react-reveal/Fade";
 import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png";
 import WordCloud from "./wordCloud";
-import VisTags from "./visTags";
+import VisUtils from "./visUtils";
 
 /**
  *
@@ -68,7 +68,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
         description="Browse the latest visualisations from the Data Visualisation Hub at The University of Sheffield."
       />
 
-      <VisTags
+      <VisUtils
         handleTagMenu={handleTagMenu}
         tagMenu={tagMenu}
         tags={pageContext.allVisCatTag}
