@@ -98,6 +98,7 @@ const visEmbed = (props) => {
   return (
     <div className="text-7xl" title="Embed visualisation">
       <button
+        aria-label="Embed Visualisation"
         onClick={() => setEmbedMenu(!embedMenu)}
         className="py-1 px-2 text-white bg-black hover:bg-white hover:text-black flex justify-center rounded-md text-xl cursor-pointer"
       >
@@ -152,6 +153,7 @@ const visEmbed = (props) => {
           onClick={() => setEmbedMenu(!embedMenu)}
           className="text-gray-500 hover:text-gray-900 rounded-md transition duration-300 text-3xl p-1 absolute top-0 right-0 flex items-center"
           title="Close embed menu"
+          aria-label="Close embed menu"
         >
           <MdCancel />
         </button>

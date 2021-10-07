@@ -94,6 +94,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
       <div className="flex flex-wrap justify-center group">
         <div className="flex w-full h-full justify-center">
           <WordCloud
+            id="main-word-cloud"
             words={topVisCatTag}
             colours={["#ececec"]}
             backgroundColour={["#1f2937"]}
