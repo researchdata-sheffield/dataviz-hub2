@@ -9,7 +9,7 @@ Object {
         class="sc-hKgJUU jzjvBo"
       >
         <div
-          class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+          class="word-cloud-wrap space-y-0 space-x-1"
         >
           <a
             class="word font-semibold"
@@ -44,7 +44,7 @@ Object {
       class="sc-hKgJUU jzjvBo"
     >
       <div
-        class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+        class="word-cloud-wrap space-y-0 space-x-1"
       >
         <a
           class="word font-semibold"

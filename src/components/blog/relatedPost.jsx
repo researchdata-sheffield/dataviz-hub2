@@ -1,13 +1,13 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql, Link } from "gatsby"
-import { jaccardIndexCompareTwoStrings } from "../../utils/blog"
-import Fade from "react-reveal/Fade"
-import { getImageSource, shortenText } from "../../utils/shared"
-import { AiOutlineBulb } from "react-icons/ai"
+import React from "react";
+import PropTypes from "prop-types";
+import { useStaticQuery, graphql, Link } from "gatsby";
+import { jaccardIndexCompareTwoStrings } from "../../utils/blog";
+import Fade from "react-reveal/Fade";
+import { getImageSource, shortenText } from "../../utils/shared";
+import { AiOutlineBulb } from "react-icons/ai";
 
 const RelatedPost = (props) => {
-  const { currentPost, type } = props
+  const { currentPost, type } = props;
 
   const postList = useStaticQuery(graphql`
     query relatedPostList {
@@ -28,17 +28,17 @@ const RelatedPost = (props) => {
         }
       }
     }
-  `)
+  `);
   // remove current post from posts list
   const data = postList.allMdx.edges
     .map((edges) => edges.node)
     .filter(function (node) {
-      return node.fields.slug !== currentPost.fields.slug
-    })
+      return node.fields.slug !== currentPost.fields.slug;
+    });
 
   // create new service for getting related posts
-  const service = new RelatedPostServices(currentPost, data, type)
-  const relatedPosts = service.getRelatedPosts()
+  const service = new RelatedPostServices(currentPost, data, type);
+  const relatedPosts = service.getRelatedPosts();
 
   return (
     <div className="max-w-screen-xl mx-auto">
@@ -52,16 +52,19 @@ const RelatedPost = (props) => {
             You Might Also Like
           </p>
         </div>
-        <div className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center lg:justify-start lg:px-5">
+        <div
+          className="flex flex-wrap py-5 lg:pt-8 lg:pb-16 justify-center lg:justify-start lg:px-5"
+          aria-label="You Might Also Like"
+        >
           {relatedPosts.length == 0 && (
             <p className="px-10 text-gray-600">No related items ...</p>
           )}
           {relatedPosts.map((node) => {
-            let imagesrc = getImageSource(node, true)
-            let title = shortenText(node.frontmatter.title, 8)
-            let description = shortenText(node.frontmatter.description, 34)
+            let imagesrc = getImageSource(node, true);
+            let title = shortenText(node.frontmatter.title, 8);
+            let description = shortenText(node.frontmatter.description, 34);
             const classes =
-              "group-hover:hidden text-gray-100 font-bold transition duration-500"
+              "group-hover:hidden text-gray-100 font-bold transition duration-500";
 
             if (type == "visualisation") {
               return (
@@ -81,7 +84,7 @@ const RelatedPost = (props) => {
                     className="group text-left relative shadow-lg hover:shadow-2xl rounded-lg transform hover:scale-105 transition duration-500"
                   ></div>
                 </Link>
-              )
+              );
             }
 
             return (
@@ -142,7 +145,7 @@ const RelatedPost = (props) => {
                               {node.frontmatter.tag.map((tag, i, arr) => {
                                 return i < 3 && arr.length - 1 === i
                                   ? tag.toUpperCase()
-                                  : tag.toUpperCase().concat(", ")
+                                  : tag.toUpperCase().concat(", ");
                               })}
                               {node.frontmatter.tag.length > 3 && (
                                 <p className="inline-block text-white">
@@ -169,61 +172,61 @@ const RelatedPost = (props) => {
                   </div>
                 </div>
               </Link>
-            )
+            );
           })}
         </div>
       </Fade>
     </div>
-  )
-}
+  );
+};
 
-export default RelatedPost
+export default RelatedPost;
 
 RelatedPost.propTypes = {
   currentPost: PropTypes.any,
   type: PropTypes.any
-}
+};
 
 class RelatedPostServices {
   constructor(currentPost, posts, type) {
-    this.posts = posts
-    this.maxPosts = 3
-    this.title = currentPost.frontmatter.title
-    this.description = currentPost.frontmatter.description
-    this.category = currentPost.frontmatter.category || null
-    this.tags = currentPost.frontmatter.tag || null
-    this.mdxType = type
+    this.posts = posts;
+    this.maxPosts = 3;
+    this.title = currentPost.frontmatter.title;
+    this.description = currentPost.frontmatter.description;
+    this.category = currentPost.frontmatter.category || null;
+    this.tags = currentPost.frontmatter.tag || null;
+    this.mdxType = type;
 
     if (type === "visualisation") {
       this.posts = this.posts.filter((post) => {
-        return post.frontmatter.type === type
-      })
+        return post.frontmatter.type === type;
+      });
     }
   }
 
   setMaxPosts(number) {
-    this.maxPosts = number
-    return this
+    this.maxPosts = number;
+    return this;
   }
 
   setTitle(title) {
-    this.title = title
-    return this
+    this.title = title;
+    return this;
   }
 
   setDescription(des) {
-    this.description = des
-    return this
+    this.description = des;
+    return this;
   }
 
   setCategory(cat) {
-    this.category = cat
-    return this
+    this.category = cat;
+    return this;
   }
 
   setTag(tag) {
-    this.tags = tag
-    return this
+    this.tags = tag;
+    return this;
   }
 
   getRelatedPosts() {
@@ -237,80 +240,80 @@ class RelatedPostServices {
      * return top 3 (or number of posts set)
      */
     const { posts, category, tags, maxPosts, title, description, mdxType } =
-      this
-    const CAT_POINT = 2
-    const TAG_POINT = 1
-    const TITLE_POINT = 3
-    const DESCRIPTION_POINT = 3
-    const TYPE_POINT = 4
+      this;
+    const CAT_POINT = 2;
+    const TAG_POINT = 1;
+    const TITLE_POINT = 3;
+    const DESCRIPTION_POINT = 3;
+    const TYPE_POINT = 4;
 
     //- Functions ---------------------
     function addCategoryPoints(currPost) {
       if (!currPost.frontmatter.category || !category) {
-        return
+        return;
       }
       currPost.frontmatter.category.forEach((cat) => {
         if (category.includes(cat)) {
-          currPost.point += CAT_POINT
+          currPost.point += CAT_POINT;
         }
-      })
+      });
     }
 
     function addTagPoints(currPost) {
       if (!currPost.frontmatter.tag || !tags) {
-        return
+        return;
       }
       currPost.frontmatter.tag.forEach((tag) => {
         if (tags.includes(tag)) {
-          currPost.point += TAG_POINT
+          currPost.point += TAG_POINT;
         }
-      })
+      });
     }
 
     function addTitlePoints(currPost) {
       let score = jaccardIndexCompareTwoStrings(
         title,
         currPost.frontmatter.title
-      )
-      currPost.point += TITLE_POINT * score
+      );
+      currPost.point += TITLE_POINT * score;
     }
 
     function addDescriptionPoints(currPost) {
       let score = jaccardIndexCompareTwoStrings(
         description,
         currPost.frontmatter.description
-      )
-      currPost.point += DESCRIPTION_POINT * score
+      );
+      currPost.point += DESCRIPTION_POINT * score;
     }
 
     function addTypePoint(currPost) {
       if (currPost.frontmatter.type == mdxType) {
-        currPost.point += TYPE_POINT
+        currPost.point += TYPE_POINT;
       }
     }
 
     function sortByPoint(a, b) {
       // sort desc by points
-      if (a.point < b.point) return 1
-      if (a.point > b.point) return -1
-      return 0
+      if (a.point < b.point) return 1;
+      if (a.point > b.point) return -1;
+      return 0;
     }
 
     //- Process posts ---------------------
     for (const postPos in posts) {
       // get current post and initialise the point
-      const currPost = posts[postPos]
-      currPost.point = 0
+      const currPost = posts[postPos];
+      currPost.point = 0;
 
       // add points to current post
-      addCategoryPoints(currPost)
-      addTagPoints(currPost)
+      addCategoryPoints(currPost);
+      addTagPoints(currPost);
 
-      addTitlePoints(currPost)
-      addDescriptionPoints(currPost)
-      addTypePoint(currPost)
+      addTitlePoints(currPost);
+      addDescriptionPoints(currPost);
+      addTypePoint(currPost);
     }
 
-    return posts.sort(sortByPoint).slice(0, maxPosts)
+    return posts.sort(sortByPoint).slice(0, maxPosts);
   }
 }

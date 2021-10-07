@@ -137,7 +137,7 @@ Object {
               width="100%"
             >
               <div
-                class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+                class="word-cloud-wrap space-y-0 space-x-1"
               />
             </div>
           </div>
@@ -557,9 +557,10 @@ Object {
           >
             <div
               class="sc-hKgJUU ecgUJx"
+              id="main-word-cloud"
             >
               <div
-                class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+                class="word-cloud-wrap space-y-0 space-x-1"
               />
             </div>
           </div>
@@ -794,7 +795,7 @@ Object {
             width="100%"
           >
             <div
-              class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+              class="word-cloud-wrap space-y-0 space-x-1"
             />
           </div>
         </div>
@@ -1214,9 +1215,10 @@ Object {
         >
           <div
             class="sc-hKgJUU ecgUJx"
+            id="main-word-cloud"
           >
             <div
-              class="word-cloud-wrap space-y-0 space-x-2 space-y-1"
+              class="word-cloud-wrap space-y-0 space-x-1"
             />
           </div>
         </div>

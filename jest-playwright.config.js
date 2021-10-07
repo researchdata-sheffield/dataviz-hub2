@@ -1,7 +1,7 @@
 // https://playwright.dev/docs/api/class-browsertype OPTIONS
 module.exports = {
   launchOptions: {
-    headless: false,
+    headless: true,
     devtools: false
   },
   contextOptions: {
