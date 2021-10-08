@@ -40,13 +40,14 @@ const menuCategory = ({ pageContext, handleTagMenu, tagMenu }) => {
             {tag[0]}
           </Link>
         ))}
-        <div
-          title="Click to open the menu"
+        <button
+          aria-label="Click to toggle the tag menu"
+          title="Click to toggle the tag menu"
           onClick={() => handleTagMenu()}
           className={`${buttonStyle} hover:text-white hover:bg-gray-900 hover:border-gray-900 font-bold cursor-pointer`}
         >
           {tagMenu ? "CLOSE" : "MORE"}
-        </div>
+        </button>
       </div>
     </Flip>
   );

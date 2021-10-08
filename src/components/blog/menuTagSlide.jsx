@@ -90,26 +90,27 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
           </div>
         </div>
 
-        {filterTag.map((tag) => (
-          <Link
-            key={tag}
-            activeStyle={{ color: "white", backgroundColor: "#00aeef" }}
-            partiallyActive={true}
-            to={`/blog/tag/${kebabCase(tag)}`}
-            className="inline-block hover:bg-brand-blue hover:text-white py-1 px-2 m-1 bg-gray-50 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
-          >
-            {tag} ({pageContext.countTags[`${tag}`]})
-          </Link>
-        ))}
-        <div
+        <div aria-label="Slide tag menu results">
+          {filterTag.map((tag) => (
+            <Link
+              key={tag}
+              activeStyle={{ color: "white", backgroundColor: "#00aeef" }}
+              partiallyActive={true}
+              to={`/blog/tag/${kebabCase(tag)}`}
+              className="inline-block hover:bg-brand-blue hover:text-white py-1 px-2 m-1 bg-gray-50 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
+            >
+              {tag} ({pageContext.countTags[`${tag}`]})
+            </Link>
+          ))}
+        </div>
+        <button
           onClick={() => handleTagMenu()}
           className={`${
             tagMenu ? "block" : "hidden"
-          } cursor-pointer my-5 px-3 py-2 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold text-center`}
-          tabIndex="0"
+          } cursor-pointer my-5 px-3 py-2 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold text-center w-full`}
         >
           ClOSE
-        </div>
+        </button>
       </div>
     </div>
   );
