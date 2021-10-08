@@ -1,26 +1,26 @@
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { Link } from "gatsby"
-import kebabCase from "lodash.kebabcase"
-import { FaTags, FaAngleDown } from "react-icons/fa"
-import { FiSearch } from "react-icons/fi"
-import { useLocation } from "@gatsbyjs/reach-router"
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
+import kebabCase from "lodash.kebabcase";
+import { FaTags, FaAngleDown } from "react-icons/fa";
+import { FiSearch } from "react-icons/fi";
+import { useLocation } from "@gatsbyjs/reach-router";
 
 const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
-  const [filterTag, setfilterTag] = useState(pageContext.allTags)
+  const [filterTag, setfilterTag] = useState(pageContext.allTags);
 
-  var { href } = useLocation()
-  if (!href) href = ""
+  var { href } = useLocation();
+  if (!href) href = "";
 
   function searchTag(e) {
     // on input, show tag menu
-    if (tagMenu === false) handleTagMenu()
+    if (tagMenu === false) handleTagMenu();
 
-    let searchWord = e.target.value.toLowerCase()
+    let searchWord = e.target.value.toLowerCase();
     let searchTagList = pageContext.allTags.filter(function (tag) {
-      return tag.toLowerCase().indexOf(searchWord) != -1 // returns true or false
-    })
-    setfilterTag(searchTagList)
+      return tag.toLowerCase().indexOf(searchWord) != -1; // returns true or false
+    });
+    setfilterTag(searchTagList);
   }
 
   return (
@@ -52,7 +52,10 @@ const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
           </div>
         </div>
         {/* tag menu */}
-        <div className={`${tagMenu ? `` : `hidden`} pt-4`}>
+        <div
+          className={`${tagMenu ? `` : `hidden`} pt-4`}
+          aria-label="Tag menu results"
+        >
           {filterTag.map((tag) => (
             <Link
               key={tag}
@@ -67,7 +70,8 @@ const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
         </div>
       </div>
       {/* arrow button */}
-      <div
+      <button
+        aria-label={`${tagMenu ? "Collapse" : "Open"} tag menu`}
         onClick={() => handleTagMenu()}
         className="text-gray-900 flex justify-center text-2xl absolute top-0 right-0 mr-4 mt-4"
       >
@@ -77,13 +81,13 @@ const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
             transition: "all .5s ease"
           }}
         />
-      </div>
+      </button>
     </div>
-  )
-}
+  );
+};
 
-export default menuTag
+export default menuTag;
 
 menuTag.propTypes = {
   pageContext: PropTypes.any
-}
+};

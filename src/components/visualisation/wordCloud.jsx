@@ -34,7 +34,8 @@ const wordCloud = React.memo(
     minFontSize = 0.9,
     maxFontSize = 2.1,
     fontUnit = "rem",
-    wordStyle
+    wordStyle,
+    ...props
   }) => {
     const [wordsArr, setWords] = useState(words);
     const wordCloudColours = colours || [
@@ -88,8 +89,9 @@ const wordCloud = React.memo(
         height={height}
         radius={radius}
         backgroundColour={wordBackgroundColour.length > 0 ? true : false}
+        {...props}
       >
-        <div className="word-cloud-wrap space-y-0 space-x-2 space-y-1">
+        <div className="word-cloud-wrap space-y-0 space-x-1">
           {wordsArr &&
             wordsArr.map((item) => {
               // depends on the item count, calculate the required font size

@@ -152,9 +152,9 @@ exports[`Search component return search result without error 1`] = `
         <div
           class="bg-white text-gray-900 py-2"
         >
-          Found 
+          There are 
           2
-           results for you.
+           items matching your search.
         </div>
         <div
           class="flex flex-wrap py-10 xl:pt-16 xl:pb-64 justify-center bg-gray-100"

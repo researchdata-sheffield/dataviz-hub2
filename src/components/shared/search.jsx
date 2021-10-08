@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery, withPrefix } from "gatsby";
 import PropTypes from "prop-types";
 import { FiSearch } from "react-icons/fi";
 import Highlighter from "react-highlight-words";
@@ -60,7 +60,7 @@ class Search extends Component {
         return (
           <div>
             <div className="bg-white text-gray-900 py-2">
-              Found {this.state.results.length} results for you.
+              There are {this.state.results.length} items matching your search.
             </div>
 
             <div className="flex flex-wrap py-10 xl:pt-16 xl:pb-64 justify-center bg-gray-100">
@@ -80,7 +80,7 @@ class Search extends Component {
 
                 return (
                   <a
-                    href={`${item.url}`}
+                    href={`${withPrefix(item.url)}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     key={i}

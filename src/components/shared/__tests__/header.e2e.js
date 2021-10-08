@@ -2,7 +2,7 @@ describe("Header e2e tests", () => {
   beforeAll(async () => {
     await page.goto("/", { waitUntil: "domcontentloaded" });
     await page.waitForSelector("id=__loader", { state: "hidden" });
-  }, 300000);
+  }, 400000);
 
   afterAll(async () => {
     await page.close();

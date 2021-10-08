@@ -7,7 +7,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import Header from "../header";
 import { LocationProvider } from "@gatsbyjs/reach-router";
-import { render, fireEvent, getByRole } from "@testing-library/react";
+import { render, fireEvent } from "@testing-library/react";
 
 describe("Header", () => {
   it("renders correctly", async () => {

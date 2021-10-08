@@ -73,7 +73,7 @@ const eventNotice = ({ eventBrite }) => {
                       {userLocalTime.time} ({userLocalTime.timezone})
                     </p>
                     <div className="flex flex-wrap">
-                      <div className="w-full sm:w-full md:w-5/6 lg:w-5/6 xl:w-5/6 text-sm xl:text-base">
+                      <div className="w-full md:w-5/6 text-sm xl:text-base">
                         <p className="flex">
                           {node.online_event && (
                             <FaMapMarkerAlt className="mr-1 mt-1" />
@@ -98,7 +98,7 @@ const eventNotice = ({ eventBrite }) => {
                             node.venue.address.postal_code}
                         </p>
                       </div>
-                      <div className="flex flex-wrap w-full sm:w-full md:w-1/6 lg:w-1/6 xl:w-1/6 content-center justify-center hidden-xs hidden-md">
+                      <div className="flex flex-wrap w-full md:w-1/6 content-center justify-center hidden-xs hidden-md">
                         <button
                           href={node.url}
                           target="_blank"
