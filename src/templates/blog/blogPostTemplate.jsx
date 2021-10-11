@@ -1,57 +1,57 @@
 // BASE
-import React, { useEffect } from "react"
-import { graphql, withPrefix } from "gatsby"
-import PropTypes from "prop-types"
-import { Helmet } from "react-helmet"
-import { GatsbyImage } from "gatsby-plugin-image"
+import React, { useEffect } from "react";
+import { graphql, withPrefix } from "gatsby";
+import PropTypes from "prop-types";
+import { Helmet } from "react-helmet";
+import { GatsbyImage } from "gatsby-plugin-image";
 
-import SEO from "../../components/shared/seo"
-import PostPagination from "../../components/blog/postPagination"
-import { CatBtn, TagBtn } from "../../components/style/styleComponent"
-import Comment from "../../components/blog/comment"
-import ShareButtons from "../../components/shared/shareButtons"
+import SEO from "../../components/shared/seo";
+import PostPagination from "../../components/blog/postPagination";
+import { CatBtn, TagBtn } from "../../components/style/styleComponent";
+import Comment from "../../components/blog/comment";
+import ShareButtons from "../../components/shared/shareButtons";
 
 // MDX component
-import "katex/dist/katex.min.css"
-import CommonMdxProvider from "../../components/shared/commonMdxProvider"
+import "katex/dist/katex.min.css";
+import CommonMdxProvider from "../../components/shared/commonMdxProvider";
 
 // Utils
-import kebabCase from "lodash.kebabcase"
-import { useScript } from "../../utils/hooks/useScript"
-import { getShareLinks } from "../../utils/shared"
-import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent"
+import kebabCase from "lodash.kebabcase";
+import { useScript } from "../../utils/hooks/useScript";
+import { getShareLinks } from "../../utils/shared";
+import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent";
 
-import Fade from "react-reveal/Fade"
-import Pulse from "react-reveal/Pulse"
-import trianglify from "trianglify"
+import Fade from "react-reveal/Fade";
+import Pulse from "react-reveal/Pulse";
+import trianglify from "trianglify";
 
 const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
-  const { title, date, author, category, tag, disableTOC } = mdx.frontmatter
-  const { prev, next } = pageContext
+  const { title, date, author, category, tag, disableTOC } = mdx.frontmatter;
+  const { prev, next } = pageContext;
 
-  const shareLinks = getShareLinks(mdx)
+  const shareLinks = getShareLinks(mdx);
 
   // include d3 scripts
-  const d3 = mdx.frontmatter.d3 || null
+  const d3 = mdx.frontmatter.d3 || null;
 
   {
     d3 &&
       d3.map((d) => {
         if (d.includes("https://")) {
-          useScript(d, "", false) // external script
+          useScript(d, "", false); // external script
         } else {
-          useScript(withPrefix(`d3/${d}`), "", false)
+          useScript(withPrefix(`d3/${d}`), "", false);
         }
-      })
+      });
   }
 
   // enable/disable table of content
-  var tableOfContent
+  var tableOfContent;
   if (disableTOC === true) {
-    tableOfContent = null
+    tableOfContent = null;
   } else {
-    tableOfContent = mdx.tableOfContents
-    trackTableOfContent(`.TOC li a`, `.mdxBody`)
+    tableOfContent = mdx.tableOfContents;
+    trackTableOfContent(`.TOC li a`, `.mdxBody`);
   }
 
   //Rendering table of content
@@ -68,7 +68,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <></>
       )}
     </li>
-  )
+  );
   const renderSubItem = (item) => (
     <li key={item.title} className="pt-1 list-none">
       {item.url ? <a href={item.url}> {item.title}</a> : <></>}
@@ -78,7 +78,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
         <></>
       )}
     </li>
-  )
+  );
 
   if (typeof window !== `undefined`) {
     //const list = document.querySelector('.gatsby-code-title')
@@ -89,8 +89,8 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   // produce trianglify image
   useEffect(() => {
-    var element = document.getElementById("headElement")
-    var dimensions = element.getClientRects()[0]
+    var element = document.getElementById("headElement");
+    var dimensions = element.getClientRects()[0];
     var pattern = trianglify({
       width: dimensions.width,
       height: dimensions.height,
@@ -98,14 +98,14 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       variance: Math.random(),
       strokeWidth: Math.random() * 5,
       seed: Math.random().toString(5)
-    }).toCanvas()
+    }).toCanvas();
 
-    var img = pattern.toDataURL("image/png")
+    var img = pattern.toDataURL("image/png");
     element.style["background-image"] =
       "linear-gradient(0deg, rgba(0,0,0,0.05) 70%, rgba(0,0,0,0.60) 100%), url(" +
       img +
-      ")"
-  })
+      ")";
+  });
 
   return (
     <div className="relative" key={mdx.id}>
@@ -207,8 +207,15 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
       {/* body */}
       <div
-        className="flex flex-wrap relative pt-10 mx-auto"
-        style={{ maxWidth: "1200px" }}
+        aria-label="Blog post main content"
+        style={{
+          maxWidth: "1200px",
+          margin: "auto",
+          paddingTop: "2.5rem",
+          position: "relative",
+          display: "flex",
+          flexWrap: "wrap"
+        }}
       >
         {/* desktop share buttons && mobile: table of content & share buttons */}
         <ShareButtons
@@ -255,15 +262,15 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       />
       <Comment mdx={mdx} />
     </div>
-  )
-}
+  );
+};
 
-export default blogPostTemplate
+export default blogPostTemplate;
 
 blogPostTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any
-}
+};
 
 export const query = graphql`
   query BlogPostQuery($id: String) {
@@ -282,4 +289,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

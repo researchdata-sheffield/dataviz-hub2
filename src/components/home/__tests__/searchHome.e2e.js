@@ -1,5 +1,8 @@
 describe("Search bar on the home page", () => {
   beforeAll(async () => {
+    await jestPlaywright.resetPage();
+    await jestPlaywright.resetContext();
+
     await page.goto("/");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });

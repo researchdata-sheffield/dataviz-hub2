@@ -1,6 +1,12 @@
 describe("e2e | Visualisation item page", () => {
   beforeEach(async () => {
-    await page.goto("/visualisation/23/08/2021/Leading-risk-factors-for-DALYs");
+    await jestPlaywright.resetPage();
+    await jestPlaywright.resetContext();
+
+    await page.goto(
+      "/visualisation/23/08/2021/Leading-risk-factors-for-DALYs",
+      { waitUntil: "load" }
+    );
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
 
@@ -77,7 +83,7 @@ describe("e2e | Visualisation item page", () => {
         (el) => getComputedStyle(el).display
       )
     ).toBe("none");
-  });
+  }, 90000);
 
   it.jestPlaywrightSkip(
     { browsers: ["webkit", "firefox"] },
@@ -121,5 +127,5 @@ describe("e2e | Visualisation item page", () => {
     expect(await page.url()).toContain(
       "/visualisation/23/08/2021/Leading-risk-factors-for-DALYs"
     );
-  });
+  }, 40000);
 });

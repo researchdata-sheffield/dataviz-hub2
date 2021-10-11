@@ -36,7 +36,10 @@ class PostPagination extends React.Component {
 
         {/* social media share buttons */}
         {displayShareButtons && (
-          <div className={`flex flex-wrap text-sm justify-center w-full pt-5`}>
+          <div
+            className={`flex flex-wrap text-sm justify-center w-full pt-5`}
+            aria-label="Bottom share buttons"
+          >
             <Twitter
               className="greyScale-100 hover:greyScale-0"
               solid
@@ -105,6 +108,7 @@ class PostPagination extends React.Component {
               value="prev"
               className={linkStyle + " justify-end"}
               to={prev && prev.node.fields.slug}
+              aria-label="Previous post"
             >
               {prev && (
                 <>
@@ -116,6 +120,7 @@ class PostPagination extends React.Component {
               value="next"
               className={linkStyle}
               to={next && next.node.fields.slug}
+              aria-label="Next post"
             >
               {next && (
                 <>

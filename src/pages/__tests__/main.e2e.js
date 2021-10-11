@@ -1,5 +1,8 @@
 describe("e2e tests for all pages", () => {
   beforeAll(async () => {
+    await jestPlaywright.resetPage();
+    await jestPlaywright.resetContext();
+
     await page.goto("/");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
@@ -14,13 +17,21 @@ describe("e2e tests for all pages", () => {
     async () => {
       const fs = require("fs");
       const path = require("path");
-      let rawdata = fs.readFileSync(path.resolve("./tests/websitePaths.json"));
-      let paths = JSON.parse(rawdata).filter((p) => p != "/visWorkshop/");
+      let rawPathData = fs.readFileSync(
+        path.resolve("./tests/websitePaths.json")
+      );
+      let paths = JSON.parse(rawPathData).filter(
+        (p) => p != "/visWorkshop/" || !p.includes("404")
+      );
+      //console.log(paths)
 
       for (const link of paths) {
         try {
-          await page.goto(link, { waitUntil: "domcontentloaded" });
-          expect(await page.isVisible("#website")).toBeTruthy();
+          await Promise.all([
+            page.waitForNavigation(),
+            page.goto(link, { waitUntil: "domcontentloaded" })
+          ]);
+          expect(await page.url()).not.toContain("/404");
         } catch (error) {
           throw new Error(`Error in rendering: ${link}`);
         }

@@ -1,5 +1,8 @@
 describe("e2e | Visualisation page", () => {
   beforeAll(async () => {
+    await jestPlaywright.resetPage();
+    await jestPlaywright.resetContext();
+
     await page.goto("/visualisation");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
@@ -32,7 +35,7 @@ describe("e2e | Visualisation page", () => {
       await page.$eval("#vis-tag-menu", (el) => getComputedStyle(el).visibility)
     ).toBe("visible");
     await page.click("#vis-tag-menu button");
-  }, 30000);
+  });
 
   it("opens up/close the footer", async () => {
     await page.evaluate(() => window.scrollTo(0, 700));
@@ -52,7 +55,7 @@ describe("e2e | Visualisation page", () => {
     expect(
       await page.$eval("main footer", (el) => getComputedStyle(el).display)
     ).toBe("none");
-  }, 30000);
+  });
 
   it("navigate to the contribute visualisation page", async () => {
     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
@@ -75,7 +78,7 @@ describe("e2e | Visualisation page", () => {
     await page.click("#scrollTop-btn");
     await page.waitForFunction(() => window.scrollY == 0);
     expect(await page.evaluate(() => window.scrollY)).toBe(0);
-  }, 30000);
+  });
 
   it("navigates to category and tag pages", async () => {
     await Promise.all([
