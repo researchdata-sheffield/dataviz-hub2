@@ -47,8 +47,7 @@ describe("e2e | Events page", () => {
         firstElement.click()
       ]);
 
-      await newPage.waitForLoadState();
-      expect(await newPage.url()).toBe(eventUrl);
+      expect(newPage.url()).toBe(eventUrl);
     }
-  });
+  }, 40000);
 });

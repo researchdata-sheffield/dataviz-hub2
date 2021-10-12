@@ -2,7 +2,8 @@
 module.exports = {
   launchOptions: {
     headless: true,
-    devtools: false
+    devtools: false,
+    timeout: 60000
   },
   contextOptions: {
     baseURL: "http://localhost:9000",
@@ -13,5 +14,9 @@ module.exports = {
     }
   },
   exitOnPageError: false, // process won't exit on http errors anymore
-  browsers: ["chromium", "firefox", "webkit"]
+  browsers: [
+    "chromium",
+    //"firefox",
+    "webkit"
+  ]
 };

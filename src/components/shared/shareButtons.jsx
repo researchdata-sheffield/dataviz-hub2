@@ -23,6 +23,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
           <div
             className="mt-28 flex flex-col text-xs"
             style={{ maxWidth: "40px", height: "0", overflow: "visible" }}
+            aria-label="Top share buttons"
           >
             <Twitter
               className="greyScale-100 hover:greyScale-0 transition duration-500"
@@ -84,6 +85,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
               : "flex-col w-1/4"
           } flex text-sm justify-center items-center py-2 ml-10`}
           style={{ maxWidth: "50px" }}
+          aria-label="Top mobile share buttons"
         >
           <Twitter solid small message={shareMessage} link={shareLink} />
           <Facebook solid small link={shareLink} />

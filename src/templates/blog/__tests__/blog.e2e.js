@@ -1,6 +1,6 @@
 describe("e2e | Blog page", () => {
   beforeAll(async () => {
-    await page.goto("/blog", { waitUntil: "load" });
+    await page.goto("/blog", { waitUntil: "domcontentloaded" });
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
 
@@ -39,7 +39,7 @@ describe("e2e | Blog page", () => {
         await page.$eval("#slideTagMenu", (el) => el.style.transform)
       ).not.toBe("translateX(0%)");
     },
-    30000
+    60000
   );
 
   it.jestPlaywrightSkip(
@@ -61,23 +61,13 @@ describe("e2e | Blog page", () => {
           el.classList.contains("hidden")
         )
       ).toBeTruthy();
-
-      await page.fill("#tagSearch", "python");
-      expect(
-        (await page.$$('[aria-label="Tag menu results"] a')).length
-      ).toBeLessThanOrEqual(2);
-      expect(
-        await page.$eval('[aria-label="Tag menu results"]', (el) =>
-          el.classList.contains("hidden")
-        )
-      ).toBeFalsy();
     },
-    30000
+    60000
   );
 
   it("navigates to correct tag and category blog page", async () => {
     await Promise.all([
-      page.waitForNavigation(),
+      page.waitForNavigation({ waitUntil: "load" }),
       page.click(
         '[aria-label="List of categories and top tags"] :text("Articles")'
       )
@@ -85,7 +75,7 @@ describe("e2e | Blog page", () => {
     expect(page.url()).toContain("/blog/category/articles");
 
     await Promise.all([
-      page.waitForNavigation(),
+      page.waitForNavigation({ waitUntil: "load" }),
       page.click(
         '[aria-label="List of categories and top tags"] :text("Python")'
       )
@@ -104,8 +94,8 @@ describe("e2e | Blog page", () => {
 
   it("navigates to the second page on click the 'Older posts' button", async () => {
     await Promise.all([
-      page.waitForNavigation(),
-      await page.click('[aria-label="Older posts"]')
+      page.waitForNavigation({ waitUntil: "load" }),
+      page.click('[aria-label="Older posts"]')
     ]);
     expect(page.url()).toContain("/blog/page/2");
   });
@@ -113,7 +103,7 @@ describe("e2e | Blog page", () => {
   it("navigates to the first page on click the 'Newer posts'", async () => {
     await Promise.all([
       page.waitForNavigation(),
-      await page.click('[aria-label="Newer posts"]')
+      page.click('[aria-label="Newer posts"]')
     ]);
     expect(page.url()).toContain("/blog");
   });
