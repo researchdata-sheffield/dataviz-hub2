@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-165060977-1",
+        trackingId: process.env.QA_ENV ? "289653096" : "UA-165060977-1",
         head: true,
         enableWebVitalsTracking: true
       }

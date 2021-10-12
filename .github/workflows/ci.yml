@@ -19,7 +19,7 @@ on:
 
 jobs:
   CI-Build:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
@@ -68,7 +68,7 @@ jobs:
         run: npm run serve & npm run test:e2e
 
   Test:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
