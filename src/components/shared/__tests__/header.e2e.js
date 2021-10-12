@@ -1,8 +1,5 @@
 describe("Header e2e tests", () => {
   beforeAll(async () => {
-    await jestPlaywright.resetPage();
-    await jestPlaywright.resetContext();
-
     await page.goto("/", { waitUntil: "domcontentloaded" });
     await page.waitForSelector("id=__loader", { state: "hidden" });
   }, 400000);

@@ -1,8 +1,5 @@
 describe("e2e | Visualisation page", () => {
   beforeAll(async () => {
-    await jestPlaywright.resetPage();
-    await jestPlaywright.resetContext();
-
     await page.goto("/visualisation");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });

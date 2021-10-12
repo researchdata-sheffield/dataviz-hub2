@@ -2,9 +2,6 @@ import moment from "moment-timezone";
 
 describe("e2e | Events page", () => {
   beforeAll(async () => {
-    await jestPlaywright.resetPage();
-    await jestPlaywright.resetContext();
-
     await page.goto("/events");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
@@ -50,8 +47,7 @@ describe("e2e | Events page", () => {
         firstElement.click()
       ]);
 
-      await newPage.waitForLoadState();
-      expect(await newPage.url()).toBe(eventUrl);
+      expect(newPage.url()).toBe(eventUrl);
     }
   }, 40000);
 });

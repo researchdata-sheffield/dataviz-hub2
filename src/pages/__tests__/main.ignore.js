@@ -1,8 +1,5 @@
 describe("e2e tests for all pages", () => {
   beforeAll(async () => {
-    await jestPlaywright.resetPage();
-    await jestPlaywright.resetContext();
-
     await page.goto("/");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });

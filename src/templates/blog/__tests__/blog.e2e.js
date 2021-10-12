@@ -1,8 +1,5 @@
 describe("e2e | Blog page", () => {
   beforeAll(async () => {
-    await jestPlaywright.resetPage();
-    await jestPlaywright.resetContext();
-
     await page.goto("/blog", { waitUntil: "domcontentloaded" });
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
@@ -64,16 +61,6 @@ describe("e2e | Blog page", () => {
           el.classList.contains("hidden")
         )
       ).toBeTruthy();
-
-      await page.fill("#tagSearch", "python");
-      expect(
-        (await page.$$('[aria-label="Tag menu results"] a')).length
-      ).toBeLessThanOrEqual(2);
-      expect(
-        await page.$eval('[aria-label="Tag menu results"]', (el) =>
-          el.classList.contains("hidden")
-        )
-      ).toBeFalsy();
     },
     60000
   );
