@@ -39,24 +39,4 @@ describe("e2e | Blog page", () => {
 
     expect(page.url()).toContain("#tutorials");
   });
-
-  it("navigate to the other post through related posts, and prev & next buttons", async () => {
-    const firstPost = await page.$('[aria-label="You Might Also Like"] a');
-    const postLink = await firstPost.getAttribute("href");
-
-    await Promise.all([page.waitForNavigation(), firstPost.click()]);
-    expect(page.url()).toContain(postLink);
-
-    await page.waitForSelector('[aria-label="Next post"]');
-    const nextPost = await page.$('[aria-label="Next post"]');
-
-    await Promise.all([page.waitForNavigation(), nextPost.click()]);
-    expect(page.url()).toContain(await nextPost.getAttribute("href"));
-
-    await page.waitForSelector('[aria-label="Previous post"]');
-    const prevPost = await page.$('[aria-label="Previous post"]');
-
-    await Promise.all([page.waitForNavigation(), prevPost.click()]);
-    expect(page.url()).toContain(await prevPost.getAttribute("href"));
-  });
 });
