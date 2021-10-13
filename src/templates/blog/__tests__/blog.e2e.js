@@ -94,7 +94,7 @@ describe("e2e | Blog page", () => {
 
   it("navigates to the second page on click the 'Older posts' button", async () => {
     await Promise.all([
-      page.waitForNavigation({ waitUntil: "load" }),
+      page.waitForNavigation({ timeout: 60000 }),
       page.click('[aria-label="Older posts"]')
     ]);
     expect(page.url()).toContain("/blog/page/2");
@@ -102,7 +102,7 @@ describe("e2e | Blog page", () => {
 
   it("navigates to the first page on click the 'Newer posts'", async () => {
     await Promise.all([
-      page.waitForNavigation(),
+      page.waitForNavigation({ timeout: 60000 }),
       page.click('[aria-label="Newer posts"]')
     ]);
     expect(page.url()).toContain("/blog");
