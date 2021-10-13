@@ -81,9 +81,15 @@ module.exports = {
           posts: require.resolve("./src/templates/blog/blogPostTemplate.jsx"),
           docs: require.resolve("./src/templates/docs/docsTemplate.jsx")
         },
-        remarkPlugins: [require("remark-math"), require("remark-html-katex")],
+        remarkPlugins: [require("remark-math")],
         gatsbyRemarkPlugins: [
           "gatsby-remark-code-titles",
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`
+            }
+          },
           `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-embed-video`,
