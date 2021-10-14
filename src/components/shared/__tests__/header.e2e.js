@@ -1,6 +1,6 @@
 describe("Header e2e tests", () => {
   beforeAll(async () => {
-    await page.goto("/", { waitUntil: "domcontentloaded" });
+    await page.goto("/");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   }, 400000);
 
@@ -34,18 +34,4 @@ describe("Header e2e tests", () => {
       console.log(error);
     }
   }, 40000);
-
-  it("navigate to pages (Desktop)", async () => {
-    try {
-      const hrefs = await page.$$eval("#desktopHeader a", (links) =>
-        links.map((a) => a.href)
-      );
-      for (const link of hrefs) {
-        await page.goto(link, { waitUntil: "load" });
-        expect(page.url()).toContain(link);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-  }, 300000);
 });

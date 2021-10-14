@@ -54,24 +54,7 @@ describe("e2e | Visualisation page", () => {
     ).toBe("none");
   });
 
-  it("navigate to the contribute visualisation page", async () => {
-    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
-    await page.hover("#visualisation-invite");
-
-    await Promise.all([
-      page.waitForNavigation(), // The promise resolves after navigation has finished
-      page.click("#visualisation-invite a")
-    ]);
-
-    expect(await page.url()).toContain(
-      "/docs/21/07/2021/Contribute-visualisation"
-    );
-  });
-
   it("returns to the top with the scroll top button", async () => {
-    await page.goto("/visualisation");
-    await page.waitForSelector("id=__loader", { state: "hidden" });
-
     await page.click("#scrollTop-btn");
     await page.waitForFunction(() => window.scrollY == 0);
     expect(await page.evaluate(() => window.scrollY)).toBe(0);
@@ -96,5 +79,19 @@ describe("e2e | Visualisation page", () => {
 
     await Promise.all([page.waitForNavigation(), page.click("text=InfoVis")]);
     expect(await page.url()).toContain("/visualisation");
+  });
+
+  it("navigate to the contribute visualisation page", async () => {
+    await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+    await page.hover("#visualisation-invite");
+
+    await Promise.all([
+      page.waitForNavigation(),
+      page.click("#visualisation-invite a")
+    ]);
+
+    expect(await page.url()).toContain(
+      "/docs/21/07/2021/Contribute-visualisation"
+    );
   });
 });
