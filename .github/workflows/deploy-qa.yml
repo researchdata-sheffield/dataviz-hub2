@@ -53,6 +53,7 @@ jobs:
         
       - name: Deploy to QA
         run: npm run deploy:qa
+        shell: bash
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}

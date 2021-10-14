@@ -54,6 +54,7 @@ jobs:
         
       - name: Deploy
         run: npm run deploy
+        shell: bash
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}

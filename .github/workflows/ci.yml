@@ -54,7 +54,8 @@ jobs:
       
       # Enable incremental build
       - name: Incremental build
-        run: $env:NODE_OPTIONS = '--max-old-space-size=4096'; npm run build:noGA
+        run: NODE_OPTIONS="--max_old_space_size=4096" npm run build:noGA
+        shell: bash
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
@@ -66,6 +67,7 @@ jobs:
           
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e
+        shell: bash
 
   Test:
     runs-on: windows-latest
