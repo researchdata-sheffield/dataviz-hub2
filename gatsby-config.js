@@ -17,7 +17,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-165060977-1",
+        trackingId: process.env.QA_ENV ? "289653096" : "UA-165060977-1",
         head: true,
         enableWebVitalsTracking: true
       }
@@ -81,9 +81,15 @@ module.exports = {
           posts: require.resolve("./src/templates/blog/blogPostTemplate.jsx"),
           docs: require.resolve("./src/templates/docs/docsTemplate.jsx")
         },
-        remarkPlugins: [require("remark-math"), require("remark-html-katex")],
+        remarkPlugins: [require("remark-math")],
         gatsbyRemarkPlugins: [
           "gatsby-remark-code-titles",
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              strict: `ignore`
+            }
+          },
           `gatsby-remark-embedder`,
           {
             resolve: `gatsby-remark-embed-video`,

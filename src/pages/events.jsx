@@ -46,7 +46,7 @@ const events = ({ data: { eventBrite, pastEvent, pastEventBlog } }) => {
       >
         <div className="flex flex-wrap w-full justify-center my-16 lg:my-24">
           <div
-            className="relative w-full lg:w-7/12 p-6 text-black overflow-auto min-h-70 lg:rounded-l-sm shadow-xl"
+            className="relative w-full lg:w-7/12 p-6 pb-10 text-black overflow-auto min-h-70 lg:rounded-l-sm shadow-xl"
             style={{
               background: "#fbfbfb",
               borderTop: "solid 8px rgb(230 230 230)"

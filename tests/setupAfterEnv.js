@@ -6,7 +6,9 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
   failureThreshold: 0.03,
   failureThresholdType: "percent",
   dumpDiffToConsole: false,
-  allowSizeMismatch: true
+  dumpInlineDiffToConsole: true,
+  allowSizeMismatch: true,
+  comparisonMethod: "ssim"
 });
 
 expect.extend({ toMatchImageSnapshot });

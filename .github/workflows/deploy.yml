@@ -16,7 +16,10 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Cancel Previous Runs

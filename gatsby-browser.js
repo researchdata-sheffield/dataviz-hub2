@@ -7,6 +7,7 @@
 
 import "tailwindcss/dist/base.css";
 import "gitalk/dist/gitalk.css";
+import "katex/dist/katex.min.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "prismjs/plugins/line-numbers/prism-line-numbers.css";

@@ -1,5 +1,5 @@
 describe("e2e | Visualisation item page", () => {
-  beforeEach(async () => {
+  beforeAll(async () => {
     page.setDefaultNavigationTimeout(60000);
     await page.goto("/visualisation/23/08/2021/Leading-risk-factors-for-DALYs");
     await page.waitForSelector("id=__loader", { state: "hidden" });
