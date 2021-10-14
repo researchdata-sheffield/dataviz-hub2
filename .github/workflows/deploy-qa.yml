@@ -17,6 +17,9 @@ on:
 jobs:
   Deploy-to-QA:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     
     steps:
@@ -53,7 +56,6 @@ jobs:
         
       - name: Deploy to QA
         run: npm run deploy:qa
-        shell: bash
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}

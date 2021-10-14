@@ -20,6 +20,9 @@ on:
 jobs:
   CI-Build:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
@@ -54,8 +57,7 @@ jobs:
       
       # Enable incremental build
       - name: Incremental build
-        run: NODE_OPTIONS="--max_old_space_size=4096" npm run build:noGA
-        shell: bash
+        run: NODE_OPTIONS=--max_old_space_size=4096 npm run build:noGA
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
@@ -67,10 +69,12 @@ jobs:
           
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e
-        shell: bash
 
   Test:
     runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
     steps:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
