@@ -54,7 +54,7 @@ jobs:
       
       # Enable incremental build
       - name: Incremental build
-        run: npm run build:noGA
+        run: export NODE_OPTIONS="--max_old_space_size=4096" npm run build:noGA
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
