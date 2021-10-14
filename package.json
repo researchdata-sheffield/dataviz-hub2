@@ -115,6 +115,7 @@
     "trianglify": "^4.1.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
     "@babel/eslint-parser": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
     "@emotion/react": "^11.4.1",
@@ -123,10 +124,7 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/react-hooks": "^7.0.2",
     "autoprefixer": "^10.3.7",
-    "axe-core": "^4.3.3",
-    "babel-core": "^6.26.3",
     "babel-jest": "^27.2.5",
-    "babel-loader": "^8.2.2",
     "babel-preset-gatsby": "^1.14.0",
     "cssnano": "5.0.8",
     "eslint": "^8.0.0",
