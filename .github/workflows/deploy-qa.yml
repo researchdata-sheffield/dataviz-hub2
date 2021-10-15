@@ -16,7 +16,7 @@ on:
 
 jobs:
   Deploy-to-QA:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
@@ -55,10 +55,7 @@ jobs:
           git config --local user.name "github-actions-bot"
         
       - name: Deploy to QA
-        run: |
-          NODE_OPTIONS=--max_old_space_size=4096 npm run build:qa
-          git remote set-url origin https://git:${GH_TOKEN}@github.com/researchdata-sheffield/dataviz-hub2-qa.git
-          rm -f public/CNAME && npx gh-pages -d public -b main
+        run: NODE_OPTIONS=--max_old_space_size=4096 npm run deploy:qa
 
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}

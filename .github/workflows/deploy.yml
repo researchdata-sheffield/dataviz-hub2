@@ -16,7 +16,7 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
@@ -52,8 +52,8 @@ jobs:
       
       - name: Set user info
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "support+actions@github.com"
+          git config --local user.name "github-actions-bot"
         
       - name: Deploy
         run: npm run deploy
