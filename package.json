@@ -38,6 +38,7 @@
     "@nivo/bar": "^0.74.0",
     "@nivo/bump": "^0.74.0",
     "@nivo/core": "^0.74.0",
+    "@nivo/geo": "^0.74.0",
     "@nivo/marimekko": "^0.74.0",
     "@nivo/radar": "^0.74.0",
     "@nivo/waffle": "^0.74.0",
