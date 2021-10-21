@@ -101,7 +101,7 @@ Object {
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Get started
                               <svg
@@ -181,7 +181,7 @@ Object {
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Go to Lab
                               <svg
@@ -261,7 +261,7 @@ Object {
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Learn workflows
                               <svg
@@ -346,7 +346,7 @@ Object {
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Coming soon
                               <svg
@@ -426,7 +426,7 @@ Object {
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Get started
                               <svg
@@ -506,7 +506,7 @@ Object {
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Go to Lab
                               <svg
@@ -586,7 +586,7 @@ Object {
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Learn workflows
                               <svg
@@ -671,7 +671,7 @@ Object {
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Coming soon
                               <svg
@@ -751,7 +751,7 @@ Object {
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Get started
                               <svg
@@ -831,7 +831,7 @@ Object {
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Go to Lab
                               <svg
@@ -911,7 +911,7 @@ Object {
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Learn workflows
                               <svg
@@ -996,7 +996,7 @@ Object {
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                             >
                               Coming soon
                               <svg
@@ -1137,7 +1137,7 @@ Object {
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Get started
                             <svg
@@ -1217,7 +1217,7 @@ Object {
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Go to Lab
                             <svg
@@ -1297,7 +1297,7 @@ Object {
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Learn workflows
                             <svg
@@ -1382,7 +1382,7 @@ Object {
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Coming soon
                             <svg
@@ -1462,7 +1462,7 @@ Object {
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Get started
                             <svg
@@ -1542,7 +1542,7 @@ Object {
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Go to Lab
                             <svg
@@ -1622,7 +1622,7 @@ Object {
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Learn workflows
                             <svg
@@ -1707,7 +1707,7 @@ Object {
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Coming soon
                             <svg
@@ -1787,7 +1787,7 @@ Object {
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Get started
                             <svg
@@ -1867,7 +1867,7 @@ Object {
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Go to Lab
                             <svg
@@ -1947,7 +1947,7 @@ Object {
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Learn workflows
                             <svg
@@ -2032,7 +2032,7 @@ Object {
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-fubCzh cqrgYR mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
                           >
                             Coming soon
                             <svg

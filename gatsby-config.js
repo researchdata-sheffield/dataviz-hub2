@@ -38,7 +38,7 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/content/blog`,
-        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+        ignore: [`/^[^.]+$|.(?!(js)$)([^.]+$)/`]
       }
     },
     {

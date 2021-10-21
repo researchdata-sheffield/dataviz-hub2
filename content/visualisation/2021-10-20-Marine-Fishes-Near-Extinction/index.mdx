@@ -1,0 +1,51 @@
+---
+type: visualisation
+author: ["Yu Liang Weng"]
+title: "Overfishing and habitat loss drive range contraction of iconic marine fishes to near extinction"
+thumbnail: thumb.jpg
+description: Researchers develop a space-for-time approach to track the spatial contraction and drivers of decline of sawfishes. These iconic and endangered shark-like rays were once found in warm, coastal waters of 90 nations and are now presumed extinct in more than half (n = 46). Researchers also predict that sawfishes are gone from at least nine additional nations.
+date: "2021-10-20"
+category: [School of Biosciences]
+tag: [Ecology]
+rowSpan: 1
+columnSpan: 1
+svgImagePath: Marine-Fishes-Near-Extinction.svg
+---
+
+import ExtinctionMap from "./extinctionMap";
+
+<ExtinctionMap />
+
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
+<VisDetail mdx={props.mdx} />
+
+export const data = [
+  {
+    title: "Source",
+    content: `<i>Yan, H., Kyne, P., Jabado, R., Leeney, R., Davidson, L., Derrick, D., Finucci, B., Freckleton, R., Fordham, S. and Dulvy, N., 2021. Overfishing and habitat loss drive range contraction of iconic marine fishes to near extinction</i>. Science Advances, [online] 7(7). Available at: <a href="https://doi.org/10.1126/sciadv.abb6026">https://doi.org/10.1126/sciadv.abb6026</a> [Accessed 20 October 2021].`
+  },
+  {
+    title: "Detail",
+    content: `The content of this visualisation is inspired by the supplementary material (Table S2. Predicted probability of extinction) of the paper referenced in the <b>Source</b> section. The underlying data comes from the <a href="https://github.com/helenfyan/Sawfish_Prioritization">GitHub repository</a> provided at the end of the paper. Prediction outcomes (1000 csv files) were merged to get the results.`
+  },
+  {
+    title: "Code",
+    content: `The source code is hosted on website's GitHub repository, you can find it <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-10-20-Marine-Fishes-Near-Extinction/">here</a>.<br/>
+    The visualisation is created using React and <a href="https://nivo.rocks/choropleth/canvas/">nivo choropleth canvas</a>. After setup a React website, install the following dependencies: <br/>
+    <code class="language-text">npm install @nivo/core @nivo/geo</code>, or replace <code class="language-text">npm install</code> with <code class="language-text">yarn add</code> if you are using Yarn.<br/>`
+  },
+  {
+    title: "Attribution",
+    content: `SVG images used here were downloaded from <a href="https://uxwing.com/">uxwing.com</a>.`
+  },
+  {
+    title: "License",
+    content: `Creative Commons license <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY 4.0</a>.`
+  }
+];
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>
