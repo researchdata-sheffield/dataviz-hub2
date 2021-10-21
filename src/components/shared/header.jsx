@@ -467,11 +467,12 @@ const Header = () => {
           id="rssBox"
           className={`${
             isOpen ? "" : "invisible"
-          } fixed z-50 bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center`}
+          } fixed bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center`}
           style={{
             top: "50%",
             left: "50%",
-            transform: "translate(-50%, -50%)"
+            transform: "translate(-50%, -50%)",
+            zIndex: "1000"
           }}
         >
           <FaTimes

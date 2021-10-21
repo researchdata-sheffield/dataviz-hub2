@@ -99,7 +99,7 @@ Object {
                 href="/events"
               >
                 <button
-                  class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-red-500"
+                  class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-red-500"
                 >
                   Upcoming events
                   <svg
@@ -166,7 +166,7 @@ Object {
               class="react-reveal"
             >
               <button
-                class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue"
+                class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue"
               >
                 Coming soon
                 <svg
@@ -226,7 +226,7 @@ Object {
                 Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.
               </div>
               <button
-                class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-green-500"
+                class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-green-500"
                 href="#"
               >
                 I want support
@@ -284,7 +284,7 @@ Object {
                   target="_blank"
                 >
                   <button
-                    class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2"
+                    class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2"
                     href="#"
                     style="margin-top: 18px;"
                   >
@@ -326,7 +326,7 @@ Object {
                     target="_blank"
                   >
                     <button
-                      class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                      class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                       href="#"
                       style="margin-top: 10px;"
                     >
@@ -339,7 +339,7 @@ Object {
                     target="_blank"
                   >
                     <button
-                      class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                      class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                       href="#"
                       style="margin-top: 10px;"
                     >
@@ -352,7 +352,7 @@ Object {
                     target="_blank"
                   >
                     <button
-                      class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                      class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                       href="#"
                       style="margin-top: 10px;"
                     >
@@ -365,7 +365,7 @@ Object {
                     target="_blank"
                   >
                     <button
-                      class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                      class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                       href="#"
                       style="margin-top: 10px;"
                     >
@@ -378,7 +378,7 @@ Object {
                     target="_blank"
                   >
                     <button
-                      class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                      class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                       href="#"
                       style="margin-top: 10px;"
                     >
@@ -388,7 +388,7 @@ Object {
                 </div>
               </div>
               <button
-                class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 bg-green-500 py-1 px-2"
+                class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 bg-green-500 py-1 px-2"
                 href="#"
               >
                 Go back
@@ -458,7 +458,7 @@ Object {
               target="_blank"
             >
               <button
-                class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-pink-500"
+                class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-pink-500"
               >
                 Our repository
                 <svg
@@ -581,7 +581,7 @@ Object {
               href="/events"
             >
               <button
-                class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-red-500"
+                class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-red-500"
               >
                 Upcoming events
                 <svg
@@ -648,7 +648,7 @@ Object {
             class="react-reveal"
           >
             <button
-              class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue"
+              class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue"
             >
               Coming soon
               <svg
@@ -708,7 +708,7 @@ Object {
               Get in touch with us. It is natural that you have found something difficult to understand or need more specific guidance and direction.
             </div>
             <button
-              class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-green-500"
+              class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-green-500"
               href="#"
             >
               I want support
@@ -766,7 +766,7 @@ Object {
                 target="_blank"
               >
                 <button
-                  class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2"
+                  class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2"
                   href="#"
                   style="margin-top: 18px;"
                 >
@@ -808,7 +808,7 @@ Object {
                   target="_blank"
                 >
                   <button
-                    class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                    class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                     href="#"
                     style="margin-top: 10px;"
                   >
@@ -821,7 +821,7 @@ Object {
                   target="_blank"
                 >
                   <button
-                    class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                    class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                     href="#"
                     style="margin-top: 10px;"
                   >
@@ -834,7 +834,7 @@ Object {
                   target="_blank"
                 >
                   <button
-                    class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                    class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                     href="#"
                     style="margin-top: 10px;"
                   >
@@ -847,7 +847,7 @@ Object {
                   target="_blank"
                 >
                   <button
-                    class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                    class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                     href="#"
                     style="margin-top: 10px;"
                   >
@@ -860,7 +860,7 @@ Object {
                   target="_blank"
                 >
                   <button
-                    class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
+                    class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 hover:bg-green-500 py-1 px-2 mr-2"
                     href="#"
                     style="margin-top: 10px;"
                   >
@@ -870,7 +870,7 @@ Object {
               </div>
             </div>
             <button
-              class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 bg-green-500 py-1 px-2"
+              class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 bg-green-500 py-1 px-2"
               href="#"
             >
               Go back
@@ -940,7 +940,7 @@ Object {
             target="_blank"
           >
             <button
-              class="sc-fubCzh cqrgYR rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-pink-500"
+              class="sc-furwcr gFdcYo rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-pink-500"
             >
               Our repository
               <svg
