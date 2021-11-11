@@ -7,6 +7,9 @@ import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import bg from "../../images/search/search.png";
 import { getImageSource, shortenText } from "../../utils/shared";
+import { SearchItem, ItemThumb } from "../style/search";
+import { CatBtn, TagBtn } from "../style/styleComponent";
+import kebabCase from "lodash.kebabcase";
 
 // Search component
 class Search extends Component {
@@ -85,18 +88,49 @@ class Search extends Component {
                     rel="noopener noreferrer"
                     key={i}
                   >
-                    <div
-                      style={{
-                        width: "363px",
-                        backgroundImage: `url(${imagesrc})`,
-                        backgroundSize: "cover",
-                        backgroundPosition: "center",
-                        borderRadius: "10px",
-                        minHeight: "420px"
-                      }}
-                      className="shadow-lg hover:shadow-xl rounded-lg group text-left relative md:mx-6 my-6 transform hover:scale-105 transition duration-500"
-                    >
-                      <div
+                    <SearchItem>
+                      <ItemThumb
+                        style={{
+                          width: "100%",
+                          backgroundImage: `url(${imagesrc})`,
+                          backgroundSize: "cover",
+                          backgroundPosition: "center",
+                          borderRadius: "10px",
+                          minHeight: "220px"
+                        }}
+                      ></ItemThumb>
+                      <div>
+                        {item.category &&
+                          item.category.map((cat) => (
+                            <CatBtn
+                              key={cat}
+                              to={`/blog/category/${kebabCase(cat)}`}
+                            >
+                              <Highlighter
+                                highlightClassName={highlightClasses}
+                                textToHighlight={cat}
+                                searchWords={this.state.query.split()}
+                              />
+                            </CatBtn>
+                          ))}
+                        {item.tag &&
+                          item.tag.map((currentTag) => (
+                            <TagBtn
+                              key={currentTag}
+                              to={`/blog/tag/${kebabCase(currentTag)}`}
+                            >
+                              <Highlighter
+                                highlightClassName={highlightClasses}
+                                textToHighlight={currentTag}
+                                searchWords={this.state.query.split()}
+                              />
+                            </TagBtn>
+                          ))}
+                        <span>{item.date}</span>
+                      </div>
+                      <h1>{title}</h1>
+                      <p>{description}</p>
+                      {/* <div
                         className="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-65 group-hover:bg-black-85"
                         style={{ minHeight: "420px" }}
                       >
@@ -113,7 +147,7 @@ class Search extends Component {
                           >
                             {item.type || "blog"}
                           </h1>
-                          {/* title */}
+                          
                           <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
                             <Highlighter
                               highlightClassName={highlightClasses}
@@ -121,7 +155,7 @@ class Search extends Component {
                               searchWords={this.state.query.split()}
                             />
                           </h1>
-                          {/* authors  */}
+                         
                           <h1
                             className="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500"
                             style={{ textShadow: "#000 0px 0px 30px" }}
@@ -142,7 +176,7 @@ class Search extends Component {
                               );
                             })}
                           </h1>
-                          {/* category */}
+                          
                           {item.category && (
                             <h1 className="group-hover:hidden text-gray-200 font-bold transition duration-500">
                               CAT: &nbsp;
@@ -160,7 +194,6 @@ class Search extends Component {
                             </h1>
                           )}
 
-                          {/* tag */}
                           {item.tag && (
                             <h1 className="group-hover:hidden text-gray-200 font-bold transition duration-500">
                               TAG: &nbsp;
@@ -204,8 +237,8 @@ class Search extends Component {
                             />
                           </h1>
                         </div>
-                      </div>
-                    </div>
+                      </div> */}
+                    </SearchItem>
                   </a>
                 );
               })}
