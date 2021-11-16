@@ -165,81 +165,21 @@ exports[`Search component return search result without error 1`] = `
             target="_blank"
           >
             <div
-              class="shadow-lg hover:shadow-xl rounded-lg group text-left relative md:mx-6 my-6 transform hover:scale-105 transition duration-500"
-              style="width: 363px; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 420px;"
+              class="sc-bdvvtL bYgJTE"
             >
               <div
-                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-65 group-hover:bg-black-85"
-                style="min-height: 420px;"
-              >
-                <div
-                  class="absolute pt-8 lg:pt-12 2xl:pt-16 overflow-hidden"
-                  style="max-width: 320px;"
-                >
-                  <h1
-                    class="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md"
-                    style="text-shadow: none; padding: .15rem .65rem;"
-                  >
-                    docs
-                  </h1>
-                  <h1
-                    class="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100"
-                  >
-                    <span>
-                      <span
-                        class=""
-                      >
-                        Statistical Testing
-                      </span>
-                    </span>
-                  </h1>
-                  <h1
-                    class="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500"
-                    style="text-shadow: #000 0px 0px 30px;"
-                  >
-                    <span
-                      class="text-white"
-                    >
-                      <span
-                        class=""
-                      >
-                        Dataviz Team, 
-                      </span>
-                    </span>
-                    <span
-                      class="text-white"
-                    >
-                      <span
-                        class=""
-                      >
-                        Jean Russell
-                      </span>
-                    </span>
-                  </h1>
-                  <p
-                    class="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"
-                  >
-                    <span>
-                      <span
-                        class=""
-                      >
-                        /DOCS/07/04/2021/LEARNINGPATH-STATISTICAL-MODELING-4
-                      </span>
-                    </span>
-                  </p>
-                  <h1
-                    class="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"
-                  >
-                    <span>
-                      <span
-                        class=""
-                      >
-                        Statistical Modeling Part 4 - What is Statistical testing? Why do we need to test? How do we perform tests?
-                      </span>
-                    </span>
-                  </h1>
-                </div>
+                class="sc-gsDKAQ dkUFpn"
+                style="width: 100%; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 220px;"
+              />
+              <div>
+                <span />
               </div>
+              <h1>
+                Statistical Testing
+              </h1>
+              <p>
+                Statistical Modeling Part 4 - What is Statistical testing? Why do we need to test? How do we perform tests?
+              </p>
             </div>
           </a>
           <a
@@ -248,114 +188,60 @@ exports[`Search component return search result without error 1`] = `
             target="_blank"
           >
             <div
-              class="shadow-lg hover:shadow-xl rounded-lg group text-left relative md:mx-6 my-6 transform hover:scale-105 transition duration-500"
-              style="width: 363px; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 420px;"
+              class="sc-bdvvtL bYgJTE"
             >
               <div
-                class="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-65 group-hover:bg-black-85"
-                style="min-height: 420px;"
-              >
-                <div
-                  class="absolute pt-8 lg:pt-12 2xl:pt-16 overflow-hidden"
-                  style="max-width: 320px;"
+                class="sc-gsDKAQ dkUFpn"
+                style="width: 100%; background-image: url(undefined); background-size: cover; background-position: center; border-radius: 10px; min-height: 220px;"
+              />
+              <div>
+                <a
+                  class="sc-iCfMLu imbDEA"
+                  gatsby="true"
+                  href="/blog/category/research-innovation-it"
                 >
-                  <h1
-                    class="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md"
-                    style="text-shadow: none; padding: .15rem .65rem;"
-                  >
-                    visualisation
-                  </h1>
-                  <h1
-                    class="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100"
-                  >
-                    <span>
-                      <span
-                        class=""
-                      >
-                        Which statistical test to use for two variables? ...
-                      </span>
-                    </span>
-                  </h1>
-                  <h1
-                    class="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500"
-                    style="text-shadow: #000 0px 0px 30px;"
-                  >
+                  <span>
                     <span
-                      class="text-white"
+                      class=""
                     >
-                      <span
-                        class=""
-                      >
-                        Yu Liang Weng
-                      </span>
+                      Research & Innovation IT
                     </span>
-                  </h1>
-                  <h1
-                    class="group-hover:hidden text-gray-200 font-bold transition duration-500"
-                  >
-                    CAT:  
-                    <span>
-                      <span
-                        class="text-white"
-                      >
-                        <span
-                          class=""
-                        >
-                          RESEARCH & INNOVATION IT
-                        </span>
-                      </span>
-                      <span>
-                         
-                      </span>
-                    </span>
-                  </h1>
-                  <h1
-                    class="group-hover:hidden text-gray-200 font-bold transition duration-500"
-                  >
-                    TAG:  
+                  </span>
+                </a>
+                <a
+                  class="sc-furwcr kBeoSF"
+                  gatsby="true"
+                  href="/blog/tag/statistics"
+                >
+                  <span>
                     <span
-                      class="text-white"
+                      class=""
                     >
-                      <span
-                        class=""
-                      >
-                        STATISTICS, 
-                      </span>
+                      Statistics
                     </span>
+                  </span>
+                </a>
+                <a
+                  class="sc-furwcr kBeoSF"
+                  gatsby="true"
+                  href="/blog/tag/interative"
+                >
+                  <span>
                     <span
-                      class="text-white"
+                      class=""
                     >
-                      <span
-                        class=""
-                      >
-                        INTERATIVE
-                      </span>
+                      Interative
                     </span>
-                  </h1>
-                  <p
-                    class="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500"
-                  >
-                    <span>
-                      <span
-                        class=""
-                      >
-                        /VISUALISATION/04/08/2021/WHICH-STATISTICAL-TEST-TO-USE-FOR-TWO-VARIABLES
-                      </span>
-                    </span>
-                  </p>
-                  <h1
-                    class="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500"
-                  >
-                    <span>
-                      <span
-                        class=""
-                      >
-                        An interative tool based on the flow chart made by Jean Russell to help you determine which statistical test to use for two variables. This tool is a part of ...
-                      </span>
-                    </span>
-                  </h1>
-                </div>
+                  </span>
+                </a>
+                <span />
               </div>
+              <h1>
+                Which statistical test to use for two variables? ...
+              </h1>
+              <p>
+                An interative tool based on the flow chart made by Jean Russell to help you determine which statistical test to use for two variables. This tool is a part of ...
+              </p>
             </div>
           </a>
         </div>

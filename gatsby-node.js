@@ -175,23 +175,10 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             }
             frontmatter {
               template
-              author {
-                name
-                avatar {
-                  childImageSharp {
-                    gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-                  }
-                }
-              }
               title
               date(formatString: "dddd Do MMMM YYYY")
               category
               tag
-              thumbnail {
-                childImageSharp {
-                  gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-                }
-              }
               d3
               type
               published
