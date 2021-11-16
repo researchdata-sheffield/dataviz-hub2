@@ -3,7 +3,7 @@ import React, { useEffect } from "react";
 import { graphql, withPrefix } from "gatsby";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
-import { GatsbyImage } from "gatsby-plugin-image";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
 import SEO from "../../components/shared/seo";
 import PostPagination from "../../components/blog/postPagination";
@@ -164,7 +164,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
                   <GatsbyImage
                     className="rounded-full mx-1 h-30px w-30px lg:h-40px lg:w-40px 2xl:h-50px 2xl:w-50px"
                     key={authors.name}
-                    image={authors.avatar.childImageSharp.gatsbyImageData}
+                    image={getImage(
+                      authors.avatar.childImageSharp.gatsbyImageData
+                    )}
                     alt={authors.name}
                   />
                 ))}
