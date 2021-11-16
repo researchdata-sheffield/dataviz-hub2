@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { graphql, useStaticQuery, withPrefix } from "gatsby";
 import PropTypes from "prop-types";
 import { FiSearch } from "react-icons/fi";
-import Highlighter from "react-highlight-words";
 import Zoom from "react-reveal/Zoom";
 import Fade from "react-reveal/Fade";
 import bg from "../../images/search/search.png";
@@ -62,11 +61,22 @@ class Search extends Component {
 
         return (
           <div>
-            <div className="bg-white text-gray-900 py-2">
+            <div className="bg-gray-50 text-gray-900 py-2">
               There are {this.state.results.length} items matching your search.
             </div>
 
-            <div className="flex flex-wrap py-10 xl:pt-16 xl:pb-64 justify-center bg-gray-100">
+            <div
+              style={{
+                display: "flex",
+                flexWrap: "wrap",
+                justifyContent: "space-evenly",
+                paddingTop: "50px",
+                paddingBottom: "100px",
+                maxWidth: "1400px",
+                margin: "auto",
+                color: "#000"
+              }}
+            >
               {this.state.results.map((item, i) => {
                 let imagesrc;
                 {
@@ -79,7 +89,6 @@ class Search extends Component {
 
                 let title = shortenText(item.title, 8);
                 let description = shortenText(item.description, 30);
-                const highlightClasses = "text-blue-400 bg-black";
 
                 return (
                   <a
@@ -96,148 +105,71 @@ class Search extends Component {
                           backgroundSize: "cover",
                           backgroundPosition: "center",
                           borderRadius: "10px",
-                          minHeight: "220px"
+                          minHeight: "220px",
+                          paddingBottom: `${
+                            item.type == "visualisation" && "100%"
+                          }`,
+                          border: "1px solid rgb(244, 244, 244)"
                         }}
                       ></ItemThumb>
-                      <div>
+                      <div style={{ margin: "10px auto" }}>
+                        <CatBtn
+                          style={{
+                            fontSize: ".68rem",
+                            background: "lightgray",
+                            borderColor: "lightgray",
+                            color: "#333",
+                            fontWeight: "600"
+                          }}
+                          title={`Type: ${item.type}`}
+                        >
+                          {item.type ? item.type.toUpperCase() : "BLOG"}
+                        </CatBtn>
                         {item.category &&
                           item.category.map((cat) => (
-                            <CatBtn
+                            <TagBtn
+                              style={{
+                                fontSize: ".68rem"
+                              }}
                               key={cat}
+                              title={`Category: ${cat}`}
                               to={`/blog/category/${kebabCase(cat)}`}
                             >
-                              <Highlighter
-                                highlightClassName={highlightClasses}
-                                textToHighlight={cat}
-                                searchWords={this.state.query.split()}
-                              />
-                            </CatBtn>
+                              {cat}
+                            </TagBtn>
                           ))}
                         {item.tag &&
                           item.tag.map((currentTag) => (
                             <TagBtn
+                              style={{
+                                fontSize: ".68rem"
+                              }}
                               key={currentTag}
+                              title={`Tag: ${currentTag}`}
                               to={`/blog/tag/${kebabCase(currentTag)}`}
                             >
-                              <Highlighter
-                                highlightClassName={highlightClasses}
-                                textToHighlight={currentTag}
-                                searchWords={this.state.query.split()}
-                              />
+                              {currentTag}
                             </TagBtn>
                           ))}
                         <span>{item.date}</span>
                       </div>
-                      <h1>{title}</h1>
-                      <p>{description}</p>
-                      {/* <div
-                        className="rounded-lg max-h-60 w-full p-6 transition duration-700 bg-black-65 group-hover:bg-black-85"
-                        style={{ minHeight: "420px" }}
+                      <h1
+                        style={{
+                          fontWeight: "800",
+                          fontSize: "1.5rem",
+                          marginBottom: "15px",
+                          color: "#242730"
+                        }}
                       >
-                        <div
-                          className="absolute pt-8 lg:pt-12 2xl:pt-16 overflow-hidden"
-                          style={{ maxWidth: "320px" }}
-                        >
-                          <h1
-                            className="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md"
-                            style={{
-                              textShadow: "none",
-                              padding: ".15rem .65rem"
-                            }}
-                          >
-                            {item.type || "blog"}
-                          </h1>
-                          
-                          <h1 className="group-hover:-translate-y-8 text-white font-bold leading-7 text-2xl transform transition duration-100">
-                            <Highlighter
-                              highlightClassName={highlightClasses}
-                              textToHighlight={title}
-                              searchWords={this.state.query.split()}
-                            />
-                          </h1>
-                         
-                          <h1
-                            className="group-hover:hidden text-gray-400 leading-7 my-4 font-bold text-lg transition duration-500"
-                            style={{ textShadow: "#000 0px 0px 30px" }}
-                          >
-                            {item.author.map((author, index, arr) => {
-                              return (
-                                <Highlighter
-                                  className="text-white"
-                                  highlightClassName={highlightClasses}
-                                  textToHighlight={
-                                    arr.length - 1 === index
-                                      ? author
-                                      : author.concat(", ")
-                                  }
-                                  searchWords={this.state.query.split()}
-                                  key={author}
-                                />
-                              );
-                            })}
-                          </h1>
-                          
-                          {item.category && (
-                            <h1 className="group-hover:hidden text-gray-200 font-bold transition duration-500">
-                              CAT: &nbsp;
-                              {item.category.map((cat) => (
-                                <span key={cat}>
-                                  <Highlighter
-                                    className="text-white"
-                                    highlightClassName={highlightClasses}
-                                    textToHighlight={cat.toUpperCase()}
-                                    searchWords={this.state.query.split()}
-                                  />
-                                  <span>&nbsp;</span>
-                                </span>
-                              ))}
-                            </h1>
-                          )}
-
-                          {item.tag && (
-                            <h1 className="group-hover:hidden text-gray-200 font-bold transition duration-500">
-                              TAG: &nbsp;
-                              {item.tag.map((tag, index, arr) => {
-                                return (
-                                  i < 3 && (
-                                    <Highlighter
-                                      className="text-white"
-                                      highlightClassName={highlightClasses}
-                                      textToHighlight={
-                                        arr.length - 1 === index
-                                          ? tag.toUpperCase()
-                                          : tag.toUpperCase().concat(", ")
-                                      }
-                                      searchWords={this.state.query.split()}
-                                      key={tag}
-                                    />
-                                  )
-                                );
-                              })}
-                              {item.tag.length > 3 && (
-                                <p className="inline-block text-white">
-                                  {" "}
-                                  +{item.tag.length - 3} more
-                                </p>
-                              )}
-                            </h1>
-                          )}
-                          <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">
-                            <Highlighter
-                              highlightClassName={highlightClasses}
-                              textToHighlight={item.url.toUpperCase()}
-                              searchWords={this.state.query.split()}
-                            />
-                          </p>
-                          <h1 className="hidden group-hover:block text-white leading-5 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500">
-                            <Highlighter
-                              highlightClassName={highlightClasses}
-                              textToHighlight={description}
-                              searchWords={this.state.query.split()}
-                            />
-                          </h1>
-                        </div>
-                      </div> */}
+                        {title}
+                      </h1>
+                      <p
+                        style={{
+                          color: "#45464a"
+                        }}
+                      >
+                        {description}
+                      </p>
                     </SearchItem>
                   </a>
                 );
@@ -261,9 +193,7 @@ class Search extends Component {
     };
 
     return (
-      <div
-        className={`${this.props.classNames} relative text-gray-700 w-full text-center`}
-      >
+      <div className={`${this.props.classNames} relative w-full text-center`}>
         <div
           className="pt-40 pb-10 bg-white"
           style={{
@@ -297,7 +227,7 @@ class Search extends Component {
             </div>
           </Fade>
         </div>
-        <div className="search__list bg-gray-100">
+        <div className="search__list">
           <ResultList />
         </div>
       </div>

@@ -6,6 +6,12 @@ export const SearchItem = styled.div`
   transition: 0.5s ease;
   text-align: left;
   position: relative;
+  margin-bottom: 50px;
+
+  h1:hover,
+  p:hover {
+    color: "#00aeef";
+  }
 `;
 
 export const ItemThumb = styled.div`
