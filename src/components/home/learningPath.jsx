@@ -73,7 +73,8 @@ const LearningPath = () => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true
+          dots: true,
+          arrow: true
         }
       },
       {
@@ -83,7 +84,8 @@ const LearningPath = () => {
           verticalSwiping: true,
           slidesToShow: 2,
           slidesToScroll: 1,
-          dots: true
+          dots: true,
+          arrow: true
         }
       }
     ]
