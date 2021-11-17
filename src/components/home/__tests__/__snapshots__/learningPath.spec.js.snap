@@ -6,9 +6,8 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="flex flex-wrap justify-center items-center relative"
         id="learning-path"
-        style="min-height: 850px; background-repeat: no-repeat; background-size: cover;"
+        style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; min-height: 850px; background-repeat: no-repeat; background-size: cover;"
       >
         <div
           class="react-reveal container mx-auto justify-center flex flex-wrap text-center mt-8"
@@ -32,15 +31,10 @@ Object {
             class="slick-slider center slick-initialized"
             dir="ltr"
           >
-            <button
+            <div
               class="slick-arrow slick-prev"
-              data-role="none"
-              style="display: block;"
-              type="button"
-            >
-               
-              Previous
-            </button>
+              style="display: block; left: 0px; z-index: 100;"
+            />
             <div
               class="slick-list"
               style="padding: 0px 60px;"
@@ -63,45 +57,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Introduction to Dataviz
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             New to data visualisation and programming.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Introduction to Dataviz
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Explore data visualisations through definitions, examples, videos, and relevant resources.
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/03/07/2020/LearningPath-Introduction"
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Get started
                               <svg
@@ -143,45 +136,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Lab
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Previous knowledge of programming languages.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Lab
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Tutorials and guides on create data visualisations using different tools and languages. ...
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/04/07/2020/LearningPath-Lab"
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Go to Lab
                               <svg
@@ -223,45 +215,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Workflows
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Experienced in producing data visualisations.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Workflows
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Increase your research impact through reproducible data visualisation workflows.
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/05/07/2020/LearningPath-Workflow"
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Learn workflows
                               <svg
@@ -303,50 +294,50 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <span
-                          class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                          class="sc-bqiRlB kCYLgv"
                         >
                           Coming soon
                         </span>
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Statistical Modeling
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Interested in statistics and inferences.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Statistical Modeling
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             A statistical model is a mathematical model used to describe the relationship ...
                           </p>
                           <a
-                            class="cursor-not-allowed"
                             gatsby="true"
                             href="#learning-path"
+                            style="cursor: not-allowed;"
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Coming soon
                               <svg
@@ -388,45 +379,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Introduction to Dataviz
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             New to data visualisation and programming.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Introduction to Dataviz
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Explore data visualisations through definitions, examples, videos, and relevant resources.
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/03/07/2020/LearningPath-Introduction"
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Get started
                               <svg
@@ -468,45 +458,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Lab
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Previous knowledge of programming languages.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Lab
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Tutorials and guides on create data visualisations using different tools and languages. ...
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/04/07/2020/LearningPath-Lab"
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Go to Lab
                               <svg
@@ -548,45 +537,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Workflows
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Experienced in producing data visualisations.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Workflows
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Increase your research impact through reproducible data visualisation workflows.
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/05/07/2020/LearningPath-Workflow"
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Learn workflows
                               <svg
@@ -628,50 +616,50 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <span
-                          class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                          class="sc-bqiRlB kCYLgv"
                         >
                           Coming soon
                         </span>
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Statistical Modeling
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Interested in statistics and inferences.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Statistical Modeling
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             A statistical model is a mathematical model used to describe the relationship ...
                           </p>
                           <a
-                            class="cursor-not-allowed"
                             gatsby="true"
                             href="#learning-path"
+                            style="cursor: not-allowed;"
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Coming soon
                               <svg
@@ -713,45 +701,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Introduction to Dataviz
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             New to data visualisation and programming.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Introduction to Dataviz
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Explore data visualisations through definitions, examples, videos, and relevant resources.
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/03/07/2020/LearningPath-Introduction"
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Get started
                               <svg
@@ -793,45 +780,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Lab
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Previous knowledge of programming languages.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Lab
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Tutorials and guides on create data visualisations using different tools and languages. ...
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/04/07/2020/LearningPath-Lab"
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Go to Lab
                               <svg
@@ -873,45 +859,44 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Workflows
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Experienced in producing data visualisations.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Dataviz Workflows
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             Increase your research impact through reproducible data visualisation workflows.
                           </p>
                           <a
-                            class=""
                             gatsby="true"
                             href="/docs/05/07/2020/LearningPath-Workflow"
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Learn workflows
                               <svg
@@ -953,50 +938,50 @@ Object {
                       tabindex="-1"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                        class="sc-iqseJM jHzSlO"
                         style="min-height: 250px; background-position: center;"
                         tabindex="0"
                       >
                         <span
-                          class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                          class="sc-bqiRlB kCYLgv"
                         >
                           Coming soon
                         </span>
                         <div
-                          class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                          class="sc-crHmcD joeJNY frontCard"
                         >
                           <div
-                            class="text-xl mt-5 font-bold xl:text-2xl"
+                            class="title"
                           >
                             Statistical Modeling
                           </div>
                           <div
-                            class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                            class="description"
                           >
                             Interested in statistics and inferences.
                           </div>
                         </div>
                         <div
-                          class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                          class="sc-egiyK lmKQfX backCard"
                         >
                           <h1
-                            class="font-bold mb-1 text-xl xl:text-2xl"
+                            class="title"
                           >
                             Statistical Modeling
                           </h1>
                           <p
-                            class="text-base leading-5"
+                            class="description"
                           >
                             A statistical model is a mathematical model used to describe the relationship ...
                           </p>
                           <a
-                            class="cursor-not-allowed"
                             gatsby="true"
                             href="#learning-path"
+                            style="cursor: not-allowed;"
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                              class="sc-furwcr gFdcYo moreBtn"
                             >
                               Coming soon
                               <svg
@@ -1026,15 +1011,10 @@ Object {
                 </div>
               </div>
             </div>
-            <button
+            <div
               class="slick-arrow slick-next"
-              data-role="none"
-              style="display: block;"
-              type="button"
-            >
-               
-              Next
-            </button>
+              style="display: block; right: 0px; z-index: 100;"
+            />
           </div>
         </div>
       </div>
@@ -1042,9 +1022,8 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="flex flex-wrap justify-center items-center relative"
       id="learning-path"
-      style="min-height: 850px; background-repeat: no-repeat; background-size: cover;"
+      style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; min-height: 850px; background-repeat: no-repeat; background-size: cover;"
     >
       <div
         class="react-reveal container mx-auto justify-center flex flex-wrap text-center mt-8"
@@ -1068,15 +1047,10 @@ Object {
           class="slick-slider center slick-initialized"
           dir="ltr"
         >
-          <button
+          <div
             class="slick-arrow slick-prev"
-            data-role="none"
-            style="display: block;"
-            type="button"
-          >
-             
-            Previous
-          </button>
+            style="display: block; left: 0px; z-index: 100;"
+          />
           <div
             class="slick-list"
             style="padding: 0px 60px;"
@@ -1099,45 +1073,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Introduction to Dataviz
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           New to data visualisation and programming.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Introduction to Dataviz
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Explore data visualisations through definitions, examples, videos, and relevant resources.
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/03/07/2020/LearningPath-Introduction"
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Get started
                             <svg
@@ -1179,45 +1152,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Lab
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Previous knowledge of programming languages.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Lab
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Tutorials and guides on create data visualisations using different tools and languages. ...
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/04/07/2020/LearningPath-Lab"
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Go to Lab
                             <svg
@@ -1259,45 +1231,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Workflows
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Experienced in producing data visualisations.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Workflows
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Increase your research impact through reproducible data visualisation workflows.
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/05/07/2020/LearningPath-Workflow"
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Learn workflows
                             <svg
@@ -1339,50 +1310,50 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <span
-                        class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                        class="sc-bqiRlB kCYLgv"
                       >
                         Coming soon
                       </span>
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Statistical Modeling
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Interested in statistics and inferences.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Statistical Modeling
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           A statistical model is a mathematical model used to describe the relationship ...
                         </p>
                         <a
-                          class="cursor-not-allowed"
                           gatsby="true"
                           href="#learning-path"
+                          style="cursor: not-allowed;"
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Coming soon
                             <svg
@@ -1424,45 +1395,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Introduction to Dataviz
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           New to data visualisation and programming.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Introduction to Dataviz
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Explore data visualisations through definitions, examples, videos, and relevant resources.
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/03/07/2020/LearningPath-Introduction"
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Get started
                             <svg
@@ -1504,45 +1474,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Lab
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Previous knowledge of programming languages.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Lab
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Tutorials and guides on create data visualisations using different tools and languages. ...
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/04/07/2020/LearningPath-Lab"
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Go to Lab
                             <svg
@@ -1584,45 +1553,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Workflows
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Experienced in producing data visualisations.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Workflows
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Increase your research impact through reproducible data visualisation workflows.
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/05/07/2020/LearningPath-Workflow"
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Learn workflows
                             <svg
@@ -1664,50 +1632,50 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <span
-                        class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                        class="sc-bqiRlB kCYLgv"
                       >
                         Coming soon
                       </span>
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Statistical Modeling
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Interested in statistics and inferences.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Statistical Modeling
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           A statistical model is a mathematical model used to describe the relationship ...
                         </p>
                         <a
-                          class="cursor-not-allowed"
                           gatsby="true"
                           href="#learning-path"
+                          style="cursor: not-allowed;"
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Coming soon
                             <svg
@@ -1749,45 +1717,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Introduction to Dataviz
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           New to data visualisation and programming.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Introduction to Dataviz
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Explore data visualisations through definitions, examples, videos, and relevant resources.
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/03/07/2020/LearningPath-Introduction"
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Get started
                             <svg
@@ -1829,45 +1796,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Lab
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Previous knowledge of programming languages.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Lab
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Tutorials and guides on create data visualisations using different tools and languages. ...
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/04/07/2020/LearningPath-Lab"
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Go to Lab
                             <svg
@@ -1909,45 +1875,44 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Workflows
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Experienced in producing data visualisations.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Dataviz Workflows
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           Increase your research impact through reproducible data visualisation workflows.
                         </p>
                         <a
-                          class=""
                           gatsby="true"
                           href="/docs/05/07/2020/LearningPath-Workflow"
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Learn workflows
                             <svg
@@ -1989,50 +1954,50 @@ Object {
                     tabindex="-1"
                   >
                     <div
-                      class="transform transition duration-300 ease-in-out text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md"
+                      class="sc-iqseJM jHzSlO"
                       style="min-height: 250px; background-position: center;"
                       tabindex="0"
                     >
                       <span
-                        class="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg"
+                        class="sc-bqiRlB kCYLgv"
                       >
                         Coming soon
                       </span>
                       <div
-                        class="transform transition duration-300 ease-in-out group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0"
+                        class="sc-crHmcD joeJNY frontCard"
                       >
                         <div
-                          class="text-xl mt-5 font-bold xl:text-2xl"
+                          class="title"
                         >
                           Statistical Modeling
                         </div>
                         <div
-                          class="text-gray-300 text-base mt-3 xl:text-lg leading-4"
+                          class="description"
                         >
                           Interested in statistics and inferences.
                         </div>
                       </div>
                       <div
-                        class="transform transition duration-300 ease-in-out fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0"
+                        class="sc-egiyK lmKQfX backCard"
                       >
                         <h1
-                          class="font-bold mb-1 text-xl xl:text-2xl"
+                          class="title"
                         >
                           Statistical Modeling
                         </h1>
                         <p
-                          class="text-base leading-5"
+                          class="description"
                         >
                           A statistical model is a mathematical model used to describe the relationship ...
                         </p>
                         <a
-                          class="cursor-not-allowed"
                           gatsby="true"
                           href="#learning-path"
+                          style="cursor: not-allowed;"
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-furwcr gFdcYo mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base"
+                            class="sc-furwcr gFdcYo moreBtn"
                           >
                             Coming soon
                             <svg
@@ -2062,15 +2027,10 @@ Object {
               </div>
             </div>
           </div>
-          <button
+          <div
             class="slick-arrow slick-next"
-            data-role="none"
-            style="display: block;"
-            type="button"
-          >
-             
-            Next
-          </button>
+            style="display: block; right: 0px; z-index: 100;"
+          />
         </div>
       </div>
     </div>

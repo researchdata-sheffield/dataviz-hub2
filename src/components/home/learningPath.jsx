@@ -1,24 +1,53 @@
 import React from "react";
 import { Link, graphql, useStaticQuery } from "gatsby";
 import Fade from "react-reveal/Fade";
+import PropTypes from "prop-types";
 
 import { ArrowButton } from "../style/styleComponent";
 import { getImageSource, shortenText } from "../../utils/shared";
 import Slider from "react-slick";
 import Bg from "../../images/home/learningPath.jpg";
+import { CardWrapper, FrontCard, BackCard, StatusSpan } from "../style/home";
+
+const NextArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, right: 0, zIndex: "100" }}
+      onClick={onClick}
+    />
+  );
+};
+
+NextArrow.propTypes = {
+  className: PropTypes.any,
+  style: PropTypes.any,
+  onClick: PropTypes.any
+};
+
+const PrevArrow = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, left: 0, zIndex: "100" }}
+      onClick={onClick}
+    />
+  );
+};
+
+PrevArrow.propTypes = {
+  className: PropTypes.any,
+  style: PropTypes.any,
+  onClick: PropTypes.any
+};
 
 /**
- * Display all learning paths where the index.mdx specified learningPath: true
+ * Display all learning paths with `learningPath: true` in the index.mdx file.
  * Latest learning path will get a 'New' icon. If published: false, then 'New' will be replaced by 'Coming soon'
  */
 const LearningPath = () => {
-  const animationClasses = "transform transition duration-300 ease-in-out";
-  const cardClasses = `${animationClasses} text-white flex flex-wrap group justify-center mx-5 p-8 xl:p-10 text-center mt-5 hover:-translate-y-2 shadow-md hover:shadow-2xl rounded-md`;
-  const frontCard = `${animationClasses} group-hover:invisible translate-y-0 group-hover:-translate-y-40 group-focus:-translate-y-40 opacity-100 group-hover:opacity-0 group-focus:opacity-0`;
-  const backCard = `${animationClasses} fixed top-0 left-0 p-8 text-left group-hover:translate-y-0 translate-y-40 group-focus:translate-y-0 invisible group-hover:visible group-focus:visible group-focus:opacity-100 group-hover:opacity-100 opacity-0`;
-  const moreBtn =
-    "mt-5 py-1 px-3 bg-black hover:bg-brand-blue text-sm xl:text-base";
-
   const data = useStaticQuery(graphql`
     query LearningPathQuery {
       allMdx(
@@ -52,6 +81,8 @@ const LearningPath = () => {
 
   // https://react-slick.neostack.com/docs/example/simple-slider
   const carouselSettings = {
+    nextArrow: <NextArrow />,
+    prevArrow: <PrevArrow />,
     className: "center",
     accessibility: true,
     dots: false,
@@ -94,8 +125,12 @@ const LearningPath = () => {
   return (
     <div
       id="learning-path"
-      className="flex flex-wrap justify-center items-center relative"
       style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        alignItems: "center",
+        position: "relative",
         minHeight: "850px",
         backgroundImage: `linear-gradient(180deg, rgba(17,24,39,.98) 0%, rgba(16,16,30,.94) 100%), url(${Bg})`,
         backgroundRepeat: "no-repeat",
@@ -131,8 +166,7 @@ const LearningPath = () => {
 
               return (
                 <div key={node.id} className="py-4">
-                  <div
-                    className={`${cardClasses}`}
+                  <CardWrapper
                     style={{
                       backgroundImage: `linear-gradient(155deg, rgba(0,0,0,.65) 50%, rgba(2,0,36,.4) 100%), url(${imagesrc})`,
                       minHeight: "250px",
@@ -142,40 +176,40 @@ const LearningPath = () => {
                     tabIndex="0"
                   >
                     {arr.length - 1 === index && (
-                      <span className="absolute top-0 right-0 z-10 bg-black -mt-3 mr-3 px-2 py-1 text-brand-blue font-bold rounded-md text-sm shadow-lg">
+                      <StatusSpan>
                         {published ? "New" : "Coming soon"}
-                      </span>
+                      </StatusSpan>
                     )}
-                    <div className={frontCard}>
-                      <div className="text-xl mt-5 font-bold xl:text-2xl">
+                    <FrontCard className="frontCard">
+                      <div className="title">
                         {node.frontmatter.learningPathTitle}
                       </div>
-                      <div className="text-gray-300 text-base mt-3 xl:text-lg leading-4">
+                      <div className="description">
                         {learningPathDescription}
                       </div>
-                    </div>
-                    <div className={backCard}>
-                      <h1 className="font-bold mb-1 text-xl xl:text-2xl">
+                    </FrontCard>
+                    <BackCard className="backCard">
+                      <h1 className="title">
                         {node.frontmatter.learningPathTitle}
                       </h1>
-                      <p className="text-base leading-5">{description}</p>
+                      <p className="description">{description}</p>
                       <Link
                         to={published ? node.fields.slug : "#learning-path"}
-                        className={`${published ? "" : "cursor-not-allowed"}`}
+                        style={{ cursor: published ? "" : "not-allowed" }}
                         title={
                           published
                             ? `Learning Path - ${node.frontmatter.learningPathTitle}`
                             : "This learning path is not published yet"
                         }
                       >
-                        <ArrowButton className={moreBtn}>
+                        <ArrowButton className="moreBtn">
                           {published
                             ? node.frontmatter.learningPathBtn
                             : "Coming soon"}
                         </ArrowButton>
                       </Link>
-                    </div>
-                  </div>
+                    </BackCard>
+                  </CardWrapper>
                 </div>
               );
             })}
