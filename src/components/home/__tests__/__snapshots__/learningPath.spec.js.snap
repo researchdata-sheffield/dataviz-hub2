@@ -1,0 +1,2090 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home | Learning Paths should renders correctly 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        id="learning-path"
+        style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; min-height: 850px; background-repeat: no-repeat; background-size: cover;"
+      >
+        <div
+          class="react-reveal container mx-auto justify-center flex flex-wrap text-center mt-8"
+        >
+          <div
+            class="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold"
+            style="font-family: TUOS Stephenson,Georgia,Times,serif;"
+          >
+            Learning paths.
+          </div>
+          <p
+            class="mt-3 text-gray-100 px-5"
+          >
+            Discover how to get the most out of statistics, visualisations and tool sets.
+          </p>
+        </div>
+        <div
+          class="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+        >
+          <div
+            class="slick-slider center slick-initialized"
+            dir="ltr"
+          >
+            <div
+              class="slick-arrow slick-prev"
+              style="display: block; left: 0px; z-index: 100;"
+            />
+            <div
+              class="slick-list"
+              style="padding: 0px 60px;"
+            >
+              <div
+                class="slick-track"
+                style="width: -480px; opacity: 1; transform: translate3d(120px, 0px, 0px);"
+              >
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-center slick-cloned"
+                  data-index="-4"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Introduction to Dataviz
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            New to data visualisation and programming.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Introduction to Dataviz
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Explore data visualisations through definitions, examples, videos, and relevant resources.
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/03/07/2020/LearningPath-Introduction"
+                            title="Learning Path - Introduction to Dataviz"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Get started
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="-3"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Dataviz Lab
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Previous knowledge of programming languages.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Dataviz Lab
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Tutorials and guides on create data visualisations using different tools and languages. ...
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/04/07/2020/LearningPath-Lab"
+                            title="Learning Path - Dataviz Lab"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Go to Lab
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="-2"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Dataviz Workflows
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Experienced in producing data visualisations.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Dataviz Workflows
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Increase your research impact through reproducible data visualisation workflows.
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/05/07/2020/LearningPath-Workflow"
+                            title="Learning Path - Dataviz Workflows"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Learn workflows
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="false"
+                  class="slick-slide slick-active slick-cloned"
+                  data-index="-1"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="sc-bqiRlB kCYLgv"
+                        >
+                          Coming soon
+                        </span>
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Statistical Modeling
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Interested in statistics and inferences.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Statistical Modeling
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            A statistical model is a mathematical model used to describe the relationship ...
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="#learning-path"
+                            style="cursor: not-allowed;"
+                            title="This learning path is not published yet"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Coming soon
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="false"
+                  class="slick-slide slick-active slick-center slick-current"
+                  data-index="0"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Introduction to Dataviz
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            New to data visualisation and programming.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Introduction to Dataviz
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Explore data visualisations through definitions, examples, videos, and relevant resources.
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/03/07/2020/LearningPath-Introduction"
+                            title="Learning Path - Introduction to Dataviz"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Get started
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="false"
+                  class="slick-slide slick-active"
+                  data-index="1"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Dataviz Lab
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Previous knowledge of programming languages.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Dataviz Lab
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Tutorials and guides on create data visualisations using different tools and languages. ...
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/04/07/2020/LearningPath-Lab"
+                            title="Learning Path - Dataviz Lab"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Go to Lab
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide"
+                  data-index="2"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Dataviz Workflows
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Experienced in producing data visualisations.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Dataviz Workflows
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Increase your research impact through reproducible data visualisation workflows.
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/05/07/2020/LearningPath-Workflow"
+                            title="Learning Path - Dataviz Workflows"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Learn workflows
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide"
+                  data-index="3"
+                  style="outline: none; width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="sc-bqiRlB kCYLgv"
+                        >
+                          Coming soon
+                        </span>
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Statistical Modeling
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Interested in statistics and inferences.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Statistical Modeling
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            A statistical model is a mathematical model used to describe the relationship ...
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="#learning-path"
+                            style="cursor: not-allowed;"
+                            title="This learning path is not published yet"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Coming soon
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-center slick-cloned"
+                  data-index="4"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Introduction to Dataviz
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            New to data visualisation and programming.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Introduction to Dataviz
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Explore data visualisations through definitions, examples, videos, and relevant resources.
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/03/07/2020/LearningPath-Introduction"
+                            title="Learning Path - Introduction to Dataviz"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Get started
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="5"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Dataviz Lab
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Previous knowledge of programming languages.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Dataviz Lab
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Tutorials and guides on create data visualisations using different tools and languages. ...
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/04/07/2020/LearningPath-Lab"
+                            title="Learning Path - Dataviz Lab"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Go to Lab
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="6"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Dataviz Workflows
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Experienced in producing data visualisations.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Dataviz Workflows
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            Increase your research impact through reproducible data visualisation workflows.
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="/docs/05/07/2020/LearningPath-Workflow"
+                            title="Learning Path - Dataviz Workflows"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Learn workflows
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div
+                  aria-hidden="true"
+                  class="slick-slide slick-cloned"
+                  data-index="7"
+                  style="width: -40px;"
+                  tabindex="-1"
+                >
+                  <div>
+                    <div
+                      class="py-4"
+                      style="width: 100%; display: inline-block;"
+                      tabindex="-1"
+                    >
+                      <div
+                        class="sc-iqseJM jHzSlO"
+                        style="min-height: 250px; background-position: center;"
+                        tabindex="0"
+                      >
+                        <span
+                          class="sc-bqiRlB kCYLgv"
+                        >
+                          Coming soon
+                        </span>
+                        <div
+                          class="sc-crHmcD joeJNY frontCard"
+                        >
+                          <div
+                            class="title"
+                          >
+                            Statistical Modeling
+                          </div>
+                          <div
+                            class="description"
+                          >
+                            Interested in statistics and inferences.
+                          </div>
+                        </div>
+                        <div
+                          class="sc-egiyK lmKQfX backCard"
+                        >
+                          <h1
+                            class="title"
+                          >
+                            Statistical Modeling
+                          </h1>
+                          <p
+                            class="description"
+                          >
+                            A statistical model is a mathematical model used to describe the relationship ...
+                          </p>
+                          <a
+                            gatsby="true"
+                            href="#learning-path"
+                            style="cursor: not-allowed;"
+                            title="This learning path is not published yet"
+                          >
+                            <button
+                              class="sc-furwcr gFdcYo moreBtn"
+                            >
+                              Coming soon
+                              <svg
+                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                fill="currentColor"
+                                height="1em"
+                                stroke="currentColor"
+                                stroke-width="0"
+                                viewBox="0 0 24 24"
+                                width="1em"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  d="M0 0h24v24H0V0z"
+                                  fill="none"
+                                />
+                                <path
+                                  d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                                />
+                              </svg>
+                            </button>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="slick-arrow slick-next"
+              style="display: block; right: 0px; z-index: 100;"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>,
+  "container": <div>
+    <div
+      id="learning-path"
+      style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center; position: relative; min-height: 850px; background-repeat: no-repeat; background-size: cover;"
+    >
+      <div
+        class="react-reveal container mx-auto justify-center flex flex-wrap text-center mt-8"
+      >
+        <div
+          class="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold"
+          style="font-family: TUOS Stephenson,Georgia,Times,serif;"
+        >
+          Learning paths.
+        </div>
+        <p
+          class="mt-3 text-gray-100 px-5"
+        >
+          Discover how to get the most out of statistics, visualisations and tool sets.
+        </p>
+      </div>
+      <div
+        class="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+      >
+        <div
+          class="slick-slider center slick-initialized"
+          dir="ltr"
+        >
+          <div
+            class="slick-arrow slick-prev"
+            style="display: block; left: 0px; z-index: 100;"
+          />
+          <div
+            class="slick-list"
+            style="padding: 0px 60px;"
+          >
+            <div
+              class="slick-track"
+              style="width: -480px; opacity: 1; transform: translate3d(120px, 0px, 0px);"
+            >
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-center slick-cloned"
+                data-index="-4"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Introduction to Dataviz
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          New to data visualisation and programming.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Introduction to Dataviz
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Explore data visualisations through definitions, examples, videos, and relevant resources.
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/03/07/2020/LearningPath-Introduction"
+                          title="Learning Path - Introduction to Dataviz"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Get started
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-3"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Dataviz Lab
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Previous knowledge of programming languages.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Dataviz Lab
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Tutorials and guides on create data visualisations using different tools and languages. ...
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/04/07/2020/LearningPath-Lab"
+                          title="Learning Path - Dataviz Lab"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Go to Lab
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="-2"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Dataviz Workflows
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Experienced in producing data visualisations.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Dataviz Workflows
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Increase your research impact through reproducible data visualisation workflows.
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/05/07/2020/LearningPath-Workflow"
+                          title="Learning Path - Dataviz Workflows"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Learn workflows
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-cloned"
+                data-index="-1"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <span
+                        class="sc-bqiRlB kCYLgv"
+                      >
+                        Coming soon
+                      </span>
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Statistical Modeling
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Interested in statistics and inferences.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Statistical Modeling
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          A statistical model is a mathematical model used to describe the relationship ...
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="#learning-path"
+                          style="cursor: not-allowed;"
+                          title="This learning path is not published yet"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Coming soon
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active slick-center slick-current"
+                data-index="0"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Introduction to Dataviz
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          New to data visualisation and programming.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Introduction to Dataviz
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Explore data visualisations through definitions, examples, videos, and relevant resources.
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/03/07/2020/LearningPath-Introduction"
+                          title="Learning Path - Introduction to Dataviz"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Get started
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="false"
+                class="slick-slide slick-active"
+                data-index="1"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Dataviz Lab
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Previous knowledge of programming languages.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Dataviz Lab
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Tutorials and guides on create data visualisations using different tools and languages. ...
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/04/07/2020/LearningPath-Lab"
+                          title="Learning Path - Dataviz Lab"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Go to Lab
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="2"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Dataviz Workflows
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Experienced in producing data visualisations.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Dataviz Workflows
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Increase your research impact through reproducible data visualisation workflows.
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/05/07/2020/LearningPath-Workflow"
+                          title="Learning Path - Dataviz Workflows"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Learn workflows
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide"
+                data-index="3"
+                style="outline: none; width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <span
+                        class="sc-bqiRlB kCYLgv"
+                      >
+                        Coming soon
+                      </span>
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Statistical Modeling
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Interested in statistics and inferences.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Statistical Modeling
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          A statistical model is a mathematical model used to describe the relationship ...
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="#learning-path"
+                          style="cursor: not-allowed;"
+                          title="This learning path is not published yet"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Coming soon
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-center slick-cloned"
+                data-index="4"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Introduction to Dataviz
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          New to data visualisation and programming.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Introduction to Dataviz
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Explore data visualisations through definitions, examples, videos, and relevant resources.
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/03/07/2020/LearningPath-Introduction"
+                          title="Learning Path - Introduction to Dataviz"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Get started
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="5"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Dataviz Lab
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Previous knowledge of programming languages.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Dataviz Lab
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Tutorials and guides on create data visualisations using different tools and languages. ...
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/04/07/2020/LearningPath-Lab"
+                          title="Learning Path - Dataviz Lab"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Go to Lab
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="6"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Dataviz Workflows
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Experienced in producing data visualisations.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Dataviz Workflows
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          Increase your research impact through reproducible data visualisation workflows.
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="/docs/05/07/2020/LearningPath-Workflow"
+                          title="Learning Path - Dataviz Workflows"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Learn workflows
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-hidden="true"
+                class="slick-slide slick-cloned"
+                data-index="7"
+                style="width: -40px;"
+                tabindex="-1"
+              >
+                <div>
+                  <div
+                    class="py-4"
+                    style="width: 100%; display: inline-block;"
+                    tabindex="-1"
+                  >
+                    <div
+                      class="sc-iqseJM jHzSlO"
+                      style="min-height: 250px; background-position: center;"
+                      tabindex="0"
+                    >
+                      <span
+                        class="sc-bqiRlB kCYLgv"
+                      >
+                        Coming soon
+                      </span>
+                      <div
+                        class="sc-crHmcD joeJNY frontCard"
+                      >
+                        <div
+                          class="title"
+                        >
+                          Statistical Modeling
+                        </div>
+                        <div
+                          class="description"
+                        >
+                          Interested in statistics and inferences.
+                        </div>
+                      </div>
+                      <div
+                        class="sc-egiyK lmKQfX backCard"
+                      >
+                        <h1
+                          class="title"
+                        >
+                          Statistical Modeling
+                        </h1>
+                        <p
+                          class="description"
+                        >
+                          A statistical model is a mathematical model used to describe the relationship ...
+                        </p>
+                        <a
+                          gatsby="true"
+                          href="#learning-path"
+                          style="cursor: not-allowed;"
+                          title="This learning path is not published yet"
+                        >
+                          <button
+                            class="sc-furwcr gFdcYo moreBtn"
+                          >
+                            Coming soon
+                            <svg
+                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              fill="currentColor"
+                              height="1em"
+                              stroke="currentColor"
+                              stroke-width="0"
+                              viewBox="0 0 24 24"
+                              width="1em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path
+                                d="M0 0h24v24H0V0z"
+                                fill="none"
+                              />
+                              <path
+                                d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"
+                              />
+                            </svg>
+                          </button>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="slick-arrow slick-next"
+            style="display: block; right: 0px; z-index: 100;"
+          />
+        </div>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;

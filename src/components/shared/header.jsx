@@ -1,74 +1,76 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React, { useState, useEffect } from "react"
-import university_logo from "../../images/TUOSlogo.png"
-import { FiSearch } from "react-icons/fi"
-import { FaGoogle, FaSlack, FaTimes, FaBars, FaRss } from "react-icons/fa"
-import { A } from "../style/blogPostStyle"
-import { useLocation } from "@gatsbyjs/reach-router"
+import { Link } from "gatsby";
+import PropTypes from "prop-types";
+import React, { useState, useEffect } from "react";
+import university_logo from "../../images/TUOSlogo.png";
+import { FiSearch } from "react-icons/fi";
+import { FaGoogle, FaSlack, FaTimes, FaBars, FaRss } from "react-icons/fa";
+import { A } from "../style/blogPostStyle";
+import { useLocation } from "@gatsbyjs/reach-router";
 
 const Header = () => {
-  const [isExpanded, toggleExpansion] = useState(false)
-  const [isScroll, toggleScrolled] = useState(false)
-  const [isOpen, toggleOpen] = useState(false)
-  const location = useLocation()
-  var currentPagePath = location.pathname
+  const [isExpanded, toggleExpansion] = useState(false);
+  const [isScroll, toggleScrolled] = useState(false);
+  const [isOpen, toggleOpen] = useState(false);
+  const location = useLocation();
+  var currentPagePath = location.pathname;
 
   // close mobile menu on route change
   if (typeof window !== "undefined" && window.screen.width <= 1200) {
     useEffect(() => {
-      toggleExpansion(false)
-    }, [location])
+      toggleExpansion(false);
+    }, [location]);
   }
 
   // monitor page scroll
   useEffect(() => {
     function handleScroll() {
-      const scrolledValue = window.scrollY > 10
+      const scrolledValue = window.scrollY > 10;
       if (isScroll !== scrolledValue) {
-        toggleScrolled(!isScroll)
+        toggleScrolled(!isScroll);
       }
     }
-    document.addEventListener("scroll", handleScroll, { passive: true })
+    document.addEventListener("scroll", handleScroll, { passive: true });
     return () => {
-      document?.removeEventListener("scroll", handleScroll)
-    }
-  }, [isScroll])
+      document?.removeEventListener("scroll", handleScroll);
+    };
+  }, [isScroll]);
 
   // RSS button
   useEffect(() => {
-    document.querySelector("#copyBtn").addEventListener("click", copyRssLink)
-    document.querySelector("#rssMobile").addEventListener("click", copyRssLink)
-    document.querySelector("#rssDesktop").addEventListener("click", copyRssLink)
+    document.querySelector("#copyBtn").addEventListener("click", copyRssLink);
+    document.querySelector("#rssMobile").addEventListener("click", copyRssLink);
+    document
+      .querySelector("#rssDesktop")
+      .addEventListener("click", copyRssLink);
 
     return () => {
       document
         ?.querySelector("#copyBtn")
-        ?.removeEventListener("click", copyRssLink)
+        ?.removeEventListener("click", copyRssLink);
       document
         ?.querySelector("#rssMobile")
-        ?.removeEventListener("click", copyRssLink)
+        ?.removeEventListener("click", copyRssLink);
       document
         ?.querySelector("#rssDesktop")
-        ?.removeEventListener("click", copyRssLink)
-    }
-  })
+        ?.removeEventListener("click", copyRssLink);
+    };
+  });
 
-  onScrollNav()
+  onScrollNav();
 
   /**
    * Sticky nav. Hide on scroll down, visible on scroll up
    */
   function onScrollNav() {
     if (typeof window === "undefined") {
-      return
+      return;
     }
 
-    let prevScrollPos = window.pageYOffset
+    let prevScrollPos = window.pageYOffset;
 
     window.onscroll = function () {
-      const maxScroll = document.body.clientHeight - window.innerHeight
-      let currentScrollPos = window.pageYOffset
+      const maxScroll = document.body.clientHeight - window.innerHeight;
+      let currentScrollPos = window.pageYOffset;
       if (
         (maxScroll > 0 &&
           prevScrollPos > currentScrollPos &&
@@ -76,14 +78,16 @@ const Header = () => {
         (maxScroll <= 0 && prevScrollPos > currentScrollPos) ||
         (prevScrollPos <= 0 && currentScrollPos <= 0)
       ) {
-        document.getElementById("navbar").style.top = "0px"
+        document.getElementById("navbar").style.top = "0px";
+        document.getElementById("navbar").style.visibility = "visible";
       } else {
-        document.getElementById("navbar").style.top = "-300px"
-        document.getElementById("navbar").style.paddingTop = "1px"
-        document.getElementById("navbar").style.paddingBottom = "1px"
+        document.getElementById("navbar").style.top = "-300px";
+        document.getElementById("navbar").style.paddingTop = "1px";
+        document.getElementById("navbar").style.paddingBottom = "1px";
+        document.getElementById("navbar").style.visibility = "hidden";
       }
-      prevScrollPos = currentScrollPos
-    }
+      prevScrollPos = currentScrollPos;
+    };
   }
 
   /**
@@ -94,24 +98,24 @@ const Header = () => {
    */
   const NavLink = (props) => {
     function navColourClass(mobile = false) {
-      var className = "transition duration-300 " // don't remove space
+      var className = "transition duration-300 "; // don't remove space
 
       if (mobile == "true") {
         if (isScroll) {
-          className += "text-black hover:text-brand-blue"
-          return className
+          className += "text-black hover:text-brand-blue";
+          return className;
         }
-        className += "text-gray-600 hover:text-brand-blue"
-        return className
+        className += "text-gray-600 hover:text-brand-blue";
+        return className;
       }
 
       if (isScroll) {
-        className += "text-black hover:text-brand-blue"
-        return className
+        className += "text-black hover:text-brand-blue";
+        return className;
       }
 
-      className += "text-gray-100 group-hover:text-black hover:text-brand-blue"
-      return className
+      className += "text-gray-100 group-hover:text-black hover:text-brand-blue";
+      return className;
     }
 
     switch (props.type) {
@@ -126,11 +130,12 @@ const Header = () => {
           >
             {props.children}
           </A>
-        )
+        );
 
       case "Link":
         return (
           <Link
+            to={props.to}
             {...props}
             className={`${navColourClass(props.mobile)} ${
               props.className
@@ -138,7 +143,7 @@ const Header = () => {
           >
             {props.children}
           </Link>
-        )
+        );
 
       case "a-icon":
         return (
@@ -151,11 +156,12 @@ const Header = () => {
           >
             {props.children}
           </A>
-        )
+        );
 
       case "Link-icon":
         return (
           <Link
+            to={props.to}
             {...props}
             className={`${navColourClass(props.mobile)} ${
               props.className
@@ -163,28 +169,28 @@ const Header = () => {
           >
             {props.children}
           </Link>
-        )
+        );
     }
-  }
+  };
 
   function mobileMenuIconClass() {
     var className =
-      "px-3 py-2 flex items-center border rounded outline-none transition duration-300 group-hover:border-gray-700 group-hover:text-gray-700"
+      "px-3 py-2 flex items-center border rounded outline-none transition duration-300 group-hover:border-gray-700 group-hover:text-gray-700";
 
     if (isExpanded || isScroll || currentPagePath === "/") {
-      className += " text-gray-700 border-gray-700" // do not delete the space
-      return className
+      className += " text-gray-700 border-gray-700"; // do not delete the space
+      return className;
     }
-    className += " text-white border-white" // do not delete the space
-    return className
+    className += " text-white border-white"; // do not delete the space
+    return className;
   }
 
   function copyRssLink() {
-    toggleOpen(true)
-    var copyText = document.querySelector("#rssLink")
-    copyText.select()
-    copyText.setSelectionRange(0, 9999)
-    document.execCommand("copy")
+    toggleOpen(true);
+    var copyText = document.querySelector("#rssLink");
+    copyText.select();
+    copyText.setSelectionRange(0, 9999);
+    document.execCommand("copy");
   }
 
   return (
@@ -193,8 +199,10 @@ const Header = () => {
         id="navbar"
         role="navigation"
         className={`${
-          isScroll ? "shadow-lg bg-white" : "group-hover:bg-white"
-        } transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`}
+          isScroll
+            ? "shadow-lg bg-white"
+            : "group-hover:bg-white bg-transparent"
+        } transition duration-500 flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`}
         style={{ transition: "top 0.3s" }}
       >
         <div className="flex items-center flex-shrink-0 mr-5">
@@ -307,7 +315,7 @@ const Header = () => {
                 type="a-icon"
                 mobile="true"
                 className="block mt-3"
-                href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+                href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
                 title="Join Google group"
               >
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline">
@@ -318,7 +326,7 @@ const Header = () => {
                 type="a-icon"
                 mobile="true"
                 className="block mt-3"
-                href="https://join.slack.com/t/shef-dataviz/signup"
+                href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
                 title="Join Slack channel"
               >
                 <div className="px-4 text-2xl transition duration-500 ease-in-out no-underline">
@@ -333,7 +341,7 @@ const Header = () => {
                 target="_self"
                 title="RSS Feed"
                 onClick={() => {
-                  return false
+                  return false;
                 }}
               >
                 <button className="relative px-4 text-2xl transition duration-500 ease-in-out no-underline">
@@ -407,7 +415,7 @@ const Header = () => {
             )}
             <NavLink
               type="a-icon"
-              href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+              href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
               title="Join Google group"
             >
               <div className="text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1">
@@ -416,7 +424,7 @@ const Header = () => {
             </NavLink>
             <NavLink
               type="a-icon"
-              href="https://join.slack.com/t/shef-dataviz/signup"
+              href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
               title="Join Slack channel"
             >
               <div className="text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1">
@@ -429,7 +437,7 @@ const Header = () => {
               title="RSS Feed"
               target="_self"
               onClick={() => {
-                return false
+                return false;
               }}
             >
               <button className="relative text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1 cursor-pointer">
@@ -459,17 +467,18 @@ const Header = () => {
           id="rssBox"
           className={`${
             isOpen ? "" : "invisible"
-          } fixed z-50 bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center`}
+          } fixed bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center`}
           style={{
             top: "50%",
             left: "50%",
-            transform: "translate(-50%, -50%)"
+            transform: "translate(-50%, -50%)",
+            zIndex: "1000"
           }}
         >
           <FaTimes
             className="text-2xl absolute top-0 right-0 text-gray-800 m-2 rounded-full hover:text-white hover:bg-red-500 transition duration-300 p-1"
             onClick={() => {
-              toggleOpen(!isOpen)
+              toggleOpen(!isOpen);
             }}
           />
           <FaRss className="text-5xl mx-auto" />
@@ -497,8 +506,8 @@ const Header = () => {
         </div>
       </nav>
     </header>
-  )
-}
+  );
+};
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
@@ -506,11 +515,12 @@ Header.propTypes = {
   children: PropTypes.any,
   location: PropTypes.any,
   className: PropTypes.string,
-  mobile: PropTypes.bool
-}
+  mobile: PropTypes.bool,
+  to: PropTypes.any
+};
 
 Header.defaultProps = {
   siteTitle: ``
-}
+};
 
-export default Header
+export default Header;

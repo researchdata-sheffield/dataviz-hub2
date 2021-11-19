@@ -6,8 +6,13 @@
       "es6": true,
       "jest": true
     },
-    // https://github.com/babel/babel-eslint
-    "parser": "babel-eslint",
+    "parser": "@babel/eslint-parser",
+    "parserOptions": {
+      "requireConfigFile": false,
+      "babelOptions": {
+        "presets": ["babel-preset-gatsby"]
+      }
+    },
     "rules": {
       // https://eslint.org/docs/2.0.0/rules/strict
       "strict": 0
@@ -19,6 +24,8 @@
       "plugin:react/recommended",
       // https://github.com/benmosher/eslint-plugin-import
       "plugin:import/recommended"
+      // https://github.com/playwright-community/eslint-plugin-playwright
+      //"plugin:playwright/jest-playwright"
     ],
     "settings": {
       "react": {

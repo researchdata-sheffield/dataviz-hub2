@@ -17,6 +17,9 @@ jobs:
   deploy:
     name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
 
     steps:
       - name: Cancel Previous Runs
@@ -49,17 +52,16 @@ jobs:
       
       - name: Set user info
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "support+actions@github.com"
+          git config --local user.name "github-actions-bot"
         
       - name: Deploy
-        run: npm run deploy:incremental
+        run: npm run deploy
         env:
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
           EVENT_ORG_ID_1: ${{ secrets.EVENT_ORG_ID_1 }}
           EVENT_ORG_ID_2: ${{ secrets.EVENT_ORG_ID_2 }}
-          GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID }}
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}

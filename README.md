@@ -29,7 +29,7 @@
   ·
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/issues">Submit an Issue</a>
   ·
-  <a href="dataviz.shef.ac.uk/blog">Blog</a>
+  <a href="https://dataviz.shef.ac.uk/blog">Blog</a>
   <br>
   <br>
 </p>
@@ -37,9 +37,6 @@
 <p align="center">
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/ci.yml">
     <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/CI/badge.svg?branch=development" alt="CI status" />
-  </a>&nbsp;
-  <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/test.yml">
-    <img src="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/test.yml/badge.svg?branch=development" alt="Test status" />
   </a>&nbsp;
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/actions/workflows/deploy.yml">
     <img src="https://github.com/researchdata-sheffield/dataviz-hub2/workflows/Deploy/badge.svg?branch=master" alt="Deploy status" />
@@ -52,6 +49,9 @@
   </a>&nbsp;
   <a href="https://sonarcloud.io/component_measures?id=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities">
     <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=vulnerabilities" alt="Vulnerabilities" />
+  </a>&nbsp;
+  <a href="https://sonarcloud.io/dashboard?id=researchdata-sheffield_dataviz-hub2">
+    <img src="https://sonarcloud.io/api/project_badges/measure?project=researchdata-sheffield_dataviz-hub2&metric=alert_status" />
   </a>
 </p>
 

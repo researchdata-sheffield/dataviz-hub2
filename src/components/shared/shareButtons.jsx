@@ -1,12 +1,17 @@
-import React from "react"
-import PropTypes from "prop-types"
-import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing"
-import { RiEditBoxLine } from "react-icons/ri"
-import ReactTooltip from "react-tooltip"
-import Fade from "react-reveal/Fade"
+import React from "react";
+import PropTypes from "prop-types";
+import { Twitter, Facebook, Mail, Linkedin } from "react-social-sharing";
+import { RiEditBoxLine } from "react-icons/ri";
+import ReactTooltip from "react-tooltip";
+import Fade from "react-reveal/Fade";
 
+/**
+ * @param {Object} shareLinks an object contains all information for sharing
+ * @param {boolean} tableOfContent either receive false or an object of tableOfContent for the MDX document
+ * @param {function} renderItem a function which takes an item and returns HTML (how to display items)
+ */
 const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
-  const { githubLink, shareLink, shareMessage } = shareLinks
+  const { githubLink, shareLink, shareMessage } = shareLinks;
 
   return (
     <>
@@ -18,6 +23,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
           <div
             className="mt-28 flex flex-col text-xs"
             style={{ maxWidth: "40px", height: "0", overflow: "visible" }}
+            aria-label="Top share buttons"
           >
             <Twitter
               className="greyScale-100 hover:greyScale-0 transition duration-500"
@@ -79,6 +85,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
               : "flex-col w-1/4"
           } flex text-sm justify-center items-center py-2 ml-10`}
           style={{ maxWidth: "50px" }}
+          aria-label="Top mobile share buttons"
         >
           <Twitter solid small message={shareMessage} link={shareLink} />
           <Facebook solid small link={shareLink} />
@@ -112,11 +119,11 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default shareButtons
+export default shareButtons;
 
 shareButtons.propTypes = {
   mdx: PropTypes.any
-}
+};

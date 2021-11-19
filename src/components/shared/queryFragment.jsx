@@ -1,4 +1,4 @@
-import { graphql } from "gatsby"
+import { graphql } from "gatsby";
 
 /**
  * fragment FragmentName on TypeName {
@@ -13,7 +13,7 @@ export const eventbriteEdge = graphql`
       node {
         id
         url
-        name{
+        name {
           text
         }
         logo {
@@ -37,39 +37,41 @@ export const eventbriteEdge = graphql`
       }
     }
   }
-`
+`;
 
-export const mdxFrontmatter = graphql`fragment MdxFrontmatter on Frontmatter {
-  type
-  title
-  date(formatString: "DD MMMM YYYY")
-  description
-  tag
-  category
-  featured
-  thumbnail {
-    childImageSharp {
-      gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
-    }
-  }
-  author {
-    name
-    avatar {
+export const mdxFrontmatter = graphql`
+  fragment MdxFrontmatter on Frontmatter {
+    type
+    title
+    date(formatString: "DD MMMM YYYY")
+    description
+    tag
+    category
+    featured
+    thumbnail {
       childImageSharp {
-        gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
+        gatsbyImageData(layout: FULL_WIDTH)
+      }
+    }
+    author {
+      name
+      avatar {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH)
+        }
       }
     }
   }
-}`
+`;
 
-export const mdxFields = graphql`fragment MdxFields on MdxFields {
-  slug
-  readingTime {
-    text
+export const mdxFields = graphql`
+  fragment MdxFields on MdxFields {
+    slug
+    readingTime {
+      text
+    }
   }
-}  
-`
-
+`;
 
 export const imageSharp = graphql`
   fragment ImageSharp on File {
@@ -77,4 +79,4 @@ export const imageSharp = graphql`
       gatsbyImageData
     }
   }
-`
+`;

@@ -4,8 +4,6 @@
 npx lint-staged && npm run test:ci
 
 
-
-
 # Restrict to specific branch
 # branch=$(git branch | sed -n -e 's/^\* \(.*\)/\1/p')
 

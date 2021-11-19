@@ -5,7 +5,7 @@ exports[`Header renders correctly 1`] = `
   className="font-semibold z-50 relative group"
 >
   <nav
-    className="group-hover:bg-white transition duration-500 bg-transparent flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden"
+    className="group-hover:bg-white bg-transparent transition duration-500 flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden"
     id="navbar"
     role="navigation"
     style={
@@ -18,7 +18,7 @@ exports[`Header renders correctly 1`] = `
       className="flex items-center flex-shrink-0 mr-5"
     >
       <a
-        className="sc-crrszt fCPgvf invisible "
+        className="sc-crHmcD ixmMsE invisible "
         href="https://www.sheffield.ac.uk/"
         rel="noopener noreferrer"
         target="_blank"
@@ -131,7 +131,7 @@ exports[`Header renders correctly 1`] = `
           Blog
         </a>
         <a
-          className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="sc-crHmcD ixmMsE transition duration-300 text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           href="https://orda.shef.ac.uk/visualisations/"
           rel="noopener noreferrer"
           style={
@@ -157,8 +157,8 @@ exports[`Header renders correctly 1`] = `
           className="flex flex-wrap w-full justify-center space-x-4 mt-8 pt-6 border-t-2 border-gray-200"
         >
           <a
-            className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
-            href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+            className="sc-crHmcD ixmMsE transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
             rel="noopener noreferrer"
             style={
               Object {
@@ -193,8 +193,8 @@ exports[`Header renders correctly 1`] = `
             </div>
           </a>
           <a
-            className="sc-crrszt fCPgvf transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
-            href="https://join.slack.com/t/shef-dataviz/signup"
+            className="sc-crHmcD ixmMsE transition duration-300 text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
             rel="noopener noreferrer"
             style={
               Object {
@@ -347,7 +347,7 @@ exports[`Header renders correctly 1`] = `
           Blog
         </a>
         <a
-          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="sc-crHmcD ixmMsE transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           href="https://orda.shef.ac.uk/visualisations/"
           rel="noopener noreferrer"
           style={
@@ -369,8 +369,8 @@ exports[`Header renders correctly 1`] = `
           About
         </a>
         <a
-          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
-          href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group"
+          className="sc-crHmcD ixmMsE transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
           rel="noopener noreferrer"
           style={
             Object {
@@ -405,8 +405,8 @@ exports[`Header renders correctly 1`] = `
           </div>
         </a>
         <a
-          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
-          href="https://join.slack.com/t/shef-dataviz/signup"
+          className="sc-crHmcD ixmMsE transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
           rel="noopener noreferrer"
           style={
             Object {
@@ -441,7 +441,7 @@ exports[`Header renders correctly 1`] = `
           </div>
         </a>
         <a
-          className="sc-crrszt fCPgvf transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="sc-crHmcD ixmMsE transition duration-300 text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
           id="rssDesktop"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -532,13 +532,14 @@ exports[`Header renders correctly 1`] = `
       </div>
     </div>
     <div
-      className="invisible fixed z-50 bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center"
+      className="invisible fixed bg-white shadow-2xl rounded-lg p-5 lg:p-10 text-center"
       id="rssBox"
       style={
         Object {
           "left": "50%",
           "top": "50%",
           "transform": "translate(-50%, -50%)",
+          "zIndex": "1000",
         }
       }
     >

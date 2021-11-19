@@ -154,13 +154,15 @@ const SunburstChart = () => {
         backgroundColor: "#df3b57",
         backgroundImage:
           "linear-gradient(135deg, #1c000a 0%, #2a0010 20%, #460001 50%, #54001f 80%, #70002a 100%)",
-        minHeight: "550px",
+        maxHeight: "600px",
         height: "100%",
+        minWidth: "550px",
         maxWidth: "580px",
         borderRadius: "20px",
         backgroundSize: "cover",
         padding: "1rem",
-        position: "relative"
+        position: "relative",
+        margin: "0 auto"
       }}
     >
       <h1 style={plotTitle}>
@@ -169,7 +171,14 @@ const SunburstChart = () => {
         consumption and harm{" "}
         <span style={{ color: "#FB989F" }}>for men than women</span>
       </h1>
-      <div style={{ height: "430px", marginBottom: "20px", zIndex: "10" }}>
+      <div
+        style={{
+          height: "430px",
+          marginTop: "20px",
+          zIndex: "10",
+          position: "relative"
+        }}
+      >
         <Sunburst {...chartConfig} />
       </div>
       <div
@@ -177,9 +186,10 @@ const SunburstChart = () => {
           position: "absolute",
           right: 0,
           marginRight: "1rem",
-          bottom: "12%",
+          bottom: "10%",
           display: "flex",
-          flexDirection: "column"
+          flexDirection: "column",
+          zIndex: 20
         }}
       >
         <OptionBtn

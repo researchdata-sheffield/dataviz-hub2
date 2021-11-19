@@ -1,0 +1,52 @@
+---
+type: visualisation
+author: ["Yu Liang Weng"]
+title: "Improved rice cooking approach to maximise arsenic removal while preserving nutrient elements"
+thumbnail: thumb.jpg
+description: The parboiled and absorbed (PBA) method removed 54% & 73% inorganic arsenic (iAs) from brown & white rice. The PBA method raised margin of exposure (MOE) by 3.7 and 2.2 times for white and brown rice, respectively. Read the paper for this method's graphical abstract and step by step guide.
+date: "2021-09-22"
+category: [Department of Geography, School Of Health And Related Research]
+tag: [Inorganic arsenic, Nutrients]
+rowSpan: 2
+columnSpan: 1
+pngImagePath: improved-rice-cooking-approach-to-maximise-arsenic-removal-while-preserving-nutrient-elements.png
+svgImagePath: improved-rice-cooking-approach-to-maximise-arsenic-removal-while-preserving-nutrient-elements.svg
+---
+
+import ImprovedApproach from "./improved-approach";
+
+<ImprovedApproach />
+
+<VisPagination mdx={props.mdx}>
+  <EmbedCode localPath="svgImagePath" />
+</VisPagination>
+<VisDetail mdx={props.mdx} />
+
+export const data = [
+  {
+    title: "Source",
+    content: `<i>Menon, M., Dong, W., Chen, X., Hufton, J. and Rhodes, E., 2021. Improved rice cooking approach to maximise arsenic removal while preserving nutrient elements. Science of The Total Environment, [online] 755, p.143341.</i> Available at: <a href="https://doi.org/10.1016/j.scitotenv.2020.143341">https://doi.org/10.1016/j.scitotenv.2020.143341</a> [Accessed 24 September 2021].`
+  },
+  {
+    title: "Detail",
+    content: `The content of this visualisation were adpated from the paper referenced in the <b>Source</b> section. The bar chart data were read visually from the Figure 1 therefore it might not be consistent with the original paper.`
+  },
+  {
+    title: "Code",
+    content: `The source code is hosted on website's GitHub repository, you can find it <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2021-09-22-Improved-Rice-Cooking-Approach/">here</a>.<br/>
+    The visualisation is created using React and <a href="https://nivo.rocks/bar/t">nivo bar chart</a>. After setup a React website, install the following dependencies: <br/>
+    <code class="language-text">npm install @nivo/core @nivo/bar</code>, or replace <code class="language-text">npm install</code> with <code class="language-text">yarn add</code> if you are using Yarn.<br/>`
+  },
+  {
+    title: "Attribution",
+    content: `SVG images used here were downloaded from <a href="https://uxwing.com/">uxwing.com</a>.`
+  },
+  {
+    title: "License",
+    content: `Creative Commons license <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY 4.0</a>.`
+  }
+];
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>
