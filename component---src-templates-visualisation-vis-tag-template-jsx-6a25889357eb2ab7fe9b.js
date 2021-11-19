@@ -1,0 +1,2 @@
+(self.webpackChunkdatavizhub_tuos=self.webpackChunkdatavizhub_tuos||[]).push([[4789],{72388:function(t,e,a){"use strict";a.r(e);var u=a(67294),n=a(54922),s=a(31796),r=a(23431);e.default=function(t){var e=t.data.allMdx,a=t.pageContext,f=(0,u.useRef)(),c=(0,n.L)(e.edges,f);return(0,r.tZ)(s.Z,{currentMDXs:c,nextPageRef:f,pageContext:a,title:a.tag})}}}]);
+//# sourceMappingURL=component---src-templates-visualisation-vis-tag-template-jsx-6a25889357eb2ab7fe9b.js.map
