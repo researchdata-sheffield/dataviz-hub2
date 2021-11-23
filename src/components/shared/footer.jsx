@@ -24,54 +24,64 @@ const Footer = React.memo(({ className }) => {
             </Link>
           </div>
           <ul className="list-reset leading-normal">
-            <li>
-              <Link className={linkClasses} to="/community">
-                Community
-              </Link>
-            </li>
-            <li>
-              <Link className={linkClasses} to="/#learning-path">
-                Learning Path
-              </Link>
-            </li>
-            <li>
-              <Link className={linkClasses} to="/blog">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link className={linkClasses} to="/events">
-                Events
-              </Link>
-            </li>
-            <li>
-              <A_footer href="https://orda.shef.ac.uk/visualisations/">
-                Showcase
-              </A_footer>
-            </li>
-            <li>
-              <Link className={linkClasses} to="/privacy">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link className={linkClasses} to="/accessibility">
-                Accessibility
-              </Link>
-            </li>
-            <li>
-              <Link className={linkClasses} to="/sitemap/sitemap-index.xml">
-                Sitemap
-              </Link>
-            </li>
-            <li>
-              <Link className={linkClasses} to="/about">
-                About
-              </Link>
-            </li>
-            <li>
-              <A_footer href="mailto:rdm@sheffield.ac.uk">Contact us</A_footer>
-            </li>
+            {[
+              {
+                route: `/community`,
+                title: `Community`
+              },
+              {
+                route: `/#learning-path`,
+                title: `Learning Path`
+              },
+              {
+                route: `/blog`,
+                title: `Blog`
+              },
+              {
+                route: `/events`,
+                title: `Events`
+              },
+              {
+                route: `/visualisation`,
+                title: `InfoVis`
+              },
+              {
+                route: `https://orda.shef.ac.uk/visualisations/`,
+                title: `Showcase`,
+                external: true
+              },
+              {
+                route: `/privacy`,
+                title: `Privacy Policy`
+              },
+              {
+                route: `/accessibility`,
+                title: `Accessibility`
+              },
+              {
+                route: `/sitemap/sitemap-index.xml`,
+                title: `Sitemap`
+              },
+              {
+                route: `/about`,
+                title: `About`
+              },
+              {
+                route: `mailto:rdm@sheffield.ac.uk`,
+                title: `Contact us`,
+                external: true
+              }
+            ].map((item) => (
+              <li key={`Footer - ${item.title}`}>
+                {item.external !== true ? (
+                  <Link className={linkClasses} to={item.route}>
+                    {item.title}
+                  </Link>
+                ) : (
+                  <A_footer href={item.route}>{item.title}</A_footer>
+                )}
+              </li>
+            ))}
           </ul>
         </div>
         <div className="sm:w-3/12 h-auto sm:mt-0 mt-8">

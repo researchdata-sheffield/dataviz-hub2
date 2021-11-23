@@ -98,7 +98,7 @@ const Header = () => {
    */
   const NavLink = (props) => {
     function navColourClass(mobile = false) {
-      var className = "transition duration-300 "; // don't remove space
+      var className = "transition duration-300 relative "; // don't remove space
 
       if (mobile == "true") {
         if (isScroll) {
@@ -276,6 +276,10 @@ const Header = () => {
                 title: `Blog`
               },
               {
+                route: `/visualisation`,
+                title: `InfoVis`
+              },
+              {
                 route: `https://orda.shef.ac.uk/visualisations/`,
                 title: `Showcase`
               },
@@ -297,6 +301,14 @@ const Header = () => {
                   to={link.route}
                 >
                   {link.title}
+                  {link.title == "InfoVis" && (
+                    <span
+                      className="absolute top-0 right-0 bg-red-500 text-white rounded-md text-xs -mr-2"
+                      style={{ padding: "2px 5px" }}
+                    >
+                      new
+                    </span>
+                  )}
                 </NavLink>
               ) : (
                 <NavLink
@@ -346,12 +358,6 @@ const Header = () => {
               >
                 <button className="relative px-4 text-2xl transition duration-500 ease-in-out no-underline">
                   <FaRss />
-                  <span
-                    className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md text-xs -mt-4 -mr-2"
-                    style={{ padding: "2px 5px" }}
-                  >
-                    new
-                  </span>
                 </button>
               </NavLink>
               <NavLink
@@ -389,6 +395,10 @@ const Header = () => {
                 title: `Blog`
               },
               {
+                route: `/visualisation`,
+                title: `InfoVis`
+              },
+              {
                 route: `https://orda.shef.ac.uk/visualisations/`,
                 title: `Showcase`
               },
@@ -406,6 +416,18 @@ const Header = () => {
                   to={link.route}
                 >
                   {link.title}
+                  {link.title == "InfoVis" && (
+                    <span
+                      className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md -mr-3"
+                      style={{
+                        padding: "1px 3px",
+                        fontSize: ".68rem",
+                        lineHeight: "1rem"
+                      }}
+                    >
+                      new
+                    </span>
+                  )}
                 </NavLink>
               ) : (
                 <NavLink type="a" href={link.route} key={link.title}>
@@ -442,16 +464,6 @@ const Header = () => {
             >
               <button className="relative text-md transition duration-500 ease-in-out inline-block no-underline ml-2 mr-2 -mb-1 cursor-pointer">
                 <FaRss />
-                <span
-                  className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md -mt-4 -mr-4"
-                  style={{
-                    padding: "1px 3px",
-                    fontSize: ".7rem",
-                    lineHeight: "1rem"
-                  }}
-                >
-                  new
-                </span>
               </button>
             </NavLink>
             <NavLink type="Link-icon" to="/search" title="Search">
