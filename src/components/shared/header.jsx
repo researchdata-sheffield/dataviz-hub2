@@ -277,7 +277,7 @@ const Header = () => {
               },
               {
                 route: `/visualisation`,
-                title: `InfoVis`
+                title: `Visualisation`
               },
               {
                 route: `https://orda.shef.ac.uk/visualisations/`,
@@ -396,7 +396,7 @@ const Header = () => {
               },
               {
                 route: `/visualisation`,
-                title: `InfoVis`
+                title: `Visualisation`
               },
               {
                 route: `https://orda.shef.ac.uk/visualisations/`,
