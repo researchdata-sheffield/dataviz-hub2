@@ -68,8 +68,8 @@ const ExtinctionMap = () => {
       id="visualisation"
       style={{
         backgroundImage: `linear-gradient(215deg, #d0d0d0 20%, #c6c6c6 60%, #000 100%)`,
-        minWidth: "640px",
-        minHeight: "640px",
+        minWidth: "800px",
+        minHeight: "800px",
         maxWidth: "1100px",
         maxHeight: "1100px",
         borderRadius: "20px",
@@ -126,7 +126,7 @@ const ExtinctionMap = () => {
               direction: "column",
               justify: true,
               translateX: 30,
-              translateY: -70,
+              translateY: -80,
               itemsSpacing: 0,
               itemWidth: 92,
               itemHeight: 18,
@@ -215,6 +215,18 @@ const ExtinctionMap = () => {
           }}
         />
       </div>
+      <h3
+        style={{
+          fontSize: ".75rem",
+          color: "white",
+          position: "absolute",
+          left: 0,
+          bottom: "2.5%",
+          margin: "1.5rem"
+        }}
+      >
+        Predicted probability of extinction
+      </h3>
       <img
         src={Shark}
         alt="Shark image"

@@ -125,7 +125,7 @@ class SearchHome extends Component {
                 <Link
                   className={quickLink}
                   to="/#explore"
-                  data-tip="#Data and visualisation"
+                  data-tip="#What is Data visualisation"
                 >
                   Data visualisation
                 </Link>
@@ -152,26 +152,40 @@ class SearchHome extends Component {
                 <Link
                   className={quickLink}
                   to="/#home_showcase"
-                  data-tip="#Showcase"
+                  data-tip="#ORDA Showcase"
                 >
                   Showcase
+                </Link>
+              </li>
+              {/* <li>
+                <Link
+                  className={quickLink}
+                  to="/#collaboration"
+                  data-tip="#collaboration & partners"
+                >
+                  Collaboration
+                </Link>
+              </li> */}
+              <li>
+                <Link className={quickLink} data-tip="#Blog" to="/blog">
+                  Blog
                 </Link>
               </li>
               <li>
                 <Link
                   className={quickLink}
-                  to="/#collaboration"
-                  data-tip="#collaboration"
+                  data-tip="#InfoVis - The latest from TUoS"
+                  to="/visualisation"
                 >
-                  Collaboration
+                  Visualisation
                 </Link>
               </li>
-              <li>
-                <Link className={quickLink} to="/blog">
-                  Blog
-                </Link>
-              </li>
-              <ReactTooltip />
+              <ReactTooltip
+                border={true}
+                borderColor="#ececec"
+                backgroundColor="white"
+                textColor="black"
+              />
             </ul>
           </div>
 
