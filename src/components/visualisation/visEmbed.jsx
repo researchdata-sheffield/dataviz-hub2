@@ -24,6 +24,7 @@ const visEmbed = (props) => {
 
   // process content in <EmbedCode>
   useEffect(() => {
+    // find the <EmbedCode> element
     const filtered = React.Children.toArray(props.children).filter((child) => {
       return child.props.mdxType == "EmbedCode";
     });
@@ -106,9 +107,7 @@ const visEmbed = (props) => {
       </button>
       <div
         id="embedMenu"
-        className={`${
-          embedMenu ? "z-20" : "hidden z-0"
-        } fixed rounded-lg py-5 px-6 text-left text-gray-700`}
+        className={`fixed rounded-lg py-5 px-6 text-left text-gray-700`}
         style={{
           left: "50%",
           top: "50%",
@@ -116,7 +115,9 @@ const visEmbed = (props) => {
           maxWidth: "800px",
           userSelect: "text",
           backgroundColor: "#f7f7f7",
-          boxShadow: "0 10px 50px -5px #00aeef"
+          boxShadow: "0 10px 50px -5px #00aeef",
+          zIndex: embedMenu ? "999" : "0",
+          display: embedMenu ? "" : "none"
         }}
       >
         {!embedCode && (

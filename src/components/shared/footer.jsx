@@ -43,7 +43,7 @@ const Footer = React.memo(({ className }) => {
               },
               {
                 route: `/visualisation`,
-                title: `InfoVis`
+                title: `Visualisation`
               },
               {
                 route: `https://orda.shef.ac.uk/visualisations/`,

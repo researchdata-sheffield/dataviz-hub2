@@ -125,7 +125,7 @@ class SearchHome extends Component {
                 <Link
                   className={quickLink}
                   to="/#explore"
-                  data-tip="#Data and visualisation"
+                  data-tip="#What is Data visualisation"
                 >
                   Data visualisation
                 </Link>
@@ -174,10 +174,10 @@ class SearchHome extends Component {
               <li>
                 <Link
                   className={quickLink}
-                  data-tip="#The latest from TUoS"
+                  data-tip="#InfoVis - The latest from TUoS"
                   to="/visualisation"
                 >
-                  InfoVis
+                  Visualisation
                 </Link>
               </li>
               <ReactTooltip

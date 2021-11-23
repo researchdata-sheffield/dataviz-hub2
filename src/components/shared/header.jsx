@@ -301,7 +301,7 @@ const Header = () => {
                   to={link.route}
                 >
                   {link.title}
-                  {link.title == "InfoVis" && (
+                  {link.title == "Visualisation" && (
                     <span
                       className="absolute top-0 right-0 bg-red-500 text-white rounded-md text-xs -mr-2"
                       style={{ padding: "2px 5px" }}
@@ -416,7 +416,7 @@ const Header = () => {
                   to={link.route}
                 >
                   {link.title}
-                  {link.title == "InfoVis" && (
+                  {link.title == "Visualisation" && (
                     <span
                       className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md -mr-3"
                       style={{

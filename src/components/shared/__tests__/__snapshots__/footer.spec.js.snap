@@ -66,6 +66,15 @@ Object {
               </li>
               <li>
                 <a
+                  class="text-gray-400 hover:text-brand-blue"
+                  gatsby="true"
+                  href="/visualisation"
+                >
+                  Visualisation
+                </a>
+              </li>
+              <li>
+                <a
                   class="undefined text-gray-400 hover:text-brand-blue"
                   href="https://orda.shef.ac.uk/visualisations/"
                   rel="noopener noreferrer"
@@ -448,6 +457,15 @@ Object {
                 href="/events"
               >
                 Events
+              </a>
+            </li>
+            <li>
+              <a
+                class="text-gray-400 hover:text-brand-blue"
+                gatsby="true"
+                href="/visualisation"
+              >
+                Visualisation
               </a>
             </li>
             <li>
