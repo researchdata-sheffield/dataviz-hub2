@@ -137,7 +137,17 @@ exports[`Header renders correctly 1`] = `
           mobile="true"
           type="Link"
         >
-          InfoVis
+          Visualisation
+          <span
+            className="absolute top-0 right-0 bg-red-500 text-white rounded-md text-xs -mr-2"
+            style={
+              Object {
+                "padding": "2px 5px",
+              }
+            }
+          >
+            new
+          </span>
         </a>
         <a
           className="sc-crHmcD ixmMsE transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
@@ -351,7 +361,19 @@ exports[`Header renders correctly 1`] = `
           href="/visualisation"
           type="Link"
         >
-          InfoVis
+          Visualisation
+          <span
+            className="invisible group-hover:visible absolute top-0 right-0 bg-red-500 text-white rounded-md -mr-3"
+            style={
+              Object {
+                "fontSize": ".68rem",
+                "lineHeight": "1rem",
+                "padding": "1px 3px",
+              }
+            }
+          >
+            new
+          </span>
         </a>
         <a
           className="sc-crHmcD ixmMsE transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
