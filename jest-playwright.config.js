@@ -6,7 +6,13 @@ module.exports = {
     timeout: 60000
   },
   contextOptions: {
-    baseURL: "http://localhost:9000",
+    baseURL: process.env.LIVE_ENV
+      ? [
+          process.env.QA_ENV
+            ? "https://researchdata-sheffield.github.io/dataviz-hub2-qa"
+            : "https://dataviz.shef.ac.uk"
+        ]
+      : "http://localhost:9000",
     viewport: {
       // default: 1280 x 720
       width: 1280,

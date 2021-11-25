@@ -3,12 +3,23 @@ const { configureToMatchImageSnapshot } = require("jest-image-snapshot");
 
 const toMatchImageSnapshot = configureToMatchImageSnapshot({
   noColors: true,
-  failureThreshold: 0.03,
+  failureThreshold: 0.05,
   failureThresholdType: "percent",
-  dumpDiffToConsole: false,
-  dumpInlineDiffToConsole: true,
+  dumpDiffToConsole: true,
+  dumpInlineDiffToConsole: false,
   allowSizeMismatch: true,
-  comparisonMethod: "ssim"
+  comparisonMethod: "ssim",
+  customSnapshotIdentifier: (stringObj) => {
+    let appendix = process.env.LIVE_ENV ? "LIVE" : "";
+    let customIdentifier = [
+      appendix,
+      stringObj.defaultIdentifier,
+      stringObj.counter
+    ]
+      .join("_")
+      .replace(" ", "");
+    return customIdentifier;
+  }
 });
 
 expect.extend({ toMatchImageSnapshot });
