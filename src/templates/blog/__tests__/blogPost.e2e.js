@@ -1,7 +1,7 @@
 describe("e2e | Blog page", () => {
   beforeAll(async () => {
     page.setDefaultNavigationTimeout(60000);
-    await page.goto("/blog/02/05/2020/dataviz-stats-1", {
+    await page.goto("blog/02/05/2020/dataviz-stats-1", {
       waitUntil: "load"
     });
     await page.waitForSelector("id=__loader", { state: "hidden" });
@@ -15,25 +15,8 @@ describe("e2e | Blog page", () => {
     { browsers: ["webkit"] },
     "match the content",
     async () => {
-      const elementHandle = await page.$(
-        '[aria-label="Blog post main content"]'
-      );
-      expect(await elementHandle.screenshot()).toMatchImageSnapshot({
-        failureThreshold: 0.1
-      });
-    }
-  );
-
-  it.jestPlaywrightSkip(
-    { browsers: ["chromium", "firefox"] },
-    "match the content (Webkit)",
-    async () => {
-      const elementHandle = await page.$(
-        '[aria-label="Blog post main content"]'
-      );
-      expect(await elementHandle.screenshot()).toMatchImageSnapshot({
-        failureThreshold: 0.2
-      });
+      const elementHandle = await page.$(".mdxBody");
+      expect(await elementHandle.screenshot()).toMatchImageSnapshot();
     }
   );
 

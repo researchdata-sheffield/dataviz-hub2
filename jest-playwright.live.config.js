@@ -6,7 +6,7 @@ module.exports = {
     timeout: 60000
   },
   contextOptions: {
-    baseURL: "http://localhost:9000/",
+    baseURL: "https://dataviz.shef.ac.uk/",
     viewport: {
       // default: 1280 x 720
       width: 1280,
@@ -14,9 +14,5 @@ module.exports = {
     }
   },
   exitOnPageError: false, // process won't exit on http errors anymore
-  browsers: [
-    "chromium",
-    "firefox"
-    //"webkit"
-  ]
+  browsers: ["chromium", "firefox", "webkit"]
 };

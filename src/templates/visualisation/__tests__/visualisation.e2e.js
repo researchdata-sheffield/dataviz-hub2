@@ -1,6 +1,6 @@
 describe("e2e | Visualisation page", () => {
   beforeAll(async () => {
-    await page.goto("/visualisation");
+    await page.goto("visualisation");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
 

@@ -63,7 +63,7 @@ Whenever you want to submit new codes, create a new pull request and merge (or s
 
 We use [Jest][jest] as the test runner and [Playwright][playwright] for end to end testing. Please write test cases for new codes and use `npm run test:ci` to check if all tests passed. If contents are changed, use `npm run test:update` to update snapshots.
 
-You can also use `npm run test:e2e` to run end to end tests. To do this, you will need to serve a production build at `localhost:9000` first using `gatsby serve` so that browsers can access the website.
+You can also use `npm run test:e2e` to run end to end tests. To do this, you will need to serve a production build (use `npm run build:noGA`) at `localhost:9000` first using `gatsby serve` so that browsers can access the website.
 
 ### Continuous Integration
 

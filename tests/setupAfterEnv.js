@@ -5,20 +5,26 @@ const toMatchImageSnapshot = configureToMatchImageSnapshot({
   noColors: true,
   failureThreshold: 0.05,
   failureThresholdType: "percent",
-  dumpDiffToConsole: true,
+  dumpDiffToConsole: false,
   dumpInlineDiffToConsole: false,
   allowSizeMismatch: true,
   comparisonMethod: "ssim",
+  customDiffConfig: {
+    ssim: "fast"
+  },
   customSnapshotIdentifier: (stringObj) => {
-    let appendix = process.env.LIVE_ENV ? "LIVE" : "";
-    let customIdentifier = [
-      appendix,
-      stringObj.defaultIdentifier,
-      stringObj.counter
-    ]
+    let appendix = "DEV";
+
+    if (process.env.LIVE_ENV) {
+      appendix = "LIVE";
+    }
+    if (process.env.QA_ENV) {
+      appendix = "QA";
+    }
+
+    return [appendix, stringObj.defaultIdentifier, stringObj.counter]
       .join("_")
       .replace(" ", "");
-    return customIdentifier;
   }
 });
 
