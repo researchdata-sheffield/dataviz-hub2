@@ -19,7 +19,7 @@ on:
 
 jobs:
   CI-Build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     defaults:
       run:
         shell: bash
@@ -71,7 +71,7 @@ jobs:
         run: npm run serve & npm run test:e2e
 
   Test:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     defaults:
       run:
         shell: bash

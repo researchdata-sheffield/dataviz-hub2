@@ -1,27 +1,27 @@
-import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
-import BlogLayout from "../../components/blog/blogLayout"
-import MenuCategory from "../../components/blog/menuCategory"
-import PropTypes from "prop-types"
-import SEO from "../../components/shared/seo"
-import Flip from "react-reveal/Flip"
-import { GreyButton } from "../../components/style/styleComponent"
-import Bg from "../../images/blog/colorful-world.jpg"
-import { backgroundMovement } from "../../utils/hooks/backgroundMovement"
+import React, { useState } from "react";
+import { graphql, Link } from "gatsby";
+import BlogLayout from "../../components/blog/blogLayout";
+import MenuCategory from "../../components/blog/menuCategory";
+import PropTypes from "prop-types";
+import SEO from "../../components/shared/seo";
+import Flip from "react-reveal/Flip";
+import { GreyButton } from "../../components/style/styleComponent";
+import Bg from "../../images/blog/colorful-world.jpg";
+import { backgroundMovement } from "../../utils/hooks/backgroundMovement";
 
 const blogTemplate = ({ data: { allMdx }, pageContext }) => {
-  const [tagMenu, toggleTagMenu] = useState(false)
+  const [tagMenu, toggleTagMenu] = useState(false);
 
   function handleTagMenu() {
-    toggleTagMenu(!tagMenu)
+    toggleTagMenu(!tagMenu);
 
     if (screen.width <= 1280 && tagMenu === false) {
-      var element = document.querySelector("#tagMenu")
-      element.scrollIntoView()
+      var element = document.querySelector("#tagMenu");
+      element.scrollIntoView();
     }
   }
 
-  backgroundMovement("blogBackground")
+  backgroundMovement("blogBackground");
 
   return (
     <>
@@ -76,7 +76,7 @@ const blogTemplate = ({ data: { allMdx }, pageContext }) => {
               tagMenu={tagMenu}
             />
             <div className="mt-10">
-              <Link to="/blog#read">
+              <Link to="blog#read">
                 <GreyButton className="text-sm bg-gray-700 text-white hover:bg-black">
                   Start reading
                 </GreyButton>
@@ -95,15 +95,15 @@ const blogTemplate = ({ data: { allMdx }, pageContext }) => {
         tagMenu={tagMenu}
       />
     </>
-  )
-}
+  );
+};
 
-export default blogTemplate
+export default blogTemplate;
 
 blogTemplate.propTypes = {
   pageContext: PropTypes.any,
   data: PropTypes.any
-}
+};
 
 export const query = graphql`
   query blogList($skip: Int!, $limit: Int!) {
@@ -126,4 +126,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;
