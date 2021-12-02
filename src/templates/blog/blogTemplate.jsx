@@ -76,7 +76,7 @@ const blogTemplate = ({ data: { allMdx }, pageContext }) => {
               tagMenu={tagMenu}
             />
             <div className="mt-10">
-              <Link to="blog#read">
+              <Link to="/blog#read">
                 <GreyButton className="text-sm bg-gray-700 text-white hover:bg-black">
                   Start reading
                 </GreyButton>
