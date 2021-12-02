@@ -44,7 +44,7 @@
     "@nivo/marimekko": "^0.74.0",
     "@nivo/radar": "^0.74.0",
     "@nivo/waffle": "^0.74.0",
-    "babel-plugin-styled-components": "^1.13.3",
+    "babel-plugin-styled-components": "^2.0.2",
     "canvas": "^2.8.0",
     "cross-env": "^7.0.3",
     "debug": "^4.3.2",
