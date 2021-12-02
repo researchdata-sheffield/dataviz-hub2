@@ -9,8 +9,9 @@ updates:
     directory: "/"
     versioning-strategy: auto
     schedule:
-      interval: "weekly"
-      day: "sunday"
+      interval: "monthly"
+      time: "05:00"
+      timezone: "Europe/London"
     labels:
       - "npm dependencies"
       
@@ -19,5 +20,7 @@ updates:
     schedule:
       interval: "weekly"
       day: "monday"
+      time: "05:00"
+      timezone: "Europe/London"
     labels:
       - "github actions dependencies"
