@@ -2,7 +2,7 @@ import moment from "moment-timezone";
 
 describe("e2e | Events page", () => {
   beforeAll(async () => {
-    await page.goto("/events");
+    await page.goto("events");
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
 

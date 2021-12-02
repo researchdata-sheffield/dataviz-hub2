@@ -6,7 +6,7 @@ module.exports = {
     timeout: 60000
   },
   contextOptions: {
-    baseURL: "http://localhost:9000/",
+    baseURL: "https://dataviz.shef.ac.uk/",
     viewport: {
       // default: 1280 x 720
       width: 1280,
