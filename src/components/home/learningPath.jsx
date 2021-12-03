@@ -165,7 +165,10 @@ const LearningPath = () => {
               let published = node.frontmatter.published !== false;
 
               return (
-                <div key={node.id} className="py-4">
+                <div
+                  key={node.id}
+                  style={{ paddingTop: "1rem", paddingBottom: "1rem" }}
+                >
                   <CardWrapper
                     style={{
                       backgroundImage: `linear-gradient(155deg, rgba(0,0,0,.65) 50%, rgba(2,0,36,.4) 100%), url(${imagesrc})`,
