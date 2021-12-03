@@ -18,7 +18,7 @@ export const CardWrapper = styled.div`
   border-radius: 0.375rem;
 
   &:hover {
-    transform: translateX(-0.5rem);
+    transform: translateY(-0.5rem);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
 
     .frontCard {
