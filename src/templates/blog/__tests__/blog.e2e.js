@@ -117,6 +117,7 @@ describe("e2e | Blog page", () => {
     "navigates to the correct page on select page number",
     async () => {
       await Promise.all([
+        page.waitForNavigation({ timeout: 30000 }),
         page.selectOption('[aria-label="Select the target page"]', "3")
       ]);
       expect(page.url()).toContain("/blog/page/3");
