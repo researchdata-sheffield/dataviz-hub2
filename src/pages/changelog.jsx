@@ -2,7 +2,7 @@ import React from "react";
 import SEO from "../components/shared/seo";
 import { MDXProvider } from "@mdx-js/react";
 import ChangelogMDX from "../../CHANGELOG.mdx";
-import { commonMdxComponents } from "../components/style/commonMdxComponent";
+import { commonMdxComponent } from "../components/style/commonMdxComponent";
 
 const Changelog = () => {
   return (
@@ -46,7 +46,7 @@ const Changelog = () => {
           paddingTop: "50px"
         }}
       >
-        <MDXProvider components={{ ...commonMdxComponents }}>
+        <MDXProvider components={{ ...commonMdxComponent }}>
           <ChangelogMDX />
         </MDXProvider>
       </div>
