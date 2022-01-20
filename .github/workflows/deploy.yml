@@ -8,9 +8,12 @@ on:
   workflow_dispatch:
     inputs:
       Name:   
+        description: 'A name for this re-run'
         required: true
         default: 'Re-run the workflow'
       Description:
+        description: 'A description for this re-run'
+        required: false
         default: ''  
 
 jobs:

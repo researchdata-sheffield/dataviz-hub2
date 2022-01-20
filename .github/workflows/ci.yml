@@ -4,7 +4,7 @@ on:
   push:
     branches-ignore: [ master ]
   pull_request:
-    branches: [ '**' ]
+    branches: [ 'master', 'development' ]
     types: [         
       opened,
       synchronize,
@@ -12,13 +12,28 @@ on:
   workflow_dispatch:
     inputs:
       Name:   
+        description: 'A name for this re-run'
         required: true
         default: 'Re-run the workflow'
       Description:
+        description: 'A description for this re-run'
+        required: false
         default: ''  
 
 jobs:
+  Check-Duplicate:
+    runs-on: ubuntu-latest
+    outputs:
+      should_skip: ${{ steps.skip_check.outputs.should_skip }}
+    steps:
+      - id: skip_check
+        uses: fkirc/skip-duplicate-actions@master
+        with:
+          skip_after_successful_duplicate: 'true'
+
   CI-Build:
+    needs: Check-Duplicate
+    if: ${{ needs.Check-Duplicate.outputs.should_skip != 'true' }}
     runs-on: windows-latest
     defaults:
       run:
@@ -71,6 +86,8 @@ jobs:
         run: npm run serve & npm run test:e2e
 
   Test:
+    needs: Check-Duplicate
+    if: ${{ needs.Check-Duplicate.outputs.should_skip != 'true' }}
     runs-on: windows-latest
     defaults:
       run:
