@@ -106,7 +106,7 @@ describe("e2e | Blog page", () => {
 
   it("navigates to the first page on click the 'Newer posts'", async () => {
     await Promise.all([
-      //page.waitForNavigation({ timeout: 60000 }),
+      page.waitForNavigation({ timeout: 30000 }),
       page.click('[aria-label="Newer posts"]')
     ]);
     expect(page.url()).toContain("/blog");
