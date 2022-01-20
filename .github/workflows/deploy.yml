@@ -85,6 +85,7 @@ jobs:
   e2e-test:
     needs: deploy
     continue-on-error: true
+    name: Post-deploy E2E test
     runs-on: windows-latest
     defaults:
       run:
