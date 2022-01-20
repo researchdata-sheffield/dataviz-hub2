@@ -10,8 +10,8 @@ module.exports = [
   { type: "test", release: "patch" },
   { type: "build", release: "patch" },
   { type: "ci", release: "patch" },
-  { type: "chore", release: "patch" },
   { breaking: true, release: "major" },
   { revert: true, release: "patch" },
+  { type: "chore", release: false },
   { scope: "no-release", release: false }
-]
+];

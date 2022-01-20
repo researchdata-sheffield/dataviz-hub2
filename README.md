@@ -2,11 +2,10 @@
 
 <div align="center">
   <i>Data visualisation community website for The University of Sheffield, exists to provide tools, training and build a community around interactive data visualisation at TUoS.</i>
-  <br><br><br>
-  
+  <br><br>
   <p>
     <a href="https://shef-dataviz.slack.com" target="_blank" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Slack_Technologies_Logo.svg/1280px-Slack_Technologies_Logo.svg.png" width="20%" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Slack_icon_2019.svg" width="5%" />
     </a>
     <span width="10%">&nbsp; &nbsp;</span>
     <a href="https://groups.google.com/a/sheffield.ac.uk/forum/?hl=en#!forum/shef_dataviz-group" target="_blank" rel="noopener noreferrer">
@@ -14,11 +13,14 @@
     </a>
       <span width="10%">&nbsp; &nbsp;</span>
     <a href="mailto:rdm@sheffield.ac.uk" target="_blank" rel="noopener noreferrer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/7/75/Antu-mail-folder-sent-16.svg" width="5%" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/High-contrast-mail-mark-unread.svg/48px-High-contrast-mail-mark-unread.svg.png" width="5%" />
+    </a>
+    <span width="10%">&nbsp; &nbsp;</span>
+    <a href="https://dataviz.shef.ac.uk/rss.xml" target="_blank" rel="noopener noreferrer">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/Font_Awesome_5_solid_rss-square.svg" width="5%" />
     </a>
   </p>
 </div>
-<br>
 
 <p align="center">
   <a href="https://dataviz.shef.ac.uk"><strong>dataviz.shef.ac.uk</strong></a>
@@ -60,11 +62,11 @@
 ![Fig1](./src/images/readme/readme.png)
 
 <p align="center">
-  <a href="https://dataviz.shef.ac.uk/#learning-path">Learning path</a>
+  <a href="https://dataviz.shef.ac.uk/#learning-path">📚 Learning path</a>
   ·
-  <a href="https://dataviz.shef.ac.uk/events">Events</a>
+  <a href="https://dataviz.shef.ac.uk/visualisation">✨ Visualisation</a>
   ·
-  <a href="https://dataviz.shef.ac.uk/rss.xml">RSS feed</a>
+  <a href="https://dataviz.shef.ac.uk/events">📅 Event</a>
   <br>
 </p>
 
