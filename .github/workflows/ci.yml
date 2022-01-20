@@ -30,6 +30,7 @@ jobs:
         uses: fkirc/skip-duplicate-actions@master
         with:
           skip_after_successful_duplicate: 'true'
+          concurrent_skipping: 'same_content_newer'
 
   CI-Build:
     needs: Check-Duplicate
