@@ -214,6 +214,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return obj.node.frontmatter.type === "visualisation";
   });
 
+  if (process.env.NODE_ENV == "development") {
+    visMdx = visMdx.slice(0, 10);
+    console.log(
+      `MESSAGE: Create only first ${visMdx.length} visualisations in development.`
+    );
+  }
+
   const visCategories = [];
   const visTags = [];
 
@@ -321,6 +328,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return obj.node.frontmatter.type === "docs";
   });
 
+  if (process.env.NODE_ENV == "development") {
+    docsMdx = docsMdx.slice(0, 10);
+    console.log(
+      `MESSAGE: Create only first ${docsMdx.length} docs in development.`
+    );
+  }
+
   docsMdx.forEach(({ node }, index, arr) => {
     const prevDoc = arr[index - 1];
     const nextDoc = arr[index + 1];
@@ -350,9 +364,16 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
    */
   console.log("MESSAGE: Creating blog post routes ...");
   console.log("----------------------------------------------------");
-  const posts = result.data.allMdx.edges.filter((obj) => {
+  let posts = result.data.allMdx.edges.filter((obj) => {
     return obj.node.frontmatter.type == null;
   });
+
+  if (process.env.NODE_ENV == "development") {
+    posts = posts.slice(0, 13);
+    console.log(
+      `MESSAGE: Create only first ${posts.length} blog posts in development.`
+    );
+  }
 
   const POSTS_PER_PAGE = 12;
   var numPages = posts.length;
