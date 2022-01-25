@@ -1,5 +1,3 @@
-//import React from "react";
-//import PropTypes from "prop-types";
 import styled from "styled-components";
 
 export const SummaryWrapper = styled.div`
@@ -27,6 +25,8 @@ export const SummaryBox = styled.div`
   text-align: center;
   border-radius: 15px;
   background: #0f131c;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 8px 10px -6px rgba(0, 0, 0, 0.1);
   ${"" /* box-shadow: 2px 2px 5px 2px #000; */}
 
   h1 {
@@ -94,6 +94,7 @@ export const SearchResults = styled.div`
   position: absolute;
   z-index: 999;
   max-height: 400px;
+  width: 100%;
   overflow-y: scroll;
   left: 0;
   bottom: 0;
@@ -104,6 +105,9 @@ export const SearchResults = styled.div`
     padding: 5px 10px;
     transition: 0.5s ease;
     cursor: pointer;
+    font-weight: 300;
+    width: 100%;
+    text-align: left;
 
     :hover {
       background: #111827;
@@ -113,5 +117,39 @@ export const SearchResults = styled.div`
 
   .result-item:not(:last-child) {
     border-bottom: 1px solid #e8e8e8;
+  }
+`;
+
+export const ResultDiv = styled.div`
+  margin-top: 100px;
+  padding: 15px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  transition: 0.5s ease;
+
+  &:hover {
+    margin-top: 50px;
+  }
+
+  .date {
+    font-size: 0.85rem;
+    font-weight: 300;
+    padding: 3px 5px;
+    background: #eaeaea;
+    border-radius: 5px;
+  }
+  .title {
+    width: 100%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-top: 5px;
+    margin-bottom: 0;
+  }
+  .doi {
+    color: grey;
+    font-size: 0.9rem;
+    font-style: italic;
   }
 `;

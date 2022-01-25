@@ -15,7 +15,8 @@ const Visualisation = () => {
         background: "linear-gradient(345deg, #FEE140 0%, #FA709A 100%)",
         padding: "30px",
         boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-        borderRadius: "15px"
+        borderRadius: "15px",
+        position: "relative"
       }}
     >
       <h1
@@ -32,7 +33,7 @@ const Visualisation = () => {
       </h1>
       <img
         src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/FAIR_data_principles.jpg/640px-FAIR_data_principles.jpg"
-        width="300"
+        width="250"
         style={{
           borderRadius: "15px",
           marginBottom: "30px"
