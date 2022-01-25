@@ -39,8 +39,7 @@ const VisWorkshop = () => {
             "the university of sheffield",
             "data visualisation",
             "data visualisation hub",
-            "research",
-            "about dataviz"
+            "research"
           ]}
         />
         <div
