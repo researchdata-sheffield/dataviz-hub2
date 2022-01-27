@@ -4,15 +4,15 @@ author: ["Joe Molloy"]
 title: "Why Garden? Attitudes and the perceived health benefits of home gardening"
 thumbnail: thumb.png
 category: [IT-Services]
-tag: [Shiny]
-description: A shiny app presenting summary statistics from the Why Garden?... paper by (Chalmin-Pui et al. 2021)
-date: "2022-01-19"
+tag: [shiny]
+description: An interactive shiny app visualising summary statistics from (Chalmin-Pui et al. 2021)
+date: "2022-01-27"
 ---
 
-<iframe width="100%" height="700px" src="https://jlmrds.shinyapps.io/whygarden_shiny_app/"/>
+<iframe width="100%" height="900px" src="https://jlmrds.shinyapps.io/whygarden_shiny_app/"/>
 
 <VisPagination mdx = {props.mdx}> 
-  <EmbedCode url = "https://jlmrds.shinyapps.io/whygarden_shiny_app/" type = "iframe" height = "700px" />
+  <EmbedCode url = "https://jlmrds.shinyapps.io/whygarden_shiny_app/" type = "iframe" height = "900px" />
 </VisPagination>
 
 <VisDetail mdx = {props.mdx}/>
@@ -20,19 +20,11 @@ date: "2022-01-19"
 export const dataArray = [
   {
     title: "Source",
-    content: ''
-  },
-  {
-    title: "Detail",
-    content: ''
+    content: 'The data for this visualisation was extracted from the publication by Chalmin-Pui et al. You can read the paper <a href = "https://eprints.whiterose.ac.uk/171212/"> here </a>'
   },
   {
     title: "Code",
-    content: This visualisation was created using R and the Shiny package.
-  },
-  {
-    title: "Attribution",
-    content: ''
+    content: 'This visualisation was created using R and the <a href = "https://shiny.rstudio.com"> Shiny </a> package. You can see other Shiny content on the website by browsing the <a href = "https://dataviz.shef.ac.uk/blog/tag/shiny"> Shiny tag </a>'
   },
   {
     title: "License",
