@@ -93,7 +93,7 @@ export const SearchResults = styled.div`
   height: 0;
   position: absolute;
   z-index: 999;
-  max-height: 400px;
+  max-height: 350px;
   width: 100%;
   overflow-y: scroll;
   left: 0;
@@ -123,13 +123,15 @@ export const SearchResults = styled.div`
 export const ResultDiv = styled.div`
   margin-top: 100px;
   padding: 15px;
-  background: white;
+  background: transparent;
   border-radius: 15px;
-  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  box-shadow: none;
   transition: 0.5s ease;
 
   &:hover {
     margin-top: 50px;
+    background: white;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
   }
 
   .date {
@@ -151,5 +153,100 @@ export const ResultDiv = styled.div`
     color: grey;
     font-size: 0.9rem;
     font-style: italic;
+  }
+
+  .summary {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 30px;
+
+    .gauge {
+      flex: 1;
+      padding-left: 15px;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      & > div {
+        max-width: 220px;
+        margin: auto;
+      }
+    }
+  }
+`;
+
+export const BreakdownWrapper = styled.div`
+  margin-top: 50px;
+
+  .title {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .breakdown-row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 20px;
+
+    .logo {
+      position: relative;
+      padding: 15px;
+      width: 150px;
+      height: 150px;
+
+      h1 {
+        font-size: 1.4rem;
+        font-weight: 600;
+        text-transform: lowercase;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        color: #44403a;
+        font-style: italic;
+
+        span {
+          font-size: 1.8rem;
+          text-transform: uppercase;
+          color: #000;
+          font-weight: 900;
+        }
+      }
+
+      .logo__icon {
+        color: #c6c6c6;
+        font-size: 4rem;
+        position: absolute;
+        right: 30%;
+        bottom: 40%;
+        transform: translate(50%, 50%);
+      }
+    }
+
+    .sub-metrics {
+      flex: 1;
+      padding: 0 40px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      align-items: center;
+
+      .metric-circle {
+        canvas {
+          cursor: pointer !important;
+        }
+
+        &:not(:last-child) {
+          margin-right: 20px;
+        }
+
+        h3 {
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
 `;

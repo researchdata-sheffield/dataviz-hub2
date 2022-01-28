@@ -2,9 +2,11 @@ import React, { useState, useCallback, useEffect } from "react";
 import { ResultWrapper, CustomInput, SearchResults, ResultDiv } from "./styles";
 import AssessmentResults from "./assessment_results.json";
 import debounce from "lodash.debounce";
+import DatasetSummary from "./datasetSummary";
+import DatasetBreakdown from "./datasetBreakdown";
 
 const DatasetResult = () => {
-  const [currentDataset, setDataset] = useState(null);
+  const [currentDataset, setDataset] = useState({});
   const [searchResults, setSearchResults] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   let timer;
@@ -51,7 +53,7 @@ const DatasetResult = () => {
       });
 
       setSearchResults(filteredResults);
-    }, 1000),
+    }, 500),
     []
   );
 
@@ -87,12 +89,12 @@ const DatasetResult = () => {
           list="datasets"
           value={searchValue}
           onChange={onChangeInput}
-          placeholder="Search by title, DOI, date, ..."
+          placeholder="Search by title, DOI, date (yyyy-mm-dd), ..."
         />
         &#128269;
         <SearchResults className="search-results">
           {searchResults.length != 0 &&
-            searchResults.slice(0, 5).map((dataset, idx) => (
+            searchResults.slice(0, 10).map((dataset, idx) => (
               <button
                 className="result-item"
                 key={`dataset-${dataset.test_id}-${idx}`}
@@ -106,7 +108,7 @@ const DatasetResult = () => {
             ))}
         </SearchResults>
       </div>
-      {currentDataset && (
+      {Object.keys(currentDataset).length !== 0 && (
         <ResultDiv>
           <span className="date">
             {formatPublishedDate(
@@ -122,6 +124,8 @@ const DatasetResult = () => {
           >
             {currentDataset.figshare_details.doi}
           </a>
+          <DatasetSummary currentDataset={currentDataset} />
+          <DatasetBreakdown currentDataset={currentDataset} />
         </ResultDiv>
       )}
     </ResultWrapper>
