@@ -1,6 +1,6 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { ResultWrapper, CustomInput, SearchResults, ResultDiv } from "./styles";
-import AssessmentResults from "./assessment_results.json";
+import AssessmentResults from "../data/assessment_results.json";
 import debounce from "lodash.debounce";
 import DatasetSummary from "./datasetSummary";
 import DatasetBreakdown from "./datasetBreakdown";

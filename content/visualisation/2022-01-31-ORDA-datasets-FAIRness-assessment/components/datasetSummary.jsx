@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Radar, Gauge } from "@ant-design/plots";
-import StatisticsData from "./statistics.json";
-import { mapPrinciple } from "./helper";
+import StatisticsData from "../data/statistics.json";
+import { mapPrinciple } from "../helper";
 
 const DatasetSummary = ({ currentDataset }) => {
   const [radarData, setRadarData] = useState([]);
@@ -151,7 +151,7 @@ const DatasetSummary = ({ currentDataset }) => {
             return {
               fontSize: "13px",
               lineHeight: 1,
-              background: "#000",
+              background: "rgb(83, 82, 82)",
               borderRadius: "5px",
               padding: "3px 5px",
               marginTop: "10px",

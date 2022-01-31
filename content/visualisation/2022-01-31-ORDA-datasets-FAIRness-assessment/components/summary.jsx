@@ -1,7 +1,7 @@
 import React from "react";
-import data from "./statistics.json";
+import data from "../data/statistics.json";
 import { SummaryWrapper, SummaryBox } from "./styles";
-import { getColour } from "./helper";
+import { getColour } from "../helper";
 
 const Summary = () => {
   return (

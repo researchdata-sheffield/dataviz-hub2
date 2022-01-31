@@ -1,4 +1,7 @@
 import styled from "styled-components";
+import ReactTooltip from "react-tooltip";
+import React from "react";
+import PropTypes from "prop-types";
 
 export const SummaryWrapper = styled.div`
   display: flex;
@@ -62,6 +65,7 @@ export const ResultWrapper = styled.div`
     margin: 0;
     width: max-content;
     background: white;
+    color: #1a1919;
     padding: 0.5rem;
     border-radius: 5px 5px 0 0;
 
@@ -105,9 +109,12 @@ export const SearchResults = styled.div`
     padding: 5px 10px;
     transition: 0.5s ease;
     cursor: pointer;
+    line-height: 1.2;
     font-weight: 300;
+    font-size: 0.95rem;
     width: 100%;
     text-align: left;
+    color: #1a1919;
 
     :hover {
       background: #111827;
@@ -138,6 +145,7 @@ export const ResultDiv = styled.div`
     font-size: 0.85rem;
     font-weight: 300;
     padding: 3px 5px;
+    color: #1a1919;
     background: #eaeaea;
     border-radius: 5px;
   }
@@ -235,6 +243,8 @@ export const BreakdownWrapper = styled.div`
       align-items: center;
 
       .metric-circle {
+        color: #1a1919;
+
         canvas {
           cursor: pointer !important;
         }
@@ -250,3 +260,62 @@ export const BreakdownWrapper = styled.div`
     }
   }
 `;
+
+export const StyledTooltip = styled(ReactTooltip)`
+  max-width: 550px;
+  max-height: 100vh;
+  padding: 15px !important;
+  border-radius: 15px !important;
+  overflow: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tooltip-content {
+    .info {
+      span {
+        padding: 2px 5px;
+        border-radius: 5px;
+        color: black;
+        background: white;
+        font-size: 0.8rem;
+      }
+      span:not(:last-child) {
+        margin-right: 5px;
+      }
+    }
+
+    .title {
+      color: white;
+      font-weight: 700;
+    }
+
+    .subtitle {
+      text-decoration: underline;
+      margin-top: 10px;
+    }
+
+    ul li {
+      list-style: inside;
+    }
+  }
+`;
+
+export const StyledReactTooltip = (props) => {
+  return (
+    <StyledTooltip
+      type="dark"
+      place="top"
+      effect="float"
+      globalEventOff="click"
+      {...props}
+    />
+  );
+};
+
+StyledReactTooltip.propTypes = {
+  props: PropTypes.any
+};

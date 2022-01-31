@@ -1,6 +1,4 @@
 import React from "react";
-import Summary from "./summary";
-import DatasetResult from "./datasetResult";
 
 /**
  * Visualisation component
@@ -18,39 +16,7 @@ const Visualisation = () => {
         borderRadius: "15px",
         position: "relative"
       }}
-    >
-      <h1
-        style={{
-          fontSize: "2.5rem",
-          fontWeight: "900",
-          fontFamily: "TUoS Blake",
-          color: "#1a1919",
-          fontStyle: "italic"
-        }}
-      >
-        Assess FAIRness of datasets in ORDA
-      </h1>
-      <h4
-        style={{
-          fontSize: ".85rem",
-          fontWeight: "500",
-          fontStyle: "italic",
-          marginBottom: "30px"
-        }}
-      >
-        Assessment date: 26/11/21
-      </h4>
-      {/* <img
-        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/FAIR_data_principles.jpg/640px-FAIR_data_principles.jpg"
-        width="250"
-        style={{
-          borderRadius: "15px",
-          marginBottom: "30px"
-        }}
-      /> */}
-      <Summary />
-      <DatasetResult />
-    </div>
+    ></div>
   );
 };
 

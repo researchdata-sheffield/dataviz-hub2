@@ -1,13 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
-import { BreakdownWrapper } from "./styles";
+import { BreakdownWrapper, StyledReactTooltip } from "./styles";
 import { MdManageSearch, MdSettingsSuggest } from "react-icons/md";
 import { GiCycle } from "react-icons/gi";
 import { HiCursorClick } from "react-icons/hi";
-import { getColour } from "./helper";
+import { getColour } from "../helper";
 import { Liquid } from "@ant-design/plots";
+import ReactTooltip from "react-tooltip";
 
 const DatasetBreakdown = ({ currentDataset }) => {
+  useEffect(() => {
+    // re-render tooltip content when dataset changes
+    ReactTooltip.rebuild();
+  }, [currentDataset]);
+
   /**
    * Filter relevant metric tests for particular principle (F,A,I,R) using the metric identifier
    * @param {*} code
@@ -111,6 +117,83 @@ const DatasetBreakdown = ({ currentDataset }) => {
     }
   };
 
+  const getTooltipContent = (jsonContent) => {
+    if (!jsonContent) {
+      return "";
+    }
+    const parsedContent = JSON.parse(jsonContent);
+
+    const warnings = parsedContent.test_debug.filter((log) =>
+      log.includes("WARNING")
+    );
+
+    return (
+      <div className="tooltip-content">
+        <div className="info">
+          <span>Maturity: {parsedContent.maturity}</span>
+          <span
+            style={{
+              background:
+                parsedContent.test_status == "pass" ? "#7dff6b" : "#fc3"
+            }}
+          >
+            Status: {parsedContent.test_status}
+          </span>
+        </div>
+        <h1 className="title">
+          {parsedContent.metric_identifier}: {parsedContent.metric_name}
+        </h1>
+        <h2 className="subtitle">Metric tests:</h2>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col" style={{ width: "50px" }}>
+                Maturity
+              </th>
+              <th scope="col" style={{ width: "50px" }}>
+                Score
+              </th>
+              <th scope="col" style={{ width: "50px" }}>
+                Status
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {Object.keys(parsedContent.metric_tests).map((test) => (
+              <tr key={`${parsedContent.metric_identifier}-tests-${test}`}>
+                <td>{parsedContent.metric_tests[test].metric_test_name}</td>
+                <td style={{ textAlign: "center" }}>
+                  {parsedContent.metric_tests[test].metric_test_maturity}
+                </td>
+                <td style={{ textAlign: "center" }}>
+                  {parsedContent.metric_tests[test].metric_test_score}
+                </td>
+                <td style={{ textAlign: "center" }}>
+                  {parsedContent.metric_tests[test].metric_test_status}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        {warnings.length !== 0 && (
+          <>
+            <h2 className="subtitle">
+              Warnings that potentially reduced the score:{" "}
+            </h2>
+            <ul>
+              {warnings.map((warning, idx) => (
+                <li key={`${parsedContent.metric_identifier}-warning-${idx}`}>
+                  {warning.split("WARNING: ")[1]}
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+      </div>
+    );
+  };
+
   return (
     <BreakdownWrapper>
       <h1 className="title">Breakdown</h1>
@@ -130,11 +213,23 @@ const DatasetBreakdown = ({ currentDataset }) => {
             <div className="sub-metrics">
               {filterSubMetrics(data.capitalLetter).map((metric) => {
                 return (
-                  <Liquid
-                    key={metric.metric_identifier}
-                    className="metric-circle"
-                    {...createLiquidConfig(metric)}
-                  />
+                  <>
+                    <div
+                      key={metric.metric_identifier}
+                      className="metric-circle"
+                      data-for={`tooltip-metric-${metric.metric_identifier}`}
+                      data-tip={JSON.stringify(metric)}
+                      data-event="click focus"
+                      onMouseOut={() => ReactTooltip.hide()}
+                    >
+                      <Liquid {...createLiquidConfig(metric)} />
+                    </div>
+
+                    <StyledReactTooltip
+                      id={`tooltip-metric-${metric.metric_identifier}`}
+                      getContent={(dataTip) => getTooltipContent(dataTip)}
+                    />
+                  </>
                 );
               })}
             </div>
