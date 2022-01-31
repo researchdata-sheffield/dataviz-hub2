@@ -39,11 +39,13 @@ const VisWorkshop = () => {
             "the university of sheffield",
             "data visualisation",
             "data visualisation hub",
-            "research",
-            "about dataviz"
+            "research"
           ]}
         />
-        <div className="min-h-100 flex flex-wrap justify-center py-32">
+        <div
+          className="min-h-100 flex flex-wrap justify-center py-32"
+          style={{ background: "#111827" }}
+        >
           <Visualisation />
         </div>
       </>

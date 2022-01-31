@@ -38,7 +38,7 @@ module.exports = {
       options: {
         name: `blog`,
         path: `${__dirname}/content/blog`,
-        ignore: [`/^[^.]+$|.(?!(js)$)([^.]+$)/`]
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`, `**/*/*.json`]
       }
     },
     {
@@ -46,7 +46,7 @@ module.exports = {
       options: {
         name: `docs`,
         path: `${__dirname}/content/docs`,
-        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`, `**/*/*.json`]
       }
     },
     {
@@ -54,7 +54,7 @@ module.exports = {
       options: {
         name: `visualisation`,
         path: `${__dirname}/content/visualisation`,
-        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`]
+        ignore: [`/^[^.]+$|.(?!(js|exe)$)([^.]+$)/`, `**/*/*.json`]
       }
     },
     {
