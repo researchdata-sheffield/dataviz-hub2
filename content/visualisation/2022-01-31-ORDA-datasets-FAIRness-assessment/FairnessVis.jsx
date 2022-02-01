@@ -1,6 +1,7 @@
 import React from "react";
 import Summary from "./components/summary";
 import DatasetResult from "./components/datasetResult";
+import FairLogo from "./FAIR_comparison.png";
 
 /**
  * Visualisation component
@@ -41,6 +42,7 @@ const FairnessVis = () => {
       >
         Assessment date: 26/11/21
       </h4>
+      <img className="logo" src={FairLogo} style={{}} />
       <Summary />
       <DatasetResult />
     </div>

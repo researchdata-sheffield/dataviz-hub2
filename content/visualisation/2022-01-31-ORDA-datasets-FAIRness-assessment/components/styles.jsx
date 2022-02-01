@@ -20,6 +20,22 @@ export const SummaryWrapper = styled.div`
     color: #222;
     margin-bottom: 15px;
   }
+
+  @media (max-width: 768px) {
+    .logo {
+      width: 300px;
+      margin-bottom: 15px;
+    }
+  }
+
+  .logo {
+    width: 200px;
+    border-radius: 15px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 15px;
+  }
 `;
 
 export const SummaryBox = styled.div`
