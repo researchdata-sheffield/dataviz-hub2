@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdatavizhub_tuos=self.webpackChunkdatavizhub_tuos||[]).push([[4324],{18855:function(a,i,t){t.r(i);t(67294);var e=t(23431);i.default=function(){return(0,e.tZ)("div",{id:"visualisation",style:{maxWidth:"1180px",background:"linear-gradient(345deg, #c6e7ff 0%, #fff0a5 100%)",padding:"30px",boxShadow:"0 25px 50px -12px rgba(0, 0, 0, 0.25)",borderRadius:"15px",position:"relative"}})}}}]);
+//# sourceMappingURL=component---src-pages-workshop-visualisation-jsx-6231b31f9999fb8cb0aa.js.map
