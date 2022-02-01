@@ -1,0 +1,50 @@
+---
+type: visualisation
+author: ["Yu Liang Weng"]
+title: "Assess FAIRness of datasets in ORDA"
+thumbnail: thumb.png
+description: This visualisation present the FAIRness assessment results for datasets in Online Research Data (University's data repository). The assessment was made using the F-UJI web service.
+date: "2022-01-31"
+category: [Library]
+tag: [FAIRness, F-UJI]
+---
+
+import FairnessVis from "./FairnessVis";
+
+export const data = [
+  {
+    title: "Source",
+    content: `The assessment was made using the tool from: <i>Devaraju, A. and Huber, R. (2021). An automated solution for measuring the progress toward FAIR research data. Patterns, vol 2(11)</i>, <a href="https://doi.org/10.1016/j.patter.2021.100370">https://doi.org/10.1016/j.patter.2021.100370</a>. `
+  },
+  {
+    title: "Detail",
+    content: `Robert and Anusuriya has created a web service called <a href="https://github.com/pangaea-data-publisher/fuji">F-UJI</a> which can programatically assess FAIRness of research data objects based on metrics developed by the FAIRsFAIR project. This assessment was made on 26/11/21 by creating an local F-UJI web service instance and assessed each dataset in ORDA iteratively.`
+  },
+  {
+    title: "Code",
+    content: `The source code is hosted on website's GitHub repository, you can find it <a href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/content/visualisation/2022-01-31-ORDA-datasets-FAIRness-assessment/">here</a>.<br/>
+    The visualisation is created using the React library and some other packages. After setup a React website, install the following dependencies: <br/>
+    <code class="language-text">npm install styled-components @ant-design/charts @ant-design/plots react-tooltip</code>, or replace <code class="language-text">npm install</code> with <code class="language-text">yarn add</code> if you are using Yarn.<br/>
+    `
+  },
+  {
+    title: "License",
+    content: `Code and content for the visualisation are covered by a Creative Commons license (<a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>).`
+  }
+];
+
+<FairnessVis />
+
+<VisPagination mdx={props.mdx}>
+  <EmbedCode
+    url="https://dataviz.shef.ac.uk/visualisation/31/01/2022/ORDA-datasets-FAIRness-assessment"
+    type="iframe"
+    height="900px"
+  />
+</VisPagination>
+
+<VisDetail mdx={props.mdx} />
+
+<VisDiv>
+  <Tab data={data} />
+</VisDiv>
