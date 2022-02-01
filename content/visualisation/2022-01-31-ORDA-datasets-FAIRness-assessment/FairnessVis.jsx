@@ -2,14 +2,14 @@ import React from "react";
 import Summary from "./components/summary";
 import DatasetResult from "./components/datasetResult";
 import FairLogo from "./FAIR_comparison.png";
-
+import { VisWrap } from "./components/styles";
 /**
  * Visualisation component
  * @returns
  */
 const FairnessVis = () => {
   return (
-    <div
+    <VisWrap
       id="visualisation"
       style={{
         maxWidth: "1180px",
@@ -42,10 +42,10 @@ const FairnessVis = () => {
       >
         Assessment date: 26/11/21
       </h4>
-      <img className="logo" src={FairLogo} style={{}} />
+      <img className="fair-logo" src={FairLogo} />
       <Summary />
       <DatasetResult />
-    </div>
+    </VisWrap>
   );
 };
 

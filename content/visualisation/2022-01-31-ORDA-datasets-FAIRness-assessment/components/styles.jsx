@@ -3,11 +3,33 @@ import ReactTooltip from "react-tooltip";
 import React from "react";
 import PropTypes from "prop-types";
 
+export const VisWrap = styled.div`
+  .fair-logo {
+    width: 300px;
+    margin-bottom: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .fair-logo {
+      width: 200px;
+      border-radius: 15px;
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 15px;
+    }
+  }
+`;
+
 export const SummaryWrapper = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   margin: auto;
+
+  .summaryBox {
+    margin-top: 15px;
+  }
 
   .summaryBox:not(:last-child) {
     margin-right: 10px;
@@ -18,23 +40,7 @@ export const SummaryWrapper = styled.div`
     font-weight: 600;
     font-size: 1.1rem;
     color: #222;
-    margin-bottom: 15px;
-  }
-
-  @media (max-width: 768px) {
-    .logo {
-      width: 300px;
-      margin-bottom: 15px;
-    }
-  }
-
-  .logo {
-    width: 200px;
-    border-radius: 15px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 15px;
+    margin-bottom: 0px;
   }
 `;
 
