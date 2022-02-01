@@ -29,6 +29,9 @@ export const SummaryWrapper = styled.div`
 
   .summaryBox {
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
   }
 
   .summaryBox:not(:last-child) {

@@ -3,13 +3,10 @@ type: visualisation
 author: ["Yu Liang Weng"]
 title: "Assess FAIRness of datasets in ORDA"
 thumbnail: thumb.png
-description:
+description: This visualisation present the FAIRness assessment results for datasets in Online Research Data (University's data repository). The assessment was made using the F-UJI web service.
 date: "2022-01-31"
 category: [Library]
 tag: [FAIRness, F-UJI]
-rowSpan: 1
-columnSpan: 1
-published: false
 ---
 
 import FairnessVis from "./FairnessVis";
@@ -38,7 +35,13 @@ export const data = [
 
 <FairnessVis />
 
-<VisPagination mdx={props.mdx}>{/* <EmbedCode /> */}</VisPagination>
+<VisPagination mdx={props.mdx}>
+  <EmbedCode
+    url="https://dataviz.shef.ac.uk/visualisation/31/01/2022/ORDA-datasets-FAIRness-assessment"
+    type="iframe"
+    height="900px"
+  />
+</VisPagination>
 
 <VisDetail mdx={props.mdx} />
 

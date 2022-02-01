@@ -1,31 +1,36 @@
-import React, { useRef } from "react"
-import { graphql } from "gatsby"
-import PropTypes from "prop-types"
-import { loadMoreVisualisation } from "../../utils/hooks/loadMoreVisualisation"
-import VisLayout from "../../components/visualisation/visLayout"
+import React, { useRef } from "react";
+import { graphql } from "gatsby";
+import PropTypes from "prop-types";
+import { loadMoreVisualisation } from "../../utils/hooks/loadMoreVisualisation";
+import VisLayout from "../../components/visualisation/visLayout";
 
-const visTemplate = ({data: {allMdx}, pageContext }) => {
+const visTemplate = ({ data: { allMdx }, pageContext }) => {
   const nextPageRef = useRef();
   const currentMDXs = loadMoreVisualisation(allMdx.edges, nextPageRef);
 
-  return(
-    <VisLayout currentMDXs={currentMDXs} nextPageRef={nextPageRef} pageContext={pageContext} />
-  )
-}
+  return (
+    <VisLayout
+      currentMDXs={currentMDXs}
+      nextPageRef={nextPageRef}
+      pageContext={pageContext}
+    />
+  );
+};
 
-export default visTemplate
+export default visTemplate;
 
 visTemplate.propTypes = {
-  data: PropTypes.any,
-}
-
+  data: PropTypes.any
+};
 
 export const query = graphql`
-	query visualisationList {
-		allMdx(
-			filter: { frontmatter: { type: { eq: "visualisation" } } }
-			sort: { fields: [frontmatter___date], order: DESC }
-		) {
+  query visualisationList {
+    allMdx(
+      filter: {
+        frontmatter: { type: { eq: "visualisation" }, published: { ne: false } }
+      }
+      sort: { fields: [frontmatter___date], order: DESC }
+    ) {
       edges {
         node {
           id
@@ -39,6 +44,6 @@ export const query = graphql`
           }
         }
       }
-		}
-	}
-`
+    }
+  }
+`;
