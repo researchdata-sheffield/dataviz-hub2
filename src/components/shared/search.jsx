@@ -260,7 +260,8 @@ class Search extends Component {
       // return the corresponding nodes in the store
       return store
         .filter((node) => (results.includes(node.id) ? node : null))
-        .map((node) => node.node);
+        .map((node) => node.node)
+        .sort((a, b) => b.date.localeCompare(a.date));
     }
   }
 
