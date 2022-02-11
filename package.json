@@ -90,7 +90,7 @@
     "moment": "^2.29.1",
     "moment-timezone": "^0.5.34",
     "node-polyfill-webpack-plugin": "^1.1.4",
-    "node-sass": "^6.0.1",
+    "node-sass": "^7.0.0",
     "postcss": "^8.4.0",
     "prismjs": "^1.25.0",
     "prop-types": "^15.7.2",
