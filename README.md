@@ -31,7 +31,7 @@
   ·
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/issues">Submit an Issue</a>
   ·
-  <a href="https://dataviz.shef.ac.uk/blog">Blog</a>
+  <a href="https://dataviz.shef.ac.uk/changelog">Changlog</a>
   <br>
   <br>
 </p>
@@ -62,6 +62,8 @@
 ![Fig1](./src/images/readme/readme.png)
 
 <p align="center">
+  <a href="https://dataviz.shef.ac.uk/blog">📝 Blog</a>
+  ·
   <a href="https://dataviz.shef.ac.uk/#learning-path">📚 Learning path</a>
   ·
   <a href="https://dataviz.shef.ac.uk/visualisation">✨ Visualisation</a>
