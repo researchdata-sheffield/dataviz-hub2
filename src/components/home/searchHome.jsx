@@ -194,63 +194,19 @@ class SearchHome extends Component {
               Featured
             </div>
             <ul className="list-reset leading-normal text-xs 2xl:text-sm">
-              <li>
-                <a
-                  className={quickLink}
-                  onClick={() => {
-                    navigate("/search", { state: { searchWord: "Chart" } });
-                  }}
-                  href="#"
-                >
-                  Chart
-                </a>
-              </li>
-              <li>
-                <a
-                  className={quickLink}
-                  onClick={() => {
-                    navigate("/search", { state: { searchWord: "Colour" } });
-                  }}
-                  href="#"
-                >
-                  Colour
-                </a>
-              </li>
-              <li>
-                <a
-                  className={quickLink}
-                  onClick={() => {
-                    navigate("/search", {
-                      state: { searchWord: "Statistical Modeling" }
-                    });
-                  }}
-                  href="#"
-                >
-                  Statistical Modeling
-                </a>
-              </li>
-              <li>
-                <a
-                  className={quickLink}
-                  onClick={() => {
-                    navigate("/search", { state: { searchWord: "Docs" } });
-                  }}
-                  href="#"
-                >
-                  Docs
-                </a>
-              </li>
-              <li>
-                <a
-                  className={quickLink}
-                  onClick={() => {
-                    navigate("/search", { state: { searchWord: "R" } });
-                  }}
-                  href="#"
-                >
-                  R
-                </a>
-              </li>
+              {["Chart", "Colour", "Visualisation", "Docs", "R"].map((word) => (
+                <li key={`search-word-${word}`}>
+                  <a
+                    className={quickLink}
+                    onClick={() => {
+                      navigate("/search", { state: { searchWord: word } });
+                    }}
+                    href="#"
+                  >
+                    {word}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -276,7 +232,8 @@ class SearchHome extends Component {
       // return the corresponding nodes in the store
       let nodes = store
         .filter((node) => (results.includes(node.id) ? node : null))
-        .map((node) => node.node);
+        .map((node) => node.node)
+        .sort((a, b) => b.date.localeCompare(a.date));
 
       if (process.env.NODE_ENV === "production") {
         return nodes.filter((item) => item.published !== false);

@@ -330,6 +330,19 @@ module.exports = {
               depth: 1
             },
             store: true
+          },
+          {
+            name: "date",
+            indexed: true,
+            resolver: "frontmatter.date",
+            attributes: {
+              tokenize: "full",
+              encode: "extra",
+              threshold: 1,
+              resolution: 12,
+              depth: 1
+            },
+            store: true
           }
         ]
       }
