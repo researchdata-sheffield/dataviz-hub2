@@ -31,7 +31,7 @@
   ·
   <a href="https://github.com/researchdata-sheffield/dataviz-hub2/issues">Submit an Issue</a>
   ·
-  <a href="https://dataviz.shef.ac.uk/changelog">Changlog</a>
+  <a href="https://dataviz.shef.ac.uk/changelog">Changelog</a>
   <br>
   <br>
 </p>
