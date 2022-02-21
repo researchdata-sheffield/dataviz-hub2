@@ -66,7 +66,7 @@ Object {
             </a>
           </div>
           <div
-            class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
+            class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
             style="width: 33.333333%;"
           >
             <div
@@ -160,7 +160,7 @@ Object {
             </a>
           </div>
           <div
-            class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
+            class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
             style="width: 33.333333%;"
           >
             <div
@@ -241,7 +241,7 @@ Object {
           >
             Read more
             <svg
-              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+              class="inline-block group-hover:translate-x-1 transition duration-100"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -325,7 +325,7 @@ Object {
           </a>
         </div>
         <div
-          class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
+          class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
           style="width: 33.333333%;"
         >
           <div
@@ -419,7 +419,7 @@ Object {
           </a>
         </div>
         <div
-          class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 transform -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
+          class="bg-white hidden xl:block fixed left-0 top-0 opacity-0 group-focus:opacity-100 group-hover:opacity-100 -translate-x-110% group-hover:translate-x-0 transition duration-500 shadow-xl"
           style="width: 33.333333%;"
         >
           <div
@@ -500,7 +500,7 @@ Object {
         >
           Read more
           <svg
-            class="inline-block transform group-hover:translate-x-1 transition duration-100"
+            class="inline-block group-hover:translate-x-1 transition duration-100"
             fill="currentColor"
             height="1em"
             stroke="currentColor"

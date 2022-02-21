@@ -54,7 +54,7 @@ Object {
           class="flex flex-wrap text-black pt-24 pb-36 justify-center"
         >
           <div
-            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
             data-section="events"
           >
             <div
@@ -103,7 +103,7 @@ Object {
                 >
                   Upcoming events
                   <svg
-                    class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                    class="inline-block group-hover:translate-x-1 transition duration-100"
                     fill="currentColor"
                     height="1em"
                     stroke="currentColor"
@@ -125,7 +125,7 @@ Object {
             </div>
           </div>
           <div
-            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
             data-section="training"
           >
             <div
@@ -170,7 +170,7 @@ Object {
               >
                 Coming soon
                 <svg
-                  class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                  class="inline-block group-hover:translate-x-1 transition duration-100"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -191,7 +191,7 @@ Object {
             </div>
           </div>
           <div
-            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
             data-section="support"
           >
             <div
@@ -231,7 +231,7 @@ Object {
               >
                 I want support
                 <svg
-                  class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                  class="inline-block group-hover:translate-x-1 transition duration-100"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -393,7 +393,7 @@ Object {
               >
                 Go back
                 <svg
-                  class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                  class="inline-block group-hover:translate-x-1 transition duration-100"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -414,7 +414,7 @@ Object {
             </div>
           </div>
           <div
-            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+            class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
             data-section="collaboration"
           >
             <div
@@ -462,7 +462,7 @@ Object {
               >
                 Our repository
                 <svg
-                  class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                  class="inline-block group-hover:translate-x-1 transition duration-100"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -536,7 +536,7 @@ Object {
         class="flex flex-wrap text-black pt-24 pb-36 justify-center"
       >
         <div
-          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
           data-section="events"
         >
           <div
@@ -585,7 +585,7 @@ Object {
               >
                 Upcoming events
                 <svg
-                  class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                  class="inline-block group-hover:translate-x-1 transition duration-100"
                   fill="currentColor"
                   height="1em"
                   stroke="currentColor"
@@ -607,7 +607,7 @@ Object {
           </div>
         </div>
         <div
-          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
           data-section="training"
         >
           <div
@@ -652,7 +652,7 @@ Object {
             >
               Coming soon
               <svg
-                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                class="inline-block group-hover:translate-x-1 transition duration-100"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -673,7 +673,7 @@ Object {
           </div>
         </div>
         <div
-          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
           data-section="support"
         >
           <div
@@ -713,7 +713,7 @@ Object {
             >
               I want support
               <svg
-                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                class="inline-block group-hover:translate-x-1 transition duration-100"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -875,7 +875,7 @@ Object {
             >
               Go back
               <svg
-                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                class="inline-block group-hover:translate-x-1 transition duration-100"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"
@@ -896,7 +896,7 @@ Object {
           </div>
         </div>
         <div
-          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative"
+          class="w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative"
           data-section="collaboration"
         >
           <div
@@ -944,7 +944,7 @@ Object {
             >
               Our repository
               <svg
-                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                class="inline-block group-hover:translate-x-1 transition duration-100"
                 fill="currentColor"
                 height="1em"
                 stroke="currentColor"

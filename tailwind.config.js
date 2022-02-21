@@ -1,21 +1,25 @@
+const colors = require("tailwindcss/colors");
+
 // See https://tailwindcss.com/docs/configuration for details
 module.exports = {
-  mode: "jit",
   important: "#website", //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
-  purge: {
-    content: [
-      "./src/**/*.{jsx, js}",
-      "./content/**/*.jsx",
-      "./content/**/*.mdx",
-      "./content/**/*.js"
-    ]
-  },
+  content: [
+    "./src/**/*.{jsx, js}",
+    "./content/**/*.jsx",
+    "./content/**/*.mdx",
+    "./content/**/*.js"
+  ],
   theme: {
     extend: {
       screens: {
         "2lg": "1200px",
         xl: "1280px",
         "2xl": "1441px"
+      },
+      colors: {
+        green: colors.emerald,
+        yellow: colors.amber,
+        purple: colors.violet
       },
       backgroundColor: {
         footer: "#414042",
@@ -85,13 +89,9 @@ module.exports = {
         "60px": "60px"
       },
       margin: {
-        "-3": "-0.75rem",
-        "-9": "-2.25rem",
-        "-12": "-3rem",
-        "-14": "-3.5rem",
-        "-18": "-4.5rem",
-        "-36": "-9rem",
-        "-60": "-15rem",
+        3: "0.75rem",
+        9: "2.25rem",
+        12: "3rem",
         7: "1.75rem",
         14: "3.5rem",
         18: "4.5rem",
@@ -240,117 +240,5 @@ module.exports = {
         "-10": "-10"
       }
     }
-  },
-  variants: {
-    textColor: [
-      "responsive",
-      "focus",
-      "group-focus",
-      "group-hover",
-      "hover",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    backgroundColor: [
-      "responsive",
-      "focus",
-      "active",
-      "group-focus",
-      "group-hover",
-      "hover",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    borderColor: [
-      "responsive",
-      "group-hover",
-      "hover",
-      "focus",
-      "group-focus",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    borderWidth: [
-      "responsive",
-      "group-hover",
-      "hover",
-      "focus",
-      "group-focus",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    fontWeight: ["group-hover", "first", "last", "odd", "even"],
-    fontSize: [
-      "responsive",
-      "hover",
-      "focus",
-      "group-hover",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    display: ["responsive", "group-hover", "hover", "focus", "group-focus"],
-    opacity: ["responsive", "group-hover", "focus", "group-focus", "hover"],
-    zIndex: ["responsive", "hover", "focus", "group-focus", "group-hover"],
-    scale: [
-      "responsive",
-      "focus",
-      "active",
-      "group-focus",
-      "hover",
-      "group-hover",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    transitionDuration: ["responsive", "focus", "group-hover", "hover"],
-    transitionProperty: ["responsive", "focus", "group-hover", "hover"],
-    transitionTimingFunction: ["responsive", "hover", "focus", "group-hover"],
-    minHeight: [
-      "responsive",
-      "hover",
-      "focus",
-      "group-focus",
-      "group-hover",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    maxHeight: [
-      "responsive",
-      "hover",
-      "focus",
-      "group-focus",
-      "group-hover",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    greyScale: ["responsive", "hover", "focus", "group-focus", "group-hover"],
-    translate: [
-      "responsive",
-      "hover",
-      "focus",
-      "group-focus",
-      "active",
-      "group-hover",
-      "first",
-      "last",
-      "odd",
-      "even"
-    ],
-    visibility: ["responsive", "group-hover", "hover", "focus", "group-focus"]
   }
 };

@@ -97,7 +97,7 @@ Object {
                             >
                               Get started
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -175,7 +175,7 @@ Object {
                             >
                               Go to Lab
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -253,7 +253,7 @@ Object {
                             >
                               Learn workflows
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -337,7 +337,7 @@ Object {
                             >
                               Coming soon
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -415,7 +415,7 @@ Object {
                             >
                               Get started
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -493,7 +493,7 @@ Object {
                             >
                               Go to Lab
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -571,7 +571,7 @@ Object {
                             >
                               Learn workflows
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -655,7 +655,7 @@ Object {
                             >
                               Coming soon
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -733,7 +733,7 @@ Object {
                             >
                               Get started
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -811,7 +811,7 @@ Object {
                             >
                               Go to Lab
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -889,7 +889,7 @@ Object {
                             >
                               Learn workflows
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -973,7 +973,7 @@ Object {
                             >
                               Coming soon
                               <svg
-                                class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                                class="inline-block group-hover:translate-x-1 transition duration-100"
                                 fill="currentColor"
                                 height="1em"
                                 stroke="currentColor"
@@ -1101,7 +1101,7 @@ Object {
                           >
                             Get started
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1179,7 +1179,7 @@ Object {
                           >
                             Go to Lab
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1257,7 +1257,7 @@ Object {
                           >
                             Learn workflows
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1341,7 +1341,7 @@ Object {
                           >
                             Coming soon
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1419,7 +1419,7 @@ Object {
                           >
                             Get started
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1497,7 +1497,7 @@ Object {
                           >
                             Go to Lab
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1575,7 +1575,7 @@ Object {
                           >
                             Learn workflows
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1659,7 +1659,7 @@ Object {
                           >
                             Coming soon
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1737,7 +1737,7 @@ Object {
                           >
                             Get started
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1815,7 +1815,7 @@ Object {
                           >
                             Go to Lab
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1893,7 +1893,7 @@ Object {
                           >
                             Learn workflows
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"
@@ -1977,7 +1977,7 @@ Object {
                           >
                             Coming soon
                             <svg
-                              class="inline-block transform group-hover:translate-x-1 transition duration-100"
+                              class="inline-block group-hover:translate-x-1 transition duration-100"
                               fill="currentColor"
                               height="1em"
                               stroke="currentColor"

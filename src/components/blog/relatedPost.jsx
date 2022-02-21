@@ -81,7 +81,7 @@ const RelatedPost = (props) => {
                       borderRadius: "15px",
                       paddingBottom: "100%"
                     }}
-                    className="group text-left relative shadow-lg hover:shadow-2xl rounded-lg transform hover:scale-105 transition duration-500"
+                    className="group text-left relative shadow-lg hover:shadow-2xl rounded-lg hover:scale-105 transition duration-500"
                   ></div>
                 </Link>
               );
@@ -103,7 +103,7 @@ const RelatedPost = (props) => {
                     minHeight: "430px",
                     maxHeight: "500px"
                   }}
-                  className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg transform hover:scale-105 transition duration-500"
+                  className="group text-left relative shadow-c1 hover:shadow-c2 rounded-lg hover:scale-105 transition duration-500"
                 >
                   {/* content */}
                   <div
@@ -120,12 +120,12 @@ const RelatedPost = (props) => {
                       style={{ maxWidth: "97%" }}
                     >
                       <h1
-                        className="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transform transition duration-300 inline-block rounded-md"
+                        className="mb-3 group-hover:-translate-y-8 text-white bg-gray-900 group-hover:text-brand-blue group-hover:bg-black font-bold text-lg transition duration-300 inline-block rounded-md"
                         style={{ textShadow: "none", padding: ".15rem .65rem" }}
                       >
                         {node.frontmatter.type || "blog"}
                       </h1>
-                      <h1 className="group-hover:-translate-y-8 text-white font-extrabold leading-7 text-2xl transform transition duration-100">
+                      <h1 className="group-hover:-translate-y-8 text-white font-extrabold leading-7 text-2xl transition duration-100">
                         {title}
                       </h1>
                       {type == "blog" &&
@@ -162,10 +162,10 @@ const RelatedPost = (props) => {
                         {node.fields.readingTime.text}
                       </h1>
                       {/* content on hover */}
-                      <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold transform group-hover:-translate-y-12 transition duration-500">
+                      <p className="hidden group-hover:block my-4 text-xs text-gray-500 w-full font-semibold group-hover:-translate-y-12 transition duration-500">
                         {node.fields.slug.toUpperCase()}
                       </p>
-                      <h1 className="hidden group-hover:block text-white leading-6 text-lg py-3 transform group-hover:-translate-y-12 transition duration-500">
+                      <h1 className="hidden group-hover:block text-white leading-6 text-lg py-3 group-hover:-translate-y-12 transition duration-500">
                         {description}
                       </h1>
                     </div>

@@ -14,7 +14,7 @@ import { GrGroup, GrContactInfo } from "react-icons/gr";
 
 const HomeCommunity = () => {
   const cardClasses =
-    "w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 transform hover:-translate-y-3 transition duration-500 group relative";
+    "w-4/5 md:w-1/3 lg:w-1/5 p-3 2xl:p-12 mt-10 hover:-translate-y-3 transition duration-500 group relative";
   const cardTextClasses =
     "text-sm xl:text-base border-t-1 border-gray-300 py-3 text-gray-600 group-hover:text-gray-900";
   const buttonClasses = "rounded-md text-xs lg:text-sm mt-5 lg:mt-10";

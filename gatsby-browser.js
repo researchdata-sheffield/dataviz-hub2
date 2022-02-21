@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import "tailwindcss/dist/base.css";
+import "tailwindcss/base.css";
 import "gitalk/dist/gitalk.css";
 import "katex/dist/katex.min.css";
 import "slick-carousel/slick/slick.css";

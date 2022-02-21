@@ -80,7 +80,7 @@ export const IMG = styled(GatsbyImage)`
   transition: 0.5s ease;
   background-size: cover;
   background-position: center;
-  ${tw`transform group-hover:scale-110`}
+  ${tw`group-hover:scale-110`}
 `;
 
 export const IMG_DIV = styled.div`
@@ -195,7 +195,7 @@ export const AnimateButton = styled.button`
 
 export const ArrowButton = (props) => {
   const arrowStyle =
-    "inline-block transform group-hover:translate-x-1 transition duration-100";
+    "inline-block group-hover:translate-x-1 transition duration-100";
 
   switch (props.type) {
     case "GreyButton":

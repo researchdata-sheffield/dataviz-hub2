@@ -203,7 +203,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
       >
         <div
           id="dynamicBg"
-          className="absolute top-0 w-full left-0 h-full transform scale-110"
+          className="absolute top-0 w-full left-0 h-full scale-110"
           style={{
             backgroundImage: `linear-gradient(145deg, rgba(250, 139, 255, 0.97) 20%, rgba(43, 210, 255, 0.92) 48%, rgba(43, 255, 136, 0.2) 90%), url(${Bg})`,
             backgroundPosition: "center",

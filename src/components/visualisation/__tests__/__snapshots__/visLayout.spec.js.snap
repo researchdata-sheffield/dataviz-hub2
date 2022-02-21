@@ -18,7 +18,7 @@ Object {
             title="Tag Menu"
           >
             <svg
-              class="text-white text-xl transform group-hover:scale-125 transition duration-500"
+              class="text-white text-xl group-hover:scale-125 transition duration-500"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -38,7 +38,7 @@ Object {
             title="Footer"
           >
             <svg
-              class="text-white text-2xl transform group-hover:scale-110 transition duration-500"
+              class="text-white text-2xl group-hover:scale-110 transition duration-500"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -693,7 +693,7 @@ Object {
           title="Tag Menu"
         >
           <svg
-            class="text-white text-xl transform group-hover:scale-125 transition duration-500"
+            class="text-white text-xl group-hover:scale-125 transition duration-500"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -713,7 +713,7 @@ Object {
           title="Footer"
         >
           <svg
-            class="text-white text-2xl transform group-hover:scale-110 transition duration-500"
+            class="text-white text-2xl group-hover:scale-110 transition duration-500"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
