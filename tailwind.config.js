@@ -4,10 +4,10 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   important: "#website", //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
   content: [
-    "./src/**/*.{jsx, js}",
-    "./content/**/*.jsx",
-    "./content/**/*.mdx",
-    "./content/**/*.js"
+    "./src/components/**/*.{jsx, js}",
+    "./src/pages/**/*.{jsx, js}",
+    "./src/templates/**/*.{jsx, js}",
+    "./content/**/*.{jsx, js, mdx}"
   ],
   theme: {
     extend: {
@@ -187,11 +187,7 @@ module.exports = {
         74: "18.5rem",
         78: "19.5rem",
         82: "20.5rem",
-        86: "21.5rem",
-        full: "100%",
-        full2: "200%",
-        full3: "300%",
-        full4: "400%"
+        86: "21.5rem"
       },
       scale: {
         170: "1.7",
