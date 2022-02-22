@@ -5,7 +5,10 @@ description: An open-sourced Python library with graphical user interace. Built 
 date: 2022-02-18
 category: [Articles]
 tag: [Heterogeneous, Python]
+thumbnail: thumb.png
 ---
+
+import earthquakeMp4 from "./earthquake.mp4";
 
 _This is an event blog for the [GlueViz workshop](https://n8cir.org.uk/events/glueviz/) hosted by the N8 Centre of Excellence in Computationally Intensive Research (N8 CIR). You can access the training materials from [here](https://n8cir.org.uk/events/event-resource/glueviz/)._
 
@@ -21,8 +24,11 @@ Definition of _heterogeneous_ by the speaker **[Jonathan H Pickering](https://ep
 
 The creation of GlueViz dates back to 2012 with additional features added overtime. The data viewer tool is built on top of the [Matplotlib](https://matplotlib.org/) visualisation library and enables you to visualise the data using Histogram, Image, Scatter plots, Dendrogram, and Table. In the most recent version `v1.2` you will find a new data viewer which is called `3D Scatter` that can generate some very interesting three-dimensional plots. However, I&apos;m slightly disappointed about the number of plots that Glueviz provided. Nevertheless, if you want to run something programmatically then Glueviz does have some flexibility as it has an integrated Python IPython terminal so you could extend Glueviz further and write custom scripts, and create your own data viewer!
 
-![3D scatter plot of earthquake locations](images/earthquake.gif)  
-_Image 0. 3D scatter plot of earthquake locations_
+<video controls>
+  <source src={earthquakeMp4} type="video/mp4" />
+</video>{" "}
+
+_Video 1: 3D scatter plot of earthquake locations_
 
 We have talked about heterogeneous data, but GlueViz is also quite useful in exploring just a single dataset. If we were writing Python scripts for some simple data exploration, we would need to import some packages, read and perhaps transform the data file, then call the target method to draw a chart. In the GlueViz software, most stages of this process can be simplified through a graphical user interface and you can drag and drop the dataset to create charts supported by the software (although it is quite limited at this time).
 
@@ -46,7 +52,7 @@ The plot on the top right is a 2D image with three subsets, and the plot on the 
 
 ### Data Linking
 
-Sometimes we would like to link two different datasets together and we can do this by using the `link data` button in Glueviz to _glue_ the same attribute or attributes that describe the same quantity. In this way, selections will also be propagated between datasets.
+Sometimes we would like to link two different datasets together and we can do this by using the `Link data` button in Glueviz to _glue_ the same attribute or attributes that describe the same quantity. In this way, selections will also be propagated between datasets.
 
 ![Link data in Glueviz](images/link-data.png)  
 _Image 3. Link data in Glueviz_

@@ -450,6 +450,15 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: false,
+        openAnalyzer: false,
+        analyzerMode: "static",
+        reportFilename: "webpack-report.html"
+      }
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ]
