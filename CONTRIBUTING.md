@@ -6,7 +6,7 @@ This is your community around interactive data visualisation at TUoS and we woul
 - [Issues, Bugs, Feedback!](#issue)
 - [Commit Message Guidelines](#commit)
 - [Contribute to the core website](#website)
-- [Contribute blog posts](#blogpost)
+- [Contribute contents](#contents)
 
 ## <a name="coc"></a> Code of Conduct
 
@@ -98,9 +98,28 @@ This repository comes with the following workflows:
 - **Deploy** - Deploy a new production build to the live environment from the master branch
 - **Deploy-QA** - Deploy a new production build to the QA environment from the development branch
 
-## <a name="blogpost"></a> Contribute blog post
+## <a name="contents"></a> Contribute contents
 
-To contribute, please visit the [guide](https://dataviz.shef.ac.uk/docs/22/03/2020/contribute-blog-post) for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
+To contribute contents such as blog posts, visualisations, and documentation, please click the links in each section for more information, if you have any questions raise an [issue](https://github.com/researchdata-sheffield/dataviz-hub2/issues) under this repository.
+
+### Blog post
+
+- [Guide on contribute blog posts](https://dataviz.shef.ac.uk/docs/22/03/2020/contribute-blog-post)
+
+### Documentation
+
+Documentation includes contents like learning paths, or document that can't be classified as blog posts nor visualisations. Writing a document is exactly the same as to writing a blog post but there are some extra properties you can specify:
+
+- `learningPath` (type: `boolean`) - `true` or `false`, this should set to `true` if this is the first part of a learning path you are writing. The remaining part of this learning path should not specify this property otherwise it will also be included in the learning path section in the home page.
+- `learningPathBtn` (type: `string`) - This is the text to be shown on the button after hovering over the learning path on the home page
+- `learningPathTitle` (type: `string`) - the title of the learning path to be shown on the home page
+- `learningPathDescription` (type: `string`) - the description of the learning path to be shown on the home page
+
+All markdown files and resources for the document should be placed under the directory `/content/docs/yourFolderName`.
+
+### Visualisation
+
+- [How to contribute visualisation?](https://dataviz.shef.ac.uk/docs/21/07/2021/Contribute-visualisation)
 
 [coc]: https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/CODE-OF-CONDUCT.md
 [issue]: https://github.com/researchdata-sheffield/dataviz-hub2/issues

@@ -4,11 +4,12 @@ const colors = require("tailwindcss/colors");
 module.exports = {
   important: "#website", //Make tailwind have highest specificity over other styling plugin (e.g. styled components)
   content: [
-    "./src/components/**/*.{jsx, js}",
-    "./src/pages/**/*.{jsx, js}",
-    "./src/templates/**/*.{jsx, js}",
-    "./content/**/*.{jsx, js, mdx}"
+    "./src/components/**/*.{jsx,js}", //no spaces between commas
+    "./src/pages/**/*.{jsx,js}",
+    "./src/templates/**/*.{jsx,js}",
+    "./content/**/*.{jsx,mdx,md}"
   ],
+
   theme: {
     extend: {
       screens: {
