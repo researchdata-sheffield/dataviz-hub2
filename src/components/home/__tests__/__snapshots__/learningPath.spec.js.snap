@@ -25,7 +25,8 @@ Object {
           </p>
         </div>
         <div
-          class="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+          class="mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+          style="overflow: hidden; width: 100%; max-width: 1280px;"
         >
           <div
             class="slick-slider center slick-initialized"
@@ -1029,7 +1030,8 @@ Object {
         </p>
       </div>
       <div
-        class="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+        class="mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+        style="overflow: hidden; width: 100%; max-width: 1280px;"
       >
         <div
           class="slick-slider center slick-initialized"

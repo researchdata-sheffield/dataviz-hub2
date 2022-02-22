@@ -48,7 +48,7 @@ export const onInitialClientRender = () => {
 
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
-    `Dataviz.Shef has been updated. ` + `Reload to display the latest version?`
+    `Dataviz.Shef has been updated since your last visit, please refresh the page to get the latest version. You can also go to the /changelog page to see what's new!`
   );
   if (answer === true) {
     window.location.reload();

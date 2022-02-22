@@ -215,7 +215,7 @@ export const H6 = styled.h6`
 
 export const P = styled.p`
   display: block;
-  margin: 1.5rem 0;
+  margin: 1em 0;
   word-wrap: break-word;
   white-space: normal;
   line-height: 2rem;
@@ -228,7 +228,7 @@ export const Ol = styled.ol`
   margin-bottom: 1em;
   margin-left: 0;
   margin-right: 0;
-  padding-left: 40px;
+  padding-left: 30px;
   line-height: 2.25rem;
 
   .li {
@@ -247,7 +247,7 @@ export const Ul = styled.ul`
   margin-bottom: 1 em;
   margin-left: 0;
   margin-right: 0;
-  padding-left: 40px;
+  padding-left: 30px;
   line-height: 2.25rem;
 
   .li {
