@@ -12,15 +12,6 @@ class SearchHome extends Component {
     results: []
   };
 
-  // componentDidMount() {
-  //   // Set search result width = search box width
-  //   setTimeout(() => {
-  //     var box = document.querySelector('#searchBox');
-  //     var result = document.querySelector('#searchResult');
-  //     result.style['maxWidth'] = box.offsetWidth + 'px';
-  //   }, 2000);
-  // }
-
   render() {
     const quickLink = "text-gray-700 hover:underline";
 
@@ -124,6 +115,15 @@ class SearchHome extends Component {
               <li>
                 <Link
                   className={quickLink}
+                  to="/changelog"
+                  data-tip="#Changelog of Dataviz.Shef"
+                >
+                  What&apos;s new?
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className={quickLink}
                   to="/#explore"
                   data-tip="#What is Data visualisation"
                 >
@@ -157,15 +157,6 @@ class SearchHome extends Component {
                   Showcase
                 </Link>
               </li>
-              {/* <li>
-                <Link
-                  className={quickLink}
-                  to="/#collaboration"
-                  data-tip="#collaboration & partners"
-                >
-                  Collaboration
-                </Link>
-              </li> */}
               <li>
                 <Link className={quickLink} data-tip="#Blog" to="/blog">
                   Blog

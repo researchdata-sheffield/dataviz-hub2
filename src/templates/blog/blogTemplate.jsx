@@ -44,7 +44,7 @@ const blogTemplate = ({ data: { allMdx }, pageContext }) => {
       >
         <div
           id="blogBackground"
-          className="absolute top-0 left-0 w-full h-full transform scale-110"
+          className="absolute top-0 left-0 w-full h-full scale-110"
           style={{
             background: `linear-gradient(0deg, rgba(255, 255, 255, 0.70), rgba(255, 255, 255, 0.70)), url(${Bg})`,
             backgroundPosition: "center",

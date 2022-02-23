@@ -1,7 +1,9 @@
 describe("e2e | Visualisation item page", () => {
   beforeAll(async () => {
     page.setDefaultNavigationTimeout(30000);
-    await page.goto("visualisation/23/08/2021/Leading-risk-factors-for-DALYs");
+    await page.goto(
+      "visualisation/31/01/2022/ORDA-datasets-FAIRness-assessment"
+    );
     await page.waitForSelector("id=__loader", { state: "hidden" });
   });
 
@@ -22,7 +24,7 @@ describe("e2e | Visualisation item page", () => {
         "https://twitter.com/intent/tweet/?text="
       );
       expect(await twitterPage.url()).toContain(
-        "url=https%3A%2F%2Fdataviz.shef.ac.uk%2Fvisualisation%2F23%2F08%2F2021%2FLeading-risk-factors-for-DALYs"
+        "url=https%3A%2F%2Fdataviz.shef.ac.uk%2Fvisualisation"
       );
       await twitterPage.close();
 
@@ -33,15 +35,13 @@ describe("e2e | Visualisation item page", () => {
       await facebookPage.waitForLoadState();
       expect(await facebookPage.url()).toContain("https://www.facebook.com/");
       expect(await facebookPage.url()).toContain(
-        "Leading-risk-factors-for-DALYs"
+        "ORDA-datasets-FAIRness-assessment"
       );
       await facebookPage.close();
 
       expect(
         await page.getAttribute('[aria-label="Share on E-mail"]', "href")
-      ).toBe(
-        "mailto:?subject=Leading%20risk%20factors%20for%20disability-adjusted%20life%20years%20in%20different%20SDI%20countries%20-%20A%20simple%20visualisation%20that%20shows%20leading%20risk%20factors%20for%20number%20of%20years%20lost%20due%20to%20overall%20disease%20burden%2C%20in%20countries%20with%20different%20Socio-Demographic%20Indexes.%0A&body=https%3A%2F%2Fdataviz.shef.ac.uk%2Fvisualisation%2F23%2F08%2F2021%2FLeading-risk-factors-for-DALYs"
-      );
+      ).toContain("mailto:?subject=Assess");
 
       const [linkedinPage] = await Promise.all([
         context.waitForEvent("page"),
@@ -50,7 +50,7 @@ describe("e2e | Visualisation item page", () => {
       await linkedinPage.waitForLoadState();
       expect(await linkedinPage.url()).toContain("https://www.linkedin.com/");
       expect(await linkedinPage.url()).toContain(
-        "https%253A%252F%252Fdataviz%2Eshef%2Eac%2Euk%252Fvisualisation%252F23%252F08%252F2021%252FLeading-risk-factors-for-DALYs"
+        "https%253A%252F%252Fdataviz%2Eshef%2Eac%2Euk%252Fvisualisation"
       );
       await linkedinPage.close();
 
@@ -113,20 +113,25 @@ describe("e2e | Visualisation item page", () => {
 
   it.jestPlaywrightSkip(
     { browsers: ["webkit"] },
-    "can navigate between visualisations using Prev & Next buttons",
+    "can navigate between visualisations using the Next button",
     async () => {
       await Promise.all([
         page.waitForNavigation(), // The promise resolves after navigation has finished
         page.click('[aria-label="Next visualisation"]')
       ]);
       expect(await page.url()).not.toContain(
-        "/visualisation/23/08/2021/Leading-risk-factors-for-DALYs"
+        "ORDA-datasets-FAIRness-assessment"
       );
+    },
+    40000
+  );
 
+  it.jestPlaywrightSkip(
+    { browsers: ["webkit"] },
+    "can navigate between visualisations using the Prev button",
+    async () => {
       await Promise.all([page.click('[aria-label="Previous visualisation"]')]);
-      expect(await page.url()).toContain(
-        "/visualisation/23/08/2021/Leading-risk-factors-for-DALYs"
-      );
+      expect(await page.url()).toContain("ORDA-datasets-FAIRness-assessment");
     },
     40000
   );

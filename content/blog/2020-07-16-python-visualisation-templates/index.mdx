@@ -5,39 +5,69 @@ thumbnail: ./thumb.png
 description: "A selection of visualisation templates for you to build a visualisation more quickly."
 date: "2020-07-16"
 category: ["Articles"]
-tag: ['Template', 'Python']
+tag: ["Template", "Python"]
 template: "custom"
 featured: false
 ---
 
-<div className="shadow-xl flex justify-center items-center text-center" style={{background: 'linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)', width: "100%", flexDirection: "column", paddingTop: "37vh", paddingBottom: "37vh"}}>
+<div
+  className="shadow-xl flex justify-center items-center text-center"
+  style={{
+    background:
+      "linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)",
+    width: "100%",
+    flexDirection: "column",
+    paddingTop: "37vh",
+    paddingBottom: "37vh"
+  }}
+>
   <div>
-    <div className="text-5xl text-white font-bold">Visualisation templates for Python</div>
-    <div className="text-lg text-gray-100 mt-2">A selection of visualisation templates for you to build a visualisation more quickly.</div>
-    <div className="text-sm text-gray-100 mt-8">16th July 2020, Yu Liang Weng</div>
+    <div className="text-5xl text-white font-bold">
+      Visualisation templates for Python
+    </div>
+    <div className="text-lg text-gray-100 mt-2">
+      A selection of visualisation templates for you to build a visualisation
+      more quickly.
+    </div>
+    <div className="text-sm text-gray-100 mt-8">
+      16th July 2020, Yu Liang Weng
+    </div>
   </div>
 </div>
 
 <div className="flex flex-wrap container mx-auto mt-16 mb-36 px-3 lg:px-36">
-  This article is updated regularly to keep up with latest Python data visualisation libraries, there are 
-  only limited number of templates here, for more examples
-  please visit the following galleries/repositories:  <br />
+  This article is updated regularly to keep up with latest Python data
+  visualisation libraries, there are only limited number of templates here, for
+  more examples please visit the following galleries/repositories: <br />
   <ul>
-    <li><a href="https://matplotlib.org/gallery/index.html">matplotlib</a></li>
-    <li><a href="https://seaborn.pydata.org/examples/index.html">seaborn</a></li>
-    <li><a href="https://plotly.com/python/">plotly</a></li>
-    <li><a href="https://docs.bokeh.org/en/latest/docs/gallery.html">bokeh</a></li>
-    <li><a href="https://github.com/ResidentMario/missingno">missingno</a> - Missing data visualization module</li>
-    <li><a href="https://github.com/andrea-cuttone/geoplotlib">geoplotlib</a></li>
-    <li><a href="https://altair-viz.github.io/gallery/index.html">altair</a></li>
+    <li>
+      <a href="https://matplotlib.org/gallery/index.html">matplotlib</a>
+    </li>
+    <li>
+      <a href="https://seaborn.pydata.org/examples/index.html">seaborn</a>
+    </li>
+    <li>
+      <a href="https://plotly.com/python/">plotly</a>
+    </li>
+    <li>
+      <a href="https://docs.bokeh.org/en/latest/docs/gallery.html">bokeh</a>
+    </li>
+    <li>
+      <a href="https://github.com/ResidentMario/missingno">missingno</a> -
+      Missing data visualization module
+    </li>
+    <li>
+      <a href="https://github.com/andrea-cuttone/geoplotlib">geoplotlib</a>
+    </li>
+    <li>
+      <a href="https://altair-viz.github.io/gallery/index.html">altair</a>
+    </li>
   </ul>
 </div>
 
-
-
 <div className="flex flex-wrap container mx-auto shadow-lg my-16" style={{backgroundColor: '#f7f7f7'}}>
   <div className="md:w-2/5 relative px-3 bg-white group">
-    <img className="group-hover:scale-110 transform transition duration-500" src="./scatterPlot.png" alt="Scatter plot" />
+    <img className="group-hover:scale-110 transition duration-500" src="./scatterPlot.png" alt="Scatter plot" />
     <pltBtn className="absolute bottom-0 left-0 font-bold bg-gray-800 text-white w-full text-center py-3 group-hover:bg-transparent group-hover:text-transparent transition duration-500">
       Scatterplot
     </pltBtn>
@@ -60,7 +90,7 @@ sns.despine(f, left=True, bottom=True)
 
 # Plot
 sns.scatterplot(x="culmen_length_mm", y="culmen_depth_mm",
-                palette="ch:r=-.2,d=.3_r", hue="sex", 
+                palette="ch:r=-.2,d=.3_r", hue="sex",
                 size="species",
                 linewidth=0,
                 data=penguins, ax=ax)
@@ -71,7 +101,7 @@ sns.scatterplot(x="culmen_length_mm", y="culmen_depth_mm",
 
 <div className="flex flex-wrap container mx-auto shadow-lg my-16" style={{backgroundColor: '#f7f7f7'}}>
   <div className="md:w-2/5 relative px-3 bg-white group">
-    <img className="group-hover:scale-110 transform transition duration-500" src="./boxPlot.png" alt="box plot" />
+    <img className="group-hover:scale-110 transition duration-500" src="./boxPlot.png" alt="box plot" />
     <div className="absolute bottom-0 left-0 font-bold bg-gray-800 text-white w-full text-center py-3 group-hover:bg-transparent group-hover:text-transparent transition duration-500">
       Boxplot
     </div>
@@ -95,10 +125,9 @@ sns.despine(offset=10, trim=True)
   </div>
 </div>
 
-
 <div className="flex flex-wrap container mx-auto shadow-lg my-16" style={{backgroundColor: '#f7f7f7'}}>
   <div className="md:w-2/5 relative px-3 bg-white group">
-    <img className="group-hover:scale-110 transform transition duration-500" src="./barPlot.png" alt="bar plot" />
+    <img className="group-hover:scale-110 transition duration-500" src="./barPlot.png" alt="bar plot" />
     <div className="absolute bottom-0 left-0 font-bold bg-gray-800 text-white w-full text-center py-3 group-hover:bg-transparent group-hover:text-transparent transition duration-500">
       Barplot
     </div>
@@ -112,7 +141,7 @@ import seaborn as sns
 
 df_time = df.Time.value_counts()
 df_hour = df_time.groupby(df_time.index.hour).sum()
-sns.barplot(df_hour.index, df_hour.values, 
+sns.barplot(df_hour.index, df_hour.values,
             alpha=0.86, palette="husl") \
     .get_yaxis().set_major_formatter(
         matplotlib.ticker.FuncFormatter(
@@ -126,10 +155,9 @@ plt.ylabel("Number of Accidents")
   </div>
 </div>
 
-
 <div className="flex flex-wrap container mx-auto shadow-lg my-16" style={{backgroundColor: '#f7f7f7'}}>
   <div className="md:w-2/5 relative px-3 bg-white group">
-    <img className="group-hover:scale-110 transform transition duration-500" src="./hexbinPlot.png" alt="hexbin plot" />
+    <img className="group-hover:scale-110 transition duration-500" src="./hexbinPlot.png" alt="hexbin plot" />
     <div className="absolute bottom-0 left-0 font-bold bg-gray-800 text-white w-full text-center py-3 group-hover:bg-transparent group-hover:text-transparent transition duration-500">
       Hexbin plot
     </div>
@@ -144,17 +172,16 @@ sns.set(style="ticks")
 # Load the penguins dataset
 penguins = sns.load_dataset("penguins")
 
-sns.jointplot("flipper_length_mm", "culmen_length_mm", 
+sns.jointplot("flipper_length_mm", "culmen_length_mm",
               kind="hex", color="#00aeef", data=penguins)
 ```
 
   </div>
 </div>
 
-
 <div className="flex flex-wrap container mx-auto shadow-lg my-16" style={{backgroundColor: '#f7f7f7'}}>
   <div className="md:w-2/5 relative px-3 bg-white group">
-    <img className="group-hover:scale-110 transform transition duration-500" src="./distPlot.png" alt="distribution plot" />
+    <img className="group-hover:scale-110 transition duration-500" src="./distPlot.png" alt="distribution plot" />
     <div className="absolute bottom-0 left-0 font-bold bg-gray-800 text-white w-full text-center py-3 group-hover:bg-transparent group-hover:text-transparent transition duration-500">
       Distplot
     </div>
@@ -164,7 +191,7 @@ sns.jointplot("flipper_length_mm", "culmen_length_mm",
 ```python
 import seaborn as sns
 
-# import some data 
+# import some data
 
 fig, ax = plt.subplots(nrows=3, ncols=1, figsize=(7,16))
 sns.set_color_codes()
@@ -184,20 +211,18 @@ for i, col in enumerate(df["Year"].unique()):
     ax[i].title.set_text("Year:" + str(col))
     ax[i].text(70, 0.0076,'Highest value:'+ str( " {} on {} "
         .format( df_year_value, df_year_index )), fontsize=12)
-    
+
     ax[i].text(70, 0.0072,'Mean:'+ str( "{: .{}f}"
         .format( df_year.mean(), 1 )), fontsize=12)
-    
+
     ax[i].text(70, 0.0068,'Median:'+ str( "{: .{}f}"
         .format( df_year.median(), 1 )), fontsize=12)
-    
+
     ax[i].text(70, 0.0064,'SD:'+ str( "{: .{}f}"
         .format( df_year.std(), 1 )), fontsize=12)
-    
+
 plt.show()
 ```
 
   </div>
 </div>
-
-

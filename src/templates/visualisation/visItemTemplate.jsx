@@ -92,8 +92,8 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
             className="text-xl bg-gray-800 text-gray-100 hover:bg-gray-700 hover:text-brand-blue group overflow-hidden"
             title="Back to visualisation page"
           >
-            <AiOutlineRollback className="transform group-hover:translate-x-24" />
-            <AiOutlineHome className="absolute transform translate-x-24 group-hover:translate-x-0" />
+            <AiOutlineRollback className="group-hover:translate-x-24" />
+            <AiOutlineHome className="absolute translate-x-24 group-hover:translate-x-0" />
           </VisBackBtn>
         </div>
       )}

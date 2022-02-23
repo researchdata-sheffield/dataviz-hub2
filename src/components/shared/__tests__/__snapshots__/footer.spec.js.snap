@@ -226,6 +226,15 @@ Object {
             >
               <li>
                 <a
+                  class="text-gray-400 hover:text-brand-blue"
+                  gatsby="true"
+                  href="/changelog"
+                >
+                  Changelog
+                </a>
+              </li>
+              <li>
+                <a
                   class="undefined text-gray-400 hover:text-brand-blue"
                   href="https://github.com/researchdata-sheffield/dataviz-hub2/issues"
                   rel="noopener noreferrer"
@@ -246,11 +255,12 @@ Object {
               </li>
               <li>
                 <a
-                  class="text-gray-400 hover:text-brand-blue"
-                  gatsby="true"
-                  href="/docs/22/03/2020/contribute-blog-post"
+                  class="undefined text-gray-400 hover:text-brand-blue"
+                  href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/development/CONTRIBUTING.md"
+                  rel="noopener noreferrer"
+                  target="_blank"
                 >
-                  Contribute blog posts
+                  Contributing
                 </a>
               </li>
             </ul>
@@ -621,6 +631,15 @@ Object {
           >
             <li>
               <a
+                class="text-gray-400 hover:text-brand-blue"
+                gatsby="true"
+                href="/changelog"
+              >
+                Changelog
+              </a>
+            </li>
+            <li>
+              <a
                 class="undefined text-gray-400 hover:text-brand-blue"
                 href="https://github.com/researchdata-sheffield/dataviz-hub2/issues"
                 rel="noopener noreferrer"
@@ -641,11 +660,12 @@ Object {
             </li>
             <li>
               <a
-                class="text-gray-400 hover:text-brand-blue"
-                gatsby="true"
-                href="/docs/22/03/2020/contribute-blog-post"
+                class="undefined text-gray-400 hover:text-brand-blue"
+                href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/development/CONTRIBUTING.md"
+                rel="noopener noreferrer"
+                target="_blank"
               >
-                Contribute blog posts
+                Contributing
               </a>
             </li>
           </ul>

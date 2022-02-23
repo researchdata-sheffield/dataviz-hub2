@@ -11,31 +11,6 @@ const readingTime = require("reading-time");
 const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const fs = require("fs");
 
-exports.onPostBuild = async ({ graphql }) => {
-  const { data } = await graphql(`
-    {
-      pages: allSitePage {
-        nodes {
-          path
-        }
-      }
-    }
-  `);
-
-  const paths = data.pages.nodes.map((item) => item.path);
-
-  return fs.promises
-    .writeFile("./tests/websitePaths.json", JSON.stringify(paths))
-    .then(() =>
-      console.log(
-        "Success [/tests/websitePaths.json]: Paths stored in websitePaths.json."
-      )
-    )
-    .catch((error) =>
-      console.log("Failed [/tests/websitePaths.json]: ", error)
-    );
-};
-
 exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
   actions.setWebpackConfig({
     plugins: [new NodePolyfillPlugin()],
@@ -214,13 +189,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return obj.node.frontmatter.type === "visualisation";
   });
 
-  if (process.env.NODE_ENV == "development") {
-    visMdx = visMdx.slice(0, 10);
-    console.log(
-      `MESSAGE: Create only first ${visMdx.length} visualisations in development.`
-    );
-  }
-
   const visCategories = [];
   const visTags = [];
 
@@ -327,13 +295,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   let docsMdx = result.data.allMdx.edges.filter((obj) => {
     return obj.node.frontmatter.type === "docs";
   });
-
-  if (process.env.NODE_ENV == "development") {
-    docsMdx = docsMdx.slice(0, 10);
-    console.log(
-      `MESSAGE: Create only first ${docsMdx.length} docs in development.`
-    );
-  }
 
   docsMdx.forEach(({ node }, index, arr) => {
     const prevDoc = arr[index - 1];
@@ -520,4 +481,32 @@ exports.createSchemaCustomization = ({ actions }) => {
     }
   `;
   createTypes(typeDefs);
+};
+
+/**
+ * Post build tasks
+ */
+exports.onPostBuild = async ({ graphql }) => {
+  const { data } = await graphql(`
+    {
+      pages: allSitePage {
+        nodes {
+          path
+        }
+      }
+    }
+  `);
+
+  const paths = data.pages.nodes.map((item) => item.path);
+
+  return fs.promises
+    .writeFile("./tests/websitePaths.json", JSON.stringify(paths))
+    .then(() =>
+      console.log(
+        "Success [/tests/websitePaths.json]: Paths stored in websitePaths.json."
+      )
+    )
+    .catch((error) =>
+      console.log("Failed [/tests/websitePaths.json]: ", error)
+    );
 };

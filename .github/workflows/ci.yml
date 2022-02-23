@@ -36,7 +36,7 @@ jobs:
   CI-Build:
     needs: Check-Duplicate
     if: ${{ needs.Check-Duplicate.outputs.should_skip != 'true' }}
-    runs-on: windows-latest
+    runs-on: windows-2019
     defaults:
       run:
         shell: bash
@@ -90,7 +90,7 @@ jobs:
   Test:
     needs: Check-Duplicate
     if: ${{ needs.Check-Duplicate.outputs.should_skip != 'true' }}
-    runs-on: windows-latest
+    runs-on: windows-2019
     defaults:
       run:
         shell: bash

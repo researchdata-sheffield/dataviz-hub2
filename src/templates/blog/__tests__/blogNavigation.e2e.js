@@ -21,7 +21,7 @@ describe("e2e | Blog page", () => {
 
   it.jestPlaywrightSkip(
     { browsers: ["webkit"] },
-    "navigate to other posts through prev & next buttons",
+    "navigate to other posts through the next button",
     async () => {
       await page.goto("blog/18/02/2021/Useful-Resources-for-R", {
         waitUntil: "load"
@@ -34,12 +34,23 @@ describe("e2e | Blog page", () => {
       expect(page.url()).not.toContain(
         "/blog/18/02/2021/Useful-Resources-for-R"
       );
+    }
+  );
+  it.jestPlaywrightSkip(
+    { browsers: ["webkit"] },
+    "navigate to other posts through the prev button",
+    async () => {
+      await page.goto("blog/18/02/2021/Useful-Resources-for-R", {
+        waitUntil: "load"
+      });
+      await page.waitForSelector("id=__loader", { state: "hidden" });
 
-      await page.waitForSelector('[aria-label="Previous post"]');
       const prevPost = await page.$('[aria-label="Previous post"]');
 
-      await Promise.all([prevPost.click()]);
-      expect(page.url()).toContain("/blog/18/02/2021/Useful-Resources-for-R");
+      await Promise.all([page.waitForNavigation(), prevPost.click()]);
+      expect(page.url()).not.toContain(
+        "/blog/18/02/2021/Useful-Resources-for-R"
+      );
     }
   );
 });

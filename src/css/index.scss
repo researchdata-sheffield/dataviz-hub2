@@ -128,73 +128,71 @@ textarea::placeholder {
   }
 }
 
-@responsive {
-  @variants hover, group-hover {
-    .greyScale-0 {
-      filter: grayscale(0%);
-    }
-    .greyScale-20 {
-      filter: grayscale(20%);
-    }
-    .greyScale-40 {
-      filter: grayscale(40%);
-    }
-    .greyScale-60 {
-      filter: grayscale(60%);
-    }
-    .greyScale-80 {
-      filter: grayscale(80%);
-    }
-    .greyScale-100 {
-      filter: grayscale(100%);
-    }
+@layer utilities {
+  .greyScale-0 {
+    filter: grayscale(0%);
+  }
+  .greyScale-20 {
+    filter: grayscale(20%);
+  }
+  .greyScale-40 {
+    filter: grayscale(40%);
+  }
+  .greyScale-60 {
+    filter: grayscale(60%);
+  }
+  .greyScale-80 {
+    filter: grayscale(80%);
+  }
+  .greyScale-100 {
+    filter: grayscale(100%);
+  }
 
-    .blur-0 {
-      filter: blur(0px);
-    }
-    .blur-2 {
-      filter: blur(2px);
-    }
-    .blur-4 {
-      filter: blur(4px);
-    }
-    .blur-6 {
-      filter: blur(6px);
-    }
-    .blur-8 {
-      filter: blur(8px);
-    }
-    .blur-10 {
-      filter: blur(10px);
-    }
+  .blur-0 {
+    filter: blur(0px);
+  }
+  .blur-2 {
+    filter: blur(2px);
+  }
+  .blur-4 {
+    filter: blur(4px);
+  }
+  .blur-6 {
+    filter: blur(6px);
+  }
+  .blur-8 {
+    filter: blur(8px);
+  }
+  .blur-10 {
+    filter: blur(10px);
+  }
 
-    .brightness-0 {
-      filter: brightness(0%);
-    }
-    .brightness-20 {
-      filter: brightness(20%);
-    }
-    .brightness-40 {
-      filter: brightness(40%);
-    }
-    .brightness-60 {
-      filter: brightness(60%);
-    }
-    .brightness-80 {
-      filter: brightness(80%);
-    }
-    .brightness-90 {
-      filter: brightness(90%);
-    }
-    .brightness-100 {
-      filter: brightness(100%);
-    }
+  .brightness-0 {
+    filter: brightness(0%);
+  }
+  .brightness-20 {
+    filter: brightness(20%);
+  }
+  .brightness-40 {
+    filter: brightness(40%);
+  }
+  .brightness-60 {
+    filter: brightness(60%);
+  }
+  .brightness-80 {
+    filter: brightness(80%);
+  }
+  .brightness-90 {
+    filter: brightness(90%);
+  }
+  .brightness-100 {
+    filter: brightness(100%);
+  }
 
-    .textShadow-relatedPost {
-      text-shadow: 0px 1px 7px #757575;
-    }
-    .textShadow-none {
-      text-shadow: none;
-    }
+  .textShadow-relatedPost {
+    text-shadow: 0px 1px 7px #757575;
+  }
+  .textShadow-none {
+    text-shadow: none;
   }
 }

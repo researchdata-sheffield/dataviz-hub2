@@ -20,7 +20,7 @@ const featuredItem = ({ item }) => {
             <Fade key={node.id} duration={2000} fraction={0.3}>
               <div
                 key={node.id}
-                className="group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 flex-grow"
+                className="group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 grow"
                 tabIndex="0"
               >
                 <Link to={node.fields.slug}>

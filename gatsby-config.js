@@ -178,7 +178,6 @@ module.exports = {
       }
     },
     `gatsby-plugin-styled-components`,
-    `babel-plugin-styled-components`,
     `gatsby-plugin-emotion`,
     `gatsby-plugin-instagram-embed`,
     {
@@ -437,6 +436,29 @@ module.exports = {
     },
     /*********** END RSS Feed ************* */
     `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-purgecss`,
+      options: {
+        printRejected: true,
+        develop: true,
+        tailwind: true,
+        purgeOnly: [
+          "src/components/",
+          "src/pages/",
+          "src/templates/",
+          "content/"
+        ]
+      }
+    },
+    {
+      resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
+      options: {
+        devMode: false,
+        openAnalyzer: false,
+        analyzerMode: "static",
+        reportFilename: "webpack-report.html"
+      }
+    },
     `gatsby-plugin-sitemap`,
     `gatsby-plugin-meta-redirect` // make sure to put last in the array
   ]

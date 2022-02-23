@@ -152,7 +152,14 @@ const LearningPath = () => {
         </div>
       </Fade>
 
-      <div className="max-w-6xl 2xl:max-w-7xl mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden">
+      <div
+        className="mx-auto mt-4 mb-16 lg:mb-56 overflow-hidden"
+        style={{
+          overflow: "hidden",
+          width: "100%",
+          maxWidth: "1280px"
+        }}
+      >
         <Slider {...carouselSettings}>
           {data.allMdx &&
             data.allMdx.edges.map(({ node }, index, arr) => {
