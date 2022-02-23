@@ -87,6 +87,9 @@ describe("e2e | Blog page", () => {
     { browsers: ["webkit"] },
     "navigates to the second page on click the 'Older posts' button",
     async () => {
+      await page.goto("blog", { waitUntil: "load" });
+      await page.waitForSelector("id=__loader", { state: "hidden" });
+
       await Promise.all([
         page.waitForNavigation({ timeout: 30000 }),
         page.click('[aria-label="Older posts"]')
