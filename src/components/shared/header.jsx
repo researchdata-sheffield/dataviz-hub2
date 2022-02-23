@@ -205,7 +205,7 @@ const Header = () => {
         } transition duration-500 flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`}
         style={{ transition: "top 0.3s" }}
       >
-        <div className="flex items-center flex-shrink-0 mr-5">
+        <div className="flex items-center shrink-0 mr-5">
           <A
             className={`${
               isScroll ? "" : [currentPagePath === "/" ? "invisible" : ""]

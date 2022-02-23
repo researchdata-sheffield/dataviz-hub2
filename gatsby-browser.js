@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 
-import "tailwindcss/dist/base.css";
+import "tailwindcss/base.css";
 import "gitalk/dist/gitalk.css";
 import "katex/dist/katex.min.css";
 import "slick-carousel/slick/slick.css";
@@ -48,7 +48,7 @@ export const onInitialClientRender = () => {
 
 export const onServiceWorkerUpdateReady = () => {
   const answer = window.confirm(
-    `Dataviz.Shef has been updated. ` + `Reload to display the latest version?`
+    `Dataviz.Shef has been updated since your last visit, please refresh the page to get the latest version. You can also go to the /changelog page to see what's new!`
   );
   if (answer === true) {
     window.location.reload();

@@ -9,7 +9,7 @@ Object {
         class="w-full flex flex-wrap pb-6 bg-gray-900"
       >
         <div
-          class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 flex-grow"
+          class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 grow"
           tabindex="0"
         >
           <a
@@ -121,7 +121,7 @@ Object {
           </div>
         </div>
         <div
-          class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 flex-grow"
+          class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 grow"
           tabindex="0"
         >
           <a
@@ -230,7 +230,7 @@ Object {
       class="w-full flex flex-wrap pb-6 bg-gray-900"
     >
       <div
-        class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 flex-grow"
+        class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 grow"
         tabindex="0"
       >
         <a
@@ -342,7 +342,7 @@ Object {
         </div>
       </div>
       <div
-        class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 flex-grow"
+        class="react-reveal group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 grow"
         tabindex="0"
       >
         <a

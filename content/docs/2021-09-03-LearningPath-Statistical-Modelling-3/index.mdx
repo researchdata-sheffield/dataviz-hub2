@@ -13,20 +13,18 @@ Much of modern research is interested in the relationship between variables.
 A statistical model is a formal representation of this relationship that lets us test a relationship or predict the value of an unknown based on the value of a known quantity.
 
 The purpose for which the model is created and the data used will significantly influence how the model is interpreted.
-Experimental scientists may develop models that assume a causal relationship between the variables, for example, plant growth rate based on the application of fertilises.
+Experimental scientists may assume a causal relationship between the variables, for example, plant growth rate based on the application of fertilises.
 Others may be interested in the relationship between variables; how one may vary given changes in the other.
 For example, a meteorologist may predict how much precipitation a region may get based on atmospheric pressure.
 
 There are numerous statistical models; they can be as simple as fitting a regression line between two continuous variables or as complex as a weather forecast, which require a high specification supercomputer to run.
 In all cases, models attempt to capture changes in a variable based on known relationships.
 No model can do this perfectly. A statistical model is just an assumption.
-In all instances, there will be unexplainable variability or ‘noise’ accompanying our deterministic models.
+In all instances, there will be unexplainable variation or ‘noise’ accompanying our models.
 David Spiegelhalter describes models as maps of terrain.
 Not an image of the terrain.
 An important distinction, too often, models are not shown the proper amount of scepticism they deserve.
 With this in mind, let’s look at some powerful yet simple statistical models used frequently in modern research.
-
-
 
 ## Prerequisites
 
@@ -59,7 +57,7 @@ With this in mind, let’s look at some powerful yet simple statistical models u
 
 ## Regression
 
-Linear regression, as the name suggests, assumes a linear relationship between one or more independent variables and a single dependent variable. Linear regression is a useful and very popular statistical modelling tool.
+Linear models, as the name suggests, assumes a linear relationship between one or more independent variables and a single dependent variable. Linear regression is a useful and very popular statistical modelling tool.
 It lets us investigate relationships between variables and make predictions about the value of the dependent variable given the value of the independent variable or variables.
 The three most common linear regression models you’re likely to encounter are simple Linear regression, multiple linear regression, and Logistic regression.
 
@@ -67,7 +65,7 @@ The three most common linear regression models you’re likely to encounter are 
 
 Simple linear regression is used on occasions with just two continuous variables. A straight line is fit through the data, which represents the linear relationship between the two variables.
 There are a number of ways to estimate this linear relationship; by far, the most common method is ordinary least squares. This method seeks to fit a line that minimises the sum of the squared residuals.
-A residual is the vertical distance from the observed value to the regression line. That may sound a little alien; it’s easiest to understand when it’s presented graphically. So let’s jump into a case study.
+A residual is the vertical distance from the observed value to the regression line - or, specifically, a measure of the noise between the actual points and the line. That may sound a little alien; it’s easiest to understand when it’s presented graphically. So let’s jump into a case study.
 
 #### Example
 
@@ -106,6 +104,7 @@ The model lets us estimate the change in crown volume based on the change in bas
 
 When using regression techniques, it’s important to remember that there is are a list of assumptions that the mathematical model makes about our data.
 These assumptions are listed in a helpful handbook for commonly used statistical tests, which can be found [here.](https://www.statstutor.ac.uk/resources/uploaded/tutorsquickguidetostatistics.pdf)
+Each of the assumptions below are preceeded by the assumption that you have a good understanding of your independent variables.
 
 #### _Independent observations_
 
@@ -115,7 +114,9 @@ For example, data collected over time may have an underlying seasonal component.
 #### _Residuals should be normally distributed_
 
 The residuals of our model are normally distributed. This is an interesting one, often you will find it stated that the data should be normally distributed.
-This is not the case. It is the residuals of the model that should be normally distributed. The residual values are the observed values minus the predicted values from the model.
+This is not the case. A perfectly fitting linear model would still have variation in the dependent variable. This is the variation due to the model.
+When this variation from the model is removed, you are left with the residuals.
+It is the residuals of the model that should be normally distributed. The residual values are the observed values minus the predicted values from the model.
 There are a number of ways we might check for normality of our residuals, we can do this graphically, by plotting them as a histogram and looking for a characteristic bell shape (Figure 2), or by using a Q-Q (quantile - quantile) plot (Figure 3)
 
 ![Histogram](./Images/HistResid1.png)
@@ -135,11 +136,11 @@ We can check this by plotting our residuals against our predicted values. A stro
 
 #### _No outlying variables that have a substantial influence on the fit_
 
-Outlying variables can have a big impact on our linear models as whatever method we use to fit our line will try to reduce a very large residual error. So just a few outlying data points can have an unduly large influence on our regression line.
+Outlying variables can have a big impact on our linear models as whatever method we use to fit our line will try to reduce a very large residual error.
+So just a few outlying data points can have an unduly large influence on our regression line.
+These outliers are typically when the independent variable value is exceptionally large or small compared to other values in the data set.
 To check that there are no outlying variables that are influencing the position and slope of our least-squares line, we can look at Cook’s distance and leverage for each point.
 For more information about Cook's distance and levarge points I can reccomend [this article.](https://www.statology.org/how-to-identify-influential-data-points-using-cooks-distance/)
-
-
 
 ## Multiple linear regression
 
@@ -189,8 +190,6 @@ To use a categorical variable, we must recode them into dummy variables. I won�
 ### Model Assumptions
 
 All of the assumptions that are made for simple linear regression apply to multiple linear regression, with the additional assumption that none of the independent variables in the model should be highly related. This can be tested very easily by checking that none are highly correlated.
-
-
 
 ## Logistic regression
 

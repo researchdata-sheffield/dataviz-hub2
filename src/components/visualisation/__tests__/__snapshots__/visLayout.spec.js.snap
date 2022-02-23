@@ -18,7 +18,7 @@ Object {
             title="Tag Menu"
           >
             <svg
-              class="text-white text-xl transform group-hover:scale-125 transition duration-500"
+              class="text-white text-xl group-hover:scale-125 transition duration-500"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -38,7 +38,7 @@ Object {
             title="Footer"
           >
             <svg
-              class="text-white text-2xl transform group-hover:scale-110 transition duration-500"
+              class="text-white text-2xl group-hover:scale-110 transition duration-500"
               fill="currentColor"
               height="1em"
               stroke="currentColor"
@@ -366,6 +366,15 @@ Object {
                 >
                   <li>
                     <a
+                      class="text-gray-400 hover:text-brand-blue"
+                      gatsby="true"
+                      href="/changelog"
+                    >
+                      Changelog
+                    </a>
+                  </li>
+                  <li>
+                    <a
                       class="undefined text-gray-400 hover:text-brand-blue"
                       href="https://github.com/researchdata-sheffield/dataviz-hub2/issues"
                       rel="noopener noreferrer"
@@ -386,11 +395,12 @@ Object {
                   </li>
                   <li>
                     <a
-                      class="text-gray-400 hover:text-brand-blue"
-                      gatsby="true"
-                      href="/docs/22/03/2020/contribute-blog-post"
+                      class="undefined text-gray-400 hover:text-brand-blue"
+                      href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/development/CONTRIBUTING.md"
+                      rel="noopener noreferrer"
+                      target="_blank"
                     >
-                      Contribute blog posts
+                      Contributing
                     </a>
                   </li>
                 </ul>
@@ -693,7 +703,7 @@ Object {
           title="Tag Menu"
         >
           <svg
-            class="text-white text-xl transform group-hover:scale-125 transition duration-500"
+            class="text-white text-xl group-hover:scale-125 transition duration-500"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -713,7 +723,7 @@ Object {
           title="Footer"
         >
           <svg
-            class="text-white text-2xl transform group-hover:scale-110 transition duration-500"
+            class="text-white text-2xl group-hover:scale-110 transition duration-500"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -1041,6 +1051,15 @@ Object {
               >
                 <li>
                   <a
+                    class="text-gray-400 hover:text-brand-blue"
+                    gatsby="true"
+                    href="/changelog"
+                  >
+                    Changelog
+                  </a>
+                </li>
+                <li>
+                  <a
                     class="undefined text-gray-400 hover:text-brand-blue"
                     href="https://github.com/researchdata-sheffield/dataviz-hub2/issues"
                     rel="noopener noreferrer"
@@ -1061,11 +1080,12 @@ Object {
                 </li>
                 <li>
                   <a
-                    class="text-gray-400 hover:text-brand-blue"
-                    gatsby="true"
-                    href="/docs/22/03/2020/contribute-blog-post"
+                    class="undefined text-gray-400 hover:text-brand-blue"
+                    href="https://github.com/researchdata-sheffield/dataviz-hub2/blob/development/CONTRIBUTING.md"
+                    rel="noopener noreferrer"
+                    target="_blank"
                   >
-                    Contribute blog posts
+                    Contributing
                   </a>
                 </li>
               </ul>

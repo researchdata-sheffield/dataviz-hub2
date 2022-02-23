@@ -37,7 +37,7 @@ const events = ({ data: { eventBrite, pastEvent, pastEventBlog } }) => {
         ]}
       />
       <div
-        className="flex flex-wrap flex-grow-0 items-center justify-center min-h-100"
+        className="flex flex-wrap grow-0 items-center justify-center min-h-100"
         style={{
           backgroundColor: "rgb(255,121,180)",
           backgroundImage:

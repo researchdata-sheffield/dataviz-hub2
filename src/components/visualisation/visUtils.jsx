@@ -21,7 +21,7 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
   const [filterTag, setfilterTag] = useState(tags);
   const [footer, setFooter] = useState(false);
   const footerIconStyle =
-    "text-white text-2xl transform group-hover:scale-110 transition duration-500";
+    "text-white text-2xl group-hover:scale-110 transition duration-500";
 
   trackScrollPosition("vis-tag-button");
   trackScrollPosition("vis-footer-button");
@@ -51,7 +51,7 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
         className="group"
         title="Tag Menu"
       >
-        <FaTags className="text-white text-xl transform group-hover:scale-125 transition duration-500" />
+        <FaTags className="text-white text-xl group-hover:scale-125 transition duration-500" />
       </VisTagMenuBtn>
 
       <VisFooterBtn

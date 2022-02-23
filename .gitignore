@@ -86,3 +86,6 @@ yarn-error.log
 
 # nohup
 nohup.*
+
+# Webpack bundle analyser
+webpack-report.html
