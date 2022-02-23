@@ -31,7 +31,7 @@ To help us keep a consistent and readable commit messages, we use the specificat
 - `test` - Add, remove, and refactor tests
 - `build` - Changes that affecting the building stage and dependencies
 - `ci` - Continuous Integration related files and scripts
-- `chore` - Changes that does not go into the production environment
+- `chore` - Changes that does not go into the production environment (live website), or it is just some housekeeping tasks
 
 Although the scope is optional but it is recommended to include the scope so that the commit message will be more clear to other contributors. The CI pipeline will pick up and analyse new commits made to the `master branch` and automatically make new releases based on the type (and scope) of these commits. The version update strategy for each type can be found in the file [semantic-release-rules.js](https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/semantic-release-rules.js).
 

@@ -83,15 +83,6 @@ describe("e2e | Blog page", () => {
     expect(page.url()).toContain("/blog/tag/python");
   });
 
-  it("scroll to the blog posts on click 'Start Reading'", async () => {
-    await page.goto("blog", { waitUntil: "load" });
-    await page.click('a[href="/blog#read"]');
-    await page.waitForFunction(() => window.scrollY >= window.innerHeight);
-    const windowHeight = await page.evaluate(() => window.innerHeight);
-    const currentY = await page.evaluate(() => window.scrollY);
-    expect(currentY).toBeGreaterThanOrEqual(windowHeight);
-  });
-
   it.jestPlaywrightSkip(
     { browsers: ["webkit"] },
     "navigates to the second page on click the 'Older posts' button",
