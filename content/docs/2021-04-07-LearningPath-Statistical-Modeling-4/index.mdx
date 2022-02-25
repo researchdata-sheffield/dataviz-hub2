@@ -21,18 +21,18 @@ _The process of hypothesis testing - by Dr. Jean Russell_
 
 Commonly used hypothesis test methods are T-test, F-test, and Pearson's Chi-squared Test. These tests are called paramateric tests because the hypothesised model parameterise the underlying distributions differently (for example, Gaussian/normal distribution has two parameters - mean and standard deviation).
 
-The basic idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. The testing starts with a null hypothesis (usually denoted as $H_{0}$). the null hypothesis is always the hypothesis that assumes the simpler parameterisation of the model, or the hypothesis we believe to be false. The hypothesis $H_{0}$ should be rejected if the observed sample is classified as a rare event, otherwise the hypothesis should be accepted. In all cases, there will also be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$. A clear understanding or definition of your null hypothesis and alternative hypothesis will help you interpret the significant result.
+The basic idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. The testing starts with a null hypothesis (usually denoted as $H_{0}$). the null hypothesis is always the hypothesis that assumes the simpler parameterisation of the model, or the hypothesis we believe to be false. The hypothesis $H_{0}$ should be rejected if the observed sample is classified as a rare event, otherwise the hypothesis should be accepted. In all cases, there will also be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$. A clear understanding or definition of your null hypothesis and alternative hypothesis will help you interpret the significance of the result.
 
-Performing a test usually consists the following steps:
+Extending from the diagram shown on above, there are a number of important steps throughout the testing:
 
-1. Set the test hypothesis (or null hypothesis) and denote it as $H_{0}$, so the alternative hypothesis will be $H_{1}$.
-2. Set the test level (or the significance level) $\alpha$, usually taken as 0.05 or 0.01. The value represents the probability of the null hypothesis being incorrectly rejected, given that the null hypothesis is true (or simply, the probability of the observed sample being a rare event).
-3. Choose a suitable statistical test.
-4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$.
+1. Specify the null hypothesis and the alternative hypothesis clearly in English. Think about what you want to be true and what you consider to be false. What difference would there be in the numbers if the alternative hypothesis was true rather than false?
+2. Choose a suitable statistical test. This depends on hypotheses you have established previously. A clear hypothesis should give you a clue on what test to use. For example, t-test can be used to test the difference between two means, or test whether a regression coefficient is to be included in the model. Use t-test as a first go if you are not sure.
+3. Check if distributional assumptions for the test are satisfied on the data. Generally, you should be fine with tests assuming normality as long as standard deviations do not vary hugely with the group, but if any of the distributional assumptions are violated then you need to reconsider a different test. For example, use a non-parametric test, or maybe transform the dependent (outcome) variable. Beware that what you are testing will be reformulated by doing this.
+4. If all distributional assumptions are met then you can start to look at the p-value for the test and the coefficients in the model e.g., the different means in ANOVA or the regression coefficients.
 
-In part 4 we will be looking at common hypothesis test method and their application in linear models. You can download the R script file [here](./script.R).
+In part 4 we will be looking at common hypothesis test methods and their application in linear models.
 
-We have also prepared a flowchart helps you to choose a statistical test for comparing two variables. Please click the button below to start.
+We have also prepared a flowchart to help you to choose a statistical test for comparing two variables. Click the button below to open the flowchart.
 
 <ReactFlowProvider>
   <FlowChart />
@@ -63,64 +63,87 @@ We have also prepared a flowchart helps you to choose a statistical test for com
     </span>
     <p className="mb-0 mt-2">None</p>
   </div>
-</div>{" "}
+</div>
 
-<br />{" "}
+<br />
 
 ## Formulating the Hypotheses for testing
 
-## Z-test
+There is never one hypothesis in statistics; they always come in pairs: a null and an alternative. When you formulate a hypothesis you normally actually start with the **alternative hypothesis**. The way to find these alternative hypotheses is to look at what sort of evidence you would see as bolstering the idea that you wish to explore. For instance:
 
-A Z-test is a hypothesis test based on normal distribution that investigate the significance difference between two group mean with the following assumptions:
+- If we were exploring whether Sheffield or Hallam students were more likely to attend events during Varsity, we would be interested in the difference in number attending. Specifically we would be interested if there was a clear majority of students from either university.
+- If we were interested in whether a new treatment for Covid worked then we would be interested in whether it performed better than the current one.
+- If we were exploring what type of hospitality venues did better in the city centre then we may be interested in a difference in the difference in revenue. Then we would be interested in differences between revenues at different venues.
 
-- large sample size (over 30)
-- samples are independent
-- populations follows normal distribution
-- variances are known
+The **null hypothesis** is however, the hypothesis that says what happens if the data is totally boring. It is usually more precise than the alternative. So the null hypotheses are for those scenarios above:
 
-There is no built-in function in R for calculating z-test, however, you can work it out using means and variances for each sample group and refer to the standard normal table.
+- There is no difference between the number of students attending from Sheffield and those from Hallam.
+- The new treatment for Covid performs the same as the previous treatment.
+- There is no difference between types of venue in the revenue they bring in.
 
-## T-test
+The nulls are simple and exact, they also usually assume what we are interested in exploring does not exist. It is therefore possible to have sets of hypotheses that are more than pairs. This typically happens in linear regression and multifactor ANOVA.
+
+## How Hypotheses affect the Study Design
+
+There are a number of ways that having specified your hypotheses that will help you design your study. You need to make sure that you have robust ways of measuring your outcome variables. These may be using a tried and tested method of gathering data or developing a new one. You also need to measure or encode correctly into the data any comparison that is important to your hypotheses. Basically if you are wanting to measure the difference between two or more groups then you must collect data from every group. I If you have not recorded the correct data either missed a group or a variable then no matter how fancy your experiment is it will not answer those questions.
+
+Further, if you have some idea of what sort of difference is of interest then it is possible to calculate a sample size. You can get an idea of what might be of interest from previous studies. This is useful because often the process carried out to gather the data is the most expensive part of the study and quite often increases per subject. You need to gather as few as possible without risking missing an important result because you have gathered too few. If you collect too few then you may need to consider sequential designs which means if the result is not significant then you carry on collect more results. This is beyond the scope of this learning path and if you interested more about sequential designs, there are plenty of resources online.
+
+Most studies have several hypotheses although some have a principle pair of hypotheses that will determine whether a study is a success or a failure. Technically, with each test you wish to carry out means that you should increase the sample size. There is no standard adjustment for this. The graph below assumes that you are making a Bonferroni adjustment for multiple tests and gives an idea how much the sample size might need to grow by if you are carrying out more than one test.
+
+![Sample size required for one or more tests](study-design.png)  
+Figure. _Sample size required for one or more tests._
+
+## Two Group T-test
 
 The T-test is a hypothesis test that investigate the significance difference between two groups with the following assumptions:
 
-- samples are independent
-- populations follows normal distribution
-- data are categorical or continuous
-- homogeneity of variance (meaning variances are equal among independent samples), depending on what t-test you use. Though the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this. Whereas the Levene's test and Student's t-test requires this assumption to be true
-- sample size is not large
+- Samples are independent;
+- Coefficients follows normal distribution;
+- depndent (outcome) variable is continuous, scalar, or discrete;
+- homogeneity of variance (meaning variances are equal among independent samples), depending on what t-test you use. Though the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this. Whereas the Levene's test and Student's t-test required this assumption to be true. There is a form of the Student&apos;s T-test that adjusts the degree of freedom (d.f., i.e. the number of parameters we can vary freely) to overcome this problem.
+- sample size is not large.
 
-The test calculates the t-value according to [Student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) and if the t-value close to zero then it suggests there isn't a significant difference between two groups. There are three types of T-test:
+The test calculates the t-value according to [Student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) and if the t-value close to zero then it suggests the difference is insignificant. There are many types of T-test but we listed the most common three tests:
 
-1. **One-sample t-test** - use for comparing a single group against a target value.
-2. **Two-sample t-test** - use for comparing groups sampled from two different population
-3. **Paired t-test** - comparing groups sampled from the same population
+1. **One-sample t-test** - use for comparing a single simple against a target value.
+2. **Two-sample t-test** - use for comparing groups sampled from two different population.
+3. **Paired t-test** - comparing groups sampled from the same population.
 
-In addition to three types of T-test we have mentioned, you might also need to consider whether to use a **one-tailed test** or a **two-tailed test**. The t-distribution looks similar to the normal distribution and it has two tails, and in most of the t-test we use two-tailed tests by default and test both the negative and positive differences. For example, say we want to test whether the population mean equals to 30, in this case a two-tailed test is used. If we were interested in the case when the population mean greater than or equal to 30, then a one-tailed test would be more suitable as we are not interested in the other side (the population mean is less than 30).
+The t-distribution looks similar to the normal distribution and it has two tails, and in most of the t-tests we use the two-tailed test by default and test both the negative and positive differences. You may wonder the difference between the t-distribution and the normal distribution, and this difference is illustrated by the following image:
 
-Example R code:
+<a
+  title="Skbkekas, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wikimedia Commons"
+  href="https://upload.wikimedia.org/wikipedia/commons/4/41/Student_t_pdf.svg"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <img
+    width="400"
+    alt="Student t pdf"
+    src="https://upload.wikimedia.org/wikipedia/commons/4/41/Student_t_pdf.svg"
+  />
+</a>
+<i>
+  Figure. Comparison between the Normal distribution (v=+infinity) and
+  t-distributions. Source: Wikimedia Commons
+</i>
 
-```r
-# Two-tailed t-test (unpaired)
-t.test(
-  treatment1,
-  treatment2,
-  alternative = "two.sided",
-  var.equal = FALSE
-)
-```
+`v` is the degrees of freedom (for the Two-group T-test this number is two less than the number of samples) and when the d.f. of the t-distribution approaches $+ \infty$, the t-distribution is effectively the same as the standard normal distribution. In general, the t-distribution has less height than the normal distribution with larger tails, which means the likelihood of values distributed away from the mean is higher. The t-test can be used for hypotheses such as are boys better readers than girls, are random selected parts from a factory equally good as the required specification, and whether the effect of the two drugs on the treatment of hypertension are equal. For comparison between groups, you need to calculate the mean and variance for each group.
+
+The following figure is an example of the Welch two sample t-test (performed using R) which is using an adjust degrees of freedom method and there is no standard error for each mean. In here we are testing whether the effect of two treatments are equal - as suggested by the alternative hypothesis. Since the p-value is less than 0.05, we can safely reject the null hypothesis and conclude that the true difference between the two treatment is not equal to zero, i.e. the effect of two treatments are not equal.
 
 ![Two-tailed t-test (unpaired)](1t-test.png)
 
-[Click here](https://www.sthda.com/english/wiki/t-test-formula) to see t-test formula.
+[Click here](https://www.sthda.com/english/wiki/t-test-formula) to see t-test formulas.
 
-## F-test
+## Oneway ANOVA F-test
 
-F-test is a test that the statistical value (or f value) obeys the [F-distribution](https://en.wikipedia.org/wiki/F-distribution) (this is the sampling distribution for ratio of variances - $\frac{\textrm{between-group variance}}{\textrm{within-group variance}}$) under the null hypothesis $H_{0}$. It is usually used to analyse a statistical model that uses more than one parameter to determine whether all or part of the parameters in the model are suitable for estimating the population. In short, the F-test compares nested models fit to the same dataset by comparing variances of models. The assumptions for data will be similar to the one in T-test:
+F distribution - the sampling distribution for ratio of variances - $\frac{\textrm{between-group variance}}{\textrm{within-group variance}}$, was developed by R.A. Fisher who also developed the F-test. However, the F-distribution may be used to test other things such as in Levene&apos;s F-test which tests equality of variance between two groups. F-test also commonly used for assess whether a variable is good for a statistical model or not by comparing variances of models with and without the variable. The assumptions for F-test:
 
-- data are normally distributed
-- data are independent from each other
-- sum of squares follows $\chi^{2}$ distributions
+- Coefficients follows normal distribution;
+- Samples are independent or dependent depending on the f-test you are using;
+- Sum of squares follows $\chi^{2}$ distributions.
 
 Example R code:
 
