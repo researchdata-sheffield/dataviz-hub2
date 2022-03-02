@@ -92,7 +92,7 @@ Further, if you have some idea of what sort of difference is of interest then it
 Most studies have several hypotheses although some have a principle pair of hypotheses that will determine whether a study is a success or a failure. Technically, with each test you wish to carry out means that you should increase the sample size. There is no standard adjustment for this. The graph below assumes that you are making a Bonferroni adjustment for multiple tests and gives an idea how much the sample size might need to grow by if you are carrying out more than one test.
 
 ![Sample size required for one or more tests](study-design.png)  
-Figure. _Sample size required for one or more tests._
+Figure 1. _Sample size required for one or more tests._
 
 ## Two Group T-test
 
@@ -145,26 +145,26 @@ F distribution - the sampling distribution for ratio of variances - $\frac{\text
 - Samples are independent or dependent depending on the f-test you are using;
 - Sum of squares follows $\chi^{2}$ distributions.
 
-Example R code:
+![F-test](2f-test.png)  
+_Figure 2. An example of F-test for finding relationship between drinking and smoking._
 
-```r
-var.test(
-  age20,
-  age25,
-  ratio = 1,
-  conf.level = 0.95,
-  alternative = "two.sided"
-)
-```
+In the _Figure 2_ we uses the F-test to find out whether drinking and smoking go together, the data (beware that this data is mocked) is a 2x2 table indicating whether the individual drink and/or smoke:
 
-![F-test](2f-test.png)
+|             | Smoker | Non-smoker |
+| ----------- | ------ | ---------- |
+| Drinker     | 43     | 7          |
+| Non-Drinker | 11     | 39         |
+
+For example, the value on the first row and the first column means 43 people who is a drinker but also a smoker.
+
+Since the p-value is significant less than 0.05, this tells us that the drinking and smoking are closely related.
 
 There are other tests we can also use to test for homogeneity of variance:
 
-- Brown-Forsythe - use median instead of the mean, good for non-normality data
-- Bartlett (least robust, use to test equal variances among samples)
-- Levene - good for symmetric, moderate-tailed distributions. An alternative for Bartlett
-- Chi-Square - use for comparing the variance of a population against a target value
+- Brown-Forsythe - Use median instead of the mean, good for non-normality data.
+- Bartlett - Least robust, use to test equal variances among samples.
+- Levene - Good for symmetric, moderate-tailed distributions. Only appropriate for T-Test as it compares two variances i.e. one from each group.
+- Chi-Square - Use for comparing the variance of a population against a target value.
 
 ## Linear models
 
