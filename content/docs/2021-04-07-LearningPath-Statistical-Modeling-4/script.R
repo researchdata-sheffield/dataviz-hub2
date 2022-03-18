@@ -50,8 +50,8 @@ t.test(
 ######### F-test #########
 ##########################
 df_ftest <- data.frame(
-  "Smoker" = c(36, 14), 
-  "Non-smoker" = c(28, 22), 
+  "Smoker" = c(43, 7), 
+  "Non-smoker" = c(11, 39), 
   row.names = c("Drinker", "Non-drinker")
   )
 
