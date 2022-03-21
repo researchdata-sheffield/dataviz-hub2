@@ -12,30 +12,37 @@ const NodePolyfillPlugin = require("node-polyfill-webpack-plugin");
 const fs = require("fs");
 
 exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
-  actions.setWebpackConfig({
+  const webpackConfig = {
     plugins: [new NodePolyfillPlugin()],
     resolve: {
       fallback: {
         fs: false
       }
+    },
+    module: {
+      rules: [
+        {
+          /* prevent error from canvas used by trianglify:
+           * error Generating SSR bundle failed Unexpected character '' (1:0) & (1:2)
+           */
+          test: /canvas/,
+          use: loaders.null()
+        }
+      ]
     }
-  });
+  };
 
-  if (stage === "build-html" || stage === "develop-html") {
-    actions.setWebpackConfig({
-      module: {
-        rules: [
-          {
-            /* prevent error from canvas used by trianglify:
-             * error Generating SSR bundle failed Unexpected character '' (1:0)
-             */
-            test: /canvas/,
-            use: loaders.null()
-          }
-        ]
+  if (stage === "build-html") {
+    webpackConfig.module.rules.push(
+      // WebpackError: ReferenceError: ResizeObserver is not defined
+      {
+        test: /@nivo\/core/,
+        use: loaders.null()
       }
-    });
+    );
   }
+
+  actions.setWebpackConfig(webpackConfig);
 };
 
 /**

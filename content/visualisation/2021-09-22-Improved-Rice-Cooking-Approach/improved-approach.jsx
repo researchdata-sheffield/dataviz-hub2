@@ -1,5 +1,8 @@
 import React from "react";
-import { ResponsiveBar } from "@nivo/bar";
+import loadable from "@loadable/component";
+const ResponsiveBar = loadable(() => import("@nivo/bar"), {
+  resolveComponent: (components) => components.ResponsiveBar
+});
 import Chicken from "./images/chicken.svg";
 import Rice from "./images/grain-rice.svg";
 import Mushroom from "./images/mushroom.svg";

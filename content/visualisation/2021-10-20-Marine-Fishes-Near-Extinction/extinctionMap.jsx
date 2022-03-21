@@ -1,5 +1,8 @@
 import React from "react";
-import { ResponsiveChoroplethCanvas } from "@nivo/geo";
+import loadable from "@loadable/component";
+const ResponsiveChoroplethCanvas = loadable(() => import("@nivo/geo"), {
+  resolveComponent: (components) => components.ResponsiveChoroplethCanvas
+});
 import worldCountries from "./data/world_countries.json";
 import probabilityData from "./data/prediction.json";
 import Shark from "./images/shark.svg";
