@@ -6,7 +6,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { ResponsiveRadar } from "@nivo/radar";
+import loadable from "@loadable/component";
+const ResponsiveRadar = loadable(() => import("@nivo/radar"), {
+  resolveComponent: (components) => components.ResponsiveRadar
+});
 import Dish from "./food-dish.svg";
 
 export const data = [

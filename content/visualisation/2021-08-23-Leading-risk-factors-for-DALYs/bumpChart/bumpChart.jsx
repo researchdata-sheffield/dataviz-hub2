@@ -1,20 +1,23 @@
-import React from "react"
-import { ResponsiveBump } from "@nivo/bump"
+import React from "react";
+import loadable from "@loadable/component";
+const ResponsiveBump = loadable(() => import("@nivo/bump"), {
+  resolveComponent: (components) => components.ResponsiveBump
+});
 
 const bumpChart = ({ theme, data, gender }) => {
   const riskColour = (item) => {
     switch (item.category) {
       case "Environmental":
-        return "#A9FF6B"
+        return "#A9FF6B";
       case "Metabolic":
-        return "#70DBFF"
+        return "#70DBFF";
       case "Behavioural":
-        return "#F99494"
+        return "#F99494";
     }
-  }
+  };
 
   const customTooltip = (item) => {
-    const { id, color, data } = item.serie
+    const { id, color, data } = item.serie;
 
     return (
       <div
@@ -66,8 +69,8 @@ const bumpChart = ({ theme, data, gender }) => {
           </div>
         </div>
       </div>
-    )
-  }
+    );
+  };
 
   return (
     <ResponsiveBump
@@ -116,7 +119,7 @@ const bumpChart = ({ theme, data, gender }) => {
         legendOffset: gender == "male" && -40
       }}
     />
-  )
-}
+  );
+};
 
-export default bumpChart
+export default bumpChart;

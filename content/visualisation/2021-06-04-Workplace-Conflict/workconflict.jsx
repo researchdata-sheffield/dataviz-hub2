@@ -6,7 +6,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { ResponsiveWaffle } from "@nivo/waffle";
+import loadable from "@loadable/component";
+const ResponsiveWaffle = loadable(() => import("@nivo/waffle"), {
+  resolveComponent: (components) => components.ResponsiveWaffle
+});
 import depression from "./depression.png";
 
 const THEME = {
