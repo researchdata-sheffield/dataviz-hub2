@@ -168,7 +168,7 @@ There are other tests we can also use to test for homogeneity of variance:
 
 ## Linear models
 
-A practical application of hypothesis testing is in linear models. Linear regression is a statistical analysis technique that uses the least square regression function to model the relationship between a continuous response variable and one or more independent predictor (or explanatory) variables. This function is a linear combination of one or more model parameters called regression coefficients. Functions that have only one predictor variable are called simple regression, and functions with more than one predictor variable are called multiple regression. In linear regression, the data is modeled using a linear predictive function, and unknown model parameters are also estimated through the data. These models are called linear models.
+Another practical application of hypothesis testing is in linear models. In the previous chapter we have introduced the <Link to="docs/03/09/2021/LearningPath-Statistical-Modelling-3#regression">linear regression</Link> models, which is a linear combination of one or more model coefficients called regression coefficients. Functions that have only one predictor variable are called simple regression, and functions with more than one predictor variable are called multiple regression. In linear regression, the data is modelled using a linear predictive function, and unknown model coefficients are also estimated through the data.
 
 A simple regression looks something like the following:
 
@@ -176,49 +176,31 @@ $$
 Y_{i} = \alpha + \beta_{1}X_{1i} + \beta_{2}X_{2i} + \epsilon_{i}
 $$
 
-where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors.
+where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors with **mean zero**.
 
-In addition to prediction using linear models, we are also concerned with the quality of estimates of parameters and the distribution of errors and residuals. In this section, we are going to see some use cases of t-test and f-test in linear models.
+In addition to prediction using linear models, we are also concerned with the quality of estimates of parameters and the distribution of errors and residuals. In this section, we are going to see some use cases of T-test and F-test in linear models.
 
-### T-test
+### Comparing Two Different Models in Linear regression
 
-If we were creating a linear model from a dataset and print a summary of the details, we will be getting outputs like this:
-
-```r
-# use the built-in dataset mtcars
-lm2 <- lm(mpg ~ hp + disp, mtcars)
-
-summary(lm2)
-```
-
-![A linear model summary](3lm.png)
-
-Notice that for each variable there are corresponding t-statistic and p-value ($Pr(>|t|)$). But what are we testing? In a linear model we are testing the null hypothesis that the coefficient $\beta{j}$ of variable $X{ji}$, is equal to zero. In the picture on above, our estimate of `disp` has a p-value that significantly smaller than 0.05 (the default significance level) which means we have sufficient evidence to reject the null hypothesis that the coefficient equals to zero, meaning we can keep the `disp` variable for th model. On the other hand, the variable `hp` has a p-value of 0.73679 which suggests we do not have strong evidence to reject the null hypothesis. Then a naive final model would be
-
-$$
-mpg = 30.73 - 0.03disp
-$$
-
-The $R^{2}$ score shows how well the regression fitted to data, the closer to 1 the better. The f-statistic in the output tells us whether the current model is better than the intercept-only model (i.e. setting all variable's coefficients to zero). In this case, the p-value suggests we can reject the null hypothesis that all coefficients are equal to zero.
-
-### ANOVA
-
-Analysis of variances or ANOVA extends from t-test and is used to test the significance of the difference between the means of two or more samples (that may come from different groups). Due to the influence of various factors, there is variability in data obtained from sampling. The causes of variation can be divided into two basic sources:
+From time to time we would have come up with different linear models and of course we would like to find one model that best describes the data. An useful technique for comparing two different models in linear regression is Analysis of Variances (ANOVA). We can use ANOVA to find the variability between two models by testing the two sources of variances:
 
 - **Between-group variation** - Differences caused by experimental conditions like different treatments. It is expressed by the total sum of the sum of squared deviations between the mean value of the variable in each group and the grand mean.
 - **Within-group variation** - Differences caused by measurement errors or differences between individuals. These errors are random errors. They are expressed by the sum of the sum of squared deviations between the mean in each group and the value of the variable within the group.
 
-The total variances will be variances from between-group plus variances from within-group. [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.
+> [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.
 
-Assumptions:
+The ratio of these two variances $\frac{variance_{between}}{variance_{within}}$ (two sums of squares) results in an F-statistic. The calculation brings the F-statistics together with the number of degrees of freedom and we can reduce to a p-value we can infer which model is better.
 
-- samples are independent
-- homogeneity of variances between samples
-- experimental errors are normally distributed
+To use ANOVA for linear regression, the data must conform to the following assumptions:
 
-There are several types of ANOVA but one-way ANOVA and two-way ANOVA are the most common ones which assess differences between a continuous variable and one predictor variable, and differences between a continuous variable and two predictor variables, respectively. Now, let's look at how we can use ANOVA with f-tests to compare two linear models.
+- Samples are independent.
+- Variables must be continuous, although you can convert categorical variables into dummy varibles (see next section).
+- Homogeneity of variances between samples.
+- Experimental errors are normally distributed.
 
-Suppose I have the following two models, where the second linear model has a additional variable we would like to include:
+You may have heard phrases like one-way ANOVA or two-way ANOVA and the difference between them is the number of independent variables we are considering - as also suggested by their name. Of course, you can have three-way ANOVA, four-way ANOVA, etc..
+
+So how do we do ANOVA for linear regression models? Here we are using a dataset `mtcar` from [R dataset](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) as an example which contains eleven different variables for thirty-two cars. Suppose we have the following two models for finding out variables which affects fuel consumption (in `mpg`) of cars, where the second linear model has a additional variable `gear` (number of gears that particular car have) we would like to include:
 
 ```r
 lm1 <- lm(mpg ~ hp , mtcars)
@@ -228,30 +210,34 @@ summary(lm1)
 summary(lm2)
 ```
 
-![Summaries of two linear models](4lms.png)
+![Summaries of two linear models](4lms.png)  
+_Summaries of two linear models._
 
-From the summaries on above we can see the variable `gear` with a positive coefficient is a good addition to the model (somewhat suggests cars with more gears have better fuel economy). Now we can use the anova function to see which model provides the best fit of the data.
+From the summaries on above we can see the variable `gear` with a positive coefficient is a good addition to the model (somewhat suggesting cars with more gears have better fuel economy). Now let's use the `anova` function to see which model provides the best fit of the data.
 
 ```r
 anova(lm1, lm2)
 ```
 
-![Anova](5anova.png)
+![Anova](5anova.png)  
+_Output from the anova function._
 
-From the result we can see that the sum of squares has reduced over 30%, and the p-value suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` have significantly improved the model and we can happily accept the new variable into our model.
+From the _Analysis of Variance Table_ we can see that the sum of squares has reduced over 30% (from `447` to `280`), and the p-value (significantly less than `0.05`) suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` improved the model and we can accept the new variable into our model.
 
-## Next step
+### Dummy Variables for normal ANOVA with Linear Regression
+
+## What's next?
 
 In this part of the learning path we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In <Link to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">part 5</Link> we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.
 
 ## Recommended reading
 
-[Seeing Theory - Frequentist Inference](https://seeing-theory.brown.edu/frequentist-inference/index.html#section1)  
-[Hypothesis Testing](https://ocw.jhsph.edu/courses/methodsinbiostatisticsii/PDFs/lecture15.pdf)  
-[Another hypothesis Testing material](https://www.ucl.ac.uk/~uctp41a/b203/lecture4.pdf)  
-[T-test](https://www.stats.ox.ac.uk/~massa/Lecture%2010.pdf)  
-[Maths behind linear models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)  
-[ANOVA](https://bookdown.org/ndphillips/YaRrr/anova.html)
+- [Seeing Theory - Frequentist Inference](https://seeing-theory.brown.edu/frequentist-inference/index.html#section1)
+- [Hypothesis Testing](https://ocw.jhsph.edu/courses/methodsinbiostatisticsii/PDFs/lecture15.pdf)
+- [Another hypothesis Testing material](https://www.ucl.ac.uk/~uctp41a/b203/lecture4.pdf)
+- [T-test](https://www.stats.ox.ac.uk/~massa/Lecture%2010.pdf)
+- [Maths behind linear models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)
+- [ANOVA](https://bookdown.org/ndphillips/YaRrr/anova.html)
 
 ## Sidenote
 
