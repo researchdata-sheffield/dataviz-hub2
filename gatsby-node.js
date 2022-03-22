@@ -34,16 +34,6 @@ exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
     });
   }
 
-  // if (stage === "build-html") {
-  //   webpackConfig.module.rules.push(
-  //     // WebpackError: ReferenceError: ResizeObserver is not defined
-  //     {
-  //       test: /@nivo\/core/,
-  //       use: loaders.null()
-  //     }
-  //   );
-  // }
-
   actions.setWebpackConfig(webpackConfig);
 };
 
