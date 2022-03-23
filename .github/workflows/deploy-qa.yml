@@ -16,7 +16,7 @@ on:
 
 jobs:
   Deploy-to-QA:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     defaults:
       run:
         shell: bash

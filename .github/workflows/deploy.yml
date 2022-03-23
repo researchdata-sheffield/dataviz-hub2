@@ -19,7 +19,7 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     defaults:
       run:
         shell: bash
