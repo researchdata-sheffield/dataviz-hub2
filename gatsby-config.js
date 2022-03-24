@@ -437,20 +437,6 @@ module.exports = {
     /*********** END RSS Feed ************* */
     `gatsby-plugin-sass`,
     {
-      resolve: `gatsby-plugin-purgecss`,
-      options: {
-        printRejected: true,
-        develop: true,
-        tailwind: true,
-        purgeOnly: [
-          "src/components/",
-          "src/pages/",
-          "src/templates/",
-          "content/"
-        ]
-      }
-    },
-    {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {
         devMode: false,
