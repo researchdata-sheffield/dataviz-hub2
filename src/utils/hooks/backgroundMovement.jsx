@@ -42,11 +42,6 @@ export function backgroundMovement(
 
       // update mouse location
       setLocation({ x: event.clientX, y: event.clientY });
-<<<<<<< HEAD
-=======
-      // xLocation.current = event.clientX;
-      // yLocation.current = event.clientY;
->>>>>>> e863593d94a2e16add0f5533ab99d3ad00751985
 
       // move background according to difference
       let translateValues = getTranslateValues(background);

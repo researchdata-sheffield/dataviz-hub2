@@ -200,20 +200,20 @@ To use ANOVA for linear regression, the data must conform to the following assum
 
 You may have heard phrases like one-way ANOVA or two-way ANOVA and the difference between them is the number of independent variables we are considering - as also suggested by their name. Of course, you can have three-way ANOVA, four-way ANOVA, etc..
 
-So how do we do ANOVA for linear regression models? Here we are using a dataset `mtcar` from [R dataset](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) as an example which contains eleven different variables for thirty-two cars. Suppose we have the following two models for finding out variables which affects fuel consumption (in `mpg`) of cars, where the second linear model has a additional variable `gear` (number of gears that particular car have) we would like to include:
+So how do we do ANOVA for linear regression models? Here we are using a dataset `mtcar` from [R dataset](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) as an example which contains eleven different variables for thirty-two cars. Suppose we have the following two models for finding out variables which affects fuel consumption (in `mpg`) of cars, where the second linear model has a additional variable `wt` (weight of cars) we would like to include:
 
 ```r
 lm1 <- lm(mpg ~ hp , mtcars)
-lm2 <- lm(mpg ~ hp + gear, mtcars)
+lm2 <- lm(mpg ~ hp + wt, mtcars)
 
 summary(lm1)
 summary(lm2)
 ```
 
-![Summaries of two linear models](4lms.png)  
+![Summaries of two linear models](4lm.png)  
 _Summaries of two linear models._
 
-From the summaries on above we can see the variable `gear` with a positive coefficient is a good addition to the model (somewhat suggesting cars with more gears have better fuel economy). Now let's use the `anova` function to see which model provides the best fit of the data.
+From the summaries on above we can see the variable `wt` (weight in 1000 lbs) with a positive coefficient is a good addition to the model (somewhat suggesting cars with less weight have better fuel economy). Now let's use the `anova` function to see which model provides the best fit of the data.
 
 ```r
 anova(lm1, lm2)
@@ -225,6 +225,20 @@ _Output from the anova function._
 From the _Analysis of Variance Table_ we can see that the sum of squares has reduced over 30% (from `447` to `280`), and the p-value (significantly less than `0.05`) suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` improved the model and we can accept the new variable into our model.
 
 ### Dummy Variables for normal ANOVA with Linear Regression
+
+Sometimes we may want to include categorical variables in the models but these models cannot be compared simply using ANOVA because of the [simpson paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox). Categorical variables usually have two or more categories and we generally refer each variable as _factor_ and each category as _level_.
+Dummy variables take values of zero or one, and we need to create $n-1$ dummy variables for a categorical variable that has $n$ categories. E.g. For a variable indicating whether there is rain on a certain date, we can create a dummy variable where `1` represents a rainy day and `0` represents a sunny day. In the `mtcar` dataset cars have gears ranging from 3 to 5, therefore we can create two variables indicating whether the car has four gears or five gears. But why do we not need a third variable for three gears? This is because we can deduce whether a car has three gears from the previous two dummy variables (i.e. when both dummy variables are equal to zero); we would have collinearity if we introduced a variable for cars with three gears. Note that this method of creating dummy variables is also suitable for conducting T-test.
+
+The following figure shows the effect of the `gear` variable on the second linear models that we have created earlier. The model now becomes
+
+$$
+mpg ~ hp + mt + 4gears + 5gears
+$$
+
+![Effect of dummy variables](6dummy.png)  
+_Effect of dummy variables_
+
+The p-values for dummy variables are noticeable larger than 0.05 which suggesting the `gear` variable is not suitable for predicting the fuel economy of a particular car. At the bottom of the figure we can see the ANOVA also rejecting the new variable. Therefore, we can conclude the `gear` variable has no special meaning to `mpg`.
 
 ## What's next?
 
