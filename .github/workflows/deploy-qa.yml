@@ -16,7 +16,7 @@ on:
 
 jobs:
   Deploy-QA:
-    runs-on: windows-2019
+    runs-on: ubuntu-latest
     defaults:
       run:
         shell: bash
@@ -33,8 +33,8 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ~/.npm
-          key: ${{ runner.os }}-npm-cache-v4-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-npm-cache-v4-
+          key: ${{ runner.os }}-npm-cache-new-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-npm-cache-new-
 
       - name: Gatsby QA Cache
         id: gatsby-qa-cache
