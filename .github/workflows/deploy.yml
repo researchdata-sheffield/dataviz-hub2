@@ -69,10 +69,9 @@ jobs:
           GIT_COMMITTER_NAME: "github-actions-bot"
           GIT_COMMITTER_EMAIL: "support+actions@github.com"
         
-      - name: Deploy
+      - name: Build
         run: |
-          git remote set-url origin https://git:${GH_TOKEN}@github.com/researchdata-sheffield/dataviz-hub2.git
-          npm run deploy
+          npm run build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
@@ -83,6 +82,15 @@ jobs:
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GH_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
 
     
 
