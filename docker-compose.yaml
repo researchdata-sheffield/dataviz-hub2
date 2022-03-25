@@ -1,0 +1,15 @@
+services:
+  gatsby-app:
+    build:
+      context: ./
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./src:/app/src
+      - /app/node_modules
+    ports:
+      - "8000:8000"
+      - "9929:9929"
+      - "9230:9230"
+    environment:
+      - NODE_ENV=development
+      - GATSBY_WEBPACK_PUBLICPATH=/

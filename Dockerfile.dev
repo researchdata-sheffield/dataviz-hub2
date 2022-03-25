@@ -1,0 +1,26 @@
+FROM node:14.18-alpine
+
+# including VSCode debug ports
+EXPOSE 8000 9929 9230
+
+WORKDIR /app
+
+COPY package*.json ./
+
+RUN apk add --no-cache --virtual .gyp \
+      build-base \
+      cairo-dev \
+      jpeg-dev \
+      pango-dev \
+      giflib-dev \
+      python3 \
+      py3-pip \
+      make \
+      g++ \
+    && npm install --legacy-peer-deps \
+    && apk del .gyp
+
+# copy the whole source folder(the dir is relative to the Dockerfile
+COPY . .
+
+CMD [ "npm", "run", "develop", "--", "--host", "0.0.0.0", "--port", "8000" ]
