@@ -13,7 +13,7 @@ Object {
           class="relative"
         >
           <button
-            class="sc-eCImPb sc-jRQBWg deNrSP kiSVoP group"
+            class="sc-eCYdqJ sc-jSMfEi kQKQuV kniTro group"
             id="vis-tag-button"
             title="Tag Menu"
           >
@@ -33,7 +33,7 @@ Object {
             </svg>
           </button>
           <button
-            class="sc-eCImPb sc-gKclnd deNrSP ktgQax group bg-gray-800"
+            class="sc-eCYdqJ sc-gKXOVf kQKQuV cAwCOt group bg-gray-800"
             id="vis-footer-button"
             title="Footer"
           >
@@ -136,7 +136,7 @@ Object {
               </h1>
             </div>
             <div
-              class="sc-hKwDye VdeFT"
+              class="sc-hKMtZM fYVfow"
               height="auto"
               width="100%"
             >
@@ -583,7 +583,7 @@ Object {
             class="flex w-full h-full justify-center"
           >
             <div
-              class="sc-hKwDye itZNMR"
+              class="sc-hKMtZM blmuIS"
               id="main-word-cloud"
             >
               <div
@@ -620,7 +620,7 @@ Object {
                 class="react-reveal"
               >
                 <div
-                  class="sc-gsDKAQ dGLTnf"
+                  class="sc-gsnTZi edVJYX"
                 >
                   <div
                     class="rounded-xl md:absolute md:top-0 md:left-0"
@@ -643,7 +643,7 @@ Object {
                 class="react-reveal"
               >
                 <div
-                  class="sc-gsDKAQ dGLTnf"
+                  class="sc-gsnTZi edVJYX"
                 >
                   <div
                     class="group rounded-xl relative md:absolute md:top-0 md:left-0 text-center flex"
@@ -698,7 +698,7 @@ Object {
         class="relative"
       >
         <button
-          class="sc-eCImPb sc-jRQBWg deNrSP kiSVoP group"
+          class="sc-eCYdqJ sc-jSMfEi kQKQuV kniTro group"
           id="vis-tag-button"
           title="Tag Menu"
         >
@@ -718,7 +718,7 @@ Object {
           </svg>
         </button>
         <button
-          class="sc-eCImPb sc-gKclnd deNrSP ktgQax group bg-gray-800"
+          class="sc-eCYdqJ sc-gKXOVf kQKQuV cAwCOt group bg-gray-800"
           id="vis-footer-button"
           title="Footer"
         >
@@ -821,7 +821,7 @@ Object {
             </h1>
           </div>
           <div
-            class="sc-hKwDye VdeFT"
+            class="sc-hKMtZM fYVfow"
             height="auto"
             width="100%"
           >
@@ -1268,7 +1268,7 @@ Object {
           class="flex w-full h-full justify-center"
         >
           <div
-            class="sc-hKwDye itZNMR"
+            class="sc-hKMtZM blmuIS"
             id="main-word-cloud"
           >
             <div
@@ -1305,7 +1305,7 @@ Object {
               class="react-reveal"
             >
               <div
-                class="sc-gsDKAQ dGLTnf"
+                class="sc-gsnTZi edVJYX"
               >
                 <div
                   class="rounded-xl md:absolute md:top-0 md:left-0"
@@ -1328,7 +1328,7 @@ Object {
               class="react-reveal"
             >
               <div
-                class="sc-gsDKAQ dGLTnf"
+                class="sc-gsnTZi edVJYX"
               >
                 <div
                   class="group rounded-xl relative md:absolute md:top-0 md:left-0 text-center flex"

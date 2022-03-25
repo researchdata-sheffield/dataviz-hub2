@@ -78,7 +78,7 @@ events.propTypes = {
   data: PropTypes.any
 };
 
-export const query = graphql`
+export const eventQuery = graphql`
   query {
     eventBrite: allEventbriteEvents(
       limit: 4
