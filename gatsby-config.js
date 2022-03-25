@@ -210,7 +210,14 @@ module.exports = {
         cache_busting_mode: "none" // Work with offline plugin
       }
     },
-    `gatsby-plugin-offline`, // should be listed after the manifest plugin
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        workboxConfig: {
+          maximumFileSizeToCacheInBytes: 20971520
+        },
+      },
+    }, // should be listed after the manifest plugin
     "gatsby-plugin-postcss",
     /***************** FLEXSEARCH ********************/
     {

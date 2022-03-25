@@ -16,7 +16,7 @@ on:
 
 jobs:
   Deploy-QA:
-    runs-on: ubuntu-latest
+    runs-on: windows-2019
     defaults:
       run:
         shell: bash
@@ -43,8 +43,8 @@ jobs:
           path: |
             public
             .cache
-          key: ${{ runner.os }}-gatsby-v4-qa-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-gatsby-v4-qa-
+          key: ${{ runner.os }}-v4-gatsby-qa-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-v4-gatsby-qa-
       
       - name: Install dependencies
         run: npm ci
@@ -59,7 +59,7 @@ jobs:
           npm run build:qa
           rm -f public/CNAME
         env:
-          NODE_OPTIONS: '--max_old_space_size=4096'
+          NODE_OPTIONS: "--max-old-space-size=8192"
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
           EVENT_ORG_ID_1: ${{ secrets.EVENT_ORG_ID_1 }}
