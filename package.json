@@ -57,7 +57,7 @@
     "gatsby": "^4.10.3",
     "gatsby-plugin-feed": "^4.10.2",
     "gatsby-plugin-flexsearch": "^1.0.3",
-    "gatsby-plugin-google-analytics": "^4.10.0",
+    "gatsby-plugin-google-analytics": "^4.11.0",
     "gatsby-plugin-image": "^2.10.1",
     "gatsby-plugin-instagram-embed": "^4.0.0",
     "gatsby-plugin-layout": "^3.10.0",
