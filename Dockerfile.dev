@@ -3,6 +3,8 @@ FROM node:14.18-alpine
 # including VSCode debug ports
 EXPOSE 8000 9929 9230
 
+RUN npm install -g gatsby-cli
+
 WORKDIR /app
 
 COPY package*.json ./
