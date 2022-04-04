@@ -178,7 +178,13 @@ $$
 
 where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors with **mean zero**.
 
-In addition to prediction using linear models, we are also concerned with the quality of estimates of parameters and the distribution of errors and residuals. In this section, we are going to see some use cases of T-test and F-test in linear models.
+In addition to prediction using linear models, we are also concerned with the quality of estimates of coefficients and the distribution of errors and residuals. The least squares method is a common regression analysis method for finding the best fit for a set of data points.
+
+![Linear least squares](https://upload.wikimedia.org/wikipedia/commons/b/b0/Linear_least_squares_example2.svg)  
+*Linear least squares (Source: Krishnavedala, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons)*
+
+From the figure above you can see lines between each data point adn the line of best fit, this distance shows the variability of the current model and we use it to calculate the sum of squared error (SSE), which is the sum of the squared distance from each data point to the mean (of all data points). This variance will also be used in the next section (as part of he within-group variation) when we comparing two different models.
+
 
 ### Comparing Two Different Models in Linear regression
 
