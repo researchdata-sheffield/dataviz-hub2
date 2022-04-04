@@ -48,7 +48,7 @@ jobs:
 
       - name: NPM Cache
         id: npm-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
@@ -58,7 +58,7 @@ jobs:
       # Creates new cache when OS/run_id changes
       - name: Gatsby Cache
         id: gatsby-ci-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: |
             public
@@ -103,7 +103,7 @@ jobs:
 
       - name: NPM Cache
         id: npm-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
@@ -117,7 +117,7 @@ jobs:
 
       - name: Jest cache
         id: gatsby-jest-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3.0.1
         with:
           path: .jest-cache
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}
