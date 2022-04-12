@@ -13,14 +13,12 @@ export function backgroundMovement(
   yFactor = 0.05
 ) {
   const [location, setLocation] = useState({ x: 0, y: 0 });
-  //const xLocation = useRef(0);
-  //const yLocation = useRef(0);
 
   const getTranslateValues = useCallback((element) => {
     const style = getComputedStyle(element);
     const matrix = style.transform || style.MozTransform;
 
-    if (typeof matrix == "undefined" || !matrix || matrix == "none") {
+    if (typeof matrix === "undefined" || !matrix || matrix == "none") {
       return {
         x: 0,
         y: 0
@@ -44,8 +42,6 @@ export function backgroundMovement(
 
       // update mouse location
       setLocation({ x: event.clientX, y: event.clientY });
-      // xLocation.current = event.clientX;
-      // yLocation.current = event.clientY;
 
       // move background according to difference
       let translateValues = getTranslateValues(background);
