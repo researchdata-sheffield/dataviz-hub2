@@ -43,8 +43,8 @@ jobs:
           path: |
             public
             .cache
-          key: ${{ runner.os }}-v4-gatsby-qa-${{ github.run_id }}
-          restore-keys: ${{ runner.os }}-v4-gatsby-qa-
+          key: ${{ runner.os }}-gatsby-qa-${{ github.run_id }}
+          restore-keys: ${{ runner.os }}-gatsby-qa-
       
       - name: Install dependencies
         run: npm ci
