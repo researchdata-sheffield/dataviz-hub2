@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkdatavizhub_tuos=self.webpackChunkdatavizhub_tuos||[]).push([[3484],{41331:function(e,t,a){a.r(t);var u=a(67294),n=a(37339),s=a(55356),r=a(23431);t.default=function(e){var t=e.data.allMdx,a=e.pageContext,c=(0,u.useRef)(),f=(0,n.L)(t.edges,c);return(0,r.tZ)(s.Z,{currentMDXs:f,nextPageRef:c,pageContext:a,title:a.category})}}}]);
+//# sourceMappingURL=component---src-templates-visualisation-vis-category-template-jsx-2181d713e710f45781ad.js.map
