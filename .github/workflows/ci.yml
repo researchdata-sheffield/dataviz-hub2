@@ -22,7 +22,7 @@ on:
 
 jobs:
   Check-Duplicate:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     outputs:
       should_skip: ${{ steps.skip_check.outputs.should_skip }}
     steps:
@@ -36,7 +36,7 @@ jobs:
   CI-Build:
     needs: Check-Duplicate
     if: ${{ needs.Check-Duplicate.outputs.should_skip != 'true' }}
-    runs-on: windows-2019
+    runs-on: windows-latest
     defaults:
       run:
         shell: bash
@@ -44,21 +44,19 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
-      - name: NPM Cache
-        id: npm-cache
-        uses: actions/cache@v2
+      - uses: actions/setup-node@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-npm-cache-
+          node-version: '16'
+          cache: 'npm'
           
       # Retrieve gatsby cache
       # Creates new cache when OS/run_id changes
       - name: Gatsby Cache
+        if: "!contains(github.event.head_commit.message, 'skip cache')"
         id: gatsby-ci-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: |
             public
@@ -74,8 +72,9 @@ jobs:
       
       # Enable incremental build
       - name: Incremental build
-        run: NODE_OPTIONS=--max_old_space_size=4096 npm run build:noGA
+        run: npm run build:noGA
         env:
+          NODE_OPTIONS: "--max-old-space-size=8192"
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
           EVENT_API_KEY_2: ${{ secrets.EVENT_API_KEY_2 }}
           EVENT_ORG_ID_1: ${{ secrets.EVENT_ORG_ID_1 }}
@@ -85,12 +84,14 @@ jobs:
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
           
       - name: Serve and E2E test
-        run: npm run serve & npm run test:e2e
+        run: npm run serve & npm run test:e2e; tskill node
+
+      - run: echo "ps"
 
   Test:
     needs: Check-Duplicate
     if: ${{ needs.Check-Duplicate.outputs.should_skip != 'true' }}
-    runs-on: windows-2019
+    runs-on: windows-latest
     defaults:
       run:
         shell: bash
@@ -98,11 +99,11 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
 
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
 
       - name: NPM Cache
         id: npm-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: ~/.npm
           key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
@@ -116,7 +117,7 @@ jobs:
 
       - name: Jest cache
         id: gatsby-jest-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v3
         with:
           path: .jest-cache
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}

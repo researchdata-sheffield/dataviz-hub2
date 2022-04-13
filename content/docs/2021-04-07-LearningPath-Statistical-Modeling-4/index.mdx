@@ -2,229 +2,265 @@
 type: docs
 author: ["Dataviz Team", "Jean Russell"]
 title: "Statistical Testing"
-thumbnail: 
 description: Statistical Modeling Part 4 - What is Statistical testing? Why do we need to test? How do we perform tests?
 date: 2021-04-07
 published: false
----  
+---
 
-import { HiOutlineLightBulb } from "react-icons/hi"  
-import FlowChart from "../../visualisation/2021-08-04-Which-Statistical-Test-To-Use-For-Two-Variables/flowChart/flowChart"
-import { ReactFlowProvider } from 'react-flow-renderer';
+import { HiOutlineLightBulb } from "react-icons/hi";
+import FlowChart from "../../visualisation/2021-08-04-Which-Statistical-Test-To-Use-For-Two-Variables/flowChart/flowChart";
+import { ReactFlowProvider } from "react-flow-renderer";
 
 ## Introduction
-Statistical (hypothesis) testing is a methodology that is used to determine whether the difference between sample and sample, sample and population is caused by sampling error or underlying difference. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference. The basic principle of which is to  
-- make some assumptions about the characteristics of the population first
-- then make inference through studies of samples, and
-- decide whether the hypothesis/assumption should be rejected or accepted  
 
-Commonly used hypothesis test methods are Z-test, T-test, and F-test. These tests are called parametric tests because they rely on several assumptions for data related to underlying distribution and sampling variances, and parameters of the distribution are fully specified.  
+Statistical (hypothesis) testing is a methodology that is used to determine whether there are significant differences between two or more understanding of the data (hypotheses or models) that has been sampled. The significance test is one of the most commonly used methods of hypothesis testing and the most basic form of statistical inference. The process of hypothesis testing is shown on the diagram below:
 
+![The process of Hypothesis testing](process_diagram.svg)  
+_The process of hypothesis testing - by Dr. Jean Russell_
 
-Parametric tests has the following applications:  
-- test a hypothesis/assumption
-- test the significance of a result
-- compare two statistical models (estimate differences)
-- determine relationship between variables  
+Commonly used hypothesis test methods are T-test, F-test, and Pearson's Chi-squared Test. These tests are called paramateric tests because the hypothesised model parameterise the underlying distributions differently (for example, Gaussian/normal distribution has two parameters - mean and standard deviation).
 
-The basis idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. In order to test whether a hypothesis $H_{0}$ is correct, first assume that the hypothesis is correct, and then make a decision to accept or reject the hypothesis $H_{0}$ according to the sample. The hypothesis $H_{0}$ should be rejected if the observed sample is classified as a rare event, otherwise the hypothesis should be accepted. In all cases, there will also be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$.  
+The basic idea of hypothesis testing is the principle of 'rare events' - where an event is extremely unlikely to happen in an experiment, and the idea of contradiction. The testing starts with a null hypothesis (usually denoted as $H_{0}$). the null hypothesis is always the hypothesis that assumes the simpler parameterisation of the model, or the hypothesis we believe to be false. The hypothesis $H_{0}$ should be rejected if the observed sample is classified as a rare event, otherwise the hypothesis should be accepted. In all cases, there will also be a hypothesis $H_{1}$ called the alternative hypothesis, which is effectively the opposite of our hypothesis $H_{0}$. A clear understanding or definition of your null hypothesis and alternative hypothesis will help you interpret the significance of the result.
 
-Performing a test usually consists the following steps:
-1. Set the test hypothesis (or null hypothesis) and denote it as $H_{0}$, so the alternative hypothesis will be $H_{1}$.
-2. Set the test level (or the significance level) $\alpha$, usually taken as 0.05 or 0.01. The value represents the probability of the null hypothesis being incorrectly rejected, given that the null hypothesis is true (or simply, the probability of the observed sample being a rare event).
-3. Choose a suitable statistical test.
-4. Based on the size of the statistic and the p-value obtained from the test, determine whether to accept or reject the null hypothesis. If the p-value (probability of the observed value being as a rare event) is less than $\alpha$ then we can reject $H_{0}$. Otherwise in the case of $p > \alpha$ we accept $H_{0}$.  
+Extending from the diagram shown on above, there are a number of important steps throughout the testing:
 
+1. Specify the null hypothesis and the alternative hypothesis clearly in English. Think about what you want to be true and what you consider to be false. What difference would there be in the numbers if the alternative hypothesis was true rather than false?
+2. Choose a suitable statistical test. This depends on hypotheses you have established previously. A clear hypothesis should give you a clue on what test to use. For example, t-test can be used to test the difference between two means, or test whether a regression coefficient is to be included in the model. Use t-test as a first go if you are not sure.
+3. Check if distributional assumptions for the test are satisfied on the data. Generally, you should be fine with tests assuming normality as long as standard deviations do not vary hugely with the group, but if any of the distributional assumptions are violated then you need to reconsider a different test. For example, use a non-parametric test, or maybe transform the dependent (outcome) variable. Beware that what you are testing will be reformulated by doing this.
+4. If all distributional assumptions are met then you can start to look at the p-value for the test and the coefficients in the model e.g., the different means in ANOVA or the regression coefficients.
 
-In part 4 we will be looking at common hypothesis test method and their application in linear models. You can download the R script file [here](./script.R).  
-  
-We have also prepared a flowchart helps you to choose a statistical test for comparing two variables. Please click the button below to start.  
+In part 4 we will be looking at common hypothesis test methods and their application in linear models.
+
+We have also prepared a flowchart to help you to choose a statistical test for comparing two variables. Click the button below to open the flowchart.
 
 <ReactFlowProvider>
   <FlowChart />
 </ReactFlowProvider>
 
-<br/>
+<br />
 
 ## Prerequisites
 
 <div className="bg-white shadow-md p-3 md:p-5 rounded-3xl text-base text-black border-1 border-gray-50">
   <div>
-    <span className="py-1 px-2 bg-shefYellow text-black hover:bg-yellow-400 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Required</span> 
+    <span className="py-1 px-2 bg-shefYellow text-black hover:bg-yellow-400 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">
+      Required
+    </span>
     <p className="mt-2">None</p>
   </div>
   <div className="mt-6">
-    <span className="py-1 px-2 text-white bg-shefGreen hover:bg-green-700 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Recommended</span>
-    <p className="mt-2">Part 3 of learning path, F distribution, Student's t distribution</p>
+    <span className="py-1 px-2 text-white bg-shefGreen hover:bg-green-700 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">
+      Recommended
+    </span>
+    <p className="mt-2">
+      Part 3 of learning path, F distribution, Student's t distribution
+    </p>
   </div>
   <div className="mt-6">
-    <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">Optional</span>
+    <span className="py-1 px-2 text-white bg-shefBlue hover:bg-blue-900 transition duration-300 cursor-pointer text-base font-semibold rounded-md mr-3">
+      Optional
+    </span>
     <p className="mb-0 mt-2">None</p>
   </div>
-</div>  
+</div>
 
-<br/>  
+<br />
 
+## Formulating the Hypotheses for testing
 
-## Z-test
-A Z-test is a hypothesis test based on normal distribution that investigate the significance difference between two group mean with the following assumptions:  
-- large sample size (over 30)
-- samples are independent
-- populations follows normal distribution
-- variances are known
- 
-There is no built-in function in R for calculating z-test, however, you can work it out using means and variances for each sample group and refer to the standard normal table.  
- 
-## T-test
-The T-test is a hypothesis test that investigate the significance difference between two groups with the following assumptions:  
-- samples are independent 
-- populations follows normal distribution
-- data are categorical or continuous  
-- homogeneity of variance (meaning variances are equal among independent samples), depending on what t-test you use. Though the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this. Whereas the Levene's test and Student's t-test requires this assumption to be true
-- sample size is not large  
+There is never one hypothesis in statistics; they always come in pairs: a null and an alternative. When you formulate a hypothesis you normally actually start with the **alternative hypothesis**. The way to find these alternative hypotheses is to look at what sort of evidence you would see as bolstering the idea that you wish to explore. For instance:
 
-The test calculates the t-value according to [Student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) and if the t-value close to zero then it suggests there isn't a significant difference between two groups. There are three types of T-test:  
-1. **One-sample t-test** - use for comparing a single group against a target value.
-2. **Two-sample t-test** - use for comparing groups sampled from two different population  
-3. **Paired t-test** - comparing groups sampled from the same population  
+- If we were exploring whether Sheffield or Hallam students were more likely to attend events during Varsity, we would be interested in the difference in number attending. Specifically we would be interested if there was a clear majority of students from either university.
+- If we were interested in whether a new treatment for Covid worked then we would be interested in whether it performed better than the current one.
+- If we were exploring what type of hospitality venues did better in the city centre then we may be interested in a difference in the difference in revenue. Then we would be interested in differences between revenues at different venues.
 
-In addition to three types of T-test we have mentioned, you might also need to consider whether to use a **one-tailed test** or a **two-tailed test**. The t-distribution looks similar to the normal distribution and it has two tails, and in most of the t-test we use two-tailed tests by default and test both the negative and positive differences. For example, say we want to test whether the population mean equals to 30, in this case a two-tailed test is used. If we were interested in the case when the population mean greater than or equal to 30, then a one-tailed test would be more suitable as we are not interested in the other side (the population mean is less than 30).  
+The **null hypothesis** is however, the hypothesis that says what happens if the data is totally boring. It is usually more precise than the alternative. So the null hypotheses are for those scenarios above:
 
-Example R code:  
+- There is no difference between the number of students attending from Sheffield and those from Hallam.
+- The new treatment for Covid performs the same as the previous treatment.
+- There is no difference between types of venue in the revenue they bring in.
 
-```r
-# Two-tailed t-test (unpaired)
-t.test(
-  treatment1, 
-  treatment2, 
-  alternative = "two.sided", 
-  var.equal = FALSE
-)
-```
+The nulls are simple and exact, they also usually assume what we are interested in exploring does not exist. It is therefore possible to have sets of hypotheses that are more than pairs. This typically happens in linear regression and multifactor ANOVA.
 
-![Two-tailed t-test (unpaired)](1t-test.png) 
+## How Hypotheses affect the Study Design
 
-[Click here](https://www.sthda.com/english/wiki/t-test-formula) to see t-test formula.
+There are a number of ways that having specified your hypotheses that will help you design your study. You need to make sure that you have robust ways of measuring your outcome variables. These may be using a tried and tested method of gathering data or developing a new one. You also need to measure or encode correctly into the data any comparison that is important to your hypotheses. Basically if you are wanting to measure the difference between two or more groups then you must collect data from every group. I If you have not recorded the correct data either missed a group or a variable then no matter how fancy your experiment is it will not answer those questions.
 
+Further, if you have some idea of what sort of difference is of interest then it is possible to calculate a sample size. You can get an idea of what might be of interest from previous studies. This is useful because often the process carried out to gather the data is the most expensive part of the study and quite often increases per subject. You need to gather as few as possible without risking missing an important result because you have gathered too few. If you collect too few then you may need to consider sequential designs which means if the result is not significant then you carry on collect more results. This is beyond the scope of this learning path and if you interested more about sequential designs, there are plenty of resources online.
 
-## F-test
-F-test is a test that the statistical value (or f value) obeys the [F-distribution](https://en.wikipedia.org/wiki/F-distribution) (this is the sampling distribution for ratio of variances - $\frac{\textrm{between-group variance}}{\textrm{within-group variance}}$) under the null hypothesis $H_{0}$. It is usually used to analyse a statistical model that uses more than one parameter to determine whether all or part of the parameters in the model are suitable for estimating the population. In short, the F-test compares nested models fit to the same dataset by comparing variances of models. The assumptions for data will be similar to the one in T-test:
-- data are normally distributed
-- data are independent from each other  
-- sum of squares follows $\chi^{2}$ distributions
-  
-Example R code:  
+Most studies have several hypotheses although some have a principle pair of hypotheses that will determine whether a study is a success or a failure. Technically, with each test you wish to carry out means that you should increase the sample size. There is no standard adjustment for this. The graph below assumes that you are making a Bonferroni adjustment for multiple tests and gives an idea how much the sample size might need to grow by if you are carrying out more than one test.
 
-```r
-var.test(
-  age20, 
-  age25,
-  ratio = 1,
-  conf.level = 0.95,
-  alternative = "two.sided"
-)
-```
+![Sample size required for one or more tests](study-design.png)  
+Figure 1. _Sample size required for one or more tests._
 
-![F-test](2f-test.png)
+## Two Group T-test
 
-There are other tests we can also use to test for homogeneity of variance:  
-- Brown-Forsythe - use median instead of the mean, good for non-normality data
-- Bartlett (least robust, use to test equal variances among samples)
-- Levene - good for symmetric, moderate-tailed distributions. An alternative for Bartlett
-- Chi-Square - use for comparing the variance of a population against a target value  
+The T-test is a hypothesis test that investigate the significance difference between two groups with the following assumptions:
 
+- Samples are independent;
+- Coefficients follows normal distribution;
+- depndent (outcome) variable is continuous, scalar, or discrete;
+- homogeneity of variance (meaning variances are equal among independent samples), depending on what t-test you use. Though the [Welch's t-test](https://en.wikipedia.org/wiki/Welch%27s_t-test) doesn't require this. Whereas the Levene's test and Student's t-test required this assumption to be true. There is a form of the Student&apos;s T-test that adjusts the degree of freedom (d.f., i.e. the number of parameters we can vary freely) to overcome this problem.
+- sample size is not large.
 
+The test calculates the t-value according to [Student's t distribution](https://en.wikipedia.org/wiki/Student%27s_t-distribution) and if the t-value close to zero then it suggests the difference is insignificant. There are many types of T-test but we listed the most common three tests:
+
+1. **One-sample t-test** - use for comparing a single simple against a target value.
+2. **Two-sample t-test** - use for comparing groups sampled from two different population.
+3. **Paired t-test** - comparing groups sampled from the same population.
+
+The t-distribution looks similar to the normal distribution and it has two tails, and in most of the t-tests we use the two-tailed test by default and test both the negative and positive differences. You may wonder the difference between the t-distribution and the normal distribution, and this difference is illustrated by the following image:
+
+<a
+  title="Skbkekas, CC BY 3.0 &lt;https://creativecommons.org/licenses/by/3.0&gt;, via Wikimedia Commons"
+  href="https://upload.wikimedia.org/wikipedia/commons/4/41/Student_t_pdf.svg"
+  rel="noopener noreferrer"
+  target="_blank"
+>
+  <img
+    width="400"
+    alt="Student t pdf"
+    src="https://upload.wikimedia.org/wikipedia/commons/4/41/Student_t_pdf.svg"
+  />
+</a>
+<i>
+  Figure. Comparison between the Normal distribution (v=+infinity) and
+  t-distributions. Source: Wikimedia Commons
+</i>
+
+`v` is the degrees of freedom (for the Two-group T-test this number is two less than the number of samples) and when the d.f. of the t-distribution approaches $+ \infty$, the t-distribution is effectively the same as the standard normal distribution. In general, the t-distribution has less height than the normal distribution with larger tails, which means the likelihood of values distributed away from the mean is higher. The t-test can be used for hypotheses such as are boys better readers than girls, are random selected parts from a factory equally good as the required specification, and whether the effect of the two drugs on the treatment of hypertension are equal. For comparison between groups, you need to calculate the mean and variance for each group.
+
+The following figure is an example of the Welch two sample t-test (performed using R) which is using an adjust degrees of freedom method and there is no standard error for each mean. In here we are testing whether the effect of two treatments are equal - as suggested by the alternative hypothesis. Since the p-value is less than 0.05, we can safely reject the null hypothesis and conclude that the true difference between the two treatment is not equal to zero, i.e. the effect of two treatments are not equal.
+
+![Two-tailed t-test (unpaired)](1t-test.png)
+
+[Click here](https://www.sthda.com/english/wiki/t-test-formula) to see t-test formulas.
+
+## Oneway ANOVA F-test
+
+F distribution - the sampling distribution for ratio of variances - $\frac{\textrm{between-group variance}}{\textrm{within-group variance}}$, was developed by R.A. Fisher who also developed the F-test. However, the F-distribution may be used to test other things such as in Levene&apos;s F-test which tests equality of variance between two groups. F-test also commonly used for assess whether a variable is good for a statistical model or not by comparing variances of models with and without the variable. The assumptions for F-test:
+
+- Coefficients follows normal distribution;
+- Samples are independent or dependent depending on the f-test you are using;
+- Sum of squares follows $\chi^{2}$ distributions.
+
+![F-test](2f-test.png)  
+_Figure 2. An example of F-test for finding relationship between drinking and smoking._
+
+In the _Figure 2_ we uses the F-test to find out whether drinking and smoking go together, the data (beware that this data is mocked) is a 2x2 table indicating whether the individual drink and/or smoke:
+
+|             | Smoker | Non-smoker |
+| ----------- | ------ | ---------- |
+| Drinker     | 43     | 7          |
+| Non-Drinker | 11     | 39         |
+
+For example, the value on the first row and the first column means 43 people who is a drinker but also a smoker.
+
+Since the p-value is significant less than 0.05, this tells us that the drinking and smoking are closely related.
+
+There are other tests we can also use to test for homogeneity of variance:
+
+- Brown-Forsythe - Use median instead of the mean, good for non-normality data.
+- Bartlett - Least robust, use to test equal variances among samples.
+- Levene - Good for symmetric, moderate-tailed distributions. Only appropriate for T-Test as it compares two variances i.e. one from each group.
+- Chi-Square - Use for comparing the variance of a population against a target value.
 
 ## Linear models
-A practical application of hypothesis testing is in linear models. Linear regression is a statistical analysis technique that uses the least square regression function to model the relationship between a continuous response variable and one or more independent predictor (or explanatory) variables. This function is a linear combination of one or more model parameters called regression coefficients. Functions that have only one predictor variable are called simple regression, and functions with more than one predictor variable are called multiple regression. In linear regression, the data is modeled using a linear predictive function, and unknown model parameters are also estimated through the data. These models are called linear models.  
 
-A simple regression looks something like the following:  
+Another practical application of hypothesis testing is in linear models. In the previous chapter we have introduced the <Link to="docs/03/09/2021/LearningPath-Statistical-Modelling-3#regression">linear regression</Link> models, which is a linear combination of one or more model coefficients called regression coefficients. Functions that have only one predictor variable are called simple regression, and functions with more than one predictor variable are called multiple regression. In linear regression, the data is modelled using a linear predictive function, and unknown model coefficients are also estimated through the data.
+
+A simple regression looks something like the following:
 
 $$
 Y_{i} = \alpha + \beta_{1}X_{1i} + \beta_{2}X_{2i} + \epsilon_{i}
 $$
 
-where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors.  
- 
-In addition to prediction using linear models, we are also concerned with the quality of estimates of parameters and the distribution of errors and residuals. In this section, we are going to see some use cases of t-test and f-test in linear models.
- 
-### T-test
-If we were creating a linear model from a dataset and print a summary of the details, we will be getting outputs like this:
- 
-```r
-# use the built-in dataset mtcars
-lm2 <- lm(mpg ~ hp + disp, mtcars)
- 
-summary(lm2)
-```
- 
-![A linear model summary](3lm.png)
- 
-Notice that for each variable there are corresponding t-statistic and p-value ($Pr(>|t|)$). But what are we testing? In a linear model we are testing the null hypothesis that the coefficient $\beta{j}$ of variable $X{ji}$, is equal to zero. In the picture on above, our estimate of `disp` has a p-value that significantly smaller than 0.05 (the default significance level) which means we have sufficient evidence to reject the null hypothesis that the coefficient equals to zero, meaning we can keep the `disp` variable for th model. On the other hand, the variable `hp` has a p-value of 0.73679 which suggests we do not have strong evidence to reject the null hypothesis. Then a naive final model would be  
+where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors with **mean zero**.
 
-$$
-mpg = 30.73 - 0.03disp
-$$
+In addition to prediction using linear models, we are also concerned with the quality of estimates of coefficients and the distribution of errors and residuals. The least squares method is a common regression analysis method for finding the best fit for a set of data points.
 
-  
-The $R^{2}$ score shows how well the regression fitted to data, the closer to 1 the better. The f-statistic in the output tells us whether the current model is better than the intercept-only model (i.e. setting all variable's coefficients to zero). In this case, the p-value suggests we can reject the null hypothesis that all coefficients are equal to zero.  
- 
- 
-### ANOVA
-Analysis of variances or ANOVA extends from t-test and is used to test the significance of the difference between the means of two or more samples (that may come from different groups). Due to the influence of various factors, there is variability in data obtained from sampling. The causes of variation can be divided into two basic sources:
+![Linear least squares](https://upload.wikimedia.org/wikipedia/commons/b/b0/Linear_least_squares_example2.svg)  
+_Linear least squares (Source: Krishnavedala, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons)_
+
+From the figure above you can see lines between each data point adn the line of best fit, this distance shows the variability of the current model and we use it to calculate the sum of squared error (SSE), which is the sum of the squared distance from each data point to the mean (of all data points). This variance will also be used in the next section (as part of he within-group variation) when we comparing two different models.
+
+### Comparing Two Different Models in Linear regression
+
+From time to time we would have come up with different linear models and of course we would like to find one model that best describes the data. An useful technique for comparing two different models in linear regression is Analysis of Variances (ANOVA). We can use ANOVA to find the variability between two models by testing the two sources of variances:
+
 - **Between-group variation** - Differences caused by experimental conditions like different treatments. It is expressed by the total sum of the sum of squared deviations between the mean value of the variable in each group and the grand mean.
-- **Within-group variation** - Differences caused by measurement errors or differences between individuals. These errors are random errors. They are expressed by the sum of the sum of squared deviations between the mean in each group and the value of the variable within the group.  
- 
-The total variances will be variances from between-group plus variances from within-group. [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.  
- 
-Assumptions:
-- samples are independent
-- homogeneity of variances between samples
-- experimental errors are normally distributed
- 
-There are several types of ANOVA but one-way ANOVA and two-way ANOVA are the most common ones which assess differences between a continuous variable and one predictor variable, and differences between a continuous variable and two predictor variables, respectively. Now, let's look at how we can use ANOVA with f-tests to compare two linear models.  
- 
-Suppose I have the following two models, where the second linear model has a additional variable we would like to include:  
-  
+- **Within-group variation** - Differences caused by measurement errors or differences between individuals. These errors are random errors. They are expressed by the sum of the sum of squared deviations between the mean in each group and the value of the variable within the group.
+
+> [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.
+
+The ratio of these two variances $\frac{variance_{between}}{variance_{within}}$ (two sums of squares) results in an F-statistic. The calculation brings the F-statistics together with the number of degrees of freedom and we can reduce to a p-value we can infer which model is better.
+
+To use ANOVA for linear regression, the data must conform to the following assumptions:
+
+- Samples are independent.
+- Variables must be continuous, although you can convert categorical variables into dummy varibles (see next section).
+- Homogeneity of variances between samples.
+- Experimental errors are normally distributed.
+
+You may have heard phrases like one-way ANOVA or two-way ANOVA and the difference between them is the number of independent variables we are considering - as also suggested by their name. Of course, you can have three-way ANOVA, four-way ANOVA, etc..
+
+So how do we do ANOVA for linear regression models? Here we are using a dataset `mtcar` from [R dataset](https://www.rdocumentation.org/packages/datasets/versions/3.6.2/topics/mtcars) as an example which contains eleven different variables for thirty-two cars. Suppose we have the following two models for finding out variables which affects fuel consumption (in `mpg`) of cars, where the second linear model has a additional variable `wt` (weight of cars) we would like to include:
 
 ```r
 lm1 <- lm(mpg ~ hp , mtcars)
-lm2 <- lm(mpg ~ hp + gear, mtcars)
+lm2 <- lm(mpg ~ hp + wt, mtcars)
 
 summary(lm1)
 summary(lm2)
 ```
 
-![Summaries of two linear models](4lms.png)
+![Summaries of two linear models](4lm.png)  
+_Summaries of two linear models._
 
-From the summaries on above we can see the variable `gear` with a positive coefficient is a good addition to the model (somewhat suggests cars with more gears have better fuel economy). Now we can use the anova function to see which model provides the best fit of the data. 
+From the summaries on above we can see the variable `wt` (weight in 1000 lbs) with a positive coefficient is a good addition to the model (somewhat suggesting cars with less weight have better fuel economy). Now let's use the `anova` function to see which model provides the best fit of the data.
 
 ```r
 anova(lm1, lm2)
 ```
 
-![Anova](5anova.png)
+![Anova](5anova.png)  
+_Output from the anova function._
 
-From the result we can see that the sum of squares has reduced over 30%, and the p-value suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` have significantly improved the model and we can happily accept the new variable into our model. 
+From the _Analysis of Variance Table_ we can see that the sum of squares has reduced over 30% (from `447` to `280`), and the p-value (significantly less than `0.05`) suggesting we can easily reject the null hypothesis that the ratio of between-group variance and within-group variance is not equal to one (which assess the variability of means in each group), therefore, this additional variable `gear` improved the model and we can accept the new variable into our model.
 
+### Dummy Variables for normal ANOVA with Linear Regression
 
-## Next step
-In this part of the learning path we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In <Link to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">part 5</Link> we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.  
+Sometimes we may want to include categorical variables in the models but these models cannot be compared simply using ANOVA because of the [simpson paradox](https://en.wikipedia.org/wiki/Simpson%27s_paradox). Categorical variables usually have two or more categories and we generally refer each variable as _factor_ and each category as _level_.
+Dummy variables take values of zero or one, and we need to create $n-1$ dummy variables for a categorical variable that has $n$ categories. E.g. For a variable indicating whether there is rain on a certain date, we can create a dummy variable where `1` represents a rainy day and `0` represents a sunny day. In the `mtcar` dataset cars have gears ranging from 3 to 5, therefore we can create two variables indicating whether the car has four gears or five gears. But why do we not need a third variable for three gears? This is because we can deduce whether a car has three gears from the previous two dummy variables (i.e. when both dummy variables are equal to zero); we would have collinearity if we introduced a variable for cars with three gears. Note that this method of creating dummy variables is also suitable for conducting T-test.
 
+The following figure shows the effect of the `gear` variable on the second linear models that we have created earlier. The model now becomes
+
+$$
+mpg ~ hp + mt + 4gears + 5gears
+$$
+
+![Effect of dummy variables](6dummy.png)  
+_Effect of dummy variables_
+
+The p-values for dummy variables are noticeable larger than 0.05 which suggesting the `gear` variable is not suitable for predicting the fuel economy of a particular car. At the bottom of the figure we can see the ANOVA also rejecting the new variable. Therefore, we can conclude the `gear` variable has no special meaning to `mpg`.
+
+## What's next?
+
+In this part of the learning path we have scratched the surface of statistical testing and seen two common hypothesis testing methods and their application in linear models. For more comprehensive materials on this topics, please refer to materials in the **Recommended reading** section. In <Link to="/docs/12/04/2021/LearningPath-Statistical-Modeling-5">part 5</Link> we will introduced you to the **Central Limit Theorem** which is a very important theorem in statistics, and is also the reason why we can make assumptions about the underlying distribution of samples in parametric tests.
 
 ## Recommended reading
-[Seeing Theory - Frequentist Inference](https://seeing-theory.brown.edu/frequentist-inference/index.html#section1)  
-[Hypothesis Testing](https://ocw.jhsph.edu/courses/methodsinbiostatisticsii/PDFs/lecture15.pdf)  
-[Another hypothesis Testing material](https://www.ucl.ac.uk/~uctp41a/b203/lecture4.pdf)  
-[T-test](https://www.stats.ox.ac.uk/~massa/Lecture%2010.pdf)  
-[Maths behind linear models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)  
-[ANOVA](https://bookdown.org/ndphillips/YaRrr/anova.html)  
 
-
+- [Seeing Theory - Frequentist Inference](https://seeing-theory.brown.edu/frequentist-inference/index.html#section1)
+- [Hypothesis Testing](https://ocw.jhsph.edu/courses/methodsinbiostatisticsii/PDFs/lecture15.pdf)
+- [Another hypothesis Testing material](https://www.ucl.ac.uk/~uctp41a/b203/lecture4.pdf)
+- [T-test](https://www.stats.ox.ac.uk/~massa/Lecture%2010.pdf)
+- [Maths behind linear models](https://math.nyu.edu/~cfgranda/pages/OBDA_fall17/notes/linear_models.pdf)
+- [ANOVA](https://bookdown.org/ndphillips/YaRrr/anova.html)
 
 ## Sidenote
-Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference). The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution and posterior distribution are introduced to find out the probability of each parameter value in the parameter space.  
+
+Statistical (hypothesis) testing is a methodology in **frequentist inference** (often compared with bayesian inference). The major difference between the **frequentist inference** and **bayesian inference** (both are type of [statistics inference](https://www.bristol.ac.uk/medical-school/media/rms/red/4_ideas_of_statistical_inference.html)) lies in how they interpret the parameter space (i.e. all possible values of parameters we're trying to estimate). The frequentist approach considering that there are unique true constant parameters, the observation data is generated under these parameters. Since it is not known which values the parameters are, the maximum likelihood estimation (MLE) and confidence interval are introduced to estimate parameters in the parameter space. Whilst the bayesian approach considered that the parameter itself has a probability distribution, thus parameters might not be unique. Each value in the parameter space has some probability to be the parameter used by the real model so prior distribution and posterior distribution are introduced to find out the probability of each parameter value in the parameter space.
 
 ---
 
-When you use test functions in R you will often see *confidence interval* included in your results with a certain percentage. A confidence interval estimates a range of possible values which is very likely to include population mean. If you look closely at the formula of the confidence interval then you will see it calculates variations around the sample mean. A common misunderstanding of confidence interval is to interpret it as the probability of the population mean will fall within the interval. However, the actual meaning of the percentage is the probability that the interval produced will contain the population mean. For example, if we have a 99% confidence interval then we are confident that we will see the population mean fall within the interval in 99 out of 100 times of construction of confidence intervals. Whereas the misunderstanding put confidence on a particular confidence interval.  
+When you use test functions in R you will often see _confidence interval_ included in your results with a certain percentage. A confidence interval estimates a range of possible values which is very likely to include population mean. If you look closely at the formula of the confidence interval then you will see it calculates variations around the sample mean. A common misunderstanding of confidence interval is to interpret it as the probability of the population mean will fall within the interval. However, the actual meaning of the percentage is the probability that the interval produced will contain the population mean. For example, if we have a 99% confidence interval then we are confident that we will see the population mean fall within the interval in 99 out of 100 times of construction of confidence intervals. Whereas the misunderstanding put confidence on a particular confidence interval.

@@ -274,7 +274,7 @@ IndexPage.propTypes = {
   data: PropTypes.any
 };
 
-export const query = graphql`
+export const indexQuery = graphql`
   query {
     featuredItem: allMdx(
       filter: {

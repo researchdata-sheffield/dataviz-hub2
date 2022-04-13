@@ -49,14 +49,23 @@ t.test(
 ##########################
 ######### F-test #########
 ##########################
+df_ftest <- data.frame(
+  "Smoker" = c(43, 7), 
+  "Non-smoker" = c(11, 39), 
+  row.names = c("Drinker", "Non-drinker")
+  )
 
-var.test(
-  age20, 
-  age25,
-  ratio = 1,
-  conf.level = 0.95,
-  alternative = "two.sided"
-)
+
+fisher.test(df_ftest)
+
+
+# var.test(
+#   age20, 
+#   age25,
+#   ratio = 1,
+#   conf.level = 0.95,
+#   alternative = "two.sided"
+# )
 
 
 
@@ -72,3 +81,8 @@ summary(lm1)
 summary(lm2)
 
 anova(lm1, lm2)
+
+
+
+
+

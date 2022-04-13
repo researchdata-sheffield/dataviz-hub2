@@ -19,7 +19,7 @@ on:
 jobs:
   deploy:
     name: Deploy to GitHub Pages
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     defaults:
       run:
         shell: bash
@@ -28,20 +28,18 @@ jobs:
       - name: Cancel Previous Runs
         uses: styfle/cancel-workflow-action@0.9.1
         
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: master
           persist-credentials: false
       
-      - name: NPM Cache
-        id: npm-cache
-        uses: actions/cache@v2
+      - uses: actions/setup-node@v3
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-npm-cache-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-npm-cache-
+          node-version: '16'
+          cache: 'npm'
 
       - name: Gatsby Cache
+        if: "!contains(github.event.head_commit.message, 'skip cache')"
         id: gatsby-deploy-cache
         uses: actions/cache@v2
         with:
@@ -69,8 +67,9 @@ jobs:
           GIT_COMMITTER_NAME: "github-actions-bot"
           GIT_COMMITTER_EMAIL: "support+actions@github.com"
         
-      - name: Deploy
-        run: npm run deploy
+      - name: Build
+        run: |
+          npm run build
         env:
           NODE_OPTIONS: '--max_old_space_size=4096'
           EVENT_API_KEY_1: ${{ secrets.EVENT_API_KEY_1 }}
@@ -81,6 +80,15 @@ jobs:
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          personal_token: ${{ secrets.GH_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./public
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
 
     
 

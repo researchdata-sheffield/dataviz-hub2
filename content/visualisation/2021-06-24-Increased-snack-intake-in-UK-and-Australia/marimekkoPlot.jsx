@@ -6,7 +6,10 @@
 
 import React from "react";
 import PropTypes from "prop-types";
-import { ResponsiveMarimekko } from "@nivo/marimekko";
+import loadable from "@loadable/component";
+const ResponsiveMarimekko = loadable(() => import("@nivo/marimekko"), {
+  resolveComponent: (components) => components.ResponsiveMarimekko
+});
 import Snack from "./snacks.svg";
 import AUFlag from "./australia.svg";
 import UKFlag from "./united-kingdom.svg";

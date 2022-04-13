@@ -1,3 +1,4 @@
+/* eslint-disable */
 import { graphql } from "gatsby";
 
 /**
@@ -7,7 +8,7 @@ import { graphql } from "gatsby";
   }
  */
 
-export const eventbriteEdge = graphql`
+export const fragmentQueries = graphql`
   fragment EventbriteEventsEdge on EventbriteEventsConnection {
     edges {
       node {
@@ -37,9 +38,7 @@ export const eventbriteEdge = graphql`
       }
     }
   }
-`;
 
-export const mdxFrontmatter = graphql`
   fragment MdxFrontmatter on Frontmatter {
     type
     title
@@ -62,18 +61,14 @@ export const mdxFrontmatter = graphql`
       }
     }
   }
-`;
 
-export const mdxFields = graphql`
   fragment MdxFields on MdxFields {
     slug
     readingTime {
       text
     }
   }
-`;
 
-export const imageSharp = graphql`
   fragment ImageSharp on File {
     childImageSharp {
       gatsbyImageData
