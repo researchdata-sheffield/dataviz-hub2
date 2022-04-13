@@ -13,7 +13,7 @@ Object {
           class="relative"
         >
           <button
-            class="sc-eCYdqJ sc-jSMfEi kQKQuV kniTro group"
+            class="sc-jSMfEi sc-gKXOVf kiuFGX hsfkHZ group"
             id="vis-tag-button"
             title="Tag Menu"
           >
@@ -33,7 +33,7 @@ Object {
             </svg>
           </button>
           <button
-            class="sc-eCYdqJ sc-gKXOVf kQKQuV cAwCOt group bg-gray-800"
+            class="sc-jSMfEi sc-iBkjds kiuFGX eFRXLr group bg-gray-800"
             id="vis-footer-button"
             title="Footer"
           >
@@ -136,7 +136,7 @@ Object {
               </h1>
             </div>
             <div
-              class="sc-hKMtZM fYVfow"
+              class="sc-eCYdqJ gdEvlx"
               height="auto"
               width="100%"
             >
@@ -583,7 +583,7 @@ Object {
             class="flex w-full h-full justify-center"
           >
             <div
-              class="sc-hKMtZM blmuIS"
+              class="sc-eCYdqJ bMrtpT"
               id="main-word-cloud"
             >
               <div
@@ -602,34 +602,29 @@ Object {
           class="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5"
         >
           <div
-            class="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
-            style="grid-auto-flow: dense; grid-template-rows: min-content;"
+            class="sc-gsnTZi djaffU"
           >
             <a
-              class="shadow-xl rounded-xl visualisationColourBorder"
+              class="__outer shadow-xl visualisationColourBorder"
               gatsby="true"
               href="/visualisation/06/09/2021/Test-Title"
               style="grid-row: span 1; grid-column: span 1;"
             >
               <img
-                class="absolute"
+                class="__loading-image"
                 src="test-file-stub"
-                style="max-width: 100px; left: 50%; top: 50%; transform: translate(-50%, -50%);"
               />
               <div
                 class="react-reveal"
               >
                 <div
-                  class="sc-gsnTZi edVJYX"
+                  class="sc-dkzDqf hbXdWQ"
                 >
                   <div
-                    class="rounded-xl md:absolute md:top-0 md:left-0"
-                    style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                    class="__inner"
                   >
                     <img
                       alt="Visualisation: Test Title"
-                      class="rounded-xl"
-                      style="height: 100%; width: 100%; object-fit: cover; object-position: center; transition: .2s ease-out;"
                     />
                   </div>
                 </div>
@@ -637,17 +632,15 @@ Object {
             </a>
             <div
               id="visualisation-invite"
-              style="grid-row: span 1; grid-column: span 1; visibility: hidden;"
             >
               <div
                 class="react-reveal"
               >
                 <div
-                  class="sc-gsnTZi edVJYX"
+                  class="sc-dkzDqf hbXdWQ"
                 >
                   <div
-                    class="group rounded-xl relative md:absolute md:top-0 md:left-0 text-center flex"
-                    style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                    class="__wrap"
                   >
                     <h1
                       class="text-gray-300 font-bold m-auto"
@@ -655,10 +648,9 @@ Object {
                       Add your visualisations here
                     </h1>
                     <a
-                      class="absolute text-sm text-gray-200 font-bold cursor-pointer bg-gray-600 rounded-md py-1 px-2 hidden group-hover:block"
+                      class="text text-gray-200 bg-gray-600"
                       gatsby="true"
                       href="/docs/21/07/2021/Contribute-visualisation"
-                      style="transform: translate(-50%, 0%); left: 50%; top: 70%;"
                     >
                       Learn how
                     </a>
@@ -698,7 +690,7 @@ Object {
         class="relative"
       >
         <button
-          class="sc-eCYdqJ sc-jSMfEi kQKQuV kniTro group"
+          class="sc-jSMfEi sc-gKXOVf kiuFGX hsfkHZ group"
           id="vis-tag-button"
           title="Tag Menu"
         >
@@ -718,7 +710,7 @@ Object {
           </svg>
         </button>
         <button
-          class="sc-eCYdqJ sc-gKXOVf kQKQuV cAwCOt group bg-gray-800"
+          class="sc-jSMfEi sc-iBkjds kiuFGX eFRXLr group bg-gray-800"
           id="vis-footer-button"
           title="Footer"
         >
@@ -821,7 +813,7 @@ Object {
             </h1>
           </div>
           <div
-            class="sc-hKMtZM fYVfow"
+            class="sc-eCYdqJ gdEvlx"
             height="auto"
             width="100%"
           >
@@ -1268,7 +1260,7 @@ Object {
           class="flex w-full h-full justify-center"
         >
           <div
-            class="sc-hKMtZM blmuIS"
+            class="sc-eCYdqJ bMrtpT"
             id="main-word-cloud"
           >
             <div
@@ -1287,34 +1279,29 @@ Object {
         class="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5"
       >
         <div
-          class="max-w-8xl w-full md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-1"
-          style="grid-auto-flow: dense; grid-template-rows: min-content;"
+          class="sc-gsnTZi djaffU"
         >
           <a
-            class="shadow-xl rounded-xl visualisationColourBorder"
+            class="__outer shadow-xl visualisationColourBorder"
             gatsby="true"
             href="/visualisation/06/09/2021/Test-Title"
             style="grid-row: span 1; grid-column: span 1;"
           >
             <img
-              class="absolute"
+              class="__loading-image"
               src="test-file-stub"
-              style="max-width: 100px; left: 50%; top: 50%; transform: translate(-50%, -50%);"
             />
             <div
               class="react-reveal"
             >
               <div
-                class="sc-gsnTZi edVJYX"
+                class="sc-dkzDqf hbXdWQ"
               >
                 <div
-                  class="rounded-xl md:absolute md:top-0 md:left-0"
-                  style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                  class="__inner"
                 >
                   <img
                     alt="Visualisation: Test Title"
-                    class="rounded-xl"
-                    style="height: 100%; width: 100%; object-fit: cover; object-position: center; transition: .2s ease-out;"
                   />
                 </div>
               </div>
@@ -1322,17 +1309,15 @@ Object {
           </a>
           <div
             id="visualisation-invite"
-            style="grid-row: span 1; grid-column: span 1; visibility: hidden;"
           >
             <div
               class="react-reveal"
             >
               <div
-                class="sc-gsnTZi edVJYX"
+                class="sc-dkzDqf hbXdWQ"
               >
                 <div
-                  class="group rounded-xl relative md:absolute md:top-0 md:left-0 text-center flex"
-                  style="height: 100%; width: 100%; background-repeat: no-repeat;"
+                  class="__wrap"
                 >
                   <h1
                     class="text-gray-300 font-bold m-auto"
@@ -1340,10 +1325,9 @@ Object {
                     Add your visualisations here
                   </h1>
                   <a
-                    class="absolute text-sm text-gray-200 font-bold cursor-pointer bg-gray-600 rounded-md py-1 px-2 hidden group-hover:block"
+                    class="text text-gray-200 bg-gray-600"
                     gatsby="true"
                     href="/docs/21/07/2021/Contribute-visualisation"
-                    style="transform: translate(-50%, 0%); left: 50%; top: 70%;"
                   >
                     Learn how
                   </a>
