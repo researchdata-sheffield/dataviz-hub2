@@ -50,9 +50,13 @@ jobs:
         with:
           node-version: '16'
           cache: 'npm'
-          
+      
+      - name: Output commit message
+        run: echo "${{ github.event.head_commit.message }}"
+
       # Retrieve gatsby cache
       # Creates new cache when OS/run_id changes
+      # Skip if the commit message contains text 'skip cache'
       - name: Gatsby Cache
         if: "!contains(github.event.head_commit.message, 'skip cache')"
         id: gatsby-ci-cache
@@ -85,8 +89,6 @@ jobs:
           
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e; tskill node
-
-      - run: echo "ps"
 
   Test:
     needs: Check-Duplicate

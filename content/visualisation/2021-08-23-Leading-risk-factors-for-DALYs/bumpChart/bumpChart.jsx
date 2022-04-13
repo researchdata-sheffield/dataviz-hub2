@@ -63,9 +63,10 @@ const bumpChart = ({ theme, data, gender }) => {
           </div>
           <div style={{ textAlign: "center" }}>
             <h2 style={{ color: "#777" }}>Ranking</h2>
-            {data.map((rank, idx) => (
-              <h3 key={`${id}-${idx}`}>{rank.y || "unknown"}</h3>
-            ))}
+            {data &&
+              data.data.map((rank, idx) => (
+                <h3 key={`${id}-${idx}`}>{rank.y || "unknown"}</h3>
+              ))}
           </div>
         </div>
       </div>
