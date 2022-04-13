@@ -84,7 +84,7 @@ jobs:
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
           
       - name: Serve and E2E test
-        run: npm run serve; npm run test:e2e; tskill node
+        run: npm run serve & npm run test:e2e; tskill node
 
       - run: echo "ps"
 
