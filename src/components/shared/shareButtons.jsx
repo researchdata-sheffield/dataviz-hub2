@@ -75,7 +75,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
 
       {/* mobile: table of content & share buttons */}
       <div
-        className="w-full shadow-md flex flex-wrap lg:hidden focus:justify-center -mt-12 lg:mt-0"
+        className="w-full shadow-md flex flex-wrap lg:hidden justify-center -mt-12 lg:mt-0"
         style={{ backgroundColor: "#f3f3f3" }}
       >
         <div
@@ -83,7 +83,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
             tableOfContent && Object.keys(tableOfContent).length === 0
               ? "flex-row"
               : "flex-col w-1/4"
-          } flex text-sm justify-center items-center py-2 ml-10`}
+          } flex text-sm justify-center items-center py-2`}
           style={{ maxWidth: "50px" }}
           aria-label="Top mobile share buttons"
         >
@@ -106,7 +106,7 @@ const shareButtons = ({ shareLinks, tableOfContent, renderItem }) => {
         <div
           className={` ${
             tableOfContent && tableOfContent.items ? "pt-8 pb-5" : "hidden"
-          } mx-auto overflow-auto text-black lg:hidden px-2`}
+          } ml-10 overflow-auto text-black lg:hidden px-2`}
         >
           {tableOfContent && tableOfContent.items && (
             <p className="font-bold mb-3 pb-2 border-b-1 border-gray-300">

@@ -112,12 +112,13 @@ const search = () => {
           placeholder="Double click to select | Type to search"
         />
         <datalist id="regions">
-          {regionJSONData.map((region, idx) => (
-            <option
-              key={`region-${region.Location}-${idx}`}
-              value={region.Location}
-            />
-          ))}
+          {regionJSONData &&
+            regionJSONData.map((region, idx) => (
+              <option
+                key={`region-${region.Location}-${idx}`}
+                value={region.Location}
+              />
+            ))}
         </datalist>
       </div>
       {currentData && (

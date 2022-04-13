@@ -18,7 +18,7 @@ exports[`Search component renders correctly 1`] = `
     }
   >
     <p
-      className="react-reveal text-lg text-gray-800 mb-5 font-extrabold"
+      className="react-reveal text-lg text-gray-800 mb-4 font-bold"
       style={
         Object {
           "opacity": undefined,
@@ -103,7 +103,7 @@ exports[`Search component return search result without error 1`] = `
       style="background-image: url(test-file-stub); background-size: contain; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 600px;"
     >
       <p
-        class="react-reveal text-lg text-gray-800 mb-5 font-extrabold"
+        class="react-reveal text-lg text-gray-800 mb-4 font-bold"
       >
         What are you looking for?
       </p>
@@ -182,7 +182,11 @@ exports[`Search component return search result without error 1`] = `
                 >
                   DOCS
                 </a>
-                <span />
+                <p
+                  style="font-size: .85rem; margin-top: 10px;"
+                >
+                  Invalid Date
+                </p>
               </div>
               <h1
                 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 15px; color: rgb(36, 39, 48);"
@@ -246,7 +250,11 @@ exports[`Search component return search result without error 1`] = `
                 >
                   Interative
                 </a>
-                <span />
+                <p
+                  style="font-size: .85rem; margin-top: 10px;"
+                >
+                  Invalid Date
+                </p>
               </div>
               <h1
                 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 15px; color: rgb(36, 39, 48);"

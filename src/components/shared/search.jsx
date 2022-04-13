@@ -89,6 +89,13 @@ class Search extends Component {
 
                 let title = shortenText(item.title, 8);
                 let description = shortenText(item.description, 30);
+                const dateOptions = {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric"
+                };
+                let itemDate = new Date(item.date);
+                itemDate = itemDate.toLocaleDateString("en-GB", dateOptions);
 
                 return (
                   <a
@@ -151,7 +158,15 @@ class Search extends Component {
                               {currentTag}
                             </TagBtn>
                           ))}
-                        <span>{item.date}</span>
+                        <p
+                          style={{
+                            fontSize: ".85rem",
+                            marginTop: "10px",
+                            color: ""
+                          }}
+                        >
+                          {itemDate}
+                        </p>
                       </div>
                       <h1
                         style={{
@@ -206,7 +221,7 @@ class Search extends Component {
           }}
         >
           <Zoom top duration={1000} cascade>
-            <p className="text-lg text-gray-800 mb-5 font-extrabold">
+            <p className="text-lg text-gray-800 mb-4 font-bold">
               What are you looking for?
             </p>
           </Zoom>

@@ -44,15 +44,12 @@ const wordCloud = React.memo(
       "#fedf00",
       "#0066b3",
       "#6d3db3",
-      "#52ff9c",
       "#ade1f8",
       "#f0f0f0",
       "#fff",
-      "#ff79b4",
       "#89f064",
       "#393939",
-      "#08e8ff",
-      "#00aeef"
+      "#08e8ff"
     ];
     const wordBackgroundColour = backgroundColour || [];
 
