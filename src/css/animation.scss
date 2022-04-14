@@ -9,72 +9,131 @@
 }
 
 @-webkit-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
+  0% {
+    color: white;
+  }
+  25% {
+    color: #00aeef;
+  }
+  40% {
+    color: #ea005e;
+  }
+  55% {
+    color: #a3ce71;
+  }
+  70% {
+    color: #a0aec0;
+  }
+  85% {
+    color: rgb(0, 0, 0);
+  }
 }
 @-moz-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
+  0% {
+    color: white;
+  }
+  25% {
+    color: #00aeef;
+  }
+  40% {
+    color: #ea005e;
+  }
+  55% {
+    color: #a3ce71;
+  }
+  70% {
+    color: #a0aec0;
+  }
+  85% {
+    color: rgb(0, 0, 0);
+  }
 }
 @-ms-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
+  0% {
+    color: white;
+  }
+  25% {
+    color: #00aeef;
+  }
+  40% {
+    color: #ea005e;
+  }
+  55% {
+    color: #a3ce71;
+  }
+  70% {
+    color: #a0aec0;
+  }
+  85% {
+    color: rgb(0, 0, 0);
+  }
 }
 @-o-keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
+  0% {
+    color: white;
+  }
+  25% {
+    color: #00aeef;
+  }
+  40% {
+    color: #ea005e;
+  }
+  55% {
+    color: #a3ce71;
+  }
+  70% {
+    color: #a0aec0;
+  }
+  85% {
+    color: rgb(0, 0, 0);
+  }
 }
 @keyframes color-change {
-  0% { color: white; }
-  25% { color: #00aeef; }
-  40% { color: #ea005e; }
-  55% { color: #A3CE71; }
-  70% { color: #a0aec0; }
-  85% { color: rgb(0, 0, 0); }
+  0% {
+    color: white;
+  }
+  25% {
+    color: #00aeef;
+  }
+  40% {
+    color: #ea005e;
+  }
+  55% {
+    color: #a3ce71;
+  }
+  70% {
+    color: #a0aec0;
+  }
+  85% {
+    color: rgb(0, 0, 0);
+  }
 }
-
 
 /******
 * Typing
 */
 @keyframes typing {
-  from { 
-      width: 0%;
-      opacity: 0;
-      border-right: 2px solid #00aeef;
+  from {
+    width: 0%;
+    opacity: 0;
+    border-right: 2px solid #00aeef;
   }
-  to { 
-      opacity: 1;
-      width: 100%;
-      border-right: 0;
+  to {
+    opacity: 1;
+    width: 100%;
+    border-right: 0;
   }
 }
 
 @keyframes blink {
-  from, to { 
-      border-color: transparent 
+  from,
+  to {
+    border-color: transparent;
   }
-  50% { 
-      border-color: #00aeef; 
+  50% {
+    border-color: #00aeef;
   }
 }
-
 
 /******
 * Scroll Down Button
@@ -111,56 +170,85 @@
 */
 @keyframes inline-link-hover {
   0% {
-    background-size:100% 2px;
-    background-position:left 85%;
+    background-size: 100% 2px;
+    background-position: left 85%;
   }
   49% {
-    background-size:0px 2px;
-    background-position:left 85%;
-  }
-  50%{ 
-    background-size:0px 2px;
-    background-position:right 85%;
-  }
-  100%{ 
-    background-size:100% 2px;
-    background-position:right 85%;
-  }
-}
-
-@keyframes link-hover{ 
-  0% {
-    transform:scaleX(1);
-    transform-origin:top right;
-  }
-  49% {
-    transform:scaleX(0);
-    transform-origin:top right;
+    background-size: 0px 2px;
+    background-position: left 85%;
   }
   50% {
-    transform:scaleX(0);
-    transform-origin:top left;
-  } 
-  100%{ 
-    transform:scaleX(1);
-    transform-origin:top left;
+    background-size: 0px 2px;
+    background-position: right 85%;
+  }
+  100% {
+    background-size: 100% 2px;
+    background-position: right 85%;
   }
 }
 
+@keyframes link-hover {
+  0% {
+    transform: scaleX(1);
+    transform-origin: top right;
+  }
+  49% {
+    transform: scaleX(0);
+    transform-origin: top right;
+  }
+  50% {
+    transform: scaleX(0);
+    transform-origin: top left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: top left;
+  }
+}
 
 @keyframes random-border-colour {
-  0% { border-left-color: rgb(7, 241, 191); }
-  10% { border-left-color: #00aeef; }
-  30% { border-left-color: #ea005e; }
-  40% { border-left-color: #A3CE71; }
-  50% { border-left-color: '#ffaf0f' }
-  60% { border-left-color: '#bf0fff' }
-  70% { border-left-color: '#251d5a' }
-  80% { border-left-color: #a0aec0; }
-  90% { border-left-color: rgb(253, 95, 109); }
+  0% {
+    border-left-color: rgb(7, 241, 191);
+  }
+  10% {
+    border-left-color: #00aeef;
+  }
+  30% {
+    border-left-color: #ea005e;
+  }
+  40% {
+    border-left-color: #a3ce71;
+  }
+  50% {
+    border-left-color: "#ffaf0f";
+  }
+  60% {
+    border-left-color: "#bf0fff";
+  }
+  70% {
+    border-left-color: "#251d5a";
+  }
+  80% {
+    border-left-color: #a0aec0;
+  }
+  90% {
+    border-left-color: rgb(253, 95, 109);
+  }
 }
 
 .random-border-colour {
   color: white;
   animation: random-border-colour 20s ease infinite;
+}
+
+@keyframes AnimateBackground {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  to {
+    background-position: 0% 50%;
+  }
 }
