@@ -15,7 +15,7 @@ module.exports = {
         preset: "conventionalcommits",
         releaseRules: "./semantic-release-rules.js",
         parserOpts: {
-          noteKeywords: ["BREAKING CHANGE", "BREAKING CHANGES"]
+          noteKeywords: ["BREAKING CHANGE", "BREAKING-CHANGE", "BREAKING CHANGES"]
         }
       }
     ],
