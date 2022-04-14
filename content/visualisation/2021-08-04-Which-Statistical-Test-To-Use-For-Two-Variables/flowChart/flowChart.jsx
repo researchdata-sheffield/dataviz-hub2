@@ -28,11 +28,10 @@ import {
   RedNodeComponent
 } from "./nodeComponents";
 import { getEdge, getNode, getNodesAndEdges } from "./utils";
-import { chartNodeData } from "./data/nodeData";
-import { chartEdgeData } from "./data/edgeData";
 import { textForHelp } from "./data/textData";
 import { FaToggleOff, FaToggleOn } from "react-icons/fa";
 import { MdHelp } from "react-icons/md";
+import { loadingLayer, useFetch } from "@utils/hooks/useFetch";
 
 const sanitizeOptions = {
   allowedTags: sanitizeHtml.defaults.allowedTags.concat([
@@ -66,13 +65,6 @@ const nodeTypes = {
 const snapGrid = [15, 15];
 const connectionLineStyle = { stroke: "#fff" };
 
-// Initialise data
-let groupedData = [...chartNodeData, ...chartEdgeData].map((el) => ({
-  ...el,
-  isHidden: el.id != "start", // only show the start button
-  labelStyle: el.id.charAt(0) == "e" && { fontSize: ".95rem" } // set edges' font size
-}));
-
 /**************************
  * Return flowchart
  * @returns
@@ -85,14 +77,35 @@ const flowChart = () => {
   const { setCenter } = useZoomPanHelper();
   const [showHelp, setShowHelp] = useState(false);
   // data for all edges and nodes
-  const [elements, setElements] = useState(groupedData);
-  // dialog box
+  const [groupedData, setGroupedData] = useState(null);
+  // current elements
+  const [elements, setElements] = useState(null);
+  // dialog box, element description
   const [elementData, setElementData] = useState({
     label: "",
     description: ""
   });
   //list of clicked nodes
   const [clickedNodes, setClickedNodes] = useState([]);
+  const url =
+    "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2-data/main/visualisation/2021-08-04-Which-Statistical-Test-To-Use-For-Two-Variables";
+  const [loadingNode, chartNodeData] = useFetch(`${url}/nodeData.js`, false);
+  const [loadingEdge, chartEdgeData] = useFetch(`${url}/edgeData.js`, false);
+
+  useEffect(() => {
+    if (!chartEdgeData || !chartNodeData) {
+      return;
+    }
+    // Initialise data
+    let data = [...eval(chartNodeData), ...eval(chartEdgeData)].map((el) => ({
+      ...el,
+      isHidden: el.id != "start", // only show the start button
+      labelStyle: el.id.charAt(0) == "e" && { fontSize: ".95rem" } // set edges' font size
+    }));
+
+    setGroupedData(data);
+    setElements(data);
+  }, [chartNodeData, chartEdgeData]);
 
   /****************************************
    * Utility functions for the flowchart
@@ -335,6 +348,10 @@ const flowChart = () => {
   /****************************************
    * End of Utility functions
    ***************************************/
+
+  if (loadingNode || loadingEdge || !groupedData) {
+    return loadingLayer();
+  }
 
   return (
     <div>

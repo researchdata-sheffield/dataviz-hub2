@@ -1,4 +1,7 @@
 module.exports = [
+  { breaking: true, release: "major" },
+  { tag: 'Breaking', release: 'major' },
+  { revert: true, release: "patch" },
   { type: "feat", release: "minor" },
   { type: "fix", release: "patch" },
   { type: "perf", release: "patch" },
@@ -10,8 +13,6 @@ module.exports = [
   { type: "test", release: "patch" },
   { type: "build", release: "patch" },
   { type: "ci", release: "patch" },
-  { breaking: true, release: "major" },
-  { revert: true, release: "patch" },
   { type: "chore", release: false },
   { scope: "no-release", release: false }
 ];

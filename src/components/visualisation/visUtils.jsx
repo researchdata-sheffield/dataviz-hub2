@@ -129,6 +129,7 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
           menu="Tag menu"
           minFontSize={0.97}
           maxFontSize={2.8}
+          padding="1px 3px"
           colour={[
             "#808080",
             "#ff5e5e",

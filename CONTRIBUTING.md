@@ -44,6 +44,8 @@ Although the scope is optional but it is recommended to include the scope so tha
 - `fix(no-release): responsive issue for xxx`
   - the `no-release` scope will not trigger a release
 
+For breaking changes, add `!` after `<type>(Scope)` or add `BREAKING CHANGE: description.`/`BREAKING CHANGES: description.`
+
 ## <a name="website"></a> Contribute to the core website
 
 This website is built from <a href="https://www.gatsbyjs.org/">Gatsby</a> framework.

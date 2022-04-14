@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Sunburst } from "@ant-design/charts";
-import JSONdata from "./data.json";
+import { useFetch, loadingLayer } from "@utils/hooks/useFetch";
 import styled from "styled-components";
 import PoundPriceTag from "./pound-price-tag.svg";
 import WineBottle from "./wine-bottle-glass.svg";
@@ -54,7 +54,14 @@ const transformValue = (data) => {
  * @returns
  */
 const SunburstChart = () => {
+  const [loading, JSONdata] = useFetch(
+    "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2-data/main/visualisation/2021-09-06-Modeling-the-Effects-of-Alcohol-Pricing-Policies/data.json"
+  );
   const [valueOption, setValueOption] = useState("percentageChange");
+
+  if (loading || !JSONdata) {
+    return loadingLayer();
+  }
 
   const tooltipStyle = (data) => {
     return {

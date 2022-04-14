@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { Radar, Gauge } from "@ant-design/plots";
-import StatisticsData from "../data/statistics.json";
 import { mapPrinciple } from "../helper";
+import { useFetch } from "@utils/hooks/useFetch";
 
 const DatasetSummary = ({ currentDataset }) => {
+  const [loading, statsData] = useFetch(
+    "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2-data/main/visualisation/2022-01-31-ORDA-datasets-FAIRness-assessment/statistics.json"
+  );
   const [radarData, setRadarData] = useState([]);
 
   useEffect(() => {
-    processStatistics(StatisticsData, currentDataset);
-  }, [currentDataset]);
+    processStatistics(statsData, currentDataset);
+  }, [currentDataset, statsData]);
 
   /**
    * Prepare average and dataset statistics
@@ -18,6 +21,10 @@ const DatasetSummary = ({ currentDataset }) => {
    */
   const processStatistics = (avgData, datasetData) => {
     let stats = [];
+
+    if (!avgData) {
+      return;
+    }
 
     Object.keys(avgData).forEach((principle) => {
       let scorePercent =
@@ -173,6 +180,10 @@ const DatasetSummary = ({ currentDataset }) => {
       }
     };
   };
+
+  if (loading) {
+    <div>Loading...</div>;
+  }
 
   return (
     <div className="summary">

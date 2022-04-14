@@ -3,9 +3,8 @@ import loadable from "@loadable/component";
 const ResponsiveChoroplethCanvas = loadable(() => import("@nivo/geo"), {
   resolveComponent: (components) => components.ResponsiveChoroplethCanvas
 });
-import worldCountries from "./data/world_countries.json";
-import probabilityData from "./data/prediction.json";
 import Shark from "./images/shark.svg";
+import { useFetch, loadingLayer } from "@utils/hooks/useFetch";
 
 const sourceInfo = {
   position: "absolute",
@@ -66,6 +65,15 @@ const unknownArray = [
  * @returns
  */
 const ExtinctionMap = () => {
+  const url =
+    "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2-data/main/visualisation/2021-10-20-Marine-Fishes-Near-Extinction";
+  const [loading, worldCountries] = useFetch(`${url}/world_countries.json`);
+  const [loadingProb, probabilityData] = useFetch(`${url}/prediction.json`);
+
+  if (loading || loadingProb || !worldCountries || !probabilityData) {
+    return loadingLayer();
+  }
+
   return (
     <div
       id="visualisation"

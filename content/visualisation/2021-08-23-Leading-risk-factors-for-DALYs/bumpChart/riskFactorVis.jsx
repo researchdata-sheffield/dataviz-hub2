@@ -1,8 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BumpChart from "./bumpChart";
 import { BumpChartWrap, ChartUtility } from "./style";
-import femaleJsonData from "./female.json";
-import maleJsonData from "./male.json";
+import { useFetch } from "@utils/hooks/useFetch";
 
 /**
  * dataviz.shef.ac.uk
@@ -10,8 +9,23 @@ import maleJsonData from "./male.json";
  * https://creativecommons.org/licenses/by-sa/4.0/
  */
 const RiskFactorVis = () => {
-  const [maleData, setMaleData] = useState(maleJsonData["Low"]);
-  const [femaleData, setFemaleData] = useState(femaleJsonData["Low"]);
+  const url =
+    "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2-data/main/visualisation/2021-08-23-Leading-risk-factors-for-DALYs/bumpChart";
+  const [loadingMale, maleJsonData] = useFetch(`${url}/male.json`);
+  const [loadingFemale, femaleJsonData] = useFetch(`${url}/female.json`);
+  const [maleData, setMaleData] = useState(null);
+  const [femaleData, setFemaleData] = useState(null);
+
+  useEffect(() => {
+    if (maleJsonData && femaleJsonData) {
+      setMaleData(maleJsonData["Low"]);
+      setFemaleData(femaleJsonData["Low"]);
+    }
+  }, [maleJsonData, femaleJsonData]);
+
+  if (loadingMale || loadingFemale) {
+    return;
+  }
 
   const sourceInfo = {
     position: "absolute",

@@ -17,6 +17,9 @@ exports.onCreateWebpackConfig = ({ actions, stage, loaders }) => {
     resolve: {
       fallback: {
         fs: false
+      },
+      alias: {
+        "@utils": path.resolve(__dirname, "src/utils")
       }
     },
     module: {

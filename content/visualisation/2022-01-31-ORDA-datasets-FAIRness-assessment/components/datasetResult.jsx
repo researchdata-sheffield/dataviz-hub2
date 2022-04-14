@@ -1,16 +1,20 @@
 import React, { useState, useCallback, useEffect } from "react";
 import { ResultWrapper, CustomInput, SearchResults, ResultDiv } from "./styles";
-import AssessmentResults from "../data/assessment_results.json";
 import debounce from "lodash.debounce";
 import DatasetSummary from "./datasetSummary";
 import DatasetBreakdown from "./datasetBreakdown";
+import { useFetch, loadingLayer } from "@utils/hooks/useFetch";
 
 const DatasetResult = () => {
+  const [loading, assessmentData] = useFetch(
+    "https://raw.githubusercontent.com/researchdata-sheffield/dataviz-hub2-data/main/visualisation/2022-01-31-ORDA-datasets-FAIRness-assessment/assessment_results.json"
+  );
   const [currentDataset, setDataset] = useState({});
   const [searchResults, setSearchResults] = useState([]);
   const [searchValue, setSearchValue] = useState("");
   let timer;
 
+  // Debounce search input
   useEffect(() => {
     if (timer) {
       clearTimeout(timer);
@@ -18,7 +22,7 @@ const DatasetResult = () => {
     timer = setTimeout(() => {
       timer = null;
       debounceInput(searchValue);
-    }, 1000);
+    }, 500);
 
     return () => clearTimeout(timer);
   }, [searchValue]);
@@ -38,23 +42,25 @@ const DatasetResult = () => {
 
       let userInputLowerCase = userInput.toLowerCase();
 
-      const filteredResults = AssessmentResults.filter((result) => {
-        return (
-          result.figshare_details.title
-            .toLowerCase()
-            .includes(userInputLowerCase) ||
-          result.request.object_identifier
-            .toLowerCase()
-            .includes(userInputLowerCase) ||
-          result.figshare_details.published_date
-            .toLowerCase()
-            .includes(userInputLowerCase)
-        );
-      });
+      const filteredResults = assessmentData
+        ? assessmentData.filter((result) => {
+            return (
+              result.figshare_details.title
+                .toLowerCase()
+                .includes(userInputLowerCase) ||
+              result.request.object_identifier
+                .toLowerCase()
+                .includes(userInputLowerCase) ||
+              result.figshare_details.published_date
+                .toLowerCase()
+                .includes(userInputLowerCase)
+            );
+          })
+        : [];
 
       setSearchResults(filteredResults);
     }, 500),
-    []
+    [assessmentData]
   );
 
   /**
@@ -80,6 +86,10 @@ const DatasetResult = () => {
       day: "2-digit"
     });
   };
+
+  if (loading) {
+    return loadingLayer();
+  }
 
   return (
     <ResultWrapper style={{ marginTop: "50px" }}>
