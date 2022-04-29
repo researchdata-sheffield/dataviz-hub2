@@ -182,7 +182,7 @@ module.exports = {
     `gatsby-plugin-instagram-embed`,
     {
       resolve: `gatsby-source-eventbrite-multi-accounts`,
-      //resolve: `../gatsby-source-eventbrite-multi-accounts`, // local plugin test
+      //resolve: require.resolve(`../gatsby-source-eventbrite-multi-accounts`), // local plugin test
       options: {
         organisations: [
           {
@@ -215,8 +215,8 @@ module.exports = {
       options: {
         workboxConfig: {
           maximumFileSizeToCacheInBytes: 20971520
-        },
-      },
+        }
+      }
     }, // should be listed after the manifest plugin
     "gatsby-plugin-postcss",
     /***************** FLEXSEARCH ********************/

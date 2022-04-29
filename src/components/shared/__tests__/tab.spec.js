@@ -32,17 +32,15 @@ describe("tab component", () => {
   it("should renders correctly", async () => {
     expect(tabComponent).toMatchSnapshot();
 
-    await waitFor(() => {
-      expect(document.querySelector("#react-tabs-1")).toHaveClass(
-        "react-tabs__tab-panel--selected"
-      );
-      expect(document.querySelector("#react-tabs-3")).not.toHaveClass(
-        "react-tabs__tab-panel--selected"
-      );
-      expect(document.querySelector("#react-tabs-5")).not.toHaveClass(
-        "react-tabs__tab-panel--selected"
-      );
-    });
+    expect(document.querySelector("#panel\\:r0\\:0")).toHaveClass(
+      "react-tabs__tab-panel--selected"
+    );
+    expect(document.querySelector("#panel\\:r0\\:1")).not.toHaveClass(
+      "react-tabs__tab-panel--selected"
+    );
+    expect(document.querySelector("#panel\\:r0\\:2")).not.toHaveClass(
+      "react-tabs__tab-panel--selected"
+    );
   });
 
   it("should switch to different tab on click", async () => {
@@ -53,10 +51,8 @@ describe("tab component", () => {
     const sourceBtn = await getByText(tabComponent.container, "Source");
     const licenseBtn = await getByText(tabComponent.container, "License");
 
-    await waitFor(() => {
-      expect(sourceBtn).not.toHaveClass("react-tabs__tab--selected");
-      expect(detailBtn).toHaveClass("react-tabs__tab--selected");
-      expect(licenseBtn).not.toHaveClass("react-tabs__tab--selected");
-    });
+    expect(sourceBtn).not.toHaveClass("react-tabs__tab--selected");
+    expect(detailBtn).toHaveClass("react-tabs__tab--selected");
+    expect(licenseBtn).not.toHaveClass("react-tabs__tab--selected");
   });
 });
