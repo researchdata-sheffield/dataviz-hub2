@@ -79,7 +79,7 @@
     "gatsby-remark-embedder": "^6.0.0",
     "gatsby-remark-katex": "^6.11.0",
     "gatsby-remark-prismjs": "^6.11.0",
-    "gatsby-remark-responsive-iframe": "^5.11.0",
+    "gatsby-remark-responsive-iframe": "^5.13.0",
     "gatsby-remark-table-of-contents": "2.0.0",
     "gatsby-source-eventbrite-multi-accounts": "^1.0.11",
     "gatsby-source-filesystem": "^4.11.1",
