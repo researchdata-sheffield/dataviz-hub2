@@ -33,8 +33,9 @@ module.exports = {
   globals: {
     __PATH_PREFIX__: ""
   },
-  testURL: "http://localhost:9000",
-
+  testEnvironmentOptions: {
+    url: "http://localhost:9000"
+  },
   // files will be included before all tests are run
   setupFiles: ["<rootDir>/tests/loadershim.js"],
   setupFilesAfterEnv: ["<rootDir>/tests/setupAfterEnv.js", "expect-playwright"],
