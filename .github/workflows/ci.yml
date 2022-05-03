@@ -86,7 +86,32 @@ jobs:
           GATSBY_GH_APP_GITALK_ID: ${{ secrets.GATSBY_GH_APP_GITALK_ID }}
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
-          
+      
+      - name: Upload as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: repo-artifact
+          path: /
+          retention-days: 1
+
+  E2E-Test:
+    needs: CI-Build
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: repo-artifact
+      
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e; tskill node
 
