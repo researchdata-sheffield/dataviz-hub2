@@ -87,11 +87,14 @@ jobs:
           GATSBY_GH_APP_GITALK_SECRET: ${{ secrets.GATSBY_GH_APP_GITALK_SECRET }}
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
       
-      - name: Upload as artifact
+      - name: Zip artifact for test
+        run: zip e2e.zip ./* -r
+
+      - name: Upload artifact
         uses: actions/upload-artifact@v3
         with:
           name: repo-artifact
-          path: /
+          path: e2e.zip
           retention-days: 1
 
   E2E-Test:
@@ -112,6 +115,9 @@ jobs:
         with:
           name: repo-artifact
       
+      - name: unzip artifact
+        run: unzip release.zip
+
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e; tskill node
 
