@@ -88,7 +88,7 @@ jobs:
           GATSBY_ENV: ${{ secrets.GATSBY_ENV }}
       
       - name: Zip artifact for test
-        run: 7za a e2e.7z ./* -r
+        run: 7z a -t7z e2e.7z ./* -r
 
       - name: Upload artifact
         uses: actions/upload-artifact@v3
@@ -116,7 +116,7 @@ jobs:
           name: repo-artifact
       
       - name: unzip artifact
-        run: 7za e e2e.7z
+        run: 7z e e2e.7z
 
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e; tskill node
