@@ -116,7 +116,7 @@ jobs:
           name: repo-artifact
       
       - name: unzip artifact
-        run: 7z e e2e.7z
+        run: 7z e -y e2e.7z
 
       - name: Serve and E2E test
         run: npm run serve & npm run test:e2e; tskill node
