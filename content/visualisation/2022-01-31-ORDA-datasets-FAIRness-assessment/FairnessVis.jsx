@@ -12,6 +12,7 @@ const FairnessVis = () => {
     <VisWrap
       id="visualisation"
       style={{
+        minWidth: "500px",
         maxWidth: "1180px",
         background: "linear-gradient(345deg, #c6e7ff 0%, #fff0a5 100%)",
         padding: "30px",

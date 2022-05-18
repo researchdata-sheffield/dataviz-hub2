@@ -56,6 +56,8 @@ export const SummaryBox = styled.div`
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 8px 10px -6px rgba(0, 0, 0, 0.1);
   ${"" /* box-shadow: 2px 2px 5px 2px #000; */}
+  flex-grow: 1;
+  flex-basis: 0;
 
   h1 {
     font-weight: 900;
@@ -94,10 +96,15 @@ export const ResultWrapper = styled.div`
     padding: 0.5rem;
     border-radius: 5px 5px 0 0;
 
+    &:focus-within {
+      .search-results {
+        opacity: 1;
+      }
+    }
+
     :hover {
       .search-results {
         opacity: 1;
-        height: auto;
       }
     }
   }
@@ -122,6 +129,7 @@ export const SearchResults = styled.div`
   height: 0;
   position: absolute;
   z-index: 999;
+  min-height: 200px;
   max-height: 350px;
   width: 100%;
   overflow-y: scroll;
@@ -188,6 +196,7 @@ export const ResultDiv = styled.div`
     font-style: italic;
   }
 
+  ${"" /* Styles for dataset summary */}
   .summary {
     display: flex;
     flex-wrap: wrap;
@@ -200,6 +209,10 @@ export const ResultDiv = styled.div`
       padding-left: 15px;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
+
+      @media only screen and (max-width: 850px) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+      }
 
       & > div {
         max-width: 220px;
