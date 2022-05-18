@@ -74,7 +74,6 @@ const DatasetResult = () => {
     );
 
     setDataset(filteredResult[0]);
-    return null;
   };
 
   const formatPublishedDate = (dateString) => {
@@ -95,13 +94,17 @@ const DatasetResult = () => {
     <ResultWrapper style={{ marginTop: "50px" }}>
       <h1 className="title">Assessment result by dataset</h1>
       <div className="searchBar">
-        <CustomInput
-          list="datasets"
-          value={searchValue}
-          onChange={onChangeInput}
-          placeholder="Search by title, DOI, date (yyyy-mm-dd), ..."
-        />
-        &#128269;
+        <div
+          style={{ display: "flex", alignItems: "center", minWidth: "300px" }}
+        >
+          <CustomInput
+            list="datasets"
+            value={searchValue}
+            onChange={onChangeInput}
+            placeholder="Search by title, DOI, date (yyyy-mm-dd), ..."
+          />
+          <span>&#128269;</span>
+        </div>
         <SearchResults className="search-results">
           {searchResults.length != 0 &&
             searchResults.slice(0, 10).map((dataset, idx) => (
