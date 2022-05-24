@@ -99,12 +99,14 @@ export const ResultWrapper = styled.div`
     &:focus-within {
       .search-results {
         opacity: 1;
+        z-index: 999;
       }
     }
 
     :hover {
       .search-results {
         opacity: 1;
+        z-index: 999;
       }
     }
   }
@@ -128,7 +130,7 @@ export const SearchResults = styled.div`
   opacity: 0;
   height: 0;
   position: absolute;
-  z-index: 999;
+  z-index: 0;
   min-height: 200px;
   max-height: 350px;
   width: 100%;

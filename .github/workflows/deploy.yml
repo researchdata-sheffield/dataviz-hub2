@@ -115,7 +115,7 @@ jobs:
             "commit_title": "New release",
             "commit_message": "${{ github.event.commits[0].message }}",
             "commit_sha": "${{ github.sha }}",
-            "outcome": "${{ needs.scan.result }}",
+            "outcome": "${{ needs.deploy.result }}",
             "run_url": "https://github.com/researchdata-sheffield/dataviz-hub2/actions/runs/${{ github.run_id }}",
             "impact": "Low",
             "benefit": "New release"
