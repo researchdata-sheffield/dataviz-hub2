@@ -89,6 +89,38 @@ jobs:
           publish_dir: ./public
           user_name: 'github-actions[bot]'
           user_email: 'github-actions[bot]@users.noreply.github.com'
+  
+  Post-Notification:
+    runs-on: windows-latest
+    needs: deploy
+    # https://docs.github.com/en/actions/learn-github-actions/contexts#needs-context
+    if: ${{ github.event_name != 'schedule' && always() && (needs.deploy.result == 'failure' || needs.deploy.result == 'success') }}
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Git info
+        run: echo ${{ github.event.commits[0].message }}
+      - name: Webhook
+        # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
+        run: |
+          curl --write-out '%{http_code}' \
+          --request POST \
+          --header 'Authorization: Basic ${{ secrets.WEBHOOK_TOKEN }}' \
+          --header 'Content-Type: application/json' \
+          --url '${{ secrets.WEBHOOK_URL }}' \
+          --data '{
+            "origin": "GitHub",
+            "project": "dataviz-hub",
+            "commit_title": "New release",
+            "commit_message": "${{ github.event.commits[0].message }}",
+            "commit_sha": "${{ github.sha }}",
+            "outcome": "${{ needs.scan.result }}",
+            "run_url": "https://github.com/researchdata-sheffield/dataviz-hub2/actions/runs/${{ github.run_id }}",
+            "impact": "Low",
+            "benefit": "New release"
+          }'
+
 
     
 
