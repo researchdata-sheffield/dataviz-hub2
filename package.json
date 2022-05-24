@@ -2,7 +2,7 @@
   "name": "datavizhub-tuos",
   "private": true,
   "description": "Promoting and building community around data visualisation at the University of Sheffield",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "author": "Yu Liang Weng <y.weng@sheffield.ac.uk>",
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
