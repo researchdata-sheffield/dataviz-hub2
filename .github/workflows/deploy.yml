@@ -100,7 +100,7 @@ jobs:
         shell: bash
     steps:
       - name: Git info
-        run: echo ${{ github.event.commits[0].message }}
+        run: echo "${{ github.event.commits[0].message }}"
       - name: Webhook
         # https://docs.github.com/en/actions/learn-github-actions/contexts#github-context
         run: |
