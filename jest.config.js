@@ -26,10 +26,11 @@ module.exports = {
   // ignore these files when testing
   testPathIgnorePatterns: ["node_modules", "\\.cache", "<rootDir>.*/public"],
 
-  // IMPORTANT: because Gatsby includes un-transpiled ES6 code
+  // IMPORTANT: https://www.gatsbyjs.com/docs/how-to/testing/unit-testing/
+  // because Gatsby includes un-transpiled ES6 code
   // And it will try to transform files within Gatsby-name folders under node_modules
   // gatsby-browser-entry.js isn’t being transpiled before running in Jest
-  transformIgnorePatterns: ["node_modules/(?!(gatsby)/)"],
+  transformIgnorePatterns: [`node_modules/(?!(gatsby|gatsby-script|gatsby-link)/)`],
   globals: {
     __PATH_PREFIX__: ""
   },
