@@ -138,7 +138,7 @@ The following figure is an example of the Welch two sample t-test (performed usi
 
 ## Oneway ANOVA F-test
 
-F distribution - the sampling distribution for ratio of variances - $\frac{\textrm{between-group variance}}{\textrm{within-group variance}}$, was developed by R.A. Fisher who also developed the F-test. However, the F-distribution may be used to test other things such as in Levene&apos;s F-test which tests equality of variance between two groups. F-test also commonly used for assess whether a variable is good for a statistical model or not by comparing variances of models with and without the variable. The assumptions for F-test:
+F distribution - the sampling distribution for ratio of variances - (between-group variance) / (within-group variance), was developed by R.A. Fisher who also developed the F-test. However, the F-distribution may be used to test other things such as in Levene&apos;s F-test which tests equality of variance between two groups. F-test also commonly used for assess whether a variable is good for a statistical model or not by comparing variances of models with and without the variable. The assumptions for F-test:
 
 - Coefficients follows normal distribution;
 - Samples are independent or dependent depending on the f-test you are using;
@@ -171,16 +171,14 @@ Another practical application of hypothesis testing is in linear models. In the 
 
 A simple regression looks something like the following:
 
-$$
-Y_{i} = \alpha + \beta_{1}X_{1i} + \beta_{2}X_{2i} + \epsilon_{i}
-$$
+![Regression in latex](regression_latex.gif)
 
-where $i=1,2,...,n$, $\alpha$ is the Y intercept, $\beta_{1}X_{1i}$ and $\beta_{2}X_{2i}$ are linear components, and the $\epsilon_{i}$ is the (normally distributed) random errors with **mean zero**.
+where $i=1,2,...,n$, alpha is the Y intercept, beta_1 X_1i and beta_2 X_2i are linear components, and the epsilon_i is the (normally distributed) random errors with **mean zero**.
 
 In addition to prediction using linear models, we are also concerned with the quality of estimates of coefficients and the distribution of errors and residuals. The least squares method is a common regression analysis method for finding the best fit for a set of data points.
 
 ![Linear least squares](https://upload.wikimedia.org/wikipedia/commons/b/b0/Linear_least_squares_example2.svg)  
-_Linear least squares (Source: Krishnavedala, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons)_
+_Linear least squares (Source: Krishnavedala, CC BY-SA 3.0 https://creativecommons.org/licenses/by-sa/3.0, via Wikimedia Commons)_
 
 From the figure above you can see lines between each data point adn the line of best fit, this distance shows the variability of the current model and we use it to calculate the sum of squared error (SSE), which is the sum of the squared distance from each data point to the mean (of all data points). This variance will also be used in the next section (as part of he within-group variation) when we comparing two different models.
 
@@ -193,7 +191,7 @@ From time to time we would have come up with different linear models and of cour
 
 > [Click here](https://people.richland.edu/james/lecture/m170/ch13-1wy.html) to see formula for calculation of these variances.
 
-The ratio of these two variances $\frac{variance_{between}}{variance_{within}}$ (two sums of squares) results in an F-statistic. The calculation brings the F-statistics together with the number of degrees of freedom and we can reduce to a p-value we can infer which model is better.
+The ratio of these two variances (variance_between) / (variance_within) (two sums of squares) results in an F-statistic. The calculation brings the F-statistics together with the number of degrees of freedom and we can reduce to a p-value we can infer which model is better.
 
 To use ANOVA for linear regression, the data must conform to the following assumptions:
 

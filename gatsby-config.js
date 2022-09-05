@@ -27,6 +27,14 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-json`,
     {
+      // REQUIRED, even if you don’t want to create MDX pages from src/pages
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`
+      }
+    },
+    {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
@@ -77,7 +85,7 @@ module.exports = {
       // https://mdxjs.com/packages/mdx/#compilefile-options
       options: {
         mdxOptions: {
-          remarkPlugins: []
+          remarkPlugins: [require('remark-gfm')]
         },
         gatsbyRemarkPlugins: [
           {

@@ -5,21 +5,36 @@
     "es6": true,
     "jest": true
   },
-  "parser": "@babel/eslint-parser",
-  "parserOptions": {
-    "requireConfigFile": false,
-    "babelOptions": {
-      "presets": ["babel-preset-gatsby"]
-    }
-  },
-  "rules": {
-    "strict": 0
-  },
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
     "plugin:import/recommended",
     "plugin:mdx/recommended"
+  ],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "requireConfigFile": false,
+    "babelOptions": {
+      "presets": ["babel-preset-gatsby"]
+    },
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "strict": 0
+  },
+  "overrides": [
+    {
+      // use eslint-mdx instead of babel-eslint
+      "files": "*.mdx",
+      "extends": "plugin:mdx/recommended",
+      "rules": {
+        "no-undef": 0,
+        "react/jsx-no-undef": 0,
+        "no-unused-expressions": "off",
+        "no-jsx-html-comments": 0,
+        "import/no-unresolved": 1
+      }
+    }
   ],
   "settings": {
     "react": {

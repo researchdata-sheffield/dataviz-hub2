@@ -3,5 +3,7 @@
   "semi": true,
   "singleQuote": false,
   "tabWidth": 2,
-  "trailingComma": "none"
+  "trailingComma": "none",
+  "printWidth": 80,
+  "htmlWhitespaceSensitivity": "ignore"
 }
