@@ -39,8 +39,8 @@ const Summary = () => {
               <span> / {statsData[sectionName].score}</span>
             </h1>
             <h3>
-              Avg. {sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}{" "}
-              Score
+              Avg. {sectionName.charAt(0).toUpperCase() + sectionName.slice(1)}
+              &nbsp; Score
             </h3>
           </SummaryBox>
         );

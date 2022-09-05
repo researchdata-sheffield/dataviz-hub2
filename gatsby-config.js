@@ -74,17 +74,22 @@ module.exports = {
     /******************************* MDX Plugins *******************************************/
     {
       resolve: `gatsby-plugin-mdx`,
+      // https://mdxjs.com/packages/mdx/#compilefile-options
       options: {
-        // Apply gatsby-mdx to both .mdx and .md files
-        extensions: [".mdx", ".md"],
-        defaultLayouts: {
-          posts: require.resolve("./src/templates/blog/blogPostTemplate.jsx"),
-          docs: require.resolve("./src/templates/docs/docsTemplate.jsx")
+        mdxOptions: {
+          remarkPlugins: []
         },
-        remarkPlugins: [require("remark-math")],
         gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-katex`,
+            options: {
+              // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
+              strict: `ignore`
+            }
+          },
           "gatsby-remark-code-titles",
           {
+            // Add any KaTeX options from https://github.com/KaTeX/KaTeX/blob/master/docs/options.md here
             resolve: `gatsby-remark-katex`,
             options: {
               strict: `ignore`

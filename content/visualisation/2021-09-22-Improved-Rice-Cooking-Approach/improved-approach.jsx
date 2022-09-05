@@ -115,11 +115,11 @@ const ImprovedApproach = () => {
           marginBottom: "2rem"
         }}
       >
-        Improved rice cooking approach to{" "}
+        Improved rice cooking approach to&nbsp;
         <span style={{ color: "#EE9381", fontWeight: "800" }}>
           maximise arsenic removal
-        </span>{" "}
-        while preserving NUTRIENT elements
+        </span>
+        &nbsp; while preserving NUTRIENT elements
       </h1>
       <div
         style={{
@@ -160,7 +160,7 @@ const ImprovedApproach = () => {
           }}
         >
           <span style={{ fontSize: "1.5rem" }}>&#128161;</span> Inorganic
-          Arsenics are highly toxic and classified as a{" "}
+          Arsenics are highly toxic and classified as a&nbsp;
           <span style={{ color: "#EE9381" }}>Group-A carcinogen</span> that can
           cause lung and skin cancer. It can be found in ...
           <div
@@ -256,7 +256,7 @@ const ImprovedApproach = () => {
           style={{ ...advantageCard, background: "black", color: "#A3A3A3" }}
         >
           <h3>
-            Effective in reducing inorganic Arsenic(s) with a{" "}
+            Effective in reducing inorganic Arsenic(s) with a&nbsp;
             <span
               style={{
                 color: "#dabc84",
@@ -265,14 +265,14 @@ const ImprovedApproach = () => {
               }}
             >
               54%
-            </span>{" "}
-            and{" "}
+            </span>
+            &nbsp; and&nbsp;
             <span
               style={{ color: "#fff", fontWeight: "700", fontSize: "1.5rem" }}
             >
               73%
-            </span>{" "}
-            reduction
+            </span>
+            &nbsp; reduction
           </h3>
         </div>
         <div
@@ -286,7 +286,7 @@ const ImprovedApproach = () => {
               textShadow: "0px 0px 40px #000"
             }}
           >
-            Raising margin of exposure by{" "}
+            Raising margin of exposure by&nbsp;
             <span
               style={{
                 color: "#dabc84",
@@ -295,8 +295,8 @@ const ImprovedApproach = () => {
               }}
             >
               x2.2
-            </span>{" "}
-            and{" "}
+            </span>
+            &nbsp; and&nbsp;
             <span
               style={{ color: "#fff", fontWeight: "700", fontSize: "2rem" }}
             >
@@ -329,8 +329,8 @@ const ImprovedApproach = () => {
               style={{ fontSize: "1.1rem", fontWeight: "800", color: "white" }}
             >
               ONLY
-            </span>{" "}
-            method{" "}
+            </span>
+            &nbsp; method&nbsp;
             <span>
               suited to all rice varieties in order to obtain a desirable MOE
               for all population groups
@@ -359,7 +359,7 @@ const ImprovedApproach = () => {
             alt="Molecule icon"
           />
           <h3 style={{ zIndex: "1" }}>
-            Loss of nutrients was{" "}
+            Loss of nutrients was&nbsp;
             <span style={{ fontWeight: "700" }}>similar or less</span> than in
             comparison to other methods
           </h3>

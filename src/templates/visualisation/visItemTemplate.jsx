@@ -120,10 +120,9 @@ visItemTemplate.propTypes = {
 };
 
 export const query = graphql`
-  query visualisationItemQuery($id: String) {
+  query ($id: String) {
     mdx(id: { eq: $id }) {
       id
-      body
       tableOfContents
       fields {
         ...MdxFields

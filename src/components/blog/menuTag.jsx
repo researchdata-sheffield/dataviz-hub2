@@ -31,7 +31,8 @@ const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
       <div className="overflow-hidden pt-1 pb-2">
         <div>
           <h1 className="inline-block text-2xl font-semibold mr-4 text-gray-900">
-            <FaTags style={{ display: "inline-block" }} />{" "}
+            <FaTags style={{ display: "inline-block" }} />
+            &nbsp;
             {href.includes("/blog/tag/") ? (
               <Link to="/blog/#read">ALL</Link>
             ) : (

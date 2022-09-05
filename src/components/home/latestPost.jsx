@@ -86,8 +86,8 @@ const latestPost = ({ post }) => {
                       node.frontmatter.author.length == idx + 1
                         ? author.name
                         : author.name + " · "
-                    )}{" "}
-                    &nbsp; | &nbsp; {node.fields.readingTime.text}
+                    )}
+                    &nbsp; &nbsp; | &nbsp; {node.fields.readingTime.text}
                   </p>
                   <p className="mt-2 text-gray-500">
                     {node.frontmatter.tag.map((tag, i) => {

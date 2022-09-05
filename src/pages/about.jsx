@@ -1,15 +1,15 @@
-import React from "react"
-import { Link } from "gatsby"
-import SEO from "../components/shared/seo"
-import RSE from "../images/about/rse.png"
-import ITS from "../images/about/its.png"
-import ORDA from "../images/about/orda_logo.jpg"
-import Fade from "react-reveal/Fade"
-import bg from "../images/about/about.jpg"
+import React from "react";
+import { Link } from "gatsby";
+import SEO from "../components/shared/seo";
+import RSE from "../images/about/rse.png";
+import ITS from "../images/about/its.png";
+import ORDA from "../images/about/orda_logo.jpg";
+import Fade from "react-reveal/Fade";
+import bg from "../images/about/about.jpg";
 
 const About = () => {
   let logoStyle =
-    "max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3"
+    "max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3";
 
   return (
     <>
@@ -98,7 +98,7 @@ const About = () => {
           <Fade>
             <p className="">
               <b className="text-brand-blue">Dataviz.Shef</b> is a joint
-              initiative between <b>The University Library</b>,{" "}
+              initiative between <b>The University Library</b>,&nbsp;
               <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>
               . This community website exists to provide research staff and
               students at the University of Sheffield with information and
@@ -142,7 +142,7 @@ const About = () => {
             <p className="text-gray-900">
               From ideas to content for the ORDA showcase, our blog or Dataviz
               documentation, contributions are open to all. For the moment just
-              get in touch with us through the{" "}
+              get in touch with us through the&nbsp;
               <a
                 className="link-effect"
                 href="mailto:rdm@sheffield.ac.uk"
@@ -154,8 +154,8 @@ const About = () => {
               , &nbsp;
               <Link className="link-effect" to="/community/#joinus">
                 google group
-              </Link>{" "}
-              or{" "}
+              </Link>
+              &nbsp; or&nbsp;
               <Link className="link-effect" to="/community/#joinus">
                 slack team
               </Link>
@@ -165,7 +165,7 @@ const About = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

@@ -24,7 +24,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   const pageTitle = title ? `${title} |` : "";
   const pageSubtitle = title ? (
     <p>
-      Viewing items in{" "}
+      Viewing items in&nbsp;
       <span className="text-gray-400 font-semibold">{title}</span>.
     </p>
   ) : (
@@ -167,7 +167,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
         <div ref={nextPageRef} style={{ height: "100px", width: "100%" }}></div>
       </div>
       <div className="text-center text-gray-600 pb-5 text-sm">
-        This page is inspired by{" "}
+        This page is inspired by&nbsp;
         <a
           href="https://informationisbeautiful.net/beautifulnews"
           target="_blank"

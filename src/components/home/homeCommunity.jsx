@@ -43,7 +43,7 @@ const HomeCommunity = () => {
         <div className="container mx-auto justify-center flex flex-wrap pt-36">
           <div className="text-4xl xl:text-5xl 2xl:text-6xl font-bold text-gray-900 w-full text-center px-4">
             <h1 style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif" }}>
-              YOUR COMMUNITY.{" "}
+              YOUR COMMUNITY.&nbsp;
             </h1>
           </div>
           <Link

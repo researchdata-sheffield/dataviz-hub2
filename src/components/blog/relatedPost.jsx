@@ -149,8 +149,7 @@ const RelatedPost = (props) => {
                               })}
                               {node.frontmatter.tag.length > 3 && (
                                 <p className="inline-block text-white">
-                                  {" "}
-                                  +{node.frontmatter.tag.length - 3} more
+                                  &nbsp; +{node.frontmatter.tag.length - 3} more
                                 </p>
                               )}
                             </h1>

@@ -25,7 +25,7 @@ visTagTemplate.propTypes = {
 };
 
 export const query = graphql`
-  query visTag($tag: String) {
+  query ($tag: String) {
     allMdx(
       sort: { fields: [frontmatter___date], order: DESC }
       filter: {

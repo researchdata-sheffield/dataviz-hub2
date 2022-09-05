@@ -91,7 +91,7 @@ const ExtinctionMap = () => {
     >
       <h1 style={plotTitle}>
         Overfishing and habitat loss drive range contraction of iconic marine
-        fishes to{" "}
+        fishes to&nbsp;
         <span
           style={{
             backgroundImage:
@@ -198,19 +198,19 @@ const ExtinctionMap = () => {
                     Predicted probability of extinction:
                   </h2>
                   <p>
-                    Median:{" "}
+                    Median:&nbsp;
                     <span style={{ fontSize: ".95rem", fontWeight: "600" }}>
                       {data.median}
                     </span>
                   </p>
                   <p>
-                    Minimum:{" "}
+                    Minimum:&nbsp;
                     <span style={{ fontSize: ".95rem", fontWeight: "600" }}>
                       {data.min}
                     </span>
                   </p>
                   <p>
-                    Maximum:{" "}
+                    Maximum:&nbsp;
                     <span style={{ fontSize: ".95rem", fontWeight: "600" }}>
                       {data.max}
                     </span>

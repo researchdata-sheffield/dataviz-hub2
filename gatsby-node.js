@@ -85,7 +85,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     createNodeField({
       node,
       name: `readingTime`,
-      value: readingTime(node.rawBody)
+      value: readingTime(node.body)
     });
   }
 };
@@ -150,6 +150,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
             fields {
               slug
             }
+            body
             frontmatter {
               template
               title
@@ -159,6 +160,9 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
               d3
               type
               published
+            }
+            internal {
+              contentFilePath
             }
           }
         }
@@ -209,7 +213,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: node.fields.slug,
-      component: visItemTemplate,
+      component: `${visItemTemplate}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id: node.id,
         slug: node.fields.slug,
@@ -311,7 +315,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       // (or `node.frontmatter.slug`)
       path: node.fields.slug,
-      component: docsTemplateFinal,
+      component: `${docsTemplateFinal}?__contentFilePath=${node.internal.contentFilePath}`,
       // You can use the values in this context in page layout component
       context: {
         id: node.id,
@@ -366,7 +370,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
     createPage({
       path: node.fields.slug,
-      component: template,
+      component: `${template}?__contentFilePath=${node.internal.contentFilePath}`,
       context: {
         id: node.id,
         slug: node.fields.slug,

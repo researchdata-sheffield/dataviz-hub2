@@ -212,10 +212,9 @@ docsTemplate.propTypes = {
 };
 
 export const docsQuery = graphql`
-  query docsQuery($id: String) {
+  query ($id: String) {
     mdx(id: { eq: $id }) {
       id
-      body
       tableOfContents
       fields {
         ...MdxFields

@@ -179,7 +179,7 @@ const DatasetBreakdown = ({ currentDataset }) => {
         {warnings.length !== 0 && (
           <>
             <h2 className="subtitle">
-              Warnings that potentially reduced the score:{" "}
+              Warnings that potentially reduced the score:&nbsp;
             </h2>
             <ul>
               {warnings.map((warning, idx) => (

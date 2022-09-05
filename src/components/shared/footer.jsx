@@ -155,7 +155,7 @@ const Footer = React.memo(({ className }) => {
         <div className="sm:w-5/12 sm:flex sm:mt-0 mt-8 h-auto justify-center flex-wrap">
           <div className="sm:w-2/3 text-white text-lg mb-2 pr-6">
             <div className="font-semibold text-brand-blue">
-              Data Visualisation Hub{" "}
+              Data Visualisation Hub&nbsp;
             </div>
             <div className="text-gray-100 text-lg mb-2 font-medium">
               The University of Sheffield.

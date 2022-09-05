@@ -1,6 +1,5 @@
 import React from "react";
 import { MDXProvider } from "@mdx-js/react";
-import { MDXRenderer } from "gatsby-plugin-mdx";
 import { commonMdxComponent } from "../style/commonMdxComponent";
 
 export default function commonMdxProvider(props) {
@@ -11,9 +10,7 @@ export default function commonMdxProvider(props) {
         ...props.components
       }}
     >
-      <MDXRenderer className={props.className} {...props}>
-        {props.mdx.body}
-      </MDXRenderer>
+      {React.cloneElement(props.children, ...props)}
     </MDXProvider>
   );
 }

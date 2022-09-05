@@ -1,5 +1,5 @@
 ---
-author: ["Jez Cope", "Angus Taggart"] 
+author: ["Jez Cope", "Angus Taggart"]
 title: "Visualising data on the web with Python and Dash"
 thumbnail: ./Dash1.jpg
 description: "Dash is a user interface library for creating analytical web applications. Those who use Python for data analysis, data exploration, visualization, modelling, instrument control, and reporting will find immediate use for Dash."
@@ -8,17 +8,15 @@ category: ["Tutorial"]
 tag: ["Python", "Dash", "Web", "Plotly", "Pandas"]
 ---
 
-
-
-*[Dash](https://plot.ly/dash/) is a user interface library for creating analytical web applications. Those who use [Python](https://www.python.org) for data analysis, data exploration, visualization, 
-modelling, instrument control, and reporting will find immediate use for [Dash](https://plot.ly/dash/).*
-
+_[Dash](https://plot.ly/dash/) is a user interface library for creating analytical web applications. Those who use [Python](https://www.python.org) for data analysis, data exploration, visualization,
+modelling, instrument control, and reporting will find immediate use for [Dash](https://plot.ly/dash/)._
 
 ---
-  
+
 <br />
 
 ## 1. Prerequisites
+
 This documentation assumes some prior knowledge of [Python](https://www.python.org/). A minimum of being able to install Python, relevent packages, and execute code should get you an example visualisation.
 If you need assistance with Python, [python.org](https://docs.python.org/3/tutorial/index.html) provides documentation and tutorials.
 
@@ -33,17 +31,17 @@ For example, you might want to consider using a virtual environment to aid in ma
 
 The following tools should be available:
 
--   Browser capable of HTML 5.
--   [Python](https://www.python.org/downloads/) (2.7 or 3.3 and above)
+- Browser capable of HTML 5.
+- [Python](https://www.python.org/downloads/) (2.7 or 3.3 and above)
 
 In order to run Dash in a Flask server, the following libraries will need to be available:
 
- - dash (The core Dash back-end)
- - dash-renderer (Dash front-end)
- - dash-html-components(HTML components)
- - dash-core-components (Supercharged components)
- - plotly (Plotly graphing library)
- - pandas (Numerical Analysis and Data Manipulation)
+- dash (The core Dash back-end)
+- dash-renderer (Dash front-end)
+- dash-html-components(HTML components)
+- dash-core-components (Supercharged components)
+- plotly (Plotly graphing library)
+- pandas (Numerical Analysis and Data Manipulation)
 
 Those have been pre-populated in a [requirements.txt](./requirements.txt) file, compatible with [pip](https://pip.pypa.io/en/stable/installing/), to prepare a python environment.
 
@@ -57,8 +55,7 @@ In this example, we are going to build a graph that shows life expectancy in com
 
 ## 4. First step
 
-Besides Dash, we are using __Pandas__ for extracting and manipulating data and __Plotly__ to render the output into a Graph. In order to use those libraries, you first need to import them:
-
+Besides Dash, we are using **Pandas** for extracting and manipulating data and **Plotly** to render the output into a Graph. In order to use those libraries, you first need to import them:
 
 ```python
 import dash
@@ -75,7 +72,6 @@ import pandas as pd
 ## 5. Download and read a CSV file
 
 Use Panda's `read_csv` function to download and extract your dataset. When you read a CSV, you get a `DataFrame`, which is made up of rows and columns. You access columns in a DataFrame the same way you access elements of a dictionary.
-
 
 ```python
 df = pd.read_csv('https://ndownloader.figsh.com/files/8261349')
@@ -155,11 +151,11 @@ df.head()
 </table>
 </div>
 
-
 <br />
 
 ## 7. Layout
-Dash apps are composed of two parts: __Layout__ and __Interactivity__.
+
+Dash apps are composed of two parts: **Layout** and **Interactivity**.
 The first part is the "layout" of the app, and it describes what the application looks like.
 
 In this example, we are going to create two kinds of filter:
@@ -167,8 +163,7 @@ In this example, we are going to create two kinds of filter:
 1. Countries: Multiple selection combo box with a list of all countries included on the Dataset
 2. Life Expectancy: Slider with a range of ages (min and max)
 
-<!-- ![filter.PNG](attachment:filter.PNG) -->
-
+{/* ![filter.PNG](attachment:filter.PNG) */}
 
 ```python
 countries = df['country'].unique()
@@ -186,8 +181,8 @@ app.layout = html.Div([
             placeholder='Select...',
             multi=True
         )
-    ],    
-    style={'width': '20%', 'display': 'inline-block', 'margin-bottom': '20px'}),    
+    ],
+    style={'width': '20%', 'display': 'inline-block', 'margin-bottom': '20px'}),
 
     html.Div([
         html.Label('Life Expectancy'),
@@ -216,7 +211,6 @@ app.layout = html.Div([
 Dash provides a simple reactive decorator for binding your custom data analysis code to your Dash user interface.  
 When an input element changes (e.g. when you select an item in the dropdown or drag the slider), Dash’s decorator provides your Python code with the new value of the input.  
 In this example, we are calling the `update_graph` function each time either a country is selected or a life expectancy range is set.
-
 
 ```python
 @app.callback(
@@ -268,7 +262,6 @@ Every aesthetic element of the app is customisable: The sizing, the positioning,
 
 Use `app.css.append_css` in order to set an external CSS file
 
-
 ```python
 app.css.append_css({
     "external_url": "https://codepen.io/chriddyp/pen/bWLwgP.css"
@@ -291,13 +284,17 @@ It is strongly recommended you read this file to understand it before executing 
 
 If it all works correctly, your app should be running and accessible in your web browser; the default address is `http://127.0.0.1:8050/`. It should look something like this:
 
-<iframe src="https://dash-tutorial.herokuapp.com/" style={{height: "600px", width: "100%", display: "block"}} frameBorder="0"></iframe>
+<iframe
+  src="https://dash-tutorial.herokuapp.com/"
+  style={{ height: "600px", width: "100%", display: "block" }}
+  frameBorder="0"
+></iframe>
 
-------------------------------------------------------------------------------
+---
 
 **Related technologies:**
 
- - [Pandas](https://pandas.pydata.org/)
- - [Plotly](https://plot.ly/)
- - [React.js](https://reactjs.org/)
- - [Flask](https://flask.pocoo.org/)
+- [Pandas](https://pandas.pydata.org/)
+- [Plotly](https://plot.ly/)
+- [React.js](https://reactjs.org/)
+- [Flask](https://flask.pocoo.org/)

@@ -47,7 +47,8 @@ const UpcomingEvents = ({ allEventbriteEvents }) => {
                   <p className="flex">
                     {node.online_event && (
                       <FaMapMarkerAlt className="mr-1 mt-1" />
-                    )}{" "}
+                    )}
+                    &nbsp;
                     {node.online_event && "Online Event"}
                   </p>
                   <p className="flex">

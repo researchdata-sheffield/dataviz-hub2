@@ -19,11 +19,11 @@ For example, a meteorologist may predict how much precipitation a region may get
 There are numerous statistical models; they can be as simple as fitting a regression line between two continuous variables or as complex as a weather forecast, which require a high specification supercomputer to run.
 In all cases, models attempt to capture changes in a variable based on known relationships.
 No model can do this perfectly. A statistical model is just an assumption.
-In all instances, there will be unexplainable variation or ‘noise’ accompanying our models.
+In all instances, there will be unexplainable variation or 'noise' accompanying our models.
 David Spiegelhalter describes models as maps of terrain.
 Not an image of the terrain.
 An important distinction, too often, models are not shown the proper amount of scepticism they deserve.
-With this in mind, let’s look at some powerful yet simple statistical models used frequently in modern research.
+With this in mind, let's look at some powerful yet simple statistical models used frequently in modern research.
 
 ## Prerequisites
 
@@ -58,13 +58,13 @@ With this in mind, let’s look at some powerful yet simple statistical models u
 
 Linear models, as the name suggests, assumes a linear relationship between one or more independent variables and a single dependent variable. Linear regression is a useful and very popular statistical modelling tool.
 It lets us investigate relationships between variables and make predictions about the value of the dependent variable given the value of the independent variable or variables.
-The three most common linear regression models you’re likely to encounter are simple Linear regression, multiple linear regression, and Logistic regression.
+The three most common linear regression models you're likely to encounter are simple Linear regression, multiple linear regression, and Logistic regression.
 
 ### Simple linear regression
 
 Simple linear regression is used on occasions with just two continuous variables. A straight line is fit through the data, which represents the linear relationship between the two variables.
 There are a number of ways to estimate this linear relationship; by far, the most common method is ordinary least squares. This method seeks to fit a line that minimises the sum of the squared residuals.
-A residual is the vertical distance from the observed value to the regression line - or, specifically, a measure of the noise between the actual points and the line. That may sound a little alien; it’s easiest to understand when it’s presented graphically. So let’s jump into a case study.
+A residual is the vertical distance from the observed value to the regression line - or, specifically, a measure of the noise between the actual points and the line. That may sound a little alien; it's easiest to understand when it's presented graphically. So let's jump into a case study.
 
 #### Example
 
@@ -77,7 +77,7 @@ _Figure 1 - Change in basal width and crown volume with a fitted least-squares r
 
 #### What does this model tell us?
 
-So we have a fitted model. But what does it tell us? In Figure 1, I’ve shown you a fitted regression line on a graph, many with be familiar with this.
+So we have a fitted model. But what does it tell us? In Figure 1, I've shown you a fitted regression line on a graph, many with be familiar with this.
 However, as we know, a model is a mathematical representation of the relationship between the two variables.
 Two coefficients can summarise this line: the slope of the line and the value on the y axis where the line intercepts.
 Table 1 shows a typical output from a linear regression model.
@@ -85,7 +85,7 @@ Table 1 shows a typical output from a linear regression model.
 |              | Estimate | Std. Error | Z value | Pr\(>\|z\|\) |
 | ------------ | -------- | ---------- | ------- | ------------ |
 | (Intercept)  | -0.1544  | 0.1256     | -1.229  | 0.224        |
-| Basal Growth | 38.7929  | 2.8232     | 13.741  | <2e-16       |
+| Basal Growth | 38.7929  | 2.8232     | 13.741  | `<`2e-16     |
 
 _Table 1 - Output from a simple linear regression model_
 
@@ -93,7 +93,7 @@ We can use the gradient of the regression line to make assumptions about the val
 In our example, this is the change in crown volume of our trees, depending on the change in basal growth. You may see the gradient of the regression line referred to as the regression coefficient.
 In our example, the regression coefficient is 38.8, so for an increase of 1m<sup>2</sup> in basal growth, we could expect to see an increase of 38.8 m<sup>3</sup> in crown volume. The interpretation of this gradient does vary depending on the study.
 For example, if we were to assume a causal relationship, this gradient would instead represent the change in crown volume if we increased the basal growth by 1m<sup>2</sup> in a controlled experiment.
-Of course, this does not apply here as we can’t control this change.
+Of course, this does not apply here as we can't control this change.
 
 As we discussed at the start of this post, models are not perfect.
 You can see from Figure 1 that the points are scattered around the regression line.
@@ -101,13 +101,13 @@ The model lets us estimate the change in crown volume based on the change in bas
 
 ### Model assumptions
 
-When using regression techniques, it’s important to remember that there is are a list of assumptions that the mathematical model makes about our data.
+When using regression techniques, it's important to remember that there is are a list of assumptions that the mathematical model makes about our data.
 These assumptions are listed in a helpful handbook for commonly used statistical tests, which can be found [here.](https://www.statstutor.ac.uk/resources/uploaded/tutorsquickguidetostatistics.pdf)
 Each of the assumptions below are preceeded by the assumption that you have a good understanding of your independent variables.
 
 #### _Independent observations_
 
-This assumption states that there should be no correlation between successive values; data shouldn’t have an underlying link or cluster.
+This assumption states that there should be no correlation between successive values; data shouldn't have an underlying link or cluster.
 For example, data collected over time may have an underlying seasonal component. We can test the independence of observations with a Durbin Watson test.
 
 #### _Residuals should be normally distributed_

@@ -144,7 +144,7 @@ const visEmbed = (props) => {
             onClick={() => copyEmbedCode()}
             className="w-full mt-2 text-xl bg-gray-200 rounded-lg text-gray-900 hover:bg-green-200 p-3 text-center transition duration-500 font-semibold cursor-pointer"
           >
-            Copy embed code{" "}
+            Copy embed code&nbsp;
             <MdContentCopy className="text-2xl inline-block ml-1" />
           </div>
         )}

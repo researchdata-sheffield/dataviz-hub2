@@ -173,9 +173,9 @@ const SunburstChart = () => {
       }}
     >
       <h1 style={plotTitle}>
-        Alcohol pricing policies are estimated to be{" "}
+        Alcohol pricing policies are estimated to be&nbsp;
         <span style={{ color: "#FB989F" }}>more effective</span> at reducing
-        consumption and harm{" "}
+        consumption and harm&nbsp;
         <span style={{ color: "#FB989F" }}>for men than women</span>
       </h1>
       <div

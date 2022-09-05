@@ -18,7 +18,8 @@
   "extends": [
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:import/recommended"
+    "plugin:import/recommended",
+    "plugin:mdx/recommended"
   ],
   "settings": {
     "react": {
@@ -35,6 +36,10 @@
         },
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
-    }
+    },
+    "mdx/code-blocks": true,
+    // optional, if you want to disable language mapper, set it to `false`
+    // if you want to override the default language mapper inside, you can provide your own
+    "mdx/language-mapper": {}
   }
 }

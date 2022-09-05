@@ -511,8 +511,7 @@ const Header = () => {
               className="bg-brand-pink p-2 rounded-md cursor-pointer"
               onClick={() => copyRssLink}
             >
-              {" "}
-              COPY{" "}
+              &nbsp; COPY&nbsp;
             </button>
           </div>
         </div>

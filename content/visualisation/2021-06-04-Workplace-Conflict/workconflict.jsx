@@ -76,7 +76,8 @@ const Workconflict = () => {
           paddingBottom: ".5rem"
         }}
       >
-        Workplace conflict costs employers <br />{" "}
+        Workplace conflict costs employers <br />
+        &nbsp;
         <span
           style={{
             background:
@@ -84,8 +85,8 @@ const Workconflict = () => {
           }}
         >
           £28 billion
-        </span>{" "}
-        a year
+        </span>
+        &nbsp; a year
       </h1>
 
       <img style={{ margin: "1rem auto" }} src={depression} />

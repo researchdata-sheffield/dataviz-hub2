@@ -69,7 +69,8 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
       <div className="lg:py-2 xl:py-6">
         <div>
           <h1 className="inline-block text-2xl pb-2 xl:pb-5 font-semibold mr-4 text-gray-900">
-            <FaTags style={{ display: "inline-block" }} />{" "}
+            <FaTags style={{ display: "inline-block" }} />
+            &nbsp;
             {href.includes("/blog/tag/") ? (
               <Link to="/blog/#read">ALL</Link>
             ) : (

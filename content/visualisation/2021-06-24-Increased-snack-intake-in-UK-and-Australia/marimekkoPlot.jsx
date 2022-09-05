@@ -84,7 +84,7 @@ const marimekkoPlot = () => {
       }}
     >
       <h1 style={plotTitle}>
-        People turned to{" "}
+        People turned to&nbsp;
         <span
           style={{
             backgroundImage:
@@ -93,8 +93,8 @@ const marimekkoPlot = () => {
           }}
         >
           sweets, chocolate and salty snacks
-        </span>{" "}
-        during the Covid-19 lockdowns in the UK and Australia
+        </span>
+        &nbsp; during the Covid-19 lockdowns in the UK and Australia
       </h1>
       <h3 style={{ color: "white", marginTop: "0.5rem", fontSize: "0.85rem" }}>
         “Increased snack intake was associated with higher levels of perceived

@@ -24,7 +24,7 @@ visTemplate.propTypes = {
 };
 
 export const query = graphql`
-  query visualisationList {
+  query {
     allMdx(
       filter: {
         frontmatter: { type: { eq: "visualisation" }, published: { ne: false } }

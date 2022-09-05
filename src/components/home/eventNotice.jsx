@@ -59,8 +59,8 @@ const eventNotice = ({ eventBrite }) => {
                     <h1 className="inline-block font-semibold xl:text-xl">
                       <p className="text-brand-blue text-2xl xl:text-3xl inline-block">
                         NEXT
-                      </p>{" "}
-                      event: &nbsp;
+                      </p>
+                      &nbsp; event: &nbsp;
                       <p className="inline-block text-lg xl:text-xl font-bold">
                         {node.name.text ? node.name.text : "No next event"}
                       </p>
@@ -77,7 +77,8 @@ const eventNotice = ({ eventBrite }) => {
                         <p className="flex">
                           {node.online_event && (
                             <FaMapMarkerAlt className="mr-1 mt-1" />
-                          )}{" "}
+                          )}
+                          &nbsp;
                           {node.online_event && "Online Event"}
                         </p>
                         <p className="flex">
