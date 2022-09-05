@@ -1,5 +1,4 @@
 module.exports = {
-  preset: "jest-playwright-preset",
   cacheDirectory: ".jest-cache",
 
   // transform js/jsx files using jest-preprocess.js file
@@ -23,7 +22,9 @@ module.exports = {
   // IMPORTANT: because Gatsby includes un-transpiled ES6 code
   // And it will try to transform files within Gatsby-name folders under node_modules
   // gatsby-browser-entry.js isn’t being transpiled before running in Jest
-  transformIgnorePatterns: ["node_modules/(?!(gatsby)/)"],
+  transformIgnorePatterns: [
+    `node_modules/(?!(gatsby|gatsby-script|gatsby-link)/)`
+  ],
   globals: {
     __PATH_PREFIX__: ""
   },

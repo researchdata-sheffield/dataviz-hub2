@@ -7,7 +7,7 @@ exports[`Search component renders correctly 1`] = `
   <div
     className="pt-40 pb-10 bg-white"
     style={
-      Object {
+      {
         "backgroundImage": "url(test-file-stub)",
         "backgroundPosition": "center",
         "backgroundRepeat": "no-repeat",
@@ -20,7 +20,7 @@ exports[`Search component renders correctly 1`] = `
     <p
       className="react-reveal text-lg text-gray-800 mb-4 font-bold"
       style={
-        Object {
+        {
           "opacity": undefined,
         }
       }
@@ -30,7 +30,7 @@ exports[`Search component renders correctly 1`] = `
     <div
       className="react-reveal inline-block focus:outline-none text-gray-600 bg-white shadow p-3 rounded-lg"
       style={
-        Object {
+        {
           "opacity": undefined,
         }
       }
@@ -44,7 +44,7 @@ exports[`Search component renders correctly 1`] = `
         strokeLinejoin="round"
         strokeWidth="2"
         style={
-          Object {
+          {
             "color": undefined,
           }
         }
@@ -73,7 +73,7 @@ exports[`Search component renders correctly 1`] = `
         onInput={[Function]}
         placeholder="Search title, description, date..."
         style={
-          Object {
+          {
             "minWidth": "25vw",
           }
         }

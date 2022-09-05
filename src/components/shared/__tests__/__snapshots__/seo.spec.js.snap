@@ -3,7 +3,7 @@
 exports[`SEO renders correctly 1`] = `
 <div
   style={
-    Object {
+    {
       "height": "100vh",
       "width": "100%",
     }

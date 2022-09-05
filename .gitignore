@@ -89,3 +89,6 @@ nohup.*
 
 # Webpack bundle analyser
 webpack-report.html
+/test-results/
+/playwright-report/
+/playwright/.cache/
