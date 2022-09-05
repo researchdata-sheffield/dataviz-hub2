@@ -45,7 +45,7 @@ jobs:
           restore-keys: ${{ runner.os }}-gatsby-qa-
       
       - name: Install dependencies
-        run: npm ci
+        run: npm ci --legacy-peer-deps
 
       - name: Set user info
         run: |
