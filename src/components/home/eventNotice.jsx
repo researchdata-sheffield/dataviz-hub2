@@ -40,7 +40,7 @@ const eventNotice = ({ eventBrite }) => {
 
                 <a
                   className="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2"
-                  style={{ fontFamily: "TUoS Blake" }}
+                  style={{ fontFamily: "Source Serif Pro" }}
                   href={node.url}
                   target="_blank"
                   rel="noopener noreferrer"

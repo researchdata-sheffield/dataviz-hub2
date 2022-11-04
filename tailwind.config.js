@@ -25,8 +25,10 @@ module.exports = {
       backgroundColor: {
         footer: "#414042",
         highlight: "#1cbfff",
-        "brand-blue": "#00aeef",
+        "brand-blue": "#9ADBE8",
         "brand-pink": "#ff79b4",
+        "brand-black": "#131E29",
+        "brand-purple": "#440099",
         light_grey: "#f1f1f1",
         light_black: "rgba(0,0,0, .6)",
         "black-10": "rgba(0, 0, 0, .1)",
@@ -44,8 +46,10 @@ module.exports = {
         sheflightBlue: "#ade1f8"
       },
       borderColor: {
-        "brand-blue": "#00aeef",
+        "brand-blue": "#9ADBE8",
         "brand-pink": "#ff79b4",
+        "brand-black": "#131E29",
+        "brand-purple": "#440099",
         menu_red: "#ff5e5e",
         menu_yellow: "#f3f218",
         menu_green: "#99f318",
@@ -75,9 +79,6 @@ module.exports = {
       boxShadow: {
         c1: "0px 12px 15px 0px #C8C4C1",
         c2: "0px 12.3px 15.37px 0px #3A3631"
-      },
-      fontFamily: {
-        stephenson: ["TUOS Stephenson", "Georgia", "Times", "serif"]
       },
       fontSize: {
         xxs: ".65rem",
@@ -200,7 +201,9 @@ module.exports = {
       },
       textColor: {
         highlight: "#337ab7",
-        "brand-blue": "#00aeef",
+        "brand-blue": "#9ADBE8",
+        "brand-black": "#131E29",
+        "brand-purple": "#440099",
         shefBlue: "#0066b3",
         shefPurple: "#251d5a",
         shefYellow: "#fedf00",

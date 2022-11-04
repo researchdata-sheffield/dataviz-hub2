@@ -1,15 +1,15 @@
-import React from "react"
-import { Link } from "gatsby"
-import SEO from "../components/shared/seo"
-import RSE from "../images/about/rse.png"
-import ITS from "../images/about/its.png"
-import ORDA from "../images/about/orda_logo.jpg"
-import Fade from "react-reveal/Fade"
-import bg from "../images/about/about.jpg"
+import React from "react";
+import { Link } from "gatsby";
+import SEO from "../components/shared/seo";
+import RSE from "../images/about/rse.png";
+import ITS from "../images/about/its.png";
+import ORDA from "../images/about/orda_logo.jpg";
+import Fade from "react-reveal/Fade";
+import bg from "../images/about/about.jpg";
 
 const About = () => {
   let logoStyle =
-    "max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3"
+    "max-w-xs rounded overflow-hidden my-4 p-6 flex flex-wrap justify-center content-center w-full sm:w-1/3";
 
   return (
     <>
@@ -32,7 +32,10 @@ const About = () => {
         }}
       >
         <Fade cascade delay={700} duration={2000}>
-          <div className="text-white" style={{ fontFamily: "TUoS Blake" }}>
+          <div
+            className="text-white"
+            style={{ fontFamily: "Source Serif Pro" }}
+          >
             <h1
               className="text-5xl font-bold "
               style={{ textShadow: "#000000 0px 0px 10px" }}
@@ -66,7 +69,7 @@ const About = () => {
             >
               <p
                 className="font-medium text-4xl leading-tight"
-                style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif" }}
+                style={{ fontFamily: "Source Serif Pro, serif" }}
               >
                 The
                 <br />
@@ -165,7 +168,7 @@ const About = () => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default About
+export default About;

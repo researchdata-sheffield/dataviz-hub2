@@ -221,7 +221,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/Favicon_128x128.png`, // This path is relative to the root of the site.
         cache_busting_mode: "none" // Work with offline plugin
       }
     },

@@ -39,21 +39,29 @@
  * @import "components/forms";
  */
 
+/**
+ * Global variables
+ */
+$colour-brand-blue: #9adbe8;
+$colour-brand-purple: #440099;
+$colour-brand-black: #131e29;
+
 html {
   scroll-behavior: smooth !important;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 a {
   color: #4e4e4e;
 
   &:hover {
-    color: #00aeef;
+    color: $colour-brand-blue;
   }
 }
 
 button:focus,
 a:focus {
-  border: 1px solid #00aeef;
+  border: 1px solid $colour-brand-blue;
 }
 
 p {
@@ -82,11 +90,11 @@ h6 {
 }
 
 ::-moz-selection {
-  background: #00aeef;
+  background: $colour-brand-blue;
   color: white;
 }
 ::selection {
-  background: #00aeef;
+  background: $colour-brand-blue;
   color: white;
 }
 

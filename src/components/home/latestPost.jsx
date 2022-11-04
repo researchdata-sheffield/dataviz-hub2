@@ -36,11 +36,11 @@ const latestPost = ({ post }) => {
           return (
             <div
               key={node.id}
-              className="group w-full relative z-10 border-t-1 border-transparent first:border-gray-900"
+              className="group w-full relative z-10 border-t-1 border-transparent first:border-brand-black"
               tabIndex="0"
             >
               <Fade key={node.id} duration={1000} fraction={0.1}>
-                <div className="w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl">
+                <div className="w-full bg-brand-black hover:bg-transparent text-white 2xl:text-xl">
                   <Link
                     to={node.fields.slug}
                     className="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4"
@@ -121,7 +121,7 @@ const latestPost = ({ post }) => {
       </div>
 
       <div
-        className="flex flex-wrap w-full bg-gray-900 py-10 px-3 justify-center items-center self-center z-10"
+        className="flex flex-wrap w-full bg-brand-black py-10 px-3 justify-center items-center self-center z-10"
         style={{ transition: ".3s ease" }}
       >
         <div className="text-white mr-10">

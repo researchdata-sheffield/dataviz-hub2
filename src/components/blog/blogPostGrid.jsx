@@ -32,7 +32,7 @@ const blogPostGrid = ({ allMdx }) => {
                     <FaStar className="text-yellow-300 text-2xl" />
                     <p
                       className="inline-block lg:opacity-0 group-hover:opacity-100 text-base font-semibold px-2"
-                      style={{ fontFamily: "TUoS Blake" }}
+                      style={{ fontFamily: "Source Serif Pro" }}
                     >
                       Featured
                     </p>
@@ -43,10 +43,10 @@ const blogPostGrid = ({ allMdx }) => {
                 </IMG_DIV>
                 <ArrowBox className="px-6 pt-6 2xl:px-8 2xl:pt-8 leading-none">
                   <div className="overflow-hidden fade-box">
-                    <h1 className="font-extrabold xl:text-2xl 2xl:text-3xl leading-tight text-black group-hover:text-brand-blue overflow-y-hidden font-sans">
+                    <h1 className="font-extrabold xl:text-2xl 2xl:text-3xl leading-tight text-black group-hover:text-brand-purple overflow-y-hidden font-sans">
                       {title}
                     </h1>
-                    <p className="my-3 text-base leading-tight group-hover:text-brand-blue text-gray-800">
+                    <p className="my-3 text-base leading-tight group-hover:text-brand-purple text-gray-800">
                       {description}
                     </p>
                   </div>

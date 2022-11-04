@@ -1,7 +1,7 @@
-import React from "react"
-import SEO from "../components/shared/seo"
-import Bg from "../images/404/moon.jpg"
-import { Link } from "gatsby"
+import React from "react";
+import SEO from "../components/shared/seo";
+import Bg from "../images/404/moon.jpg";
+import { Link } from "gatsby";
 
 const NotFoundPage = () => (
   <>
@@ -19,7 +19,10 @@ const NotFoundPage = () => (
       className="flex items-center justify-center text-center"
       style={{ backgroundImage: `url(${Bg})`, minHeight: "650px" }}
     >
-      <div className="text-white px-4" style={{ fontFamily: "TUoS Blake" }}>
+      <div
+        className="text-white px-4"
+        style={{ fontFamily: "Source Serif Pro" }}
+      >
         <h1 className="text-5xl font-bold leading-tight">Page Not Found</h1>
         <p
           className="text-xl mt-3 text-gray-100"
@@ -35,6 +38,6 @@ const NotFoundPage = () => (
       </div>
     </div>
   </>
-)
+);
 
-export default NotFoundPage
+export default NotFoundPage;

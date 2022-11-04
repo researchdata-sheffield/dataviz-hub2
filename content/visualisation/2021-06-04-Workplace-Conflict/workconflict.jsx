@@ -69,7 +69,7 @@ const Workconflict = () => {
         style={{
           color: "#fff",
           lineHeight: 1.3,
-          fontFamily: "TUOS Stephenson, Georgia, Times, serif",
+          fontFamily: "Source Serif Pro, serif",
           fontSize: "3.75rem",
           fontWeight: "700",
           marginBottom: "2.5rem",

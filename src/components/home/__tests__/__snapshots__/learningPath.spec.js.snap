@@ -14,7 +14,7 @@ Object {
         >
           <div
             class="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold"
-            style="font-family: TUOS Stephenson,Georgia,Times,serif;"
+            style="font-family: Source Serif Pro, serif;"
           >
             Learning paths.
           </div>
@@ -94,7 +94,7 @@ Object {
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Get started
                               <svg
@@ -172,7 +172,7 @@ Object {
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Go to Lab
                               <svg
@@ -250,7 +250,7 @@ Object {
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Learn workflows
                               <svg
@@ -334,7 +334,7 @@ Object {
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Coming soon
                               <svg
@@ -412,7 +412,7 @@ Object {
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Get started
                               <svg
@@ -490,7 +490,7 @@ Object {
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Go to Lab
                               <svg
@@ -568,7 +568,7 @@ Object {
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Learn workflows
                               <svg
@@ -652,7 +652,7 @@ Object {
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Coming soon
                               <svg
@@ -730,7 +730,7 @@ Object {
                             title="Learning Path - Introduction to Dataviz"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Get started
                               <svg
@@ -808,7 +808,7 @@ Object {
                             title="Learning Path - Dataviz Lab"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Go to Lab
                               <svg
@@ -886,7 +886,7 @@ Object {
                             title="Learning Path - Dataviz Workflows"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Learn workflows
                               <svg
@@ -970,7 +970,7 @@ Object {
                             title="This learning path is not published yet"
                           >
                             <button
-                              class="sc-ftvSup iVXtfr moreBtn"
+                              class="sc-ftvSup EZzVk moreBtn"
                             >
                               Coming soon
                               <svg
@@ -1019,7 +1019,7 @@ Object {
       >
         <div
           class="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold"
-          style="font-family: TUOS Stephenson,Georgia,Times,serif;"
+          style="font-family: Source Serif Pro, serif;"
         >
           Learning paths.
         </div>
@@ -1099,7 +1099,7 @@ Object {
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Get started
                             <svg
@@ -1177,7 +1177,7 @@ Object {
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Go to Lab
                             <svg
@@ -1255,7 +1255,7 @@ Object {
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Learn workflows
                             <svg
@@ -1339,7 +1339,7 @@ Object {
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Coming soon
                             <svg
@@ -1417,7 +1417,7 @@ Object {
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Get started
                             <svg
@@ -1495,7 +1495,7 @@ Object {
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Go to Lab
                             <svg
@@ -1573,7 +1573,7 @@ Object {
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Learn workflows
                             <svg
@@ -1657,7 +1657,7 @@ Object {
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Coming soon
                             <svg
@@ -1735,7 +1735,7 @@ Object {
                           title="Learning Path - Introduction to Dataviz"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Get started
                             <svg
@@ -1813,7 +1813,7 @@ Object {
                           title="Learning Path - Dataviz Lab"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Go to Lab
                             <svg
@@ -1891,7 +1891,7 @@ Object {
                           title="Learning Path - Dataviz Workflows"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Learn workflows
                             <svg
@@ -1975,7 +1975,7 @@ Object {
                           title="This learning path is not published yet"
                         >
                           <button
-                            class="sc-ftvSup iVXtfr moreBtn"
+                            class="sc-ftvSup EZzVk moreBtn"
                           >
                             Coming soon
                             <svg

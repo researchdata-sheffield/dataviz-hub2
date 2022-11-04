@@ -25,7 +25,7 @@ Object {
               class="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2"
               href="https://www.eventbrite.co.uk/e/celebration-of-open-research-at-the-university-of-sheffield-tickets-163679197887"
               rel="noopener noreferrer"
-              style="font-family: TUoS Blake;"
+              style="font-family: Source Serif Pro;"
               target="_blank"
             >
               <img
@@ -151,7 +151,7 @@ Object {
             class="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2"
             href="https://www.eventbrite.co.uk/e/celebration-of-open-research-at-the-university-of-sheffield-tickets-163679197887"
             rel="noopener noreferrer"
-            style="font-family: TUoS Blake;"
+            style="font-family: Source Serif Pro;"
             target="_blank"
           >
             <img

@@ -175,7 +175,7 @@ exports[`Search component return search result without error 1`] = `
                 style="margin: 10px auto;"
               >
                 <a
-                  class="sc-iBkjds bvWaLD"
+                  class="sc-iBkjds bboyCs"
                   gatsby="true"
                   style="font-size: .68rem; background: lightgray; border-color: lightgray; color: rgb(51, 51, 51); font-weight: 600;"
                   title="Type: docs"
@@ -216,7 +216,7 @@ exports[`Search component return search result without error 1`] = `
                 style="margin: 10px auto;"
               >
                 <a
-                  class="sc-iBkjds bvWaLD"
+                  class="sc-iBkjds bboyCs"
                   gatsby="true"
                   style="font-size: .68rem; background: lightgray; border-color: lightgray; color: rgb(51, 51, 51); font-weight: 600;"
                   title="Type: visualisation"
@@ -224,7 +224,7 @@ exports[`Search component return search result without error 1`] = `
                   VISUALISATION
                 </a>
                 <a
-                  class="sc-ftvSup dXofDi"
+                  class="sc-ftvSup fyxfJt"
                   gatsby="true"
                   href="/blog/category/research-innovation-it"
                   style="font-size: .68rem;"
@@ -233,7 +233,7 @@ exports[`Search component return search result without error 1`] = `
                   Research & Innovation IT
                 </a>
                 <a
-                  class="sc-ftvSup dXofDi"
+                  class="sc-ftvSup fyxfJt"
                   gatsby="true"
                   href="/blog/tag/statistics"
                   style="font-size: .68rem;"
@@ -242,7 +242,7 @@ exports[`Search component return search result without error 1`] = `
                   Statistics
                 </a>
                 <a
-                  class="sc-ftvSup dXofDi"
+                  class="sc-ftvSup fyxfJt"
                   gatsby="true"
                   href="/blog/tag/interative"
                   style="font-size: .68rem;"

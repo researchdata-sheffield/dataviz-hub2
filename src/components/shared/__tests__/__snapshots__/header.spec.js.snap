@@ -16,27 +16,49 @@ exports[`Header renders correctly 1`] = `
   >
     <div
       className="flex items-center shrink-0 mr-5"
+      style={
+        Object {
+          "padding": "10px",
+        }
+      }
     >
       <a
         className="sc-crXcEl cMXhgO invisible "
         href="https://www.sheffield.ac.uk/"
         rel="noopener noreferrer"
+        style={
+          Object {
+            "background": "none",
+            "borderRight": "2px solid #440099",
+            "marginRight": ".8rem",
+            "paddingBottom": 0,
+            "paddingRight": ".8rem",
+          }
+        }
         target="_blank"
         title="The University of Sheffield Logo"
       >
         <img
           alt="The University of Sheffield Logo"
-          className="mt-1"
           src="test-file-stub"
           style={
             Object {
-              "maxWidth": "13.6vh",
+              "maxWidth": "13.5vh",
+              "minWidth": "120px",
             }
           }
         />
       </a>
       <div
-        className="invisible ml-4 text-lg font-extrabold transition duration-1000 ease-in-out"
+        className="invisible text-xl"
+        style={
+          Object {
+            "alignSelf": "end",
+            "fontWeight": 900,
+            "marginBottom": "-3px",
+            "transition": "1s ease",
+          }
+        }
       >
         <a
           className="textanimate"
@@ -95,7 +117,7 @@ exports[`Header renders correctly 1`] = `
         className="mt-5 justify-end flex flex-wrap items-center"
       >
         <a
-          className="transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-600 hover:text-brand-purple block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/"
           mobile="true"
@@ -104,7 +126,7 @@ exports[`Header renders correctly 1`] = `
           Home
         </a>
         <a
-          className="transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-600 hover:text-brand-purple block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/community"
           mobile="true"
@@ -113,7 +135,7 @@ exports[`Header renders correctly 1`] = `
           Community
         </a>
         <a
-          className="transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-600 hover:text-brand-purple block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/events"
           mobile="true"
@@ -122,7 +144,7 @@ exports[`Header renders correctly 1`] = `
           Events
         </a>
         <a
-          className="transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-600 hover:text-brand-purple block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/blog"
           mobile="true"
@@ -131,7 +153,7 @@ exports[`Header renders correctly 1`] = `
           Blog
         </a>
         <a
-          className="transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-600 hover:text-brand-purple block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/visualisation"
           mobile="true"
@@ -150,7 +172,7 @@ exports[`Header renders correctly 1`] = `
           </span>
         </a>
         <a
-          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-600 hover:text-brand-purple block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           href="https://orda.shef.ac.uk/visualisations/"
           rel="noopener noreferrer"
           style={
@@ -164,7 +186,7 @@ exports[`Header renders correctly 1`] = `
           Showcase
         </a>
         <a
-          className="transition duration-300 relative text-gray-600 hover:text-brand-blue block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-600 hover:text-brand-purple block w-full text-2xl transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/about"
           mobile="true"
@@ -176,7 +198,7 @@ exports[`Header renders correctly 1`] = `
           className="flex flex-wrap w-full justify-center space-x-4 mt-8 pt-6 border-t-2 border-gray-200"
         >
           <a
-            className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-600 hover:text-brand-purple block mt-3 flex items-center"
             href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
             rel="noopener noreferrer"
             style={
@@ -212,7 +234,7 @@ exports[`Header renders correctly 1`] = `
             </div>
           </a>
           <a
-            className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-600 hover:text-brand-purple block mt-3 flex items-center"
             href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
             rel="noopener noreferrer"
             style={
@@ -248,7 +270,7 @@ exports[`Header renders correctly 1`] = `
             </div>
           </a>
           <a
-            className="transition duration-300 relative text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            className="transition duration-300 relative text-gray-600 hover:text-brand-purple block mt-3 flex items-center"
             gatsby="true"
             id="rssMobile"
             mobile="true"
@@ -281,7 +303,7 @@ exports[`Header renders correctly 1`] = `
             </button>
           </a>
           <a
-            className="transition duration-300 relative text-gray-600 hover:text-brand-blue block mt-3 flex items-center"
+            className="transition duration-300 relative text-gray-600 hover:text-brand-purple block mt-3 flex items-center"
             gatsby="true"
             href="/search"
             mobile="true"
@@ -332,7 +354,7 @@ exports[`Header renders correctly 1`] = `
         className="justify-end flex flex-wrap items-center"
       >
         <a
-          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/community"
           type="Link"
@@ -340,7 +362,7 @@ exports[`Header renders correctly 1`] = `
           Community
         </a>
         <a
-          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/events"
           type="Link"
@@ -348,7 +370,7 @@ exports[`Header renders correctly 1`] = `
           Events
         </a>
         <a
-          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/blog"
           type="Link"
@@ -356,7 +378,7 @@ exports[`Header renders correctly 1`] = `
           Blog
         </a>
         <a
-          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/visualisation"
           type="Link"
@@ -376,7 +398,7 @@ exports[`Header renders correctly 1`] = `
           </span>
         </a>
         <a
-          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           href="https://orda.shef.ac.uk/visualisations/"
           rel="noopener noreferrer"
           style={
@@ -390,7 +412,7 @@ exports[`Header renders correctly 1`] = `
           Showcase
         </a>
         <a
-          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
+          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined transition duration-500 ease-in-out md:mr-2 no-underline px-4 py-1"
           gatsby="true"
           href="/about"
           type="Link"
@@ -398,7 +420,7 @@ exports[`Header renders correctly 1`] = `
           About
         </a>
         <a
-          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined flex items-center"
           href="https://groups.google.com/a/sheffield.ac.uk/g/shef_dataviz-group"
           rel="noopener noreferrer"
           style={
@@ -434,7 +456,7 @@ exports[`Header renders correctly 1`] = `
           </div>
         </a>
         <a
-          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined flex items-center"
           href="https://shef-dataviz.slack.com/join/signup#/domain-signup"
           rel="noopener noreferrer"
           style={
@@ -470,7 +492,7 @@ exports[`Header renders correctly 1`] = `
           </div>
         </a>
         <a
-          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="sc-crXcEl cMXhgO transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined flex items-center"
           id="rssDesktop"
           onClick={[Function]}
           rel="noopener noreferrer"
@@ -507,7 +529,7 @@ exports[`Header renders correctly 1`] = `
           </button>
         </a>
         <a
-          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-blue undefined flex items-center"
+          className="transition duration-300 relative text-gray-100 group-hover:text-black hover:text-brand-purple undefined flex items-center"
           gatsby="true"
           href="/search"
           title="Search"

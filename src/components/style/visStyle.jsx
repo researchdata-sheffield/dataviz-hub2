@@ -230,7 +230,7 @@ export const WordCloud = styled.div`
     display: inline-block;
     line-height: 1;
     transition: 0.3s ease;
-    font-family: TUoS Blake;
+    font-family: "Source Serif Pro", serif;
     vertical-align: middle;
     padding: ${(props) => (props.backgroundColour === true ? "8px 13px" : "")};
 

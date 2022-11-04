@@ -1,7 +1,7 @@
 import { Link } from "gatsby";
 import React from "react";
 import PropTypes from "prop-types";
-import university_logo from "../../images/TUOSlogo.png";
+import university_logo from "../../images/UOSLogo_Primary_White_RGB.svg";
 import { FaGoogle, FaSlack, FaRss } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { A_footer } from "../style/styleComponent";
