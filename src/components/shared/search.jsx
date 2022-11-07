@@ -161,8 +161,7 @@ class Search extends Component {
                         <p
                           style={{
                             fontSize: ".85rem",
-                            marginTop: "10px",
-                            color: ""
+                            marginTop: "10px"
                           }}
                         >
                           {itemDate}

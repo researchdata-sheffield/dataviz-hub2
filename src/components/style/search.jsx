@@ -10,7 +10,7 @@ export const SearchItem = styled.div`
 
   h1:hover,
   p:hover {
-    color: "#00aeef";
+    color: "#440099";
   }
 `;
 
