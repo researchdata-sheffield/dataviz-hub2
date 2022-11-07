@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { getImageSource } from "../../utils/shared";
 import { VisGrid, VisItem } from "../style/visStyle";
 import Fade from "react-reveal/Fade";
-import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png";
+import UniversityIcon from "../../images/UOSLogo_Primary_White_RGB.svg";
 import WordCloud from "./wordCloud";
 import VisUtils from "./visUtils";
 
