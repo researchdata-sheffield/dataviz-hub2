@@ -54,7 +54,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   }
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-brand-black">
       <SEO
         title={`${pageTitle} Visualisation`}
         keywords={[
@@ -111,7 +111,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
         </button>
       </div>
 
-      <div className="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5">
+      <div className="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-brand-black px-5">
         <VisGrid>
           {currentMDXs.length > 0 &&
             currentMDXs.map(({ node }) => {

@@ -29,7 +29,7 @@ const Community = () => {
               <AnimateButton className="mr-10 bg-white text-black hover:text-white" hoverBC="#000">Discover</AnimateButton>
             </Link>
             <Link to='/community#joinus'>
-              <AnimateButton className=" bg-white text-black hover:text-white" hoverBC="#000" boxShadow="#00aeef">Join community</AnimateButton>
+              <AnimateButton className=" bg-white text-black hover:text-white" hoverBC="#000" boxShadow="#9ADBE8">Join community</AnimateButton>
             </Link>
           </div>
         </Fade>

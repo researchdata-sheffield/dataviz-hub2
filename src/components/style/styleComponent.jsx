@@ -132,11 +132,11 @@ export const IMG_DIV = styled.div`
 `;
 
 export const CatBtn = styled(gatsby_Link)`
-  ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
+  ${tw`inline-block hover:bg-brand-blue hover:text-brand-black py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
 `;
 
 export const TagBtn = styled(gatsby_Link)`
-  ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
+  ${tw`inline-block hover:bg-brand-blue hover:text-brand-black py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
 `;
 
 export const HomeBlogNav = styled.div`

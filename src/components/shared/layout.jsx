@@ -3,18 +3,18 @@ import PropTypes from "prop-types";
 import ScrollTopBtn from "./scrollTop";
 import Header from "./header";
 import Footer from "./footer";
-import logo from "../../images/UOSLogo_Primary_Violet_RGB.svg";
+import logo from "../../images/UOSLogo_Primary_White_RGB.svg";
 
 const Layout = (props) => {
   return (
     <div
       id="website"
-      className="flex flex-col font-sans min-h-screen text-gray-900 high-specificity"
+      className="flex flex-col font-sans min-h-screen text-brand-black high-specificity"
     >
       <ScrollTopBtn />
       <div
         id="__loader"
-        className="transition duration-1500 bg-gray-900 w-full h-full fixed text-center flex flex-wrap content-center justify-center items-center"
+        className="transition duration-1500 bg-brand-black w-full h-full fixed text-center flex flex-wrap content-center justify-center items-center"
         style={{ zIndex: "999" }}
       >
         <div className="w-full">

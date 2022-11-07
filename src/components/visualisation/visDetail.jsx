@@ -24,7 +24,7 @@ const visDetail = ({
   return (
     <div
       className={`${className} flex flex-wrap justify-between mt-5 mx-auto items-center`}
-      style={{ ...style, maxWidth: "550px" }}
+      style={{ ...(style || []), maxWidth: "550px" }}
     >
       {displayDescription && (
         <p className="text-gray-300 text-base">{mdx.frontmatter.description}</p>

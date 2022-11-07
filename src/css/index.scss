@@ -91,11 +91,11 @@ h6 {
 
 ::-moz-selection {
   background: $colour-brand-blue;
-  color: white;
+  color: $colour-brand-black;
 }
 ::selection {
   background: $colour-brand-blue;
-  color: white;
+  color: $colour-brand-black;
 }
 
 textarea::placeholder {

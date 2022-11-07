@@ -93,7 +93,7 @@ const HomeCommunity = () => {
               dataviz team to help you make the most of your data.
             </div>
             <ArrowButton
-              className={`${buttonClasses} group-hover:bg-brand-blue`}
+              className={`${buttonClasses} group-hover:bg-brand-blue group-hover:text-brand-black`}
             >
               Coming soon
             </ArrowButton>

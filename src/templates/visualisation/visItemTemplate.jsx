@@ -78,7 +78,7 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
           <CommonMdxProvider mdx={mdx} components={components} />
         </div>
       ) : (
-        <div className="flex flex-wrap relative mx-auto bg-gray-900">
+        <div className="flex flex-wrap relative mx-auto bg-brand-black">
           <div
             className="relative mx-auto container py-32 px-3 text-lg xl:text-xl text-gray-200"
             style={{ maxWidth: "1200px" }}
@@ -89,7 +89,7 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
             onClick={() =>
               navigate(localStorage.getItem("VisGoBackURL") || "/visualisation")
             }
-            className="text-xl bg-gray-800 text-gray-100 hover:bg-gray-700 hover:text-brand-blue group overflow-hidden"
+            className="text-xl bg-brand-blue text-brand-black hover:bg-gray-100 group overflow-hidden"
             title="Back to visualisation page"
           >
             <AiOutlineRollback className="group-hover:translate-x-24" />

@@ -17,13 +17,12 @@ const UpcomingEvents = ({ allEventbriteEvents }) => {
 
           return (
             <a
-              className="flex flex-col-reverse md:flex-row flex-wrap w-full hover:shadow-xl my-3 lg:my-1 group"
+              className="flex flex-col-reverse md:flex-row flex-wrap w-full hover:shadow-xl my-3 lg:my-2 group"
               style={{
                 position: "relative",
                 transition: ".5s ease",
                 background: "white",
                 color: "rgb(55, 65, 81)",
-                border: "2px solid rgb(249, 250, 251)",
                 overflowY: "hidden"
               }}
               href={node.url}
@@ -31,8 +30,8 @@ const UpcomingEvents = ({ allEventbriteEvents }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <div className="w-full md:w-9/12 py-4 px-4">
-                <p className="font-semibold text-lg text-black group-hover:text-brand-blue leading-5">
+              <div className="w-full md:w-9/12 py-4 px-4 group-hover:bg-brand-blue">
+                <p className="font-semibold text-lg text-black leading-5">
                   {node.name.text}
                 </p>
                 <p className="text-gray-700 mt-1 leading-tight text-sm group-hover:text-black">
