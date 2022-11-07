@@ -457,7 +457,14 @@ module.exports = {
       }
     },
     /*********** END RSS Feed ************* */
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+        // globally expose the contents to each sass file
+        additionalData: `@use "./src/css/_variables" as var;`
+      }
+    },
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {

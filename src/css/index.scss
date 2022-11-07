@@ -39,13 +39,6 @@
  * @import "components/forms";
  */
 
-/**
- * Global variables
- */
-$colour-brand-blue: #9adbe8;
-$colour-brand-purple: #440099;
-$colour-brand-black: #131e29;
-
 html {
   scroll-behavior: smooth !important;
   font-family: "Source Sans Pro", sans-serif;
@@ -55,13 +48,13 @@ a {
   color: #4e4e4e;
 
   &:hover {
-    color: $colour-brand-blue;
+    color: var.$colour-brand-blue;
   }
 }
 
 button:focus,
 a:focus {
-  border: 1px solid $colour-brand-blue;
+  border: 1px solid var.$colour-brand-blue;
 }
 
 p {
@@ -90,12 +83,12 @@ h6 {
 }
 
 ::-moz-selection {
-  background: $colour-brand-blue;
-  color: $colour-brand-black;
+  background: var.$colour-brand-blue;
+  color: var.$colour-brand-black;
 }
 ::selection {
-  background: $colour-brand-blue;
-  color: $colour-brand-black;
+  background: var.$colour-brand-blue;
+  color: var.$colour-brand-black;
 }
 
 textarea::placeholder {

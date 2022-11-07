@@ -128,3 +128,7 @@ All markdown files and resources for the document should be placed under the dir
 [pr]: https://github.com/researchdata-sheffield/dataviz-hub2/pulls
 [jest]: https://jestjs.io/
 [playwright]: https://playwright.dev/
+
+### Styles
+
+Place global variables in the file `src/css/_variables.scss` and use it in any scss files like `var.$varibale-name`.

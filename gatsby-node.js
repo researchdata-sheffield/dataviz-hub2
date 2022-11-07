@@ -94,7 +94,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  *  Create pages from MDX files
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  console.log("----------------------------------------------------");
+  console.log("----------------gatsby-node.js---------------------");
   console.log(`Environment: ${process.env.GATSBY_ENV}`);
   console.log("MESSAGE: Creating pages from MDX files ...");
   // De-structure the createPage function from the actions object

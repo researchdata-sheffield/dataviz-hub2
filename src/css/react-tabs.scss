@@ -23,7 +23,7 @@
     &--selected {
       background: rgba(55, 65, 81, 1);
       color: white;
-      border-bottom: 2px solid $colour-brand-blue;
+      border-bottom: 2px solid var.$colour-brand-blue;
 
       &:hover {
         background: rgba(255,255,255, 1);
@@ -42,7 +42,7 @@
     }
 
     &:focus {
-      border-color: $colour-brand-blue;
+      border-color: var.$colour-brand-blue;
       outline: none;
     }
   }
