@@ -221,7 +221,7 @@ class Search extends Component {
           }}
         >
           <Zoom top duration={1000} cascade>
-            <p className="text-lg text-gray-800 mb-4 font-bold">
+            <p className="text-2xl text-brand-black mb-4 font-bold">
               What are you looking for?
             </p>
           </Zoom>
@@ -233,7 +233,7 @@ class Search extends Component {
                 onChange={this.search}
                 onInput={this.search}
                 autoComplete="off"
-                className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600"
+                className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-700"
                 style={{ minWidth: "25vw" }}
                 type="text"
                 name="search"

@@ -42,7 +42,7 @@ Object {
                   />
                 </svg>
                 <a
-                  class="sc-jSMfEi eOUpBv rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                  class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                   gatsby="true"
                   href="/blog/category/articles"
                 >
@@ -87,7 +87,7 @@ Object {
                 class="mt-2 text-gray-500"
               >
                 <a
-                  class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/r"
                 >
@@ -136,7 +136,7 @@ Object {
                   />
                 </svg>
                 <a
-                  class="sc-jSMfEi eOUpBv rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                  class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                   gatsby="true"
                   href="/blog/category/tutorial"
                 >
@@ -182,28 +182,28 @@ Object {
                 class="mt-2 text-gray-500"
               >
                 <a
-                  class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/shiny"
                 >
                   Shiny
                 </a>
                 <a
-                  class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/template"
                 >
                   Template
                 </a>
                 <a
-                  class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/r"
                 >
                   R
                 </a>
                 <a
-                  class="sc-gKXOVf kmTNOw text-xs py-0 mx-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mx-1 my-0"
                   gatsby="true"
                   href="/blog/05/02/2021/Shiny-Template"
                 >
@@ -301,7 +301,7 @@ Object {
                 />
               </svg>
               <a
-                class="sc-jSMfEi eOUpBv rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                 gatsby="true"
                 href="/blog/category/articles"
               >
@@ -346,7 +346,7 @@ Object {
               class="mt-2 text-gray-500"
             >
               <a
-                class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/r"
               >
@@ -395,7 +395,7 @@ Object {
                 />
               </svg>
               <a
-                class="sc-jSMfEi eOUpBv rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                 gatsby="true"
                 href="/blog/category/tutorial"
               >
@@ -441,28 +441,28 @@ Object {
               class="mt-2 text-gray-500"
             >
               <a
-                class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/shiny"
               >
                 Shiny
               </a>
               <a
-                class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/template"
               >
                 Template
               </a>
               <a
-                class="sc-gKXOVf kmTNOw text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/r"
               >
                 R
               </a>
               <a
-                class="sc-gKXOVf kmTNOw text-xs py-0 mx-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mx-1 my-0"
                 gatsby="true"
                 href="/blog/05/02/2021/Shiny-Template"
               >

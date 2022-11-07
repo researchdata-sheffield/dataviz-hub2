@@ -106,7 +106,7 @@ To contribute contents such as blog posts, visualisations, and documentation, pl
 
 ### Blog post
 
-- [Guide on contribute blog posts](https://dataviz.shef.ac.uk/docs/22/03/2020/contribute-blog-post)
+- See the guide for how to contribute blog post on [website](https://dataviz.shef.ac.uk/docs/22/03/2020/contribute-blog-post) or [local markdown file](./content/docs/2020-03-22-datavizhub-guide/index.mdx).
 
 ### Documentation
 
@@ -121,7 +121,7 @@ All markdown files and resources for the document should be placed under the dir
 
 ### Visualisation
 
-- [How to contribute visualisation?](https://dataviz.shef.ac.uk/docs/21/07/2021/Contribute-visualisation)
+- See the guide for how to contribute visualisation on [website](https://dataviz.shef.ac.uk/docs/21/07/2021/Contribute-visualisation) or [local markdown file](./content/docs/2021-07-21-Contribute-visualisation/index.mdx).
 
 [coc]: https://github.com/researchdata-sheffield/dataviz-hub2/blob/master/CODE-OF-CONDUCT.md
 [issue]: https://github.com/researchdata-sheffield/dataviz-hub2/issues
@@ -131,4 +131,22 @@ All markdown files and resources for the document should be placed under the dir
 
 ### Styles
 
-Place global variables in the file `src/css/_variables.scss` and use it in any scss files like `var.$varibale-name`.
+Place global variables in the file `src/css/_variables.scss` and use it in any scss files in the format of `var.$varibale-name`.
+
+You may wish to use the [react-reveal](https://www.react-reveal.com/) package to add some animations to your contributed pages. Sometimes the following order of HTML elements would not render the content correctly:
+
+```mdx
+import { Fade } from "react-reveal";
+
+<div>
+  <Fade>...contents</Fade>
+</div>
+```
+
+To solve this problem, move the `<Fade>` tag one level above:
+
+```mdx
+<Fade>
+  <div>...contents</div>
+</Fade>
+```

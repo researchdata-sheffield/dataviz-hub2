@@ -51,7 +51,7 @@ const About = () => {
           </div>
 
           <Link to="/about#more">
-            <button className="mt-16 bg-gray-300 hover:bg-brand-blue text-center hover:text-white text-gray-700 font-semibold py-2 px-6 border-2 border-transparent shadow">
+            <button className="mt-16 bg-gray-300 hover:bg-brand-blue text-center text-brand-black font-semibold py-2 px-6 border-2 border-transparent shadow">
               Learn more
             </button>
           </Link>
@@ -100,7 +100,7 @@ const About = () => {
         <div className="flex flex-wrap text-gray-900 text-xl px-3 lg:px-32 xl:px-48 py-16">
           <Fade>
             <p className="">
-              <b className="text-brand-blue">Dataviz.Shef</b> is a joint
+              <b className="bg-brand-blue">Dataviz.Shef</b> is a joint
               initiative between <b>The University Library</b>,{" "}
               <b>IT Services</b>, and <b>Research Software Engineering (RSE)</b>
               . This community website exists to provide research staff and
@@ -140,7 +140,9 @@ const About = () => {
               </a>
             </div>
 
-            <p className="text-brand-blue text-4xl py-8">Contribute</p>
+            <p className="border-brand-blue border-b-4 text-4xl my-8">
+              Contribute
+            </p>
 
             <p className="text-gray-900">
               From ideas to content for the ORDA showcase, our blog or Dataviz

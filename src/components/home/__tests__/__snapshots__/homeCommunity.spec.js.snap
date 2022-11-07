@@ -166,7 +166,7 @@ Object {
               class="react-reveal"
             >
               <button
-                class="sc-ftvSup EZzVk rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue"
+                class="sc-ftvSup EZzVk rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue group-hover:text-brand-black"
               >
                 Coming soon
                 <svg
@@ -648,7 +648,7 @@ Object {
             class="react-reveal"
           >
             <button
-              class="sc-ftvSup EZzVk rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue"
+              class="sc-ftvSup EZzVk rounded-md text-xs lg:text-sm mt-5 lg:mt-10 group-hover:bg-brand-blue group-hover:text-brand-black"
             >
               Coming soon
               <svg

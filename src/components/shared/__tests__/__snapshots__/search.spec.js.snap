@@ -18,7 +18,7 @@ exports[`Search component renders correctly 1`] = `
     }
   >
     <p
-      className="react-reveal text-lg text-gray-800 mb-4 font-bold"
+      className="react-reveal text-2xl text-brand-black mb-4 font-bold"
       style={
         Object {
           "opacity": undefined,
@@ -66,7 +66,7 @@ exports[`Search component renders correctly 1`] = `
       </svg>
       <input
         autoComplete="off"
-        className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600"
+        className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-700"
         id="pageSearch"
         name="search"
         onChange={[Function]}
@@ -103,7 +103,7 @@ exports[`Search component return search result without error 1`] = `
       style="background-image: url(test-file-stub); background-size: contain; background-position: center; background-repeat: no-repeat; width: 100%; min-height: 600px;"
     >
       <p
-        class="react-reveal text-lg text-gray-800 mb-4 font-bold"
+        class="react-reveal text-2xl text-brand-black mb-4 font-bold"
       >
         What are you looking for?
       </p>
@@ -136,7 +136,7 @@ exports[`Search component return search result without error 1`] = `
         </svg>
         <input
           autocomplete="off"
-          class="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600"
+          class="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-700"
           id="pageSearch"
           name="search"
           placeholder="Search title, description, date..."
@@ -175,7 +175,7 @@ exports[`Search component return search result without error 1`] = `
                 style="margin: 10px auto;"
               >
                 <a
-                  class="sc-iBkjds bboyCs"
+                  class="sc-iBkjds fAfJIM"
                   gatsby="true"
                   style="font-size: .68rem; background: lightgray; border-color: lightgray; color: rgb(51, 51, 51); font-weight: 600;"
                   title="Type: docs"
@@ -216,7 +216,7 @@ exports[`Search component return search result without error 1`] = `
                 style="margin: 10px auto;"
               >
                 <a
-                  class="sc-iBkjds bboyCs"
+                  class="sc-iBkjds fAfJIM"
                   gatsby="true"
                   style="font-size: .68rem; background: lightgray; border-color: lightgray; color: rgb(51, 51, 51); font-weight: 600;"
                   title="Type: visualisation"
@@ -224,7 +224,7 @@ exports[`Search component return search result without error 1`] = `
                   VISUALISATION
                 </a>
                 <a
-                  class="sc-ftvSup fyxfJt"
+                  class="sc-ftvSup jKBtmd"
                   gatsby="true"
                   href="/blog/category/research-innovation-it"
                   style="font-size: .68rem;"
@@ -233,7 +233,7 @@ exports[`Search component return search result without error 1`] = `
                   Research & Innovation IT
                 </a>
                 <a
-                  class="sc-ftvSup fyxfJt"
+                  class="sc-ftvSup jKBtmd"
                   gatsby="true"
                   href="/blog/tag/statistics"
                   style="font-size: .68rem;"
@@ -242,7 +242,7 @@ exports[`Search component return search result without error 1`] = `
                   Statistics
                 </a>
                 <a
-                  class="sc-ftvSup fyxfJt"
+                  class="sc-ftvSup jKBtmd"
                   gatsby="true"
                   href="/blog/tag/interative"
                   style="font-size: .68rem;"
