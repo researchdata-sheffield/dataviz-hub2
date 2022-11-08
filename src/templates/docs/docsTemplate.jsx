@@ -1,6 +1,6 @@
 // BASE
 import React from "react";
-import { graphql, withPrefix } from "gatsby";
+import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -17,7 +17,7 @@ import "katex/dist/katex.min.css";
 // Utils
 import { useScript } from "../../utils/hooks/useScript";
 import { getShareLinks } from "../../utils/shared";
-import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent";
+import { useTrackTableOfContent } from "../../utils/hooks/trackTableOfContent";
 
 import Fade from "react-reveal/Fade";
 
@@ -29,14 +29,7 @@ const DocsTemplate = ({ data: { mdx }, pageContext }) => {
 
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 || null;
-  {
-    d3 &&
-      d3.map((d) => {
-        if (d.includes("https://")) useScript(d, "", false);
-        // external script
-        else useScript(withPrefix(`d3/${d}`), "", false);
-      });
-  }
+  useScript(d3);
 
   // enable/disable table of content
   let tableOfContent;
@@ -45,8 +38,9 @@ const DocsTemplate = ({ data: { mdx }, pageContext }) => {
     tableOfContent = null;
   } else {
     tableOfContent = mdx.tableOfContents;
-    trackTableOfContent(`.TOC li a`, `.mdxBody`);
   }
+
+  useTrackTableOfContent(`.TOC li a`, `.mdxBody`);
 
   //Rendering table of content
   const renderItem = (item) => (

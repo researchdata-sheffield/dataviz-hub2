@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { IoIosArrowUp } from "react-icons/io";
 import { useTrackScrollPosition } from "../../utils/hooks/trackScrollPosition";
 
-const scrollTop = () => {
+const ScrollTop = () => {
   useTrackScrollPosition("scrollTop-btn");
 
   return (
@@ -17,8 +17,8 @@ const scrollTop = () => {
   );
 };
 
-export default scrollTop;
+export default ScrollTop;
 
-scrollTop.propTypes = {
+ScrollTop.propTypes = {
   pageContext: PropTypes.any
 };

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import SEO from "../../components/shared/seo";
 import { Helmet } from "react-helmet";
-import { graphql, withPrefix } from "gatsby";
+import { graphql } from "gatsby";
 import PostPagination from "../../components/blog/postPagination";
 
 import CommonMdxProvider from "../../components/shared/commonMdxProvider";
@@ -18,13 +18,8 @@ const BlogPostTemplateCustom = ({ data: { mdx }, pageContext }) => {
   const d3 = mdx.frontmatter.d3 || null;
 
   // include d3 scripts
-  useScript("https://unpkg.com/topojson@3", "", false);
-  {
-    d3 &&
-      d3.map((d) => {
-        useScript(withPrefix(`d3/${d}`), "", false);
-      });
-  }
+  useScript(["https://unpkg.com/topojson@3"]);
+  useScript(d3);
 
   return (
     <>

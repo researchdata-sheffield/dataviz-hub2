@@ -46,6 +46,26 @@ export function calculateUserLocalTime(sheffieldTime, timezone = "") {
  * @returns {object / string} an object contains image urls or an absolute path to the image
  */
 export function getImageSource(node, source = false) {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const imageData = useStaticQuery(graphql`
+    query getImageFiles {
+      image1: file(relativePath: { eq: "blog/no_image_1.jpg" }) {
+        ...ImageSharp
+      }
+      image2: file(relativePath: { eq: "blog/no_image_2.png" }) {
+        ...ImageSharp
+      }
+      image3: file(relativePath: { eq: "blog/no_image_3.png" }) {
+        ...ImageSharp
+      }
+      image4: file(relativePath: { eq: "blog/no_image_4.png" }) {
+        ...ImageSharp
+      }
+      image5: file(relativePath: { eq: "blog/no_image_5.png" }) {
+        ...ImageSharp
+      }
+    }
+  `);
   let imagesrc;
   if (
     node.frontmatter &&
@@ -54,26 +74,6 @@ export function getImageSource(node, source = false) {
   ) {
     imagesrc = node.frontmatter.thumbnail.childImageSharp.gatsbyImageData;
   } else {
-    const imageData = useStaticQuery(graphql`
-      query getImageFiles {
-        image1: file(relativePath: { eq: "blog/no_image_1.jpg" }) {
-          ...ImageSharp
-        }
-        image2: file(relativePath: { eq: "blog/no_image_2.png" }) {
-          ...ImageSharp
-        }
-        image3: file(relativePath: { eq: "blog/no_image_3.png" }) {
-          ...ImageSharp
-        }
-        image4: file(relativePath: { eq: "blog/no_image_4.png" }) {
-          ...ImageSharp
-        }
-        image5: file(relativePath: { eq: "blog/no_image_5.png" }) {
-          ...ImageSharp
-        }
-      }
-    `);
-
     let imageArray = Object.values(imageData);
     // choose a random image from the result
     let imageToUse = imageArray[randomInteger(imageArray.length)];

@@ -16,24 +16,24 @@ import { useEffect } from "react";
  * </ul>
  * </li>
  */
-export function trackTableOfContent(tocSelector, itemSelector) {
-  function handleClassList(element, tagName, type = "add") {
-    if (tagName.substring(0, 1) !== "H") return;
-    let el = element.parentElement;
-    let rm = type === "remove";
-
-    rm ? el.classList.remove("active") : el.classList.add("active");
-
-    if (tagName !== "H1") {
-      handleClassList(
-        el.parentElement,
-        `H${tagName.substring(1) - 1}`,
-        rm ? "remove" : "add"
-      );
-    }
-  }
-
+export function useTrackTableOfContent(tocSelector, itemSelector) {
   useEffect(() => {
+    function handleClassList(element, tagName, type = "add") {
+      if (tagName.substring(0, 1) !== "H") return;
+      let el = element.parentElement;
+      let rm = type === "remove";
+  
+      rm ? el.classList.remove("active") : el.classList.add("active");
+  
+      if (tagName !== "H1") {
+        handleClassList(
+          el.parentElement,
+          `H${tagName.substring(1) - 1}`,
+          rm ? "remove" : "add"
+        );
+      }
+    }
+        
     function handleTOC() {
       const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
@@ -59,5 +59,5 @@ export function trackTableOfContent(tocSelector, itemSelector) {
     return () => {
       document.removeEventListener("DOMContentLoaded", handleTOC);
     };
-  }, []);
+  }, [tocSelector, itemSelector]);
 }

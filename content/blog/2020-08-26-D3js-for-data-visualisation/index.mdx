@@ -160,7 +160,7 @@ multiple replicate lines. Rather than using a for loop, D3 have provided a usefu
 method:
 
 ```js
-var data = [5,10,15,20,25]
+let data = [5,10,15,20,25]
 
 svg.selectAll("rect")
     .data(data)
@@ -292,13 +292,13 @@ append all paths to `g` later. This ensures all paths are grouped for better
 code management and visibility.
 
 ```js:title=Create_Projection
-var projection = d3.geoNaturalEarth1();
-var path = d3.geoPath()
+let projection = d3.geoNaturalEarth1();
+let path = d3.geoPath()
               .projection(projection);
-var svg = d3.select("#worldMap")
+let svg = d3.select("#worldMap")
               .append("g")
               .attr("position", "center");
-var tooltip = d3.select("div.tooltip");
+let tooltip = d3.select("div.tooltip");
 ```
 
 To load datasets we are using D3 functions `d3.json` and `d3.csv`, and the use of
@@ -339,7 +339,7 @@ country.
 
 ```js:title=Create_map_function
 function createMap(world, names, population) {
-	var countriesData = topojson.feature(world, world.objects.countries).features;
+	let countriesData = topojson.feature(world, world.objects.countries).features;
 	countries = countriesData.filter(d => {
 		return names.some(n => {
 			if (d.id == n.id) return d.name = n.name;
@@ -401,7 +401,7 @@ function createMap(world, names, population) {
   ...
 	svg.call(d3.drag()
     .on("drag", function() {
-      var xy = d3.mouse(this);
+      let xy = d3.mouse(this);
       projection.rotate(xy).translate([xy[0], xy[1]])
       svg.selectAll("path")
         .attr("d",path);

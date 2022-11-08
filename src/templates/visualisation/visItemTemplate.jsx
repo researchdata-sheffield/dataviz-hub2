@@ -1,6 +1,6 @@
 // BASE
 import React from "react";
-import { graphql, withPrefix, navigate } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
@@ -32,15 +32,7 @@ const VisItemTemplate = ({ data: { mdx }, pageContext }) => {
 
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 || null;
-  if (d3) {
-    d3.forEach((d) => {
-      if (d.includes("https://")) {
-        useScript(d, "", false); // external script
-      } else {
-        useScript(withPrefix(`d3/${d}`), "", false);
-      }
-    });
-  }
+  useScript(d3);
 
   return (
     <div className="relative" key={mdx.id}>
