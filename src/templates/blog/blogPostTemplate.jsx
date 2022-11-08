@@ -1,6 +1,6 @@
 // BASE
 import React, { useEffect } from "react";
-import { graphql, withPrefix } from "gatsby";
+import { graphql } from "gatsby";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
@@ -19,13 +19,13 @@ import CommonMdxProvider from "../../components/shared/commonMdxProvider";
 import kebabCase from "lodash.kebabcase";
 import { useScript } from "../../utils/hooks/useScript";
 import { getShareLinks } from "../../utils/shared";
-import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent";
+import { useTrackTableOfContent } from "../../utils/hooks/trackTableOfContent";
 
 import Fade from "react-reveal/Fade";
 import Pulse from "react-reveal/Pulse";
 import trianglify from "trianglify";
 
-const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
+const BlogPostTemplate = ({ data: { mdx }, pageContext }) => {
   const { title, date, author, category, tag, disableTOC } = mdx.frontmatter;
   const { prev, next } = pageContext;
 
@@ -33,26 +33,16 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 || null;
-
-  {
-    d3 &&
-      d3.map((d) => {
-        if (d.includes("https://")) {
-          useScript(d, "", false); // external script
-        } else {
-          useScript(withPrefix(`d3/${d}`), "", false);
-        }
-      });
-  }
+  useScript(d3);
 
   // enable/disable table of content
-  var tableOfContent;
+  let tableOfContent;
   if (disableTOC === true) {
     tableOfContent = null;
   } else {
     tableOfContent = mdx.tableOfContents;
-    trackTableOfContent(`.TOC li a`, `.mdxBody`);
   }
+  useTrackTableOfContent(`.TOC li a`, `.mdxBody`);
 
   //Rendering table of content
   const renderItem = (item) => (
@@ -89,9 +79,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
 
   // produce trianglify image
   useEffect(() => {
-    var element = document.getElementById("headElement");
-    var dimensions = element.getClientRects()[0];
-    var pattern = trianglify({
+    let element = document.getElementById("headElement");
+    let dimensions = element.getClientRects()[0];
+    let pattern = trianglify({
       width: dimensions.width,
       height: dimensions.height,
       cellSize: 60 + Math.ceil(Math.random() * 100),
@@ -100,7 +90,7 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
       seed: Math.random().toString(5)
     }).toCanvas();
 
-    var img = pattern.toDataURL("image/png");
+    let img = pattern.toDataURL("image/png");
     element.style["background-image"] =
       "linear-gradient(0deg, rgba(0,0,0,0.05) 70%, rgba(0,0,0,0.60) 100%), url(" +
       img +
@@ -267,9 +257,9 @@ const blogPostTemplate = ({ data: { mdx }, pageContext }) => {
   );
 };
 
-export default blogPostTemplate;
+export default BlogPostTemplate;
 
-blogPostTemplate.propTypes = {
+BlogPostTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any
 };

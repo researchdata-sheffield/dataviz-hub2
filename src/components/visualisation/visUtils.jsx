@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { trackScrollPosition } from "../../utils/hooks/trackScrollPosition";
+import { useTrackScrollPosition } from "../../utils/hooks/trackScrollPosition";
 import { VisTagMenuBtn, VisFooterBtn } from "../style/visStyle";
 import { FaTags } from "react-icons/fa";
-import { MdCancel } from "react-icons/md";
+import { MdClose } from "react-icons/md";
 import { ImMenu3, ImMenu4 } from "react-icons/im";
 import { FiSearch } from "react-icons/fi";
 import Footer from "../shared/footer";
@@ -21,10 +21,10 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
   const [filterTag, setfilterTag] = useState(tags);
   const [footer, setFooter] = useState(false);
   const footerIconStyle =
-    "text-white text-2xl group-hover:scale-110 transition duration-500";
+    "text-2xl group-hover:scale-110 transition duration-500";
 
-  trackScrollPosition("vis-tag-button");
-  trackScrollPosition("vis-footer-button");
+  useTrackScrollPosition("vis-tag-button");
+  useTrackScrollPosition("vis-footer-button");
 
   function searchTag() {
     let searchWord = searchValue.toLowerCase();
@@ -58,7 +58,11 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
         onClick={() => setFooter(!footer)}
         tabindex="101"
         id="vis-footer-button"
-        className={`group ${footer ? "bg-brand-blue" : "bg-gray-800"}`}
+        className={`group ${
+          footer
+            ? "bg-brand-blue text-brand-black"
+            : "bg-brand-black text-white"
+        }`}
         title="Footer"
       >
         {!footer && <ImMenu4 className={footerIconStyle} />}
@@ -70,7 +74,7 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
         id="vis-tag-menu"
         className={`${
           tagMenu ? "visible" : "invisible translate-x-full"
-        } bg-gray-900 transform`}
+        } bg-black transform`}
         style={{
           zIndex: "1000",
           maxWidth: "450px",
@@ -84,10 +88,10 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
       >
         <button
           onClick={() => handleTagMenu()}
-          className="text-gray-500 hover:text-red-400 text-lg"
+          className="text-gray-300 hover:text-brand-blue text-lg"
           style={{
             border: "1px solid transparent",
-            backgroundColor: "black",
+            backgroundColor: "rgb(25, 25, 25)",
             transition: ".3s ease",
             position: "absolute",
             top: 0,
@@ -95,11 +99,11 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
             margin: "1.5rem",
             display: "flex",
             alignItems: "center",
-            padding: ".75rem .25rem",
+            padding: ".3rem",
             borderRadius: ".375rem"
           }}
         >
-          <MdCancel className="text-xl mr-1" />
+          <MdClose className="text-xl mr-1" />
           CLOSE
         </button>
         <div className="w-full m-6">
@@ -127,24 +131,9 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
           height="auto"
           words={filterTag}
           menu="Tag menu"
-          minFontSize={0.97}
+          minFontSize={1.2}
           maxFontSize={2.8}
           padding="1px 3px"
-          colour={[
-            "#808080",
-            "#ff5e5e",
-            "#fedf00",
-            "#6d3db3",
-            "#52ff9c",
-            "#ade1f8",
-            "#f0f0f0",
-            "#fff",
-            "#ff56a1",
-            "#89f064",
-            "#393939",
-            "#08e8ff",
-            "#00aeef"
-          ]}
           wordStyle={{ whiteSpace: "normal" }}
         />
       </div>

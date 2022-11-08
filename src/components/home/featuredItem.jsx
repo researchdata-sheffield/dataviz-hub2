@@ -10,7 +10,7 @@ import { getImageSource, shortenText } from "../../utils/shared";
 const featuredItem = ({ item }) => {
   if (item && item.edges) {
     return (
-      <div className="w-full flex flex-wrap pb-6 bg-gray-900">
+      <div className="w-full flex flex-wrap pb-6 bg-brand-black">
         {item.edges.map(({ node }) => {
           let imagesrc = getImageSource(node);
           let title = shortenText(node.frontmatter.title, 11);
@@ -20,18 +20,18 @@ const featuredItem = ({ item }) => {
             <Fade key={node.id} duration={2000} fraction={0.3}>
               <div
                 key={node.id}
-                className="group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-gray-900 text-gray-300 grow"
+                className="group w-full sm:w-1/2 min-h-80 lg:min-h-95 xl:min-h-100 pb-28 overflow-hidden relative leading-none bg-brand-black text-gray-300 grow"
                 tabIndex="0"
               >
                 <Link to={node.fields.slug}>
                   <div
-                    className="flex top-0 left-0 absolute m-3 lg:m-5 text-white lg:bg-transparent lg:text-gray-300 group-hover:bg-gray-900 items-center rounded-lg p-1"
+                    className="flex top-0 left-0 absolute m-3 lg:m-5 text-white lg:bg-transparent lg:text-gray-300 group-hover:bg-brand-black items-center rounded-lg p-1"
                     style={{ zIndex: "3" }}
                   >
                     <FaStar className="text-yellow-300 text-2xl" />
                     <p
                       className="inline-block lg:opacity-0 group-hover:opacity-100 text-base font-semibold px-2"
-                      style={{ fontFamily: "TUoS Blake" }}
+                      style={{ fontFamily: "Source Serif Pro" }}
                     >
                       Featured
                     </p>

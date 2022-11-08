@@ -1,25 +1,27 @@
 import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import React, { useState, useEffect } from "react";
-import university_logo from "../../images/TUOSlogo.png";
+import university_logo from "../../images/UOSLogo_Primary_Violet_RGB.svg";
 import { FiSearch } from "react-icons/fi";
 import { FaGoogle, FaSlack, FaTimes, FaBars, FaRss } from "react-icons/fa";
 import { A } from "../style/blogPostStyle";
 import { useLocation } from "@gatsbyjs/reach-router";
+import NavData from "../../data/nav.json";
 
 const Header = () => {
   const [isExpanded, toggleExpansion] = useState(false);
   const [isScroll, toggleScrolled] = useState(false);
   const [isOpen, toggleOpen] = useState(false);
   const location = useLocation();
-  var currentPagePath = location.pathname;
+  let currentPagePath = location.pathname;
 
   // close mobile menu on route change
-  if (typeof window !== "undefined" && window.screen.width <= 1200) {
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.screen.width <= 1200) {
       toggleExpansion(false);
-    }, [location]);
-  }
+    }
+    toggleExpansion(false);
+  }, [location]);
 
   // monitor page scroll
   useEffect(() => {
@@ -98,23 +100,24 @@ const Header = () => {
    */
   const NavLink = (props) => {
     function navColourClass(mobile = false) {
-      var className = "transition duration-300 relative "; // don't remove space
+      let className = "transition duration-300 relative "; // don't remove space
 
       if (mobile == "true") {
         if (isScroll) {
-          className += "text-black hover:text-brand-blue";
+          className += "text-black hover:text-brand-purple";
           return className;
         }
-        className += "text-gray-600 hover:text-brand-blue";
+        className += "text-gray-600 hover:text-brand-purple";
         return className;
       }
 
       if (isScroll) {
-        className += "text-black hover:text-brand-blue";
+        className += "text-black hover:text-brand-purple";
         return className;
       }
 
-      className += "text-gray-100 group-hover:text-black hover:text-brand-blue";
+      className +=
+        "text-gray-100 group-hover:text-black hover:text-brand-purple";
       return className;
     }
 
@@ -174,7 +177,7 @@ const Header = () => {
   };
 
   function mobileMenuIconClass() {
-    var className =
+    let className =
       "px-3 py-2 flex items-center border rounded outline-none transition duration-300 group-hover:border-gray-700 group-hover:text-gray-700";
 
     if (isExpanded || isScroll || currentPagePath === "/") {
@@ -187,7 +190,7 @@ const Header = () => {
 
   function copyRssLink() {
     toggleOpen(true);
-    var copyText = document.querySelector("#rssLink");
+    let copyText = document.querySelector("#rssLink");
     copyText.select();
     copyText.setSelectionRange(0, 9999);
     document.execCommand("copy");
@@ -205,25 +208,40 @@ const Header = () => {
         } transition duration-500 flex items-center justify-between flex-wrap px-5 fixed w-full z-10 overflow-hidden`}
         style={{ transition: "top 0.3s" }}
       >
-        <div className="flex items-center shrink-0 mr-5">
+        <div
+          className="flex items-center shrink-0 lg:mr-5"
+          style={{ padding: "10px" }}
+        >
           <A
             className={`${
               isScroll ? "" : [currentPagePath === "/" ? "invisible" : ""]
             } `}
             href="https://www.sheffield.ac.uk/"
             title="The University of Sheffield Logo"
+            style={{
+              background: "none",
+              paddingBottom: 0,
+              borderRight: "2px solid #440099",
+              marginRight: ".8rem",
+              paddingRight: ".8rem"
+            }}
           >
             <img
-              className="mt-1"
               alt="The University of Sheffield Logo"
-              style={{ maxWidth: "13.6vh" }}
+              style={{ maxWidth: "13.5vh", minWidth: "120px" }}
               src={university_logo}
             />
           </A>
           <div
             className={`${
               isScroll ? "" : [currentPagePath === "/" ? "invisible" : ""]
-            } ml-4 text-lg font-extrabold transition duration-1000 ease-in-out`}
+            } text-xl`}
+            style={{
+              alignSelf: "end",
+              transition: "1s ease",
+              marginBottom: "-3px",
+              fontWeight: 900
+            }}
           >
             <Link className="textanimate" to="/">
               Dataviz.Shef
@@ -258,43 +276,14 @@ const Header = () => {
         >
           {/* <div className="mt-5 pt-6 border-gray-200 border-t-1"></div> */}
           <div className="mt-5 justify-end flex flex-wrap items-center">
-            {[
-              {
-                route: `/`,
-                title: `Home`
-              },
-              {
-                route: `/community`,
-                title: `Community`
-              },
-              {
-                route: `/events`,
-                title: `Events`
-              },
-              {
-                route: `/blog`,
-                title: `Blog`
-              },
-              {
-                route: `/visualisation`,
-                title: `Visualisation`
-              },
-              {
-                route: `https://orda.shef.ac.uk/visualisations/`,
-                title: `Showcase`
-              },
-              {
-                route: `/about`,
-                title: `About`
-              }
-            ].map((link) =>
+            {NavData.map((link) =>
               link.title != "Showcase" ? (
                 <NavLink
                   type="Link"
                   mobile="true"
                   className="block w-full text-2xl"
                   activeStyle={{
-                    color: `${isScroll ? "#00aeef" : "black"}`,
+                    color: `${isScroll ? "#440099" : "black"}`,
                     fontWeight: "bold"
                   }}
                   key={link.title}
@@ -381,36 +370,11 @@ const Header = () => {
           className={`hidden py-2 xl:flex items-center w-auto text-xs xl:text-sm`}
         >
           <div className="justify-end flex flex-wrap items-center">
-            {[
-              {
-                route: `/community`,
-                title: `Community`
-              },
-              {
-                route: `/events`,
-                title: `Events`
-              },
-              {
-                route: `/blog`,
-                title: `Blog`
-              },
-              {
-                route: `/visualisation`,
-                title: `Visualisation`
-              },
-              {
-                route: `https://orda.shef.ac.uk/visualisations/`,
-                title: `Showcase`
-              },
-              {
-                route: `/about`,
-                title: `About`
-              }
-            ].map((link) =>
+            {NavData.filter((n) => n.title != "Home").map((link) =>
               link.title != "Showcase" ? (
                 <NavLink
                   type="Link"
-                  activeStyle={{ color: `#00aeef`, fontWeight: "bold" }}
+                  activeStyle={{ color: `#440099`, fontWeight: "bold" }}
                   partiallyActive={true}
                   key={link.title}
                   to={link.route}

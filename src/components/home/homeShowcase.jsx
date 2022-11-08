@@ -70,7 +70,7 @@ const HomeShowcase = () => {
           <div className="lg:w-5/12 px-3 lg:px-5 2xl:px-24 flex flex-wrap justify-center pb-16">
             <h1
               className="text-4xl 2xl:text-5xl text-gray-900 text-center mt-10 mb-6 lg:py-5"
-              style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif" }}
+              style={{ fontFamily: "Source Serif Pro, serif" }}
             >
               Online Research Data
             </h1>

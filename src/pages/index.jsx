@@ -15,11 +15,11 @@ import Covid from "../images/home/COVIDDeathPropMSOA.png";
 import Bg from "../images/home/lineBackground.png";
 import { ArrowButton, AnimateButton } from "../components/style/styleComponent";
 import { randomInteger } from "../utils/shared";
-import { backgroundMovement } from "../utils/hooks/backgroundMovement";
+import { useBackgroundMovement } from "../utils/hooks/backgroundMovement";
 
 const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
   let datePrev = moment();
-  var words = [
+  let words = [
     "Colour",
     "What are you looking for?",
     "blog post",
@@ -33,7 +33,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
   ];
 
   useEffect(() => {
-    var input = document.getElementById("homeSearch");
+    let input = document.getElementById("homeSearch");
     const interval = setInterval(() => {
       let dateNow = moment();
       let dateDiff = dateNow - datePrev;
@@ -48,7 +48,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
     };
   }, [words]);
 
-  backgroundMovement("dynamicBg");
+  useBackgroundMovement("dynamicBg");
 
   return (
     <div className="bg-white">
@@ -102,7 +102,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
               <Fade bottom delay={700}>
                 <ArrowButton
                   type="BlackWhiteButton"
-                  className="group py-2 px-4 text-sm 2xl:text-lg xl:py-3 xl:px-8 shadow-none bg-white text-gray-900 border-1 border-gray-500 hover:text-white hover:bg-gray-900"
+                  className="group py-2 px-4 text-sm 2xl:text-lg xl:py-3 xl:px-8 shadow-none bg-white text-brand-black border-1 border-gray-500 hover:text-white hover:bg-brand-black"
                 >
                   What is data visualisation
                 </ArrowButton>
@@ -114,7 +114,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
           {/* Right component */}
           {/*style={{borderTop: "50px solid #000000", }} */}
           <div
-            className="flex flex-wrap text-gray-100 2lg:w-8/12 bg-black"
+            className="flex flex-wrap text-gray-100 2lg:w-8/12 bg-brand-black"
             style={{ marginLeft: "auto", transition: ".5s ease" }}
           >
             {/* An example of visualisation, update weekly/monthly? */}
@@ -215,7 +215,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
             <div className="text-gray-900">
               <h1
                 className="text-5xl 2xl:text-6xl font-semibold"
-                style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif" }}
+                style={{ fontFamily: "Source Serif Pro, serif" }}
               >
                 Data and visualisation
               </h1>
@@ -257,7 +257,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
       >
         <h1
           className="text-3xl lg:text-4xl 2xl:text-5xl font-semibold text-gray-800 text-center py-5 w-full"
-          style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif" }}
+          style={{ fontFamily: "Source Serif Pro, serif" }}
         >
           Collaboration and Partnership.
         </h1>

@@ -1,6 +1,6 @@
 // BASE
 import React from "react";
-import { graphql, withPrefix, navigate } from "gatsby";
+import { graphql, navigate } from "gatsby";
 import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 
@@ -20,7 +20,7 @@ import VisDetail from "../../components/visualisation/visDetail";
 import { VisDiv, VisBackBtn, EmbedCode } from "../../components/style/visStyle";
 import { AiOutlineRollback, AiOutlineHome } from "react-icons/ai";
 
-const visItemTemplate = ({ data: { mdx }, pageContext }) => {
+const VisItemTemplate = ({ data: { mdx }, pageContext }) => {
   const components = { VisPagination, VisDetail, VisDiv, EmbedCode };
 
   const shareLinks = getShareLinks(mdx);
@@ -32,15 +32,7 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
 
   // include d3 scripts
   const d3 = mdx.frontmatter.d3 || null;
-  if (d3) {
-    d3.forEach((d) => {
-      if (d.includes("https://")) {
-        useScript(d, "", false); // external script
-      } else {
-        useScript(withPrefix(`d3/${d}`), "", false);
-      }
-    });
-  }
+  useScript(d3);
 
   return (
     <div className="relative" key={mdx.id}>
@@ -78,7 +70,7 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
           <CommonMdxProvider mdx={mdx} components={components} />
         </div>
       ) : (
-        <div className="flex flex-wrap relative mx-auto bg-gray-900">
+        <div className="flex flex-wrap relative mx-auto bg-brand-black">
           <div
             className="relative mx-auto container py-32 px-3 text-lg xl:text-xl text-gray-200"
             style={{ maxWidth: "1200px" }}
@@ -89,7 +81,7 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
             onClick={() =>
               navigate(localStorage.getItem("VisGoBackURL") || "/visualisation")
             }
-            className="text-xl bg-gray-800 text-gray-100 hover:bg-gray-700 hover:text-brand-blue group overflow-hidden"
+            className="text-xl bg-brand-blue text-brand-black hover:bg-gray-100 group overflow-hidden"
             title="Back to visualisation page"
           >
             <AiOutlineRollback className="group-hover:translate-x-24" />
@@ -112,9 +104,9 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
   );
 };
 
-export default visItemTemplate;
+export default VisItemTemplate;
 
-visItemTemplate.propTypes = {
+VisItemTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any
 };

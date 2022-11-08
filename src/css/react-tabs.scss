@@ -17,16 +17,16 @@
     cursor: pointer;
     color: rgb(189, 189, 189);
     background-color: rgba(31, 41, 55, 1);
-    font-size: .95rem;
-    transition: .3s ease;
+    font-size: 0.95rem;
+    transition: 0.3s ease;
 
     &--selected {
       background: rgba(55, 65, 81, 1);
       color: white;
-      border-bottom: 2px solid rgba(0, 174, 239, 1);
+      border-bottom: 2px solid var.$colour-brand-blue;
 
       &:hover {
-        background: rgba(255,255,255, 1);
+        background: rgba(255, 255, 255, 1);
         color: black;
       }
     }
@@ -38,23 +38,31 @@
 
     &:hover {
       background: rgba(55, 65, 81, 1);
-      color: white
+      color: white;
     }
 
     &:focus {
-      border-color: rgba(0, 174, 239, 1);
+      border-color: var.$colour-brand-blue;
       outline: none;
     }
   }
 
   &__tab-panel {
     display: none;
-    font-size: .95rem;
+    font-size: 0.95rem;
     color: rgba(209, 213, 219, 1);
-    background-color: rgba(17, 24, 39, 1);
+    background-color: var.$colour-brand-black;
 
     &--selected {
       display: block;
+    }
+
+    a {
+      color: var.$colour-brand-blue;
+
+      &:hover {
+        background: var.$colour-brand-purple;
+      }
     }
   }
 }

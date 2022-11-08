@@ -1,0 +1,30 @@
+[
+  {
+    "route": "/",
+    "title": "Home"
+  },
+  {
+    "route": "/community",
+    "title": "Community"
+  },
+  {
+    "route": "/events",
+    "title": "Events"
+  },
+  {
+    "route": "/blog",
+    "title": "Blog"
+  },
+  {
+    "route": "/visualisation",
+    "title": "Visualisation"
+  },
+  {
+    "route": "https://orda.shef.ac.uk/visualisations/",
+    "title": "Showcase"
+  },
+  {
+    "route": "/about",
+    "title": "About"
+  }
+]

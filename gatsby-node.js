@@ -94,7 +94,7 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
  *  Create pages from MDX files
  */
 exports.createPages = async ({ graphql, actions, reporter }) => {
-  console.log("----------------------------------------------------");
+  console.log("----------------gatsby-node.js---------------------");
   console.log(`Environment: ${process.env.GATSBY_ENV}`);
   console.log("MESSAGE: Creating pages from MDX files ...");
   // De-structure the createPage function from the actions object
@@ -332,7 +332,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   });
 
   const POSTS_PER_PAGE = 12;
-  var numPages = posts.length;
+  let numPages = posts.length;
   const categories = [];
   const tags = [];
 
@@ -341,7 +341,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   // Call `createPage` for each result/post
   posts.forEach(({ node }, index, arr) => {
-    var excluded = false;
+    let excluded = false;
 
     // For each post, add their tags/categories to arrays
     node.frontmatter.category &&

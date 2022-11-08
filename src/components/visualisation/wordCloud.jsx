@@ -31,7 +31,7 @@ const wordCloud = React.memo(
     padding,
     menu = "",
     order = "default",
-    minFontSize = 0.9,
+    minFontSize = 0.95,
     maxFontSize = 2.1,
     fontUnit = "rem",
     wordStyle,
@@ -39,17 +39,10 @@ const wordCloud = React.memo(
   }) => {
     const [wordsArr, setWords] = useState(words);
     const wordCloudColours = colours || [
-      "#808080",
-      "#ff5e5e",
+      "#9ADBE8",
       "#fedf00",
-      "#0066b3",
-      "#6d3db3",
-      "#ade1f8",
-      "#f0f0f0",
-      "#fff",
-      "#89f064",
-      "#393939",
-      "#08e8ff"
+      "#00aeef",
+      "#ff79b4"
     ];
     const wordBackgroundColour = backgroundColour || [];
 

@@ -6,6 +6,13 @@ import { Link as gatsby_Link } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { MdKeyboardArrowRight } from "react-icons/md";
 
+// TODO: make this global with css variables
+const COLOURS = {
+  "brand-blue": "#9ADBE8",
+  "brand-black": "#131E29",
+  "brand-purple": "#440099"
+};
+
 export const PostBox = styled.div`
   display: block;
 
@@ -56,23 +63,23 @@ export const ArrowBox = styled.div`
   }
 
   .group:hover > & {
-    border-top: 0px solid #00aeef;
+    border-top: 0px solid ${COLOURS["brand-purple"]};
   }
 
   .group:hover > &:before {
-    border-bottom-color: #00aeef;
+    border-bottom-color: ${COLOURS["brand-purple"]};
   }
 `;
 
 export const ArrowBox_featured = styled(ArrowBox)`
-  background-color: #111827;
+  background-color: ${COLOURS["brand-black"]};
 
   &:after {
-    border-bottom-color: #111827;
+    border-bottom-color: ${COLOURS["brand-black"]};
   }
 
   .group:hover > & {
-    border-top: 0px solid #111827;
+    border-top: 0px solid ${COLOURS["brand-black"]};
   }
 `;
 
@@ -96,9 +103,9 @@ export const IMG_DIV = styled.div`
   }
 
   .group:hover > &::before {
-    -webkit-box-shadow: inset 0 -3px 0 #00aeef;
-    -moz-box-shadow: inset 0 -3px 0 #00aeef;
-    box-shadow: inset 0 -3px 0 #00aeef;
+    -webkit-box-shadow: inset 0 -3px 0 ${COLOURS["brand-purple"]};
+    -moz-box-shadow: inset 0 -3px 0 ${COLOURS["brand-purple"]};
+    box-shadow: inset 0 -3px 0 ${COLOURS["brand-purple"]};
     position: absolute;
     top: 0;
     left: 0;
@@ -125,11 +132,11 @@ export const IMG_DIV = styled.div`
 `;
 
 export const CatBtn = styled(gatsby_Link)`
-  ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
+  ${tw`inline-block hover:bg-brand-blue hover:text-brand-black py-1 px-2 mt-2 mr-2 bg-gray-800 text-gray-100 border-gray-800 border-1 hover:border-transparent rounded-full text-xs`}
 `;
 
 export const TagBtn = styled(gatsby_Link)`
-  ${tw`inline-block hover:bg-brand-blue hover:text-white py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
+  ${tw`inline-block hover:bg-brand-blue hover:text-brand-black py-1 px-2 mt-2 mr-2 bg-white text-gray-700 border-1 border-gray-200 hover:border-transparent rounded-full text-xs`}
 `;
 
 export const HomeBlogNav = styled.div`

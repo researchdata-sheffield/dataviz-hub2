@@ -22,13 +22,13 @@ class PostPagination extends React.Component {
     const displayShareButtons = this.props.displayShareButtons ?? true;
     const { githubLink, shareLink, shareMessage } = shareLinks;
 
-    var mdxType = mdx.frontmatter.type || "blog";
+    let mdxType = mdx.frontmatter.type || "blog";
 
     let prevTitle = prev ? shortenText(prev.node.frontmatter.title, 6) : "";
     let nextTitle = next ? shortenText(next.node.frontmatter.title, 6) : "";
 
     let linkStyle =
-      "flex items-center px-3 hover:text-brand-blue text-gray-900 min-w-20";
+      "flex items-center px-3 inline-block hover:bg-brand-blue text-brand-black";
 
     return (
       <div className="relative z-20" style={{ backgroundColor: "#fafafa" }}>
@@ -75,7 +75,7 @@ class PostPagination extends React.Component {
               data-tip=""
               data-for="share_editpost"
             >
-              <div className="m-2 py-1 px-2 bg-black hover:bg-brand-blue text-white flex justify-center rounded-md text-xl cursor-pointer">
+              <div className="m-2 py-1 px-2 bg-black hover:bg-brand-blue text-white hover:text-brand-black flex justify-center rounded-md text-xl cursor-pointer">
                 <RiEditBoxLine />
               </div>
             </a>

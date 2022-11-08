@@ -25,7 +25,7 @@ const FairnessVis = () => {
         style={{
           fontSize: "2.5rem",
           fontWeight: "900",
-          fontFamily: "TUoS Blake",
+          fontFamily: "Source Serif Pro",
           color: "#1a1919",
           fontStyle: "italic"
         }}

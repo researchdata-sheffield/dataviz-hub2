@@ -15,7 +15,7 @@ import { MdCancel, MdError } from "react-icons/md";
  *      4a. YES => capture html as image and download (Recommend Chrome as svg generated in Firefox doesn't work in Chrome)
  *       4b. No => Hide/disable download button
  */
-const visDownload = ({ mdx }) => {
+const VisDownload = ({ mdx }) => {
   const [menu, setMenu] = useState(false);
   const [targetVis, setTargetVis] = useState("");
   const pngImagePath =
@@ -51,13 +51,13 @@ const visDownload = ({ mdx }) => {
       <div
         className={`${
           menu ? "z-20" : "hidden z-0"
-        } fixed rounded-lg py-5 px-6 bg-gray-700 text-white text-base text-left`}
+        } fixed rounded-lg py-5 px-6 bg-brand-black text-white text-base text-left`}
         style={{
           left: "50%",
           top: "50%",
           transform: "translate(-50%, -50%)",
           maxWidth: "350px",
-          boxShadow: "0 5px 30px -5px #00aeef"
+          boxShadow: "0 5px 30px -5px #9ADBE8"
         }}
       >
         <h4 className="text-gray-300">
@@ -119,7 +119,7 @@ const visDownload = ({ mdx }) => {
         {/* cancel button */}
         <button
           onClick={() => setMenu(!menu)}
-          className="text-gray-100 hover:text-brand-pink rounded-md transition duration-300 text-2xl p-1 absolute top-0 right-0 flex items-center"
+          className="text-gray-100 hover:text-brand-blue rounded-md transition duration-300 text-2xl p-1 absolute top-0 right-0 flex items-center"
           aria-label="Close download menu"
         >
           <MdCancel />
@@ -129,8 +129,8 @@ const visDownload = ({ mdx }) => {
   );
 };
 
-visDownload.propTypes = {
+VisDownload.propTypes = {
   mdx: PropTypes.any
 };
 
-export default visDownload;
+export default VisDownload;

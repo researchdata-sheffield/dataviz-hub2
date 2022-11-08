@@ -5,12 +5,12 @@ import { useEffect } from "react";
  * @param {*} elementId affected element on scroll
  * @param {*} pageOffset position to make the element visible
  */
-export function trackScrollPosition(elementId, pageOffset = 300) {
+export function useTrackScrollPosition(elementId, pageOffset = 300) {
   let element;
 
   useEffect(() => {
     function scrollAction() {
-      var el = document.getElementById(elementId);
+      let el = document.getElementById(elementId);
       el.style.opacity = "0";
       el.style.visibility = "invisible";
 

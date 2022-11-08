@@ -20,8 +20,8 @@ class Search extends Component {
   componentDidMount = () => {
     setTimeout(() => {
       if (this.props.location.state && this.props.location.state.searchWord) {
-        var queryHome = this.props.location.state.searchWord;
-        var input = document.getElementById("pageSearch");
+        let queryHome = this.props.location.state.searchWord;
+        let input = document.getElementById("pageSearch");
         this.setState({ query: queryHome });
         input.setAttribute("value", queryHome);
         this.searchFunction(queryHome);
@@ -31,34 +31,30 @@ class Search extends Component {
 
   render() {
     const ResultList = () => {
-      // query length changed from 2 to 0
-      if (this.state.results.length > 0 && this.state.query.length > 0) {
-        const data = useStaticQuery(graphql`
-          query postList {
-            allMdx(
-              sort: { fields: [frontmatter___date], order: DESC }
-              filter: { frontmatter: { published: { ne: false } } }
-            ) {
-              edges {
-                node {
-                  id
-                  frontmatter {
-                    date(formatString: "ddd, DD MMM YYYY")
-                    thumbnail {
-                      childImageSharp {
-                        gatsbyImageData(
-                          placeholder: BLURRED
-                          layout: FULL_WIDTH
-                        )
-                      }
+      const data = useStaticQuery(graphql`
+        query postList {
+          allMdx(
+            sort: { fields: [frontmatter___date], order: DESC }
+            filter: { frontmatter: { published: { ne: false } } }
+          ) {
+            edges {
+              node {
+                id
+                frontmatter {
+                  date(formatString: "ddd, DD MMM YYYY")
+                  thumbnail {
+                    childImageSharp {
+                      gatsbyImageData(placeholder: BLURRED, layout: FULL_WIDTH)
                     }
                   }
                 }
               }
             }
           }
-        `);
-
+        }
+      `);
+      // query length changed from 2 to 0
+      if (this.state.results.length > 0 && this.state.query.length > 0) {
         return (
           <div>
             <div className="bg-gray-50 text-gray-900 py-2">
@@ -161,8 +157,7 @@ class Search extends Component {
                         <p
                           style={{
                             fontSize: ".85rem",
-                            marginTop: "10px",
-                            color: ""
+                            marginTop: "10px"
                           }}
                         >
                           {itemDate}
@@ -221,7 +216,7 @@ class Search extends Component {
           }}
         >
           <Zoom top duration={1000} cascade>
-            <p className="text-lg text-gray-800 mb-4 font-bold">
+            <p className="text-2xl text-brand-black mb-4 font-bold">
               What are you looking for?
             </p>
           </Zoom>
@@ -233,7 +228,7 @@ class Search extends Component {
                 onChange={this.search}
                 onInput={this.search}
                 autoComplete="off"
-                className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-600"
+                className="search__input py-0 pl-4 text-lg focus:outline-none pr-5 text-gray-700"
                 style={{ minWidth: "25vw" }}
                 type="text"
                 name="search"
@@ -253,13 +248,13 @@ class Search extends Component {
     //index - a flexsearch index instance (variables set in gatsby-config)
     //store - object that stores the indexed gatsby nodes where the id of each node corresponds to the id the filter, according with flexsearch.js best practices (https://github.com/nextapps-de/flexsearch#best-practices)).
 
-    var index = window.__FLEXSEARCH__.en.index;
-    var store = window.__FLEXSEARCH__.en.store;
+    let index = window.__FLEXSEARCH__.en.index;
+    let store = window.__FLEXSEARCH__.en.store;
 
     if (!query || !index) {
       return [];
     } else {
-      var results = [];
+      let results = [];
       // search the indexed fields
       Object.keys(index).forEach((idx) => {
         results.push(

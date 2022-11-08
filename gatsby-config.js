@@ -15,11 +15,26 @@ module.exports = {
   },
   plugins: [
     {
-      resolve: `gatsby-plugin-google-analytics`,
+      // https://www.gatsbyjs.com/plugins/gatsby-plugin-google-gtag/
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: process.env.QA_ENV ? "289653096" : "UA-165060977-1",
-        head: true,
-        enableWebVitalsTracking: true
+        // You can add multiple tracking ids and a pageview event will be fired for all of them.
+        // This is the measurement ID in GA4
+        trackingIds: [process.env.QA_ENV ? "G-9F9DQR2Q4S" : "G-C49ZZFBML4"],
+        // This config will be shared across all trackingIds
+        gtagConfig: {
+          // Some countries (such as Germany) require you to use the _anonymizeIP
+          anonymize_ip: true,
+          cookie_expires: 0,
+          enable_web_vitals_tracking: true
+        },
+        // This object is used for configuration specific to this plugin
+        pluginConfig: {
+          // Puts tracking script in the head instead of the body
+          head: true,
+          // Respect do not track setting from user's browser
+          respectDNT: true
+        }
       }
     },
     `gatsby-plugin-image`,
@@ -206,7 +221,7 @@ module.exports = {
         background_color: `#ffffff`,
         theme_color: `#ffffff`,
         display: `minimal-ui`,
-        icon: `src/images/icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/Favicon_128x128.png`, // This path is relative to the root of the site.
         cache_busting_mode: "none" // Work with offline plugin
       }
     },
@@ -442,7 +457,14 @@ module.exports = {
       }
     },
     /*********** END RSS Feed ************* */
-    `gatsby-plugin-sass`,
+    {
+      resolve: `gatsby-plugin-sass`,
+      options: {
+        implementation: require("sass"),
+        // globally expose the contents to each sass file
+        additionalData: `@use "./src/css/_variables" as var;`
+      }
+    },
     {
       resolve: "gatsby-plugin-webpack-bundle-analyser-v2",
       options: {

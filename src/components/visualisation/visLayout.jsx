@@ -5,7 +5,7 @@ import { Link } from "gatsby";
 import { getImageSource } from "../../utils/shared";
 import { VisGrid, VisItem } from "../style/visStyle";
 import Fade from "react-reveal/Fade";
-import UniversityIcon from "../../images/TUOS_PRIMARY_LOGO_LINEAR_BLACK.png";
+import UniversityIcon from "../../images/UOSLogo_Primary_White_RGB.svg";
 import WordCloud from "./wordCloud";
 import VisUtils from "./visUtils";
 
@@ -17,7 +17,7 @@ import VisUtils from "./visUtils";
  * @param {Object} pageContext Other page related information
  * @returns
  */
-const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
+const VisLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   const [tagMenu, setTagMenu] = useState(false);
 
   // category & tag will pass a title
@@ -54,7 +54,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   }
 
   return (
-    <div className="bg-gray-900">
+    <div className="bg-brand-black">
       <SEO
         title={`${pageTitle} Visualisation`}
         keywords={[
@@ -111,7 +111,7 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
         </button>
       </div>
 
-      <div className="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-gray-900 px-5">
+      <div className="min-h-80 flex flex-wrap justify-center pt-24 pb-32 bg-brand-black px-5">
         <VisGrid>
           {currentMDXs.length > 0 &&
             currentMDXs.map(({ node }) => {
@@ -182,9 +182,11 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   );
 };
 
-export default visLayout;
+export default VisLayout;
 
-visLayout.propTypes = {
+VisLayout.propTypes = {
   currentMDXs: PropTypes.any,
-  nextPageRef: PropTypes.any
+  nextPageRef: PropTypes.any,
+  title: PropTypes.string,
+  pageContext: PropTypes.object
 };

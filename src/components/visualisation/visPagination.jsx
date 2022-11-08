@@ -13,12 +13,12 @@ const visPagination = (props) => {
   const { githubLink, shareLink, shareMessage } = mdx.shareLinks;
   const { prev, next } = mdx.pageContext;
   const buttonStyle =
-    "py-2 px-2 bg-gray-800 text-white font-semibold text-sm rounded-md hover:bg-gray-700 transition duration-300";
+    "py-2 px-2 bg-gray-800 hover:bg-brand-blue text-white hover:text-brand-black font-semibold text-sm rounded-md transition duration-300";
 
   return (
     <div
       className={`${className} flex flex-wrap justify-between mt-2 space-y-3 mx-auto items-center relative z-10`}
-      style={{ ...style, maxWidth: "550px" }}
+      style={{ ...(style || []), maxWidth: "550px" }}
     >
       {/* Previous visualisation */}
       <Link

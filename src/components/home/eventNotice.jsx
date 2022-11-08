@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade";
 import { shortenText, calculateUserLocalTime } from "../../utils/shared";
 import NoThumb from "../../images/no_thumbnail.png";
 
-const eventNotice = ({ eventBrite }) => {
+const EventNotice = ({ eventBrite }) => {
   const UPDATE_TIME_MS = 30000;
   const [currentDate, setDate] = useState(
     moment().format("ddd DD MMMM YYYY, hh:mm A")
@@ -40,7 +40,7 @@ const eventNotice = ({ eventBrite }) => {
 
                 <a
                   className="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2"
-                  style={{ fontFamily: "TUoS Blake" }}
+                  style={{ fontFamily: "Source Serif Pro" }}
                   href={node.url}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -65,7 +65,7 @@ const eventNotice = ({ eventBrite }) => {
                         {node.name.text ? node.name.text : "No next event"}
                       </p>
                     </h1>
-                    <p className="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base">
+                    <p className="text-gray-600 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base">
                       {summary}
                     </p>
                     <p className="flex pt-2 text-sm xl:text-base">
@@ -84,18 +84,12 @@ const eventNotice = ({ eventBrite }) => {
                           {node.venue && (
                             <FaMapMarkerAlt className="mr-1 mt-1" />
                           )}
-                          {node.venue &&
-                            node.venue.name &&
-                            node.venue.name + ", "}
-                          {node.venue &&
-                            node.venue.address.address_1 &&
+                          {node?.venue?.name && node.venue.name + ", "}
+                          {node?.venue?.address?.address_1 &&
                             node.venue.address.address_1 + ", "}
-                          {node.venue &&
-                            node.venue.address.city &&
+                          {node?.venue?.address?.city &&
                             node.venue.address.city + ", "}
-                          {node.venue &&
-                            node.venue.address.postal_code &&
-                            node.venue.address.postal_code}
+                          {node?.venue?.address?.postal_code || ""}
                         </p>
                       </div>
                       <div className="flex flex-wrap w-full md:w-1/6 content-center justify-center hidden-xs hidden-md">
@@ -103,7 +97,7 @@ const eventNotice = ({ eventBrite }) => {
                           href={node.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hidden group-hover:flex shadow-sm -mt-4 py-2 px-5 text-lg bg-gray-800 text-white hover:bg-brand-blue"
+                          className="hidden group-hover:flex shadow-sm -mt-4 py-2 px-5 text-lg bg-brand-black text-white hover:text-brand-black hover:bg-brand-blue"
                         >
                           Register
                         </button>
@@ -120,8 +114,8 @@ const eventNotice = ({ eventBrite }) => {
   );
 };
 
-export default eventNotice;
+export default EventNotice;
 
-eventNotice.propTypes = {
+EventNotice.propTypes = {
   eventBrite: PropTypes.any
 };

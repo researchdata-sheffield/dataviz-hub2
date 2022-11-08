@@ -18,7 +18,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
  * IF url is not specified, use localPath to get one of the saved images
  *  - localPath: <string> name of the image property in frontmatter to use: "svgExternalImagePath", "svgImagePath", "pngImagePath", "pngExternalImagePath"
  */
-const visEmbed = (props) => {
+const VisEmbed = (props) => {
   const [embedMenu, setEmbedMenu] = useState(false);
   const [embedCode, setEmbedCode] = useState("");
 
@@ -78,7 +78,7 @@ const visEmbed = (props) => {
     let copyText = element.innerText || element.textContent;
 
     // create an input element for copying to clipboard
-    var input = document.body.appendChild(document.createElement("input"));
+    let input = document.body.appendChild(document.createElement("input"));
     input.value = copyText;
     input.select();
     document.execCommand("copy");
@@ -115,7 +115,7 @@ const visEmbed = (props) => {
           maxWidth: "800px",
           userSelect: "text",
           backgroundColor: "#f7f7f7",
-          boxShadow: "0 10px 50px -5px #00aeef",
+          boxShadow: "0 10px 50px -5px #9ADBE8",
           zIndex: embedMenu ? "999" : "0",
           display: embedMenu ? "" : "none"
         }}
@@ -142,7 +142,7 @@ const visEmbed = (props) => {
           <div
             id="copyEmbedCodeBtn"
             onClick={() => copyEmbedCode()}
-            className="w-full mt-2 text-xl bg-gray-200 rounded-lg text-gray-900 hover:bg-green-200 p-3 text-center transition duration-500 font-semibold cursor-pointer"
+            className="w-full mt-2 text-xl bg-gray-200 rounded-lg text-gray-900 hover:bg-brand-blue p-3 text-center transition duration-500 font-semibold cursor-pointer"
           >
             Copy embed code{" "}
             <MdContentCopy className="text-2xl inline-block ml-1" />
@@ -152,7 +152,7 @@ const visEmbed = (props) => {
         {/* cancel button */}
         <button
           onClick={() => setEmbedMenu(!embedMenu)}
-          className="text-gray-500 hover:text-gray-900 rounded-md transition duration-300 text-3xl p-1 absolute top-0 right-0 flex items-center"
+          className="text-gray-500 hover:text-brand-blue rounded-md transition duration-300 text-3xl p-1 absolute top-0 right-0 flex items-center"
           title="Close embed menu"
           aria-label="Close embed menu"
         >
@@ -163,11 +163,13 @@ const visEmbed = (props) => {
   );
 };
 
-visEmbed.propTypes = {
-  props: PropTypes.any
+VisEmbed.propTypes = {
+  props: PropTypes.any,
+  children: PropTypes.any,
+  mdx: PropTypes.object
 };
 
-export default visEmbed;
+export default VisEmbed;
 
 /**
  * Get embed code template based on type and URL.

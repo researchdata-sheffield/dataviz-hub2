@@ -119,7 +119,8 @@
 
   &:hover {
     /*     background: rgba(0, 0, 0, 0.9); */
-    background: #00aeef;
+    background: #9ADBE8;
+    color: black;
     z-index: 99;
   }
 
@@ -267,7 +268,7 @@ Home Search bar & animation
   & li.active > a {
     color: rgb(34, 34, 34);
     font-weight: 600;
-    border-left: #00aeef 6px solid;
+    border-left: #9adbe8 6px solid;
     padding-left: 8px;
   }
 }
@@ -279,19 +280,19 @@ Home Search bar & animation
   padding-left: 1rem;
   margin-top: 2.5rem;
   margin-bottom: 1.3rem;
-  border-left: 1rem solid #11b1ff;
-  font-family: "TUOS Stephenson", Georgia, Times, serif;
+  border-left: 0.5rem solid #9adbe8;
+  font-family: "Source Sans Pro", sans-serif;
 }
 h1.accAbt {
   @extend .accAbt;
   font-size: 2rem;
   margin-top: 5rem;
-  border-left: 1.7rem solid #1961ae;
+  border-left: 1rem solid #440099;
 }
 h2.accAbt {
   @extend .accAbt;
   font-size: 1.6rem;
-  font-family: "Open Sans", sans-serif;
+  font-family: "Source Serif Pro", serif;
 }
 .accAbtSubItem {
   padding-left: 2rem;

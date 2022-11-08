@@ -1,21 +1,21 @@
-import React, { useState } from "react"
-import { graphql } from "gatsby"
-import MenuCategory from "../../components/blog/menuCategory"
-import PropTypes from "prop-types"
-import BlogLayout from "../../components/blog/blogLayout"
-import SEO from "../../components/shared/seo"
-import kebabCase from "lodash.kebabcase"
-import Bg from "../../images/blog/colorful-world.jpg"
+import React, { useState } from "react";
+import { graphql } from "gatsby";
+import MenuCategory from "../../components/blog/menuCategory";
+import PropTypes from "prop-types";
+import BlogLayout from "../../components/blog/blogLayout";
+import SEO from "../../components/shared/seo";
+import kebabCase from "lodash.kebabcase";
+import Bg from "../../images/blog/colorful-world.jpg";
 
-const blogTagTemplate = ({ data: { allMdx }, pageContext }) => {
-  const [tagMenu, toggleTagMenu] = useState(false)
+const BlogTagTemplate = ({ data: { allMdx }, pageContext }) => {
+  const [tagMenu, toggleTagMenu] = useState(false);
 
   function handleTagMenu() {
-    toggleTagMenu(!tagMenu)
+    toggleTagMenu(!tagMenu);
 
     if (screen.width <= 1280 && tagMenu === false) {
-      var element = document.querySelector("#tagMenu")
-      element.scrollIntoView()
+      let element = document.querySelector("#tagMenu");
+      element.scrollIntoView();
     }
   }
 
@@ -58,15 +58,15 @@ const blogTagTemplate = ({ data: { allMdx }, pageContext }) => {
         tagMenu={tagMenu}
       />
     </>
-  )
-}
+  );
+};
 
-export default blogTagTemplate
+export default BlogTagTemplate;
 
-blogTagTemplate.propTypes = {
+BlogTagTemplate.propTypes = {
   pageContext: PropTypes.any,
   data: PropTypes.any
-}
+};
 
 export const query = graphql`
   query blogTag($tag: String, $skip: Int!, $limit: Int!) {
@@ -89,4 +89,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

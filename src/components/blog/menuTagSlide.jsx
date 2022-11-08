@@ -7,9 +7,10 @@ import { FiSearch } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { useLocation } from "@gatsbyjs/reach-router";
 
-const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
+const MenuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
+  const BUTTON_STYLES = `bg-brand-blue text-brand-black hover:bg-brand-black hover:text-white`;
   const [filterTag, setfilterTag] = useState(pageContext.allTags);
-  var { href } = useLocation();
+  let { href } = useLocation();
   if (!href) href = "";
 
   function handleChange(e) {
@@ -45,7 +46,7 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
         style={{ transform: "translateY(-5%)" }}
       >
         <div
-          className="px-3 py-4 hover:bg-brand-blue bg-gray-900 transition duration-500 shadow-xl"
+          className={`${BUTTON_STYLES} px-3 py-4 transition duration-500 shadow-xl`}
           title="Open tag menu"
           aria-label="Open the side tag menu"
         >
@@ -60,7 +61,9 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
         title="Close the menu"
         aria-label="Close the slide tag menu"
       >
-        <div className="px-3 py-3 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold">
+        <div
+          className={`${BUTTON_STYLES} px-3 py-3 transition duration-500 font-bold`}
+        >
           <IoMdClose />
         </div>
       </button>
@@ -97,7 +100,7 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
               activeStyle={{ color: "white", backgroundColor: "#00aeef" }}
               partiallyActive={true}
               to={`/blog/tag/${kebabCase(tag)}`}
-              className="inline-block hover:bg-brand-blue hover:text-white py-1 px-2 m-1 bg-gray-50 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
+              className="inline-block hover:bg-brand-blue py-1 px-2 m-1 bg-gray-50 text-gray-700 rounded-full 2xl:text-sm font-sans font-semibold"
             >
               {tag} ({pageContext.countTags[`${tag}`]})
             </Link>
@@ -107,7 +110,7 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
           onClick={() => handleTagMenu()}
           className={`${
             tagMenu ? "block" : "hidden"
-          } cursor-pointer my-5 px-3 py-2 bg-brand-blue hover:bg-gray-900 transition duration-500 font-bold text-center w-full`}
+          } ${BUTTON_STYLES} cursor-pointer my-5 px-3 py-2 transition duration-500 font-bold text-center w-full`}
         >
           ClOSE
         </button>
@@ -116,8 +119,10 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
   );
 };
 
-export default menuTagSlide;
+export default MenuTagSlide;
 
-menuTagSlide.propTypes = {
-  pageContext: PropTypes.any
+MenuTagSlide.propTypes = {
+  pageContext: PropTypes.any,
+  handleTagMenu: PropTypes.func,
+  tagMenu: PropTypes.bool
 };

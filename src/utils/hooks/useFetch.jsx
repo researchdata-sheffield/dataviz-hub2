@@ -31,7 +31,7 @@ export const useFetch = (url, json = true) => {
     };
 
     fetchData();
-  }, [url]);
+  }, [url, json]);
 
   return [loading, data];
 };

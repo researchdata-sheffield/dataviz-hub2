@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { graphql } from "gatsby";
 import PropTypes from "prop-types";
-import { loadMoreVisualisation } from "../../utils/hooks/loadMoreVisualisation";
+import { useLoadMoreVisualisation } from "../../utils/hooks/loadMoreVisualisation";
 import VisLayout from "../../components/visualisation/visLayout";
 
-const visTemplate = ({ data: { allMdx }, pageContext }) => {
+const VisTemplate = ({ data: { allMdx }, pageContext }) => {
   const nextPageRef = useRef();
-  const currentMDXs = loadMoreVisualisation(allMdx.edges, nextPageRef);
+  const currentMDXs = useLoadMoreVisualisation(allMdx.edges, nextPageRef);
 
   return (
     <VisLayout
@@ -17,10 +17,11 @@ const visTemplate = ({ data: { allMdx }, pageContext }) => {
   );
 };
 
-export default visTemplate;
+export default VisTemplate;
 
-visTemplate.propTypes = {
-  data: PropTypes.any
+VisTemplate.propTypes = {
+  data: PropTypes.any,
+  pageContext: PropTypes.any
 };
 
 export const query = graphql`

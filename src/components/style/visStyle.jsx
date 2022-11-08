@@ -230,12 +230,12 @@ export const WordCloud = styled.div`
     display: inline-block;
     line-height: 1;
     transition: 0.3s ease;
-    font-family: TUoS Blake;
+    font-family: "Source Serif Pro", serif;
     vertical-align: middle;
     padding: ${(props) => (props.backgroundColour === true ? "8px 13px" : "")};
 
     &:hover {
-      color: #00aeef !important;
+      color: #fff !important;
       background-color: ${(props) =>
         props.backgroundColour === true ? "#000" : ""} !important;
     }
@@ -272,6 +272,7 @@ const visHelperButton = styled.button`
 export const VisTagMenuBtn = styled(visHelperButton)`
   opacity: 0;
   right: 140px;
+
   background-image: linear-gradient(
     135deg,
     rgb(255, 121, 180) 15%,

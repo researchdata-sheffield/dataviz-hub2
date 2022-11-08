@@ -206,12 +206,12 @@ class SearchHome extends Component {
   }
 
   getSearchResults(query) {
-    var index = window.__FLEXSEARCH__.en.index;
-    var store = window.__FLEXSEARCH__.en.store;
+    let index = window.__FLEXSEARCH__.en.index;
+    let store = window.__FLEXSEARCH__.en.store;
     if (!query || !index) {
       return [];
     } else {
-      var results = [];
+      let results = [];
       // search the indexed fields
       Object.keys(index).forEach((idx) => {
         results.push(...index[idx].values.search(query)); // more search options at https://github.com/nextapps-de/flexsearch#index.search

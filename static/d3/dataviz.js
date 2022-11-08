@@ -2,27 +2,27 @@
 /* eslint-disable no-undef */
 
 
-var countryCoor = "https://unpkg.com/world-atlas@1/world/110m.json"
-var countryNames = "https://gist.githubusercontent.com/lkopacz/dfd9cc04a4d5a5f0fe87c89a79524479/raw/39100d4f6b7c784bd5d838a4e357873ef6877579/world-country-names.csv"
-var populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv"
+let countryCoor = "https://unpkg.com/world-atlas@1/world/110m.json"
+let countryNames = "https://gist.githubusercontent.com/lkopacz/dfd9cc04a4d5a5f0fe87c89a79524479/raw/39100d4f6b7c784bd5d838a4e357873ef6877579/world-country-names.csv"
+let populationData = "https://raw.githubusercontent.com/yld-weng/datasets/master/CC0-PublicDomain/world_population2020.csv"
 
-var margin = {top: 10, right: 10, bottom: 10, left: 10};
-var width = 960 - margin.left - margin.right;
-var height = 600 - margin.top - margin.bottom;
-var projection = d3.geoNaturalEarth1();
+let margin = {top: 10, right: 10, bottom: 10, left: 10};
+let width = 960 - margin.left - margin.right;
+let height = 600 - margin.top - margin.bottom;
+let projection = d3.geoNaturalEarth1();
 										// .center([0, 15]) 
 										// .rotate([20,0])
 										// .scale([1300/(2*Math.PI)]) 
 										// .translate([450,300]);
-var path = d3.geoPath()
+let path = d3.geoPath()
 							.projection(projection);
-var svg = d3.select("#d3")
+let svg = d3.select("#d3")
 						// .attr("width", width)
 						// .attr("height", height)
 								.append("g")
 								.attr("position", "center")
 								.attr("background-color", "#2B65EC");
-var tooltip = d3.select("div.tooltip");
+let tooltip = d3.select("div.tooltip");
 
 Promise.all([
 	d3.json(countryCoor),
@@ -36,7 +36,7 @@ Promise.all([
 
 
 function createMap(world, names, population) {
-	var countries1 = topojson.feature(world, world.objects.countries).features;
+	let countries1 = topojson.feature(world, world.objects.countries).features;
 	let countries = countries1.filter(d => {
 		return names.some(n => {
 			if (d.id == n.id) return d.name = n.name;
@@ -78,7 +78,7 @@ function createMap(world, names, population) {
 	
 	svg.call(d3.drag()
 		.on("drag", function() {
-			var xy = d3.mouse(this);
+			let xy = d3.mouse(this);
 			projection.rotate(xy).translate([xy[0], xy[1]])
 			svg.selectAll("path")
 				.attr("d", path);

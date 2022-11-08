@@ -41,19 +41,20 @@
 
 html {
   scroll-behavior: smooth !important;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 a {
   color: #4e4e4e;
 
   &:hover {
-    color: #00aeef;
+    color: var.$colour-brand-blue;
   }
 }
 
 button:focus,
 a:focus {
-  border: 1px solid #00aeef;
+  border: 1px solid var.$colour-brand-blue;
 }
 
 p {
@@ -82,12 +83,12 @@ h6 {
 }
 
 ::-moz-selection {
-  background: #00aeef;
-  color: white;
+  background: var.$colour-brand-blue;
+  color: var.$colour-brand-black;
 }
 ::selection {
-  background: #00aeef;
-  color: white;
+  background: var.$colour-brand-blue;
+  color: var.$colour-brand-black;
 }
 
 textarea::placeholder {

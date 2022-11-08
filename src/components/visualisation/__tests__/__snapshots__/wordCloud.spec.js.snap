@@ -6,7 +6,7 @@ Object {
   "baseElement": <body>
     <div>
       <div
-        class="sc-eCYdqJ eHggCq"
+        class="sc-eCYdqJ dJZmrT"
       >
         <div
           class="word-cloud-wrap space-y-0 space-x-1"
@@ -31,7 +31,7 @@ Object {
             class="word "
             gatsby="true"
             href="/visualisation/tag/test-tag-1"
-            style="font-size: 0.9rem; color: white;"
+            style="font-size: 0.95rem; color: white;"
           >
             Test Tag 1
           </a>
@@ -41,7 +41,7 @@ Object {
   </body>,
   "container": <div>
     <div
-      class="sc-eCYdqJ eHggCq"
+      class="sc-eCYdqJ dJZmrT"
     >
       <div
         class="word-cloud-wrap space-y-0 space-x-1"
@@ -66,7 +66,7 @@ Object {
           class="word "
           gatsby="true"
           href="/visualisation/tag/test-tag-1"
-          style="font-size: 0.9rem; color: white;"
+          style="font-size: 0.95rem; color: white;"
         >
           Test Tag 1
         </a>

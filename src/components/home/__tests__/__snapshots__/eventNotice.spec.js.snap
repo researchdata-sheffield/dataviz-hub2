@@ -25,7 +25,7 @@ Object {
               class="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2"
               href="https://www.eventbrite.co.uk/e/celebration-of-open-research-at-the-university-of-sheffield-tickets-163679197887"
               rel="noopener noreferrer"
-              style="font-family: TUoS Blake;"
+              style="font-family: Source Serif Pro;"
               target="_blank"
             >
               <img
@@ -54,7 +54,7 @@ Object {
                   </p>
                 </h1>
                 <p
-                  class="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base"
+                  class="text-gray-600 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base"
                 >
                   Join us for a celebration of Open Research at the University of Sheffield with the winners of the Library's inaugural Open Research Prize.
                 </p>
@@ -114,7 +114,7 @@ Object {
                     class="flex flex-wrap w-full md:w-1/6 content-center justify-center hidden-xs hidden-md"
                   >
                     <button
-                      class="hidden group-hover:flex shadow-sm -mt-4 py-2 px-5 text-lg bg-gray-800 text-white hover:bg-brand-blue"
+                      class="hidden group-hover:flex shadow-sm -mt-4 py-2 px-5 text-lg bg-brand-black text-white hover:text-brand-black hover:bg-brand-blue"
                       href="https://www.eventbrite.co.uk/e/celebration-of-open-research-at-the-university-of-sheffield-tickets-163679197887"
                       rel="noopener noreferrer"
                       target="_blank"
@@ -151,7 +151,7 @@ Object {
             class="flex flex-wrap w-full overflow-hidden max-h-90 text-gray-700 group pb-2 px-2"
             href="https://www.eventbrite.co.uk/e/celebration-of-open-research-at-the-university-of-sheffield-tickets-163679197887"
             rel="noopener noreferrer"
-            style="font-family: TUoS Blake;"
+            style="font-family: Source Serif Pro;"
             target="_blank"
           >
             <img
@@ -180,7 +180,7 @@ Object {
                 </p>
               </h1>
               <p
-                class="text-gray-500 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base"
+                class="text-gray-600 hidden md:flex lg:flex xl:flex leading-tight text-sm xl:text-base"
               >
                 Join us for a celebration of Open Research at the University of Sheffield with the winners of the Library's inaugural Open Research Prize.
               </p>
@@ -240,7 +240,7 @@ Object {
                   class="flex flex-wrap w-full md:w-1/6 content-center justify-center hidden-xs hidden-md"
                 >
                   <button
-                    class="hidden group-hover:flex shadow-sm -mt-4 py-2 px-5 text-lg bg-gray-800 text-white hover:bg-brand-blue"
+                    class="hidden group-hover:flex shadow-sm -mt-4 py-2 px-5 text-lg bg-brand-black text-white hover:text-brand-black hover:bg-brand-blue"
                     href="https://www.eventbrite.co.uk/e/celebration-of-open-research-at-the-university-of-sheffield-tickets-163679197887"
                     rel="noopener noreferrer"
                     target="_blank"

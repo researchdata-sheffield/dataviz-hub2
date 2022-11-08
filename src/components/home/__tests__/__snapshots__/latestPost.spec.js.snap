@@ -9,11 +9,11 @@ Object {
         class="w-full flex flex-wrap"
       >
         <div
-          class="group w-full relative z-10 border-t-1 border-transparent first:border-gray-900"
+          class="group w-full relative z-10 border-t-1 border-transparent first:border-brand-black"
           tabindex="0"
         >
           <div
-            class="react-reveal w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl"
+            class="react-reveal w-full bg-brand-black hover:bg-transparent text-white 2xl:text-xl"
           >
             <a
               class="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4"
@@ -42,7 +42,7 @@ Object {
                   />
                 </svg>
                 <a
-                  class="sc-jSMfEi boAFJw rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                  class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                   gatsby="true"
                   href="/blog/category/articles"
                 >
@@ -87,7 +87,7 @@ Object {
                 class="mt-2 text-gray-500"
               >
                 <a
-                  class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/r"
                 >
@@ -103,11 +103,11 @@ Object {
           </div>
         </div>
         <div
-          class="group w-full relative z-10 border-t-1 border-transparent first:border-gray-900"
+          class="group w-full relative z-10 border-t-1 border-transparent first:border-brand-black"
           tabindex="0"
         >
           <div
-            class="react-reveal w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl"
+            class="react-reveal w-full bg-brand-black hover:bg-transparent text-white 2xl:text-xl"
           >
             <a
               class="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4"
@@ -136,7 +136,7 @@ Object {
                   />
                 </svg>
                 <a
-                  class="sc-jSMfEi boAFJw rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                  class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                   gatsby="true"
                   href="/blog/category/tutorial"
                 >
@@ -182,28 +182,28 @@ Object {
                 class="mt-2 text-gray-500"
               >
                 <a
-                  class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/shiny"
                 >
                   Shiny
                 </a>
                 <a
-                  class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/template"
                 >
                   Template
                 </a>
                 <a
-                  class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                   gatsby="true"
                   href="/blog/tag/r"
                 >
                   R
                 </a>
                 <a
-                  class="sc-gKXOVf lowNZz text-xs py-0 mx-1 my-0"
+                  class="sc-gKXOVf iEHMrg text-xs py-0 mx-1 my-0"
                   gatsby="true"
                   href="/blog/05/02/2021/Shiny-Template"
                 >
@@ -222,7 +222,7 @@ Object {
         </div>
       </div>
       <div
-        class="flex flex-wrap w-full bg-gray-900 py-10 px-3 justify-center items-center self-center z-10"
+        class="flex flex-wrap w-full bg-brand-black py-10 px-3 justify-center items-center self-center z-10"
         style="transition: .3s ease;"
       >
         <div
@@ -268,11 +268,11 @@ Object {
       class="w-full flex flex-wrap"
     >
       <div
-        class="group w-full relative z-10 border-t-1 border-transparent first:border-gray-900"
+        class="group w-full relative z-10 border-t-1 border-transparent first:border-brand-black"
         tabindex="0"
       >
         <div
-          class="react-reveal w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl"
+          class="react-reveal w-full bg-brand-black hover:bg-transparent text-white 2xl:text-xl"
         >
           <a
             class="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4"
@@ -301,7 +301,7 @@ Object {
                 />
               </svg>
               <a
-                class="sc-jSMfEi boAFJw rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                 gatsby="true"
                 href="/blog/category/articles"
               >
@@ -346,7 +346,7 @@ Object {
               class="mt-2 text-gray-500"
             >
               <a
-                class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/r"
               >
@@ -362,11 +362,11 @@ Object {
         </div>
       </div>
       <div
-        class="group w-full relative z-10 border-t-1 border-transparent first:border-gray-900"
+        class="group w-full relative z-10 border-t-1 border-transparent first:border-brand-black"
         tabindex="0"
       >
         <div
-          class="react-reveal w-full bg-gray-900 hover:bg-transparent text-white 2xl:text-xl"
+          class="react-reveal w-full bg-brand-black hover:bg-transparent text-white 2xl:text-xl"
         >
           <a
             class="flex flex-wrap flex-col md:flex-row justify-between w-full text-gray-500 hover:text-white px-5 lg:px-12 py-4"
@@ -395,7 +395,7 @@ Object {
                 />
               </svg>
               <a
-                class="sc-jSMfEi boAFJw rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
+                class="sc-jSMfEi hGNjYL rounded-full py-0 my-0 mx-1 border-none bg-white text-black hover:bg-gray-200 font-semibold invisible group-hover:visible"
                 gatsby="true"
                 href="/blog/category/tutorial"
               >
@@ -441,28 +441,28 @@ Object {
               class="mt-2 text-gray-500"
             >
               <a
-                class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/shiny"
               >
                 Shiny
               </a>
               <a
-                class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/template"
               >
                 Template
               </a>
               <a
-                class="sc-gKXOVf lowNZz text-xs py-0 mr-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mr-1 my-0"
                 gatsby="true"
                 href="/blog/tag/r"
               >
                 R
               </a>
               <a
-                class="sc-gKXOVf lowNZz text-xs py-0 mx-1 my-0"
+                class="sc-gKXOVf iEHMrg text-xs py-0 mx-1 my-0"
                 gatsby="true"
                 href="/blog/05/02/2021/Shiny-Template"
               >
@@ -481,7 +481,7 @@ Object {
       </div>
     </div>
     <div
-      class="flex flex-wrap w-full bg-gray-900 py-10 px-3 justify-center items-center self-center z-10"
+      class="flex flex-wrap w-full bg-brand-black py-10 px-3 justify-center items-center self-center z-10"
       style="transition: .3s ease;"
     >
       <div

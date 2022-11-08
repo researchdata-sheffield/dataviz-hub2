@@ -22,9 +22,9 @@ const menuCategory = ({ pageContext, handleTagMenu, tagMenu }) => {
           <Link
             key={cat}
             to={`/blog/category/${kebabCase(cat)}`}
-            activeStyle={{ color: "#00aeef" }}
+            activeStyle={{ backgroundColor: "rgb(154 219 232)" }}
             partiallyActive={true}
-            className={`${buttonStyle} hover:text-brand-blue hover:border-blue-300 font-semibold`}
+            className={`${buttonStyle} hover:bg-brand-blue hover:border-blue-300 font-semibold`}
           >
             {cat}
           </Link>
@@ -33,9 +33,9 @@ const menuCategory = ({ pageContext, handleTagMenu, tagMenu }) => {
           <Link
             key={tag[0]}
             to={`/blog/tag/${kebabCase(tag[0])}`}
-            activeStyle={{ color: "#ff79b4" }}
+            activeStyle={{ backgroundColor: "#ff79b4" }}
             partiallyActive={true}
-            className={`${buttonStyle} hover:text-brand-pink hover:border-pink-300`}
+            className={`${buttonStyle} hover:bg-brand-pink hover:border-pink-300`}
           >
             {tag[0]}
           </Link>
@@ -44,7 +44,7 @@ const menuCategory = ({ pageContext, handleTagMenu, tagMenu }) => {
           aria-label="Click to toggle the tag menu"
           title="Click to toggle the tag menu"
           onClick={() => handleTagMenu()}
-          className={`${buttonStyle} hover:text-white hover:bg-gray-900 hover:border-gray-900 font-bold cursor-pointer`}
+          className={`${buttonStyle} hover:text-white hover:bg-brand-black hover:border-brand-black font-bold cursor-pointer`}
         >
           {tagMenu ? "CLOSE" : "MORE"}
         </button>

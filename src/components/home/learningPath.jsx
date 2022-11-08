@@ -14,7 +14,7 @@ const NextArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, right: 0, zIndex: "100" }}
+      style={{ ...(style || []), right: 0, zIndex: "100" }}
       onClick={onClick}
     />
   );
@@ -31,7 +31,7 @@ const PrevArrow = (props) => {
   return (
     <div
       className={className}
-      style={{ ...style, left: 0, zIndex: "100" }}
+      style={{ ...(style || []), left: 0, zIndex: "100" }}
       onClick={onClick}
     />
   );
@@ -141,7 +141,7 @@ const LearningPath = () => {
         <div className="container mx-auto justify-center flex flex-wrap text-center mt-8">
           <div
             className="text-4xl md:text-6xl text-white w-full leading-tight font-extrabold"
-            style={{ fontFamily: "TUOS Stephenson,Georgia,Times,serif" }}
+            style={{ fontFamily: "Source Serif Pro, serif" }}
           >
             Learning paths.
           </div>
