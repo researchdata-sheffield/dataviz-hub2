@@ -17,10 +17,10 @@ const Layout = (props) => {
         className="transition duration-1500 bg-brand-black w-full h-full fixed text-center flex flex-wrap content-center justify-center items-center"
         style={{ zIndex: "999" }}
       >
-        <div className="w-full">
+        <div className="w-full p-4">
           <img
             className="mx-auto"
-            style={{ width: "400px" }}
+            style={{ maxWidth: "400px" }}
             src={logo}
             alt="The University of Sheffield Logo"
           />

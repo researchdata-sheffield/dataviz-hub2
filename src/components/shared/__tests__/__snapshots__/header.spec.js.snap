@@ -15,7 +15,7 @@ exports[`Header renders correctly 1`] = `
     }
   >
     <div
-      className="flex items-center shrink-0 mr-5"
+      className="flex items-center shrink-0 lg:mr-5"
       style={
         Object {
           "padding": "10px",

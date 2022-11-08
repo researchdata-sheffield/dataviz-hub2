@@ -208,7 +208,7 @@ const Header = () => {
         style={{ transition: "top 0.3s" }}
       >
         <div
-          className="flex items-center shrink-0 mr-5"
+          className="flex items-center shrink-0 lg:mr-5"
           style={{ padding: "10px" }}
         >
           <A
