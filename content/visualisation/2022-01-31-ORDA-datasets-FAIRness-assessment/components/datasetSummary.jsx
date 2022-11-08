@@ -182,7 +182,7 @@ const DatasetSummary = ({ currentDataset }) => {
   };
 
   if (loading) {
-    <div>Loading...</div>;
+    return <div>Loading...</div>;
   }
 
   return (

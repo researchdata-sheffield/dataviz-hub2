@@ -6,10 +6,10 @@ import { FaTags, FaAngleDown } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
 import { useLocation } from "@gatsbyjs/reach-router";
 
-const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
+const MenuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
   const [filterTag, setfilterTag] = useState(pageContext.allTags);
 
-  var { href } = useLocation();
+  let { href } = useLocation();
   if (!href) href = "";
 
   function searchTag(e) {
@@ -86,8 +86,10 @@ const menuTag = ({ pageContext, handleTagMenu, tagMenu }) => {
   );
 };
 
-export default menuTag;
+export default MenuTag;
 
-menuTag.propTypes = {
-  pageContext: PropTypes.any
+MenuTag.propTypes = {
+  pageContext: PropTypes.any,
+  handleTagMenu: PropTypes.func,
+  tagMenu: PropTypes.bool
 };

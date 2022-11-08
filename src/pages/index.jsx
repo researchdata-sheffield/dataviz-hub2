@@ -15,11 +15,11 @@ import Covid from "../images/home/COVIDDeathPropMSOA.png";
 import Bg from "../images/home/lineBackground.png";
 import { ArrowButton, AnimateButton } from "../components/style/styleComponent";
 import { randomInteger } from "../utils/shared";
-import { backgroundMovement } from "../utils/hooks/backgroundMovement";
+import { useBackgroundMovement } from "../utils/hooks/backgroundMovement";
 
 const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
   let datePrev = moment();
-  var words = [
+  let words = [
     "Colour",
     "What are you looking for?",
     "blog post",
@@ -33,7 +33,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
   ];
 
   useEffect(() => {
-    var input = document.getElementById("homeSearch");
+    let input = document.getElementById("homeSearch");
     const interval = setInterval(() => {
       let dateNow = moment();
       let dateDiff = dateNow - datePrev;
@@ -48,7 +48,7 @@ const IndexPage = ({ data: { featuredItem, latestPost, eventBrite } }) => {
     };
   }, [words]);
 
-  backgroundMovement("dynamicBg");
+  useBackgroundMovement("dynamicBg");
 
   return (
     <div className="bg-white">

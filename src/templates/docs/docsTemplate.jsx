@@ -21,7 +21,7 @@ import { trackTableOfContent } from "../../utils/hooks/trackTableOfContent";
 
 import Fade from "react-reveal/Fade";
 
-const docsTemplate = ({ data: { mdx }, pageContext }) => {
+const DocsTemplate = ({ data: { mdx }, pageContext }) => {
   const { title, date, author, disableTOC } = mdx.frontmatter;
   const { prev, next } = pageContext;
 
@@ -39,7 +39,7 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
   }
 
   // enable/disable table of content
-  var tableOfContent;
+  let tableOfContent;
 
   if (disableTOC === true) {
     tableOfContent = null;
@@ -204,9 +204,9 @@ const docsTemplate = ({ data: { mdx }, pageContext }) => {
   );
 };
 
-export default docsTemplate;
+export default DocsTemplate;
 
-docsTemplate.propTypes = {
+DocsTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any
 };

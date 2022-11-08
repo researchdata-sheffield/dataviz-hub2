@@ -17,7 +17,7 @@ import VisUtils from "./visUtils";
  * @param {Object} pageContext Other page related information
  * @returns
  */
-const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
+const VisLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   const [tagMenu, setTagMenu] = useState(false);
 
   // category & tag will pass a title
@@ -182,9 +182,11 @@ const visLayout = ({ currentMDXs, nextPageRef, title, pageContext }) => {
   );
 };
 
-export default visLayout;
+export default VisLayout;
 
-visLayout.propTypes = {
+VisLayout.propTypes = {
   currentMDXs: PropTypes.any,
-  nextPageRef: PropTypes.any
+  nextPageRef: PropTypes.any,
+  title: PropTypes.string,
+  pageContext: PropTypes.object
 };

@@ -69,7 +69,7 @@ const connectionLineStyle = { stroke: "#fff" };
  * Return flowchart
  * @returns
  *************************/
-const flowChart = () => {
+const FlowChart = () => {
   const [displayChart, setDisplayChart] = useState(false);
   const [showAll, toggleShowAll] = useState(false);
   const [centreOnClick, toggleCentre] = useState(true);
@@ -629,4 +629,4 @@ const flowChart = () => {
   );
 };
 
-export default flowChart;
+export default FlowChart;

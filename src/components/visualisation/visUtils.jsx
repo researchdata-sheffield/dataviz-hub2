@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { trackScrollPosition } from "../../utils/hooks/trackScrollPosition";
+import { useTrackScrollPosition } from "../../utils/hooks/trackScrollPosition";
 import { VisTagMenuBtn, VisFooterBtn } from "../style/visStyle";
 import { FaTags } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
@@ -23,8 +23,8 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
   const footerIconStyle =
     "text-2xl group-hover:scale-110 transition duration-500";
 
-  trackScrollPosition("vis-tag-button");
-  trackScrollPosition("vis-footer-button");
+  useTrackScrollPosition("vis-tag-button");
+  useTrackScrollPosition("vis-footer-button");
 
   function searchTag() {
     let searchWord = searchValue.toLowerCase();
@@ -58,7 +58,11 @@ const VisUtils = React.memo(({ tagMenu, handleTagMenu, tags }) => {
         onClick={() => setFooter(!footer)}
         tabindex="101"
         id="vis-footer-button"
-        className={`group ${footer ? "bg-brand-blue text-brand-black" : "bg-brand-black text-white"}`}
+        className={`group ${
+          footer
+            ? "bg-brand-blue text-brand-black"
+            : "bg-brand-black text-white"
+        }`}
         title="Footer"
       >
         {!footer && <ImMenu4 className={footerIconStyle} />}

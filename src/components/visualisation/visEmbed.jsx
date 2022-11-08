@@ -18,7 +18,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
  * IF url is not specified, use localPath to get one of the saved images
  *  - localPath: <string> name of the image property in frontmatter to use: "svgExternalImagePath", "svgImagePath", "pngImagePath", "pngExternalImagePath"
  */
-const visEmbed = (props) => {
+const VisEmbed = (props) => {
   const [embedMenu, setEmbedMenu] = useState(false);
   const [embedCode, setEmbedCode] = useState("");
 
@@ -78,7 +78,7 @@ const visEmbed = (props) => {
     let copyText = element.innerText || element.textContent;
 
     // create an input element for copying to clipboard
-    var input = document.body.appendChild(document.createElement("input"));
+    let input = document.body.appendChild(document.createElement("input"));
     input.value = copyText;
     input.select();
     document.execCommand("copy");
@@ -163,11 +163,13 @@ const visEmbed = (props) => {
   );
 };
 
-visEmbed.propTypes = {
-  props: PropTypes.any
+VisEmbed.propTypes = {
+  props: PropTypes.any,
+  children: PropTypes.any,
+  mdx: PropTypes.object
 };
 
-export default visEmbed;
+export default VisEmbed;
 
 /**
  * Get embed code template based on type and URL.

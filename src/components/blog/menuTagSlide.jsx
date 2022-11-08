@@ -7,10 +7,10 @@ import { FiSearch } from "react-icons/fi";
 import { IoMdClose } from "react-icons/io";
 import { useLocation } from "@gatsbyjs/reach-router";
 
-const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
+const MenuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
   const BUTTON_STYLES = `bg-brand-blue text-brand-black hover:bg-brand-black hover:text-white`;
   const [filterTag, setfilterTag] = useState(pageContext.allTags);
-  var { href } = useLocation();
+  let { href } = useLocation();
   if (!href) href = "";
 
   function handleChange(e) {
@@ -61,7 +61,9 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
         title="Close the menu"
         aria-label="Close the slide tag menu"
       >
-        <div className={`${BUTTON_STYLES} px-3 py-3 transition duration-500 font-bold`}>
+        <div
+          className={`${BUTTON_STYLES} px-3 py-3 transition duration-500 font-bold`}
+        >
           <IoMdClose />
         </div>
       </button>
@@ -117,8 +119,10 @@ const menuTagSlide = ({ pageContext, handleTagMenu, tagMenu }) => {
   );
 };
 
-export default menuTagSlide;
+export default MenuTagSlide;
 
-menuTagSlide.propTypes = {
-  pageContext: PropTypes.any
+MenuTagSlide.propTypes = {
+  pageContext: PropTypes.any,
+  handleTagMenu: PropTypes.func,
+  tagMenu: PropTypes.bool
 };

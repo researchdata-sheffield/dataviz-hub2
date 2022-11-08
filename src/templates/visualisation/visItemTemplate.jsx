@@ -20,7 +20,7 @@ import VisDetail from "../../components/visualisation/visDetail";
 import { VisDiv, VisBackBtn, EmbedCode } from "../../components/style/visStyle";
 import { AiOutlineRollback, AiOutlineHome } from "react-icons/ai";
 
-const visItemTemplate = ({ data: { mdx }, pageContext }) => {
+const VisItemTemplate = ({ data: { mdx }, pageContext }) => {
   const components = { VisPagination, VisDetail, VisDiv, EmbedCode };
 
   const shareLinks = getShareLinks(mdx);
@@ -112,9 +112,9 @@ const visItemTemplate = ({ data: { mdx }, pageContext }) => {
   );
 };
 
-export default visItemTemplate;
+export default VisItemTemplate;
 
-visItemTemplate.propTypes = {
+VisItemTemplate.propTypes = {
   data: PropTypes.any,
   pageContext: PropTypes.any
 };

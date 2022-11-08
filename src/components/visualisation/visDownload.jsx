@@ -15,7 +15,7 @@ import { MdCancel, MdError } from "react-icons/md";
  *      4a. YES => capture html as image and download (Recommend Chrome as svg generated in Firefox doesn't work in Chrome)
  *       4b. No => Hide/disable download button
  */
-const visDownload = ({ mdx }) => {
+const VisDownload = ({ mdx }) => {
   const [menu, setMenu] = useState(false);
   const [targetVis, setTargetVis] = useState("");
   const pngImagePath =
@@ -129,8 +129,8 @@ const visDownload = ({ mdx }) => {
   );
 };
 
-visDownload.propTypes = {
+VisDownload.propTypes = {
   mdx: PropTypes.any
 };
 
-export default visDownload;
+export default VisDownload;

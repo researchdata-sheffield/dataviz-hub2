@@ -6,7 +6,7 @@ import Fade from "react-reveal/Fade";
 import { shortenText, calculateUserLocalTime } from "../../utils/shared";
 import NoThumb from "../../images/no_thumbnail.png";
 
-const eventNotice = ({ eventBrite }) => {
+const EventNotice = ({ eventBrite }) => {
   const UPDATE_TIME_MS = 30000;
   const [currentDate, setDate] = useState(
     moment().format("ddd DD MMMM YYYY, hh:mm A")
@@ -114,8 +114,8 @@ const eventNotice = ({ eventBrite }) => {
   );
 };
 
-export default eventNotice;
+export default EventNotice;
 
-eventNotice.propTypes = {
+EventNotice.propTypes = {
   eventBrite: PropTypes.any
 };

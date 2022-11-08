@@ -9,7 +9,7 @@ import { getImageSource, shortenText } from "../../utils/shared";
 import { GatsbyImage } from "gatsby-plugin-image";
 
 const latestPost = ({ post }) => {
-  var count = 0;
+  let count = 0;
 
   return (
     <>

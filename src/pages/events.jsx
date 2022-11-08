@@ -8,7 +8,7 @@ import PastEventsBlog from "../components/events/pastEventsBlog";
 import moment from "moment";
 import { calculateUserLocalTime } from "../utils/shared";
 
-const events = ({ data: { eventBrite, pastEvent, pastEventBlog } }) => {
+const Events = ({ data: { eventBrite, pastEvent, pastEventBlog } }) => {
   const UPDATE_TIME_MS = 30000;
   const [currentDate, setDate] = useState(
     moment().format("ddd DD MMMM YYYY, hh:mm A")
@@ -72,9 +72,9 @@ const events = ({ data: { eventBrite, pastEvent, pastEventBlog } }) => {
   );
 };
 
-export default events;
+export default Events;
 
-events.propTypes = {
+Events.propTypes = {
   data: PropTypes.any
 };
 

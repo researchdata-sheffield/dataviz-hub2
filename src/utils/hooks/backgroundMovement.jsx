@@ -6,7 +6,7 @@ import { useState, useEffect, useCallback } from "react";
  * @parent boolean: whether to move background on mouse hovering parent element of 'elementId'
  * Make sure to add the style overflow: hidden to parent/element, and add the style transform: scale(1.1) to the element
  */
-export function backgroundMovement(
+export function useBackgroundMovement(
   elementId,
   parent = true,
   xFactor = 0.06,
@@ -50,12 +50,12 @@ export function backgroundMovement(
       }px, ${-yFactor * yMove + translateValues.y}px) scale(1.1)`;
     };
 
-    var background = document.querySelector(`#${elementId}`);
+    let background = document.querySelector(`#${elementId}`);
     if (!background) {
       return;
     }
     background.style.transition = "none";
-    var hoverElement = background;
+    let hoverElement = background;
 
     if (parent === true) {
       hoverElement = background.parentElement;

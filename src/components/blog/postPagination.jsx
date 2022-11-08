@@ -22,7 +22,7 @@ class PostPagination extends React.Component {
     const displayShareButtons = this.props.displayShareButtons ?? true;
     const { githubLink, shareLink, shareMessage } = shareLinks;
 
-    var mdxType = mdx.frontmatter.type || "blog";
+    let mdxType = mdx.frontmatter.type || "blog";
 
     let prevTitle = prev ? shortenText(prev.node.frontmatter.title, 6) : "";
     let nextTitle = next ? shortenText(next.node.frontmatter.title, 6) : "";

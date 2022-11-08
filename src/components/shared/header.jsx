@@ -13,14 +13,15 @@ const Header = () => {
   const [isScroll, toggleScrolled] = useState(false);
   const [isOpen, toggleOpen] = useState(false);
   const location = useLocation();
-  var currentPagePath = location.pathname;
+  let currentPagePath = location.pathname;
 
   // close mobile menu on route change
-  if (typeof window !== "undefined" && window.screen.width <= 1200) {
-    useEffect(() => {
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.screen.width <= 1200) {
       toggleExpansion(false);
-    }, [location]);
-  }
+    }
+    toggleExpansion(false);
+  }, [location]);
 
   // monitor page scroll
   useEffect(() => {
@@ -99,7 +100,7 @@ const Header = () => {
    */
   const NavLink = (props) => {
     function navColourClass(mobile = false) {
-      var className = "transition duration-300 relative "; // don't remove space
+      let className = "transition duration-300 relative "; // don't remove space
 
       if (mobile == "true") {
         if (isScroll) {
@@ -176,7 +177,7 @@ const Header = () => {
   };
 
   function mobileMenuIconClass() {
-    var className =
+    let className =
       "px-3 py-2 flex items-center border rounded outline-none transition duration-300 group-hover:border-gray-700 group-hover:text-gray-700";
 
     if (isExpanded || isScroll || currentPagePath === "/") {
@@ -189,7 +190,7 @@ const Header = () => {
 
   function copyRssLink() {
     toggleOpen(true);
-    var copyText = document.querySelector("#rssLink");
+    let copyText = document.querySelector("#rssLink");
     copyText.select();
     copyText.setSelectionRange(0, 9999);
     document.execCommand("copy");
