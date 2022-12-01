@@ -151,7 +151,7 @@
     "expect-playwright": "^0.8.0",
     "gatsby-plugin-emotion": "^7.14.0",
     "gatsby-plugin-eslint": "^4.0.2",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.27",
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.30",
     "gatsby-remark-code-titles": "^1.1.0",
     "gh-pages": "^4.0.0",
     "husky": "^8.0.1",
