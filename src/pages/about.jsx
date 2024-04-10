@@ -121,10 +121,9 @@ const About = () => {
                 In 2017, <b>ORDA (Online Research Data)</b> was launched, a free
                 platform for all University of Sheffield research staff and
                 students to share their datasets, code, presentations, posters,
-                grey literature and other non-traditional research outputs. As
-                part of ORDA, we&apos;ve developed a data visualisation showcase
-                site where researchers are able to host interactive data
-                visualisations and also link them to reposited data in ORDA.
+                grey literature and other non-traditional research outputs. You 
+                are welcome to review visual representations illustrating our 
+                research by exploring some examples <a href="https://doi.org/10.15131/shef.data.c.3879643" target="_blank" rel="noopener noreferrer">here</a>.
               </p>
               <a
                 href="https://orda.shef.ac.uk/"
