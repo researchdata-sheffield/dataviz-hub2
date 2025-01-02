@@ -36,7 +36,7 @@ jobs:
       - name: Gatsby QA Cache
         if: "!contains(github.event.head_commit.message, 'skip cache')"
         id: gatsby-qa-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             public
