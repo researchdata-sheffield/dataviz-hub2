@@ -91,7 +91,7 @@ jobs:
         run: 7z a -t7z e2e.7z ./public/ -r
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: repo-artifact
           path: e2e.7z
@@ -131,7 +131,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
 
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: repo-artifact
       
