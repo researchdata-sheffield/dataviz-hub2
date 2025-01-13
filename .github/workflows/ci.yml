@@ -117,7 +117,7 @@ jobs:
       - name: Gatsby Cache
         if: "!contains(github.event.head_commit.message, 'skip cache')"
         id: gatsby-ci-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             public
@@ -167,7 +167,7 @@ jobs:
 
       - name: Jest cache
         id: gatsby-jest-cache
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: .jest-cache
           key: ${{ runner.os }}-jestCache-${{ github.run_id }}
